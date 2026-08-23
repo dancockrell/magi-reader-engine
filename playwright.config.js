@@ -41,25 +41,24 @@ export default defineConfig({
     { name: 'tablet', use: { ...devices['iPad (gen 7)'] } },
     { name: 'phone', use: { ...devices['Pixel 7'] } },
 
-    /* Firefox is deliberately absent, and this is not an oversight.
+    /* Gecko, via the real Firefox rather than Playwright's own build.
      *
-     * Playwright's Firefox 153 build will not start on this machine:
+     * Playwright's bundled Firefox will not start on this Windows build
+     * (26200): firefox.exe embeds a manifest requiring `mozglue` as a
+     * side-by-side assembly and the distribution ships no manifest to
+     * resolve it against, so it dies with "side-by-side configuration is
+     * incorrect". A hand-written manifest and two clean re-downloads all
+     * reproduce it, which rules out a corrupt download.
      *
-     *   Activation context generation failed for firefox.exe.
-     *   Dependent Assembly mozglue, version="1.0.0.0" could not be found.
-     *
-     * firefox.exe embeds a manifest requiring `mozglue` as a side-by-side
-     * assembly, and the shipped distribution has no mozglue.manifest to
-     * resolve it against — so having mozglue.dll on disk is not enough.
-     * Tried: writing the missing manifest by hand, and a full clean
-     * re-download. Both reproduce it, so the download is not corrupt;
-     * it is this Windows build (11, 26200) plus that Firefox build.
-     *
-     * Left out rather than left failing, because a red suite that
-     * everyone learns to ignore is worse than an honest gap. Revisit on
-     * the next Playwright release: add the project back and run
-     * `npx playwright install firefox`.
+     * `moz-firefox` sidesteps the whole problem: it drives the installed
+     * Firefox over WebDriver BiDi instead of Mozilla's juggler-patched
+     * build. Requires a normal Firefox in Program Files — the MSIX/Store
+     * package is a sandboxed alias and will not do.
      */
+    {
+      name: 'gecko',
+      use: { ...devices['Desktop Firefox'], channel: 'moz-firefox' },
+    },
   ],
 
   /* Playwright starts and stops the server itself, so no dev server is
