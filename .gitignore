@@ -4,7 +4,22 @@ dist/
 .DS_Store
 .vite/
 coverage/
-public/magi-audio/vtt/
 test-results/
 playwright-report/
 dev*.log
+
+# Book media is not source.
+#
+# 224 pictures and 519 recordings, 28 MB, all of it derived from the
+# original single-file reader and regenerable from it. Committing binary
+# assets that never change but are rewritten by every extraction makes
+# the history heavy and the diffs useless.
+#
+#   npm run assets    copies them in
+#   npm run book:cues regenerates the WebVTT from the timings
+#
+# When the art becomes something we author rather than extract, this
+# decision should be revisited — probably with git-lfs.
+public/art/
+public/magi-audio/
+public/vtt/

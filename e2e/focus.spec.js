@@ -28,17 +28,26 @@ function parseRgb(text) {
   return m ? { r: +m[1], g: +m[2], b: +m[3], a: m[4] === undefined ? 1 : +m[4] } : null;
 }
 
+/**
+ * These tests are about the vocabulary card, and the app opens on the
+ * reading. Going through the real control rather than a query parameter
+ * means the switch itself stays covered.
+ */
+async function openVocabulary(page) {
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Vocabulary' }).click();
+  await page.locator('.opt').first().waitFor();
+}
+
 test.describe('keyboard focus is visible', () => {
   test('the document really has focus, unlike in the old harness', async ({ page }) => {
-    await page.goto('/');
-    await page.locator('.opt').first().waitFor();
+    await openVocabulary(page);
     expect(await page.evaluate(() => document.hasFocus())).toBe(true);
     expect(await page.evaluate(() => document.visibilityState)).toBe('visible');
   });
 
   test('tabbing to an option paints a ring that is actually there', async ({ page }) => {
-    await page.goto('/');
-    await page.locator('.opt').first().waitFor();
+    await openVocabulary(page);
 
     await page.keyboard.press('Tab');
     const focused = page.locator(':focus');
@@ -63,8 +72,7 @@ test.describe('keyboard focus is visible', () => {
   });
 
   test('the ring clears 3:1 against what sits behind it', async ({ page }) => {
-    await page.goto('/');
-    await page.locator('.opt').first().waitFor();
+    await openVocabulary(page);
     await page.keyboard.press('Tab');
 
     const { ring, behind } = await page.locator(':focus').evaluate((el) => {
@@ -89,9 +97,8 @@ test.describe('keyboard focus is visible', () => {
   });
 
   test('a mouse click leaves no ring — it is keyboard-only', async ({ page }) => {
-    await page.goto('/');
+    await openVocabulary(page);
     const first = page.locator('.opt').first();
-    await first.waitFor();
     await first.click();
 
     const outline = await first.evaluate((el) => getComputedStyle(el).outlineStyle);
@@ -99,8 +106,7 @@ test.describe('keyboard focus is visible', () => {
   });
 
   test('answering moves focus to Next rather than stranding the student', async ({ page }) => {
-    await page.goto('/');
-    await page.locator('.opt').first().waitFor();
+    await openVocabulary(page);
     await page.locator('.opt').first().click();
     await expect(page.locator('.v-next')).toBeFocused();
   });
@@ -108,8 +114,7 @@ test.describe('keyboard focus is visible', () => {
 
 test.describe('the whole card, in a real viewport', () => {
   test('never scrolls sideways', async ({ page }) => {
-    await page.goto('/');
-    await page.locator('.opt').first().waitFor();
+    await openVocabulary(page);
     const overflows = await page.evaluate(
       () => document.documentElement.scrollWidth > window.innerWidth + 1
     );
@@ -117,8 +122,7 @@ test.describe('the whole card, in a real viewport', () => {
   });
 
   test('every control is big enough to hit', async ({ page }) => {
-    await page.goto('/');
-    await page.locator('.opt').first().waitFor();
+    await openVocabulary(page);
     const small = await page.evaluate(() =>
       [...document.querySelectorAll('button, input')]
         .filter((el) => el.getClientRects().length)
@@ -133,8 +137,7 @@ test.describe('the whole card, in a real viewport', () => {
 
   test('no control overlaps the one below it', async ({ page }) => {
     /* the bug that put "Suivant" on top of the Finish button */
-    await page.goto('/');
-    await page.locator('.opt').first().waitFor();
+    await openVocabulary(page);
     await page.locator('.opt').first().click();
 
     const clash = await page.evaluate(() => {
@@ -152,7 +155,7 @@ test.describe('the whole card, in a real viewport', () => {
           const b = boxes[j].r;
           const overlap =
             a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom;
-          if (overlap) bad.push(`${boxes[i].t} ↔ ${boxes[j].t}`);
+          if (overlap) bad.push(`${boxes[i].t} <-> ${boxes[j].t}`);
         }
       }
       return bad;
@@ -163,22 +166,20 @@ test.describe('the whole card, in a real viewport', () => {
 
 test.describe('accessibility, audited rather than assumed', () => {
   test('no WCAG A or AA violations on the question card', async ({ page }) => {
-    await page.goto('/');
-    await page.locator('.opt').first().waitFor();
+    await openVocabulary(page);
 
     const results = await new AxeBuilder({ page })
       .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
       .analyze();
 
     const summary = results.violations.map(
-      (v) => `${v.id} (${v.impact}) × ${v.nodes.length}: ${v.help}`
+      (v) => `${v.id} (${v.impact}) x${v.nodes.length}: ${v.help}`
     );
     expect(summary).toEqual([]);
   });
 
   test('and none after an answer is showing', async ({ page }) => {
-    await page.goto('/');
-    await page.locator('.opt').first().waitFor();
+    await openVocabulary(page);
     await page.locator('.opt').first().click();
     await page.locator('.v-fb').waitFor();
 

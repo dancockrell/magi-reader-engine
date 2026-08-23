@@ -65,10 +65,15 @@ const src = readFileSync(htmlPath, 'utf8');
    (BOOK.order.map(...)), so extracting UNITS gets a function body. */
 const unitsLiteral = literalAfter(src, 'var TEXT_UNITS', '[', ']');
 const swapsLiteral = literalAfter(src, 'var SWAPS', '{', '}');
+/* The art is content-addressed: files are named by hash, not by scene,
+   so the scene-to-file map has to travel with the book or the pictures
+   simply do not resolve. */
+const platesLiteral = literalAfter(src, 'var PLATES', '{', '}');
 
-/* Plain data literals — evaluated with nothing in scope. */
+/* Plain data literals â€” evaluated with nothing in scope. */
 const units = Function(`"use strict"; return (${unitsLiteral});`)();
 const swaps = Function(`"use strict"; return (${swapsLiteral});`)();
+const plates = Function(`"use strict"; return (${platesLiteral});`)();
 
 const titleMatch = /title\s*:\s*"([^"]+)"/.exec(src.slice(src.indexOf('var BOOK')));
 
@@ -80,6 +85,7 @@ const book = {
   },
   units,
   swaps,
+  plates,
 };
 
 mkdirSync(dirname(outPath), { recursive: true });
@@ -87,4 +93,5 @@ writeFileSync(outPath, JSON.stringify(book, null, 1), 'utf8');
 
 console.log(`units:  ${units.length}`);
 console.log(`swaps:  ${Object.keys(swaps).length}`);
+console.log(`plates: ${Object.keys(plates).length}`);
 console.log(`written: ${outPath}`);

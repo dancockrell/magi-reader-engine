@@ -21,6 +21,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
+    "assets": "node tools/copy-assets.mjs",
+    "book:cues": "node tools/timings-to-vtt.mjs",
     "book:extract": "node tools/extract-book.mjs",
     "book:check": "node tools/check-book.mjs",
     "sweep": "node tools/sweep-report.mjs",

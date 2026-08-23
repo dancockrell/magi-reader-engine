@@ -25,6 +25,13 @@ export default defineConfig({
   retries: 0,
   reporter: process.env.CI ? 'github' : [['list']],
 
+  /* Four engines at twelve workers each starved a cold dev server that
+     had just started serving 27 MB of art and audio, and WebKit timed
+     out waiting for the first paint. The tests were fine; the machine
+     was not. Six workers keeps the suite under ten seconds without the
+     false failures. */
+  workers: process.env.CI ? 2 : 6,
+
   use: {
     baseURL: 'http://127.0.0.1:5734',
     trace: 'retain-on-failure',

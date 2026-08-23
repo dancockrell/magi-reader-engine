@@ -1,10 +1,12 @@
-﻿:root {
+:root {
   --parch: #e9dfc9;
   --parch-dim: #b9ad94;
   --parch-faint: #938977;
   --amber: #d9a04a;
   --amber-hot: #f0c073;
   --moon: #8fa9be;
+  --ink: #0b0a09;
+  --ink2: #1b1817;
   --sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --serif: 'Iowan Old Style', Georgia, serif;
   color-scheme: dark;
@@ -14,19 +16,161 @@
 }
 body {
   margin: 0;
-  background: #0b0a09;
+  background: var(--ink);
   color: var(--parch);
   font-family: var(--serif);
   display: flex;
   min-height: 100vh;
+  min-height: 100dvh;
   align-items: center;
   justify-content: center;
-  padding: 24px;
+  padding: 16px;
 }
 main {
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
 }
+
+/* ---------- focus, once, for everything ---------- */
+button:focus-visible,
+input:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--amber-hot);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(8, 6, 5, 0.85);
+}
+
+.btn {
+  font-family: var(--sans);
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 12px 20px;
+  min-height: 44px;
+  border: 1px solid #4a4038;
+  background: #1c1815;
+  color: var(--parch);
+  cursor: pointer;
+}
+.btn:hover:not(:disabled) {
+  border-color: var(--amber);
+}
+.btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.btn.primary {
+  background: linear-gradient(180deg, #5a3f1c, #3a2810);
+  border-color: var(--amber);
+}
+
+/* ================= the picture window =================
+   The frame's size comes from the viewport and nothing else. It is
+   never computed from the text, which is what made the old picture
+   march up the page as lines advanced. */
+.scene {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 68vh;
+  background: #070606;
+  border: 1px solid #2b2520;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.plate {
+  width: 100%;
+  height: 100%;
+  /* contain, never cover: a reading that crops faces is worse than one
+     with letterboxing */
+  object-fit: contain;
+  display: block;
+  user-select: none;
+}
+
+/* the line, on the picture, once */
+.subs {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 44px clamp(14px, 4vw, 40px) clamp(12px, 2.5vh, 22px);
+  background: linear-gradient(to top, rgba(6, 5, 8, 0.92) 38%, rgba(6, 5, 8, 0) 100%);
+  text-align: center;
+}
+.sub-line {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(17px, 2.5vw, 30px);
+  line-height: 1.34;
+  color: #cdbfa6;
+  text-wrap: balance;
+  /* tight shadow: a wide blur bleeds into tone marks in Thai and Korean */
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.9);
+}
+.sub-line .w {
+  transition: color 0.12s linear;
+}
+.sub-line .w.on {
+  color: #fff3d6;
+}
+.sub-tr {
+  margin: 6px 0 0;
+  font-family: var(--sans);
+  font-size: clamp(13px, 1.5vw, 18px);
+  line-height: 1.4;
+  color: var(--moon);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.9);
+}
+
+/* ---------- transport ---------- */
+.transport {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+.play {
+  min-width: 110px;
+}
+.where {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 12px 0 6px;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--parch-faint);
+}
+.where .title {
+  color: var(--parch-dim);
+}
+.through {
+  display: block;
+  width: 100%;
+  height: 4px;
+  appearance: none;
+  border: 0;
+  background: #241f1a;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.through::-webkit-progress-bar {
+  background: #241f1a;
+}
+.through::-webkit-progress-value {
+  background: var(--amber);
+}
+.through::-moz-progress-bar {
+  background: var(--amber);
+}
+
+/* ================= vocabulary card ================= */
 .q-head {
   display: flex;
   justify-content: space-between;
@@ -112,27 +256,6 @@ main {
 .opt:disabled {
   cursor: default;
 }
-button:focus-visible,
-input:focus-visible {
-  outline: 2px solid var(--amber-hot);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 5px rgba(8, 6, 5, 0.85);
-}
-.btn {
-  font-family: var(--sans);
-  font-size: 14px;
-  border-radius: 4px;
-  padding: 12px 20px;
-  border: 1px solid #4a4038;
-  background: #1c1815;
-  color: var(--parch);
-  cursor: pointer;
-  min-height: 44px;
-}
-.btn.primary {
-  background: linear-gradient(180deg, #5a3f1c, #3a2810);
-  border-color: var(--amber);
-}
 .v-next {
   display: block;
   margin: 16px auto 0;
@@ -197,6 +320,7 @@ input:focus-visible {
   color: var(--amber-hot);
   font-style: normal;
 }
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -207,4 +331,16 @@ input:focus-visible {
 }
 .done {
   text-align: center;
+}
+
+/* ---------- switching between reading and practice ---------- */
+.modes {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.modes .btn[aria-pressed='true'] {
+  border-color: var(--amber);
+  color: var(--amber-hot);
 }

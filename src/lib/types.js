@@ -57,17 +57,42 @@
  * @typedef {object} Unit
  * @property {string} id
  * @property {string} title
- * @property {string} [act]
+ * @property {string} [act]      the division of the story this belongs to
+ * @property {string} [scene]    key into the plate map; defaults to id
+ * @property {string} [caption]  one line about the picture — used as alt text
+ * @property {number} [num]
+ * @property {string} [para]     a plain-language summary of the scene
  * @property {string[]} [stanzas]
- * @property {[string,string][]} [gloss]
+ * @property {string[][]} [gloss]   [word, meaning] pairs — the pairing is
+ *                                  enforced by validateBook at load time,
+ *                                  not by the type, because a JSON import
+ *                                  cannot be narrowed to a tuple
  * @property {{q:string,opts:string[],correct:number}[]} [mc]
  */
 
 /**
+ * A book package.
+ *
+ * `plates` maps a scene to its picture file. The art is content-addressed
+ * — filenames are hashes — so without this map there is no way from a
+ * scene to its image, and a missing entry must read as "no picture"
+ * rather than as a guessed path that 404s.
+ *
  * @typedef {object} Book
  * @property {{title:string,id?:string,source?:string}} meta
  * @property {Unit[]} units
  * @property {Record<string,string>} [swaps]
+ * @property {Record<string,string>} [plates]
+ */
+
+/**
+ * One beat: a picture, a line, and the recording that speaks it.
+ * @typedef {object} Beat
+ * @property {number} i
+ * @property {string} unit
+ * @property {string} line
+ * @property {string|null} clip
+ * @property {{id:string,src:string|null,alt:string}} plate
  */
 
 /**

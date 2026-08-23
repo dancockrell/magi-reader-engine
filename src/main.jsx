@@ -5,6 +5,7 @@ import { inlineGlosses } from './lib/book/validate.js';
 import { lineFor } from './lib/vocab/text.js';
 import { createSession, advance, answer, progressOf } from './lib/vocab/session.js';
 import VocabCard from './ui/VocabCard.jsx';
+import Reader from './ui/Reader.jsx';
 import './styles.css';
 
 /** Every glossed word in the book, once, in reading order. */
@@ -64,8 +65,36 @@ function Trainer() {
   );
 }
 
+/** The two halves of the product, switchable while both are being built. */
+function App() {
+  const [mode, setMode] = useState('read');
+  return (
+    <>
+      <nav className="modes" aria-label="What to do">
+        <button
+          type="button"
+          className="btn"
+          aria-pressed={mode === 'read'}
+          onClick={() => setMode('read')}
+        >
+          Read
+        </button>
+        <button
+          type="button"
+          className="btn"
+          aria-pressed={mode === 'practise'}
+          onClick={() => setMode('practise')}
+        >
+          Vocabulary
+        </button>
+      </nav>
+      {mode === 'read' ? <Reader book={book} /> : <Trainer />}
+    </>
+  );
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Trainer />
+    <App />
   </StrictMode>
 );
