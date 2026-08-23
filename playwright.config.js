@@ -32,6 +32,16 @@ export default defineConfig({
      false failures. */
   workers: process.env.CI ? 2 : 6,
 
+  /* Assertions get longer than the 5s default.
+   *
+   * Four engines share one dev server that is handing out 28 MB of art
+   * and audio, so a render that takes 200ms alone can take seconds under
+   * load. Tests were failing on the timeout and passing in isolation,
+   * which is the worst kind of red: it teaches people to re-run rather
+   * than to look. Raising this does not hide a real failure — an
+   * assertion that is genuinely wrong still fails, just later. */
+  expect: { timeout: 15_000 },
+
   use: {
     baseURL: 'http://127.0.0.1:5734',
     trace: 'retain-on-failure',

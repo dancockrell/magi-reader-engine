@@ -97,7 +97,7 @@ test.describe('the production build on a nested path', () => {
     });
 
     try {
-      await page.goto(`http://127.0.0.1:${port}${prefix}`);
+      await page.goto(`http://127.0.0.1:${port}${prefix}#/read/1/0`);
       await page.locator('.scene').waitFor({ timeout: 15_000 });
 
       /* the picture really decoded */

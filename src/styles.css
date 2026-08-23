@@ -344,3 +344,324 @@ a:focus-visible,
   border-color: var(--amber);
   color: var(--amber-hot);
 }
+
+/* ================= the shell =================
+   The doors are where the legacy reader puts them, because that is
+   already familiar. What is different is underneath: each is a route. */
+.app {
+  width: 100%;
+}
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 10px 4px 14px;
+  border-bottom: 1px solid #241f1a;
+  margin-bottom: 18px;
+}
+.brand {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.brand b {
+  font-family: var(--serif);
+  font-size: 17px;
+  letter-spacing: 0.01em;
+}
+.brand .sub {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  opacity: 0.8;
+}
+.doors {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+/* 44px, not 40. The header is the most-tapped thing in the app and it is
+   tapped on a tablet; the suite enforces that floor for exactly this
+   reason, and caught this the moment the shell was added. */
+.doors .btn {
+  padding: 10px 13px;
+  font-size: 13px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.doors a.active {
+  border-color: var(--amber);
+  color: var(--amber-hot);
+}
+
+/* ================= overlays =================
+   <dialog> gives focus trapping, Escape, inertness and the top layer.
+   None of that is written here because none of it needs to be. */
+.overlay {
+  border: 1px solid #3a332d;
+  border-radius: 14px;
+  padding: 0;
+  background: var(--ink2);
+  color: var(--parch);
+  max-width: min(560px, 92vw);
+  width: 100%;
+}
+.overlay::backdrop {
+  background: rgba(6, 5, 4, 0.72);
+}
+.overlay-inner {
+  padding: 18px 20px 22px;
+}
+.overlay-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.overlay-head h2 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.overlay .close {
+  min-height: 40px;
+  padding: 8px 12px;
+}
+.overlay-body {
+  margin-top: 14px;
+}
+.overlay .note {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--parch-faint);
+  margin: 0 0 14px;
+  max-width: 56ch;
+}
+.overlay .note.warn {
+  color: var(--amber-hot);
+}
+.set {
+  border: 0;
+  padding: 0;
+  margin: 0 0 18px;
+}
+.set legend {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  opacity: 0.8;
+  padding: 0 0 8px;
+}
+.check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-family: var(--sans);
+  font-size: 15px;
+  cursor: pointer;
+}
+.check input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--amber);
+}
+.pace {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.pace .opt,
+.pick .opt {
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid #3a332d;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.028);
+  color: var(--parch);
+  font-family: var(--sans);
+  font-size: 14px;
+  cursor: pointer;
+}
+.pace .opt.on,
+.pick .opt.on {
+  border-color: var(--amber);
+  color: var(--amber-hot);
+}
+.pick {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.pick .opt {
+  width: 100%;
+  text-align: left;
+}
+.pick small {
+  color: var(--parch-faint);
+  margin-left: 8px;
+}
+
+/* ================= the gate ================= */
+.gate {
+  text-align: center;
+}
+.gate .cover {
+  width: 100%;
+  max-height: 34vh;
+  object-fit: cover;
+  object-position: center 40%;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 22px;
+}
+.gate h1 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 5vw, 44px);
+  margin: 0 0 10px;
+}
+.blurb {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--parch-dim);
+  max-width: 62ch;
+  margin: 0 auto 26px;
+}
+.resume {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  background: rgba(217, 160, 74, 0.1);
+  border: 1px solid #4a4132;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin: 0 auto 22px;
+  max-width: 60ch;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--parch-dim);
+}
+.resume .btn {
+  text-decoration: none;
+}
+.readings {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+@media (min-width: 760px) {
+  .readings {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.reading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  padding: 22px 18px;
+  border: 1px solid #3a332d;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    border-color 0.16s ease,
+    background 0.16s ease,
+    transform 0.16s ease;
+}
+.reading:hover {
+  border-color: var(--amber);
+  background: rgba(217, 160, 74, 0.07);
+  transform: translateY(-2px);
+}
+.reading .num {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--amber);
+  color: var(--amber);
+  font-family: var(--sans);
+  font-size: 15px;
+}
+.reading b {
+  font-family: var(--sans);
+  font-size: 17px;
+}
+.reading .what {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--parch-faint);
+  max-width: 30ch;
+}
+.notyet,
+.done,
+.practise {
+  text-align: center;
+}
+.notyet h1 {
+  font-family: var(--serif);
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.notyet p {
+  font-family: var(--sans);
+  color: var(--parch-faint);
+}
+
+/* ================= reading preferences ================= */
+:root.bigtext {
+  font-size: 118%;
+}
+:root.hicontrast body {
+  background: #000;
+  color: #fff;
+}
+:root.hicontrast .opt,
+:root.hicontrast .reading {
+  border-color: #fff;
+  background: #000;
+}
+:root.hicontrast .sub-line {
+  color: #fff;
+}
+:root.stillness *,
+:root.stillness *::before,
+:root.stillness *::after {
+  animation-duration: 0.001ms !important;
+  transition-duration: 0.001ms !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

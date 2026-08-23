@@ -78,7 +78,7 @@ test.describe('running the way itch runs it', () => {
     const game = await serveDist(prefix, 'dist');
     /* localhost and 127.0.0.1 are different origins to a browser, which
        is what makes the frame third-party here */
-    const host = await servePage(`http://localhost:${game.port}${prefix}`);
+    const host = await servePage(`http://localhost:${game.port}${prefix}#/read/1/0`);
 
     const failed = [];
     page.on('response', (r) => {
@@ -116,7 +116,7 @@ test.describe('running the way itch runs it', () => {
   test('reports whether storage survives being third-party', async ({ page }) => {
     const prefix = '/html/1891234/';
     const game = await serveDist(prefix, 'dist');
-    const host = await servePage(`http://localhost:${game.port}${prefix}`);
+    const host = await servePage(`http://localhost:${game.port}${prefix}#/read/1/0`);
 
     try {
       await page.goto(`http://127.0.0.1:${host.port}/`);

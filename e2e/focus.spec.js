@@ -34,8 +34,9 @@ function parseRgb(text) {
  * means the switch itself stays covered.
  */
 async function openVocabulary(page) {
-  await page.goto('/');
-  await page.getByRole('button', { name: 'Vocabulary' }).click();
+  /* Vocabulary is its own route now, so go straight there rather than
+     clicking through the gate — shell.spec covers the door itself. */
+  await page.goto('/#/practise');
   await page.locator('.opt').first().waitFor();
 }
 
