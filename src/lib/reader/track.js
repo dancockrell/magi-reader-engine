@@ -18,9 +18,30 @@ import { questionsOf, promptsOf } from './assessment.js';
  */
 
 /**
+ * One stop on the track.
+ *
+ * Written out rather than inferred so that `kind` is the three strings it
+ * really is: inferred, it widens to `string`, the three shapes stop being
+ * a union anyone can narrow, and every `stop.line` in the reader becomes
+ * a type error for a property that is plainly there.
+ *
+ * @typedef {object} Stop
+ * @property {'line'|'question'|'prompt'} kind
+ * @property {number} at        position on the track — what the URL holds
+ * @property {string} unit
+ * @property {number} [i]       line stops: which line of the unit
+ * @property {string} [line]
+ * @property {string|null} [clip]
+ * @property {{id:string, src:string|null, alt:string}} [plate]
+ * @property {any} [question]
+ * @property {any} [prompt]
+ */
+
+/**
  * @param {import('../types.js').Book} book
  * @param {number} pass 1 read, 2 quiz, 3 written
  * @param {Parameters<typeof beatsOf>[1]} [opts]
+ * @returns {Stop[]}
  */
 export function trackFor(book, pass = 1, opts = {}) {
   const merged = { plates: book?.plates || {}, ...opts };
@@ -39,6 +60,7 @@ export function trackFor(book, pass = 1, opts = {}) {
   const q = byUnit(questions);
   const p = byUnit(prompts);
 
+  /** @type {Omit<Stop,'at'>[]} */
   const out = [];
   for (const u of units) {
     for (const beat of beatsOf(u, merged)) out.push({ kind: 'line', unit: u.id, ...beat });
@@ -59,7 +81,12 @@ export function trackFor(book, pass = 1, opts = {}) {
   return out.map((stop, i) => ({ ...stop, at: i }));
 }
 
-/** Clamp a position onto the track. Never produces one that is not there. */
+/**
+ * Clamp a position onto the track. Never produces one that is not there.
+ * @param {Stop[]} track
+ * @param {number} index
+ * @param {number} delta
+ */
 export function stepTrack(track, index, delta) {
   if (!track.length) return 0;
   const want = Number.isFinite(index) ? Math.floor(index) + delta : 0;
@@ -73,6 +100,9 @@ export function stepTrack(track, index, delta) {
  * take more than one story. So navigation is by segment — the picture and
  * its title — and the position within a segment is a bar, not a dot per
  * line.
+ *
+ * @param {Stop[]} track
+ * @param {import('../types.js').Book|null|undefined} book
  */
 export function segmentsOf(track, book) {
   const out = [];

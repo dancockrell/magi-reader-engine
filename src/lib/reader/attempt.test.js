@@ -16,10 +16,25 @@ beforeAll(() => {
   book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
 });
 
-/** A localStorage that behaves, and one that does not. */
+/**
+ * A localStorage that behaves, and one that does not.
+ *
+ * A whole Storage, not the three methods this happens to call: a partial
+ * double is a promise that the code under test will never grow into the
+ * rest of the interface, and that promise is not ours to make.
+ *
+ * @param {'ok'|'full'|'read-throws'} [behaviour]
+ * @returns {Storage & {_map: Map<string,string>}}
+ */
 function fakeStore(behaviour = 'ok') {
+  /** @type {Map<string,string>} */
   const map = new Map();
   return {
+    get length() {
+      return map.size;
+    },
+    key: (i) => [...map.keys()][i] ?? null,
+    clear: () => map.clear(),
     getItem: (k) => {
       if (behaviour === 'read-throws') throw new Error('SecurityError');
       return map.has(k) ? map.get(k) : null;
@@ -28,7 +43,9 @@ function fakeStore(behaviour = 'ok') {
       if (behaviour !== 'ok') throw new Error('QuotaExceededError');
       map.set(k, v);
     },
-    removeItem: (k) => map.delete(k),
+    removeItem: (k) => {
+      map.delete(k);
+    },
     _map: map,
   };
 }
