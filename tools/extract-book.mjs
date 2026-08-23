@@ -10,9 +10,18 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 function literalAfter(src, declaration, open, close) {
-  const start = src.indexOf(declaration);
-  if (start < 0) throw new Error(`could not find ${declaration}`);
-  let i = src.indexOf(open, start);
+  /* Match the whole name, not a prefix of it.
+   *
+   * indexOf('var CAST') finds `var CAST_ART` — which is declared first —
+   * and silently returns the wrong object. Nothing errors; the package
+   * just quietly contains art paths where the cast should be. The name
+   * has to be followed by whitespace or '=' to count. */
+  const name = declaration.replace(/^var\s+/, '');
+  const re = new RegExp(`\\bvar\\s+${name}\\s*=`, 'g');
+  const m = re.exec(src);
+  if (!m) throw new Error(`could not find ${declaration}`);
+  const start = m.index;
+  let i = src.indexOf(open, start + m[0].length - 1);
   if (i < 0) throw new Error(`no ${open} after ${declaration}`);
 
   let depth = 0;
@@ -55,8 +64,11 @@ function literalAfter(src, declaration, open, close) {
   throw new Error(`unbalanced ${open} for ${declaration}`);
 }
 
-const htmlPath =
-  process.argv[2] || 'C:/Users/Admin/Downloads/magi-itch-improved (20)/index.html';
+/* legacy/index.html is the copy in this repository, and it is the one
+   that ships. Reading from wherever the reader happened to live on one
+   machine made this unrunnable the moment that folder moved — which it
+   did. */
+const htmlPath = process.argv[2] || 'legacy/index.html';
 const outPath = process.argv[3] || resolve(process.cwd(), 'src/books/magi/book.json');
 
 const src = readFileSync(htmlPath, 'utf8');
@@ -70,10 +82,47 @@ const swapsLiteral = literalAfter(src, 'var SWAPS', '{', '}');
    simply do not resolve. */
 const platesLiteral = literalAfter(src, 'var PLATES', '{', '}');
 
-/* Plain data literals â€” evaluated with nothing in scope. */
+/* Plain data literals, evaluated with nothing in scope. */
 const units = Function(`"use strict"; return (${unitsLiteral});`)();
 const swaps = Function(`"use strict"; return (${swapsLiteral});`)();
 const plates = Function(`"use strict"; return (${platesLiteral});`)();
+
+/**
+ * Everything else the book is made of, still welded into the HTML.
+ *
+ * A book cannot travel while its questions, its characters' lines and its
+ * translations live inside a 14,000-line script. Each of these is a plain
+ * literal; any that turns out to be computed rather than declared is
+ * reported rather than silently skipped, because a missing question is
+ * invisible until a class reaches it.
+ */
+const CONTENT = {
+  teaching: ['var TEACHING', '{'],
+  info: ['var TEXT_INFO', '{'],
+  guideVoice: ['var GUIDE_VOICE', '{'],
+  wrenLines: ['var WREN_LINES', '{'],
+  wrenReactions: ['var WREN_REACTIONS', '{'],
+  preshow: ['var GUIDE_PRESHOW', '['],
+  recaps: ['var RECAPS', '{'],
+  dialogue: ['var DIALOGUE', '{'],
+  cast: ['var CAST', '{'],
+  languages: ['var TR_LANGS', '['],
+  lineTranslations: ['var TR_LINES', '{'],
+  wordTranslations: ['var TR_WORDS', '{'],
+  uiTranslations: ['var UI_TR', '{'],
+};
+
+const content = {};
+const notLiteral = [];
+for (const [key, [decl, open]] of Object.entries(CONTENT)) {
+  const close = open === '[' ? ']' : '}';
+  try {
+    const text = literalAfter(src, decl, open, close);
+    content[key] = Function(`"use strict"; return (${text});`)();
+  } catch (err) {
+    notLiteral.push(`${key} (${decl}): ${err.message}`);
+  }
+}
 
 const titleMatch = /title\s*:\s*"([^"]+)"/.exec(src.slice(src.indexOf('var BOOK')));
 
@@ -86,12 +135,29 @@ const book = {
   units,
   swaps,
   plates,
+  ...content,
 };
 
 mkdirSync(dirname(outPath), { recursive: true });
 writeFileSync(outPath, JSON.stringify(book, null, 1), 'utf8');
 
-console.log(`units:  ${units.length}`);
-console.log(`swaps:  ${Object.keys(swaps).length}`);
-console.log(`plates: ${Object.keys(plates).length}`);
-console.log(`written: ${outPath}`);
+const size = (v) =>
+  Array.isArray(v)
+    ? `${v.length} items`
+    : v && typeof v === 'object'
+      ? `${Object.keys(v).length} keys`
+      : String(v);
+
+console.log(`units:   ${units.length}`);
+console.log(`swaps:   ${Object.keys(swaps).length}`);
+console.log(`plates:  ${Object.keys(plates).length}`);
+for (const key of Object.keys(CONTENT)) {
+  console.log(
+    `${(key + ':').padEnd(9)}${key in content ? size(content[key]) : 'NOT A LITERAL'}`
+  );
+}
+if (notLiteral.length) {
+  console.log('\ncould not lift (computed, not declared):');
+  for (const n of notLiteral) console.log(`  ${n}`);
+}
+console.log(`\nwritten: ${outPath}`);

@@ -21,12 +21,15 @@ test.describe('the picture window', () => {
   });
 
   test('the art actually loads', async ({ page }) => {
-    const ok = await page.locator('.plate').evaluate((img) => ({
-      complete: img.complete,
-      w: img.naturalWidth,
-      src: img.getAttribute('src'),
-    }));
-    expect(ok.w).toBeGreaterThan(0);
+    /* naturalWidth is 0 until the image has decoded, so reading it the
+       moment .scene appears is a race — it passed alone and failed under
+       load. Poll until the browser has it, or fail on the timeout. */
+    await expect
+      .poll(() => page.locator('.plate').evaluate((img) => img.naturalWidth), {
+        timeout: 15_000,
+        message: 'the scene picture never decoded',
+      })
+      .toBeGreaterThan(0);
   });
 
   test('the frame does not move as the reading advances', async ({ page }) => {
