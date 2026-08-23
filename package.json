@@ -1,7 +1,7 @@
 {
   "name": "raven-reader",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "engines": {
     "node": ">=20.19"
@@ -29,7 +29,7 @@
     "book:check": "node tools/check-book.mjs",
     "sweep": "node tools/sweep-report.mjs",
     "verify": "npm run format:check && npm run lint && npm run typecheck && npm run book:check && npm run sweep && npm run test",
-    "verify:full": "npm run verify && npm run build && npm run e2e",
+    "verify:full": "npm run verify && npm run build && npm run build:legacy && npm run e2e",
     "prepare": "husky"
   },
   "devDependencies": {

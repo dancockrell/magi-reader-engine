@@ -21,7 +21,18 @@ import prettier from 'eslint-config-prettier';
  *     hide in plain sight.
  */
 export default [
-  { ignores: ['dist/**', 'node_modules/**', 'src/books/**'] },
+  /* legacy/ is the shipping reader, preserved verbatim. It is not our
+     source and must not be reformatted or rewritten — see .prettierignore. */
+  {
+    ignores: [
+      'dist/**',
+      'legacy/**',
+      'legacy-dist/**',
+      'release/**',
+      'node_modules/**',
+      'src/books/**',
+    ],
+  },
 
   js.configs.recommended,
 

@@ -1,4 +1,15 @@
 dist
+legacy-dist
+release
 node_modules
 src/books
 package-lock.json
+
+# The shipping reader is a preserved artifact, not our source.
+#
+# Prettier reflowed it from 14,447 lines to 37,706 — a rewrite of every
+# line of a working, hand-tuned single-file app, which makes every diff
+# against it useless and risks changing behaviour in 14k lines nobody
+# asked to touch. It is here to be compared against and shipped from,
+# byte for byte.
+legacy/
