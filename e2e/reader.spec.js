@@ -112,11 +112,39 @@ test.describe('moving through the reading', () => {
   test('each beat carries its own audio and captions', async ({ page }) => {
     const first = await page.locator('audio').getAttribute('src');
     const track = await page.locator('audio track').getAttribute('src');
-    expect(first).toMatch(/\/magi-audio\/n_s1_0\.mp3$/);
-    expect(track).toMatch(/\/vtt\/n_s1_0\.vtt$/);
+    /* relative, no leading slash — see "no asset is requested from the
+       domain root" above */
+    expect(first).toBe('magi-audio/n_s1_0.mp3');
+    expect(track).toBe('vtt/n_s1_0.vtt');
 
     await page.getByRole('button', { name: 'Next ›' }).click();
     await expect(page.locator('audio')).toHaveAttribute('src', /n_s1_1\.mp3$/);
+  });
+
+  test('no asset is requested from the domain root', async ({ page }) => {
+    /* itch serves a game from a nested path, so a leading slash sends
+       every picture and clip to the wrong host root. This is the same
+       shape of mistake as the backslash ZIP entries that broke an
+       earlier upload: it works locally and fails only once deployed. */
+    await page.goto('/');
+    await page.locator('.scene').waitFor();
+
+    const attrs = await page.evaluate(() => {
+      const out = [];
+      const img = document.querySelector('.plate');
+      if (img) out.push(img.getAttribute('src'));
+      const audio = document.querySelector('audio');
+      if (audio) out.push(audio.getAttribute('src'));
+      const track = document.querySelector('audio track');
+      if (track) out.push(track.getAttribute('src'));
+      return out.filter(Boolean);
+    });
+
+    expect(attrs.length).toBeGreaterThan(0);
+    for (const a of attrs) {
+      expect(a.startsWith('/'), `"${a}" is absolute and will 404 on itch`).toBe(false);
+      expect(a.startsWith('http')).toBe(false);
+    }
   });
 
   test('the caption file is really served', async ({ page }) => {

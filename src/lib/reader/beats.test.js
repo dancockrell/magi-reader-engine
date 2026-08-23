@@ -30,8 +30,16 @@ describe('cutting a unit into beats', () => {
   it('resolves the picture through the plate map, since art is content-addressed', () => {
     const u = book.units[0];
     const [first] = beatsOf(u, { plates: book.plates });
-    expect(first.plate.src).toBe(`/${book.plates[u.scene || u.id]}`);
-    expect(first.plate.src).toMatch(/^\/art\/[0-9a-f]{16}\.webp$/);
+    expect(first.plate.src).toBe(book.plates[u.scene || u.id]);
+    expect(first.plate.src).toMatch(/^art\/[0-9a-f]{16}\.webp$/);
+  });
+
+  it('never produces a path anchored at the domain root', () => {
+    /* itch serves from a nested path; a leading slash 404s every
+       picture there while working perfectly on a dev server */
+    for (const b of beatsOfBook(book)) {
+      expect(b.plate.src?.startsWith('/')).toBe(false);
+    }
   });
 
   it('uses the book’s own caption as alt text, not a generic label', () => {
@@ -48,7 +56,7 @@ describe('cutting a unit into beats', () => {
   it('every scene in the book has a picture on disk', () => {
     const beats = beatsOfBook(book);
     const missing = [...new Set(beats.map((b) => b.plate.src))].filter(
-      (src) => !src || !existsSync(`public${src}`)
+      (src) => !src || !existsSync(`public/${src}`)
     );
     expect(missing).toEqual([]);
   });

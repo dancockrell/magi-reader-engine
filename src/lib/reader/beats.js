@@ -21,6 +21,14 @@ export function linesOf(unit) {
     .filter(Boolean);
 }
 
+/* Relative, with no leading slash.
+ *
+ * itch serves a game from a nested path, so "/art/x.webp" resolves
+ * against the domain root and 404s for every picture. Vite's own bundle
+ * is already relative via base:'./'; these paths have to agree with it
+ * or the build works locally and is broken the moment it is uploaded. */
+export const MEDIA_BASE = '';
+
 /**
  * @param {Partial<import('../types.js').Unit>|null|undefined} unit
  * @param {object} [opts]
@@ -29,7 +37,7 @@ export function linesOf(unit) {
  * @param {string} [opts.base]                         where those files are served from
  * @returns {import('../types.js').Beat[]}
  */
-export function beatsOf(unit, { hasClip, plates = {}, base = '/' } = {}) {
+export function beatsOf(unit, { hasClip, plates = {}, base = MEDIA_BASE } = {}) {
   if (!unit?.id) return [];
   const lines = linesOf(unit);
   const sceneId = unit.scene || unit.id;

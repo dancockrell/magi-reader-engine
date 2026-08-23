@@ -32,8 +32,9 @@ export default function Scene({
   plate,
   line,
   clip,
-  audioBase = '/magi-audio/',
-  vttBase = '/vtt/',
+  /* relative, for the same reason the plate paths are — see MEDIA_BASE */
+  audioBase = 'magi-audio/',
+  vttBase = 'vtt/',
   translation = null,
   lang = '',
   playing = false,
