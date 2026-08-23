@@ -10,6 +10,70 @@ was live on itch.
 Releases are built with `npm run release`, which refuses to produce a zip
 itch would reject and names the artifact from the version here.
 
+## 0.4.0
+
+Readings 2 and 3. A student can now go through the whole book — read it,
+be asked about it, write about it — and what comes out the far end is the
+payload the gradebook already knows how to mark.
+
+The three readings are **one track**, not three screens: read a segment,
+answer what it asked, read the next. The position in the URL still means
+one thing, stop number, whichever reading is open, so Back, reload and a
+shared link keep working with nothing else to keep.
+
+- **Reading 2 — the quiz.** A hint and one more try when the teacher has
+  enabled it. Nothing on screen says which option is right until the
+  answer is given, the hint included. Once it is given the question is
+  closed and the explanation the book wrote for it is shown — legacy
+  auto-advanced straight past that, which was the part that taught.
+- **Reading 3 — the writing.** Word count against a suggested length,
+  and the ideas the answer has touched, highlighted in the student's own
+  words. No score, ever: a person marks this. The highlighting is
+  returned as text segments rather than markup, so a student's writing
+  can never become HTML.
+- **The storyboard** replaces the dots. Pictures and titles with how far
+  through each one you are; it opens onto where you are rather than the
+  top of the book. Dots worked at twelve segments and this reader is
+  meant to hold more than one book.
+- **An attempt survives a reload.** Tablets sleep and lessons end. The
+  answers are kept per book and per reading, with nothing in them that
+  identifies a student, because the device is shared. The questions are
+  always taken from the book and never from the store, so a saved attempt
+  cannot resurrect a question that has been edited out.
+- The grader keeps the three behaviours that were easy to lose: an
+  opinion question has no wrong answer, an answer in another language is
+  reported as foreign rather than as weak, and every synonym present is
+  reported rather than the first one found.
+
+Four real defects, all caught by tests written with the feature:
+
+- The reader was fifteen pixels taller than a 720-high laptop screen, so
+  clicking Next **scrolled the page** — the marching picture again, by
+  another route. Also put the header out of reach behind a modal.
+- Centring `main` with `align-items` takes the top of the page off the
+  screen when the content is taller than the window, with no way to
+  scroll back to it. Auto margins do not.
+- `.done` was already the finished-screen class. Reusing it for a read
+  segment centred every read title in the storyboard and nothing else.
+- Both segment buttons had the accessible name "Segment", because the
+  chevrons that told them apart were `aria-hidden`.
+
+226 unit + 261 e2e across four engines, 23 skipped by device.
+
+## 0.3.0
+
+The shell: hash routes for every screen, `<dialog>` overlays, settings
+that persist and apply, and the gate. Navigation people already know,
+which is the argument for the rebuild and never was styling — in the
+legacy reader the Back button leaves the app and nothing has a URL.
+
+Three defects the tests caught: the keyboard still drove the reading
+behind an open modal (`<dialog>` makes the background inert for focus and
+pointer, but a `window` listener receives every keystroke regardless);
+the new header buttons were 40px against a 44px floor, on the most-tapped
+thing in the app; and arrow-key tests were running on touch-only device
+profiles that have no keyboard.
+
 ## 0.2.1
 
 **The 0.2.0 legacy zip should not be used.** It was built from an

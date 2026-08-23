@@ -42,6 +42,10 @@ test.describe('the picture window', () => {
       await page.waitForTimeout(60);
     }
     const after = await box();
+    /* the page must not have scrolled either: a reading that is taller
+       than the window scrolls a little every time the line changes,
+       which looks exactly like the frame moving */
+    expect(await page.evaluate(() => window.scrollY)).toBe(0);
     expect(Math.round(after.y)).toBe(Math.round(before.y));
     expect(Math.round(after.height)).toBe(Math.round(before.height));
     expect(Math.round(after.x)).toBe(Math.round(before.x));
@@ -115,8 +119,10 @@ test.describe('moving through the reading', () => {
       'touch profile: no keyboard to press'
     );
 
-    /* Give the page focus rather than assuming a fresh tab has it. */
-    await page.locator('.where').click();
+    /* Give the page focus rather than assuming a fresh tab has it.
+       Aimed at the label rather than at .where, whose middle is now the
+       button that opens the storyboard. */
+    await page.locator('.where .pass').click();
 
     await page.keyboard.press('ArrowRight');
     await expect(page.locator('.count')).toHaveText('2 of 244');

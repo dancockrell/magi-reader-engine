@@ -101,20 +101,41 @@ reports nothing on any route.
 
 ---
 
-### Phase 3 — The three readings
+### Phase 3 — The three readings ✅ 0.4.0
 
 Reading 1 exists. Two to go, and they are the assessment.
 
-- **Reading 2 — the quiz.** Question card, one retry with a hint when the
-  teacher has enabled it, scoring
-- **Reading 3 — the writing.** Textarea, word count, the keyword grader
-  from `GRADER`, confidence
-- Segment navigation that scales past twelve — the storyboard, not dots
-- Line-level transport: back a line, forward a line, replay the segment
+- ✅ **Reading 2 — the quiz.** Question card, one retry with a hint when
+  the teacher has enabled it, scoring
+- ✅ **Reading 3 — the writing.** Textarea, word count, the keyword
+  grader from `GRADER`, confidence
+- ✅ Segment navigation that scales past twelve — the storyboard, not
+  dots
+- ✅ Line-level transport: back a line, forward a line, replay the
+  segment
 
 **Done when** a student can complete all three readings end to end and
 the payload matches what the gradebook expects, asserted against the
-`parseSubmission` contract that already exists.
+`parseSubmission` contract that already exists. — met.
+
+The decision that shaped it: the three readings are **one track**, not
+three screens. Read a segment, answer what it asked, read the next. The
+position in the URL still means one thing — stop number — whichever
+reading is open, so Back, reload and a shared link all keep working with
+nothing else to keep. `trackFor(book, pass)` is the whole of it.
+
+Two behaviours were changed from the legacy reader on purpose, and both
+are named in tests:
+
+- **An answer is final, and it explains itself.** Legacy auto-advanced
+  past the explanation the book had written for each question. Now
+  answering shows it and Next is the student's to press — which is what
+  every quiz they have used already does. Final, because reading the
+  explanation and then going back to change the answer would be a way
+  through the quiz.
+- **Nothing says which option is right until the answer is given** — the
+  hint included. A student who can read the answer off the page has not
+  been taught anything.
 
 ---
 

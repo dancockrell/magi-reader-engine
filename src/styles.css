@@ -22,13 +22,18 @@ body {
   display: flex;
   min-height: 100vh;
   min-height: 100dvh;
-  align-items: center;
   justify-content: center;
   padding: 16px;
 }
 main {
   width: 100%;
   max-width: 1000px;
+  /* Centred by auto margins rather than by align-items, which is not the
+     same thing once the content is taller than the window: centring
+     overflows in both directions and takes the top of the page — the
+     header, and the way out of the reading — off the screen with no way
+     to scroll back up to it. Auto margins collapse to zero instead. */
+  margin: auto;
 }
 
 /* ---------- focus, once, for everything ---------- */
@@ -73,7 +78,13 @@ a:focus-visible,
   margin: 0;
   width: 100%;
   aspect-ratio: 16 / 10;
-  max-height: 68vh;
+  /* Leaves room for the header, the transport, the position line and
+     the page's own padding. 68vh alone made the reading fifteen pixels
+     taller than the window on a 720-high laptop — enough that clicking
+     Next scrolled the page, so the picture moved a little every time the
+     line changed. That is the marching picture again, by another route,
+     and the same test caught it. */
+  max-height: min(68vh, calc(100dvh - 260px));
   background: #070606;
   border: 1px solid #2b2520;
   border-radius: 14px;
@@ -168,6 +179,366 @@ a:focus-visible,
 }
 .through::-moz-progress-bar {
   background: var(--amber);
+}
+
+/* ---------- where you are, and the way somewhere else ----------
+   The segment is a button, not a label: at forty segments the dots
+   under the picture stop being a target you can hit on a tablet, so
+   the thing that says where you are is the thing that moves you. */
+.seg-open {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: none;
+  border: 0;
+  border-radius: 4px;
+  padding: 6px 10px;
+  min-height: 44px;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+.seg-open:hover .title {
+  color: var(--amber);
+}
+.where .count,
+.where .seg-count {
+  font-variant-numeric: tabular-nums;
+}
+.transport .btn.ghost.jump {
+  background: none;
+  border-color: transparent;
+  color: var(--parch-faint);
+  padding: 12px 14px;
+  font-size: 15px;
+  letter-spacing: 0.1em;
+}
+.transport .btn.ghost.jump:hover:not(:disabled) {
+  color: var(--parch);
+  border-color: #4a4038;
+}
+
+/* ---------- the picture, held still while a question is answered ---------- */
+.stage.still {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 34vh;
+  background: #070606;
+  border: 1px solid #2b2520;
+  border-radius: 14px;
+  overflow: hidden;
+}
+/* A written answer needs the room more than the picture does: the box,
+   the word count and the encouragement under it all have to be on the
+   screen at once, or a student writes into a card whose feedback they
+   never see. */
+.stage.still.prompt {
+  max-height: 22vh;
+}
+
+/* ================= the storyboard ================= */
+.storyboard .overlay-inner {
+  max-width: 720px;
+}
+.segs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.seg {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  grid-template-rows: auto auto;
+  gap: 0 14px;
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #3a332d;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.028);
+  color: var(--parch);
+  cursor: pointer;
+}
+.seg:hover {
+  border-color: var(--amber);
+  background: rgba(217, 160, 74, 0.09);
+}
+.seg.here {
+  border-color: var(--amber);
+  background: rgba(217, 160, 74, 0.14);
+}
+.seg.behind .seg-plate img {
+  opacity: 0.62;
+}
+.seg-plate {
+  grid-row: 1 / span 2;
+  display: block;
+  width: 84px;
+  aspect-ratio: 16 / 10;
+  border-radius: 7px;
+  overflow: hidden;
+  background: #0d0b0a;
+}
+.seg-plate img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.seg-noplate {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--sans);
+  color: var(--parch-faint);
+}
+.seg-words {
+  display: grid;
+  gap: 2px;
+  align-content: center;
+  min-width: 0;
+}
+.seg-act {
+  font-family: var(--sans);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  opacity: 0.8;
+}
+.seg-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.25;
+}
+.seg-meta {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--parch-faint);
+  font-variant-numeric: tabular-nums;
+}
+.seg-through {
+  grid-column: 2;
+  width: 100%;
+  height: 3px;
+  margin-top: 8px;
+  appearance: none;
+  border: 0;
+  background: #241f1a;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.seg-through::-webkit-progress-bar {
+  background: #241f1a;
+}
+.seg-through::-webkit-progress-value {
+  background: var(--amber);
+}
+.seg-through::-moz-progress-bar {
+  background: var(--amber);
+}
+
+/* ================= reading 2 — the question ================= */
+.qcard,
+.wcard {
+  margin-top: 16px;
+}
+.q-text {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.6vw, 27px);
+  line-height: 1.28;
+  font-weight: 400;
+  text-wrap: balance;
+  max-width: 44ch;
+  margin: 14px auto 16px;
+  text-align: center;
+  color: #f2e6cf;
+}
+.q-text:focus {
+  outline: none;
+}
+.q-opts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+@media (min-width: 640px) {
+  .q-opts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.opt.picked {
+  border-color: var(--amber);
+  background: rgba(217, 160, 74, 0.16);
+}
+/* A hint, not a verdict: it says look again, and never which one. */
+.hint {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--parch-dim);
+  background: rgba(217, 160, 74, 0.08);
+  border-left: 3px solid var(--amber);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+  margin: 0 auto 14px;
+  max-width: 56ch;
+}
+.hint b {
+  color: var(--amber-hot);
+  font-weight: 600;
+}
+/* Shown only once the answer is recorded and the question is closed. */
+.told {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--parch-dim);
+  background: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid var(--moon);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 14px;
+  margin: 14px auto 0;
+  max-width: 62ch;
+}
+.told b {
+  font-weight: 600;
+  color: var(--moon);
+}
+/* The colour agrees with the words. A green rule beside "Not this time"
+   reads as a pass at a glance, which is the glance most people give it. */
+.told.right {
+  border-left-color: #5f8a5c;
+}
+.told.right b {
+  color: #9fc79b;
+}
+.transport-note {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--parch-faint);
+  text-align: center;
+}
+.transport-note {
+  align-self: center;
+  padding: 0 12px;
+}
+.skip {
+  display: block;
+  margin: 14px auto 0;
+  background: none;
+  border-color: transparent;
+  color: var(--parch-faint);
+  font-size: 13px;
+}
+.skip:hover:not(:disabled) {
+  color: var(--parch);
+  border-color: #4a4038;
+}
+
+/* ================= reading 3 — the writing ================= */
+.wcard .q-text {
+  font-size: clamp(19px, 2.1vw, 23px);
+  margin: 10px auto 8px;
+  max-width: 52ch;
+}
+.prompt-hint {
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--parch-faint);
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto 12px;
+}
+.write {
+  display: block;
+  width: 100%;
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--parch);
+  background: rgba(255, 255, 255, 0.028);
+  border: 1px solid #3a332d;
+  border-radius: 12px;
+  padding: 14px 16px;
+  resize: vertical;
+}
+.write:focus-visible {
+  outline: 2px solid var(--amber-hot);
+  outline-offset: 2px;
+  border-color: var(--amber);
+}
+.write::placeholder {
+  color: var(--parch-faint);
+  opacity: 0.7;
+}
+.wcount {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--parch-faint);
+  margin: 8px 0 0;
+  font-variant-numeric: tabular-nums;
+}
+.toward {
+  flex: 1;
+  height: 3px;
+  appearance: none;
+  border: 0;
+  background: #241f1a;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.toward::-webkit-progress-bar {
+  background: #241f1a;
+}
+.toward::-webkit-progress-value {
+  background: var(--moon);
+}
+.toward::-moz-progress-bar {
+  background: var(--moon);
+}
+/* Encouragement, not a mark. Nothing here is ever red. */
+.wback {
+  margin-top: 14px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: rgba(143, 169, 190, 0.07);
+  border-left: 3px solid var(--moon);
+}
+.wback-lead {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--moon);
+  margin: 0 0 6px;
+}
+.wback-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--parch-dim);
+}
+.wback-text mark {
+  background: rgba(217, 160, 74, 0.24);
+  color: var(--amber-hot);
+  border-radius: 3px;
+  padding: 0 2px;
 }
 
 /* ================= vocabulary card ================= */
@@ -620,9 +991,11 @@ a:focus-visible,
   color: var(--parch-faint);
   max-width: 30ch;
 }
-.notyet,
-.done,
-.practise {
+/* Scoped to the screen, not to the class name. Unscoped, `.done` also
+   matched a finished segment in the storyboard and centred its title. */
+main.notyet,
+main.done,
+main.practise {
   text-align: center;
 }
 .notyet h1 {

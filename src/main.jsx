@@ -1,4 +1,4 @@
-import { StrictMode, useCallback, useMemo, useState } from 'react';
+import { StrictMode, useCallback, useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   createHashRouter,
@@ -12,7 +12,16 @@ import book from './books/magi/book.json';
 import { inlineGlosses } from './lib/book/validate.js';
 import { lineFor } from './lib/vocab/text.js';
 import { createSession, advance, answer, progressOf } from './lib/vocab/session.js';
-import { beatsOfBook, step } from './lib/reader/beats.js';
+import { trackFor, stepTrack } from './lib/reader/track.js';
+import { answerQuestion, skipQuestion, write } from './lib/reader/assessment.js';
+import {
+  loadAttempt,
+  saveAttempt,
+  restoreQuiz,
+  restoreWriting,
+  snapshotQuiz,
+  snapshotWriting,
+} from './lib/reader/attempt.js';
 
 import Shell from './ui/Shell.jsx';
 import Gate from './ui/Gate.jsx';
@@ -43,17 +52,81 @@ function wordsOf(b) {
   return [...seen.values()];
 }
 
+/* The teacher's rules would come from the class settings; until phase 5
+   wires that up, the reader's own default is the kind one. */
+const RULES = { retry: true };
+const BOOK_ID = book.meta?.id || 'magi';
+
+/**
+ * One reading.
+ *
+ * Owns the attempt — the answers and the writing — because those have to
+ * survive moving between stops, and the position moves through the
+ * router. The position itself is never held here: it is the URL.
+ */
 function ReadingRoute() {
   const { pass = '1', beat = '0' } = useParams();
   const navigate = useNavigate();
-  const beats = useMemo(() => beatsOfBook(book), []);
+
+  const passNo = [1, 2, 3].includes(Number(pass)) ? Number(pass) : 1;
+  const track = useMemo(() => trackFor(book, passNo), [passNo]);
+
+  /* Resumed on the way in rather than started empty, so a tablet that
+     slept through break does not cost a student their work. */
+  const [quiz, setQuiz] = useState(() => restoreQuiz(book, RULES, loadAttempt(BOOK_ID, 2)));
+  const [writing, setWriting] = useState(() => restoreWriting(book, loadAttempt(BOOK_ID, 3)));
+
+  useEffect(() => {
+    saveAttempt(BOOK_ID, 2, snapshotQuiz(quiz));
+  }, [quiz]);
+  useEffect(() => {
+    saveAttempt(BOOK_ID, 3, snapshotWriting(writing));
+  }, [writing]);
 
   /* The URL is the position. A bad one is corrected rather than
      allowed to blank the page — a stale saved index used to do
      exactly that in the legacy reader. */
   const wanted = Number.parseInt(beat, 10);
-  const safe = step(beats, Number.isFinite(wanted) ? wanted : 0, 0);
-  const passNo = [1, 2, 3].includes(Number(pass)) ? Number(pass) : 1;
+  const safe = stepTrack(track, Number.isFinite(wanted) ? wanted : 0, 0);
+  const go = useCallback((n) => navigate(`/read/${passNo}/${n}`), [navigate, passNo]);
+
+  const stop = track[safe];
+
+  /* Answering points the quiz at the question the reader is actually on
+     first. Walking back to an earlier question and answering it must
+     change that question, not whichever one the quiz object had reached. */
+  const onAnswer = useCallback(
+    (choice) => {
+      if (stop?.kind !== 'question') return;
+      const at = quiz.questions.findIndex((q) => q.id === stop.question.id);
+      if (at < 0) return;
+      setQuiz(answerQuestion({ ...quiz, at, done: false }, choice));
+      /* Deliberately does not move on. A wrong first answer under "one
+         more try" shows a hint; a recorded answer shows the explanation
+         the book wrote for that question, which is the part that teaches
+         — and auto-advancing scrolled straight past it. Next is the
+         student's to press, which is what every quiz they have used
+         already does. */
+    },
+    [quiz, stop]
+  );
+
+  const onSkip = useCallback(() => {
+    if (stop?.kind !== 'question') return;
+    const at = quiz.questions.findIndex((q) => q.id === stop.question.id);
+    setQuiz(skipQuestion({ ...quiz, at, done: false }));
+    go(stepTrack(track, safe, 1));
+  }, [quiz, stop, track, safe, go]);
+
+  const onWrite = useCallback(
+    (text) => {
+      if (stop?.kind !== 'prompt') return;
+      const at = writing.prompts.findIndex((p) => p.id === stop.prompt.id);
+      if (at < 0) return;
+      setWriting((w) => write({ ...w, at }, text));
+    },
+    [writing, stop]
+  );
 
   if (safe !== wanted || String(passNo) !== pass) {
     return <Navigate to={`/read/${passNo}/${safe}`} replace />;
@@ -64,7 +137,12 @@ function ReadingRoute() {
       book={book}
       index={safe}
       pass={passNo}
-      onMove={(next) => navigate(`/read/${passNo}/${next}`)}
+      onMove={go}
+      quiz={passNo === 2 ? quiz : null}
+      onAnswer={onAnswer}
+      onSkip={onSkip}
+      writing={passNo === 3 ? writing : null}
+      onWrite={onWrite}
     />
   );
 }

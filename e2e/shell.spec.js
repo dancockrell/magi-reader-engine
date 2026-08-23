@@ -108,8 +108,11 @@ test.describe('overlays', () => {
     await expect(page.locator('.count')).toHaveText('6 of 244');
 
     /* focus the page first, so this proves the dialog blocks the keys
-       rather than that nothing was listening in the first place */
-    await page.locator('.where').click();
+       rather than that nothing was listening in the first place.
+       Aimed at the label: the middle of .where is now the button that
+       opens the storyboard, and opening one modal to test another one
+       proves nothing. */
+    await page.locator('.where .pass').click();
     await page.getByRole('button', { name: 'Settings' }).click();
     await expect(page.locator('dialog.overlay[open]')).toBeVisible();
 
