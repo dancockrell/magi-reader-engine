@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { at } from './book.js';
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
@@ -109,7 +110,7 @@ test.describe('the production build on a nested path', () => {
 
       /* and the reading advances */
       await page.getByRole('button', { name: 'Next ›' }).click();
-      await expect(page.locator('.count')).toHaveText('2 of 244');
+      await expect(page.locator('.count')).toHaveText(at(2));
 
       expect(missing).toEqual([]);
     } finally {

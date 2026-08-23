@@ -61,7 +61,8 @@ export default function Storyboard({ open, onClose, segments, where, onJump }) {
                   <span className="seg-act">{s.act || `Segment ${i + 1}`}</span>
                   <span className="seg-title">{s.title}</span>
                   <span className="seg-meta">
-                    {s.lines} {s.lines === 1 ? 'line' : 'lines'}
+                    {s.lines ? `${s.lines} ${s.lines === 1 ? 'line' : 'lines'}` : 'no reading'}
+                    {s.said ? ` · ${s.said} spoken` : ''}
                     {s.asks ? ` · ${s.asks} to answer` : ''}
                   </span>
                 </span>

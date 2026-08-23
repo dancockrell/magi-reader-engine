@@ -18,6 +18,29 @@ import { defineConfig, devices } from '@playwright/test';
  * Playwright renders and composites for real, so focus, computed colour
  * and layout can be asserted rather than reasoned about.
  */
+const BASE = 'http://127.0.0.1:5734';
+
+/**
+ * Every test starts as a returning reader.
+ *
+ * Wren introduces the book on a first visit, and she is a modal, so
+ * without this every test that opens the gate is testing its own way past
+ * her instead of the thing it is about. A returning reader is also the
+ * common case: a class opens this more than once.
+ *
+ * The first visit is not untested — `people.spec.js` opts out of this and
+ * tests exactly that, which is where it belongs.
+ */
+export const HEARD = {
+  cookies: [],
+  origins: [
+    {
+      origin: BASE,
+      localStorage: [{ name: 'raven.heard.v1.magi', value: '["preshow"]' }],
+    },
+  ],
+};
+
 export default defineConfig({
   testDir: './e2e',
   fullyParallel: true,
@@ -43,7 +66,8 @@ export default defineConfig({
   expect: { timeout: 15_000 },
 
   use: {
-    baseURL: 'http://127.0.0.1:5734',
+    baseURL: BASE,
+    storageState: HEARD,
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
   },
@@ -87,7 +111,7 @@ export default defineConfig({
        resolve differently the readiness check never succeeds — it just
        times out after a minute with no useful message. */
     command: 'npx vite --port 5734 --strictPort --host 127.0.0.1',
-    url: 'http://127.0.0.1:5734',
+    url: BASE,
     reuseExistingServer: false,
     timeout: 60_000,
     stdout: 'ignore',

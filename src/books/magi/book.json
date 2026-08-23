@@ -2473,7 +2473,8 @@
     "role": "guide",
     "voice": "guide",
     "side": "corner",
-    "blurb": "thirteen, and has read this one about forty times"
+    "blurb": "thirteen, and has read this one about forty times",
+    "art": "art/2f65e4151c12c60d.webp"
    },
    "prof": {
     "id": "prof",
@@ -2481,7 +2482,8 @@
     "role": "reader",
     "voice": "narration",
     "side": "stage",
-    "blurb": "reads it the way it was meant to be read aloud"
+    "blurb": "reads it the way it was meant to be read aloud",
+    "art": "art/27754dd877865ac3.webp"
    }
   }
  },

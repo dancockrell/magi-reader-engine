@@ -1,5 +1,6 @@
 import { beatsOf } from './beats.js';
 import { questionsOf, promptsOf } from './assessment.js';
+import { reactionsFor, talkFor } from '../speech/script.js';
 
 /**
  * One reading, as a single ordered list of stops.
@@ -13,8 +14,16 @@ import { questionsOf, promptsOf } from './assessment.js';
  *
  * A stop is `{kind}` plus what that kind needs:
  *   line      a picture, a line, a clip
+ *   say       Wren or the Professor, saying one thing
  *   question  a multiple-choice question about the segment just read
  *   prompt    a written prompt about the segment just read
+ *
+ * Speech is a stop rather than something laid over the reading, and that
+ * is the whole of how two characters are stopped from talking at once.
+ * The shipping reader let Wren fire a reaction into the same band the
+ * Professor was mid-sentence in; here the reader is on exactly one stop,
+ * so there is one speaker and one recording, always. A guarantee nobody
+ * has to remember at the call site.
  */
 
 /**
@@ -26,13 +35,14 @@ import { questionsOf, promptsOf } from './assessment.js';
  * a type error for a property that is plainly there.
  *
  * @typedef {object} Stop
- * @property {'line'|'question'|'prompt'} kind
+ * @property {'line'|'say'|'question'|'prompt'} kind
  * @property {number} at        position on the track — what the URL holds
  * @property {string} unit
  * @property {number} [i]       line stops: which line of the unit
  * @property {string} [line]
  * @property {string|null} [clip]
  * @property {{id:string, src:string|null, alt:string}} [plate]
+ * @property {import('../speech/script.js').Turn} [turn]
  * @property {any} [question]
  * @property {any} [prompt]
  */
@@ -63,7 +73,24 @@ export function trackFor(book, pass = 1, opts = {}) {
   /** @type {Omit<Stop,'at'>[]} */
   const out = [];
   for (const u of units) {
-    for (const beat of beatsOf(u, merged)) out.push({ kind: 'line', unit: u.id, ...beat });
+    /* First time through, the two of them are the work: Wren reacts
+       where the book says she does, and they talk about the part when it
+       is over. Readings 2 and 3 have their own task and are not
+       interrupted — a question is hard enough to answer without someone
+       talking over the passage it is about. */
+    const reacts = pass === 1 ? reactionsFor(book, u.id) : new Map();
+
+    for (const beat of beatsOf(u, merged)) {
+      out.push({ kind: 'line', unit: u.id, ...beat });
+      const r = reacts.get(beat.i);
+      if (r) out.push({ kind: 'say', unit: u.id, turn: r, plate: beat.plate });
+    }
+
+    if (pass === 1) {
+      for (const turn of talkFor(book, u.id)) {
+        out.push({ kind: 'say', unit: u.id, turn });
+      }
+    }
     for (const x of q.get(u.id) || []) out.push({ kind: 'question', unit: u.id, question: x });
     for (const x of p.get(u.id) || []) out.push({ kind: 'prompt', unit: u.id, prompt: x });
   }
@@ -73,12 +100,47 @@ export function trackFor(book, pass = 1, opts = {}) {
      Losing a question silently would show up as a class where the marks
      do not add up, which is the worst way to find a bug. */
   const placed = new Set(units.map((u) => u.id));
+  const extras = Object.keys(book?.info || {}).filter((id) => !placed.has(id));
+
+  if (pass === 1) {
+    /* The author page and the note on why the story lasted are not read
+       aloud, but the two of them have a conversation about each. Ten
+       turns of it, which the first draft dropped on the floor because
+       they hang off units that are not segments. */
+    for (const id of extras) {
+      const info = book?.info?.[id];
+      const file = merged.plates[info?.scene || id];
+      const plate = file
+        ? {
+            id: info?.scene || id,
+            src: `${merged.base ?? ''}${file}`,
+            alt: info?.caption || '',
+          }
+        : undefined;
+      for (const turn of talkFor(book, id)) out.push({ kind: 'say', unit: id, turn, plate });
+    }
+  }
   for (const x of questions)
     if (!placed.has(x.unit)) out.push({ kind: 'question', unit: x.unit, question: x });
   for (const x of prompts)
     if (!placed.has(x.unit)) out.push({ kind: 'prompt', unit: x.unit, prompt: x });
 
   return out.map((stop, i) => ({ ...stop, at: i }));
+}
+
+/**
+ * The unit a stop belongs to, whether or not it is read aloud.
+ *
+ * The author page and the note on the story's afterlife are not
+ * segments, but they have a title, an act and a picture like everything
+ * else — and without this the storyboard listed them as "ohenry" and
+ * "impact", which is an internal id showing through to a child.
+ *
+ * @param {import('../types.js').Book|null|undefined} book
+ * @param {string} id
+ */
+export function unitLike(book, id) {
+  return (book?.units || []).find((u) => u.id === id) || book?.info?.[id] || null;
 }
 
 /**
@@ -109,7 +171,7 @@ export function segmentsOf(track, book) {
   const index = new Map();
   for (const stop of track) {
     if (!index.has(stop.unit)) {
-      const unit = (book?.units || []).find((u) => u.id === stop.unit);
+      const unit = unitLike(book, stop.unit);
       const seg = {
         id: stop.unit,
         act: unit?.act || '',
@@ -118,6 +180,7 @@ export function segmentsOf(track, book) {
         from: stop.at,
         to: stop.at,
         lines: 0,
+        said: 0,
         asks: 0,
       };
       index.set(stop.unit, seg);
@@ -127,6 +190,9 @@ export function segmentsOf(track, book) {
     seg.to = stop.at;
     if (stop.kind === 'line') {
       seg.lines += 1;
+      if (!seg.plate && stop.plate) seg.plate = stop.plate;
+    } else if (stop.kind === 'say') {
+      seg.said += 1;
       if (!seg.plate && stop.plate) seg.plate = stop.plate;
     } else seg.asks += 1;
   }

@@ -240,6 +240,132 @@ a:focus-visible,
 .stage.still.prompt {
   max-height: 22vh;
 }
+/* Somebody is talking about the picture, so the picture stays — smaller,
+   because the words are the thing being attended to. */
+.stage.still.say {
+  max-height: 30vh;
+}
+
+/* ================= who is speaking =================
+   One person at a time, because a stop has one speaker. There is no
+   layout here for two, which is the point — the old dialogue band had
+   room for whoever wrote into it last. */
+.speaker {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 18px;
+  align-items: center;
+  margin-top: 16px;
+  padding: 14px 18px;
+  border: 1px solid #3a332d;
+  border-left: 3px solid var(--amber);
+  border-radius: 4px 14px 14px 4px;
+  background: rgba(255, 255, 255, 0.028);
+}
+/* The Professor reads; Wren talks back. Two people, told apart by
+   something other than the name above the line. */
+.speaker[data-who='prof'] {
+  border-left-color: var(--moon);
+  background: rgba(143, 169, 190, 0.06);
+}
+.sp-face {
+  width: 96px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #0d0b0a;
+  display: grid;
+  place-items: center;
+}
+.sp-face img {
+  width: 100%;
+  height: 100%;
+  /* cover, not contain: these are portraits, cropped to a circle on
+     purpose, and the faces are centred in the source art */
+  object-fit: cover;
+  display: block;
+}
+.sp-noface {
+  font-family: var(--serif);
+  font-size: 34px;
+  color: var(--parch-faint);
+}
+.sp-said {
+  min-width: 0;
+}
+.sp-name {
+  margin: 0 0 4px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.speaker[data-who='prof'] .sp-name {
+  color: var(--moon);
+}
+.sp-text {
+  margin: 0;
+  /* Said explicitly: the gate centres its own text, and a dialog opened
+     from it inherits that — so Wren's paragraph came out centred like a
+     poem. */
+  text-align: left;
+  font-family: var(--serif);
+  font-size: clamp(16px, 1.9vw, 21px);
+  line-height: 1.45;
+  color: #cdbfa6;
+  max-width: 58ch;
+}
+.sp-text .w {
+  transition: color 0.12s linear;
+}
+.sp-text .w.on {
+  color: #fff3d6;
+}
+@media (max-width: 560px) {
+  .speaker {
+    grid-template-columns: 64px 1fr;
+    gap: 12px;
+  }
+  .sp-face {
+    width: 64px;
+  }
+}
+
+/* ---------- Wren at the door ---------- */
+.preshow .overlay-inner {
+  max-width: 640px;
+}
+.preshow .speaker {
+  margin-top: 0;
+}
+.preshow-foot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+.preshow-count {
+  flex: 1;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--parch-faint);
+  font-variant-numeric: tabular-nums;
+}
+.hear-again {
+  display: block;
+  margin: 18px auto 0;
+  background: none;
+  border-color: transparent;
+  color: var(--parch-faint);
+  font-size: 13px;
+}
+.hear-again:hover:not(:disabled) {
+  color: var(--parch);
+  border-color: #4a4038;
+}
 
 /* ================= the storyboard ================= */
 .storyboard .overlay-inner {

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { at } from './book.js';
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
@@ -98,7 +99,7 @@ test.describe('running the way itch runs it', () => {
       expect(width, 'the picture decoded inside the frame').toBeGreaterThan(0);
 
       await frame.getByRole('button', { name: 'Next ›' }).click();
-      await expect(frame.locator('.count')).toHaveText('2 of 244');
+      await expect(frame.locator('.count')).toHaveText(at(2));
 
       expect(failed, 'nothing 404d').toEqual([]);
       expect(pageErrors, 'no uncaught errors').toEqual([]);

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { at } from './book.js';
 import AxeBuilder from '@axe-core/playwright';
 
 /**
@@ -40,29 +41,32 @@ test.describe('the Back button', () => {
     await page.locator('.scene').waitFor();
     await page.getByRole('button', { name: 'Next ›' }).click();
     await page.getByRole('button', { name: 'Next ›' }).click();
-    await expect(page.locator('.count')).toHaveText('3 of 244');
+    await expect(page.locator('.count')).toHaveText(at(3));
 
     await back(page);
-    await expect(page.locator('.count')).toHaveText('2 of 244');
+    await expect(page.locator('.count')).toHaveText(at(2));
   });
 });
 
 test.describe('every screen has a URL', () => {
   test('a beat can be linked to and survives a reload', async ({ page }) => {
     await page.goto('/#/read/1/42');
-    await page.locator('.scene').waitFor();
-    await expect(page.locator('.count')).toHaveText('43 of 244');
+    /* waits on the transport rather than on .scene: a stop is a line, or
+       somebody talking, or a question, and only the first of those is a
+       .scene — a link has to land whichever it is */
+    await page.locator('.transport').waitFor();
+    await expect(page.locator('.count')).toHaveText(at(43));
 
     await page.reload();
-    await page.locator('.scene').waitFor();
-    await expect(page.locator('.count')).toHaveText('43 of 244');
+    await page.locator('.transport').waitFor();
+    await expect(page.locator('.count')).toHaveText(at(43));
   });
 
   test('a nonsense position is corrected rather than blanking the page', async ({ page }) => {
     /* a stale saved index used to throw before anything was drawn */
     for (const bad of ['9999', '-4', 'banana']) {
       await page.goto(`/#/read/1/${bad}`);
-      await page.locator('.scene').waitFor();
+      await page.locator('.transport').waitFor();
       await expect(page.locator('.count')).toBeVisible();
     }
   });
@@ -105,7 +109,7 @@ test.describe('overlays', () => {
        open guide, because "is a modal open" was a hand-kept list */
     await page.goto('/#/read/1/5');
     await page.locator('.scene').waitFor();
-    await expect(page.locator('.count')).toHaveText('6 of 244');
+    await expect(page.locator('.count')).toHaveText(at(6));
 
     /* focus the page first, so this proves the dialog blocks the keys
        rather than that nothing was listening in the first place.
@@ -120,7 +124,7 @@ test.describe('overlays', () => {
     await page.keyboard.press('ArrowRight');
     await page.keyboard.press('Space');
 
-    await expect(page.locator('.count')).toHaveText('6 of 244');
+    await expect(page.locator('.count')).toHaveText(at(6));
   });
 
   test('focus lands inside the dialog, not on the page behind', async ({ page }) => {

@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { at, TOTAL } from './book.js';
 import AxeBuilder from '@axe-core/playwright';
 
 /**
@@ -97,9 +98,9 @@ test.describe('moving through the reading', () => {
 
   test('Back is unavailable at the start and Next advances', async ({ page }) => {
     await expect(page.getByRole('button', { name: '‹ Back' })).toBeDisabled();
-    await expect(page.locator('.count')).toHaveText('1 of 244');
+    await expect(page.locator('.count')).toHaveText(at(1));
     await page.getByRole('button', { name: 'Next ›' }).click();
-    await expect(page.locator('.count')).toHaveText('2 of 244');
+    await expect(page.locator('.count')).toHaveText(at(2));
     await expect(page.getByRole('button', { name: '‹ Back' })).toBeEnabled();
   });
 
@@ -125,14 +126,14 @@ test.describe('moving through the reading', () => {
     await page.locator('.where .pass').click();
 
     await page.keyboard.press('ArrowRight');
-    await expect(page.locator('.count')).toHaveText('2 of 244');
+    await expect(page.locator('.count')).toHaveText(at(2));
     await page.keyboard.press('ArrowLeft');
-    await expect(page.locator('.count')).toHaveText('1 of 244');
+    await expect(page.locator('.count')).toHaveText(at(1));
   });
 
   test('progress is a real progress element', async ({ page }) => {
     const el = page.locator('progress.through');
-    await expect(el).toHaveAttribute('max', '244');
+    await expect(el).toHaveAttribute('max', String(TOTAL));
     await expect(el).toHaveJSProperty('value', 1);
   });
 

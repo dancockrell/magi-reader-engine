@@ -1,5 +1,8 @@
+import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import book from '../books/magi/book.json';
+import Preshow from './Preshow.jsx';
+import { preshowRun } from '../lib/speech/script.js';
 
 /**
  * The way in.
@@ -36,10 +39,16 @@ export const READINGS = [
  */
 export default function Gate({ resume = null, onForget }) {
   const cover = book.plates?.cover;
+  /* Built once. A new array on every render would be a new claim on the
+     speech queue on every render, which is the shape of the bug that
+     made her repeat herself. */
+  const turns = useMemo(() => preshowRun(book), []);
 
   return (
     <main className="gate">
       {cover ? <img className="cover" src={cover} alt="" /> : null}
+
+      <Preshow book={book} talkKey="preshow" turns={turns} title="Before we start" />
 
       {resume ? (
         <aside className="resume" aria-label="Carry on">

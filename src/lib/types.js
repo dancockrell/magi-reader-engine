@@ -78,11 +78,43 @@
  * scene to its image, and a missing entry must read as "no picture"
  * rather than as a guessed path that 404s.
  *
+ * The rest is what a book teaches with and what its characters say. It
+ * is listed here rather than left off because a package that quietly
+ * lacks `dialogue` should be a type error where it is read, not a
+ * reading where nobody speaks and no one can say why.
+ *
  * @typedef {object} Book
  * @property {{title:string,id?:string,source?:string}} meta
  * @property {Unit[]} units
  * @property {Record<string,string>} [swaps]
  * @property {Record<string,string>} [plates]
+ * @property {Record<string,any>} [teaching]   questions and prompts, by unit
+ * @property {Record<string,any>} [info]       material that is not read aloud
+ * @property {Record<string,any>} [recaps]
+ * @property {{members:Record<string,CastMember>}} [cast]
+ * @property {{name?:string, hello?:string, passIntro?:Record<string,string>}} [guideVoice]
+ * @property {any[]} [preshow]
+ * @property {Record<string,{at:number,state?:string,line?:string}[]>} [wrenReactions]
+ * @property {Record<string,{who:string,text:string,state?:string}[]>} [dialogue]
+ * @property {Record<string,any>} [lineTranslations]
+ * @property {Record<string,any>} [wordTranslations]
+ * @property {Record<string,any>} [uiTranslations]
+ * @property {any[]} [languages]
+ */
+
+/**
+ * Somebody who speaks. A book pack can ship a different cast — or one
+ * voice, or five — without the engine changing.
+ *
+ * @typedef {object} CastMember
+ * @property {string} id
+ * @property {string} name
+ * @property {string} [role]
+ * @property {string} [voice]
+ * @property {string} [side]
+ * @property {string} [blurb]
+ * @property {string} [art]   relative path, for the same reason the
+ *                            plate paths are relative
  */
 
 /**

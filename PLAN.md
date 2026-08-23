@@ -139,18 +139,43 @@ are named in tests:
 
 ---
 
-### Phase 4 — The people
+### Phase 4 — The people ✅ 0.5.0
 
 Wren and Professor Ambrose are most of the product's character, and the
 place the legacy app has been buggiest: talking over each other, a close
 button that would not close, greetings repeating.
 
-- A speech component with one queue and one owner
-- Audio through the same media-clock path the subtitles use
-- Dismissable, and it stays dismissed
+- ✅ A speech component with one queue and one owner
+- ✅ Audio through the same media-clock path the subtitles use
+- ✅ Dismissable, and it stays dismissed
 
 **Done when** two characters cannot speak at once — asserted, not
-observed — and closing one keeps it closed.
+observed — and closing one keeps it closed. — met.
+
+Two mechanisms, because there are two problems wearing one name:
+
+- **In the reading, speech is a stop on the track.** Wren reacts where
+  the book says she does; the two of them talk when a part is over. The
+  reader is on exactly one stop, so there is one speaker and one
+  recording — a guarantee of the data model, not a rule anyone has to
+  remember at a call site. This is what "cannot speak at once" now means,
+  and there is a test that walks the reading counting playing `<audio>`
+  elements.
+- **At the door, a queue with one owner.** A caller _claims_ it by key; a
+  claim replaces rather than interleaves, and `speaking()` returns at most
+  one turn. Closing is remembered by key, so is hearing something through
+  to the end, and the keys are written down — "stays dismissed" survives
+  the tab being shut, which is the only version of that promise a student
+  would recognise. She can still be asked again, without clearing storage.
+
+Found on the way, and worth more than the feature: **the reading was
+showing O. Henry without his punctuation.** The subtitle rendered the
+words parsed from the cue file, and a cue file is a transcript with no
+commas in it — so the moment a recording loaded, every comma the author
+wrote vanished from a reading app. The words now come from the book
+always, and the cues only decide which one is lit. They do not line up
+one to one: 35 of the 323 recordings disagree about the word count, so
+there is an alignment, and it is tested against every line in the book.
 
 ---
 

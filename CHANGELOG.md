@@ -10,6 +10,55 @@ was live on itch.
 Releases are built with `npm run release`, which refuses to produce a zip
 itch would reject and names the artifact from the version here.
 
+## 0.5.0
+
+Wren and Professor Ambrose. They are most of what makes this a reading
+rather than a worksheet, and the book already carried every word they say
+— 58 turns of conversation, 15 reactions, a six-part introduction, all of
+it recorded, none of it reachable.
+
+**The reading was showing O. Henry without his punctuation.** This is the
+part of the release that matters most and it was found by accident. The
+subtitle rendered the words parsed from the cue file, and a cue file is a
+transcript: it has no commas in it. So the moment a recording loaded,
+"Okay. This is The Gift of the Magi. Nineteen-oh-five, New York City, the
+day before Christmas." became "Okay This is The Gift of the Magi
+Nineteen-oh-five New York City the day before Christmas" — in a reading
+app, as the thing a child is asked to read. The words now come from the
+book, always, and the cues only decide which one is lit. They do not line
+up one to one — an em-dash splits a spoken word in two, "$8" and "87
+cents" tokenise differently, 35 of the 323 recordings disagree about the
+count — so there is an alignment, tested against every line in the book.
+
+- **Two characters cannot speak at once**, because speech in the reading
+  is a stop on the track. One position means one speaker and one
+  recording. A test walks the reading and counts playing `<audio>`
+  elements; the guarantee is the data model's, not a rule at a call site.
+- **One queue, one owner** for the greeting at the door. A caller claims
+  it by key; a claim replaces rather than interleaves. The shipping
+  reader's `TALKUI.show(who, text)` had no queue at all — whoever called
+  last won, which is every one of these bugs at once.
+- **Dismissed stays dismissed**, through a reload and through leaving the
+  gate and coming back. Sitting through it counts as having heard it.
+  Kept per book, with nothing in it that identifies a student, because the
+  device is shared — and she can be asked again without clearing storage.
+- Speech uses the same WebVTT file and the same media clock the narration
+  does. No second timing mechanism.
+- The cast travels with the book now, portraits included, so a pack can
+  ship a different cast without the engine changing.
+- The author page and the note on the story's afterlife had conversations
+  hanging off units that are not read segments. The first draft of the
+  track dropped all ten turns on the floor; they are placed and tested.
+  Those two also stop showing up in the storyboard as "ohenry" and
+  "impact", which was an internal id showing through to a child.
+
+Also: eleven correct tests went red for the wrong reason when the reading
+grew from 244 stops to 317, because they had "1 of 244" written into
+them. The position now comes from the book itself in a shared fixture —
+those tests are about Next advancing by one, not about the number.
+
+268 unit + 321 e2e across four engines, 23 skipped by device.
+
 ## 0.4.0
 
 Readings 2 and 3. A student can now go through the whole book — read it,

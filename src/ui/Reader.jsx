@@ -3,8 +3,17 @@ import Scene from './Scene.jsx';
 import Storyboard from './Storyboard.jsx';
 import QuestionCard from './QuestionCard.jsx';
 import WritingCard from './WritingCard.jsx';
-import { trackFor, stepTrack, segmentsOf, whereIn, jumpSegment } from '../lib/reader/track.js';
+import Speaker from './Speaker.jsx';
+import {
+  trackFor,
+  stepTrack,
+  segmentsOf,
+  whereIn,
+  jumpSegment,
+  unitLike,
+} from '../lib/reader/track.js';
 import { current, quizScore } from '../lib/reader/assessment.js';
+import { speaker } from '../lib/speech/script.js';
 
 /**
  * The reading itself — all three of them.
@@ -76,17 +85,21 @@ export default function Reader({
     [segments, i, onMove]
   );
 
+  /* A stop either has a voice or wants an answer. Speech runs on: the
+     Professor reads, Wren says her piece, and their conversation plays
+     through without a click between every turn. A question stops it —
+     reading on past something a student was asked is the one place the
+     app should wait for a person. */
+  const speaks = (s) => s?.kind === 'line' || s?.kind === 'say';
+  const asking = !!stop && !speaks(stop);
+
   /* Auto-advance, but stop at the end rather than looping — a reading
-     that silently restarts is disorienting in a classroom. It also stops
-     at a question: reading on past something a student was asked is the
-     one place the app should wait for a person. */
+     that silently restarts is disorienting in a classroom. */
   const onEnded = useCallback(() => {
     const next = stepTrack(track, i, 1);
-    if (next === i || track[next]?.kind !== 'line') setPlaying(false);
+    if (next === i || !speaks(track[next])) setPlaying(false);
     if (next !== i) onMove?.(next);
   }, [track, i, onMove]);
-
-  const asking = stop && stop.kind !== 'line';
 
   useEffect(() => {
     const onKey = (e) => {
@@ -130,7 +143,7 @@ export default function Reader({
 
   if (!track.length) return <main className="reader empty">Nothing to read.</main>;
 
-  const unit = book.units.find((u) => u.id === stop.unit);
+  const unit = unitLike(book, stop.unit);
   const plate = where.segment?.plate;
 
   return (
@@ -154,6 +167,18 @@ export default function Reader({
         <div className={`stage still ${stop.kind}`}>
           {plate?.src && <img className="plate" src={plate.src} alt={plate.alt} />}
         </div>
+      )}
+
+      {stop.kind === 'say' && (
+        <Speaker
+          /* keyed by the clip so the recording restarts rather than
+             being asked to seek — the seek is what races on iOS */
+          key={`${stop.turn.clip ?? stop.at}#${again}`}
+          turn={stop.turn}
+          who={speaker(book, stop.turn.who)}
+          playing={playing}
+          onEnded={onEnded}
+        />
       )}
 
       {stop.kind === 'question' && quiz && (
@@ -210,7 +235,7 @@ export default function Reader({
           ‹ Back
         </button>
 
-        {stop.kind === 'line' ? (
+        {speaks(stop) ? (
           <>
             <button
               type="button"

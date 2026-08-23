@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { at, segment, SEGMENTS } from './book.js';
 import AxeBuilder from '@axe-core/playwright';
 
 /**
@@ -305,7 +306,7 @@ test.describe('the storyboard', () => {
   test('opens from where you are, and shows pictures rather than dots', async ({ page }) => {
     await page.locator('.seg-open').click();
     await expect(page.locator('dialog.storyboard')).toBeVisible();
-    await expect(page.locator('.seg')).toHaveCount(12);
+    await expect(page.locator('.seg')).toHaveCount(SEGMENTS);
     expect(await page.locator('.seg-plate img').count()).toBeGreaterThan(8);
     await expect(page.locator('.seg.here')).toHaveCount(1);
   });
@@ -335,7 +336,7 @@ test.describe('the storyboard', () => {
 
     await expect(page.locator('dialog.storyboard')).toBeHidden();
     await expect(page.locator('.where .title')).toHaveText(title);
-    await expect(page.locator('.seg-count')).toHaveText('Segment 3 of 12');
+    await expect(page.locator('.seg-count')).toHaveText(segment(3));
   });
 
   test('the keyboard does not drive the reading behind it', async ({ page }, testInfo) => {
@@ -346,8 +347,8 @@ test.describe('the storyboard', () => {
     await page.getByRole('button', { name: 'Next ›' }).click();
     /* read the position back once it has settled, not straight after
        the click — the click returns before React has rendered */
-    await expect(page.locator('.count')).toHaveText('2 of 244');
-    const at = await page.locator('.count').textContent();
+    await expect(page.locator('.count')).toHaveText(at(2));
+    const before = await page.locator('.count').textContent();
 
     await page.locator('.seg-open').click();
     await expect(page.locator('dialog.storyboard')).toBeVisible();
@@ -355,7 +356,7 @@ test.describe('the storyboard', () => {
     await page.keyboard.press('ArrowRight');
     await page.keyboard.press('Escape');
 
-    await expect(page.locator('.count')).toHaveText(at);
+    await expect(page.locator('.count')).toHaveText(before);
   });
 });
 
@@ -363,16 +364,16 @@ test.describe('moving by segment', () => {
   test('back from partway through restarts the segment', async ({ page }) => {
     await page.goto('/#/read/1/4');
     await page.locator('.scene').waitFor();
-    await expect(page.locator('.seg-count')).toHaveText('Segment 1 of 12');
+    await expect(page.locator('.seg-count')).toHaveText(segment(1));
 
     await page.getByRole('button', { name: 'Previous segment' }).click();
-    await expect(page.locator('.count')).toHaveText('1 of 244');
+    await expect(page.locator('.count')).toHaveText(at(1));
   });
 
   test('forward goes to the top of the next one', async ({ page }) => {
     await page.goto('/#/read/1/0');
     await page.locator('.scene').waitFor();
     await page.getByRole('button', { name: 'Next segment' }).click();
-    await expect(page.locator('.seg-count')).toHaveText('Segment 2 of 12');
+    await expect(page.locator('.seg-count')).toHaveText(segment(2));
   });
 });

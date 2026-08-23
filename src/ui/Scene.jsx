@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { useCueTrack } from './useCueTrack.js';
+import { useSpokenLine } from './useSpokenLine.js';
 
 /**
  * The picture window: one image, one line of narration over it.
@@ -63,15 +64,14 @@ export default function Scene({
      The first version rendered only the words parsed from the cue file,
      so before that fetch resolved — or if it failed, or if a clip had no
      recording — the subtitle was empty and the student had a picture
-     with no text at all. The words come from the book, which is already
-     loaded; the cues only decide which one is lit.
+     with no text at all.
+
+     The second version rendered them once the fetch DID resolve, which
+     was worse and harder to see: the cue text is a transcript with no
+     punctuation, so the moment the audio loaded, O. Henry lost every
+     comma he wrote. The words come from the book. Always.
      ------------------------------------------------------------ */
-  const tokens = words.length
-    ? words.map((w) => w.w)
-    : String(line || '')
-        .split(/\s+/)
-        .filter(Boolean);
-  const litIndex = words.length ? index : -1;
+  const { tokens, lit: litIndex } = useSpokenLine(line, words, index);
 
   return (
     <figure className="scene">

@@ -10,10 +10,11 @@ beforeAll(() => {
 });
 
 describe('reading 1', () => {
-  it('is the story and nothing else', () => {
+  it('is the story, and the two of them talking about it', () => {
     const t = trackFor(book, 1);
-    expect(t.every((s) => s.kind === 'line')).toBe(true);
-    expect(t).toHaveLength(beatsOfBook(book).length);
+    expect(t.filter((s) => s.kind === 'line')).toHaveLength(beatsOfBook(book).length);
+    expect(t.filter((s) => s.kind === 'say').length).toBeGreaterThan(0);
+    expect(t.some((s) => s.kind === 'question' || s.kind === 'prompt')).toBe(false);
   });
 });
 

@@ -31,6 +31,62 @@
  * reimplementing the clock.
  */
 
+/**
+ * Which of the book's words a cue is timing.
+ *
+ * The cue text is a timing artifact: it was produced by a transcriber and
+ * it has no punctuation in it. Rendering it is how the reader ended up
+ * showing "Okay This is The Gift of the Magi Nineteen-oh-five New York
+ * City the day before Christmas" — O. Henry without a single comma, in a
+ * reading app, as the thing a child is asked to read.
+ *
+ * So the words on screen come from the book, always, and the cues only
+ * decide which one is lit. They do not line up one to one: an em-dash
+ * splits "do—oh" into two spoken words, "$8" and "87 cents" tokenise
+ * differently. 35 of the 323 recordings disagree about the count, which
+ * is enough that pairing them by index would light the wrong word for a
+ * whole line.
+ *
+ * Greedy, and forgiving in the direction that matters: a cue that cannot
+ * be placed keeps the highlight where it is rather than jumping.
+ *
+ * @param {string[]} tokens the book's words, punctuation and all
+ * @param {{w:string}[]} cues
+ * @returns {number[]} for each cue, the index of the token to light
+ */
+export function alignCues(tokens, cues) {
+  const bare = (s) =>
+    String(s || '')
+      .toLowerCase()
+      .replace(/[’']/g, "'")
+      .replace(/[^a-z0-9']/g, '');
+
+  const keys = tokens.map(bare);
+  const out = [];
+  let t = 0;
+
+  for (const cue of cues) {
+    const want = bare(cue.w);
+    let found = -1;
+    /* Look a little way ahead, never backwards: the transcript is in the
+       same order as the text, it just sometimes splits or merges. */
+    for (let k = t; k < keys.length && k <= t + 3; k++) {
+      if (want && (keys[k] === want || keys[k].includes(want))) {
+        found = k;
+        break;
+      }
+    }
+    if (found < 0) {
+      /* two cues for one word — stay put rather than drift */
+      out.push(Math.max(0, Math.min(t - 1, keys.length - 1)));
+      continue;
+    }
+    out.push(found);
+    t = found + 1;
+  }
+  return out;
+}
+
 /** `123456` ms → `00:02:03.456`, which is the only format VTT accepts. */
 export function stamp(ms) {
   const total = Math.max(0, Math.round(Number(ms) || 0));

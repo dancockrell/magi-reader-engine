@@ -106,6 +106,7 @@ const CONTENT = {
   recaps: ['var RECAPS', '{'],
   dialogue: ['var DIALOGUE', '{'],
   cast: ['var CAST', '{'],
+  castArt: ['var CAST_ART', '{'],
   languages: ['var TR_LANGS', '['],
   lineTranslations: ['var TR_LINES', '{'],
   wordTranslations: ['var TR_WORDS', '{'],
@@ -123,6 +124,23 @@ for (const [key, [decl, open]] of Object.entries(CONTENT)) {
     notLiteral.push(`${key} (${decl}): ${err.message}`);
   }
 }
+
+/* Wren's portrait is a bare string rather than an entry in CAST_ART,
+   because she is drawn by her own rig in the shipping reader and never
+   went through the cast map. She is still a member of the cast, so her
+   picture belongs with the others rather than in whichever component
+   happens to draw her. */
+const wrenArt = /var\s+WREN_ART\s*=\s*"([^"]+)"/.exec(src);
+if (wrenArt && content.castArt) content.castArt.wren = wrenArt[1];
+if (content.cast && content.castArt) {
+  for (const [id, member] of Object.entries(content.cast.members || {})) {
+    if (content.castArt[id]) member.art = content.castArt[id];
+  }
+}
+/* Folded, not dropped — and said so below, because a key that vanishes
+   between the extract and the summary reads as an extraction failure. */
+const folded = 'castArt' in content ? ['castArt'] : [];
+delete content.castArt;
 
 const titleMatch = /title\s*:\s*"([^"]+)"/.exec(src.slice(src.indexOf('var BOOK')));
 
@@ -152,9 +170,12 @@ console.log(`units:   ${units.length}`);
 console.log(`swaps:   ${Object.keys(swaps).length}`);
 console.log(`plates:  ${Object.keys(plates).length}`);
 for (const key of Object.keys(CONTENT)) {
-  console.log(
-    `${(key + ':').padEnd(9)}${key in content ? size(content[key]) : 'NOT A LITERAL'}`
-  );
+  const how = folded.includes(key)
+    ? 'folded into cast'
+    : key in content
+      ? size(content[key])
+      : 'NOT A LITERAL';
+  console.log(`${(key + ':').padEnd(9)}${how}`);
 }
 if (notLiteral.length) {
   console.log('\ncould not lift (computed, not declared):');
