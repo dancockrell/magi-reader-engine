@@ -1,5 +1,7 @@
 node_modules/
 dist/
+legacy-dist/
+release/
 *.local
 .DS_Store
 .vite/

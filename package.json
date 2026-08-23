@@ -1,7 +1,7 @@
 {
   "name": "raven-reader",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "engines": {
     "node": ">=20.19"
@@ -22,6 +22,8 @@
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "assets": "node tools/copy-assets.mjs",
+    "build:legacy": "node tools/build-legacy.mjs",
+    "release": "npm run verify:full && npm run build:legacy && node tools/release.mjs",
     "book:cues": "node tools/timings-to-vtt.mjs",
     "book:extract": "node tools/extract-book.mjs",
     "book:check": "node tools/check-book.mjs",
