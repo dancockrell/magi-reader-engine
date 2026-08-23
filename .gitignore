@@ -5,3 +5,6 @@ dist/
 .vite/
 coverage/
 public/magi-audio/vtt/
+test-results/
+playwright-report/
+dev*.log
