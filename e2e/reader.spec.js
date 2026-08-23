@@ -113,9 +113,9 @@ test.describe('moving through the reading', () => {
     const first = await page.locator('audio').getAttribute('src');
     const track = await page.locator('audio track').getAttribute('src');
     /* relative, no leading slash — see "no asset is requested from the
-       domain root" above */
+       domain root" above. One cue file carries every clip. */
     expect(first).toBe('magi-audio/n_s1_0.mp3');
-    expect(track).toBe('vtt/n_s1_0.vtt');
+    expect(track).toBe('cues/magi.vtt');
 
     await page.getByRole('button', { name: 'Next ›' }).click();
     await expect(page.locator('audio')).toHaveAttribute('src', /n_s1_1\.mp3$/);
@@ -147,12 +147,15 @@ test.describe('moving through the reading', () => {
     }
   });
 
-  test('the caption file is really served', async ({ page }) => {
-    const res = await page.request.get('/vtt/n_s1_0.vtt');
+  test('the caption file is really served, and holds every clip', async ({ page }) => {
+    const res = await page.request.get('/cues/magi.vtt');
     expect(res.ok()).toBe(true);
     const body = await res.text();
     expect(body.startsWith('WEBVTT')).toBe(true);
+    /* identified cues, so one file serves the whole book */
+    expect(body).toContain('n_s1_0\n');
     expect(body).toContain('<00:00:00.477>dollar');
+    expect(body).toContain('n_s12_14\n');
   });
 });
 

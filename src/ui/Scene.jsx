@@ -22,7 +22,7 @@ import { useCueTrack } from './useCueTrack.js';
  * @param {string} props.line               the words, from the book itself
  * @param {string|null} [props.clip]        audio id, e.g. "n_s1_0"
  * @param {string} [props.audioBase]
- * @param {string} [props.vttBase]
+ * @param {string} [props.cuesUrl]           one WebVTT file for the whole book
  * @param {string|null} [props.translation] the same line, in the reader's language
  * @param {string} [props.lang]             BCP-47 tag for that translation
  * @param {boolean} [props.playing]
@@ -34,15 +34,14 @@ export default function Scene({
   clip,
   /* relative, for the same reason the plate paths are — see MEDIA_BASE */
   audioBase = 'magi-audio/',
-  vttBase = 'vtt/',
+  cuesUrl = 'cues/magi.vtt',
   translation = null,
   lang = '',
   playing = false,
   onEnded,
 }) {
   const audioRef = useRef(null);
-  const vttUrl = clip ? `${vttBase}${clip}.vtt` : null;
-  const { words, index } = useCueTrack(audioRef, vttUrl);
+  const { words, index } = useCueTrack(audioRef, clip, cuesUrl);
 
   /* Play/pause is driven by the prop, and a rejected play() is not an
      error worth surfacing: browsers refuse autoplay until the reader has
@@ -105,16 +104,11 @@ export default function Scene({
           onEnded={onEnded}
           crossOrigin="anonymous"
         >
-          {/* The native track as well, so a student who has turned on
-              system captions gets them, and so the file is discoverable
-              as a caption track rather than only as our own data. */}
-          <track
-            kind="captions"
-            srcLang="en"
-            label="English"
-            src={vttUrl ?? undefined}
-            default
-          />
+          {/* The native track points at the same standard file. It
+              carries every clip's cues rather than only this one, so the
+              browser's own caption UI shows the whole reading — which is
+              what a student using system captions wants anyway. */}
+          <track kind="captions" srcLang="en" label="English" src={cuesUrl} />
         </audio>
       ) : null}
     </figure>

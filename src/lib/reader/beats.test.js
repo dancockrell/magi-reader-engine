@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import { readFileSync, existsSync } from 'node:fs';
 import { beatsOf, beatsOfBook, linesOf, step } from './beats.js';
+import { wordsByClip } from '../media/vtt.js';
 
 let book;
 
@@ -72,13 +73,16 @@ describe('cutting a unit into beats', () => {
 describe('every beat has the recording it names', () => {
   /* The 519 clips were produced against the old reader's line numbering.
      If this drifts, a student gets a silent page and nothing says why. */
-  it('finds an mp3 and a vtt for every beat in the book', () => {
+  it('finds an mp3 and a cue for every beat in the book', () => {
     const beats = beatsOfBook(book);
+    /* All cues live in one WebVTT file — 519 separate ones put the build
+       over itch's 1000-file limit and the upload was rejected. */
+    const cues = wordsByClip(readFileSync('public/cues/magi.vtt', 'utf8'));
     const missingAudio = [];
     const missingCues = [];
     for (const b of beats) {
       if (!existsSync(`public/magi-audio/${b.clip}.mp3`)) missingAudio.push(b.clip);
-      if (!existsSync(`public/vtt/${b.clip}.vtt`)) missingCues.push(b.clip);
+      if (!cues[b.clip]?.length) missingCues.push(b.clip);
     }
     expect({ missingAudio, missingCues }).toEqual({ missingAudio: [], missingCues: [] });
   });

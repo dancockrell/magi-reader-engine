@@ -1,59 +1,78 @@
 import { useEffect, useRef, useState } from 'react';
-import { wordsFromVtt, wordAt } from '../lib/media/vtt.js';
+import { wordsByClip, wordAt } from '../lib/media/vtt.js';
 
 /**
  * Word highlighting driven by the media clock.
  *
  * The old reader ran a requestAnimationFrame loop comparing
  * `audio.currentTime` against a private timing table. Two things are
- * wrong with that, and the second one bit this project already:
- * rAF stops in a backgrounded tab, and it ties the highlight to the
- * frame rate rather than to the audio.
+ * wrong with that, and the second bit this project already: rAF stops in
+ * a backgrounded tab, and it ties the highlight to the frame rate rather
+ * than to the audio.
  *
  * `timeupdate` comes from the media element itself, so it keeps working
  * when the tab is hidden and it is the audio's own clock. The cue text
  * still comes from a real WebVTT file, which is why a translator can fix
  * a timing in Subtitle Edit without touching this code.
- *
- * @param {import('react').RefObject<HTMLAudioElement>} audioRef
- * @param {string|null} vttUrl
  */
-export function useCueTrack(audioRef, vttUrl) {
+
+/**
+ * The whole book's cues, fetched once.
+ *
+ * Every clip's timing lives in a single WebVTT file — 519 separate ones
+ * put the build over itch's 1000-file limit and cost 519 requests. The
+ * promise is cached at module scope so that however many Scenes mount,
+ * the file is fetched exactly once.
+ *
+ * @type {Promise<Record<string, {t:number,w:string}[]>>|null}
+ */
+let cuesPromise = null;
+
+/** @param {string} url */
+export function loadCues(url) {
+  if (!cuesPromise) {
+    cuesPromise = fetch(url)
+      .then((r) => (r.ok ? r.text() : ''))
+      .then((text) => wordsByClip(text))
+      .catch(() => ({}));
+  }
+  return cuesPromise;
+}
+
+/** Testing seam: forget the cached fetch. */
+export function resetCues() {
+  cuesPromise = null;
+}
+
+/**
+ * @param {import('react').RefObject<HTMLAudioElement>} audioRef
+ * @param {string|null} clip           which recording, e.g. "n_s1_0"
+ * @param {string} [cuesUrl]
+ */
+export function useCueTrack(audioRef, clip, cuesUrl = 'cues/magi.vtt') {
   const [words, setWords] = useState([]);
   const [index, setIndex] = useState(-1);
   const wordsRef = useRef([]);
 
-  /* Fetch and parse the cue once per clip. The <track> element would
-     also parse it, but browsers expose inline cue timestamps
-     inconsistently, so the file is read directly and the element is
-     left to handle the native caption track for anyone who turns
-     system captions on. */
   useEffect(() => {
     let cancelled = false;
-    if (!vttUrl) {
-      setWords([]);
+    if (!clip) {
       wordsRef.current = [];
+      setWords([]);
       setIndex(-1);
       return undefined;
     }
-    fetch(vttUrl)
-      .then((r) => (r.ok ? r.text() : ''))
-      .then((text) => {
-        if (cancelled) return;
-        const list = wordsFromVtt(text);
-        wordsRef.current = list;
-        setWords(list);
-        setIndex(-1);
-      })
-      .catch(() => {
-        if (cancelled) return;
-        wordsRef.current = [];
-        setWords([]);
-      });
+    loadCues(cuesUrl).then((byClip) => {
+      if (cancelled) return;
+      const list = byClip[clip] || [];
+      wordsRef.current = list;
+      setWords(list);
+      setIndex(-1);
+    });
     return () => {
       cancelled = true;
     };
-  }, [vttUrl]);
+  }, [clip, cuesUrl]);
 
   useEffect(() => {
     const el = audioRef.current;

@@ -106,6 +106,49 @@ export function toVtt(words, opts = {}) {
 }
 
 /**
+ * Every clip's cue in one WebVTT file.
+ *
+ * itch refuses a zip of more than 1000 files, and one .vtt per clip put
+ * the build at 1266. A WebVTT file holds any number of cues, each with
+ * its own identifier, so the whole book's timing is one standard file —
+ * which is also one request instead of 519.
+ *
+ * @param {Record<string, Array<{t?:number,w?:string}>>} clips
+ * @returns {string}
+ */
+export function toVttBundle(clips) {
+  const cues = [];
+  for (const [id, words] of Object.entries(clips || {})) {
+    const cue = cueFor(words, { id });
+    if (cue) cues.push(cue);
+  }
+  return `WEBVTT\n\n${cues.join('\n')}`;
+}
+
+/**
+ * Split a bundle back into one word list per clip id.
+ *
+ * @param {string} vtt
+ * @returns {Record<string, {t:number,w:string}[]>}
+ */
+export function wordsByClip(vtt) {
+  /** @type {Record<string, {t:number,w:string}[]>} */
+  const out = {};
+  const blocks = String(vtt)
+    .replace(/^WEBVTT[^\n]*\n/, '')
+    .split(/\n\s*\n/);
+  for (const block of blocks) {
+    const lines = block.split('\n').filter((l) => l.trim() !== '');
+    if (lines.length < 2) continue;
+    /* a cue with an identifier puts it on the line before the timing */
+    const [id, ...rest] = lines;
+    if (!/-->/.test(rest[0] || '')) continue;
+    out[id.trim()] = wordsFromVtt(rest.join('\n'));
+  }
+  return out;
+}
+
+/**
  * Read the word timings back out of a VTT cue.
  *
  * Used to check a conversion round-trips, and to drive the highlight

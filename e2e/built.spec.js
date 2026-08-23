@@ -55,6 +55,28 @@ async function serveNested(prefix, root) {
   return { server, port: server.address().port };
 }
 
+test.describe('the build is uploadable', () => {
+  test('has fewer than 1000 files', async ({ page: _page }, testInfo) => {
+    test.skip(testInfo.project.name !== 'desktop', 'checked once');
+    /* itch rejects the upload outright:
+         "There was a problem loading your project:
+          Too many files in zip (1266 > 1000)"
+       That is exactly what one WebVTT file per clip cost — 519 of them.
+       The whole book's timing is one identified-cue file now, and this
+       is here so the next person who splits something per-clip finds out
+       before the upload rather than after. */
+    const { readdirSync, statSync } = await import('node:fs');
+    const { join } = await import('node:path');
+    const count = (dir) =>
+      readdirSync(dir).reduce(
+        (n, e) => n + (statSync(join(dir, e)).isDirectory() ? count(join(dir, e)) : 1),
+        0
+      );
+    const files = count('dist');
+    expect(files, `${files} files; itch allows 1000`).toBeLessThan(1000);
+  });
+});
+
 test.describe('the production build on a nested path', () => {
   /* Run once, not per engine. What is under test is the shape of the
      built output — whether its URLs resolve from a nested prefix — and
