@@ -1,0 +1,513 @@
+{
+ "meta": {
+  "id": "magi",
+  "title": "The Gift of the Magi",
+  "source": "extracted from index.html"
+ },
+ "units": [
+  {
+   "id": "s1",
+   "scene": "s1",
+   "act": "Act I — One Dollar Eighty-Seven",
+   "num": 1,
+   "title": "Counting the Pennies",
+   "caption": "A furnished flat. The day before Christmas.",
+   "stanzas": [
+    "One dollar and eighty-seven cents.\nThat was all.\nAnd sixty cents of it was in pennies.\nPennies saved one and two at a time\nby {bulldozing|pushing and bullying} the grocer and the vegetable man and the butcher\nuntil one’s cheeks burned with the silent {imputation|unspoken accusation} of {parsimony|being mean with money}\nthat such close dealing implied.\nThree times Della counted it.\nOne dollar and eighty-seven cents.\nAnd the next day would be Christmas.",
+    "There was clearly nothing to do\nbut flop down on the {shabby|old and worn out} little couch and {howl|cry very loudly}.\nSo Della did it.\nWhich {instigates|starts, sets going} the moral reflection\nthat life is made up of sobs, sniffles, and smiles,\nwith sniffles {predominating|being the biggest part}."
+   ],
+   "para": "Della has saved money for months — and she has only <b>one dollar and eighty-seven cents</b>. Most of it is small pennies, saved by arguing over every price until the shopkeepers silently thought she was cheap. She counts it three times. Tomorrow is Christmas. So she falls on the old couch and cries.",
+   "gloss": [
+    [
+     "bulldozing",
+     "pushing and bullying"
+    ],
+    [
+     "imputation",
+     "unspoken accusation"
+    ],
+    [
+     "parsimony",
+     "being mean with money"
+    ],
+    [
+     "shabby",
+     "old and worn out"
+    ],
+    [
+     "howl",
+     "cry very loudly"
+    ],
+    [
+     "instigates",
+     "starts, sets going"
+    ],
+    [
+     "predominating",
+     "being the biggest part"
+    ]
+   ]
+  },
+  {
+   "id": "s2",
+   "scene": "s2",
+   "act": "Act I — One Dollar Eighty-Seven",
+   "num": 2,
+   "title": "The Eight-Dollar Flat",
+   "caption": "A letter-box that takes no letters. A bell that will not ring.",
+   "stanzas": [
+    "While the mistress of the home is gradually {subsiding|calming down, sinking} from the first stage to the second,\ntake a look at the home.\nA furnished flat at $8 per week.\nIt did not exactly {beggar|be too poor for} description,\nbut it certainly had that word on the lookout for the {mendicancy|begging} squad.",
+    "In the {vestibule|a small entrance hall} below was a letter-box into which no letter would go,\nand an electric button from which no {mortal|human} finger could {coax|gently persuade} a ring.\nAlso appertaining thereunto was a card bearing the name\n“Mr. James Dillingham Young.”",
+    "The “Dillingham” had been flung to the breeze\nduring a former period of {prosperity|good times, having money}\nwhen its possessor was being paid $30 per week.\nNow, when the income was shrunk to $20, though,\nthey were thinking seriously of contracting to a modest and unassuming D.\nBut whenever Mr. James Dillingham Young came home and reached his flat above\nhe was called “Jim” and greatly hugged by Mrs. James Dillingham Young,\nalready introduced to you as Della.\nWhich is all very good."
+   ],
+   "para": "While Della cries, the narrator shows us the home: a rented flat for eight dollars a week, close to real poverty. Downstairs, a broken letter-box and a doorbell that does not work — and a proud name card: <b>Mr. James Dillingham Young</b>. Jim put up the long name when he earned thirty dollars a week. Now he earns twenty. But every evening, Della hugs him at the door and calls him Jim — and that, the narrator says, is all very good.",
+   "gloss": [
+    [
+     "subsiding",
+     "calming down, sinking"
+    ],
+    [
+     "vestibule",
+     "a small entrance hall"
+    ],
+    [
+     "mortal",
+     "human"
+    ],
+    [
+     "coax",
+     "gently persuade"
+    ],
+    [
+     "prosperity",
+     "good times, having money"
+    ],
+    [
+     "mendicancy",
+     "begging"
+    ]
+   ]
+  },
+  {
+   "id": "s3",
+   "scene": "s3",
+   "act": "Act I — One Dollar Eighty-Seven",
+   "num": 3,
+   "title": "The Gray Cat and the Glass",
+   "caption": "A window, a mirror, and a decision arriving.",
+   "stanzas": [
+    "Della finished her cry and attended to her cheeks with the powder rag.\nShe stood by the window and looked out dully\nat a gray cat walking a gray fence in a gray backyard.\nTomorrow would be Christmas Day,\nand she had only $1.87 with which to buy Jim a present.\nShe had been saving every penny she could for months, with this result.\nTwenty dollars a week doesn’t go far.\nExpenses had been greater than she had calculated.\nThey always are.\nOnly $1.87 to buy a present for Jim. Her Jim.\nMany a happy hour she had spent planning for something nice for him.\nSomething fine and rare and {sterling|of true, solid quality}—\nsomething just a little bit near to being worthy of the honor\nof being owned by Jim.",
+    "There was a {pier glass|a tall narrow mirror} between the windows of the room.\nPerhaps you have seen a pier glass in an $8 flat.\nA very thin and very {agile|quick and light in movement} person may,\nby observing his reflection in a rapid sequence of {longitudinal|up-and-down, lengthwise} strips,\nobtain a fairly accurate conception of his looks.\nDella, being slender, had mastered the art.",
+    "Suddenly she whirled from the window and stood before the glass.\nHer eyes were shining {brilliantly|very brightly},\nbut her face had lost its color within twenty seconds.\nRapidly she pulled down her hair\nand let it fall to its full length."
+   ],
+   "para": "Della dries her eyes and looks out at a gray, dull world. She has planned for months to buy Jim something <b>fine and rare</b> — something good enough for him — and she has $1.87. Then, suddenly, she turns to the narrow mirror between the windows. Her eyes are shining, but her face goes pale: she has had an idea, and the idea costs something. She pulls down her hair and lets it fall.",
+   "gloss": [
+    [
+     "sterling",
+     "of true, solid quality"
+    ],
+    [
+     "agile",
+     "quick and light in movement"
+    ],
+    [
+     "brilliantly",
+     "very brightly"
+    ],
+    [
+     "slender",
+     "thin in a graceful way"
+    ]
+   ]
+  },
+  {
+   "id": "s4",
+   "scene": "s4",
+   "act": "Act II — The Two Treasures",
+   "num": 4,
+   "title": "The Two Treasures",
+   "caption": "A gold watch, and hair like brown water.",
+   "stanzas": [
+    "Now, there were two possessions of the James Dillingham Youngs\nin which they both took a mighty pride.\nOne was Jim’s gold watch that had been his father’s and his grandfather’s.\nThe other was Della’s hair.\nHad the queen of Sheba lived in the flat across the {airshaft|a narrow open space between buildings},\nDella would have let her hair hang out the window some day to dry\njust to {depreciate|make something seem less valuable} Her Majesty’s jewels and gifts.\nHad King Solomon been the {janitor|a building caretaker},\nwith all his treasures piled up in the basement,\nJim would have pulled out his watch every time he passed,\njust to see him {pluck|pull sharply} at his beard from envy.",
+    "So now Della’s beautiful hair fell about her\nrippling and shining like a {cascade|a small waterfall} of brown waters.\nIt reached below her knee\nand made itself almost a garment for her.\nAnd then she did it up again nervously and quickly.\nOnce she {faltered|paused, almost stopped} for a minute and stood still\nwhile a tear or two splashed on the worn red carpet."
+   ],
+   "para": "The couple owns two treasures. Jim's <b>gold watch</b>, passed down from his grandfather and father. And Della's <b>hair</b>, which falls below her knee like a waterfall of brown water. The narrator says even the richest queen and king in old stories would have envied them. Della lets her hair down, looks at it — then puts it up again, quickly. She stops once. Two tears fall on the worn carpet. She has decided.",
+   "gloss": [
+    [
+     "airshaft",
+     "a narrow open space between buildings"
+    ],
+    [
+     "depreciate",
+     "make something seem less valuable"
+    ],
+    [
+     "janitor",
+     "a building caretaker"
+    ],
+    [
+     "cascade",
+     "a small waterfall"
+    ],
+    [
+     "faltered",
+     "paused, almost stopped"
+    ],
+    [
+     "garment",
+     "a piece of clothing"
+    ]
+   ]
+  },
+  {
+   "id": "s5",
+   "scene": "s5",
+   "act": "Act II — The Two Treasures",
+   "num": 5,
+   "title": "Madame Sofronie",
+   "caption": "One flight up. Hair goods of all kinds.",
+   "stanzas": [
+    "On went her old brown jacket; on went her old brown hat.\nWith a whirl of skirts and with the brilliant sparkle still in her eyes,\nshe {fluttered|moved quickly and lightly} out the door and down the stairs to the street.",
+    "Where she stopped the sign read:\n“Mme. Sofronie. Hair Goods of All Kinds.”\nOne flight up Della ran, and collected herself, {panting|breathing hard and fast}.\nMadame, large, too white, {chilly|cold in manner}, hardly looked the “Sofronie.”",
+    "“Will you buy my hair?” asked Della.\n“I buy hair,” said Madame.\n“Take yer hat off and let’s have a sight at the looks of it.”\nDown rippled the brown cascade.\n“Twenty dollars,” said Madame, lifting the mass with a {practised|skilled from much repeating} hand.\n“Give it to me quick,” said Della."
+   ],
+   "para": "Della puts on her old brown jacket and hat and hurries into the street. She finds a shop sign: <b>Mme. Sofronie — Hair Goods of All Kinds</b>. The owner is large, pale, and cold. Della asks: \"Will you buy my hair?\" The woman looks, lifts the brown waterfall with an expert hand, and says: <b>twenty dollars</b>. Della does not stop to think. \"Give it to me quick.\"",
+   "gloss": [
+    [
+     "fluttered",
+     "moved quickly and lightly"
+    ],
+    [
+     "panting",
+     "breathing hard and fast"
+    ],
+    [
+     "chilly",
+     "cold in manner"
+    ],
+    [
+     "practised",
+     "skilled from much repeating"
+    ]
+   ]
+  },
+  {
+   "id": "s6",
+   "scene": "s6",
+   "act": "Act II — The Two Treasures",
+   "num": 6,
+   "title": "The Chain",
+   "caption": "Two hours on rosy wings. Then, in a shop window—",
+   "stanzas": [
+    "Oh, and the next two hours tripped by on rosy wings.\nForget the {hashed|mixed-up, overused} metaphor.\nShe was {ransacking|searching wildly through} the stores for Jim’s present.",
+    "She found it at last.\nIt surely had been made for Jim and no one else.\nThere was no other like it in any of the stores,\nand she had turned all of them inside out.\nIt was a platinum {fob chain|a short chain for a pocket watch} simple and {chaste|plain and pure in style} in design,\nproperly proclaiming its value by substance alone\nand not by {meretricious|falsely attractive, showy} ornamentation—\nas all good things should do.\nIt was even worthy of The Watch.\nAs soon as she saw it she knew that it must be Jim’s.\nIt was like him.\nQuietness and value—the description applied to both.\nTwenty-one dollars they took from her for it,\nand she hurried home with the 87 cents.\nWith that chain on his watch\nJim might be properly anxious about the time in any company.\nGrand as the watch was,\nhe sometimes looked at it on the sly\non account of the old leather strap that he used in place of a chain."
+   ],
+   "para": "For two happy hours Della searches every store in town. At last she finds it: a <b>platinum chain</b> for Jim's pocket watch — simple, plain, valuable for what it is, not for show. \"Quietness and value\" — like Jim himself. It costs twenty-one dollars. She goes home with 87 cents. Now Jim can proudly check the time in front of anyone — until now, he sometimes looked at his grand watch secretly, because it hung on an old leather strap.",
+   "gloss": [
+    [
+     "ransacking",
+     "searching wildly through"
+    ],
+    [
+     "fob chain",
+     "a short chain for a pocket watch"
+    ],
+    [
+     "chaste",
+     "plain and pure in style"
+    ],
+    [
+     "meretricious",
+     "falsely attractive, showy"
+    ],
+    [
+     "ornamentation",
+     "decoration"
+    ]
+   ]
+  },
+  {
+   "id": "s7",
+   "scene": "s7",
+   "act": "Act III — The Homecoming",
+   "num": 7,
+   "title": "The Curls",
+   "caption": "Curling irons, and forty minutes of repair.",
+   "stanzas": [
+    "When Della reached home\nher {intoxication|great excitement, like being drunk on joy} gave way a little to {prudence|careful good sense} and reason.\nShe got out her curling irons and lighted the gas\nand went to work repairing the {ravages|serious damage} made by generosity added to love.\nWhich is always a tremendous task, dear friends—\na {mammoth|huge} task.",
+    "Within forty minutes her head was covered with tiny, close-lying curls\nthat made her look wonderfully like a {truant|staying away from school without permission} schoolboy.\nShe looked at her reflection in the mirror\nlong, carefully, and critically.",
+    "“If Jim doesn’t kill me,” she said to herself,\n“before he takes a second look at me,\nhe’ll say I look like a Coney Island chorus girl.\nBut what could I do—oh!\nwhat could I do with a dollar and eighty-seven cents?”"
+   ],
+   "para": "At home, the excitement fades and worry arrives. Della heats her curling irons and spends forty minutes repairing what love has done. Now her head is covered in tiny curls, like a schoolboy's. She studies the mirror and tells herself: Jim will say I look like a cheap dancer. <b>But what could I do with a dollar and eighty-seven cents?</b>",
+   "gloss": [
+    [
+     "intoxication",
+     "great excitement, like being drunk on joy"
+    ],
+    [
+     "prudence",
+     "careful good sense"
+    ],
+    [
+     "ravages",
+     "serious damage"
+    ],
+    [
+     "mammoth",
+     "huge"
+    ],
+    [
+     "truant",
+     "staying away from school without permission"
+    ]
+   ]
+  },
+  {
+   "id": "s8",
+   "scene": "s8",
+   "act": "Act III — The Homecoming",
+   "num": 8,
+   "title": "The Stare",
+   "caption": "Seven o'clock. A step on the stair.",
+   "stanzas": [
+    "At 7 o’clock the coffee was made\nand the frying-pan was on the back of the stove\nhot and ready to cook the chops.",
+    "Jim was never late.\nDella doubled the fob chain in her hand\nand sat on the corner of the table near the door that he always entered.\nThen she heard his step on the stair away down on the first flight,\nand she turned white for just a moment.\nShe had a habit of saying a little silent prayer\nabout the simplest everyday things,\nand now she whispered:\n“Please God, make him think I am still pretty.”",
+    "The door opened and Jim stepped in and closed it.\nHe looked thin and very serious.\nPoor fellow, he was only twenty-two—\nand to be burdened with a family!\nHe needed a new overcoat and he was without gloves.",
+    "Jim stopped inside the door,\nas {immovable|unable to be moved} as a {setter|a hunting dog that freezes when it finds a bird} at the scent of {quail|a small game bird},\nHis eyes were fixed upon Della,\nand there was an expression in them that she could not read,\nand it terrified her.\nIt was not anger, nor surprise, nor {disapproval|thinking something is wrong or bad}, nor horror,\nnor any of the {sentiments|feelings} that she had been prepared for.\nHe simply stared at her fixedly\nwith that {peculiar|strange, unusual} expression on his face."
+   ],
+   "para": "Seven o'clock. Coffee ready, pan hot. Della sits by the door with the chain in her hand and whispers a small prayer: <b>\"Please God, make him think I am still pretty.\"</b> Jim comes in — thin, serious, only twenty-two, needing a new coat, with no gloves. And then he stops. He stares at her with an expression she cannot read. Not anger. Not surprise. Not horror. Something else — and it frightens her.",
+   "gloss": [
+    [
+     "immovable",
+     "unable to be moved"
+    ],
+    [
+     "setter",
+     "a hunting dog that freezes when it finds a bird"
+    ],
+    [
+     "quail",
+     "a small game bird"
+    ],
+    [
+     "disapproval",
+     "thinking something is wrong or bad"
+    ],
+    [
+     "sentiments",
+     "feelings"
+    ],
+    [
+     "peculiar",
+     "strange, unusual"
+    ]
+   ]
+  },
+  {
+   "id": "s9",
+   "scene": "s9",
+   "act": "Act III — The Homecoming",
+   "num": 9,
+   "title": "Sold and Gone",
+   "caption": "“It went for you.”",
+   "stanzas": [
+    "Della wriggled off the table and went for him.\n“Jim, darling,” she cried, “don’t look at me that way.\nI had my hair cut off and sold\nbecause I couldn’t have lived through Christmas\nwithout giving you a present.\nIt’ll grow out again—you won’t mind, will you?\nI just had to do it.\nMy hair grows awfully fast.\nSay ‘Merry Christmas!’ Jim, and let’s be happy.\nYou don’t know what a nice—\nwhat a beautiful, nice gift I’ve got for you.”",
+    "“You’ve cut off your hair?” asked Jim, {laboriously|slowly, with great effort},\nas if he had not arrived at that {patent|obvious} fact yet\neven after the hardest mental labor.\n“Cut it off and sold it,” said Della.\n“Don’t you like me just as well, anyhow?\nI’m me without my hair, ain’t I?”\nJim looked about the room curiously.\n“You say your hair is gone?” he said,\nwith an air almost of {idiocy|foolishness, not thinking clearly}.",
+    "“You needn’t look for it,” said Della.\n“It’s sold, I tell you—sold and gone, too.\nIt’s Christmas Eve, boy. Be good to me, for it went for you.\nMaybe the hairs of my head were numbered,” she went on with sudden serious sweetness,\n“but nobody could ever count my love for you.\nShall I put the chops on, Jim?”",
+    "Out of his {trance|a state of staring without seeing} Jim seemed quickly to wake.\nHe {enfolded|wrapped his arms around} his Della.\nFor ten seconds let us regard with {discreet|politely careful} {scrutiny|close examination}\nsome inconsequential object in the other direction.\nEight dollars a week or a million a year—\nwhat is the difference?\nA mathematician or a wit would give you the wrong answer.\nThe magi brought valuable gifts, but that was not among them.\nThis dark assertion will be illuminated later on."
+   ],
+   "para": "Della runs to him: <b>I sold my hair — I couldn't live through Christmas without giving you a present.</b> Jim asks again and again, slowly, as if the fact will not enter his head: \"You've cut off your hair?\" Della answers: sold and gone — <b>it went for you</b> — and no one could ever count my love. Jim wakes from his trance and holds her. The narrator looks politely away, and asks a strange question: eight dollars a week or a million a year — what is the difference? The answer, he says, will come later.",
+   "gloss": [
+    [
+     "laboriously",
+     "slowly, with great effort"
+    ],
+    [
+     "patent",
+     "obvious"
+    ],
+    [
+     "idiocy",
+     "foolishness, not thinking clearly"
+    ],
+    [
+     "trance",
+     "a state of staring without seeing"
+    ],
+    [
+     "enfolded",
+     "wrapped his arms around"
+    ],
+    [
+     "discreet",
+     "politely careful"
+    ],
+    [
+     "scrutiny",
+     "close examination"
+    ]
+   ]
+  },
+  {
+   "id": "s10",
+   "scene": "s10",
+   "act": "Act IV — The Wisest",
+   "num": 10,
+   "title": "The Combs",
+   "caption": "A package on the table.",
+   "stanzas": [
+    "Jim drew a package from his overcoat pocket\nand threw it upon the table.\n“Don’t make any mistake, Dell,” he said, “about me.\nI don’t think there’s anything in the way of a haircut or a shave or a shampoo\nthat could make me like my girl any less.\nBut if you’ll unwrap that package\nyou may see why you had me going a while at first.”",
+    "White fingers and {nimble|quick and skilful} tore at the string and paper.\nAnd then an {ecstatic|full of overwhelming joy} scream of joy;\nand then, alas! a quick feminine change to hysterical tears and wails,\nnecessitating the immediate employment\nof all the comforting powers of the lord of the flat.",
+    "For there lay The Combs—the set of combs, side and back,\nthat Della had {worshipped|loved and admired like something holy} long in a Broadway window.\nBeautiful combs, pure tortoise shell, with jewelled rims—\njust the shade to wear in the beautiful vanished hair.\nThey were expensive combs, she knew,\nand her heart had simply {craved|wanted painfully} and {yearned|longed deeply} over them\nwithout the least hope of possession.\nAnd now, they were hers,\nbut the {tresses|long locks of hair} that should have adorned the {coveted|badly wanted} adornments were gone.",
+    "But she hugged them to her bosom,\nand at length she was able to look up with dim eyes and a smile and say:\n“My hair grows so fast, Jim!”\nAnd then Della leaped up like a little singed cat and cried, “Oh, oh!”"
+   ],
+   "para": "Jim puts a package on the table: <b>nothing could make me like my girl any less — but open it, and you'll see why I stared.</b> Della tears the paper — a scream of joy — then tears. Inside are <b>The Combs</b>: the beautiful tortoise-shell combs she had admired in a shop window for months without any hope of owning them. Combs for hair that is gone. She hugs them, smiles through wet eyes — \"My hair grows so fast, Jim!\" — and then suddenly jumps up. She has remembered her own present.",
+   "gloss": [
+    [
+     "nimble",
+     "quick and skilful"
+    ],
+    [
+     "ecstatic",
+     "full of overwhelming joy"
+    ],
+    [
+     "worshipped",
+     "loved and admired like something holy"
+    ],
+    [
+     "craved",
+     "wanted painfully"
+    ],
+    [
+     "yearned",
+     "longed deeply"
+    ],
+    [
+     "tresses",
+     "long locks of hair"
+    ],
+    [
+     "coveted",
+     "badly wanted"
+    ]
+   ]
+  },
+  {
+   "id": "s11",
+   "scene": "s11",
+   "act": "Act IV — The Wisest",
+   "num": 11,
+   "title": "The Watch",
+   "caption": "An open palm. A dull precious shine.",
+   "stanzas": [
+    "Jim had not yet seen his beautiful present.\nShe held it out to him eagerly upon her open palm.\nThe dull precious metal seemed to flash\nwith a reflection of her bright and {ardent|burning with feeling} spirit.",
+    "“Isn’t it a dandy, Jim?\nI hunted all over town to find it.\nYou’ll have to look at the time a hundred times a day now.\nGive me your watch.\nI want to see how it looks on it.”",
+    "Instead of obeying, Jim tumbled down on the couch\nand put his hands under the back of his head and smiled.\n“Dell,” said he, “let’s put our Christmas presents away\nand keep ’em a while.\nThey’re too nice to use just at present.\nI sold the watch to get the money to buy your combs.\nAnd now suppose you put the chops on.”"
+   ],
+   "para": "Della holds out the chain on her open hand: <b>\"Give me your watch. I want to see how it looks on it.\"</b> Jim does not reach for his watch. He lies back on the couch and smiles: let's put our presents away for a while — they're too nice to use just now. <b>\"I sold the watch to get the money to buy your combs.\"</b> And then, gently: now suppose you put the chops on.",
+   "gloss": [
+    [
+     "ardent",
+     "burning with feeling"
+    ],
+    [
+     "dandy",
+     "an excellent, fine thing"
+    ],
+    [
+     "tumbled",
+     "fell or dropped loosely"
+    ]
+   ]
+  },
+  {
+   "id": "s12",
+   "scene": "s12",
+   "act": "Act IV — The Wisest",
+   "num": 12,
+   "title": "The Wisest",
+   "caption": "The narrator turns to face you.",
+   "stanzas": [
+    "The magi, as you know, were wise men—wonderfully wise men—\nwho brought gifts to the Babe in the {manger|a food box for animals, used as a bed}.\nThey invented the art of giving Christmas presents.\nBeing wise, their gifts were no doubt wise ones,\npossibly bearing the privilege of exchange in case of {duplication|two of the same thing}.\nAnd here I have lamely related to you\nthe uneventful {chronicle|a record of events} of two foolish children in a flat\nwho most unwisely {sacrificed|gave up something precious} for each other\nthe greatest treasures of their house.\nBut in a last word to the wise of these days\nlet it be said that of all who give gifts\nthese two were the wisest.\nOf all who give and receive gifts, such as they are wisest.\nEverywhere they are wisest.\nThey are the magi."
+   ],
+   "para": "The narrator ends by talking about the <b>magi</b> — the wise men who brought the first Christmas gifts. Their gifts were wise ones. And these two \"foolish children\" gave up the greatest treasures they had, for each other — hair for a watch that is sold, a chain for hair that is gone. Foolish? The narrator says the opposite: <b>of all who give gifts, these two were the wisest. They are the magi.</b>",
+   "gloss": [
+    [
+     "manger",
+     "a food box for animals, used as a bed"
+    ],
+    [
+     "duplication",
+     "two of the same thing"
+    ],
+    [
+     "chronicle",
+     "a record of events"
+    ],
+    [
+     "sacrificed",
+     "gave up something precious"
+    ]
+   ]
+  }
+ ],
+ "swaps": {
+  "bulldozing": "bullying",
+  "imputation": "accusation",
+  "parsimony": "stinginess",
+  "shabby": "worn",
+  "howl": "wail",
+  "instigates": "begins",
+  "predominating": "dominating",
+  "subsiding": "settling",
+  "vestibule": "hallway",
+  "mortal": "human",
+  "coax": "persuade",
+  "prosperity": "wealth",
+  "mendicancy": "begging",
+  "sterling": "genuine",
+  "agile": "nimble",
+  "brilliantly": "radiantly",
+  "slender": "slim",
+  "depreciate": "belittle",
+  "cascade": "waterfall",
+  "faltered": "hesitated",
+  "garment": "covering",
+  "fluttered": "darted",
+  "panting": "gasping",
+  "chilly": "cold",
+  "practised": "expert",
+  "ransacking": "scouring",
+  "chaste": "plain",
+  "meretricious": "flashy",
+  "ornamentation": "decoration",
+  "intoxication": "elation",
+  "prudence": "caution",
+  "ravages": "damage",
+  "mammoth": "enormous",
+  "immovable": "motionless",
+  "disapproval": "displeasure",
+  "sentiments": "feelings",
+  "peculiar": "strange",
+  "laboriously": "slowly",
+  "patent": "obvious",
+  "idiocy": "foolishness",
+  "trance": "daze",
+  "enfolded": "embraced",
+  "discreet": "tactful",
+  "scrutiny": "examination",
+  "nimble": "quick",
+  "ecstatic": "rapturous",
+  "worshipped": "adored",
+  "craved": "coveted",
+  "yearned": "longed",
+  "tresses": "locks",
+  "coveted": "craved",
+  "ardent": "passionate",
+  "tumbled": "flopped",
+  "chronicle": "record",
+  "duplication": "repetition",
+  "sacrificed": "surrendered"
+ }
+}

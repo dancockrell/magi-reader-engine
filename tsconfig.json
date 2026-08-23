@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* Type-checking plain JavaScript rather than converting to .ts.
+       The checks that catch real breakage — a renamed export, a
+       property that no longer exists, an argument that changed shape —
+       all work on JS with JSDoc, and nothing has to be rewritten to get
+       them. If this ever becomes a TypeScript codebase, this file is
+       already most of the way there. */
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["vitest/globals"],
+
+    "strict": false,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedIndexedAccess": false,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": false
+  },
+  "include": ["src/**/*.js", "src/**/*.jsx", "tools/**/*.mjs", "*.config.js"],
+  "exclude": ["node_modules", "dist", "src/books"]
+}

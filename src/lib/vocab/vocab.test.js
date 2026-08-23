@@ -1,0 +1,195 @@
+import { describe, it, expect, beforeAll } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { inlineGlosses } from '../book/validate.js';
+import { lineFor, blankWord, markWord, wordRe } from './text.js';
+import {
+  kindsFor,
+  pickKind,
+  buildQuestion,
+  oddSet,
+  swapFor,
+  distractorsFor,
+  selfBetraying,
+  shuffle,
+} from './kinds.js';
+
+/**
+ * The interesting tests here are not the unit ones — they are the sweep
+ * at the bottom, which builds every kind of question for every real word
+ * in the book and asserts the invariants that make a question answerable.
+ * Toy fixtures cannot find "craved/coveted have two right answers"; the
+ * real word list can.
+ */
+
+let book;
+let ctx;
+let items;
+
+beforeAll(() => {
+  book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
+  const seen = new Map();
+  for (const u of book.units) {
+    const entries = (u.gloss || []).map((e) => ({ w: e[0], d: e[1] }));
+    for (const sz of u.stanzas || []) entries.push(...inlineGlosses(sz));
+    for (const e of entries) {
+      const k = e.w.toLowerCase();
+      if (!seen.has(k)) seen.set(k, { w: e.w, d: e.d, unit: u.id, hits: 0, asked: 1 });
+    }
+  }
+  items = [...seen.values()];
+  ctx = { book, swaps: book.swaps, all: items };
+});
+
+/* deterministic rng so a failure can be reproduced */
+const seeded = (seed) => () => {
+  seed = (seed * 1664525 + 1013904223) % 4294967296;
+  return seed / 4294967296;
+};
+
+describe('finding a word in its line', () => {
+  it('matches on a word boundary, not inside another word', () => {
+    expect(wordRe('mark').test('The flat was unremarkable.')).toBe(false);
+    expect(wordRe('mark').test('A mark on the wall.')).toBe(true);
+  });
+
+  it('blanks every occurrence, not just the first', () => {
+    const out = blankWord('a coax and another coax', 'coax');
+    expect(out).toBe('a ______ and another ______');
+  });
+
+  it('returns null rather than the plain line when the word is absent', () => {
+    expect(blankWord('nothing here', 'coax')).toBeNull();
+    expect(markWord('nothing here', 'coax')).toBeNull();
+  });
+
+  it('finds a real line for every glossed word in the book', () => {
+    const missing = items.filter((i) => !lineFor(book, i)).map((i) => i.w);
+    expect(missing).toEqual([]);
+  });
+});
+
+describe('choosing a kind', () => {
+  it('offers only recognition on a first meeting', () => {
+    const fresh = { ...items[0], asked: 0, hits: 0 };
+    expect(kindsFor(ctx, fresh, items)).toEqual(['recognise']);
+  });
+
+  it('never repeats the previous kind while another is available', () => {
+    const item = items.find((i) => kindsFor(ctx, i, items).length > 1);
+    for (let s = 1; s < 60; s++) {
+      expect(pickKind(ctx, item, items, 'produce', seeded(s))).not.toBe('produce');
+    }
+  });
+
+  it('only offers spelling for a single ordinary word', () => {
+    const multi = items.find((i) => /\s/.test(i.w));
+    if (multi) expect(kindsFor(ctx, multi, items)).not.toContain('spell');
+  });
+
+  it('only offers substitution where a substitute is recorded', () => {
+    for (const i of items) {
+      const has = kindsFor(ctx, i, items).includes('swap');
+      expect(has).toBe(Boolean(swapFor(ctx, i) && lineFor(book, i)));
+    }
+  });
+});
+
+describe('substitution cannot have two right answers', () => {
+  it('never offers a distractor that is itself a valid substitute', () => {
+    const offenders = [];
+    for (const item of items) {
+      if (!swapFor(ctx, item)) continue;
+      for (let s = 1; s < 25; s++) {
+        for (const g of distractorsFor(ctx, item, 'swap', 3, seeded(s))) {
+          const gw = g.w.toLowerCase();
+          if (ctx.swaps[gw] === item.w.toLowerCase()) offenders.push(`${item.w} ← ${g.w}`);
+          if (ctx.swaps[item.w.toLowerCase()] === gw) offenders.push(`${item.w} → ${g.w}`);
+        }
+      }
+    }
+    expect([...new Set(offenders)]).toEqual([]);
+  });
+
+  it('specifically keeps craved and coveted apart', () => {
+    const craved = items.find((i) => i.w.toLowerCase() === 'craved');
+    if (!craved) return;
+    for (let s = 1; s < 40; s++) {
+      const words = distractorsFor(ctx, craved, 'swap', 3, seeded(s)).map((g) =>
+        g.w.toLowerCase()
+      );
+      expect(words).not.toContain('coveted');
+    }
+  });
+});
+
+describe('the sweep — every word, every kind it supports', () => {
+  it('produces an answerable question every time', () => {
+    const problems = [];
+
+    for (const item of items) {
+      const kinds = kindsFor(ctx, item, items).filter((k) => k !== 'match');
+      for (const kind of kinds) {
+        for (let s = 1; s < 6; s++) {
+          const q = buildQuestion(ctx, kind, item, items, seeded(s));
+          const label = `${kind}/${item.w}/seed${s}`;
+
+          if (!q.prompt && kind !== 'match') problems.push(`${label}: empty prompt`);
+
+          if (kind === 'spell') {
+            if (!q.answer) problems.push(`${label}: no answer`);
+          } else {
+            const correct = q.options.filter((o) => o.ok);
+            if (correct.length !== 1)
+              problems.push(`${label}: ${correct.length} correct options`);
+
+            const texts = q.options.map((o) => String(o.t).toLowerCase());
+            if (new Set(texts).size !== texts.length)
+              problems.push(`${label}: duplicate options [${texts}]`);
+
+            if (q.options.some((o) => o.t == null || o.t === ''))
+              problems.push(`${label}: blank option`);
+          }
+
+          if (selfBetraying(q)) problems.push(`${label}: prompt contains the answer`);
+        }
+      }
+    }
+
+    expect(problems.slice(0, 25)).toEqual([]);
+  });
+
+  it('builds a matching round that pairs up exactly', () => {
+    for (let s = 1; s < 20; s++) {
+      const q = buildQuestion(ctx, 'match', items[0], items, seeded(s));
+      expect(q.words).toHaveLength(3);
+      expect(q.meanings).toHaveLength(3);
+      expect(new Set(q.words).size).toBe(3);
+      /* every meaning must belong to exactly one of the words on show */
+      for (const m of q.meanings) expect(q.words).toContain(m.w);
+    }
+  });
+
+  it('offers odd-one-out with a genuine intruder', () => {
+    for (let s = 1; s < 30; s++) {
+      const set = oddSet(ctx, items[0], items, seeded(s));
+      if (!set) continue;
+      const group = new Set(set.same.map((x) => x.unit));
+      expect(set.same).toHaveLength(3);
+      expect(group.has(set.odd.unit)).toBe(
+        set.label === 'act' ? group.has(set.odd.unit) : false
+      );
+    }
+  });
+});
+
+describe('shuffle', () => {
+  it('keeps every element', () => {
+    const a = [1, 2, 3, 4, 5];
+    expect(shuffle(a, seeded(7)).sort()).toEqual(a);
+  });
+  it('does not mutate its input', () => {
+    const a = [1, 2, 3];
+    shuffle(a, seeded(3));
+    expect(a).toEqual([1, 2, 3]);
+  });
+});

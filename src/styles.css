@@ -1,0 +1,210 @@
+﻿:root {
+  --parch: #e9dfc9;
+  --parch-dim: #b9ad94;
+  --parch-faint: #938977;
+  --amber: #d9a04a;
+  --amber-hot: #f0c073;
+  --moon: #8fa9be;
+  --sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --serif: 'Iowan Old Style', Georgia, serif;
+  color-scheme: dark;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #0b0a09;
+  color: var(--parch);
+  font-family: var(--serif);
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+main {
+  width: 100%;
+  max-width: 900px;
+}
+.q-head {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  opacity: 0.75;
+}
+.v-prompt {
+  text-align: center;
+  color: #f2e6cf;
+  font-size: 28px;
+  line-height: 1.26;
+  max-width: 32ch;
+  margin: 18px auto 4px;
+  font-weight: 400;
+  text-wrap: balance;
+}
+.v-prompt.produce,
+.v-prompt.truefalse,
+.v-prompt.odd {
+  font-family: var(--sans);
+  font-size: 20px;
+}
+.v-prompt.context,
+.v-prompt.spell,
+.v-prompt.swap {
+  font-style: italic;
+  font-size: 22px;
+  max-width: 44ch;
+}
+.v-sub {
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  opacity: 0.7;
+  margin: 0 0 16px;
+}
+.v-opts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+@media (min-width: 640px) {
+  .v-opts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #3a332d;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.028);
+  color: var(--parch);
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.34;
+  cursor: pointer;
+}
+.opt:hover:not(:disabled) {
+  border-color: var(--amber);
+  background: rgba(217, 160, 74, 0.09);
+}
+.opt.correct {
+  border-color: #5f8a5c;
+  background: rgba(95, 138, 92, 0.16);
+}
+.opt.wrong {
+  border-color: #8a4a4a;
+  background: rgba(138, 74, 74, 0.14);
+}
+.opt:disabled {
+  cursor: default;
+}
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--amber-hot);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px rgba(8, 6, 5, 0.85);
+}
+.btn {
+  font-family: var(--sans);
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 12px 20px;
+  border: 1px solid #4a4038;
+  background: #1c1815;
+  color: var(--parch);
+  cursor: pointer;
+  min-height: 44px;
+}
+.btn.primary {
+  background: linear-gradient(180deg, #5a3f1c, #3a2810);
+  border-color: var(--amber);
+}
+.v-next {
+  display: block;
+  margin: 16px auto 0;
+}
+.v-spell {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.sp-in {
+  flex: 1 1 220px;
+  max-width: 320px;
+  min-height: 48px;
+  background: #14120f;
+  border: 1px solid #4a4132;
+  border-radius: 10px;
+  color: var(--parch);
+  padding: 10px 14px;
+  font-family: var(--serif);
+  font-size: 19px;
+  text-align: center;
+}
+.sp-in.right {
+  border-color: #5f8a5c;
+}
+.sp-in.wrong {
+  border-color: #8a4a4a;
+}
+.sp-hint {
+  flex-basis: 100%;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 13px;
+  color: var(--parch-faint);
+  margin: 8px 0 0;
+}
+.v-fb {
+  margin-top: 16px;
+  font-family: var(--sans);
+  font-size: 14.5px;
+  color: var(--parch-dim);
+  border-left: 2px solid #5f8a5c;
+  padding-left: 12px;
+}
+.v-fb p {
+  margin: 0 0 4px;
+}
+.v-swap {
+  color: var(--parch-faint);
+}
+.v-line {
+  font-family: var(--serif);
+  font-style: italic;
+  line-height: 1.5;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #302a24;
+}
+.v-line b {
+  color: var(--amber-hot);
+  font-style: normal;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.done {
+  text-align: center;
+}
