@@ -74,6 +74,14 @@ async function servePage(gameUrl) {
 test.describe('running the way itch runs it', () => {
   test('loads and reads inside a cross-origin iframe', async ({ page }, testInfo) => {
     test.skip(testInfo.project.name !== 'desktop', 'checked once; not engine-specific');
+    /* This one stands up two more HTTP servers and loads the whole
+       built game inside a frame, alongside six workers already sharing
+       the dev server. Its own wait for the first paint is twenty
+       seconds, which does not fit inside the default thirty with the
+       servers to start as well — so it timed out under load and passed
+       on its own, twice. That is the worst kind of red: it teaches
+       people to re-run rather than to look. */
+    test.setTimeout(90_000);
 
     const prefix = '/html/1891234/';
     const game = await serveDist(prefix, 'dist');

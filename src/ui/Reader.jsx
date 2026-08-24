@@ -62,6 +62,7 @@ function openPopover() {
  * @param {string} [props.lang]
  * @param {boolean} [props.muted]
  * @param {number} [props.rate]
+ * @param {import('react').ReactNode} [props.handIn]  shown at the end
  */
 export default function Reader({
   book,
@@ -79,6 +80,7 @@ export default function Reader({
   lang = '',
   muted = false,
   rate = 1,
+  handIn = null,
 }) {
   const track = useMemo(() => trackFor(book, pass), [book, pass]);
   const segments = useMemo(() => segmentsOf(track, book), [track, book]);
@@ -278,7 +280,9 @@ export default function Reader({
         />
       )}
 
-      {stop.kind === 'end' && <Finish pass={pass} quiz={quiz} writing={writing} />}
+      {stop.kind === 'end' && (
+        <Finish pass={pass} quiz={quiz} writing={writing} handIn={handIn} />
+      )}
 
       {/* One row, laid out the way a player is: jump, step, play, step,
           jump. It was two rows for a while, and the second one made the

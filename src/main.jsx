@@ -28,7 +28,14 @@ import {
   snapshotWriting,
 } from './lib/reader/attempt.js';
 
+import { buildSubmission } from './lib/reader/assessment.js';
+import { loadStudent, saveStudent, forgetStudent } from './lib/class/student.js';
+import { loadApi } from './lib/class/key.js';
+import { loadOutbox, saveOutbox, queue, flush } from './lib/class/outbox.js';
+import { senderFor } from './lib/class/send.js';
+
 import Shell from './ui/Shell.jsx';
+import HandIn from './ui/HandIn.jsx';
 import Gate from './ui/Gate.jsx';
 import Reader from './ui/Reader.jsx';
 import VocabCard from './ui/VocabCard.jsx';
@@ -153,6 +160,54 @@ function ReadingRoute() {
     rememberWhere(BOOK_ID, { pass: passNo, at: safe, of: track.length });
   }, [passNo, safe, track.length]);
 
+  /* ---- handing it in ---- */
+  const [student, setStudent] = useState(() => loadStudent());
+  const [handedIn, setHandedIn] = useState(() => new Set());
+  const api = loadApi();
+
+  /**
+   * Write it down, then send it.
+   *
+   * In that order, always. Everything after the first step is best
+   * effort: if the send fails the work is already in the outbox and
+   * goes next time, and the student is not told, because there is
+   * nothing they could do about it and the likely response is to hand
+   * in again.
+   */
+  const onHandIn = useCallback(
+    async (setStep) => {
+      const payload = buildSubmission({ book, pass: passNo, student, quiz, writing });
+      if (!payload) return;
+
+      const pending = queue(loadOutbox(BOOK_ID), payload);
+      saveOutbox(BOOK_ID, pending);
+      setStep?.(2);
+
+      const { items } = await flush(pending, senderFor(api));
+      saveOutbox(BOOK_ID, items);
+      setHandedIn((s) => new Set(s).add(passNo));
+    },
+    [passNo, student, quiz, writing, api]
+  );
+
+  const handIn = (
+    <HandIn
+      pass={passNo}
+      student={student}
+      hasClass={!!api}
+      alreadyIn={handedIn.has(passNo)}
+      onSignIn={(s) => {
+        saveStudent(s);
+        setStudent(s);
+      }}
+      onSignOut={() => {
+        forgetStudent();
+        setStudent(null);
+      }}
+      onHandIn={onHandIn}
+    />
+  );
+
   if (safe !== wanted || String(passNo) !== pass) {
     return <Navigate to={`/read/${passNo}/${safe}`} replace />;
   }
@@ -174,6 +229,7 @@ function ReadingRoute() {
       lang={translator ? translator.lang : ''}
       muted={!settings.sound}
       rate={settings.pace}
+      handIn={handIn}
     />
   );
 }

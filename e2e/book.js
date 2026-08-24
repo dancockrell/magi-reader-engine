@@ -30,3 +30,23 @@ export const atIn = (pass, n) => `${n} of ${trackFor(book, pass).length}`;
 
 /** The segment readout, as the reader prints it. */
 export const segment = (n) => `Segment ${n} of ${SEGMENTS}`;
+
+/**
+ * Type into a React-controlled field, keystroke by keystroke.
+ *
+ * `fill()` sets the value and fires one input event, and in Firefox that
+ * does not reach React's change tracking: the box shows the text while
+ * the state behind it stays empty. It cost a whole spec twice — once on
+ * the writing card, once on the sign-in form — so it lives here now.
+ * A student types, so the test types.
+ *
+ * @param {import('@playwright/test').Locator} field
+ * @param {string} text
+ */
+export async function typeInto(field, text) {
+  await field.click();
+  await field.press('ControlOrMeta+a');
+  await field.press('Delete');
+  await field.pressSequentially(text);
+  return field;
+}

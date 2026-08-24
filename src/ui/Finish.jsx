@@ -19,8 +19,9 @@ import { writingReport } from '../lib/reader/assessment.js';
  * @param {number} props.pass
  * @param {object|null} [props.quiz]
  * @param {object|null} [props.writing]
+ * @param {import('react').ReactNode} [props.handIn]
  */
-export default function Finish({ pass, quiz = null, writing = null }) {
+export default function Finish({ pass, quiz = null, writing = null, handIn = null }) {
   const score = pass === 2 && quiz ? quizScore(quiz) : null;
   const written = pass === 3 && writing ? writingReport(writing) : null;
   const answered = written ? written.filter((r) => r.answer.trim()).length : 0;
@@ -59,6 +60,10 @@ export default function Finish({ pass, quiz = null, writing = null }) {
         </p>
       )}
 
+      {/* Before the doors, because handing in is the thing to do here
+          and "Start reading 3" is not. */}
+      {pass > 1 ? <div className="finish-in">{handIn}</div> : null}
+
       <p className="finish-next">
         {pass < 3
           ? 'Reading ' + (pass + 1) + ' asks you for something different.'
@@ -78,12 +83,6 @@ export default function Finish({ pass, quiz = null, writing = null }) {
           Back to the start
         </Link>
       </div>
-
-      {pass > 1 && (
-        <p className="finish-note">
-          Handing this to your teacher is not built yet — your answers are saved on this device.
-        </p>
-      )}
     </section>
   );
 }

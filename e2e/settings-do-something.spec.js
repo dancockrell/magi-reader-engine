@@ -221,14 +221,17 @@ test.describe('a reading ends rather than running out', () => {
     expect(text.toLowerCase()).toContain('teacher');
   });
 
-  test('does not claim the work was handed in', async ({ page }) => {
-    /* it cannot be, yet — telling a student it was is the worst
-       version of this screen */
+  test('does not claim the work was handed in when there is nowhere to send it', async ({
+    page,
+  }) => {
+    /* Telling a student their work went to their teacher when it did
+       not is the worst version of this screen. With no class set up on
+       the device there is nowhere for it to go, and it says so. */
     await page.goto('/#/read/2/999999');
     await page.locator('.finish').waitFor();
     const text = (await page.locator('.finish').innerText()).toLowerCase();
     expect(text).not.toMatch(/\b(handed in|submitted|sent to your teacher)\b/);
-    expect(text).toContain('not built yet');
+    expect(text).toContain('stays here');
   });
 });
 
