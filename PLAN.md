@@ -79,27 +79,41 @@ The split:
 
 ### Repositories
 
-The GitHub side does not match this yet, and it should. **Raven Reader**
-is the engine; a book is its own repository built on it.
+**Done on 2026-08-25.** This work now lives at
+`github.com/dancockrell/raven-reader`, public, with all 25 commits and
+all 9 tags. Until that push it existed on exactly one disk.
 
-Names are lowercase and hyphenated so they group when sorted, and every
-description says what the thing is and who it is for in one line —
-these have to be findable a year from now by someone who has forgotten
-what they were called.
+Two naming rules, and they are about being found rather than being tidy:
 
-| now               | should be                | description                                                                                                                                                                     |
-| ----------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `raven-classroom` | `raven-reader`           | Raven Reader — an illustrated reading engine for language classrooms. Narrated storyboard, comprehension and writing passes, vocabulary trainer, and a Google Sheets gradebook. |
-| `magi-reader`     | `raven-reader-magi`      | The Gift of the Magi, built with Raven Reader. O. Henry's 1905 story as an illustrated, narrated reading with classroom assessment.                                             |
-| —                 | `raven-reader-poe-raven` | The Raven, built with Raven Reader. Poe's 1845 poem as an illustrated, narrated reading with classroom assessment.                                                              |
+**Spell things out.** No abbreviations, no initials. Someone searching
+for this has the full title in their head, not our shorthand — and a
+stranger reading the repository list has to be able to tell what each one
+is without opening it.
 
-`raven-classroom`'s description currently claims it is the engine behind
-The Long Night. It is not — `longnight` is a canvas RPG and has nothing
-to do with this. That line is the one to fix first, because a wrong
-description is worse than a missing one.
+**A book title alone is not findable.** Every book here will be a
+classic, so `the-gift-of-the-magi` competes with a century of results.
+The title _plus_ `raven-reader` is the phrase that reaches us, so both
+go in the name and both go in the description.
 
-Not urgent, but not optional: it gets harder to move the moment anything
-outside this machine points at a repository name.
+| repository                          | what it is                                     |
+| ----------------------------------- | ---------------------------------------------- |
+| `raven-reader`                      | the engine, and today also the first book pack |
+| `the-gift-of-the-magi-raven-reader` | the book, once the pack is split out           |
+| `the-raven-raven-reader`            | Poe, when it exists                            |
+
+Two older repositories are history rather than products now, and their
+descriptions say so:
+
+- `magi-reader` — build-snapshot history of the single-file prototype.
+  Worth keeping: it is the provenance of `legacy/index.html`.
+- `raven-classroom` — the classroom toolkit that grew into this: the
+  Apps Script backend, the QR check-in page, the marking console, the
+  asset generators. Its description used to claim it was the engine
+  behind The Long Night, which it never was.
+
+Still to do: split the book pack out into its own repository, and decide
+whether `raven-classroom` is archived or mined for the pieces this
+build does not have yet — the QR check-in page and the voice generators.
 
 ### A pack should load in parts
 
