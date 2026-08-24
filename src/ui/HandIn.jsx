@@ -29,6 +29,8 @@ import { label as studentLabel } from '../lib/class/student.js';
  * @param {(s:any)=>void} props.onSignIn
  * @param {()=>void} props.onSignOut
  * @param {(step:(n:number)=>void)=>Promise<void>} props.onHandIn
+ * @param {()=>void} [props.onSaveFile]  the offline path: a file the
+ *     teacher can collect, for a room with no Sheet in it
  * @param {boolean} [props.alreadyIn]
  */
 export default function HandIn({
@@ -38,6 +40,7 @@ export default function HandIn({
   onSignIn,
   onSignOut,
   onHandIn,
+  onSaveFile,
   alreadyIn = false,
 }) {
   const [state, setState] = useState(
@@ -55,11 +58,44 @@ export default function HandIn({
     };
   }, []);
 
+  /* Asked for first, whichever way the work is going out: a file with
+     no name on it is no use to a teacher collecting thirty of them, and
+     the offline path used to produce exactly that. */
+  const askWho = (
+    <div className="handin-who">
+      <SignIn
+        student={student}
+        onSignIn={(s) => {
+          onSignIn(s);
+          setState('idle');
+        }}
+        onCancel={student ? () => setState('idle') : undefined}
+      />
+    </div>
+  );
+
+  if (state === 'signing') return askWho;
+
   if (!hasClass) {
+    /* No Sheet to send to. The work is not lost and it is not stranded
+       either: it saves to a file the teacher can collect, which is the
+       whole offline path. Saying only "your work stays here" left a
+       student holding something they could not hand over. */
     return (
-      <p className="handin-note">
-        <T>No class is set up on this device, so your work stays here.</T>
-      </p>
+      <div className="handin">
+        <p className="handin-note">
+          <T>No class is set up on this device, so your work stays here.</T>
+        </p>
+        {onSaveFile ? (
+          <button
+            type="button"
+            className="btn"
+            onClick={() => (student ? onSaveFile() : setState('signing'))}
+          >
+            <T>Save my work to a file</T>
+          </button>
+        ) : null}
+      </div>
     );
   }
 
@@ -89,20 +125,7 @@ export default function HandIn({
     );
   }
 
-  if (state === 'signing' || !student) {
-    return (
-      <div className="handin-who">
-        <SignIn
-          student={student}
-          onSignIn={(s) => {
-            onSignIn(s);
-            setState('idle');
-          }}
-          onCancel={student ? () => setState('idle') : undefined}
-        />
-      </div>
-    );
-  }
+  if (!student) return askWho;
 
   return (
     <div className="handin">

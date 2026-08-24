@@ -828,6 +828,45 @@ a:focus-visible,
   outline-offset: 2px;
 }
 
+/* The collected work. Scrolls inside itself so a class of thirty does
+   not push the rest of the panel off the screen. */
+.sheetwrap {
+  overflow: auto;
+  max-height: 24rem;
+  border: 1px solid #3a332d;
+  border-radius: 8px;
+}
+.sheet {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 13px;
+}
+.sheet th,
+.sheet td {
+  text-align: left;
+  padding: 7px 10px;
+  border-bottom: 1px solid #2b2520;
+  white-space: nowrap;
+}
+.sheet thead th {
+  position: sticky;
+  top: 0;
+  background: #17130f;
+  color: var(--amber);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.sheet tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+.sheet .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
 .klass-said {
   position: sticky;
   bottom: 8px;

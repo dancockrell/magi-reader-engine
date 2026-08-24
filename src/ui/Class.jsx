@@ -17,6 +17,7 @@ import { loadOutbox, saveOutbox, waiting, flush } from '../lib/class/outbox.js';
 import { senderFor } from '../lib/class/send.js';
 import { KEY as STUDENT_KEY } from '../lib/class/student.js';
 import SheetSetup from './SheetSetup.jsx';
+import Gradebook from './Gradebook.jsx';
 
 /**
  * The teacher's side.
@@ -45,8 +46,8 @@ function hereUrl() {
   }
 }
 
-/** @param {{bookId: string}} props the book whose class this is */
-export default function Class({ bookId }) {
+/** @param {{bookId:string, bookTitle:string}} props the book whose class this is */
+export default function Class({ bookId, bookTitle }) {
   const id = useId();
   const [owner, setOwner] = useState(() => loadOwner());
   const [api, setApi] = useState(() => loadApi());
@@ -245,6 +246,8 @@ export default function Class({ bookId }) {
       </section>
 
       <SheetSetup />
+
+      <Gradebook bookId={bookId} bookTitle={bookTitle} />
 
       {link ? (
         <section className="card">

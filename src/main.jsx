@@ -192,11 +192,32 @@ function ReadingRoute() {
     [passNo, student, quiz, writing, api]
   );
 
+  /* The offline path: a file the teacher collects by hand. Named so it
+     can be found in a Downloads folder with thirty others in it. */
+  const onSaveFile = useCallback(() => {
+    const payload = buildSubmission({ book, pass: passNo, student, quiz, writing });
+    if (!payload) return;
+    const who = [student?.cls, student?.no, student?.name].filter(Boolean).join(' ') || 'work';
+    const name = `${who} — reading ${passNo}.json`.replace(/[\\/:*?"<>|]/g, '-');
+
+    const url = URL.createObjectURL(
+      new Blob([JSON.stringify(payload, null, 1)], { type: 'application/json' })
+    );
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 30_000);
+  }, [passNo, student, quiz, writing]);
+
   const handIn = (
     <HandIn
       pass={passNo}
       student={student}
       hasClass={!!api}
+      onSaveFile={onSaveFile}
       alreadyIn={handedIn.has(passNo)}
       onSignIn={(s) => {
         saveStudent(s);
@@ -326,7 +347,10 @@ const router = createHashRouter([
       { path: 'read/:pass/:beat', element: <ReadingRoute /> },
       { path: 'read/:pass', element: <Navigate to="/read/1/0" replace /> },
       { path: 'practise', element: <PractiseRoute /> },
-      { path: 'class', element: <Class bookId={BOOK_ID} /> },
+      {
+        path: 'class',
+        element: <Class bookId={BOOK_ID} bookTitle={book.meta.title} />,
+      },
       { path: 'guide', element: <NotYet what="Learning guide" phase={6} /> },
       { path: '*', element: <Navigate to="/" replace /> },
     ],
