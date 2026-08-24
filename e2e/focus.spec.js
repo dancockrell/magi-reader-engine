@@ -38,6 +38,23 @@ async function openVocabulary(page) {
      clicking through the gate — shell.spec covers the door itself. */
   await page.goto('/#/practise');
   await page.locator('.opt').first().waitFor();
+
+  /* Ask for the window, and then check we got it.
+   *
+   * Everything below depends on the page really holding focus, and four
+   * engines running at six workers are all competing for it — this file
+   * flaked once in a full run and passed alone, which is the shape of
+   * that competition. bringToFront asks; the poll makes the wait for it
+   * explicit rather than hoping. If it never arrives the failure says
+   * "the window never got focus" instead of "no control has a focus
+   * ring", which is the wrong report this whole file exists to stop. */
+  await page.bringToFront();
+  await expect
+    .poll(() => page.evaluate(() => document.hasFocus()), {
+      timeout: 10_000,
+      message: 'the window never got focus, so :focus would match nothing',
+    })
+    .toBe(true);
 }
 
 test.describe('keyboard focus is visible', () => {
