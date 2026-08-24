@@ -79,41 +79,54 @@ The split:
 
 ### Repositories
 
-**Done on 2026-08-25.** This work now lives at
-`github.com/dancockrell/raven-reader`, public, with all 25 commits and
-all 9 tags. Until that push it existed on exactly one disk.
+Three things, three repositories. Settled 2026-08-25.
 
-Two naming rules, and they are about being found rather than being tidy:
+| repository                                                                                                              | what it is |
+| ----------------------------------------------------------------------------------------------------------------------- | ---------- |
+| [`raven-reader`](https://github.com/dancockrell/raven-reader)                                                           | the engine |
+| [`the-gift-of-the-magi-o-henry-raven-reader`](https://github.com/dancockrell/the-gift-of-the-magi-o-henry-raven-reader) | the book   |
+| [`the-raven-edgar-allan-poe-raven-reader`](https://github.com/dancockrell/the-raven-edgar-allan-poe-raven-reader)       | the book   |
 
-**Spell things out.** No abbreviations, no initials. Someone searching
-for this has the full title in their head, not our shorthand — and a
-stranger reading the repository list has to be able to tell what each one
-is without opening it.
+**The naming rule: full title, author, then the engine.**
 
-**A book title alone is not findable.** Every book here will be a
-classic, so `the-gift-of-the-magi` competes with a century of results.
-The title _plus_ `raven-reader` is the phrase that reaches us, so both
-go in the name and both go in the description.
+Three reasons, and the third is the one that decided it. Spelled out,
+because someone searching has the whole title in their head and not our
+shorthand. With the author, because a classic title alone competes with
+a century of results — "The Raven Edgar Allan Poe" reaches us and
+"the-raven" does not. And with the author _especially_ here, because the
+engine is named after Poe's poem: `the-raven-raven-reader` reads like a
+stutter, and the author is what pulls the book and the software apart.
 
-| repository                          | what it is                                     |
-| ----------------------------------- | ---------------------------------------------- |
-| `raven-reader`                      | the engine, and today also the first book pack |
-| `the-gift-of-the-magi-raven-reader` | the book, once the pack is split out           |
-| `the-raven-raven-reader`            | Poe, when it exists                            |
+So, in prose and in commits: **never a bare "Raven."** It is either _The
+Raven_, the poem, or Raven Reader, the engine.
 
-Two older repositories are history rather than products now, and their
-descriptions say so:
+Two older repositories are history, and their descriptions say so:
+`magi-reader` (archived — the prototype's build snapshots, now also the
+`prototype` branch here) and `raven-classroom` (the toolkit this grew
+out of; still holds the QR check-in page and the voice generators, which
+have not been ported).
 
-- `magi-reader` — build-snapshot history of the single-file prototype.
-  Worth keeping: it is the provenance of `legacy/index.html`.
-- `raven-classroom` — the classroom toolkit that grew into this: the
-  Apps Script backend, the QR check-in page, the marking console, the
-  asset generators. Its description used to claim it was the engine
-  behind The Long Night, which it never was.
+### Splitting the Magi pack out
 
-Still to do: split the book pack out into its own repository, and decide
-whether `raven-classroom` is archived or mined for the pieces this
-build does not have yet — the QR check-in page and the voice generators.
+The Raven was easy: it existed only in `raven-classroom`, so giving it a
+repository _removed_ a copy. Magi is not, and doing it carelessly would
+recreate the duplication that started this.
+
+`src/books/magi/` is loaded directly by ten test files and by the app
+itself. Before it can move:
+
+1. The engine needs a **fixture book** of its own — small, synthetic, and
+   enough to test the reading, the questions and the gradebook against.
+   Most of those ten files should be using it anyway; several are testing
+   engine behaviour and only happen to use a real book to do it.
+2. The engine needs a **bring-your-own-pack contract**: a documented way
+   to point a build at a pack that is not in the repository. A workspace,
+   a submodule, or a copy step — decided when the first two are done.
+3. Only then does `src/books/magi/` move out, and
+   `the-gift-of-the-magi-o-henry-raven-reader` becomes real.
+
+Until then the engine repository carries the Magi pack, and that is a
+known, written-down exception rather than an accident.
 
 ### A pack should load in parts
 
