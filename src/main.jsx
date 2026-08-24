@@ -36,6 +36,7 @@ import { senderFor } from './lib/class/send.js';
 
 import Shell from './ui/Shell.jsx';
 import HandIn from './ui/HandIn.jsx';
+import Class from './ui/Class.jsx';
 import Gate from './ui/Gate.jsx';
 import Reader from './ui/Reader.jsx';
 import VocabCard from './ui/VocabCard.jsx';
@@ -324,7 +325,7 @@ const router = createHashRouter([
       { path: 'read/:pass/:beat', element: <ReadingRoute /> },
       { path: 'read/:pass', element: <Navigate to="/read/1/0" replace /> },
       { path: 'practise', element: <PractiseRoute /> },
-      { path: 'class', element: <NotYet what="Class" phase={5} /> },
+      { path: 'class', element: <Class bookId={BOOK_ID} /> },
       { path: 'guide', element: <NotYet what="Learning guide" phase={6} /> },
       { path: '*', element: <Navigate to="/" replace /> },
     ],

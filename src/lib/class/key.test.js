@@ -12,6 +12,8 @@ import {
   loadApi,
   saveApi,
   isTeacher,
+  joinCode,
+  readJoin,
 } from './key.js';
 
 const GOOD_API =
@@ -210,6 +212,44 @@ describe('the key the teacher writes down', () => {
   it('gives nothing for an owner that was never minted', () => {
     expect(classKey(null)).toBe('');
     expect(classKey({ cls: '1-A' })).toBe('');
+  });
+});
+
+describe('the link the class gets', () => {
+  it('points a device at the Sheet', () => {
+    const back = readJoin(joinCode(GOOD_API, '1-A'));
+    expect(back).toEqual({ api: GOOD_API, cls: '1-A' });
+  });
+
+  it('carries no identity at all', () => {
+    /* The prototype handed students the class key, so the link a
+       teacher writes on the board was also the thing that makes you the
+       teacher. Anyone who kept it could open the gradebook. */
+    const owner = mintOwner('1-A');
+    const code = joinCode(GOOD_API, '1-A');
+    expect(code).not.toContain(owner.id);
+    expect(readClassKey(code), 'a join code was accepted as a class key').toBeNull();
+    expect(Object.keys(readJoin(code))).toEqual(['api', 'cls']);
+  });
+
+  it('is not made at all without a real deployment to point at', () => {
+    expect(joinCode('https://evil.example/collect', '1-A')).toBe('');
+    expect(joinCode('', '1-A')).toBe('');
+  });
+
+  it('refuses one that was tampered with', () => {
+    expect(readJoin(toB32('J1|../../evil|1-A'))).toBeNull();
+    expect(readJoin(toB32('J1||1-A'))).toBeNull();
+    expect(readJoin(toB32('1|abc|dep|1-A')), 'a class key was read as a join code').toBeNull();
+    for (const bad of ['', 'nonsense!!', toB32('J2|x|y')]) expect(readJoin(bad)).toBeNull();
+  });
+
+  it('survives being retyped, like everything else a person copies', () => {
+    const code = joinCode(GOOD_API, '1-A');
+    expect(readJoin(' ' + code.toLowerCase().replace(/(.{4})/g, '$1 ') + ' ')).toEqual({
+      api: GOOD_API,
+      cls: '1-A',
+    });
   });
 });
 

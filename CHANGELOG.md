@@ -10,6 +10,78 @@ was live on itch.
 Releases are built with `npm run release`, which refuses to produce a zip
 itch would reject and names the artifact from the version here.
 
+## 0.7.0
+
+A class can be run on this. A teacher sets one up, hands out a link, and
+students' work arrives in their Sheet.
+
+Everything rests on one idea, carried over from the prototype: **the
+teacher is whoever set the class up**, because nobody else was there. So
+there is nothing to log in to and no password to lose. Setting a class up
+mints a key on that device, and that key — written down once — is what
+makes any other device the teacher's too.
+
+Two things are better than the prototype, both found by testing what a
+person actually does rather than what the code does:
+
+- **The class key is transcribable.** It was base64url, which is
+  case-sensitive, and the whole promise of a key is "write it down, type
+  it in on the other machine". A teacher who wrote `RAVEN-aB3x` and typed
+  `raven-ab3x` was told it is not a class key, with no hint why — a
+  silent failure on the one path the key exists for. Crockford base32
+  now: no I, L, O or U, case does not matter, and an `l` reads as a `1`.
+  It is also a third shorter, 217 characters down to 169.
+- **The link the class gets is not the key.** A join code points a device
+  at a Sheet and carries no identity at all. In the prototype students
+  were handed the class key, so the link written on the board was also
+  the thing that makes you the teacher: anyone who kept it could open the
+  gradebook on their own machine. Losing a join code now costs a class
+  the privacy of where their work is sent; it cannot cost them the
+  gradebook.
+
+**Handing in**, with three promises that came out of a classroom rather
+than out of the code, each of them a test:
+
+- **A student sees it being sent** — a bar and the word "Sending",
+  because that is what they will understand and wait for. The bar moves
+  on real steps, not on a timer pretending to be progress.
+- **A student is never told it failed.** They cannot do anything about
+  it, will not understand it, and the likely response is to hand in again
+  and again. The work goes in the outbox before anything is sent, and the
+  retry is ours, quietly. A test drops the network and reads the whole
+  screen looking for _fail, error, could not, try again, offline,
+  problem_.
+- **A student is never told it went somewhere it did not.** No class on
+  the device means the work stays there, and it says so, rather than
+  showing a Hand in button that does nothing.
+
+Smaller, and all of it load-bearing:
+
+- Four fields cleaned at the door, because it is much cheaper than
+  cleaning thirty rows of gradebook afterwards. `07` stays `07` — a
+  spreadsheet that drops the zero has renamed a child. Invisible
+  characters go. `asdf` is refused; 김민수, สมชาย and Николай are not. Every
+  problem points at its own box.
+- The outbox is keyed by student, reading and book, so pressing the
+  button twice replaces rather than making a teacher reconcile two rows.
+  It sends one at a time, because thirty tablets on one access point is
+  what made the network bad in the first place.
+- `text/plain` on the wire, on purpose: a JSON content type makes the
+  browser send a CORS preflight, Apps Script does not answer one, and the
+  request fails before it is made on every device every time.
+- Resetting a device destroys the class on it — key, Sheet link and
+  waiting work together — and needs the word DELETE typed. Somebody who
+  resets their way in arrives in an empty room, which is the point.
+
+Two things the tests taught about the tests: `fill()` does not reach
+React's change tracking in Firefox, which has now cost a spec twice, so
+the typing helper lives in the shared fixture; and Firefox over BiDi does
+not expose a request body at all, so the payload assertions read the
+outbox instead — the same bytes, before the wire, and now checked in four
+engines rather than two.
+
+384 unit + 569 e2e across four engines, 27 skipped by device.
+
 ## 0.6.0
 
 **The React build is now the product.** The single-file HTML app is

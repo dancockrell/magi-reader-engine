@@ -210,14 +210,28 @@ the app, and can look up any word the book chose to gloss.
 The logic is already written and tested in `src/lib/gradebook/`. What is
 missing is the shell.
 
-- Student sign-in, class link, QR
-- Teacher panel behind the class-key model
-- Gradebook, the grading workbook, the outbox
+- ✅ Student sign-in, class link
+- ✅ Teacher panel behind the class-key model
+- ✅ The outbox
+- Gradebook and the grading workbook
 - The Apps Script backend, served from the book package
+- QR for the class link
 
 **Done when** a teacher can set up a class, a student can hand work in,
 and the workbook opens with the marks feeding the grade table — the
 walkthrough done by hand earlier, now automated.
+
+Two things are better than the prototype and are worth keeping when the
+rest lands:
+
+- **The class key is transcribable.** Crockford base32 rather than
+  base64url: case does not matter, no I/L/O/U, and an `l` reads as a `1`.
+  The whole promise is "write it down, type it in on the other machine",
+  and base64url failed that silently.
+- **The link the class gets is not the key.** A join code points a device
+  at a Sheet and carries no identity at all. In the prototype the link a
+  teacher writes on the board was also the thing that makes you the
+  teacher — anyone who kept it could open the gradebook.
 
 ---
 

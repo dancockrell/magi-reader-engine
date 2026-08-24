@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Overlay from './Overlay.jsx';
 import { UiLanguage, T } from './useUi.jsx';
+import { readJoin, saveApi } from '../lib/class/key.js';
 import { load, save, documentState, PACES } from '../lib/settings.js';
 import book from '../books/magi/book.json';
 
@@ -49,10 +50,38 @@ function useSettings() {
   return { settings, set, couldNotSave };
 }
 
+/**
+ * A link the teacher handed out points this device at their Sheet.
+ *
+ * Applied once and then taken out of the URL, so that a student who
+ * bookmarks the reading does not carry the join code around with them,
+ * and so a reload does not keep re-applying it.
+ *
+ * It can only ever set where work is sent — a join code carries no
+ * identity, so no link can make anybody the teacher.
+ */
+function useJoinLink() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const code = new URLSearchParams(location.search).get('join');
+    if (!code) return;
+
+    const read = readJoin(code);
+    if (read?.api) saveApi(read.api);
+
+    const rest = new URLSearchParams(location.search);
+    rest.delete('join');
+    navigate({ pathname: location.pathname, search: rest.toString() }, { replace: true });
+  }, [location.search, location.pathname, navigate]);
+}
+
 export default function Shell() {
   const { settings, set, couldNotSave } = useSettings();
   const [panel, setPanel] = useState(/** @type {null|'settings'|'language'} */ (null));
   const location = useLocation();
+  useJoinLink();
 
   /* A route change closes any panel: leaving a screen with a modal still
      open is how the legacy reader ended up with a guide that would not

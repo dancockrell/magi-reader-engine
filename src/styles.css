@@ -687,6 +687,125 @@ a:focus-visible,
   color: var(--parch-faint);
 }
 
+/* ================= the teacher's side ================= */
+.klass {
+  text-align: left;
+  padding-bottom: 24px;
+}
+.klass h1 {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-family: var(--serif);
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0 0 6px;
+}
+.klass-which {
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.klass-lead {
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--parch-dim);
+  max-width: 62ch;
+  margin: 0 0 18px;
+}
+.card {
+  border: 1px solid #3a332d;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.028);
+  padding: 16px 18px;
+  margin: 0 0 14px;
+  display: grid;
+  gap: 10px;
+}
+.card h2 {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 600;
+}
+.card.danger {
+  border-color: #5a3b38;
+}
+.card.danger h2 {
+  color: #d79b95;
+}
+.klass-note {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--parch-dim);
+  max-width: 62ch;
+}
+.klass-note.ok {
+  color: #9fc79b;
+}
+.klass-note b {
+  color: var(--parch);
+}
+/* The key and the link: monospace, selectable, and allowed to wrap
+   anywhere, because they are long strings a person copies. */
+.keybox {
+  display: block;
+  font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: var(--amber-hot);
+  background: #100d0a;
+  border: 1px solid #4a4038;
+  border-radius: 8px;
+  padding: 12px 14px;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+.keybox.small {
+  font-size: 12px;
+  letter-spacing: 0;
+  color: var(--parch-dim);
+}
+.klass .row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn.danger {
+  border-color: #7a4b46;
+  color: #e8b4ae;
+}
+.btn.danger:hover:not(:disabled) {
+  border-color: #a4655f;
+  background: rgba(164, 101, 95, 0.12);
+}
+/* Pinned to the bottom of the window rather than to the end of a long
+   page: a teacher who connects the Sheet at the top should not have to
+   scroll to find out whether it worked. */
+.klass-said {
+  position: sticky;
+  bottom: 8px;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  margin: 0;
+  padding: 12px 14px;
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--parch);
+  background: #17130f;
+  border: 1px solid var(--amber);
+  border-radius: 10px;
+}
+
 /* ================= the storyboard ================= */
 .storyboard .overlay-inner {
   max-width: 720px;

@@ -247,6 +247,57 @@ export function readClassKey(code) {
 }
 
 /* ------------------------------------------------------------------
+   the link the class gets, which is NOT the key
+   ------------------------------------------------------------------ */
+
+/**
+ * What a student opens.
+ *
+ * It carries where the work goes and what the class is called, and
+ * deliberately no identity at all. The prototype handed students the
+ * class key, which meant the link a teacher writes on the board — or
+ * pins in a chat, or a student forwards — was also the thing that makes
+ * you the teacher. Anyone who kept the link could open the gradebook on
+ * their own machine.
+ *
+ * So a join code points a device at a Sheet and nothing more. Losing one
+ * costs a class the privacy of where their work is sent; it cannot cost
+ * them the gradebook.
+ *
+ * @param {string} apiUrl
+ * @param {string} [cls]
+ */
+export function joinCode(apiUrl, cls = '') {
+  const m = API_RE.test(apiUrl)
+    ? /^https:\/\/script\.google\.com\/macros\/s\/([^/]+)\/exec$/.exec(apiUrl)
+    : null;
+  if (!m) return '';
+  return toB32(['J1', m[1], cls || ''].join('|'));
+}
+
+/**
+ * @param {string} code
+ * @returns {{api:string, cls:string}|null}
+ */
+export function readJoin(code) {
+  const raw = String(code || '')
+    .trim()
+    .replace(/\s+/g, '')
+    .replace(/-/g, '');
+  if (!raw) return null;
+
+  const txt = fromB32(raw);
+  if (!txt) return null;
+
+  const parts = txt.split('|');
+  if (parts.length < 3 || parts[0] !== 'J1' || !parts[1]) return null;
+
+  const api = `https://script.google.com/macros/s/${parts[1]}/exec`;
+  if (!safeApi(api)) return null;
+  return { api, cls: parts.slice(2).join('|') };
+}
+
+/* ------------------------------------------------------------------
    where it is kept
    ------------------------------------------------------------------ */
 
