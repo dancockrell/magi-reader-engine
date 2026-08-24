@@ -38,9 +38,11 @@ export default function Scene({
   plate,
   line,
   clip,
-  /* relative, for the same reason the plate paths are — see MEDIA_BASE */
-  audioBase = 'magi-audio/',
-  cuesUrl = 'cues/magi.vtt',
+  /* Where this book's media sits, from the pack. No default: a default
+     here would be one book's folder name living in the engine, which is
+     the whole thing the pack format exists to stop. */
+  audioBase = '',
+  cuesUrl = '',
   translation = null,
   lang = '',
   gloss = {},

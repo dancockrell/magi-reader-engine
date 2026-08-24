@@ -44,7 +44,8 @@ function hereUrl() {
   }
 }
 
-export default function Class({ bookId = 'magi' }) {
+/** @param {{bookId: string}} props the book whose class this is */
+export default function Class({ bookId }) {
   const id = useId();
   const [owner, setOwner] = useState(() => loadOwner());
   const [api, setApi] = useState(() => loadApi());

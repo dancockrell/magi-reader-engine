@@ -56,6 +56,51 @@ So: **routes first**, because that is the change a person actually feels,
 and `<dialog>` for every overlay. Reproduce legacy's _information_, not
 its interaction model, wherever the conventional pattern is clearer.
 
+## One engine, many books
+
+This is a goal, not a description of where we are. A second title should
+be a new folder under `src/books/` and **no change anywhere else** — new
+content, no new code.
+
+That only stays true if something checks, because the cheapest way to
+write any feature is to reach for the book in front of you, and the
+damage is invisible until the day somebody tries to ship a second one.
+So `src/engine.test.js` fails if anything outside `src/books/` names a
+book, or hard-codes where a book keeps its audio or its cues.
+
+The split:
+
+|                                     |                                                                                                             |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `src/lib`, `src/ui`, `src/main.jsx` | the engine. Knows about readings, questions, speech, gradebooks. Knows no titles.                           |
+| `src/books/<id>/book.json`          | what the extractor produces: story, teaching, characters, translations. Portable data, no deployment in it. |
+| `src/books/<id>/index.js`           | the pack: the data plus where its media sits once built.                                                    |
+| `src/books/index.js`                | the registry, and the only place a title is named.                                                          |
+
+### Repositories
+
+The GitHub side does not match this yet, and it should. **Raven Reader**
+is the engine; a book is its own repository built on it.
+
+Names are lowercase and hyphenated so they group when sorted, and every
+description says what the thing is and who it is for in one line —
+these have to be findable a year from now by someone who has forgotten
+what they were called.
+
+| now               | should be                | description                                                                                                                                                                     |
+| ----------------- | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `raven-classroom` | `raven-reader`           | Raven Reader — an illustrated reading engine for language classrooms. Narrated storyboard, comprehension and writing passes, vocabulary trainer, and a Google Sheets gradebook. |
+| `magi-reader`     | `raven-reader-magi`      | The Gift of the Magi, built with Raven Reader. O. Henry's 1905 story as an illustrated, narrated reading with classroom assessment.                                             |
+| —                 | `raven-reader-poe-raven` | The Raven, built with Raven Reader. Poe's 1845 poem as an illustrated, narrated reading with classroom assessment.                                                              |
+
+`raven-classroom`'s description currently claims it is the engine behind
+The Long Night. It is not — `longnight` is a canvas RPG and has nothing
+to do with this. That line is the one to fix first, because a wrong
+description is worse than a missing one.
+
+Not urgent, but not optional: it gets harder to move the moment anything
+outside this machine points at a repository name.
+
 ## Phases
 
 Each phase ends green: `npm run verify:full` passes, a version is tagged,

@@ -51,9 +51,19 @@ export default defineConfig({
   /* Four engines at twelve workers each starved a cold dev server that
      had just started serving 27 MB of art and audio, and WebKit timed
      out waiting for the first paint. The tests were fine; the machine
-     was not. Six workers keeps the suite under ten seconds without the
-     false failures. */
-  workers: process.env.CI ? 2 : 6,
+     was not.
+
+     Six was better and still not enough. At ~600 tests the suite began
+     producing a different failure every full run and passing on every
+     re-run: the itch test timing out, the focus test losing the window,
+     and finally `browserType.launch: Timeout 180000ms exceeded` with a
+     GFX compositor error — Firefox failing to start at all because
+     nothing was left to start it with. None of those were the app.
+
+     Four costs about a minute of wall clock and buys a suite whose red
+     means something. A flaky suite is worse than a slow one: it teaches
+     everyone to press the button again instead of reading it. */
+  workers: process.env.CI ? 2 : 4,
 
   /* Assertions get longer than the 5s default.
    *

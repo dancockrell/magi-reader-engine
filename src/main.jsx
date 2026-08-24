@@ -10,7 +10,7 @@ import {
   useParams,
 } from 'react-router-dom';
 
-import book from './books/magi/book.json';
+import { defaultBook as book } from './books/index.js';
 import { inlineGlosses } from './lib/book/validate.js';
 import { lineFor } from './lib/vocab/text.js';
 import { createSession, advance, answer, progressOf } from './lib/vocab/session.js';
@@ -68,7 +68,8 @@ function wordsOf(b) {
 /* The teacher's rules would come from the class settings; until phase 5
    wires that up, the reader's own default is the kind one. */
 const RULES = { retry: true };
-const BOOK_ID = book.meta?.id || 'magi';
+/* The book names itself. Nothing in the engine knows what it is called. */
+const BOOK_ID = book.meta.id;
 
 /**
  * One reading.

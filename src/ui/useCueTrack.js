@@ -46,17 +46,19 @@ export function resetCues() {
 
 /**
  * @param {import('react').RefObject<HTMLAudioElement>} audioRef
- * @param {string|null} clip           which recording, e.g. "n_s1_0"
- * @param {string} [cuesUrl]
+ * @param {string|null} clip   which recording, e.g. "n_s1_0"
+ * @param {string} cuesUrl     the book's cue file — no default, because
+ *                             a default would be one book's filename
+ *                             sitting in the engine
  */
-export function useCueTrack(audioRef, clip, cuesUrl = 'cues/magi.vtt') {
+export function useCueTrack(audioRef, clip, cuesUrl) {
   const [words, setWords] = useState([]);
   const [index, setIndex] = useState(-1);
   const wordsRef = useRef([]);
 
   useEffect(() => {
     let cancelled = false;
-    if (!clip) {
+    if (!clip || !cuesUrl) {
       wordsRef.current = [];
       setWords([]);
       setIndex(-1);

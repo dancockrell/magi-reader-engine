@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import book from '../books/magi/book.json';
+import { defaultBook as book } from '../books/index.js';
 import Preshow from './Preshow.jsx';
 import { preshowRun } from '../lib/speech/script.js';
 import { throughOf } from '../lib/reader/resume.js';

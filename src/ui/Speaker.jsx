@@ -35,8 +35,9 @@ import SpokenText from './SpokenText.jsx';
 export default function Speaker({
   turn,
   who,
-  audioBase = 'magi-audio/',
-  cuesUrl = 'cues/magi.vtt',
+  /* from the pack — see Scene */
+  audioBase = '',
+  cuesUrl = '',
   translation = null,
   lang = '',
   gloss = {},

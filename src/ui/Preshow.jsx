@@ -14,6 +14,7 @@ import {
   wasHeard,
 } from '../lib/speech/queue.js';
 import { loadHeard, saveHeard } from '../lib/speech/heard.js';
+import { mediaOf } from '../books/index.js';
 
 /**
  * Wren, at the door.
@@ -72,6 +73,8 @@ export default function Preshow({ book, talkKey, turns, title = 'Before we start
               key={turn.clip || p.at}
               turn={turn}
               who={speaker(book, turn.who)}
+              audioBase={mediaOf(book).audio}
+              cuesUrl={mediaOf(book).cues}
               playing={playing}
               onEnded={() => {
                 /* She reads herself to the end of the queue and stops

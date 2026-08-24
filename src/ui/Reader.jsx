@@ -16,6 +16,7 @@ import {
 import { current, quizScore } from '../lib/reader/assessment.js';
 import { speaker } from '../lib/speech/script.js';
 import { glossOf } from '../lib/reader/beats.js';
+import { mediaOf } from '../books/index.js';
 import { T } from './useUi.jsx';
 
 /**
@@ -84,6 +85,9 @@ export default function Reader({
 }) {
   const track = useMemo(() => trackFor(book, pass), [book, pass]);
   const segments = useMemo(() => segmentsOf(track, book), [track, book]);
+  /* The book says where its own recordings are. The engine does not
+     know the name of a single one of them. */
+  const media = useMemo(() => mediaOf(book), [book]);
   /* Built once per book: the words each unit explains, so a stop that is
      not a line — a question, a conversation — can still offer them. */
   const glossByUnit = useMemo(() => {
@@ -205,6 +209,8 @@ export default function Reader({
           lang={lang}
           gloss={stop.gloss}
           wordIn={wordIn}
+          audioBase={media.audio}
+          cuesUrl={media.cues}
           playing={playing}
           muted={muted}
           rate={rate}
@@ -243,6 +249,8 @@ export default function Reader({
              explains are the words worth tapping while they do. */
           gloss={glossFor(stop.unit)}
           wordIn={wordIn}
+          audioBase={media.audio}
+          cuesUrl={media.cues}
           playing={playing}
           muted={muted}
           rate={rate}

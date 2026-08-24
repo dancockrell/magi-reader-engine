@@ -4,7 +4,7 @@ import Overlay from './Overlay.jsx';
 import { UiLanguage, T } from './useUi.jsx';
 import { readJoin, saveApi } from '../lib/class/key.js';
 import { load, save, documentState, PACES } from '../lib/settings.js';
-import book from '../books/magi/book.json';
+import { defaultBook as book } from '../books/index.js';
 
 /**
  * The frame every screen sits in.

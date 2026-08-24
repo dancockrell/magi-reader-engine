@@ -88,6 +88,11 @@
  * @property {Unit[]} units
  * @property {Record<string,string>} [swaps]
  * @property {Record<string,string>} [plates]
+ * @property {{audio?:string, cues?:string}} [media]  where this book's
+ *     recordings and cue file sit once built. Part of the pack rather
+ *     than of the extracted data: it depends on how the assets are laid
+ *     out, not on anything the author wrote. Relative, always — itch
+ *     serves from a nested path and a leading slash 404s everything.
  * @property {Record<string,any>} [teaching]   questions and prompts, by unit
  * @property {Record<string,any>} [info]       material that is not read aloud
  * @property {Record<string,any>} [recaps]
