@@ -25,7 +25,11 @@ const start = open.index + open[0].length;
 const end = src.indexOf('</script>', start);
 if (end < 0) throw new Error('the backend block is never closed');
 
-let code = src.slice(start, end).replace(/^\r?\n/, '').replace(/\s+$/, '') + '\n';
+let code =
+  src
+    .slice(start, end)
+    .replace(/^\r?\n/, '')
+    .replace(/\s+$/, '') + '\n';
 
 /**
  * One deliberate edit, and it is a rename.
