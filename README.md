@@ -97,6 +97,15 @@ were all hand-rolled versions of something the platform already had.
 attacked at length, and the fixes in it were paid for. So it is not
 something to preserve — it is a target to pass and then beat.
 
+It is still here, twice over. `legacy/index.html` is its final state,
+1.68 MB of hand-written HTML, never edited and guarded by a test that
+fails if its shape changes. And the
+[`prototype`](../../tree/prototype) branch carries how it got there —
+ten build snapshots, from the first 2.9 MB itch upload through the
+21 MB fully-inlined build to the day the assets were pulled back out.
+The last commit on that branch and `legacy/index.html` on `main` are the
+same file, byte for byte.
+
 Every defect found by attacking the original is an executable test here,
 written before the equivalent was rebuilt:
 
