@@ -16,7 +16,12 @@
     "resolveJsonModule": true,
     "jsx": "react-jsx",
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "types": ["vitest/globals"],
+    /* `types` is a whitelist: naming one package stops every other
+       @types being picked up automatically. vite/client is what
+       declares `?raw` and the other import suffixes, and without it
+       importing the Apps Script backend as text is an unresolved
+       module. */
+    "types": ["vitest/globals", "vite/client"],
 
     "strict": false,
     "noImplicitAny": false,

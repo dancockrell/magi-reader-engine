@@ -26,6 +26,7 @@
     "release": "npm run verify:full && npm run build:legacy && node tools/release.mjs",
     "book:cues": "node tools/timings-to-vtt.mjs",
     "book:extract": "node tools/extract-book.mjs",
+    "backend:extract": "node tools/extract-backend.mjs",
     "book:check": "node tools/check-book.mjs",
     "sweep": "node tools/sweep-report.mjs",
     "verify": "npm run format:check && npm run lint && npm run typecheck && npm run book:check && npm run sweep && npm run test",

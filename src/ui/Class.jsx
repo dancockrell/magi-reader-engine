@@ -16,6 +16,7 @@ import {
 import { loadOutbox, saveOutbox, waiting, flush } from '../lib/class/outbox.js';
 import { senderFor } from '../lib/class/send.js';
 import { KEY as STUDENT_KEY } from '../lib/class/student.js';
+import SheetSetup from './SheetSetup.jsx';
 
 /**
  * The teacher's side.
@@ -242,6 +243,8 @@ export default function Class({ bookId }) {
           Connect
         </button>
       </section>
+
+      <SheetSetup />
 
       {link ? (
         <section className="card">

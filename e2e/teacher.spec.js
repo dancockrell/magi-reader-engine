@@ -122,6 +122,65 @@ test.describe('connecting the Sheet', () => {
   });
 });
 
+test.describe('making a Sheet to send it to', () => {
+  test.beforeEach(async ({ page }) => setUpClass(page));
+
+  test('the panel tells you how, rather than asking for a link you cannot make', async ({
+    page,
+  }) => {
+    /* the script lived only inside the prototype's HTML, so the React
+       build asked for a deployment link with no way to produce one */
+    await page.getByRole('button', { name: 'Show me how' }).click();
+
+    const steps = page.locator('.steps li');
+    expect(await steps.count()).toBeGreaterThanOrEqual(5);
+    await expect(page.locator('.klass')).toContainText('Extensions → Apps Script');
+    await expect(page.locator('.klass')).toContainText('Execute as: Me');
+    await expect(page.locator('.klass')).toContainText('Who has access: Anyone');
+  });
+
+  test('warns about the warning, because that is where people stop', async ({ page }) => {
+    await page.getByRole('button', { name: 'Show me how' }).click();
+    await expect(page.locator('.klass')).toContainText('unverified app');
+    await expect(page.locator('.klass')).toContainText('Advanced');
+  });
+
+  test('shows the whole script, and it is the real one', async ({ page }) => {
+    await page.getByRole('button', { name: 'Show me how' }).click();
+
+    const code = await page.locator('pre.backend').innerText();
+    expect(code).toContain('function doPost');
+    expect(code).toContain('function doGet');
+    expect(code.split('\n').length).toBeGreaterThan(300);
+    expect(code, 'the retired working name is still in it').not.toContain(
+      'Raven classroom backend'
+    );
+  });
+
+  test('the script can be read from the keyboard', async ({ page }, testInfo) => {
+    test.skip(
+      ['tablet', 'phone'].includes(testInfo.project.name),
+      'touch profile: no keyboard to press'
+    );
+    /* it scrolls inside itself, and a box that scrolls has to be
+       reachable or somebody who cannot use a mouse cannot read the
+       script they are being asked to trust */
+    await page.getByRole('button', { name: 'Show me how' }).click();
+    const box = page.locator('pre.backend');
+    await box.focus();
+    await expect(box).toBeFocused();
+    expect(await box.evaluate((el) => el.scrollHeight > el.clientHeight)).toBe(true);
+  });
+
+  test('is out of the way until it is wanted', async ({ page }) => {
+    await expect(page.locator('pre.backend')).toHaveCount(0);
+    await page.getByRole('button', { name: 'Show me how' }).click();
+    await expect(page.locator('pre.backend')).toBeVisible();
+    await page.getByRole('button', { name: 'Hide the steps' }).click();
+    await expect(page.locator('pre.backend')).toHaveCount(0);
+  });
+});
+
 test.describe('the link the class gets', () => {
   test('is not the class key, and cannot be used as one', async ({ page, context }) => {
     await setUpClass(page);

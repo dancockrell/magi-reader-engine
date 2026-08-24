@@ -791,6 +791,43 @@ a:focus-visible,
 /* Pinned to the bottom of the window rather than to the end of a long
    page: a teacher who connects the Sheet at the top should not have to
    scroll to find out whether it worked. */
+.steps {
+  margin: 0;
+  padding-left: 1.4em;
+  display: grid;
+  gap: 6px;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--parch-dim);
+  max-width: 62ch;
+}
+.steps b {
+  color: var(--amber-hot);
+  font-weight: 600;
+}
+/* Scrolls inside itself. Three hundred lines of Apps Script must not
+   turn the panel into a page a teacher has to scroll past to reach the
+   reset button. */
+.backend {
+  margin: 0;
+  max-height: 22rem;
+  overflow: auto;
+  font-family: ui-monospace, 'Cascadia Mono', 'SF Mono', Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--parch-dim);
+  background: #100d0a;
+  border: 1px solid #4a4038;
+  border-radius: 8px;
+  padding: 12px 14px;
+  tab-size: 2;
+}
+.backend:focus-visible {
+  outline: 2px solid var(--amber-hot);
+  outline-offset: 2px;
+}
+
 .klass-said {
   position: sticky;
   bottom: 8px;

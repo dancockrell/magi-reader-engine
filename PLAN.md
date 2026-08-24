@@ -101,6 +101,18 @@ description is worse than a missing one.
 Not urgent, but not optional: it gets harder to move the moment anything
 outside this machine points at a repository name.
 
+### A pack should load in parts
+
+`book.json` is 1 MB, and about 600 KB of that is the four translations —
+every line of the story, everything Wren and the Professor say, and the
+interface, in Korean, Japanese, Thai and Spanish. A reader in English
+downloads all of it and uses none of it.
+
+Splitting the translations into a chunk that loads when a language is
+chosen would more than halve the first load. Worth doing before a second
+book, because two 1 MB packs in one bundle is the point where it stops
+being a detail. Not a correctness problem today.
+
 ## Phases
 
 Each phase ends green: `npm run verify:full` passes, a version is tagged,
@@ -258,9 +270,10 @@ missing is the shell.
 - ✅ Student sign-in, class link
 - ✅ Teacher panel behind the class-key model
 - ✅ The outbox
+- ✅ The Apps Script backend, served from the app itself
 - Gradebook and the grading workbook
-- The Apps Script backend, served from the book package
 - QR for the class link
+- Roster check at sign-in (`ROSTER`, `SIGNIN.lookup` in the prototype)
 
 **Done when** a teacher can set up a class, a student can hand work in,
 and the workbook opens with the marks feeding the grade table — the
