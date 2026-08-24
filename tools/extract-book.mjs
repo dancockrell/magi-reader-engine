@@ -73,19 +73,91 @@ const outPath = process.argv[3] || resolve(process.cwd(), 'src/books/magi/book.j
 
 const src = readFileSync(htmlPath, 'utf8');
 
+/**
+ * A literal that a book may legitimately not have.
+ *
+ * Found by pointing this at a second book. The Raven has no `SWAPS` —
+ * it was built before the vocabulary trainer existed — and the
+ * extractor stopped dead rather than saying so. A book without
+ * vocabulary swaps is a book; a book without text is not. So the text
+ * stays required and everything else reports what is missing and
+ * carries on.
+ */
+function optionalLiteral(source, declaration, open, close, fallback) {
+  try {
+    const text = literalAfter(source, declaration, open, close);
+    return { value: Function(`"use strict"; return (${text});`)(), found: true };
+  } catch {
+    return { value: fallback, found: false };
+  }
+}
+
+/**
+ * Everything later pushed onto an array that was already declared.
+ *
+ * Found by pointing this at a second book. The Raven declares four
+ * units in its literal, closes the array, and then adds the other eight
+ * with `TEXT_UNITS.push(...)` further down the file. Reading only the
+ * literal got a third of the poem and reported nothing wrong — the
+ * worst kind of extraction failure, because the result looks like a
+ * book.
+ *
+ * So: gather the pushes too, in the order they appear.
+ */
+function pushedOnto(source, name) {
+  const re = new RegExp(`\\b${name}\\s*\\.\\s*push\\s*\\(`, 'g');
+  const out = [];
+  let m;
+
+  while ((m = re.exec(source))) {
+    const open = m.index + m[0].length - 1;
+    let depth = 0;
+    let i = open;
+    let inStr = null;
+    let escaped = false;
+
+    for (; i < source.length; i++) {
+      const ch = source[i];
+      if (inStr) {
+        if (escaped) escaped = false;
+        else if (ch === '\\') escaped = true;
+        else if (ch === inStr) inStr = null;
+        continue;
+      }
+      if (ch === '"' || ch === "'" || ch === '`') inStr = ch;
+      else if (ch === '(') depth++;
+      else if (ch === ')') {
+        depth--;
+        if (depth === 0) break;
+      }
+    }
+    /* the arguments, as an array literal */
+    const args = source.slice(open + 1, i);
+    out.push(...Function(`"use strict"; return ([${args}]);`)());
+  }
+  return out;
+}
+
 /* TEXT_UNITS is the data. UNITS is a derived view of it
-   (BOOK.order.map(...)), so extracting UNITS gets a function body. */
+   (BOOK.order.map(...)), so extracting UNITS gets a function body.
+   Required: this is the story. */
 const unitsLiteral = literalAfter(src, 'var TEXT_UNITS', '[', ']');
-const swapsLiteral = literalAfter(src, 'var SWAPS', '{', '}');
+const declaredUnits = Function(`"use strict"; return (${unitsLiteral});`)();
+const pushedUnits = pushedOnto(src, 'TEXT_UNITS');
+const units = [...declaredUnits, ...pushedUnits];
+
+const swapsPart = optionalLiteral(src, 'var SWAPS', '{', '}', {});
 /* The art is content-addressed: files are named by hash, not by scene,
    so the scene-to-file map has to travel with the book or the pictures
    simply do not resolve. */
-const platesLiteral = literalAfter(src, 'var PLATES', '{', '}');
+const platesPart = optionalLiteral(src, 'var PLATES', '{', '}', {});
 
-/* Plain data literals, evaluated with nothing in scope. */
-const units = Function(`"use strict"; return (${unitsLiteral});`)();
-const swaps = Function(`"use strict"; return (${swapsLiteral});`)();
-const plates = Function(`"use strict"; return (${platesLiteral});`)();
+const swaps = swapsPart.value;
+const plates = platesPart.value;
+const missingParts = [
+  ...(swapsPart.found ? [] : ['swaps']),
+  ...(platesPart.found ? [] : ['plates']),
+];
 
 /**
  * Everything else the book is made of, still welded into the HTML.
@@ -181,6 +253,14 @@ for (const key of Object.keys(CONTENT)) {
       : 'NOT A LITERAL';
   console.log(`${(key + ':').padEnd(9)}${how}`);
 }
+/* Said out loud rather than left as an empty object in the output. A
+   book without swaps is fine; a book without swaps *because the
+   extractor could not find them* is not, and the two look identical in
+   the JSON. */
+if (missingParts.length) {
+  console.log(`\nthis book has no: ${missingParts.join(', ')}`);
+}
+
 if (notLiteral.length) {
   console.log('\ncould not lift (computed, not declared):');
   for (const n of notLiteral) console.log(`  ${n}`);
