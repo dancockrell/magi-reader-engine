@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useCueTrack } from './useCueTrack.js';
 import { useSpokenLine } from './useSpokenLine.js';
+import SpokenText from './SpokenText.jsx';
 
 /**
  * One person, saying one thing.
@@ -21,6 +22,10 @@ import { useSpokenLine } from './useSpokenLine.js';
  * @param {{id:string, name:string, art?:string, blurb?:string}} props.who
  * @param {string} [props.audioBase]
  * @param {string} [props.cuesUrl]
+ * @param {string|null} [props.translation]  what they said, in the reader's language
+ * @param {string} [props.lang]
+ * @param {Record<string,string>} [props.gloss]
+ * @param {(w:string)=>string|null} [props.wordIn]
  * @param {boolean} [props.playing]
  * @param {boolean} [props.muted]
  * @param {number} [props.rate]
@@ -32,6 +37,10 @@ export default function Speaker({
   who,
   audioBase = 'magi-audio/',
   cuesUrl = 'cues/magi.vtt',
+  translation = null,
+  lang = '',
+  gloss = {},
+  wordIn,
   playing = false,
   muted = false,
   rate = 1,
@@ -85,13 +94,18 @@ export default function Speaker({
 
       <div className="sp-said">
         <p className="sp-name">{who.name}</p>
-        <p className="sp-text" lang="en">
-          {tokens.map((t, i) => (
-            <span key={`${i}-${t}`} className={i === lit ? 'w on' : 'w'}>
-              {t}{' '}
-            </span>
-          ))}
-        </p>
+        <SpokenText
+          tokens={tokens}
+          lit={lit}
+          gloss={gloss}
+          wordIn={wordIn}
+          className="sp-text"
+        />
+        {translation ? (
+          <p className="sp-tr" lang={lang || undefined}>
+            {translation}
+          </p>
+        ) : null}
       </div>
 
       {clip ? (

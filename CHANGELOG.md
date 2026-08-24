@@ -10,6 +10,92 @@ was live on itch.
 Releases are built with `npm run release`, which refuses to produce a zip
 itch would reject and names the artifact from the version here.
 
+## 0.6.0
+
+**The React build is now the product.** The single-file HTML app is
+reference — the place to look up how something was meant to behave, and
+the source the book was extracted from. It is still never edited and
+never reformatted, and the tests that guard its shape stay, because a
+reference that drifts is worth nothing.
+
+This release is the rest of what the book already carried and nothing
+rendered — the same shape of defect as the four dead settings in 0.5.1,
+and the part the audience for this book actually needs.
+
+- **Tap a word for what it means.** 69 words the book explains, written
+  two ways — a list on the unit, and `{word|meaning}` inline in the
+  stanzas — and a reader does not care which. A dotted underline, not
+  something that looks like a control: forty buttons in a sentence would
+  read as a form.
+- **And in your own language.** 64 of the 69 have translations. The five
+  that do not — beggar, pier glass, longitudinal, pluck, hashed — show
+  their English meaning and drop the second line. Named in a test so five
+  does not quietly become thirty.
+- **What Wren and the Professor say, translated.** 413 lines, extracted
+  from the prototype this release. Every spoken line in the book, in all
+  four languages.
+- **The interface in the reader's language.** 129 phrases, under the
+  English rather than instead of it — the words on the buttons are words
+  this student is learning, and a teacher saying "press Vocabulary" out
+  loud has to keep working. An untranslated phrase reads as English,
+  never as a blank.
+
+The pop-up is the platform's `popover`: top layer, light dismiss and
+Escape, none of it written here. Two defects came out of using it, both
+caught by tests written the same hour:
+
+- **A closed popover was covering the page and eating taps.** Declaring
+  `display: grid` on the box overrode the browser's own rule that hides a
+  closed one, so sixty-four invisible boxes sat over everything. On the
+  iPad profile the transport could not be pressed at all. Invisible and
+  clickable is the worst thing a stylesheet can produce, and it took a
+  device profile to find it.
+- **The arrow keys drove the reading behind an open pop-up** — the third
+  version of this defect this project has produced, after the legacy
+  guide and the `<dialog>` one. A popover is not a dialog and does not
+  make the page behind it inert. Asked of the DOM again rather than
+  tracked.
+
+Also: the pace list lived in two places, the panel and the schema, and
+could drift — a stored pace the schema rejects becomes Normal while the
+button stays lit. One list now. And the door labels came out as
+"Vocabulary어휘" on one line, because a flex row makes `display: block` on
+a child mean nothing.
+
+307 unit + 449 e2e across four engines, 27 skipped by device.
+
+## 0.5.1
+
+An audit of what a reader actually hits, rather than of what the tests
+already cover. No console errors and nothing 404s — and seven controls
+that did nothing at all.
+
+Four were settings that saved, persisted, and reached exactly nothing. A
+control that stays ticked across a reload and changes nothing is worse
+than one that is missing, because there is no way for a student to tell.
+
+- **Language.** The book carries four complete translations — every line
+  of every unit in Korean, Japanese, Thai and Spanish — and the panel
+  promises them. Nothing rendered a word of it. For the classes this is
+  built for, that was the feature.
+- **Sound on** never set `muted`. **Pace** never set `playbackRate`.
+  **Reading ruler** applied a class no rule in the stylesheet matched.
+
+And three more:
+
+- **A reading did not end, it ran out.** Twenty-eight questions answered,
+  then a greyed-out Next and nothing else. The ending is now a stop of
+  its own, which also stops the finish card being stacked underneath a
+  question that has not been answered yet. It says plainly that handing
+  the work in is not built, rather than implying the work went somewhere.
+- **The gate's "Carry on" panel** was written, styled, and had never
+  appeared once, because nothing recorded a position and nothing passed
+  one in.
+- **The vocabulary trainer was a room with no door.**
+
+Plus: the background pages are asked about and showed a black rectangle
+where the picture should be.
+
 ## 0.5.0
 
 Wren and Professor Ambrose. They are most of what makes this a reading

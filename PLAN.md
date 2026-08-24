@@ -16,17 +16,26 @@ Neither is finished. The plan is to stop treating them as rivals.
 
 ## The strategy
 
-**Extract the book, harden the legacy app, let the rebuild catch up
-behind a test suite that covers both.**
+**`src/` is the product. `legacy/` is the prototype it was drawn from.**
 
-The multi-book goal does not require a rewrite. It requires the book to
-stop being welded into a 14,000-line HTML file. Once the content lives in
-a validated package, _both_ apps can read it, legacy keeps shipping while
-the rebuild grows, and the tests are written once against the data rather
-than twice against two UIs.
+_Changed at 0.5.1._ The plan up to here was to keep legacy shipping and
+cut over feature by feature when the rebuild won on merit. That is no
+longer the arrangement: the React build is the shipping build, and the
+single-file HTML app is reference — the place to look up how something
+was meant to behave, and the source the book was extracted from.
 
-Cut over when the rebuild is better, feature by feature — never in one
-jump.
+What follows from that:
+
+- **A missing feature is now a missing feature**, not a reason to keep
+  two apps. The list of what legacy has and the rebuild does not is a
+  work queue, and it is finished when the queue is empty.
+- **Legacy is still never edited or reformatted.** It is a reference, and
+  a reference that drifts is worth nothing. The tests that guard its
+  shape stay.
+- **The book package is still the point.** A second title should need
+  new content and no new code.
+
+Ship from `src/`. Read `legacy/` when something is unclear.
 
 ## What React is actually for
 
@@ -179,6 +188,23 @@ there is an alignment, and it is tested against every line in the book.
 
 ---
 
+### Phase 4.5 — The reader's own language
+
+Everything here is data the package already carries and nothing renders.
+That is the same shape of defect as the four dead settings in 0.5.1, and
+it is worth clearing before the class side because it is what the
+audience for this book actually needs.
+
+- Tap a word for what it means — 64 glossed words, listed and inline
+- The same word in the reader's language — 64 entries, ten languages
+- The interface in the reader's language — 129 phrases
+- What Wren and the Professor say, in the reader's language
+
+**Done when** a student who reads no English can find their way around
+the app, and can look up any word the book chose to gloss.
+
+---
+
 ### Phase 5 — Class and teacher
 
 The logic is already written and tested in `src/lib/gradebook/`. What is
@@ -215,8 +241,9 @@ exportable for compliance.
 
 ## Rules for the work
 
-1. **Legacy keeps shipping.** It is not touched except to fix real
-   defects, and never reformatted.
+1. **Legacy is reference, not a product.** Never edited, never
+   reformatted, never shipped from. The tests that guard its shape stay,
+   because a reference that drifts is worth nothing.
 2. **Tests come with the feature**, in the same commit.
 3. **Pure logic in `src/lib`, presentation in `src/ui`.** Anything that
    can be tested without a browser is.

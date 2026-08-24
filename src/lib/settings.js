@@ -12,6 +12,21 @@
 export const KEY = 'raven.settings.v1';
 
 /**
+ * The three speeds the reader offers, and what they are called.
+ *
+ * Here rather than in the panel so the list that is drawn and the list
+ * that is accepted cannot drift apart — a stored pace that the schema
+ * rejects silently becomes Normal, and the button stays lit.
+ *
+ * @type {[number, string][]}
+ */
+export const PACES = [
+  [0.85, 'Slower'],
+  [1, 'Normal'],
+  [1.18, 'Faster'],
+];
+
+/**
  * Each setting declares what it accepts. Anything else is discarded and
  * replaced with the default rather than trusted — a stored value is
  * input, not truth.
@@ -28,7 +43,7 @@ export const SCHEMA = {
   motion: { def: true, ok: (v) => typeof v === 'boolean' },
   sound: { def: true, ok: (v) => typeof v === 'boolean' },
   /* the three the reader actually offers; anything else is not ours */
-  pace: { def: 1, ok: (v) => [0.85, 1, 1.18].includes(v) },
+  pace: { def: 1, ok: (v) => PACES.some(([rate]) => rate === v) },
 
   /* language shown under the English */
   language: { def: '', ok: (v) => typeof v === 'string' && v.length <= 8 },

@@ -42,6 +42,7 @@ import { reactionsFor, talkFor } from '../speech/script.js';
  * @property {string} [line]
  * @property {string|null} [clip]
  * @property {{id:string, src:string|null, alt:string}} [plate]
+ * @property {Record<string,string>} [gloss]  the words this unit explains
  * @property {import('../speech/script.js').Turn} [turn]
  * @property {any} [question]
  * @property {any} [prompt]

@@ -111,6 +111,10 @@ const CONTENT = {
   lineTranslations: ['var TR_LINES', '{'],
   wordTranslations: ['var TR_WORDS', '{'],
   uiTranslations: ['var UI_TR', '{'],
+  /* What Wren and the Professor say, translated. Keyed by the English
+     sentence rather than by a clip id, because a line composed of two
+     recorded parts translates as its parts. */
+  speechTranslations: ['var SP_TR', '{'],
 };
 
 const content = {};

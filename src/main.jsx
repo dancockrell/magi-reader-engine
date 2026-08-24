@@ -169,6 +169,8 @@ function ReadingRoute() {
       writing={passNo === 3 ? writing : null}
       onWrite={onWrite}
       translationFor={translator ? translator.line : undefined}
+      saidIn={translator ? translator.said : undefined}
+      wordIn={translator ? translator.word : undefined}
       lang={translator ? translator.lang : ''}
       muted={!settings.sound}
       rate={settings.pace}

@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { useCueTrack } from './useCueTrack.js';
 import { useSpokenLine } from './useSpokenLine.js';
+import SpokenText from './SpokenText.jsx';
 
 /**
  * The picture window: one image, one line of narration over it.
@@ -26,6 +27,8 @@ import { useSpokenLine } from './useSpokenLine.js';
  * @param {string} [props.cuesUrl]           one WebVTT file for the whole book
  * @param {string|null} [props.translation] the same line, in the reader's language
  * @param {string} [props.lang]             BCP-47 tag for that translation
+ * @param {Record<string,string>} [props.gloss]     the words this unit explains
+ * @param {(w:string)=>string|null} [props.wordIn]  those meanings, translated
  * @param {boolean} [props.playing]
  * @param {boolean} [props.muted]
  * @param {number} [props.rate]
@@ -40,6 +43,8 @@ export default function Scene({
   cuesUrl = 'cues/magi.vtt',
   translation = null,
   lang = '',
+  gloss = {},
+  wordIn,
   playing = false,
   muted = false,
   rate = 1,
@@ -97,13 +102,7 @@ export default function Scene({
       )}
 
       <figcaption className="subs" aria-live="off">
-        <p className="sub-line" lang="en">
-          {tokens.map((t, i) => (
-            <span key={`${i}-${t}`} className={i === litIndex ? 'w on' : 'w'}>
-              {t}{' '}
-            </span>
-          ))}
-        </p>
+        <SpokenText tokens={tokens} lit={litIndex} gloss={gloss} wordIn={wordIn} />
         {translation ? (
           <p className="sub-tr" lang={lang || undefined}>
             {translation}

@@ -1,4 +1,4 @@
-import { plainStanza } from '../book/validate.js';
+import { plainStanza, inlineGlosses } from '../book/validate.js';
 
 /**
  * A unit, cut into the beats the reader actually plays.
@@ -19,6 +19,32 @@ export function linesOf(unit) {
     .flatMap((sz) => plainStanza(String(sz)).split('\n'))
     .map((l) => l.trim())
     .filter(Boolean);
+}
+
+/**
+ * The words this unit glosses, and what they mean.
+ *
+ * The book writes them two ways — a `gloss` list on the unit, and
+ * `{word|meaning}` inline in the stanzas — and a reader does not care
+ * which. Both are the same promise: this word is hard, here is what it
+ * means. Keyed lowercase because that is how a token will be looked up.
+ *
+ * @param {Partial<import('../types.js').Unit>|null|undefined} unit
+ * @returns {Record<string,string>}
+ */
+export function glossOf(unit) {
+  /** @type {Record<string,string>} */
+  const out = {};
+  for (const pair of unit?.gloss || []) {
+    const [w, d] = Array.isArray(pair) ? pair : [];
+    if (w && d) out[String(w).toLowerCase()] = String(d);
+  }
+  for (const sz of unit?.stanzas || []) {
+    for (const { w, d } of inlineGlosses(sz)) {
+      if (w && d) out[String(w).toLowerCase()] = String(d);
+    }
+  }
+  return out;
 }
 
 /* Relative, with no leading slash.
@@ -52,6 +78,11 @@ export function beatsOf(unit, { hasClip, plates = {}, base = MEDIA_BASE } = {}) 
        which describes the picture — far better than "illustration". */
     alt: unit.caption || unit.title || 'Scene illustration',
   };
+  /* Carried on the beat rather than looked up later: the reader has the
+     line and needs to know which of its words can be tapped, and that
+     question should not require the unit as well. */
+  const gloss = glossOf(unit);
+
   return lines.map((line, i) => {
     const clip = `n_${unit.id}_${i}`;
     return {
@@ -60,6 +91,7 @@ export function beatsOf(unit, { hasClip, plates = {}, base = MEDIA_BASE } = {}) 
       line,
       clip: hasClip && !hasClip(clip) ? null : clip,
       plate,
+      gloss,
     };
   });
 }

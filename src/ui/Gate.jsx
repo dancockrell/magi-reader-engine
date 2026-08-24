@@ -4,6 +4,7 @@ import book from '../books/magi/book.json';
 import Preshow from './Preshow.jsx';
 import { preshowRun } from '../lib/speech/script.js';
 import { throughOf } from '../lib/reader/resume.js';
+import { T } from './useUi.jsx';
 
 /**
  * The way in.
@@ -60,7 +61,7 @@ export default function Gate({ resume = null, onForget }) {
             Carry on
           </Link>
           <button type="button" className="btn ghost" onClick={onForget}>
-            Start again
+            <T>Start again</T>
           </button>
         </aside>
       ) : null}
@@ -79,7 +80,9 @@ export default function Gate({ resume = null, onForget }) {
               <span className="num" aria-hidden="true">
                 {r.pass}
               </span>
-              <b>{r.name}</b>
+              <b>
+                <T>{r.name}</T>
+              </b>
               <span className="what">{r.blurb}</span>
             </Link>
           </li>

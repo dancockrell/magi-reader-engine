@@ -15,6 +15,8 @@ import {
 } from '../lib/reader/track.js';
 import { current, quizScore } from '../lib/reader/assessment.js';
 import { speaker } from '../lib/speech/script.js';
+import { glossOf } from '../lib/reader/beats.js';
+import { T } from './useUi.jsx';
 
 /**
  * The reading itself — all three of them.
@@ -28,6 +30,22 @@ import { speaker } from '../lib/speech/script.js';
  */
 
 /**
+ * Is one of the word pop-ups open?
+ *
+ * `:popover-open` is a selector an older engine does not know, and an
+ * unknown selector makes querySelector throw rather than return null —
+ * which would take the whole keydown handler with it. Guarded, so a
+ * browser without popovers keeps its arrow keys.
+ */
+function openPopover() {
+  try {
+    return !!document.querySelector(':popover-open');
+  } catch {
+    return false;
+  }
+}
+
+/**
  * @param {object} props
  * @param {import('../lib/types.js').Book} props.book
  * @param {number} [props.index]                which stop, from the URL
@@ -39,6 +57,8 @@ import { speaker } from '../lib/speech/script.js';
  * @param {object} [props.writing]
  * @param {(text:string)=>void} [props.onWrite]
  * @param {(beat:object)=>string|null} [props.translationFor]
+ * @param {(text:string)=>string|null} [props.saidIn]   speech, translated
+ * @param {(w:string)=>string|null} [props.wordIn]      a glossed word, translated
  * @param {string} [props.lang]
  * @param {boolean} [props.muted]
  * @param {number} [props.rate]
@@ -54,12 +74,23 @@ export default function Reader({
   writing = null,
   onWrite,
   translationFor,
+  saidIn,
+  wordIn,
   lang = '',
   muted = false,
   rate = 1,
 }) {
   const track = useMemo(() => trackFor(book, pass), [book, pass]);
   const segments = useMemo(() => segmentsOf(track, book), [track, book]);
+  /* Built once per book: the words each unit explains, so a stop that is
+     not a line — a question, a conversation — can still offer them. */
+  const glossByUnit = useMemo(() => {
+    /** @type {Record<string, Record<string,string>>} */
+    const out = {};
+    for (const u of book.units || []) out[u.id] = glossOf(u);
+    return out;
+  }, [book]);
+  const glossFor = (unitId) => glossByUnit[unitId] || {};
   const [playing, setPlaying] = useState(false);
   const [board, setBoard] = useState(false);
   /* Bumped to replay the line the reader is already on. Part of the
@@ -126,6 +157,15 @@ export default function Reader({
          ------------------------------------------------------------ */
       if (document.querySelector('dialog[open]')) return;
 
+      /* A pop-up is open: same rule, and it needed saying separately.
+         A popover is not a dialog and does not make the page behind it
+         inert, so tapping a word and pressing the arrow key moved the
+         reading underneath it — the third time this project has shipped
+         a version of this defect, and the second time a test caught it
+         the same afternoon it was written. Asked of the DOM, again,
+         rather than tracked. */
+      if (openPopover()) return;
+
       if (e.key === ' ' && !asking) {
         e.preventDefault();
         setPlaying((p) => !p);
@@ -161,6 +201,8 @@ export default function Reader({
           clip={stop.clip}
           translation={translationFor ? translationFor(stop) : null}
           lang={lang}
+          gloss={stop.gloss}
+          wordIn={wordIn}
           playing={playing}
           muted={muted}
           rate={rate}
@@ -193,6 +235,12 @@ export default function Reader({
           key={`${stop.turn.clip ?? stop.at}#${again}`}
           turn={stop.turn}
           who={speaker(book, stop.turn.who)}
+          translation={saidIn ? saidIn(stop.turn.text) : null}
+          lang={lang}
+          /* They talk about the segment, so the words that segment
+             explains are the words worth tapping while they do. */
+          gloss={glossFor(stop.unit)}
+          wordIn={wordIn}
           playing={playing}
           muted={muted}
           rate={rate}
@@ -264,7 +312,7 @@ export default function Reader({
               onClick={() => setPlaying((p) => !p)}
               aria-pressed={playing}
             >
-              {playing ? 'Pause' : 'Play'}
+              <T>{playing ? 'Pause' : 'Play'}</T>
             </button>
             <button
               type="button"

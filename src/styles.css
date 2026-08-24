@@ -47,6 +47,13 @@ a:focus-visible,
 }
 
 .btn {
+  /* inline-block, not inline: the doors are links, and a link is inline
+     by default, so the translated second line split the inline box
+     instead of starting a new one — "Vocabulary어휘" on one line, while
+     the same markup inside a <button> stacked correctly. */
+  display: inline-block;
+  text-align: center;
+  line-height: 1.2;
   font-family: var(--sans);
   font-size: 14px;
   border-radius: 4px;
@@ -246,6 +253,109 @@ a:focus-visible,
   max-height: 30vh;
 }
 
+/* The interface phrase in the reader's language, under the English.
+   Under, not instead: the words on the buttons are also words this
+   student is learning, and a teacher saying "press Vocabulary" out loud
+   should still work. */
+.ui-tr {
+  display: block;
+  font-size: 0.82em;
+  line-height: 1.25;
+  opacity: 0.72;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* ================= a word you can tap =================
+   Styled as an underline, not as a control: forty buttons in a sentence
+   would read as a form. It is still a button, because it does something
+   when you press it. */
+.gl {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: help;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--amber);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1.5px;
+}
+.gl:hover {
+  color: var(--amber-hot);
+}
+/* The tap target, not the ink: a dotted word on a tablet is about 12px
+   tall, and a finger is not. The button keeps its inline size so the
+   line does not reflow. */
+.gl::after {
+  content: '';
+  position: absolute;
+  inset: -0.55em -0.2em;
+}
+.sub-line .w,
+.sp-text .w {
+  position: relative;
+}
+
+/* The pop-up is the platform's: top layer, light dismiss, Escape.
+ *
+ * `display` is set ONLY in the open state, and that is load-bearing. The
+ * browser hides a closed popover with `display: none` in its own
+ * stylesheet; declaring `display: grid` here overrode it, so all
+ * sixty-four boxes sat invisible over the page eating taps. On the iPad
+ * profile the transport buttons simply could not be pressed. Invisible
+ * and clickable is the worst combination a rule can produce, and it took
+ * a device profile to find it. */
+.glossbox {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  max-width: min(30ch, 86vw);
+  padding: 12px 14px;
+  border: 1px solid #4a4038;
+  border-left: 3px solid var(--amber);
+  border-radius: 4px 12px 12px 4px;
+  background: #17130f;
+  color: var(--parch);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.62);
+  gap: 4px;
+  text-align: left;
+}
+.glossbox:popover-open {
+  display: grid;
+  /* centred rather than anchored: CSS anchor positioning is not in every
+     engine this has to run on yet, and a pop-up that lands off the
+     bottom of a tablet is worse than one in the middle of the screen */
+  inset: 50% auto auto 50%;
+  translate: -50% -50%;
+}
+.glossbox b {
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  font-weight: 600;
+}
+.gl-mean {
+  font-family: var(--serif);
+  font-size: 18px;
+  line-height: 1.35;
+  color: #f2e6cf;
+}
+.gl-tr {
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--moon);
+}
+.glossbox::backdrop {
+  background: rgba(4, 3, 6, 0.45);
+}
+
 /* ================= who is speaking =================
    One person at a time, because a stop has one speaker. There is no
    layout here for two, which is the point — the old dialogue band had
@@ -303,6 +413,18 @@ a:focus-visible,
 }
 .speaker[data-who='prof'] .sp-name {
   color: var(--moon);
+}
+.sp-said .sp-tr {
+  margin: 6px 0 0;
+  font-family: var(--sans);
+  font-size: clamp(13px, 1.4vw, 16px);
+  line-height: 1.45;
+  color: var(--moon);
+  text-align: left;
+  text-shadow: none;
+}
+.speaker[data-who='prof'] .sp-said .sp-tr {
+  color: var(--parch-faint);
 }
 .sp-text {
   margin: 0;
@@ -949,7 +1071,13 @@ a:focus-visible,
   font-size: 13px;
   min-height: 44px;
   display: inline-flex;
+  /* column, so the translated second line sits under the English rather
+     than beside it. A flex row made `display: block` on the span mean
+     nothing at all, and the door read "Vocabulary어휘". */
+  flex-direction: column;
+  gap: 1px;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
 }
 .doors a.active {

@@ -125,6 +125,9 @@
  * @property {string} line
  * @property {string|null} clip
  * @property {{id:string,src:string|null,alt:string}} plate
+ * @property {Record<string,string>} [gloss] the words this unit explains,
+ *                                           carried so a line knows its
+ *                                           own hard words
  */
 
 /**

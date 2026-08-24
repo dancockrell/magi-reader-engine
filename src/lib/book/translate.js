@@ -60,6 +60,23 @@ export function wordTranslation(book, lang, word) {
 }
 
 /**
+ * What Wren or the Professor just said, in the reader's language.
+ *
+ * Keyed by the English sentence rather than by a clip id, because that
+ * is how the book wrote them — a line built from two recordings
+ * translates as its parts.
+ *
+ * @returns {string|null}
+ */
+export function speechTranslation(book, lang, english) {
+  if (!lang || !english) return null;
+  const key = String(english).replace(/\s+/g, ' ').trim();
+  const entry = book?.speechTranslations?.[key];
+  const text = entry && entry[lang];
+  return typeof text === 'string' && text.trim() ? text : null;
+}
+
+/**
  * A phrase of the interface, in the reader's language.
  *
  * Falls back to the English it was given rather than to a blank or to a
@@ -81,7 +98,8 @@ export function uiTranslation(book, lang, english) {
  * condition repeated at every call site.
  *
  * @returns {{lang:string, line:(stop:{unit:string,i?:number})=>string|null,
- *            word:(w:string)=>string|null, ui:(s:string)=>string|null}|null}
+ *            word:(w:string)=>string|null, said:(s:string)=>string|null,
+ *            ui:(s:string)=>string|null}|null}
  */
 export function translatorFor(book, lang, linesPerUnit = {}) {
   if (!hasLanguage(book, lang)) return null;
@@ -92,6 +110,7 @@ export function translatorFor(book, lang, linesPerUnit = {}) {
         ? lineTranslation(book, lang, stop.unit, stop.i, linesPerUnit[stop.unit])
         : null,
     word: (w) => wordTranslation(book, lang, w),
+    said: (s) => speechTranslation(book, lang, s),
     ui: (s) => uiTranslation(book, lang, s),
   };
 }
