@@ -325,6 +325,8 @@ describe('speech in the reading', () => {
   it('leaves reading 1 as one line at a time, plus the talking', () => {
     const t = trackFor(book, 1);
     expect(t.filter((s) => s.kind === 'line')).toHaveLength(244);
-    expect(t).toHaveLength(244 + 15 + 58);
+    /* and one more stop at the end, which is the ending itself */
+    expect(t).toHaveLength(244 + 15 + 58 + 1);
+    expect(t[t.length - 1].kind).toBe('end');
   });
 });

@@ -22,8 +22,11 @@ const track = trackFor(book, 1);
 export const TOTAL = track.length;
 export const SEGMENTS = segmentsOf(track, book).length;
 
-/** The position readout, as the reader prints it. */
+/** The position readout in reading 1, as the reader prints it. */
 export const at = (n) => `${n} of ${TOTAL}`;
+
+/** The same, in whichever reading. */
+export const atIn = (pass, n) => `${n} of ${trackFor(book, pass).length}`;
 
 /** The segment readout, as the reader prints it. */
 export const segment = (n) => `Segment ${n} of ${SEGMENTS}`;

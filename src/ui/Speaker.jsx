@@ -22,6 +22,8 @@ import { useSpokenLine } from './useSpokenLine.js';
  * @param {string} [props.audioBase]
  * @param {string} [props.cuesUrl]
  * @param {boolean} [props.playing]
+ * @param {boolean} [props.muted]
+ * @param {number} [props.rate]
  * @param {()=>void} [props.onEnded]
  * @param {string} [props.className]
  */
@@ -31,6 +33,8 @@ export default function Speaker({
   audioBase = 'magi-audio/',
   cuesUrl = 'cues/magi.vtt',
   playing = false,
+  muted = false,
+  rate = 1,
   onEnded,
   className = '',
 }) {
@@ -40,6 +44,15 @@ export default function Speaker({
   /* The words are the book's, punctuation and all. The cue file is a
      transcript with none — see useSpokenLine. */
   const { tokens, lit } = useSpokenLine(turn?.text, words, index);
+
+  /* See Scene: `muted` is a DOM property React does not reflect, and
+     playbackRate has no attribute at all. */
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el) return;
+    el.muted = muted;
+    el.playbackRate = rate;
+  }, [muted, rate, clip]);
 
   useEffect(() => {
     const el = audioRef.current;

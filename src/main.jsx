@@ -2,9 +2,11 @@ import { StrictMode, useCallback, useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   createHashRouter,
+  Link,
   Navigate,
   RouterProvider,
   useNavigate,
+  useOutletContext,
   useParams,
 } from 'react-router-dom';
 
@@ -13,6 +15,9 @@ import { inlineGlosses } from './lib/book/validate.js';
 import { lineFor } from './lib/vocab/text.js';
 import { createSession, advance, answer, progressOf } from './lib/vocab/session.js';
 import { trackFor, stepTrack } from './lib/reader/track.js';
+import { linesOf } from './lib/reader/beats.js';
+import { translatorFor } from './lib/book/translate.js';
+import { rememberWhere, whereLeftOff, forgetWhere } from './lib/reader/resume.js';
 import { answerQuestion, skipQuestion, write } from './lib/reader/assessment.js';
 import {
   loadAttempt,
@@ -64,12 +69,27 @@ const BOOK_ID = book.meta?.id || 'magi';
  * survive moving between stops, and the position moves through the
  * router. The position itself is never held here: it is the URL.
  */
+/** How many lines each unit has, so a translation that does not line up
+ *  can be refused rather than shown against the wrong sentence. */
+const LINE_COUNTS = Object.fromEntries(book.units.map((u) => [u.id, linesOf(u).length]));
+
 function ReadingRoute() {
   const { pass = '1', beat = '0' } = useParams();
   const navigate = useNavigate();
+  /* The settings live in the shell, and until now they stopped there:
+     language, sound and pace were all saved, all persisted, and none of
+     them reached the reading. */
+  const { settings } =
+    /** @type {{settings: ReturnType<typeof import('./lib/settings.js').defaults>}} */ (
+      useOutletContext()
+    );
 
   const passNo = [1, 2, 3].includes(Number(pass)) ? Number(pass) : 1;
   const track = useMemo(() => trackFor(book, passNo), [passNo]);
+  const translator = useMemo(
+    () => translatorFor(book, settings.language, LINE_COUNTS),
+    [settings.language]
+  );
 
   /* Resumed on the way in rather than started empty, so a tablet that
      slept through break does not cost a student their work. */
@@ -128,6 +148,11 @@ function ReadingRoute() {
     [writing, stop]
   );
 
+  /* Written down as they read, so the gate can offer to carry on. */
+  useEffect(() => {
+    rememberWhere(BOOK_ID, { pass: passNo, at: safe, of: track.length });
+  }, [passNo, safe, track.length]);
+
   if (safe !== wanted || String(passNo) !== pass) {
     return <Navigate to={`/read/${passNo}/${safe}`} replace />;
   }
@@ -143,6 +168,10 @@ function ReadingRoute() {
       onSkip={onSkip}
       writing={passNo === 3 ? writing : null}
       onWrite={onWrite}
+      translationFor={translator ? translator.line : undefined}
+      lang={translator ? translator.lang : ''}
+      muted={!settings.sound}
+      rate={settings.pace}
     />
   );
 }
@@ -156,6 +185,20 @@ function PractiseRoute() {
   const onAnswer = useCallback(({ ok }) => setSession((s) => answer(s, ok)), []);
   const onNext = useCallback(() => setSession((s) => advance(ctx, s)), [ctx]);
 
+  /* Somewhere to go from here, in both states. The trainer used to be a
+     room with no door: the only way out was the browser's Back button,
+     and on a tablet in a classroom that is not a way out. */
+  const doors = (
+    <p className="practise-doors">
+      <Link className="btn ghost" to="/">
+        ‹ Back to the start
+      </Link>
+      <Link className="btn ghost" to="/read/1/0">
+        Back to the reading
+      </Link>
+    </p>
+  );
+
   if (session.done) {
     return (
       <main className="done">
@@ -163,6 +206,7 @@ function PractiseRoute() {
         <p>
           {session.right} right{session.wrong ? `, ${session.wrong} to revisit` : ''}.
         </p>
+        {doors}
       </main>
     );
   }
@@ -177,7 +221,27 @@ function PractiseRoute() {
         onAnswer={onAnswer}
         onNext={onNext}
       />
+      {doors}
     </main>
+  );
+}
+
+/**
+ * The gate, with somewhere to carry on from.
+ *
+ * The panel was written and styled and had never appeared once, because
+ * nothing recorded a position and nothing passed one in.
+ */
+function GateRoute() {
+  const [where, setWhere] = useState(() => whereLeftOff(BOOK_ID));
+  return (
+    <Gate
+      resume={where}
+      onForget={() => {
+        forgetWhere(BOOK_ID);
+        setWhere(null);
+      }}
+    />
   );
 }
 
@@ -198,7 +262,7 @@ const router = createHashRouter([
     path: '/',
     element: <Shell />,
     children: [
-      { index: true, element: <Gate /> },
+      { index: true, element: <GateRoute /> },
       { path: 'read/:pass/:beat', element: <ReadingRoute /> },
       { path: 'read/:pass', element: <Navigate to="/read/1/0" replace /> },
       { path: 'practise', element: <PractiseRoute /> },

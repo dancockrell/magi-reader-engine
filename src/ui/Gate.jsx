@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import book from '../books/magi/book.json';
 import Preshow from './Preshow.jsx';
 import { preshowRun } from '../lib/speech/script.js';
+import { throughOf } from '../lib/reader/resume.js';
 
 /**
  * The way in.
@@ -34,7 +35,7 @@ export const READINGS = [
 
 /**
  * @param {object} props
- * @param {{pass:number,unit:string,beat:number,when:number}|null} [props.resume]
+ * @param {{pass:number,at:number,of:number,when:number}|null} [props.resume]
  * @param {() => void} [props.onForget]
  */
 export default function Gate({ resume = null, onForget }) {
@@ -53,9 +54,9 @@ export default function Gate({ resume = null, onForget }) {
       {resume ? (
         <aside className="resume" aria-label="Carry on">
           <span>
-            You were part-way through <b>Reading {resume.pass}</b>.
+            You were {throughOf(resume)}% through <b>Reading {resume.pass}</b>.
           </span>
-          <Link className="btn primary" to={`/read/${resume.pass}/${resume.beat}`}>
+          <Link className="btn primary" to={`/read/${resume.pass}/${resume.at}`}>
             Carry on
           </Link>
           <button type="button" className="btn ghost" onClick={onForget}>

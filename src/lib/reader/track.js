@@ -35,7 +35,7 @@ import { reactionsFor, talkFor } from '../speech/script.js';
  * a type error for a property that is plainly there.
  *
  * @typedef {object} Stop
- * @property {'line'|'say'|'question'|'prompt'} kind
+ * @property {'line'|'say'|'question'|'prompt'|'end'} kind
  * @property {number} at        position on the track — what the URL holds
  * @property {string} unit
  * @property {number} [i]       line stops: which line of the unit
@@ -102,28 +102,47 @@ export function trackFor(book, pass = 1, opts = {}) {
   const placed = new Set(units.map((u) => u.id));
   const extras = Object.keys(book?.info || {}).filter((id) => !placed.has(id));
 
+  /* The background pages have pictures too, and they are the pictures a
+     student is being asked about. Without this the author page and the
+     note on the story's afterlife showed a black rectangle where the
+     scene should be. */
+  const infoPlate = (id) => {
+    const info = book?.info?.[id];
+    const file = merged.plates[info?.scene || id];
+    if (!file) return undefined;
+    return {
+      id: info?.scene || id,
+      src: `${merged.base ?? ''}${file}`,
+      alt: info?.caption || info?.title || '',
+    };
+  };
+
   if (pass === 1) {
     /* The author page and the note on why the story lasted are not read
        aloud, but the two of them have a conversation about each. Ten
        turns of it, which the first draft dropped on the floor because
        they hang off units that are not segments. */
     for (const id of extras) {
-      const info = book?.info?.[id];
-      const file = merged.plates[info?.scene || id];
-      const plate = file
-        ? {
-            id: info?.scene || id,
-            src: `${merged.base ?? ''}${file}`,
-            alt: info?.caption || '',
-          }
-        : undefined;
+      const plate = infoPlate(id);
       for (const turn of talkFor(book, id)) out.push({ kind: 'say', unit: id, turn, plate });
     }
   }
   for (const x of questions)
-    if (!placed.has(x.unit)) out.push({ kind: 'question', unit: x.unit, question: x });
+    if (!placed.has(x.unit))
+      out.push({ kind: 'question', unit: x.unit, question: x, plate: infoPlate(x.unit) });
   for (const x of prompts)
-    if (!placed.has(x.unit)) out.push({ kind: 'prompt', unit: x.unit, prompt: x });
+    if (!placed.has(x.unit))
+      out.push({ kind: 'prompt', unit: x.unit, prompt: x, plate: infoPlate(x.unit) });
+
+  /* The reading ends, rather than running out.
+   *
+   * It used to stop dead: the last stop was the twenty-eighth question,
+   * and once it was answered there was a greyed-out Next and nothing
+   * else — no score, no acknowledgement, nowhere to go. Making the
+   * ending a stop of its own also stops the finish card being stacked
+   * underneath a question the student has not answered yet. */
+  const lastUnit = out.length ? out[out.length - 1].unit : units[0]?.id || '';
+  if (out.length) out.push({ kind: 'end', unit: lastUnit });
 
   return out.map((stop, i) => ({ ...stop, at: i }));
 }
@@ -194,7 +213,10 @@ export function segmentsOf(track, book) {
     } else if (stop.kind === 'say') {
       seg.said += 1;
       if (!seg.plate && stop.plate) seg.plate = stop.plate;
-    } else seg.asks += 1;
+    } else if (stop.kind !== 'end') {
+      seg.asks += 1;
+      if (!seg.plate && stop.plate) seg.plate = stop.plate;
+    }
   }
   return out;
 }

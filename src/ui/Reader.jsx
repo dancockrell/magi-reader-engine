@@ -4,6 +4,7 @@ import Storyboard from './Storyboard.jsx';
 import QuestionCard from './QuestionCard.jsx';
 import WritingCard from './WritingCard.jsx';
 import Speaker from './Speaker.jsx';
+import Finish from './Finish.jsx';
 import {
   trackFor,
   stepTrack,
@@ -39,6 +40,8 @@ import { speaker } from '../lib/speech/script.js';
  * @param {(text:string)=>void} [props.onWrite]
  * @param {(beat:object)=>string|null} [props.translationFor]
  * @param {string} [props.lang]
+ * @param {boolean} [props.muted]
+ * @param {number} [props.rate]
  */
 export default function Reader({
   book,
@@ -52,6 +55,8 @@ export default function Reader({
   onWrite,
   translationFor,
   lang = '',
+  muted = false,
+  rate = 1,
 }) {
   const track = useMemo(() => trackFor(book, pass), [book, pass]);
   const segments = useMemo(() => segmentsOf(track, book), [track, book]);
@@ -157,15 +162,27 @@ export default function Reader({
           translation={translationFor ? translationFor(stop) : null}
           lang={lang}
           playing={playing}
+          muted={muted}
+          rate={rate}
           onEnded={onEnded}
         />
       ) : (
         /* The picture stays. A question about a segment is much easier
            to answer with the segment still in front of you, and taking
            it away to make room for the question is what made the old
-           quiz feel like a test rather than part of the reading. */
+           quiz feel like a test rather than part of the reading.
+
+           `stop.plate` first: a question about the author page is about
+           a different picture from the segment the reader came in on,
+           and a black rectangle is what it looked like without this. */
         <div className={`stage still ${stop.kind}`}>
-          {plate?.src && <img className="plate" src={plate.src} alt={plate.alt} />}
+          {(stop.plate || plate)?.src && (
+            <img
+              className="plate"
+              src={(stop.plate || plate).src}
+              alt={(stop.plate || plate).alt}
+            />
+          )}
         </div>
       )}
 
@@ -177,6 +194,8 @@ export default function Reader({
           turn={stop.turn}
           who={speaker(book, stop.turn.who)}
           playing={playing}
+          muted={muted}
+          rate={rate}
           onEnded={onEnded}
         />
       )}
@@ -210,6 +229,8 @@ export default function Reader({
           }}
         />
       )}
+
+      {stop.kind === 'end' && <Finish pass={pass} quiz={quiz} writing={writing} />}
 
       {/* One row, laid out the way a player is: jump, step, play, step,
           jump. It was two rows for a while, and the second one made the
@@ -258,11 +279,13 @@ export default function Reader({
           </>
         ) : (
           <span className="transport-note">
-            {stop.kind !== 'question'
-              ? 'Write your answer'
-              : quiz?.answers[stop.question.id]
-                ? 'Answered'
-                : 'Choose an answer'}
+            {stop.kind === 'end'
+              ? 'The end'
+              : stop.kind === 'prompt'
+                ? 'Write your answer'
+                : quiz?.answers[stop.question.id]
+                  ? 'Answered'
+                  : 'Choose an answer'}
           </span>
         )}
 

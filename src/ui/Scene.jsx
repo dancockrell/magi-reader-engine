@@ -27,6 +27,8 @@ import { useSpokenLine } from './useSpokenLine.js';
  * @param {string|null} [props.translation] the same line, in the reader's language
  * @param {string} [props.lang]             BCP-47 tag for that translation
  * @param {boolean} [props.playing]
+ * @param {boolean} [props.muted]
+ * @param {number} [props.rate]
  * @param {()=>void} [props.onEnded]
  */
 export default function Scene({
@@ -39,10 +41,23 @@ export default function Scene({
   translation = null,
   lang = '',
   playing = false,
+  muted = false,
+  rate = 1,
   onEnded,
 }) {
   const audioRef = useRef(null);
   const { words, index } = useCueTrack(audioRef, clip, cuesUrl);
+
+  /* Set on the element rather than passed as an attribute: React does
+     not reflect `muted` to the DOM property reliably, and playbackRate
+     has no attribute at all. Both are reapplied whenever the clip
+     changes, because a new element starts at the defaults. */
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el) return;
+    el.muted = muted;
+    el.playbackRate = rate;
+  }, [muted, rate, clip]);
 
   /* Play/pause is driven by the prop, and a rejected play() is not an
      error worth surfacing: browsers refuse autoplay until the reader has

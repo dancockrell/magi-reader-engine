@@ -9,6 +9,36 @@ beforeAll(() => {
   book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
 });
 
+describe('every reading', () => {
+  for (const pass of [1, 2, 3]) {
+    it(`reading ${pass} ends with an ending, rather than running out`, () => {
+      const t = trackFor(book, pass);
+      expect(t[t.length - 1].kind).toBe('end');
+      /* exactly one, and only at the end */
+      expect(t.filter((s) => s.kind === 'end')).toHaveLength(1);
+    });
+  }
+
+  it('gives every stop that asks something a picture to ask it about', () => {
+    /* the author page and the note on the afterlife are asked about too,
+       and showed a black rectangle where the picture should be */
+    const missing = [];
+    for (const pass of [1, 2, 3]) {
+      for (const stop of trackFor(book, pass)) {
+        if (stop.kind === 'question' || stop.kind === 'prompt') {
+          if (!stop.plate?.src && !stop.unit.startsWith('s'))
+            missing.push(`${pass}:${stop.unit}`);
+        }
+      }
+    }
+    expect(missing).toEqual([]);
+  });
+
+  it('has nothing at all to show for a book with nothing in it', () => {
+    expect(trackFor({ meta: { title: '' }, units: [] }, 1)).toEqual([]);
+  });
+});
+
 describe('reading 1', () => {
   it('is the story, and the two of them talking about it', () => {
     const t = trackFor(book, 1);
