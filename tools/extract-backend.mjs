@@ -14,7 +14,7 @@ import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 
 const from = resolve(process.argv[2] || 'legacy/index.html');
-const to = resolve(process.argv[3] || 'src/backend/raven-backend.gs');
+const to = resolve(process.argv[3] || 'src/backend/backend.gs');
 
 const src = readFileSync(from, 'utf8');
 
@@ -34,11 +34,11 @@ let code =
 /**
  * One deliberate edit, and it is a rename.
  *
- * The engine is Raven Reader; "Raven classroom" was a working name and
+ * The engine is Magi Reader; "Raven classroom" was a working name and
  * is being retired everywhere, including in the thing a teacher pastes
  * into their own Sheet and then reads the comments of.
  */
-const RENAMED = code.replace(/Raven classroom backend/g, 'Raven Reader — classroom backend');
+const RENAMED = code.replace(/Raven classroom backend/g, 'Magi Reader — classroom backend');
 const renames = code === RENAMED ? 0 : 1;
 code = RENAMED;
 

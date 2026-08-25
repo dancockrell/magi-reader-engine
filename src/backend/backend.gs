@@ -1,5 +1,5 @@
 /* ------------------------------------------------------------------
-   Raven Reader — classroom backend  —  paste this into your Google Sheet.
+   Magi Reader — classroom backend  —  paste this into your Google Sheet.
 
    Extensions > Apps Script, delete what is there, paste this, Save.
    Then Deploy > New deployment > type: Web app

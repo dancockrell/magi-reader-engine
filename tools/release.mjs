@@ -138,7 +138,7 @@ function build(name, root) {
     process.exit(1);
   }
 
-  const out = join(outDir, `raven-magi-${version}-${name}.zip`);
+  const out = join(outDir, `magi-reader-${version}-${name}.zip`);
   const body = writeZip(files, root, out);
   const sha = createHash('sha256').update(body).digest('hex').slice(0, 12);
   console.log(
@@ -152,14 +152,14 @@ function build(name, root) {
 if (existsSync(outDir)) rmSync(outDir, { recursive: true, force: true });
 mkdirSync(outDir, { recursive: true });
 
-console.log(`raven-magi ${version}\n`);
+console.log(`magi-reader ${version}\n`);
 build('reader', 'dist');
 build('legacy', 'legacy-dist');
 
 if (process.argv.includes('--tag')) {
   const tag = `v${version}`;
   try {
-    execFileSync('git', ['tag', '-a', tag, '-m', `raven-magi ${version}`], {
+    execFileSync('git', ['tag', '-a', tag, '-m', `magi-reader ${version}`], {
       stdio: 'inherit',
     });
     console.log(`\ntagged ${tag}`);

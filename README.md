@@ -1,12 +1,13 @@
-# Raven Reader
+# Magi Reader
 
 **An illustrated reading engine for language classrooms.** A public-domain
 story becomes a narrated, illustrated reading that a class works through
 three times — once to watch, once to be questioned, once to write — and
 the work lands in the teacher's spreadsheet already half marked.
 
-The first book is _The Gift of the Magi_ (O. Henry, 1905). The engine is
-separate from the book: a second title is a new folder, not new code.
+The first book is _The Gift of the Magi_ (O. Henry, 1905), which is where
+the name comes from. The engine is separate from the book: a second title
+is a new folder, not new code — the second is _The Raven_.
 
 ![The reading, with Korean under the English and a glossed word marked](docs/reading.png)
 
@@ -48,7 +49,7 @@ separate from the book: a second title is a new folder, not new code.
 ```bash
 npm install
 npm run dev            # the reader
-npm test               # 461 unit tests
+npm test               # 480 unit tests
 npm run e2e            # 635 end-to-end, four browser engines
 npm run release        # verify everything, then build an uploadable zip
 ```

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import backend from '../backend/raven-backend.gs?raw';
+import backend from '../backend/backend.gs?raw';
 
 /**
  * How a teacher gets a Sheet to point the reader at.

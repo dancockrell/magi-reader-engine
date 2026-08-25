@@ -15,7 +15,7 @@ import { readFileSync } from 'node:fs';
  * came out wrong.
  */
 
-const code = readFileSync('src/backend/raven-backend.gs', 'utf8');
+const code = readFileSync('src/backend/backend.gs', 'utf8');
 
 describe('it is a script somebody can actually paste', () => {
   it('parses as JavaScript', () => {
@@ -39,8 +39,8 @@ describe('it is a script somebody can actually paste', () => {
     expect(code).toContain('unverified');
   });
 
-  it('is called Raven Reader, not the working name it had', () => {
-    expect(code).toContain('Raven Reader');
+  it('is called Magi Reader, not the working name it had', () => {
+    expect(code).toContain('Magi Reader');
     expect(code).not.toContain('Raven classroom backend');
   });
 });

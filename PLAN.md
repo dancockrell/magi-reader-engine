@@ -81,36 +81,66 @@ The split:
 
 Three things, three repositories. Settled 2026-08-25.
 
-| repository                                                                                                              | what it is |
-| ----------------------------------------------------------------------------------------------------------------------- | ---------- |
-| [`raven-reader`](https://github.com/dancockrell/raven-reader)                                                           | the engine |
-| [`the-gift-of-the-magi-o-henry-raven-reader`](https://github.com/dancockrell/the-gift-of-the-magi-o-henry-raven-reader) | the book   |
-| [`the-raven-edgar-allan-poe-raven-reader`](https://github.com/dancockrell/the-raven-edgar-allan-poe-raven-reader)       | the book   |
+| repository                                                                                                            | what it is |
+| --------------------------------------------------------------------------------------------------------------------- | ---------- |
+| [`magi-reader-engine`](https://github.com/dancockrell/magi-reader-engine)                                             | the engine |
+| [`the-gift-of-the-magi-o-henry-magi-reader`](https://github.com/dancockrell/the-gift-of-the-magi-o-henry-magi-reader) | the book   |
+| [`the-raven-edgar-allan-poe-magi-reader`](https://github.com/dancockrell/the-raven-edgar-allan-poe-magi-reader)       | the book   |
 
-**The naming rule: full title, author, then the engine.**
+**The naming rule: full title, author, then the engine.** The engine
+itself ends in `-engine`, so that a stranger looking at a list of three
+similar names can tell in one glance which one is the code.
 
-Three reasons, and the third is the one that decided it. Spelled out,
-because someone searching has the whole title in their head and not our
-shorthand. With the author, because a classic title alone competes with
-a century of results — "The Raven Edgar Allan Poe" reaches us and
-"the-raven" does not. And with the author _especially_ here, because the
-engine is named after Poe's poem: `the-raven-raven-reader` reads like a
-stutter, and the author is what pulls the book and the software apart.
+Two reasons for the long book names. Spelled out, because someone
+searching has the whole title in their head and not our shorthand. And
+with the author, because a classic title alone competes with a century
+of results — "The Raven Edgar Allan Poe" reaches us and "the-raven" does
+not.
 
-So, in prose and in commits: **never a bare "Raven."** It is either _The
-Raven_, the poem, or Raven Reader, the engine.
+#### On the name
+
+The engine was called Raven Reader for about a day. That was a mistake
+and it is worth leaving the reason written down: the name came from the
+prototype file, was promoted to the product, and was published to GitHub
+without anyone checking whether it existed. It does —
+[ravenreader.app](https://ravenreader.app/), an RSS reader with press
+coverage going back to 2018. Checking availability is not a step after
+naming; it is part of what makes a name discoverable at all.
+
+Magi Reader was chosen against a harder test: not merely unclaimed, but
+sitting where the audience is already looking. `<Classic> Reader` is the
+naming grammar of the graded-reader trade — Penguin Readers, Macmillan
+Readers, Oxford Bookworms — so to a language teacher the name already
+says what the thing is. _The Gift of the Magi_ is the first book, so the
+engine and its flagship title reinforce each other; and a story about
+two people each giving up the thing they love most so the other can have
+what they need is a fair banner for something given away free to
+classrooms.
+
+The cost, accepted knowingly: the Magi book repository stutters —
+`the-gift-of-the-magi-o-henry-magi-reader`. Every other title reads
+clean, and it is the price of the engine being named after one of its
+own books.
+
+**Storage keys keep the `raven.` prefix.** `raven.api.v1`,
+`raven.prefs.v2`, `raven.outbox.v1` and the rest are not brand names,
+they are where a real teacher's class key and a real student's unsent
+work already live. Renaming them would orphan that data on every device
+running the shipped build, silently, to fix something no user can see.
+They stay until there is a migration worth writing.
 
 Two older repositories are history, and their descriptions say so:
-`magi-reader` (archived — the prototype's build snapshots, now also the
-`prototype` branch here) and `raven-classroom` (the toolkit this grew
-out of; still holds the QR check-in page and the voice generators, which
-have not been ported).
+`the-gift-of-the-magi-o-henry-html-prototype` (archived — the
+prototype's build snapshots, now also the `prototype` branch here) and
+`magi-reader-classroom-toolkit` (the toolkit this grew out of; still
+holds the QR check-in page and the voice generators, which have not been
+ported).
 
 ### Splitting the Magi pack out
 
-The Raven was easy: it existed only in `raven-classroom`, so giving it a
-repository _removed_ a copy. Magi is not, and doing it carelessly would
-recreate the duplication that started this.
+The Raven was easy: it existed only in the classroom toolkit, so giving
+it a repository _removed_ a copy. Magi is not, and doing it carelessly
+would recreate the duplication that started this.
 
 `src/books/magi/` is loaded directly by ten test files and by the app
 itself. Before it can move:
@@ -123,7 +153,7 @@ itself. Before it can move:
    to point a build at a pack that is not in the repository. A workspace,
    a submodule, or a copy step — decided when the first two are done.
 3. Only then does `src/books/magi/` move out, and
-   `the-gift-of-the-magi-o-henry-raven-reader` becomes real.
+   `the-gift-of-the-magi-o-henry-magi-reader` becomes real.
 
 Until then the engine repository carries the Magi pack, and that is a
 known, written-down exception rather than an accident.
