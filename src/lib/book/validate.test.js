@@ -92,20 +92,47 @@ describe('the glossary must match the text', () => {
   });
 });
 
-describe('one word, one meaning', () => {
-  it('rejects the same word defined two different ways', () => {
+describe('a word that means two things', () => {
+  const twoWays = () => {
     const b = good();
     b.units[1].stanzas[0] = 'saved by {bulldozing|driving a bulldozer} the grocer.';
     b.units[1].gloss = [['bulldozing', 'driving a bulldozer']];
-    const { errors } = validateBook(b);
-    expect(errors.some((e) => /defined twice/.test(e.message))).toBe(true);
+    return b;
+  };
+
+  it('warns rather than rejecting — English does this and so does Poe', () => {
+    const { ok, errors, warnings } = validateBook(twoWays());
+    expect(ok).toBe(true);
+    expect(errors).toEqual([]);
+    expect(warnings.some((w) => /defined twice/.test(w.message))).toBe(true);
+  });
+
+  it('says what the consequence is, not just that it happened', () => {
+    const { warnings } = validateBook(twoWays());
+    expect(warnings[0].message).toMatch(/glossed in the reading but not asked in the trainer/);
+  });
+
+  it('does not count it as a word the trainer can ask about', () => {
+    /* The count promises questions. An ambiguous word gets none, so
+       counting it would overstate the book by one every time.
+
+       Compared against the same book with the two definitions agreeing,
+       so the only difference between the two counts is the ambiguity
+       itself. */
+    const agreeing = twoWays();
+    agreeing.units[1].stanzas[0] = 'saved by {bulldozing|pushing and bullying} the grocer.';
+    agreeing.units[1].gloss = [['bulldozing', 'pushing and bullying']];
+
+    expect(validateBook(twoWays()).wordCount).toBe(validateBook(agreeing).wordCount - 1);
   });
 
   it('allows the same word repeated with the same meaning', () => {
     const b = good();
     b.units[1].stanzas[0] = 'more {bulldozing|pushing and bullying} still.';
     b.units[1].gloss = [['bulldozing', 'pushing and bullying']];
-    expect(validateBook(b).ok).toBe(true);
+    const { ok, warnings } = validateBook(b);
+    expect(ok).toBe(true);
+    expect(warnings).toEqual([]);
   });
 });
 

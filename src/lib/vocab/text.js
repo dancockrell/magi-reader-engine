@@ -1,4 +1,4 @@
-import { plainStanza } from '../book/validate.js';
+import { plainStanza, wordRe } from '../book/validate.js';
 
 /**
  * Finding a word in a line, and showing it there.
@@ -9,13 +9,10 @@ import { plainStanza } from '../book/validate.js';
  * then fails to blank, the question shows the answer.
  */
 
-/** Word-boundary match that tolerates apostrophes and hyphens.
- *  "mark" must not match inside "unremarkable"; "Jim’s" must still
- *  match "Jim’s". */
-export function wordRe(w, flags = 'i') {
-  const esc = String(w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return new RegExp(`(^|[^A-Za-z'’-])(${esc})(?=[^A-Za-z'’-]|$)`, flags);
-}
+/* The boundary rule lives with the contract that enforces it. Re-exported
+   here because this is where the reader reaches for it, and because two
+   definitions of "where does a word end" is one too many. */
+export { wordRe };
 
 /** Every line of a unit, gloss markup stripped. */
 export function linesOf(unit) {
@@ -55,11 +52,15 @@ export function markWord(line, w, open = '[', close = ']') {
  *
  * Blanks EVERY occurrence, not just the first. A line that says the
  * word twice would otherwise print the answer next to the gap.
+ *
+ * The possessive stays. "my ______'s core" asks for a noun; "my ______
+ * core" has quietly deleted the grammar the student would use to find
+ * it.
  */
 export function blankWord(line, w, gap = '______') {
   const s = String(line);
   const re = wordRe(w, 'gi');
-  const out = s.replace(re, (_, pre) => pre + gap);
+  const out = s.replace(re, (_, pre, _word, possessive) => pre + gap + (possessive || ''));
   return out === s ? null : out;
 }
 

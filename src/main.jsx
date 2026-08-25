@@ -11,8 +11,8 @@ import {
 } from 'react-router-dom';
 
 import { defaultBook as book } from './books/index.js';
-import { inlineGlosses } from './lib/book/validate.js';
 import { lineFor } from './lib/vocab/text.js';
+import { wordsOf } from './lib/vocab/words.js';
 import { createSession, advance, answer, progressOf } from './lib/vocab/session.js';
 import { trackFor, stepTrack } from './lib/reader/track.js';
 import { linesOf } from './lib/reader/beats.js';
@@ -50,20 +50,6 @@ import './styles.css';
    routing. A hash keeps every route reloadable and shareable on a
    plain file host, which is where this actually lives.
    --------------------------------------------------------------- */
-
-/** Every glossed word in the book, once, in reading order. */
-function wordsOf(b) {
-  const seen = new Map();
-  for (const u of b.units) {
-    const entries = (u.gloss || []).map(([w, d]) => ({ w, d }));
-    for (const sz of u.stanzas || []) entries.push(...inlineGlosses(sz));
-    for (const e of entries) {
-      const k = e.w.toLowerCase();
-      if (!seen.has(k)) seen.set(k, { w: e.w, d: e.d, unit: u.id, hits: 0, asked: 0 });
-    }
-  }
-  return [...seen.values()];
-}
 
 /* The teacher's rules would come from the class settings; until phase 5
    wires that up, the reader's own default is the kind one. */

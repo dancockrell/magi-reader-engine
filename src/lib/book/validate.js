@@ -35,11 +35,34 @@ export function plainStanza(stanza) {
   return String(stanza).replace(new RegExp(INLINE_GLOSS.source, 'g'), '$1');
 }
 
-/** Word-boundary match that tolerates apostrophes and hyphens, matching
- *  the reader's own rule so validation and runtime agree. */
-export function wordRe(w) {
+/**
+ * Where a word begins and ends, for every part of the reader that has to
+ * find one in a line. The trainer imports this rather than keeping its
+ * own copy, because a second copy is a rule that can drift: validation
+ * would accept a book whose words the trainer could not then locate.
+ *
+ * Apostrophes and hyphens are not boundaries, so a glossed word may
+ * contain them — `o'er` and `lamp-light` are single words, and `mark`
+ * must not match inside `unremarkable`.
+ *
+ * The possessive is the exception, and it is why this exists. A poem
+ * says "my bosom's core" and "a demon's that is dreaming", and a
+ * boundary rule that treats the apostrophe as part of the word decides
+ * that "bosom" is glossed but never appears. Two of _The Raven_'s
+ * glosses were reported as defects on exactly that mistake, and Magi is
+ * full of "Jim's" and "Della's" that no gloss could ever have reached.
+ *
+ * So a trailing `'s` (or a bare `'` after a plural) is allowed to follow
+ * the word — and only that. An elision is left alone: `o'er` still does
+ * not contain `o`, because `'e` is neither of those two shapes.
+ *
+ * Group 2 is the word itself and group 3 the possessive tail, so a
+ * caller can highlight `[bosom]'s` and blank `______'s` rather than
+ * swallowing the ending.
+ */
+export function wordRe(w, flags = 'i') {
   const esc = String(w).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return new RegExp(`(^|[^A-Za-z'’-])(${esc})(?=[^A-Za-z'’-]|$)`, 'i');
+  return new RegExp(`(^|[^A-Za-z'’-])(${esc})(['’]s|['’])?(?=[^A-Za-z'’-]|$)`, flags);
 }
 
 export function validateUnit(unit, index, seenIds, errors) {
@@ -219,6 +242,7 @@ export function validateTranslations(book, errors) {
 
 export function validateBook(book) {
   const errors = [];
+  const warnings = [];
   if (!book?.meta?.title) fail(errors, 'meta.title', 'a book needs a title');
   const units = book?.units || [];
   if (!units.length) fail(errors, 'units', 'a book needs at least one unit');
@@ -228,9 +252,25 @@ export function validateBook(book) {
   validateTeaching(book?.teaching, allUnitIds(book), errors);
   validateTranslations(book, errors);
 
-  /* One word, one meaning, across the whole book: two different glosses
-     for the same word make the trainer's distractors ambiguous. */
+  /* A word defined two ways is a WARNING, not a rejection.
+
+     It was a rejection, on the reasoning that two glosses make the
+     trainer's distractors ambiguous. That reasoning is sound and the
+     remedy was not: English words mean more than one thing, and poetry
+     leans on it. Poe writes "to still the beating of my heart" and then
+     "Let my heart be still a moment" — a verb and an adjective, four
+     stanzas apart, and both glosses are right. A contract that calls
+     that a defect is telling a book to teach the language less well
+     than the language deserves.
+
+     So the reading keeps both, where the surrounding line settles which
+     is meant, and the trainer declines to quiz the word at all, because
+     out of its line there is no single right answer. The warning stays
+     because the other cause of a double definition — a generator that
+     glossed the same word inconsistently by accident — is real, and is
+     something a person should look at. */
   const meanings = new Map();
+  const ambiguous = new Set();
   const glossWords = [];
   units.forEach((u, i) => {
     const entries = (u?.gloss || []).map((e) => (Array.isArray(e) ? e : [e?.w, e?.d]));
@@ -242,10 +282,12 @@ export function validateBook(book) {
       glossWords.push(w);
       const key = String(w).toLowerCase();
       if (meanings.has(key) && meanings.get(key).d !== d) {
+        ambiguous.add(key);
         fail(
-          errors,
+          warnings,
           `units[${i}].gloss`,
-          `"${w}" is defined twice with different meanings ("${meanings.get(key).d}" / "${d}")`
+          `"${w}" is defined twice with different meanings ("${meanings.get(key).d}" / "${d}") — ` +
+            `it will be glossed in the reading but not asked in the trainer`
         );
       } else if (!meanings.has(key)) {
         meanings.set(key, { d, unit: u?.id });
@@ -254,5 +296,13 @@ export function validateBook(book) {
   });
 
   validateSwaps(book?.swaps, glossWords, errors);
-  return { ok: errors.length === 0, errors, wordCount: meanings.size };
+  return {
+    ok: errors.length === 0,
+    errors,
+    warnings,
+    /* Words the trainer can actually ask about — the ambiguous ones are
+       readable but not quizzable, and counting them here would promise
+       questions that never get built. */
+    wordCount: meanings.size - ambiguous.size,
+  };
 }

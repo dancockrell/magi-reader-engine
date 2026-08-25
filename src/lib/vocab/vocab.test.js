@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { inlineGlosses } from '../book/validate.js';
 import { lineFor, blankWord, markWord, wordRe } from './text.js';
+import { wordsOf } from './words.js';
 import {
   kindsFor,
   pickKind,
@@ -27,16 +27,10 @@ let items;
 
 beforeAll(() => {
   book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-  const seen = new Map();
-  for (const u of book.units) {
-    const entries = (u.gloss || []).map((e) => ({ w: e[0], d: e[1] }));
-    for (const sz of u.stanzas || []) entries.push(...inlineGlosses(sz));
-    for (const e of entries) {
-      const k = e.w.toLowerCase();
-      if (!seen.has(k)) seen.set(k, { w: e.w, d: e.d, unit: u.id, hits: 0, asked: 1 });
-    }
-  }
-  items = [...seen.values()];
+  /* The app's own word list, not a copy of it. The sweep below is only
+     worth anything if it asks questions about exactly the words the
+     reader would ask about. */
+  items = wordsOf(book).map((i) => ({ ...i, asked: 1 }));
   ctx = { book, swaps: book.swaps, all: items };
 });
 
@@ -52,9 +46,42 @@ describe('finding a word in its line', () => {
     expect(wordRe('mark').test('A mark on the wall.')).toBe(true);
   });
 
+  it('reaches a word wearing a possessive', () => {
+    /* Poe writes "my bosom's core" and never writes a bare "bosom", so a
+       rule that reads the apostrophe as part of the word decides the
+       gloss is for a word the poem does not contain. */
+    expect(wordRe('bosom').test("burned into my bosom's core;")).toBe(true);
+    expect(wordRe('demon').test('the seeming of a demon’s that is dreaming')).toBe(true);
+    expect(wordRe('Jim').test('Jim’s hair was lovely.')).toBe(true);
+    /* The plural possessive, where the apostrophe trails the word. Note
+       it is "birds" that is glossed, not "bird": the rule matches words,
+       it does not stem them. */
+    expect(wordRe('birds').test("the birds' eyes")).toBe(true);
+    expect(wordRe('bird').test("the birds' eyes")).toBe(false);
+  });
+
+  it('still refuses an elision, which looks the same and is not', () => {
+    /* "o'er" is one word. The possessive exception is exactly `'s` and a
+       trailing `'`; `'e` is neither, so this stays out. */
+    expect(wordRe('o').test("the lamp-light gloated o'er,")).toBe(false);
+    expect(wordRe('ne').test("and ne'er a word said he")).toBe(false);
+    expect(wordRe("o'er").test("the lamp-light gloated o'er,")).toBe(true);
+  });
+
   it('blanks every occurrence, not just the first', () => {
     const out = blankWord('a coax and another coax', 'coax');
     expect(out).toBe('a ______ and another ______');
+  });
+
+  it('leaves the possessive standing when it blanks the word', () => {
+    /* "my ______'s core" asks for a noun. "my ______ core" has deleted
+       the grammar the student would have used to find it. */
+    expect(blankWord("burned into my bosom's core;", 'bosom')).toBe(
+      "burned into my ______'s core;"
+    );
+    expect(markWord("burned into my bosom's core;", 'bosom')).toBe(
+      "burned into my [bosom]'s core;"
+    );
   });
 
   it('returns null rather than the plain line when the word is absent', () => {

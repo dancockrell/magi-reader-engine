@@ -1,22 +1,13 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { inlineGlosses } from '../book/validate.js';
 import { createSession, advance, answer, liveWords, progressOf, RETIRE_AT } from './session.js';
+import { wordsOf } from './words.js';
 
 let ctx;
 
 beforeAll(() => {
   const book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-  const seen = new Map();
-  for (const u of book.units) {
-    const entries = (u.gloss || []).map(([w, d]) => ({ w, d }));
-    for (const sz of u.stanzas || []) entries.push(...inlineGlosses(sz));
-    for (const e of entries) {
-      const k = e.w.toLowerCase();
-      if (!seen.has(k)) seen.set(k, { w: e.w, d: e.d, unit: u.id, hits: 0, asked: 0 });
-    }
-  }
-  ctx = { book, swaps: book.swaps, all: [...seen.values()] };
+  ctx = { book, swaps: book.swaps, all: wordsOf(book) };
 });
 
 const seeded = (s) => () => ((s = (s * 1664525 + 1013904223) % 4294967296), s / 4294967296);
