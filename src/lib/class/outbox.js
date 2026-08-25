@@ -16,7 +16,7 @@
  * A teacher, who can act on it, is told exactly how many are waiting.
  */
 
-export const KEY = 'raven.outbox.v1';
+export const KEY = 'reader.outbox.v1';
 
 /** Enough for a lesson's worth of work from one device, and small
  *  enough that localStorage will not refuse it. */

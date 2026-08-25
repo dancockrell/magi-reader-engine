@@ -15,7 +15,7 @@ import { parseSubmission, mergeAttempt } from './submission.js';
  * was a first and whether it was better.
  */
 
-export const KEY = 'raven.collected.v1';
+export const KEY = 'reader.collected.v1';
 
 const keyFor = (bookId) => `${KEY}.${bookId || 'book'}`;
 

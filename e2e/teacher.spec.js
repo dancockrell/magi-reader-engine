@@ -44,7 +44,7 @@ test.describe('setting a class up', () => {
   test('gives a class key that says it is the way back', async ({ page }) => {
     await setUpClass(page);
     const key = await page.locator('.keybox').first().textContent();
-    expect(key.startsWith('RAVEN-')).toBe(true);
+    expect(key.startsWith('CLASS-')).toBe(true);
 
     const said = (await page.locator('.klass').innerText()).toLowerCase();
     expect(said).toContain('write this down');
@@ -85,7 +85,7 @@ test.describe('the class key is the way to another device', () => {
 
   test('says so plainly when what was pasted is not a key', async ({ page }) => {
     await page.goto('/#/class');
-    await typeInto(page.getByLabel('Class key'), 'RAVEN-not-a-real-key');
+    await typeInto(page.getByLabel('Class key'), 'CLASS-not-a-real-key');
     await page.getByRole('button', { name: 'Use this key' }).click();
 
     await expect(page.locator('.klass-said')).toContainText('does not look like a class key');
@@ -99,7 +99,7 @@ test.describe('connecting the Sheet', () => {
   test('takes a real deployment link', async ({ page }) => {
     await connectSheet(page);
     await expect(page.locator('.klass-note.ok').first()).toContainText('Connected');
-    expect(await stored(page, 'raven.api.v1')).toBe(API);
+    expect(await stored(page, 'reader.api.v1')).toBe(API);
   });
 
   test('refuses one that is not, and says which part is wrong', async ({ page }) => {
@@ -107,18 +107,18 @@ test.describe('connecting the Sheet', () => {
        deployment URL, and "invalid link" does not help anyone find that */
     await connectSheet(page, 'https://script.google.com/home/projects/abc/edit');
     await expect(page.locator('.klass-said')).toContainText('/exec');
-    expect(await stored(page, 'raven.api.v1')).toBeNull();
+    expect(await stored(page, 'reader.api.v1')).toBeNull();
   });
 
   test('refuses a link that walks the path to somebody else’s script', async ({ page }) => {
     /* on the right host, pointing at a deployment anybody can publish */
     await connectSheet(page, 'https://script.google.com/macros/s/../../evil/exec');
-    expect(await stored(page, 'raven.api.v1')).toBeNull();
+    expect(await stored(page, 'reader.api.v1')).toBeNull();
   });
 
   test('refuses another host outright', async ({ page }) => {
     await connectSheet(page, 'https://evil.example/collect');
-    expect(await stored(page, 'raven.api.v1')).toBeNull();
+    expect(await stored(page, 'reader.api.v1')).toBeNull();
   });
 });
 
@@ -190,7 +190,7 @@ test.describe('the link the class gets', () => {
     const link = await page.locator('.keybox.small').last().textContent();
     expect(link).toContain('#/?join=');
     expect(link, 'the class key was in the student link').not.toContain(
-      key.replace('RAVEN-', '').slice(0, 20)
+      key.replace('CLASS-', '').slice(0, 20)
     );
 
     /* a student opens it: they get the Sheet, and nothing else */
@@ -198,9 +198,9 @@ test.describe('the link the class gets', () => {
     await student.goto(link);
     await student.locator('main').waitFor();
 
-    expect(await stored(student, 'raven.api.v1')).toBe(API);
+    expect(await stored(student, 'reader.api.v1')).toBe(API);
     expect(
-      await stored(student, 'raven.teacher.owner.v1'),
+      await stored(student, 'reader.teacher.owner.v1'),
       'the link made a teacher'
     ).toBeNull();
 
@@ -219,7 +219,7 @@ test.describe('the link the class gets', () => {
     await student.locator('main').waitFor();
     await expect.poll(() => student.url()).not.toContain('join=');
     /* and it still took effect */
-    expect(await stored(student, 'raven.api.v1')).toBe(API);
+    expect(await stored(student, 'reader.api.v1')).toBe(API);
     await student.close();
   });
 });
@@ -246,9 +246,9 @@ test.describe('starting over', () => {
     await page.getByRole('button', { name: /Delete everything/ }).click();
 
     await expect(page.getByRole('button', { name: 'Set up this class' })).toBeVisible();
-    expect(await stored(page, 'raven.teacher.owner.v1')).toBeNull();
-    expect(await stored(page, 'raven.api.v1')).toBeNull();
-    expect(await stored(page, 'raven.student.v1')).toBeNull();
+    expect(await stored(page, 'reader.teacher.owner.v1')).toBeNull();
+    expect(await stored(page, 'reader.api.v1')).toBeNull();
+    expect(await stored(page, 'reader.student.v1')).toBeNull();
   });
 });
 

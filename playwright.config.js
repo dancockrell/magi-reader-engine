@@ -36,7 +36,7 @@ export const HEARD = {
   origins: [
     {
       origin: BASE,
-      localStorage: [{ name: 'raven.heard.v1.magi', value: '["preshow"]' }],
+      localStorage: [{ name: 'reader.heard.v1.magi', value: '["preshow"]' }],
     },
   ],
 };

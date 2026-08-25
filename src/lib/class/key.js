@@ -41,8 +41,8 @@
  * threat: the next student to pick up the shared iPad.
  */
 
-export const OWNER_KEY = 'raven.teacher.owner.v1';
-export const API_KEY = 'raven.api.v1';
+export const OWNER_KEY = 'reader.teacher.owner.v1';
+export const API_KEY = 'reader.api.v1';
 
 /* ------------------------------------------------------------------
    Crockford base32, because a person has to copy this by hand
@@ -50,8 +50,8 @@ export const API_KEY = 'raven.api.v1';
 
    The prototype used base64url, and base64url is case-sensitive. The
    whole promise of the key is "write it down, type it in on the other
-   machine" — and a teacher who writes RAVEN-aB3x on a sticky note and
-   types raven-ab3x gets told it is not a class key, with no hint as to
+   machine" — and a teacher who writes CLASS-aB3x on a sticky note and
+   types class-ab3x gets told it is not a class key, with no hint as to
    why. That is a silent failure in the one path the key exists for.
 
    Crockford's alphabet is built for being read aloud and retyped: no
@@ -62,6 +62,37 @@ export const API_KEY = 'raven.api.v1';
    ------------------------------------------------------------------ */
 
 const B32 = '0123456789ABCDEFGHJKMNPQRSTVWXYZ';
+
+/**
+ * What a class key starts with.
+ *
+ * This is the most visible string the software has: a teacher reads it
+ * off a screen and writes it on a board. It said RAVEN, after a product
+ * name that lasted a day, and the obvious repair was to make it MAGI.
+ *
+ * Both are wrong for the same reason. The prefix is read by someone
+ * holding a key and trying to work out what it is, and a brand only
+ * answers that for people who already know the brand. CLASS answers it
+ * for everyone — including the teacher who was handed the key by a
+ * colleague and has never seen this software.
+ *
+ * It also keeps the product's name out of the engine, which is where the
+ * name of a book already is: `magi` is a book id, and `engine.test.js`
+ * cannot tell a brand from a title by reading source. Naming things
+ * after what they do rather than what shipped them sidesteps that
+ * entirely, and would have survived the rename without being touched.
+ *
+ * Old keys still read. `KEY_PREFIXES` is what `readClassKey` strips;
+ * `KEY_PREFIX` is what new keys are built with, so anything already on a
+ * laminated card stays valid for one array entry.
+ *
+ * Note what the prefix does NOT do: it is decoration, not a checksum.
+ * Crockford's decoder reads I as 1 and O as 0, so every one of these
+ * decodes as payload if it ever reaches `fromB32` by mistake. That is
+ * what the stripping care below is for.
+ */
+const KEY_PREFIX = 'CLASS';
+const KEY_PREFIXES = [KEY_PREFIX, 'RAVEN'];
 
 /** @param {string} s */
 export function toB32(s) {
@@ -203,7 +234,7 @@ export function classKey(owner, apiUrl = '') {
   /* Groups of five, which is about the span a person can hold in their
      head between glancing at the paper and the keyboard. */
   const body = toB32(record);
-  return 'RAVEN-' + body.replace(/(.{5})/g, '$1-').replace(/-$/, '');
+  return KEY_PREFIX + '-' + body.replace(/(.{5})/g, '$1-').replace(/-$/, '');
 }
 
 /**
@@ -221,14 +252,18 @@ export function classKey(owner, apiUrl = '') {
 export function readClassKey(code) {
   const trimmed = String(code || '').trim();
   /* Noticed before the separators are stripped, not after: taking the
-     dashes out first turns "RAVEN-FCH7C" into "RAVENFCH7C", and then
-     the prefix no longer matches and RAVEN decodes as five bytes of
-     payload. Which is a wrong key that looks like a wrong key, so it
-     failed quietly on exactly the paper-and-retype path this is for. */
-  const hadPrefix = /^RAVEN[-\s]/i.test(trimmed) || /^RAVEN$/i.test(trimmed.slice(0, 5));
+     dashes out first turns "CLASS-FCH7C" into "CLASSFCH7C", and then the
+     prefix no longer matches and CLASS decodes as five bytes of payload.
+     Which is a wrong key that looks like a wrong key, so it failed
+     quietly on exactly the paper-and-retype path this is for. */
+  const prefix = KEY_PREFIXES.find(
+    (p) =>
+      new RegExp(`^${p}[-\\s]`, 'i').test(trimmed) ||
+      new RegExp(`^${p}$`, 'i').test(trimmed.slice(0, p.length))
+  );
 
   let raw = trimmed.replace(/\s+/g, '').replace(/-/g, '');
-  if (hadPrefix) raw = raw.replace(/^RAVEN/i, '');
+  if (prefix) raw = raw.replace(new RegExp(`^${prefix}`, 'i'), '');
   if (!raw) return null;
 
   const txt = fromB32(raw);

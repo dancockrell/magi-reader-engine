@@ -160,7 +160,7 @@ describe('remembering who is signed in', () => {
   it('refuses a half-written record left by something else', () => {
     const s = fakeStore();
     for (const junk of ['not json', 'null', '[]', '{"cls":"1-A"}', '{"name":"asdf"}']) {
-      s._map.set('raven.student.v1', junk);
+      s._map.set('reader.student.v1', junk);
       expect(loadStudent(s), junk).toBeNull();
     }
   });
@@ -289,7 +289,7 @@ describe('the outbox on the device', () => {
   it('ignores anything that is not a queue', () => {
     const s = fakeStore();
     for (const junk of ['not json', '{}', 'null', '[1,2,3]', '[{"id":1}]']) {
-      s._map.set('raven.outbox.v1.magi', junk);
+      s._map.set('reader.outbox.v1.magi', junk);
       expect(loadOutbox('magi', s), junk).toEqual([]);
     }
   });

@@ -21,12 +21,16 @@ afterAll(() => {
   rmSync(dir, { recursive: true, force: true });
 });
 
-/** Run the real tool against a made-up reader and read what it wrote. */
-function extract(html, name) {
+/** Run the real tool against a made-up reader and read what it wrote.
+ *
+ *  The id is passed explicitly because these write into a temp folder,
+ *  and the tool refuses to take a book id from a folder name that is not
+ *  one — which is the whole point of the check. */
+function extract(html, name, id = 'fixture') {
   const from = join(dir, `${name}.html`);
   const to = join(dir, `${name}.json`);
   writeFileSync(from, html, 'utf8');
-  execFileSync('node', ['tools/extract-book.mjs', from, to], { encoding: 'utf8' });
+  execFileSync('node', ['tools/extract-book.mjs', from, to, id], { encoding: 'utf8' });
   return JSON.parse(readFileSync(to, 'utf8'));
 }
 
@@ -116,6 +120,58 @@ describe('a book that does not have every part', () => {
       'noplates'
     );
     expect(book.plates).toEqual({});
+  });
+});
+
+describe('which book it thinks it is extracting', () => {
+  const html = `<script>
+      var TEXT_UNITS = [ ${unit('s1')} ];
+      var BOOK = { title:"Some Other Book" };
+    </script>`;
+
+  it('uses the id it is given, not the one it was written for', () => {
+    /* This is the defect that made the test: the id was the literal
+       'magi', so The Raven extracted as { id:'magi', title:'The Raven' }.
+       Two packs with one id share every per-book storage key, so a class
+       reading one would overwrite its progress in the other. Nothing
+       errored; the pack just quietly claimed to be a different book. */
+    const book = extract(html, 'otherbook', 'somethingelse');
+    expect(book.meta.id).toBe('somethingelse');
+    expect(book.meta.title).toBe('Some Other Book');
+  });
+
+  it('refuses a folder name that is plainly not a book id', () => {
+    const from = join(dir, 'generic.html');
+    writeFileSync(from, html, 'utf8');
+    let err = '';
+    try {
+      execFileSync('node', ['tools/extract-book.mjs', from, join(dir, 'book', 'book.json')], {
+        encoding: 'utf8',
+        stdio: 'pipe',
+      });
+    } catch (e) {
+      err = String(e.stderr || e.message);
+    }
+    expect(err, 'a bad id has to stop the run, not ship').toMatch(/not a book id/);
+  });
+
+  it('will not invent a title for a reader that has none', () => {
+    const from = join(dir, 'untitled.html');
+    writeFileSync(from, `<script>var TEXT_UNITS = [ ${unit('s1')} ];</script>`, 'utf8');
+    let err = '';
+    try {
+      execFileSync(
+        'node',
+        ['tools/extract-book.mjs', from, join(dir, 'untitled.json'), 'untitled'],
+        {
+          encoding: 'utf8',
+          stdio: 'pipe',
+        }
+      );
+    } catch (e) {
+      err = String(e.stderr || e.message);
+    }
+    expect(err).toMatch(/no title/);
   });
 
   it('still refuses a file with no story in it', () => {

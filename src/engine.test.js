@@ -20,6 +20,37 @@ import { BOOKS, defaultBook, bookById, mediaOf } from './books/index.js';
 const ROOT = 'src';
 const BOOK_NAMES = BOOKS.map((b) => b.meta.id);
 
+/**
+ * The engine is named after one of its own books, and this test cannot
+ * see the difference.
+ *
+ * `magi` is a book id. "Magi Reader" is the product. A plain search for
+ * the id matches both, so `const APP = 'Magi Reader'` would be reported
+ * as the engine naming a book — which is the opposite of true, and the
+ * failure message would send whoever hit it looking for a layering bug
+ * that is not there.
+ *
+ * It has already happened once: the backend file was briefly
+ * `magi-backend.gs`, named after the product, and this test failed. The
+ * file was renamed to `backend.gs`, which was the right move for its own
+ * reasons, but it left the collision unfixed and waiting for the first
+ * page title or about box.
+ *
+ * So the product's own name is removed before the search, and only that.
+ * A bare `magi` anywhere still fails, which the test below proves.
+ */
+const PRODUCT = /\bmagi[ -]reader\b/gi;
+
+/** One line with its comments and the product's name taken out. */
+function codeOf(line) {
+  return line.replace(/\/\*.*?\*\/|\/\/.*$|^\s*\*.*$/g, '').replace(PRODUCT, '');
+}
+
+function namesABook(line) {
+  const code = codeOf(line);
+  return BOOK_NAMES.some((id) => new RegExp(`\\b${id}\\b`, 'i').test(code));
+}
+
 /** Every source file in the engine — everything except the packs. */
 function engineFiles(dir = ROOT, out = []) {
   for (const name of readdirSync(dir)) {
@@ -46,21 +77,28 @@ describe('the engine does not know which book it is reading', () => {
     expect(files.length).toBeGreaterThan(15);
   });
 
+  it('tells the product from the book it is named after', () => {
+    /* The exception above, kept honest. If this test ever passes by
+       matching nothing, the one above is worthless. */
+    expect(namesABook("const APP_NAME = 'Magi Reader';")).toBe(false);
+    expect(namesABook('const zip = `magi-reader-${version}.zip`;')).toBe(false);
+
+    expect(namesABook("import book from './books/magi/book.json';")).toBe(true);
+    expect(namesABook("if (id === 'magi') return DEFAULT;")).toBe(true);
+    /* the exception removes the product's name, not the whole line */
+    expect(namesABook("const t = 'Magi Reader'; const b = 'magi';")).toBe(true);
+  });
+
   it('never names a book', () => {
     /* `src/books/index.js` is the one place a title is named, and it is
        a pack directory, not the engine. Everything else asks it. */
     const guilty = [];
     for (const file of files) {
-      const text = readFileSync(file, 'utf8');
-      const lines = text.split('\n');
-      for (const id of BOOK_NAMES) {
-        const re = new RegExp(`\\b${id}\\b`, 'i');
-        lines.forEach((line, i) => {
-          /* a comment may quote the reading it is describing */
-          const code = line.replace(/\/\*.*?\*\/|\/\/.*$|^\s*\*.*$/g, '');
-          if (re.test(code)) guilty.push(`${file}:${i + 1}: ${line.trim()}`);
-        });
-      }
+      const lines = readFileSync(file, 'utf8').split('\n');
+      lines.forEach((line, i) => {
+        /* a comment may quote the reading it is describing */
+        if (namesABook(line)) guilty.push(`${file}:${i + 1}: ${line.trim()}`);
+      });
     }
     expect(guilty).toEqual([]);
   });
@@ -70,8 +108,7 @@ describe('the engine does not know which book it is reading', () => {
     for (const file of files) {
       const text = readFileSync(file, 'utf8');
       text.split('\n').forEach((line, i) => {
-        const code = line.replace(/\/\*.*?\*\/|\/\/.*$|^\s*\*.*$/g, '');
-        if (/['"][\w-]*(audio|cues)\/[\w-]*\.?\w*['"]/.test(code)) {
+        if (/['"][\w-]*(audio|cues)\/[\w-]*\.?\w*['"]/.test(codeOf(line))) {
           guilty.push(`${file}:${i + 1}: ${line.trim()}`);
         }
       });

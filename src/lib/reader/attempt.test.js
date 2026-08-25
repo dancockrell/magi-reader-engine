@@ -65,14 +65,14 @@ describe('what is in the store is input, not truth', () => {
   it('ignores junk left by something else', () => {
     const s = fakeStore();
     for (const junk of ['not json {', '"a string"', '[1,2,3]', 'null', '42']) {
-      s._map.set('raven.attempt.v2.magi.2', junk);
+      s._map.set('reader.attempt.v2.magi.2', junk);
       expect(loadAttempt('magi', 2, s)).toBeNull();
     }
   });
 
   it('ignores an answers field that is not answers', () => {
     const s = fakeStore();
-    s._map.set('raven.attempt.v2.magi.2', JSON.stringify({ answers: ['a', 'b'] }));
+    s._map.set('reader.attempt.v2.magi.2', JSON.stringify({ answers: ['a', 'b'] }));
     expect(loadAttempt('magi', 2, s)).toBeNull();
   });
 });

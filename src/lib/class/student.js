@@ -11,7 +11,7 @@
  * renamed a child.
  */
 
-export const KEY = 'raven.student.v1';
+export const KEY = 'reader.student.v1';
 
 /** As long as a name gets to be. Longer than any real one, short enough
  *  that a column stays readable. */

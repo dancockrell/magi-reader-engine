@@ -134,7 +134,7 @@ export default function Class({ bookId, bookTitle }) {
               id={`${id}-paste`}
               value={paste}
               onChange={(e) => setPaste(e.target.value)}
-              placeholder="RAVEN-…"
+              placeholder="CLASS-…"
               spellCheck="false"
               autoCapitalize="off"
             />
@@ -316,7 +316,7 @@ export default function Class({ bookId, bookTitle }) {
           className="btn danger"
           disabled={confirmReset.trim().toUpperCase() !== 'DELETE'}
           onClick={() => {
-            for (const k of [OWNER_KEY, API_KEY, STUDENT_KEY, `raven.outbox.v1.${bookId}`]) {
+            for (const k of [OWNER_KEY, API_KEY, STUDENT_KEY, `reader.outbox.v1.${bookId}`]) {
               try {
                 localStorage.removeItem(k);
               } catch {

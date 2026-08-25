@@ -9,7 +9,7 @@
  * garbage in localStorage sooner or later.
  */
 
-export const KEY = 'raven.settings.v1';
+export const KEY = 'reader.settings.v1';
 
 /**
  * The three speeds the reader offers, and what they are called.

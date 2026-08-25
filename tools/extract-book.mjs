@@ -7,7 +7,7 @@
  * are full of braces) and evaluating the literal in isolation.
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { dirname, resolve } from 'node:path';
+import { basename, dirname, resolve } from 'node:path';
 
 function literalAfter(src, declaration, open, close) {
   /* Match the whole name, not a prefix of it.
@@ -219,11 +219,39 @@ const folded = 'castArt' in content ? ['castArt'] : [];
 delete content.castArt;
 
 const titleMatch = /title\s*:\s*"([^"]+)"/.exec(src.slice(src.indexOf('var BOOK')));
+if (!titleMatch)
+  throw new Error(`no title in ${htmlPath} — a book without one fails the contract`);
+
+/**
+ * Which book this is.
+ *
+ * It used to be the literal `'magi'`, because the extractor was written
+ * for one book and nobody changed it when it was pointed at a second.
+ * The Raven came out as `{ id: 'magi', title: 'The Raven' }` — two packs
+ * claiming one id. Nothing errors: `bookById('magi')` quietly returns
+ * whichever was registered first, and every per-book storage key
+ * (`reader.where.v1.magi`, `reader.attempt.v2.magi.2`,
+ * `reader.outbox.v1.magi`) is shared between two different books, so a
+ * class reading The Raven would overwrite its own progress in Magi.
+ *
+ * The id now comes from where the pack is being written, or from an
+ * explicit fourth argument, and a value that is plainly not a book id is
+ * refused rather than shipped.
+ */
+const GENERIC = new Set(['book', 'books', 'src', 'dist', 'out', 'tmp', 'data', 'public']);
+const bookId = process.argv[4] || basename(dirname(outPath));
+if (!/^[a-z][a-z0-9-]*$/.test(bookId) || GENERIC.has(bookId)) {
+  throw new Error(
+    `"${bookId}" is not a book id — it came from the output folder name. ` +
+      `Pass one explicitly:\n` +
+      `  node tools/extract-book.mjs <reader.html> <out.json> <id>`
+  );
+}
 
 const book = {
   meta: {
-    id: 'magi',
-    title: titleMatch ? titleMatch[1] : 'The Gift of the Magi',
+    id: bookId,
+    title: titleMatch[1],
     source: 'extracted from index.html',
   },
   units,

@@ -144,16 +144,29 @@ describe('the key the teacher writes down', () => {
     expect(back).toEqual({ id: owner.id, cls: '1-A', api: GOOD_API });
   });
 
+  it('still reads a key issued under the old prefix', () => {
+    /* Keys used to start with RAVEN, after a product name that lasted a
+       day. One already written on a board has to keep working, so
+       readClassKey strips either prefix. */
+    const owner = mintOwner('2-B');
+    const old = classKey(owner, GOOD_API).replace(/^CLASS-/, 'RAVEN-');
+
+    expect(readClassKey(old)).toEqual({ id: owner.id, cls: '2-B', api: GOOD_API });
+    /* and down the paper-and-retype path, where a prefix that is not
+       recognised decodes as payload and fails quietly instead */
+    expect(readClassKey(' ' + old.toLowerCase().replace(/-/g, ' ') + '\n')?.cls).toBe('2-B');
+  });
+
   it('is grouped in fives, and stays a length a person will copy', () => {
     const key = classKey(mintOwner('1-A'), GOOD_API);
-    expect(key.startsWith('RAVEN-')).toBe(true);
+    expect(key.startsWith('CLASS-')).toBe(true);
     /* Not a round number — a bound, so that a change which doubles it
        fails here rather than in a staffroom. Most of it is the Apps
        Script deployment id, which the key has to carry: one that
        restores your identity but not your gradebook has not solved the
        dead-laptop problem. */
     expect(key.length).toBeLessThan(180);
-    for (const g of key.replace(/^RAVEN-/, '').split('-'))
+    for (const g of key.replace(/^CLASS-/, '').split('-'))
       expect(g.length).toBeLessThanOrEqual(5);
   });
 
@@ -264,7 +277,7 @@ describe('where it is kept', () => {
   it('treats what is in the store as input, not truth', () => {
     const s = fakeStore();
     for (const junk of ['not json', 'null', '[]', '"a string"', '{"cls":"1-A"}', '{"id":""}']) {
-      s._map.set('raven.teacher.owner.v1', junk);
+      s._map.set('reader.teacher.owner.v1', junk);
       expect(loadOwner(s), junk).toBeNull();
     }
   });
@@ -280,7 +293,7 @@ describe('where it is kept', () => {
   it('will not hand back one that was tampered with in the store', () => {
     /* the store is on a device a student also holds */
     const s = fakeStore();
-    s._map.set('raven.api.v1', 'https://evil.example/collect');
+    s._map.set('reader.api.v1', 'https://evil.example/collect');
     expect(loadApi(s)).toBe('');
   });
 

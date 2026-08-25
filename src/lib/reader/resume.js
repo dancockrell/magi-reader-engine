@@ -14,7 +14,7 @@
  * Never throws, for the same reason every store here does not.
  */
 
-export const KEY = 'raven.where.v1';
+export const KEY = 'reader.where.v1';
 
 const keyFor = (bookId) => `${KEY}.${bookId || 'book'}`;
 

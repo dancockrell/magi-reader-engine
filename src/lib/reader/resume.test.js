@@ -80,7 +80,7 @@ describe('what is in the store is input, not truth', () => {
       JSON.stringify({ pass: 1, at: 99, of: 10 }),
     ];
     for (const bad of junk) {
-      s._map.set('raven.where.v1.magi', bad);
+      s._map.set('reader.where.v1.magi', bad);
       expect(whereLeftOff('magi', s), bad).toBeNull();
     }
   });

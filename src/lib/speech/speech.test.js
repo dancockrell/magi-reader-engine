@@ -255,10 +255,10 @@ describe('remembering it between visits', () => {
   it('treats what is in the store as input, not truth', () => {
     const s = fakeStore();
     for (const junk of ['not json', '{"a":1}', '"hello"', 'null']) {
-      s._map.set('raven.heard.v1.magi', junk);
+      s._map.set('reader.heard.v1.magi', junk);
       expect(loadHeard('magi', s)).toEqual([]);
     }
-    s._map.set('raven.heard.v1.magi', JSON.stringify(['hello', 7, null, 'preshow']));
+    s._map.set('reader.heard.v1.magi', JSON.stringify(['hello', 7, null, 'preshow']));
     expect(loadHeard('magi', s)).toEqual(['hello', 'preshow']);
   });
 

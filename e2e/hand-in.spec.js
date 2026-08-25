@@ -28,7 +28,7 @@ const API =
 const withClass = (page, api = API) =>
   page.addInitScript((url) => {
     try {
-      localStorage.setItem('raven.api.v1', url);
+      localStorage.setItem('reader.api.v1', url);
     } catch {
       /* a locked store is its own test */
     }
@@ -72,7 +72,7 @@ const signIn = async (page, name = 'Ana Lopez') => {
 };
 
 const outbox = (page) =>
-  page.evaluate(() => JSON.parse(localStorage.getItem('raven.outbox.v1.magi') || '[]'));
+  page.evaluate(() => JSON.parse(localStorage.getItem('reader.outbox.v1.magi') || '[]'));
 
 test.describe('when no class is set up', () => {
   test('says the work stays here, rather than offering a button that does nothing', async ({

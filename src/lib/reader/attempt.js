@@ -15,7 +15,7 @@ import { startQuiz, startWriting } from './assessment.js';
  * a bad day, not a broken app.
  */
 
-export const KEY = 'raven.attempt.v2';
+export const KEY = 'reader.attempt.v2';
 
 const keyFor = (bookId, pass) => `${KEY}.${bookId || 'book'}.${pass}`;
 

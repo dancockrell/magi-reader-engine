@@ -12,7 +12,7 @@
  * hello twice.
  */
 
-export const KEY = 'raven.heard.v1';
+export const KEY = 'reader.heard.v1';
 
 const keyFor = (bookId) => `${KEY}.${bookId || 'book'}`;
 
