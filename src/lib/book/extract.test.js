@@ -30,7 +30,17 @@ function extract(html, name, id = 'fixture') {
   const from = join(dir, `${name}.html`);
   const to = join(dir, `${name}.json`);
   writeFileSync(from, html, 'utf8');
-  execFileSync('node', ['tools/extract-book.mjs', from, to, id], { encoding: 'utf8' });
+  /* `stdio: pipe` so the child's stderr is captured rather than inherited.
+     The "refuses a file with no story in it" test expects this to throw,
+     and without piping it printed a full Node stack trace into every
+     verify run — an alarming-looking error, in a passing suite, every
+     time. A log that always contains a scary error is a log nobody reads
+     when a real one turns up. The throw still carries the message on
+     `e.stderr` for the tests that match against it. */
+  execFileSync('node', ['tools/extract-book.mjs', from, to, id], {
+    encoding: 'utf8',
+    stdio: 'pipe',
+  });
   return JSON.parse(readFileSync(to, 'utf8'));
 }
 

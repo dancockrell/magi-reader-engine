@@ -19,9 +19,18 @@
       ],
       "para": "Nobody has lit the stair lamp for a long time. Mira climbs to it in the dark, finds the glass dirty and easy to break, and takes her time.",
       "gloss": [
-        ["landing", "the flat floor at the top of a stair"],
-        ["soot", "black powder left by smoke"],
-        ["still", "not moving"]
+        [
+          "landing",
+          "the flat floor at the top of a stair"
+        ],
+        [
+          "soot",
+          "black powder left by smoke"
+        ],
+        [
+          "still",
+          "not moving"
+        ]
       ]
     },
     {
@@ -36,7 +45,12 @@
         "Dry {tinder|dry stuff that catches fire quickly} first, then the flame would {kindle|to set alight} the rest.\nIt took four matches to kindle the wick at all.\nFor a moment the little lamp glimmered, and then it held."
       ],
       "para": "She asks for matches at the corner and works on the stub of wick that is left. It takes four matches, and then the lamp stays alight.",
-      "gloss": [["glimmered", "shone with a faint unsteady light"]]
+      "gloss": [
+        [
+          "glimmered",
+          "shone with a faint unsteady light"
+        ]
+      ]
     },
     {
       "id": "p3",
@@ -63,7 +77,12 @@
         "Winter {dwindled|grew smaller and smaller} and the evenings grew long again.\nThe little flame stayed {steadfast|firm and not changing} on its shelf.\nPeople still climbed the stair, and the light was still there."
       ],
       "para": "The lamp stops belonging to Mira. Everybody on the row steers by it, nobody arranged that, and it goes on burning after the winter ends.",
-      "gloss": [["still", "even now"]]
+      "gloss": [
+        [
+          "still",
+          "even now"
+        ]
+      ]
     }
   ],
   "info": {
@@ -134,23 +153,23 @@
         {
           "q": "Why does Mira move slowly once she has found the lamp?",
           "opts": [
-            "The stair is too narrow for her to hurry on.",
             "The lamp glass is thin and brittle and could break.",
+            "The stair is too narrow for her to hurry on.",
             "She is listening for someone coming up behind her.",
-            "Her mother has told her never to touch the lamp."
+            "Her mother has told her not to touch the lamp at all."
           ],
-          "correct": 1,
+          "correct": 0,
           "fb": "The text says the glass was thin and brittle, so she went slowly. Nothing else on the stair is holding her back."
         },
         {
           "q": "What does the soot on Mira's thumb tell you about the lamp?",
           "opts": [
             "It has been burning every night this week.",
-            "Somebody cleaned it earlier the same day.",
-            "It has not been lit or cleaned since last winter.",
-            "It has never been used at all."
+            "Somebody must have cleaned it earlier the same day.",
+            "It has not been used at all this year.",
+            "It has not been lit or cleaned since last winter."
           ],
-          "correct": 2,
+          "correct": 3,
           "fb": "The soot is from last winter, which means nobody has touched the lamp since then."
         }
       ],
@@ -159,11 +178,31 @@
         "hint": "One thing you can see, and one thing you can feel with your hands.",
         "minWords": 12,
         "core": [
-          ["dark", "darkness", "gloom", "black", "unlit"],
-          ["cold", "dusty", "soot", "dirty", "old"]
+          [
+            "dark",
+            "darkness",
+            "gloom",
+            "black",
+            "unlit"
+          ],
+          [
+            "cold",
+            "dusty",
+            "soot",
+            "dirty",
+            "old"
+          ]
         ],
-        "support": ["stair", "lamp", "landing", "tread"],
-        "phrases": ["full of gloom", "still and black"]
+        "support": [
+          "stair",
+          "lamp",
+          "landing",
+          "tread"
+        ],
+        "phrases": [
+          "full of gloom",
+          "still and black"
+        ]
       }
     },
     "p2": {
@@ -189,12 +228,12 @@
         {
           "q": "Where does Mira get the matches?",
           "opts": [
-            "She asks for them at the watch house on the corner.",
+            "She buys them from a shop at the end of the street.",
             "She finds them on the landing beside the lamp.",
             "The stranger at the door gives them to her.",
-            "She buys them from a shop at the end of the street."
+            "She asks for them at the watch house on the corner."
           ],
-          "correct": 0,
+          "correct": 3,
           "fb": "She begs a box of matches in the watch house at the corner. The stranger has not arrived yet."
         }
       ],
@@ -202,12 +241,12 @@
         "label": "Looking back — Act I",
         "q": "By the end of the first act, what has Mira actually done?",
         "opts": [
-          "She has met the stranger and learned his name.",
           "She has found an unlit lamp and got it burning again.",
+          "She has met the stranger and learned his name.",
           "She has given up on the lamp and gone back inside.",
           "She has bought a new lamp for the stair."
         ],
-        "correct": 1,
+        "correct": 0,
         "fb": "A dark stair, a brittle glass, a short wick and four matches. The stranger does not knock until the next act.",
         "wren": "One lamp, four matches. That is the whole first act."
       },
@@ -216,11 +255,30 @@
         "hint": "Think about what she has, and about what she does not have.",
         "minWords": 10,
         "core": [
-          ["short", "little", "small", "almost gone", "nearly"],
-          ["enough", "still", "works", "can", "last"]
+          [
+            "short",
+            "little",
+            "small",
+            "almost gone",
+            "nearly"
+          ],
+          [
+            "enough",
+            "still",
+            "works",
+            "can",
+            "last"
+          ]
         ],
-        "support": ["wick", "lamp", "flame", "match"],
-        "phrases": ["not finished yet"]
+        "support": [
+          "wick",
+          "lamp",
+          "flame",
+          "match"
+        ],
+        "phrases": [
+          "not finished yet"
+        ]
       }
     },
     "p3": {
@@ -260,11 +318,31 @@
         "hint": "Being unsure and being brave are not opposites here.",
         "minWords": 12,
         "core": [
-          ["brave", "courage", "bold", "not afraid", "anyway"],
-          ["unsure", "doubt", "hesitant", "nervous", "scared", "careful"]
+          [
+            "brave",
+            "courage",
+            "bold",
+            "not afraid",
+            "anyway"
+          ],
+          [
+            "unsure",
+            "doubt",
+            "hesitant",
+            "nervous",
+            "scared",
+            "careful"
+          ]
         ],
-        "support": ["door", "bolt", "knock", "stranger"],
-        "phrases": ["opened it anyway"]
+        "support": [
+          "door",
+          "bolt",
+          "knock",
+          "stranger"
+        ],
+        "phrases": [
+          "opened it anyway"
+        ]
       }
     },
     "p4": {
@@ -279,23 +357,23 @@
         {
           "q": "What has the lamp become by the end of the story?",
           "opts": [
-            "A beacon that the whole row of houses steers by.",
-            "A nuisance that the neighbours want put out.",
             "A private light that only Mira is allowed to use.",
+            "A nuisance that the neighbours want put out.",
+            "A beacon that the whole row of houses steers by.",
             "A signal that the watch house pays her to keep."
           ],
-          "correct": 0,
+          "correct": 2,
           "fb": "The lamp on the stair was a beacon for the whole row — it stopped being only hers the moment other people relied on it."
         },
         {
           "q": "Why does the story call the lighting a custom nobody had agreed to?",
           "opts": [
             "Because the neighbours voted on it at a meeting.",
-            "Because Mira was paid to do it every evening.",
             "Because it became a settled habit without anyone arranging it.",
-            "Because the watch house ordered her to keep it lit."
+            "Because Mira was paid to do it every evening.",
+            "Because the watch house formally ordered her to keep it lit each night."
           ],
-          "correct": 2,
+          "correct": 1,
           "fb": "Nobody arranged it and nobody was asked. It simply became the thing that happened every evening."
         }
       ],
@@ -303,12 +381,12 @@
         "label": "Looking back — Act II",
         "q": "Across the second act, what changes about the lamp?",
         "opts": [
-          "It goes out for good and the stair is dark again.",
           "It stops being Mira's lamp and becomes everybody's.",
+          "It goes out for good and the stair is dark again.",
           "It is moved from the stair into the watch house.",
           "It is replaced by a larger lamp the stranger brings."
         ],
-        "correct": 1,
+        "correct": 0,
         "fb": "A stranger knocks to ask who lights it, and by the last part the whole row steers by it. The lamp does not change; who it belongs to does.",
         "wren": "Same lamp. Different owner. Nobody signed anything."
       },
@@ -318,11 +396,32 @@
         "minWords": 14,
         "opinion": true,
         "core": [
-          ["small", "little", "ordinary", "cheap", "simple"],
-          ["large", "big", "important", "matters", "whole row", "everyone", "beacon"]
+          [
+            "small",
+            "little",
+            "ordinary",
+            "cheap",
+            "simple"
+          ],
+          [
+            "large",
+            "big",
+            "important",
+            "matters",
+            "whole row",
+            "everyone",
+            "beacon"
+          ]
         ],
-        "support": ["stair", "neighbours", "custom", "light"],
-        "phrases": ["for the whole row"]
+        "support": [
+          "stair",
+          "neighbours",
+          "custom",
+          "light"
+        ],
+        "phrases": [
+          "for the whole row"
+        ]
       }
     },
     "notes": {
@@ -339,7 +438,7 @@
           "opts": [
             "Because it is background material and not a scene of the story.",
             "Because the recording for it was lost.",
-            "Because it is too long to be read in one sitting.",
+            "Because it is far too long to be read aloud in a single sitting.",
             "Because only teachers are allowed to see it."
           ],
           "correct": 0,
@@ -349,11 +448,11 @@
           "q": "Who was this book written for?",
           "opts": [
             "A class of students in their first year.",
-            "The reading software itself, so that it can be tested.",
+            "A publisher who had asked the author for a winter story.",
             "The people who lived on Mira's stair.",
-            "A publisher who asked for a winter story."
+            "The reading software itself, so that it can be tested."
           ],
-          "correct": 1,
+          "correct": 3,
           "fb": "It was written for the test suite. Nothing in it is a real book, and that is the point of it."
         }
       ],
@@ -361,8 +460,21 @@
         "q": "What is the difference between this page and a part of the story?",
         "hint": "One of them is read aloud. Say what the other one is for.",
         "minWords": 10,
-        "core": [["not read", "silent", "no lines", "background", "between"]],
-        "support": ["page", "story", "part", "aloud"]
+        "core": [
+          [
+            "not read",
+            "silent",
+            "no lines",
+            "background",
+            "between"
+          ]
+        ],
+        "support": [
+          "page",
+          "story",
+          "part",
+          "aloud"
+        ]
       }
     },
     "after": {
@@ -388,7 +500,7 @@
         {
           "q": "What does this page add to the story?",
           "opts": [
-            "It names the stranger and explains his errand.",
+            "It names the stranger and explains what his errand was.",
             "It says the lamp was put out soon afterwards.",
             "It says the giving went on without anyone being thanked.",
             "It says Mira moved away from the street."
@@ -402,10 +514,28 @@
         "hint": "Think about what thanks would have changed, and what it would not.",
         "minWords": 12,
         "core": [
-          ["no", "not matter", "still", "anyway", "same"],
-          ["thanks", "thanked", "credit", "know", "knew", "name"]
+          [
+            "no",
+            "not matter",
+            "still",
+            "anyway",
+            "same"
+          ],
+          [
+            "thanks",
+            "thanked",
+            "credit",
+            "know",
+            "knew",
+            "name"
+          ]
         ],
-        "support": ["lamp", "stair", "gift", "give"]
+        "support": [
+          "lamp",
+          "stair",
+          "gift",
+          "give"
+        ]
       }
     }
   },
@@ -445,8 +575,15 @@
       "2": "This time I point at one thing, and then I ask about it.",
       "3": "Last one. You write, in your own words."
     },
-    "praise": ["That is the one.", "Right. Good.", "You were listening."],
-    "nudge": ["Not that one. Look again.", "Close. Read the line once more."],
+    "praise": [
+      "That is the one.",
+      "Right. Good.",
+      "You were listening."
+    ],
+    "nudge": [
+      "Not that one. Look again.",
+      "Close. Read the line once more."
+    ],
     "end": {
       "1": "That is the whole story. Now we go back through it slowly.",
       "2": "Good. Now the hard one: your own words.",
@@ -456,38 +593,84 @@
   "wrenLines": {},
   "wrenReactions": {
     "p1": [
-      { "at": 0, "state": "watch" },
-      { "at": 2, "state": "lean", "line": "No light. Of course there is no light." }
+      {
+        "at": 0,
+        "state": "watch"
+      },
+      {
+        "at": 2,
+        "state": "lean",
+        "line": "No light. Of course there is no light."
+      }
     ],
     "p2": [
-      { "at": 1, "state": "think", "line": "One wick. That is all she has." },
-      { "at": 5, "state": "delight" }
+      {
+        "at": 1,
+        "state": "think",
+        "line": "One wick. That is all she has."
+      },
+      {
+        "at": 5,
+        "state": "delight"
+      }
     ],
-    "p3": [{ "at": 0, "state": "spooked", "line": "Someone is knocking. At this hour." }],
+    "p3": [
+      {
+        "at": 0,
+        "state": "spooked",
+        "line": "Someone is knocking. At this hour."
+      }
+    ],
     "p4": [
-      { "at": 0, "state": "hush" },
-      { "at": 5, "state": "moved", "line": "Still there. That is the whole point." }
+      {
+        "at": 0,
+        "state": "hush"
+      },
+      {
+        "at": 5,
+        "state": "moved",
+        "line": "Still there. That is the whole point."
+      }
     ],
-    "notes": [{ "at": 0, "state": "knowing" }]
+    "notes": [
+      {
+        "at": 0,
+        "state": "knowing"
+      }
+    ]
   },
   "preshow": [
     {
       "state": "happy",
       "text": "This is The Lantern on the Stair. It is short, and none of it is true."
     },
-    { "state": "talk", "text": "Four parts, two of them dark and two of them less so." },
-    { "state": "hush", "text": "Nothing to do in the first reading. Just watch." }
+    {
+      "state": "talk",
+      "text": "Four parts, two of them dark and two of them less so."
+    },
+    {
+      "state": "hush",
+      "text": "Nothing to do in the first reading. Just watch."
+    }
   ],
   "dialogue": {
     "p1": [
-      { "who": "w", "state": "sulk", "text": "No lamp at all? On a stair?" },
+      {
+        "who": "w",
+        "state": "sulk",
+        "text": "No lamp at all? On a stair?"
+      },
       {
         "who": "p",
         "text": "None. Somebody stopped lighting it, and nobody started again."
       }
     ],
     "p2": [
-      { "who": "w", "state": "think", "text": "Four matches. I would have given up at two." },
+      {
+        "who": "w",
+        "state": "think",
+        "text": "Four matches. I would have given up at two."
+      },
       {
         "who": "p",
         "text": "She had one wick and no second chance. That is why she was careful."
@@ -499,22 +682,43 @@
         "state": "lean",
         "text": "She bolted the door and then opened it. Which is it?"
       },
-      { "who": "p", "text": "Both. Being careful and being brave are not opposites." }
+      {
+        "who": "p",
+        "text": "Both. Being careful and being brave are not opposites."
+      }
     ],
     "p4": [
-      { "who": "w", "state": "moved", "text": "So the whole street uses her lamp now." },
-      { "who": "p", "text": "And none of them know whose it is. That is the ending." }
+      {
+        "who": "w",
+        "state": "moved",
+        "text": "So the whole street uses her lamp now."
+      },
+      {
+        "who": "p",
+        "text": "And none of them know whose it is. That is the ending."
+      }
     ],
     "notes": [
-      { "who": "w", "state": "spooked", "text": "Wait — none of this is real?" },
+      {
+        "who": "w",
+        "state": "spooked",
+        "text": "Wait — none of this is real?"
+      },
       {
         "who": "p",
         "text": "None of it. It is here so the reader can be tested on something."
       }
     ],
     "after": [
-      { "who": "w", "state": "ache", "text": "Nobody ever thanked her." },
-      { "who": "p", "text": "No. The lamp went on being lit anyway." }
+      {
+        "who": "w",
+        "state": "ache",
+        "text": "Nobody ever thanked her."
+      },
+      {
+        "who": "p",
+        "text": "No. The lamp went on being lit anyway."
+      }
     ]
   },
   "cast": {
@@ -570,8 +774,16 @@
     }
   },
   "languages": [
-    { "code": "es", "name": "Español", "en": "Spanish" },
-    { "code": "ko", "name": "한국어", "en": "Korean" }
+    {
+      "code": "es",
+      "name": "Español",
+      "en": "Spanish"
+    },
+    {
+      "code": "ko",
+      "name": "한국어",
+      "en": "Korean"
+    }
   ],
   "lineTranslations": {
     "p1": {
@@ -672,44 +884,155 @@
     }
   },
   "wordTranslations": {
-    "gloom": { "es": "penumbra", "ko": "어둠", "fr": "pénombre" },
-    "tread": { "es": "escalón", "ko": "계단의 디딤판" },
-    "landing": { "es": "rellano", "ko": "층계참" },
-    "brittle": { "es": "quebradizo", "ko": "잘 깨지는" },
-    "fumbled": { "es": "manoseó torpemente", "ko": "서투르게 더듬었다" },
-    "soot": { "es": "hollín", "ko": "그을음" },
-    "still": { "es": "inmóvil", "ko": "움직이지 않는" },
-    "watch house": { "es": "garita", "ko": "초소" },
-    "wick": { "es": "mecha", "ko": "심지", "fr": "mèche" },
-    "patient": { "es": "paciente", "ko": "참을성 있는" },
-    "tinder": { "es": "yesca", "ko": "불쏘시개" },
-    "kindle": { "es": "encender", "ko": "불을 붙이다" },
-    "glimmered": { "es": "brilló débilmente", "ko": "희미하게 빛났다" },
-    "flickered": { "es": "parpadeó", "ko": "깜박였다" },
-    "stranger": { "es": "desconocido", "ko": "낯선 사람" },
-    "bolted": { "es": "echó el cerrojo", "ko": "빗장을 걸었다" },
-    "hesitant": { "es": "dudoso", "ko": "망설이는" },
-    "errand": { "es": "recado", "ko": "심부름" },
-    "courteous": { "es": "cortés", "ko": "정중한" },
-    "beacon": { "es": "faro", "ko": "등대", "fr": "phare" },
-    "custom": { "es": "costumbre", "ko": "관습" },
-    "grateful": { "es": "agradecido", "ko": "고마워하는" },
-    "dwindled": { "es": "menguó", "ko": "줄어들었다" },
-    "steadfast": { "es": "firme", "ko": "변함없는" }
+    "gloom": {
+      "es": "penumbra",
+      "ko": "어둠",
+      "fr": "pénombre"
+    },
+    "tread": {
+      "es": "escalón",
+      "ko": "계단의 디딤판"
+    },
+    "landing": {
+      "es": "rellano",
+      "ko": "층계참"
+    },
+    "brittle": {
+      "es": "quebradizo",
+      "ko": "잘 깨지는"
+    },
+    "fumbled": {
+      "es": "manoseó torpemente",
+      "ko": "서투르게 더듬었다"
+    },
+    "soot": {
+      "es": "hollín",
+      "ko": "그을음"
+    },
+    "still": {
+      "es": "inmóvil",
+      "ko": "움직이지 않는"
+    },
+    "watch house": {
+      "es": "garita",
+      "ko": "초소"
+    },
+    "wick": {
+      "es": "mecha",
+      "ko": "심지",
+      "fr": "mèche"
+    },
+    "patient": {
+      "es": "paciente",
+      "ko": "참을성 있는"
+    },
+    "tinder": {
+      "es": "yesca",
+      "ko": "불쏘시개"
+    },
+    "kindle": {
+      "es": "encender",
+      "ko": "불을 붙이다"
+    },
+    "glimmered": {
+      "es": "brilló débilmente",
+      "ko": "희미하게 빛났다"
+    },
+    "flickered": {
+      "es": "parpadeó",
+      "ko": "깜박였다"
+    },
+    "stranger": {
+      "es": "desconocido",
+      "ko": "낯선 사람"
+    },
+    "bolted": {
+      "es": "echó el cerrojo",
+      "ko": "빗장을 걸었다"
+    },
+    "hesitant": {
+      "es": "dudoso",
+      "ko": "망설이는"
+    },
+    "errand": {
+      "es": "recado",
+      "ko": "심부름"
+    },
+    "courteous": {
+      "es": "cortés",
+      "ko": "정중한"
+    },
+    "beacon": {
+      "es": "faro",
+      "ko": "등대",
+      "fr": "phare"
+    },
+    "custom": {
+      "es": "costumbre",
+      "ko": "관습"
+    },
+    "grateful": {
+      "es": "agradecido",
+      "ko": "고마워하는"
+    },
+    "dwindled": {
+      "es": "menguó",
+      "ko": "줄어들었다"
+    },
+    "steadfast": {
+      "es": "firme",
+      "ko": "변함없는"
+    }
   },
   "uiTranslations": {
-    "Class": { "es": "Clase", "ko": "수업" },
-    "Language": { "es": "Idioma", "ko": "언어" },
-    "Vocabulary": { "es": "Vocabulario", "ko": "어휘" },
-    "Menu": { "es": "Menú", "ko": "메뉴" },
-    "Learning guide": { "es": "Guía de aprendizaje", "ko": "학습 안내서" },
-    "Contents": { "es": "Índice", "ko": "목차" },
-    "Word": { "es": "Palabra", "ko": "단어" },
-    "What it means": { "es": "Qué significa", "ko": "뜻" },
-    "Met in": { "es": "Aparece en", "ko": "나오는 곳" },
-    "Reading": { "es": "Lectura", "ko": "읽기" },
-    "What happens": { "es": "Qué pasa", "ko": "무슨 일이 일어나는가" },
-    "What is asked": { "es": "Qué se pregunta", "ko": "무엇을 묻는가" }
+    "Class": {
+      "es": "Clase",
+      "ko": "수업"
+    },
+    "Language": {
+      "es": "Idioma",
+      "ko": "언어"
+    },
+    "Vocabulary": {
+      "es": "Vocabulario",
+      "ko": "어휘"
+    },
+    "Menu": {
+      "es": "Menú",
+      "ko": "메뉴"
+    },
+    "Learning guide": {
+      "es": "Guía de aprendizaje",
+      "ko": "학습 안내서"
+    },
+    "Contents": {
+      "es": "Índice",
+      "ko": "목차"
+    },
+    "Word": {
+      "es": "Palabra",
+      "ko": "단어"
+    },
+    "What it means": {
+      "es": "Qué significa",
+      "ko": "뜻"
+    },
+    "Met in": {
+      "es": "Aparece en",
+      "ko": "나오는 곳"
+    },
+    "Reading": {
+      "es": "Lectura",
+      "ko": "읽기"
+    },
+    "What happens": {
+      "es": "Qué pasa",
+      "ko": "무슨 일이 일어나는가"
+    },
+    "What is asked": {
+      "es": "Qué se pregunta",
+      "ko": "무엇을 묻는가"
+    }
   },
   "speechTranslations": {
     "This is The Lantern on the Stair. It is short, and none of it is true.": {

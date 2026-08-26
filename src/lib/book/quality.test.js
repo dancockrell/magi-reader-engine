@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
-import { qualityOf, positionBias, questionsOf, glossesOf } from './quality.js';
+import { qualityOf, positionBias, questionsOf, glossesOf, answerCycle } from './quality.js';
 
 /**
  * The second gate: not "can this be read" but "can it be beaten without
@@ -230,14 +230,64 @@ describe('the book as a whole', () => {
 });
 
 describe('against the books that actually exist', () => {
-  it('finds the shipped book beatable by position', () => {
-    /* This is not a hypothetical. 43% of Magi's answers are option 0,
-       against 25% for an even spread, so always answering first scores
-       43% without reading. Asserted so that fixing the book is what
-       makes this test change, rather than someone quietly deleting it. */
-    const magi = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-    const bias = positionBias(questionsOf(magi));
-    expect(bias.share).toBeGreaterThan(0.35);
-    expect(bias.slot).toBe(0);
+  /* This block used to assert the opposite: "finds the shipped book
+     beatable by position", pinning the fact that 41% of Magi's answers
+     sat in option 0 against 25% for an even spread. Its comment said it
+     was written that way "so that fixing the book is what makes this
+     test change, rather than someone quietly deleting it".
+
+     That is exactly what happened. `tools/debias.mjs` permuted the
+     options — changing no text, and verified answer-by-answer against
+     the previous version — and this test went red. So it is inverted
+     now, and guards the fix instead of the defect. */
+
+  const books = [
+    ['magi', 'src/books/magi/book.json'],
+    ['fixture', 'src/books/fixture/book.json'],
+  ];
+
+  it.each(books)('%s is not beatable by always picking one slot', (_name, path) => {
+    const book = JSON.parse(readFileSync(path, 'utf8'));
+    const questions = questionsOf(book);
+
+    /* The fragile number. Without this, a book whose questions failed to
+       load would have no bias at all and sail through. */
+    expect(questions.length, 'no questions loaded, so this proves nothing').toBeGreaterThan(10);
+
+    const bias = positionBias(questions);
+    expect(
+      bias.excess,
+      `answer sits in option ${bias.slot} ${Math.round(bias.share * 100)}% of the time`
+    ).toBeLessThan(0.15);
+  });
+
+  it.each(books)('%s has nothing the gate calls serious', (_name, path) => {
+    /* The whole point of the gate, asserted against the shipped books
+       rather than against fixtures. Both were at 76 and 84 before
+       `tools/debias.mjs` and a pass of distractor rewriting; The Raven
+       was at 58 with its answer the longest option in 82% of questions.
+
+       `high` rather than every finding, because low-severity items are
+       advisory by design and a human author is allowed to overrule
+       them. A high finding means the book is beatable without reading,
+       which is not a matter of taste. */
+    const book = JSON.parse(readFileSync(path, 'utf8'));
+    const { findings, counts } = qualityOf(book);
+
+    expect(counts.questions, 'no questions loaded, so this proves nothing').toBeGreaterThan(10);
+
+    const serious = findings.filter((f) => f.severity === 'high');
+    expect(serious.map((f) => `${f.where}: ${f.what}`)).toEqual([]);
+  });
+
+  it.each(books)('%s does not have a repeating answer key', (_name, path) => {
+    /* The trap that the fix itself could have created. A round-robin
+       assignment gives a perfect even spread and a visible cycle, which
+       scores 100% for anyone who notices, and the bias check above would
+       call it clean. */
+    const book = JSON.parse(readFileSync(path, 'utf8'));
+    const questions = questionsOf(book);
+    expect(questions.length).toBeGreaterThan(10);
+    expect(answerCycle(questions)).toBeNull();
   });
 });

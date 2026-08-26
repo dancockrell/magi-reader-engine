@@ -580,22 +580,22 @@
      "q": "How much money has Della saved for Jim's present?",
      "opts": [
       "Eight dollars, the weekly rent",
-      "One dollar and eighty-seven cents",
+      "Sixty cents in pennies",
       "Twenty dollars, Jim's whole weekly pay",
-      "Sixty cents in pennies"
+      "One dollar and eighty-seven cents"
      ],
-     "correct": 1,
+     "correct": 3,
      "fb": "'One dollar and eighty-seven cents. That was all.' The sixty cents in pennies is only part of it, and eight and twenty dollars are the rent and Jim's pay."
     },
     {
      "q": "Why did saving the pennies make Della's cheeks burn?",
      "opts": [
-      "She was ashamed that the shopkeepers silently thought she was mean with money.",
-      "She had to run from shop to shop in the cold looking for the lowest prices.",
       "The grocer shouted at her in front of the other customers.",
+      "She had to run from shop to shop in the cold looking for the lowest prices.",
+      "She was ashamed that the shopkeepers silently thought she was mean with money.",
       "She was embarrassed to pay for food with handfuls of pennies."
      ],
-     "correct": 0,
+     "correct": 2,
      "fb": "Her cheeks burned with 'the silent imputation of parsimony' — the unspoken accusation of being cheap. Nobody shouted; the shame was in what the shopkeepers were silently thinking."
     }
    ],
@@ -666,7 +666,7 @@
      "opts": [
       "Jim's pay has dropped from thirty dollars a week to twenty.",
       "The old card is too large to fit in the little letter-box downstairs.",
-      "Della has always thought the long name sounded silly.",
+      "Della has long thought the name sounded rather silly.",
       "A new neighbor has put up a card with the same name."
      ],
      "correct": 0,
@@ -754,23 +754,23 @@
     {
      "q": "What does Della see when she looks out the window?",
      "opts": [
-      "A gray cat walking a gray fence in a gray backyard.",
       "Snow beginning to fall on the empty street below.",
+      "A gray cat walking a gray fence in a gray backyard.",
       "Jim walking home early along the darkening street.",
       "The bright windows of the shops where she wanted to buy his present."
      ],
-     "correct": 0,
+     "correct": 1,
      "fb": "'A gray cat walking a gray fence in a gray backyard.' Gray three times in one line — the world outside is offering her exactly nothing."
     },
     {
      "q": "At the mirror, what happens to Della within twenty seconds?",
      "opts": [
-      "Her eyes shine, but her face loses its color.",
-      "She begins to cry again and turns away from the glass.",
       "She smiles at herself and starts fixing her hat to go out.",
+      "She begins to cry again and turns away from the glass.",
+      "Her eyes shine, but her face loses its color.",
       "She counts her money one more time in front of the mirror."
      ],
-     "correct": 0,
+     "correct": 2,
      "fb": "'Her eyes were shining brilliantly, but her face had lost its color within twenty seconds.' The crying is finished — this is something new: excitement and fear arriving together."
     }
    ],
@@ -834,10 +834,10 @@
     "opts": [
      "Della has sold her hair and bought Jim's present.",
      "Jim has come home early and found Della crying on the couch.",
-     "Della has counted her money, cried, and decided something she has not told us yet.",
-     "Della has borrowed the money she needs from the shopkeepers."
+     "Della has borrowed the money she needs from the shopkeepers.",
+     "Della has counted her money, cried, and decided something she has not told us yet."
     ],
-    "correct": 2,
+    "correct": 3,
     "fb": "One dollar and eighty-seven cents, counted three times. A cry on the shabby couch. Then shining eyes at the mirror, and her hair let down to its full length. We have watched her decide — but nobody has said what the decision is.",
     "wren": "Count, cry, mirror. She's decided something and the story won't tell us what. That's why you can't stop here."
    }
@@ -854,12 +854,12 @@
     {
      "q": "What are the two treasures of the James Dillingham Youngs?",
      "opts": [
-      "Jim's gold watch and Della's hair.",
+      "The furnished flat and Jim's weekly pay.",
       "The proud name card and the gold watch.",
       "Della's hair and her grandmother's ring.",
-      "The furnished flat and Jim's weekly pay."
+      "Jim's gold watch and Della's hair."
      ],
-     "correct": 0,
+     "correct": 3,
      "fb": "'One was Jim's gold watch that had been his father's and his grandfather's. The other was Della's hair.' Not things they bought — things that are part of who they are."
     },
     {
@@ -1032,23 +1032,23 @@
     {
      "q": "Why does Della know at once that the chain 'must be Jim's'?",
      "opts": [
-      "It is the most expensive chain in any of the stores.",
-      "It is covered in fine, showy ornament, like a rich man's chain.",
       "It is quiet and valuable, like Jim himself.",
+      "It is covered in fine, showy ornament, like a rich man's chain.",
+      "It is the most expensive chain in any of the stores.",
       "It matches the old leather strap that Jim already uses."
      ],
-     "correct": 2,
+     "correct": 0,
      "fb": "'It was like him. Quietness and value—the description applied to both.' Plain, real, and worth more than it shows — that is the chain, and that is Jim."
     },
     {
      "q": "Why does Jim sometimes look at his grand watch 'on the sly'?",
      "opts": [
-      "He is ashamed of the old leather strap it hangs on.",
+      "Looking at a watch during work is against his employer's rules.",
       "He is afraid that someone in the street will steal it.",
       "He does not want Della to know that he still carries it.",
-      "Looking at a watch during work is against his employer's rules."
+      "He is ashamed of the old leather strap it hangs on."
      ],
-     "correct": 0,
+     "correct": 3,
      "fb": "'On account of the old leather strap that he used in place of a chain.' The watch is grand; the strap says poor. So he checks the time secretly."
     }
    ],
@@ -1111,11 +1111,11 @@
     "q": "Across this act, what has Della actually traded — and for what?",
     "opts": [
      "Her months of small savings, in exchange for Jim's gold watch.",
-     "One of the two treasures of the house, to be worthy of the other.",
+     "Nothing yet — she is still standing in front of the mirror, deciding.",
      "Her old brown jacket and hat, for twenty-one dollars in a shop.",
-     "Nothing yet — she is still standing in front of the mirror, deciding."
+     "One of the two treasures of the house, to be worthy of the other."
     ],
-    "correct": 1,
+    "correct": 3,
     "fb": "The house holds two treasures: the watch and the hair. She sold hers to buy something 'even worthy of The Watch'. That is half of a shape — keep hold of it.",
     "wren": "She sold one treasure to dress the other one. Hold that shape in your head. It's going to matter."
    }
@@ -1144,11 +1144,11 @@
      "q": "When Della asks the mirror 'what could I do?', what is she really telling herself?",
      "opts": [
       "That she should have asked Jim before she sold her hair.",
-      "That there was no other way to give Jim a present.",
+      "That the eighty-seven cents might still buy her a wig.",
       "That Madame Sofronie paid her far too little for it.",
-      "That the eighty-seven cents might still buy her a wig."
+      "That there was no other way to give Jim a present."
      ],
-     "correct": 1,
+     "correct": 3,
      "fb": "'What could I do with a dollar and eighty-seven cents?' It is not an excuse — it is the plain truth, and it is the engine of the whole story."
     }
    ],
@@ -1212,23 +1212,23 @@
     {
      "q": "What does the narrator tell us about Jim as he comes in?",
      "opts": [
-      "He is twenty-two, needs a new overcoat, and has no gloves.",
-      "He is smiling, and hiding a Christmas package behind his back for Della.",
       "He is angry with Della even before he has opened the door of the flat.",
+      "He is smiling, and hiding a Christmas package behind his back for Della.",
+      "He is twenty-two, needs a new overcoat, and has no gloves.",
       "He has been paid thirty dollars a week again and looks well dressed."
      ],
-     "correct": 0,
+     "correct": 2,
      "fb": "'He needed a new overcoat and he was without gloves.' Only twenty-two, and burdened with a family. Note it quietly: Jim is exactly as poor as Della."
     },
     {
      "q": "Why does Jim's stare terrify Della?",
      "opts": [
       "It is plainly full of anger about the money she has spent.",
-      "It shows open horror at her tiny short curls.",
       "It is a feeling she cannot read or name.",
+      "It shows open horror at her tiny short curls.",
       "He looks straight past her, as if she were not in the room at all."
      ],
-     "correct": 2,
+     "correct": 1,
      "fb": "'An expression in them that she could not read.' Not anger, nor surprise, nor horror — she was ready for those. This is something with no name yet."
     }
    ],
@@ -1296,11 +1296,11 @@
      "q": "What does Jim keep asking Della, slowly, again and again?",
      "opts": [
       "Why she spent all of their saved money.",
-      "Whether her hair is really gone.",
+      "Where she has hidden his present.",
       "Who cut her hair off for her.",
-      "Where she has hidden his present."
+      "Whether her hair is really gone."
      ],
-     "correct": 1,
+     "correct": 3,
      "fb": "'You say your hair is gone?' He asks it 'laboriously', as if the obvious fact will not enter his head. Remember this look — it is explained in the next part."
     },
     {
@@ -1309,7 +1309,7 @@
       "A mathematician could calculate the difference exactly.",
       "The money means nothing next to what these two have.",
       "Jim will be earning a million a year one day.",
-      "Poor families are always happier than rich ones."
+      "Poor families tend to be happier than rich ones."
      ],
      "correct": 1,
      "fb": "'A mathematician or a wit would give you the wrong answer.' Whatever Della and Jim hold in that hug, no amount of money measures it."
@@ -1367,12 +1367,12 @@
     "label": "Looking back — Act III",
     "q": "During the long stare at the door, what does Jim know that Della does not — and that we, the readers, do not know yet either?",
     "opts": [
-     "That her hair is gone forever and will never grow back.",
-     "That he has lost his job and cannot buy her anything at all.",
      "That the gift in his pocket was made for the hair she has just sold.",
+     "That he has lost his job and cannot buy her anything at all.",
+     "That her hair is gone and will take years to grow back.",
      "That Della has been hiding money from him all through the year."
     ],
-    "correct": 2,
+    "correct": 0,
     "fb": "His stare is 'not anger, nor surprise... nor horror' — he is holding combs for hair that no longer exists. We only find that out one scene later, and then the stare makes perfect sense.",
     "wren": "He's not angry. He's doing a sum in his head that we can't see yet. Once you know about the combs, go back and read the stare again. It's a different scene."
    }
@@ -1389,23 +1389,23 @@
     {
      "q": "Della gives a scream of joy — and one second later she is crying. Why?",
      "opts": [
-      "The combs are broken inside the paper.",
       "The combs are for the hair she no longer has.",
+      "The combs are broken inside the paper.",
       "Jim has spent the rent money that they needed.",
       "She had wanted a different set of combs."
      ],
-     "correct": 1,
+     "correct": 0,
      "fb": "They are 'just the shade to wear in the beautiful vanished hair'. The perfect gift arrived one day after the hair it was made for."
     },
     {
      "q": "Why does Della look up, smile, and say 'My hair grows so fast, Jim!'?",
      "opts": [
-      "She is being brave, for Jim's sake.",
       "She truly believes her hair will be back before New Year.",
+      "She is being brave, for Jim's sake.",
       "She wants Jim to take the combs back to the shop.",
       "She is secretly angry and hiding it from him."
      ],
-     "correct": 0,
+     "correct": 1,
      "fb": "She says it 'with dim eyes and a smile' — through tears. The combs fit hair that is gone, so she gives Jim the only comfort she can find."
     }
    ],
@@ -1468,22 +1468,22 @@
      "q": "How does Jim tell Della that the watch is gone?",
      "opts": [
       "He cries and says that he is sorry.",
-      "With a smile, in one calm sentence.",
+      "He waits until after dinner to tell her the truth.",
       "He silently shows her his empty watch pocket.",
-      "He waits until after dinner to tell her the truth."
+      "With a smile, in one calm sentence."
      ],
-     "correct": 1,
+     "correct": 3,
      "fb": "He 'tumbled down on the couch' and smiled: 'I sold the watch to get the money to buy your combs.' No drama at all — that is the point."
     },
     {
      "q": "What does Jim ask Della to do, right after the truth is out?",
      "opts": [
-      "Put the chops on.",
       "Try the combs in what is left of her hair.",
+      "Put the chops on.",
       "Put the chain safely away in a drawer.",
-      "Promise never to sell anything again."
+      "Promise not to sell anything of his again."
      ],
-     "correct": 0,
+     "correct": 1,
      "fb": "'And now suppose you put the chops on.' Ordinary life simply continues — and that gentle, everyday sentence may be the tenderest line in the story."
     }
    ],
@@ -1551,12 +1551,12 @@
     {
      "q": "What is the narrator's final judgment of Della and Jim?",
      "opts": [
-      "They were careless and should have saved their money for the rent.",
+      "Of all who give gifts, they are the wisest.",
       "Their story is too small and uneventful to teach anything.",
       "They should have exchanged the gifts at the shops.",
-      "Of all who give gifts, they are the wisest."
+      "They were careless and should have saved their money for the rent."
      ],
-     "correct": 3,
+     "correct": 0,
      "fb": "He teases them as 'two foolish children' — then turns it around: 'of all who give gifts these two were the wisest. They are the magi.'"
     }
    ],
@@ -1649,22 +1649,22 @@
      "q": "Where did William Sydney Porter begin publishing stories as \"O. Henry\"?",
      "opts": [
       "In a New York newspaper office",
-      "While hiding in Honduras",
       "While serving time in an Ohio prison",
+      "While hiding in Honduras",
       "As a student in North Carolina"
      ],
-     "correct": 2,
+     "correct": 1,
      "fb": "He wrote in his cell and mailed stories out under invented names so editors would not know the author was a prisoner. \"O. Henry\" first appeared in 1899."
     },
     {
      "q": "What deal did O. Henry have with the New York World's Sunday magazine?",
      "opts": [
-      "One story every week",
-      "One novel every year",
       "A daily news column",
+      "One novel every year",
+      "One story every week",
       "He owned the magazine"
      ],
-     "correct": 0,
+     "correct": 2,
      "fb": "A story a week, for over a year — one of the reasons he produced nearly 400 stories in a short life."
     }
    ],
@@ -1734,11 +1734,11 @@
      "q": "What is \"situational irony\", the term this story is used to teach?",
      "opts": [
       "When a character says one thing but means another",
-      "When what happens is the opposite of what was expected",
       "When the reader knows something the characters do not",
+      "When what happens is the opposite of what was expected",
       "When a story ends exactly as it began"
      ],
-     "correct": 1,
+     "correct": 2,
      "fb": "Each gift was chosen for the very thing the other one sold. The outcome is the exact reverse of what both of them planned — that reversal is situational irony."
     },
     {
@@ -1746,10 +1746,10 @@
      "opts": [
       "A gift that arrives late for Christmas",
       "A present bought with borrowed money",
-      "An expensive gift given to a stranger",
-      "Two people each sacrificing their treasure for the other, so the gifts cancel out"
+      "Two people each sacrificing their treasure for the other, so the gifts cancel out",
+      "An expensive gift given to a stranger"
      ],
-     "correct": 3,
+     "correct": 2,
      "fb": "The title became an English expression for exactly this pattern of mutual sacrifice — very few stories turn into a phrase."
     }
    ],

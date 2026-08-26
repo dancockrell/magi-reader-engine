@@ -44,10 +44,35 @@
  * assumed capability.
  */
 
-/** @typedef {{kind: string, severity: 'high'|'low', where: string, what: string, why: string}} Finding */
+/**
+ * `detail` marks a finding that elaborates another one rather than
+ * standing on its own — the per-question breakdown under a book-wide
+ * fault. Reported, but not scored, so a book is not punished once for a
+ * defect and again for every place the tool can point at it.
+ *
+ * @typedef {{kind: string, severity: 'high'|'low', where: string, what: string, why: string, detail?: boolean}} Finding
+ */
 
-/** Words that make an option look wrong to anyone who has sat an exam. */
-const ABSOLUTES = ['always', 'never', 'all of', 'none of', 'every single', 'nobody ever'];
+/**
+ * Words that make an option look wrong to anyone who has sat an exam.
+ *
+ * Phrases, matched with word boundaries, not substrings. The first
+ * version listed "all of", which flagged "Why she spent all of their
+ * saved money" — ordinary prose and a perfectly good distractor. That is
+ * the over-firing failure this file warns about two paragraphs up, so it
+ * is worth saying plainly that it happened here: the same loose pattern
+ * was in `tools/debias.mjs` and made it skip that question too.
+ *
+ * "all of the above" IS a real tell. "all of" is not.
+ */
+const ABSOLUTES = [
+  /\balways\b/i,
+  /\bnever\b/i,
+  /\b(all|none|both)\s+of\s+the\s+(above|following)\b/i,
+  /\bevery\s+single\b/i,
+  /\bnobody\s+ever\b/i,
+  /\bno\s+one\s+ever\b/i,
+];
 
 const words = (s) =>
   String(s || '')
@@ -120,6 +145,36 @@ export function positionBias(questions) {
 }
 
 /**
+ * Does the answer key repeat?
+ *
+ * Added when `tools/debias.mjs` was written to fix position bias. The
+ * obvious fix is to assign slots round-robin, which produces a perfect
+ * even spread — and the sequence 0,1,2,3,0,1,2,3, which scores 100% for
+ * any student who notices. `positionBias` would report that as clean,
+ * because it is: every slot gets exactly its share.
+ *
+ * So a balanced key is necessary and not sufficient, and a gate that
+ * only checked balance would have blessed a book that was *more*
+ * exploitable than the one it started from. Any fix that satisfies a
+ * check while defeating its purpose is worth a check of its own.
+ *
+ * Returns the shortest period that explains most of the key, or null.
+ */
+export function answerCycle(questions) {
+  const seq = questions.map((q) => q.correct).filter((n) => typeof n === 'number');
+  if (seq.length < 8) return null;
+
+  for (let p = 1; p <= 4; p++) {
+    if (seq.length < p * 3) break;
+    let hits = 0;
+    for (let i = p; i < seq.length; i++) if (seq[i] === seq[i - p]) hits++;
+    const share = hits / (seq.length - p);
+    if (share > 0.85) return { period: p, share, length: seq.length };
+  }
+  return null;
+}
+
+/**
  * Score a book, and say what is wrong with it.
  *
  * @param {object} book
@@ -145,13 +200,42 @@ export function qualityOf(book) {
     });
   }
 
-  /* ---- the longest option is the answer ---- */
+  /* ---- the answer key repeats ---- */
+  const cycle = answerCycle(questions);
+  if (cycle) {
+    findings.push({
+      kind: 'answer-cycle',
+      severity: 'high',
+      where: 'the whole book',
+      what:
+        `the answer position repeats every ${cycle.period} question(s) ` +
+        `across ${cycle.length} questions`,
+      why:
+        'a student who spots the pattern scores every mark without reading. ' +
+        'An even spread is not enough on its own; the order has to be unpredictable too.',
+    });
+  }
+
+  /* ---- the longest option is the answer ----
+   *
+   * Reported per question as well as in aggregate. "82% of questions"
+   * is a true statement nobody can act on: it names no question to fix.
+   * The book-wide finding says how bad it is; the per-question ones say
+   * where to start, worst margin first, because the question whose
+   * answer runs 60 characters longer than every distractor is the one
+   * giving the game away. */
   if (questions.length >= 5) {
-    const longest = questions.filter((q) => {
+    const offenders = [];
+    for (const q of questions) {
       const lens = (q.opts || []).map((o) => String(o).length);
-      return lens.length > 1 && lens[q.correct] === Math.max(...lens);
-    }).length;
-    const share = longest / questions.length;
+      if (lens.length < 2) continue;
+      const mine = lens[q.correct];
+      if (mine !== Math.max(...lens)) continue;
+      const others = lens.filter((_, i) => i !== q.correct);
+      offenders.push({ q, margin: mine - Math.max(...others) });
+    }
+
+    const share = offenders.length / questions.length;
     if (share > 0.55) {
       findings.push({
         kind: 'longest-option',
@@ -162,6 +246,27 @@ export function qualityOf(book) {
           'writers elaborate the option they know is true and leave the others terse. ' +
           'Picking the longest is a strategy that works on this book.',
       });
+
+      /* Only the ones where length alone gives it away. A one-character
+         margin is noise; a long one is a tell a student can see. */
+      for (const o of offenders
+        .filter((x) => x.margin >= 10)
+        .sort((a, b) => b.margin - a.margin)) {
+        findings.push({
+          kind: 'longest-option-question',
+          severity: 'low',
+          /* Detail of the book-wide finding above, not a separate fault.
+             Without this the same defect is scored eighteen times and
+             the book drops from 62 to 9 for getting MORE informative,
+             which would teach everyone to distrust the score. */
+          detail: true,
+          where: whereOf(o.q),
+          what: `its answer is ${o.margin} characters longer than any other option`,
+          why:
+            'length alone points at the answer here. Lengthen the distractors ' +
+            'or trim the answer until they are comparable.',
+        });
+      }
     }
   }
 
@@ -169,14 +274,13 @@ export function qualityOf(book) {
   for (const q of questions) {
     for (const [i, opt] of (q.opts || []).entries()) {
       if (i === q.correct) continue;
-      const low = String(opt).toLowerCase();
-      const hit = ABSOLUTES.find((a) => low.includes(a));
+      const hit = ABSOLUTES.map((a) => String(opt).match(a)).find(Boolean);
       if (hit) {
         findings.push({
           kind: 'absolute-distractor',
           severity: 'low',
           where: whereOf(q),
-          what: `a wrong option says "${hit}"`,
+          what: `a wrong option says "${hit[0]}"`,
           why: 'absolutes read as false to anyone who has sat an exam, so the option does no work.',
         });
       }
@@ -241,9 +345,14 @@ export function qualityOf(book) {
   }
 
   /* A score, so a batch can be sorted worst-first. Not a grade: it
-     exists to put the book most worth a human's attention at the top. */
-  const high = findings.filter((f) => f.severity === 'high').length;
-  const low = findings.length - high;
+     exists to put the book most worth a human's attention at the top.
+
+     Detail findings are excluded. They elaborate a fault already counted
+     above, and scoring both means a book is punished once for the defect
+     and again for every place the tool can point at it. */
+  const scored = findings.filter((f) => !f.detail);
+  const high = scored.filter((f) => f.severity === 'high').length;
+  const low = scored.length - high;
   const score = Math.max(0, 100 - high * 15 - low * 4);
 
   return { score, findings, counts: { questions: questions.length, glosses: glosses.length } };
