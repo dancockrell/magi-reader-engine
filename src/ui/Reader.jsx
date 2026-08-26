@@ -16,8 +16,8 @@ import {
 import { current, quizScore } from '../lib/reader/assessment.js';
 import { speaker } from '../lib/speech/script.js';
 import { glossOf } from '../lib/reader/beats.js';
-import { mediaOf } from '../books/index.js';
 import { T } from './useUi.jsx';
+import { useBook } from './useBook.jsx';
 
 /**
  * The reading itself — all three of them.
@@ -48,7 +48,6 @@ function openPopover() {
 
 /**
  * @param {object} props
- * @param {import('../lib/types.js').Book} props.book
  * @param {number} [props.index]                which stop, from the URL
  * @param {number} [props.pass]                 which of the three readings
  * @param {(next:number)=>void} [props.onMove]  ask the router to move
@@ -66,7 +65,6 @@ function openPopover() {
  * @param {import('react').ReactNode} [props.handIn]  shown at the end
  */
 export default function Reader({
-  book,
   index = 0,
   pass = 1,
   onMove,
@@ -83,11 +81,17 @@ export default function Reader({
   rate = 1,
   handIn = null,
 }) {
+  /* The book is asked for, not imported. The reading is of whatever book
+     the app is showing, and every list built below is keyed on it — a
+     track, a set of segments or a glossary left over from a previous
+     book would be read against the wrong pictures.
+
+     The book says where its own recordings are, too. The engine does not
+     know the name of a single one of them. */
+  const { book, media } = useBook();
+
   const track = useMemo(() => trackFor(book, pass), [book, pass]);
   const segments = useMemo(() => segmentsOf(track, book), [track, book]);
-  /* The book says where its own recordings are. The engine does not
-     know the name of a single one of them. */
-  const media = useMemo(() => mediaOf(book), [book]);
   /* Built once per book: the words each unit explains, so a stop that is
      not a line — a question, a conversation — can still offer them. */
   const glossByUnit = useMemo(() => {

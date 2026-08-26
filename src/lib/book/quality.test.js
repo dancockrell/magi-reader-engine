@@ -12,7 +12,24 @@ import { qualityOf, positionBias, questionsOf, glossesOf } from './quality.js';
 
 const q = (correct, opts, text = 'What happened?') => ({ q: text, opts, correct });
 
-const bookOf = (units) => ({ meta: { title: 'T', id: 't' }, units });
+/**
+ * A book, with its questions filed where both gates read them.
+ *
+ * Written as `mc` on a unit because that reads better in a test, and
+ * moved into the teaching layer here because that is the only place a
+ * question counts. `validate.js` refuses a unit-level `mc` outright, and
+ * this helper existing is why every test below did not have to learn
+ * that.
+ */
+const bookOf = (units) => ({
+  meta: { title: 'T', id: 't' },
+  units: units.map((u) => {
+    const unit = { ...u };
+    delete unit.mc;
+    return unit;
+  }),
+  teaching: Object.fromEntries(units.filter((u) => u.mc).map((u) => [u.id, { mc: u.mc }])),
+});
 
 describe('where the answer sits', () => {
   it('notices when the answer is nearly always in the same slot', () => {
@@ -115,6 +132,49 @@ describe('glosses', () => {
       { id: 'u2', stanzas: ['y'], gloss: [{ w: 'b', d: 'two' }] },
     ];
     expect(glossesOf(bookOf(units)).map((g) => g.w)).toEqual(['a', 'b']);
+  });
+});
+
+describe('the act reviews are checked too', () => {
+  /* A recap is marked by the same code as a multiple-choice question, so
+     it can be gamed the same ways. This file missed them at first and
+     reported on 28 of the 32 questions a reader builds. The four it
+     skipped were exactly the four that had already spent a release being
+     skipped by everything else. */
+  const withRecaps = (correct) => ({
+    meta: { title: 'T', id: 't' },
+    units: [{ id: 'u1', stanzas: ['x'] }],
+    teaching: {
+      u1: {
+        recap: {
+          q: 'Looking back, what happened?',
+          opts: ['she sold it', 'he always sold everything'],
+          correct,
+        },
+      },
+    },
+  });
+
+  it('counts a recap as a question', () => {
+    expect(questionsOf(withRecaps(0))).toHaveLength(1);
+  });
+
+  it('sees a lazy distractor in a recap', () => {
+    const { findings } = qualityOf(withRecaps(0));
+    expect(findings.some((f) => f.kind === 'absolute-distractor')).toBe(true);
+  });
+
+  it('names it as an act review, not question NaN', () => {
+    /* `q.i + 1` on a recap gives "recap1", which is the kind of detail
+       that makes a report look automated and stop being read. */
+    const { findings } = qualityOf(withRecaps(0));
+    const f = findings.find((x) => x.kind === 'absolute-distractor');
+    expect(f.where).toBe('u1 act review');
+  });
+
+  it('counts the shipping book at the size the reader actually asks', () => {
+    const magi = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
+    expect(questionsOf(magi).length).toBe(32);
   });
 });
 

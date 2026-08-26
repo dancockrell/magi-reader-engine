@@ -28,10 +28,13 @@ export function bookById(id) {
   return BOOKS.find((b) => b.meta?.id === id) || defaultBook;
 }
 
-/** Where this book's recordings and cue file live, once built. */
-export function mediaOf(book) {
-  return {
-    audio: book?.media?.audio || '',
-    cues: book?.media?.cues || '',
-  };
-}
+/**
+ * Where this book's recordings and cue file live, once built.
+ *
+ * It is the engine's, not the pack list's — it reads whatever pack it is
+ * handed — so it lives in `lib/book/media.js` and is re-exported here.
+ * That way a screen that needs the audio path asks for a book's media
+ * without importing the list of titles this build ships, which is the
+ * point of the split.
+ */
+export { mediaOf } from '../lib/book/media.js';

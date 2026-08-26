@@ -20,7 +20,6 @@ const good = () => ({
         'One dollar and eighty-seven cents.\nAnd sixty cents of it in pennies saved by {bulldozing|pushing and bullying} the grocer.',
       ],
       gloss: [['bulldozing', 'pushing and bullying']],
-      mc: [{ q: 'How much has Della saved?', opts: ['$1.87', '$18.70'], correct: 0 }],
     },
     {
       id: 's2',
@@ -30,6 +29,11 @@ const good = () => ({
       gloss: [['mendicancy', 'begging']],
     },
   ],
+  /* Questions live in the teaching layer, which is the only place the
+     reader reads them from. A question on the unit itself is refused. */
+  teaching: {
+    s1: { mc: [{ q: 'How much has Della saved?', opts: ['$1.87', '$18.70'], correct: 0 }] },
+  },
   swaps: { bulldozing: 'bullying' },
 });
 
@@ -180,22 +184,51 @@ describe('the act review', () => {
 describe('multiple choice', () => {
   it('rejects a correct index outside the options', () => {
     const b = good();
-    b.units[0].mc[0].correct = 5;
+    b.teaching.s1.mc[0].correct = 5;
     const { errors } = validateBook(b);
     expect(errors.some((e) => /is not one of/.test(e.message))).toBe(true);
   });
   it('rejects duplicate options', () => {
     const b = good();
-    b.units[0].mc[0].opts = ['$1.87', '$1.87'];
+    b.teaching.s1.mc[0].opts = ['$1.87', '$1.87'];
     const { errors } = validateBook(b);
     expect(errors.some((e) => /duplicate options/.test(e.message))).toBe(true);
   });
   it('rejects a single-option question', () => {
     const b = good();
-    b.units[0].mc[0].opts = ['$1.87'];
-    b.units[0].mc[0].correct = 0;
+    b.teaching.s1.mc[0].opts = ['$1.87'];
+    b.teaching.s1.mc[0].correct = 0;
     const { errors } = validateBook(b);
     expect(errors.some((e) => /at least two options/.test(e.message))).toBe(true);
+  });
+});
+
+describe('questions put somewhere nothing reads them', () => {
+  /* `questionsOf` reads teaching[id].mc and nothing else. A unit-level
+     `mc` was typed and validated with the same care as a real question,
+     and read by nobody: a book could carry a full set of well-formed
+     questions and build a reading with none in it. Same shape as the
+     four act reviews that were shipped and never asked. */
+  it('refuses a question on the unit itself', () => {
+    const b = good();
+    b.units[0].mc = [{ q: 'How much?', opts: ['a', 'b'], correct: 0 }];
+    const { ok, errors } = validateBook(b);
+    expect(ok).toBe(false);
+    expect(errors.some((e) => /nothing reads them/.test(e.message))).toBe(true);
+  });
+
+  it('says where the question should go instead', () => {
+    /* An error that names the fault and not the fix leaves the author
+       guessing, and a generator with no way to correct itself. */
+    const b = good();
+    b.units[0].mc = [{ q: 'How much?', opts: ['a', 'b'], correct: 0 }];
+    const { errors } = validateBook(b);
+    const e = errors.find((x) => /nothing reads them/.test(x.message));
+    expect(e.message).toContain('teaching["s1"].mc');
+  });
+
+  it('says nothing about a unit with no mc key at all', () => {
+    expect(validateBook(good()).ok).toBe(true);
   });
 });
 

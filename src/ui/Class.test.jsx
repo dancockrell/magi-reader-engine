@@ -1,6 +1,8 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import Class from './Class.jsx';
+import book from '../books/fixture/index.js';
+import { BookProvider } from './useBook.jsx';
 import { encode } from '../lib/qr/encode.js';
 import { qrPath } from '../lib/qr/svg.js';
 import { classKey, joinCode, mintOwner, readJoin, readClassKey } from '../lib/class/key.js';
@@ -43,6 +45,22 @@ beforeEach(() => {
   localStorage.clear();
 });
 
+/**
+ * The teacher's panel, on the book the app is showing.
+ *
+ * Which book that is arrives through the provider, not as a prop: the
+ * outbox and the gradebook are filed per book, and the panel has to read
+ * that off the reading rather than off anything decided when this file
+ * loaded.
+ */
+function open() {
+  return render(
+    <BookProvider book={book}>
+      <Class />
+    </BookProvider>
+  );
+}
+
 /** Set this device up as a teacher with a Sheet connected. */
 function asTeacher(cls = '1-A') {
   const owner = mintOwner(cls);
@@ -57,7 +75,7 @@ describe('the code the class scans', () => {
        link could open the gradebook, and a QR code is the easiest way
        yet invented to hand a whole room something by mistake. */
     const owner = asTeacher();
-    render(<Class bookId="fixture" bookTitle="A book" />);
+    open();
 
     const svg = screen.getAllByRole('img', { name: /code holding the link/i })[0];
     expect(svg).toBeInTheDocument();
@@ -89,19 +107,19 @@ describe('the code the class scans', () => {
     /* Without an endpoint there is no join code, so a code here would
        encode a link that joins nothing. */
     localStorage.setItem('reader.teacher.owner.v1', JSON.stringify(mintOwner('1-A')));
-    render(<Class bookId="fixture" bookTitle="A book" />);
+    open();
     expect(screen.queryByRole('img', { name: /code holding the link/i })).toBeNull();
   });
 
   it('has a way to make it big enough to read from the back of the room', () => {
     asTeacher();
-    render(<Class bookId="fixture" bookTitle="A book" />);
+    open();
     expect(screen.getByRole('button', { name: /Show it big/i })).toBeInTheDocument();
   });
 
   it('describes itself to a screen reader instead of being an unnamed picture', () => {
     asTeacher();
-    render(<Class bookId="fixture" bookTitle="A book" />);
+    open();
     const svg = screen.getAllByRole('img', { name: /code holding the link/i })[0];
     expect(svg.getAttribute('aria-label')).toMatch(/link for your class/i);
   });

@@ -3,6 +3,7 @@ import book from '../books/fixture/index.js';
 import { render, screen, within } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import Guide from './Guide.jsx';
+import { BookProvider } from './useBook.jsx';
 import { guideOutline, sectionsOf, anchorFor, planOf } from '../lib/guide/outline.js';
 
 /**
@@ -19,10 +20,25 @@ import { guideOutline, sectionsOf, anchorFor, planOf } from '../lib/guide/outlin
  * title would only prove it works for that title.
  */
 
-/** Rendered at /guide, the way the app mounts it. */
+/**
+ * Rendered at /guide, the way the app mounts it.
+ *
+ * The book arrives through the provider rather than as a prop, which is
+ * how the app supplies it: the router is built before any book is chosen,
+ * so nothing on a route can be handed one.
+ */
 function open(props = {}) {
   const router = createMemoryRouter(
-    [{ path: '/guide', element: <Guide book={book} {...props} /> }],
+    [
+      {
+        path: '/guide',
+        element: (
+          <BookProvider book={book}>
+            <Guide {...props} />
+          </BookProvider>
+        ),
+      },
+    ],
     { initialEntries: ['/guide'] }
   );
   return render(<RouterProvider router={router} />);

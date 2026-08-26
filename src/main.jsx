@@ -10,12 +10,11 @@ import {
   useParams,
 } from 'react-router-dom';
 
-import { defaultBook as book } from './books/index.js';
+import { defaultBook } from './books/index.js';
 import { lineFor } from './lib/vocab/text.js';
 import { wordsOf } from './lib/vocab/words.js';
 import { createSession, advance, answer, progressOf } from './lib/vocab/session.js';
 import { trackFor, stepTrack } from './lib/reader/track.js';
-import { linesOf } from './lib/reader/beats.js';
 import { translatorFor } from './lib/book/translate.js';
 import { rememberWhere, whereLeftOff, forgetWhere } from './lib/reader/resume.js';
 import { answerQuestion, skipQuestion, write } from './lib/reader/assessment.js';
@@ -41,6 +40,7 @@ import Gate from './ui/Gate.jsx';
 import Reader from './ui/Reader.jsx';
 import Guide from './ui/Guide.jsx';
 import VocabCard from './ui/VocabCard.jsx';
+import { BookProvider, useBook } from './ui/useBook.jsx';
 import './styles.css';
 
 /* ---------------------------------------------------------------
@@ -55,8 +55,6 @@ import './styles.css';
 /* The teacher's rules would come from the class settings; until phase 5
    wires that up, the reader's own default is the kind one. */
 const RULES = { retry: true };
-/* The book names itself. Nothing in the engine knows what it is called. */
-const BOOK_ID = book.meta.id;
 
 /**
  * One reading.
@@ -65,11 +63,15 @@ const BOOK_ID = book.meta.id;
  * survive moving between stops, and the position moves through the
  * router. The position itself is never held here: it is the URL.
  */
-/** How many lines each unit has, so a translation that does not line up
- *  can be refused rather than shown against the wrong sentence. */
-const LINE_COUNTS = Object.fromEntries(book.units.map((u) => [u.id, linesOf(u).length]));
-
 function ReadingRoute() {
+  /* Which book, its id and its line counts all come from the app rather
+     than from module scope. The id is what a student's answers are filed
+     under, and computing it once when this file loaded meant that the
+     moment a second book existed, one book's work would be written under
+     the other's name. `lineCounts` has the same problem more quietly: it
+     is what refuses a translation that does not line up, so a stale one
+     refuses a good translation and accepts a bad one. */
+  const { book, id: bookId, lineCounts } = useBook();
   const { pass = '1', beat = '0' } = useParams();
   const navigate = useNavigate();
   /* The settings live in the shell, and until now they stopped there:
@@ -81,23 +83,23 @@ function ReadingRoute() {
     );
 
   const passNo = [1, 2, 3].includes(Number(pass)) ? Number(pass) : 1;
-  const track = useMemo(() => trackFor(book, passNo), [passNo]);
+  const track = useMemo(() => trackFor(book, passNo), [book, passNo]);
   const translator = useMemo(
-    () => translatorFor(book, settings.language, LINE_COUNTS),
-    [settings.language]
+    () => translatorFor(book, settings.language, lineCounts),
+    [book, settings.language, lineCounts]
   );
 
   /* Resumed on the way in rather than started empty, so a tablet that
      slept through break does not cost a student their work. */
-  const [quiz, setQuiz] = useState(() => restoreQuiz(book, RULES, loadAttempt(BOOK_ID, 2)));
-  const [writing, setWriting] = useState(() => restoreWriting(book, loadAttempt(BOOK_ID, 3)));
+  const [quiz, setQuiz] = useState(() => restoreQuiz(book, RULES, loadAttempt(bookId, 2)));
+  const [writing, setWriting] = useState(() => restoreWriting(book, loadAttempt(bookId, 3)));
 
   useEffect(() => {
-    saveAttempt(BOOK_ID, 2, snapshotQuiz(quiz));
-  }, [quiz]);
+    saveAttempt(bookId, 2, snapshotQuiz(quiz));
+  }, [bookId, quiz]);
   useEffect(() => {
-    saveAttempt(BOOK_ID, 3, snapshotWriting(writing));
-  }, [writing]);
+    saveAttempt(bookId, 3, snapshotWriting(writing));
+  }, [bookId, writing]);
 
   /* The URL is the position. A bad one is corrected rather than
      allowed to blank the page — a stale saved index used to do
@@ -146,8 +148,8 @@ function ReadingRoute() {
 
   /* Written down as they read, so the gate can offer to carry on. */
   useEffect(() => {
-    rememberWhere(BOOK_ID, { pass: passNo, at: safe, of: track.length });
-  }, [passNo, safe, track.length]);
+    rememberWhere(bookId, { pass: passNo, at: safe, of: track.length });
+  }, [bookId, passNo, safe, track.length]);
 
   /* ---- handing it in ---- */
   const [student, setStudent] = useState(() => loadStudent());
@@ -168,15 +170,15 @@ function ReadingRoute() {
       const payload = buildSubmission({ book, pass: passNo, student, quiz, writing });
       if (!payload) return;
 
-      const pending = queue(loadOutbox(BOOK_ID), payload);
-      saveOutbox(BOOK_ID, pending);
+      const pending = queue(loadOutbox(bookId), payload);
+      saveOutbox(bookId, pending);
       setStep?.(2);
 
       const { items } = await flush(pending, senderFor(api));
-      saveOutbox(BOOK_ID, items);
+      saveOutbox(bookId, items);
       setHandedIn((s) => new Set(s).add(passNo));
     },
-    [passNo, student, quiz, writing, api]
+    [book, bookId, passNo, student, quiz, writing, api]
   );
 
   /* The offline path: a file the teacher collects by hand. Named so it
@@ -197,7 +199,7 @@ function ReadingRoute() {
     a.click();
     a.remove();
     setTimeout(() => URL.revokeObjectURL(url), 30_000);
-  }, [passNo, student, quiz, writing]);
+  }, [book, passNo, student, quiz, writing]);
 
   const handIn = (
     <HandIn
@@ -224,7 +226,6 @@ function ReadingRoute() {
 
   return (
     <Reader
-      book={book}
       index={safe}
       pass={passNo}
       onMove={go}
@@ -245,10 +246,11 @@ function ReadingRoute() {
 }
 
 function PractiseRoute() {
+  const { book } = useBook();
   const ctx = useMemo(() => {
     const all = wordsOf(book);
     return { book, swaps: book.swaps, all };
-  }, []);
+  }, [book]);
   const [session, setSession] = useState(() => createSession(ctx));
   const onAnswer = useCallback(({ ok }) => setSession((s) => answer(s, ok)), []);
   const onNext = useCallback(() => setSession((s) => advance(ctx, s)), [ctx]);
@@ -301,12 +303,13 @@ function PractiseRoute() {
  * nothing recorded a position and nothing passed one in.
  */
 function GateRoute() {
-  const [where, setWhere] = useState(() => whereLeftOff(BOOK_ID));
+  const { id: bookId } = useBook();
+  const [where, setWhere] = useState(() => whereLeftOff(bookId));
   return (
     <Gate
       resume={where}
       onForget={() => {
-        forgetWhere(BOOK_ID);
+        forgetWhere(bookId);
         setWhere(null);
       }}
     />
@@ -322,18 +325,41 @@ const router = createHashRouter([
       { path: 'read/:pass/:beat', element: <ReadingRoute /> },
       { path: 'read/:pass', element: <Navigate to="/read/1/0" replace /> },
       { path: 'practise', element: <PractiseRoute /> },
-      {
-        path: 'class',
-        element: <Class bookId={BOOK_ID} bookTitle={book.meta.title} />,
-      },
-      { path: 'guide', element: <Guide book={book} /> },
+      { path: 'class', element: <Class /> },
+      { path: 'guide', element: <Guide /> },
       { path: '*', element: <Navigate to="/" replace /> },
     ],
   },
 ]);
 
+/**
+ * The app, and the one place that decides which book it is.
+ *
+ * The routes above no longer name a book, and that is the point: none of
+ * them can, because the router is a module constant built before any book
+ * exists. So the book is held here, in state, and handed to the tree —
+ * which is why the provider wraps the router rather than sitting inside
+ * it. Inside, the routes would render outside the provider and see
+ * nothing.
+ *
+ * `defaultBook` is what the reader opens with, exactly as before. There
+ * is no way to change it yet and that is deliberate: choosing a book
+ * needs somewhere to keep the choice, and the honest place is the URL —
+ * a decision that belongs with the bookshelf, not ahead of it. Held as
+ * state anyway, because that is the difference between "one book" and
+ * "the first book", and it is the whole seam.
+ */
+function App() {
+  const [book] = useState(defaultBook);
+  return (
+    <BookProvider book={book}>
+      <RouterProvider router={router} />
+    </BookProvider>
+  );
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </StrictMode>
 );

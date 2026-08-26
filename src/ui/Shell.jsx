@@ -2,9 +2,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Overlay from './Overlay.jsx';
 import { UiLanguage, T } from './useUi.jsx';
+import { useBook } from './useBook.jsx';
 import { readJoin, saveApi } from '../lib/class/key.js';
 import { load, save, documentState, PACES } from '../lib/settings.js';
-import { defaultBook as book } from '../books/index.js';
 
 /**
  * The frame every screen sits in.
@@ -78,6 +78,7 @@ function useJoinLink() {
 }
 
 export default function Shell() {
+  const { book, title } = useBook();
   const { settings, set, couldNotSave } = useSettings();
   const [panel, setPanel] = useState(/** @type {null|'settings'|'language'} */ (null));
   const location = useLocation();
@@ -88,7 +89,7 @@ export default function Shell() {
      shut. */
   useEffect(() => setPanel(null), [location.pathname]);
 
-  const languages = useMemo(() => book.languages || [], []);
+  const languages = useMemo(() => book.languages || [], [book]);
   const reading = location.pathname.startsWith('/read');
 
   return (
@@ -96,7 +97,7 @@ export default function Shell() {
       <div className="app">
         <header className="bar">
           <Link to="/" className="brand">
-            <b>{book.meta.title}</b>
+            <b>{title}</b>
             <span className="sub">An illustrated reading</span>
           </Link>
 

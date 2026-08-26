@@ -112,19 +112,30 @@ export function validateUnit(unit, index, seenIds, errors) {
       fail(errors, `${at}.gloss[${i}]`, `"${w}" is glossed but does not appear in the text`);
   }
 
-  /* Multiple choice: the answer has to be one of the options. */
-  for (const [i, q] of (unit?.mc || []).entries()) {
-    const qAt = `${at}.mc[${i}]`;
-    if (!q?.q) fail(errors, qAt, 'question with no text');
-    const opts = q?.opts || [];
-    if (opts.length < 2) fail(errors, `${qAt}.opts`, 'needs at least two options');
-    if (new Set(opts).size !== opts.length) fail(errors, `${qAt}.opts`, 'duplicate options');
-    if (!Number.isInteger(q?.correct) || q.correct < 0 || q.correct >= opts.length)
-      fail(
-        errors,
-        `${qAt}.correct`,
-        `correct index ${q?.correct} is not one of ${opts.length} options`
-      );
+  /**
+   * Questions do not live on a unit, and a book that puts them there is
+   * refused rather than quietly ignored.
+   *
+   * `questionsOf` in `reader/assessment.js` reads `teaching[id].mc` and
+   * nothing else. A unit-level `mc` was typed, validated here with the
+   * same care as a real question, and then read by nobody: a book could
+   * carry a full set of well-formed questions and build a reading with
+   * none in it, and every check would pass.
+   *
+   * That is the same defect that hid four act reviews for a whole
+   * release, and it is the one shape this contract exists to prevent.
+   * The fix is not to read both places. It is one home for a question,
+   * and a loud noise when content is put anywhere else, because the
+   * quiet version costs a class its assessment and nobody finds out
+   * until a lesson.
+   */
+  if ((unit?.mc || []).length) {
+    fail(
+      errors,
+      `${at}.mc`,
+      `${unit.mc.length} question(s) on the unit itself, where nothing reads them. ` +
+        `Questions belong in teaching["${unit?.id}"].mc`
+    );
   }
 }
 

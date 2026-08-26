@@ -14,7 +14,7 @@ import {
   wasHeard,
 } from '../lib/speech/queue.js';
 import { loadHeard, saveHeard } from '../lib/speech/heard.js';
-import { mediaOf } from '../books/index.js';
+import { useBook } from './useBook.jsx';
 
 /**
  * Wren, at the door.
@@ -32,13 +32,16 @@ import { mediaOf } from '../books/index.js';
 
 /**
  * @param {object} props
- * @param {import('../lib/types.js').Book} props.book
  * @param {string} props.talkKey     which run this is, e.g. "preshow"
  * @param {import('../lib/speech/script.js').Turn[]} props.turns
  * @param {string} [props.title]
  */
-export default function Preshow({ book, talkKey, turns, title = 'Before we start' }) {
-  const bookId = book.meta?.id || 'book';
+export default function Preshow({ talkKey, turns, title = 'Before we start' }) {
+  /* Both the id she is remembered under and the recordings she is read
+     from come from the book being read now, not from one captured when
+     this file loaded. Getting that wrong means being introduced to one
+     book and remembered as having heard another. */
+  const { book, id: bookId, media } = useBook();
   const [s, setS] = useState(() => createSpeech(loadHeard(bookId)));
   const [playing, setPlaying] = useState(false);
 
@@ -73,8 +76,8 @@ export default function Preshow({ book, talkKey, turns, title = 'Before we start
               key={turn.clip || p.at}
               turn={turn}
               who={speaker(book, turn.who)}
-              audioBase={mediaOf(book).audio}
-              cuesUrl={mediaOf(book).cues}
+              audioBase={media.audio}
+              cuesUrl={media.cues}
               playing={playing}
               onEnded={() => {
                 /* She reads herself to the end of the queue and stops

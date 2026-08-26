@@ -56,17 +56,32 @@ const words = (s) =>
     .split(/\s+/)
     .filter(Boolean);
 
-/** Every multiple-choice question, from wherever a book keeps them. */
+/**
+ * Every question a student is actually marked on.
+ *
+ * Including the act reviews, which this missed at first. A recap is
+ * marked by the same code as a multiple-choice question — `assessment.js`
+ * compares `choice === q.correct` for both — so it can be gamed the same
+ * ways, and skipping it meant the gate reported on 28 of the 32
+ * questions a reader builds. The four it ignored were exactly the four
+ * that had already spent a release being ignored by everything else.
+ *
+ * The rule for this file: if a student can score a mark on it, it is
+ * checked. Where the book files it is not interesting.
+ */
 export function questionsOf(book) {
   const out = [];
   for (const [id, t] of Object.entries(book?.teaching || {})) {
     for (const [i, q] of (t?.mc || []).entries()) out.push({ unit: id, i, ...q });
-  }
-  for (const u of book?.units || []) {
-    for (const [i, q] of (u?.mc || []).entries()) out.push({ unit: u.id, i, ...q });
+    if (t?.recap) out.push({ unit: id, i: 'recap', ...t.recap });
   }
   return out;
 }
+
+/** Where a finding is, said the way a person would say it. A recap has
+ *  no number, and "s3 question recap1" is what happens if you forget. */
+const whereOf = (q) =>
+  q.i === 'recap' ? `${q.unit} act review` : `${q.unit} question ${q.i + 1}`;
 
 /** Every glossed word, flattened out of the units. */
 export function glossesOf(book) {
@@ -160,7 +175,7 @@ export function qualityOf(book) {
         findings.push({
           kind: 'absolute-distractor',
           severity: 'low',
-          where: `${q.unit} question ${q.i + 1}`,
+          where: whereOf(q),
           what: `a wrong option says "${hit}"`,
           why: 'absolutes read as false to anyone who has sat an exam, so the option does no work.',
         });
@@ -200,11 +215,11 @@ export function qualityOf(book) {
       findings.push({
         kind: 'duplicate-question',
         severity: 'low',
-        where: `${q.unit} question ${q.i + 1}`,
+        where: whereOf(q),
         what: `asks the same thing as ${seen.get(key)}`,
         why: 'two marks for one piece of understanding, and one fewer thing taught.',
       });
-    } else seen.set(key, `${q.unit} question ${q.i + 1}`);
+    } else seen.set(key, whereOf(q));
   }
 
   /* ---- a part of the book nothing asks about ---- */

@@ -2,6 +2,7 @@ import { useEffect, useMemo } from 'react';
 import { Link, useLocation, useOutletContext } from 'react-router-dom';
 import { guideOutline, contentsOf, anchorFor, TOP } from '../lib/guide/outline.js';
 import { T } from './useUi.jsx';
+import { useBook } from './useBook.jsx';
 
 /**
  * The learning guide, which is also the teacher's guide.
@@ -239,10 +240,14 @@ function Block({ block, lang }) {
 
 /**
  * @param {object} props
- * @param {import('../lib/types.js').Book} props.book
  * @param {string} [props.lang]  overrides the reader's setting, for tests
  */
-export default function Guide({ book, lang }) {
+export default function Guide({ lang }) {
+  /* The book comes from the app, not from an import: this document is
+     entirely built out of whichever pack is being read, so a guide made
+     from a book the reader has moved on from would be a plausible-looking
+     document about the wrong story. */
+  const { book } = useBook();
   /* The reader's language comes from the shell, the same way the reading
      gets it. Read defensively rather than destructured: this component is
      also rendered on its own in a test, where there is no outlet above

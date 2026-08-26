@@ -1,5 +1,6 @@
 import { useEffect, useId, useMemo, useState } from 'react';
 import { T } from './useUi.jsx';
+import { useBook } from './useBook.jsx';
 import {
   mintOwner,
   classKey,
@@ -100,8 +101,13 @@ function QrCode({ value, alt, className = '' }) {
   );
 }
 
-/** @param {{bookId:string, bookTitle:string}} props the book whose class this is */
-export default function Class({ bookId, bookTitle }) {
+export default function Class() {
+  /* Whose class this is depends on which book is being read: the outbox
+     and the gradebook are both filed per book, and a teacher looking at
+     one book's marks must not be shown another's. Asked for on every
+     render rather than read once, because "which book" is now a thing
+     that can change. */
+  const { id: bookId, title: bookTitle } = useBook();
   const id = useId();
   const [owner, setOwner] = useState(() => loadOwner());
   const [api, setApi] = useState(() => loadApi());

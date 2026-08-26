@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { defaultBook as book } from '../books/index.js';
 import Preshow from './Preshow.jsx';
 import { preshowRun } from '../lib/speech/script.js';
 import { throughOf } from '../lib/reader/resume.js';
 import { T } from './useUi.jsx';
+import { useBook } from './useBook.jsx';
 
 /**
  * The way in.
@@ -40,17 +40,19 @@ export const READINGS = [
  * @param {() => void} [props.onForget]
  */
 export default function Gate({ resume = null, onForget }) {
+  const { book, title } = useBook();
   const cover = book.plates?.cover;
-  /* Built once. A new array on every render would be a new claim on the
-     speech queue on every render, which is the shape of the bug that
-     made her repeat herself. */
-  const turns = useMemo(() => preshowRun(book), []);
+  /* Built once per book. A new array on every render would be a new
+     claim on the speech queue on every render, which is the shape of the
+     bug that made her repeat herself — and a run built for the book
+     before this one would have her introducing the wrong story. */
+  const turns = useMemo(() => preshowRun(book), [book]);
 
   return (
     <main className="gate">
       {cover ? <img className="cover" src={cover} alt="" /> : null}
 
-      <Preshow book={book} talkKey="preshow" turns={turns} title="Before we start" />
+      <Preshow talkKey="preshow" turns={turns} title="Before we start" />
 
       {resume ? (
         <aside className="resume" aria-label="Carry on">
@@ -66,7 +68,7 @@ export default function Gate({ resume = null, onForget }) {
         </aside>
       ) : null}
 
-      <h1>{book.meta.title}</h1>
+      <h1>{title}</h1>
       <p className="blurb">
         Twelve storyboard segments, an author study, and the little story that taught the world
         what irony feels like. You will read it three times, and each time you will be asked for
