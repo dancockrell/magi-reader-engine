@@ -13,7 +13,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:cov": "vitest run --coverage",
-    "e2e": "playwright test",
+    "e2e": "playwright test --grep-invert @serial",
     "e2e:ui": "playwright test --ui",
     "e2e:report": "playwright show-report",
     "lint": "eslint .",
@@ -30,8 +30,9 @@
     "book:check": "node tools/check-book.mjs",
     "sweep": "node tools/sweep-report.mjs",
     "verify": "npm run format:check && npm run lint && npm run typecheck && npm run book:check && npm run sweep && npm run test",
-    "verify:full": "npm run verify && npm run build && npm run build:legacy && npm run e2e",
-    "prepare": "husky"
+    "verify:full": "npm run verify && npm run build && npm run build:legacy && npm run e2e:serial && npm run e2e",
+    "prepare": "husky",
+    "e2e:serial": "playwright test --grep @serial --workers=1"
   },
   "devDependencies": {
     "@axe-core/playwright": "^4.13.0",

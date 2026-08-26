@@ -71,88 +71,108 @@ async function servePage(gameUrl) {
   return { server, port: server.address().port };
 }
 
+/**
+ * Tagged `@serial`, and run on their own.
+ *
+ * These two stand up two extra HTTP servers each and load the whole
+ * built game inside a frame. Alongside the other workers that is enough
+ * contention to miss a twenty-second wait for the first paint, so this
+ * file timed out under load and passed in isolation, repeatedly.
+ *
+ * That was answered twice by raising the timeout, first to sixty seconds
+ * and then to ninety, and it came back both times, because the cause is
+ * contention and a timeout does not remove contention. It only moves the
+ * point at which the machine loses. Measured: 12.6 seconds with one
+ * worker, timing out at ninety with four.
+ *
+ * So `npm run e2e` now excludes this tag and `npm run e2e:serial` runs
+ * it alone. The ninety-second allowance stays, because it costs nothing
+ * when the test takes twelve seconds and it is the honest budget for
+ * starting two servers and a browser.
+ */
 test.describe('running the way itch runs it', () => {
-  test('loads and reads inside a cross-origin iframe', async ({ page }, testInfo) => {
-    test.skip(testInfo.project.name !== 'desktop', 'checked once; not engine-specific');
-    /* This one stands up two more HTTP servers and loads the whole
-       built game inside a frame, alongside six workers already sharing
-       the dev server. Its own wait for the first paint is twenty
-       seconds, which does not fit inside the default thirty with the
-       servers to start as well — so it timed out under load and passed
-       on its own, twice. That is the worst kind of red: it teaches
-       people to re-run rather than to look. */
-    test.setTimeout(90_000);
+  test(
+    'loads and reads inside a cross-origin iframe',
+    { tag: '@serial' },
+    async ({ page }, testInfo) => {
+      test.skip(testInfo.project.name !== 'desktop', 'checked once; not engine-specific');
+      test.setTimeout(90_000);
 
-    const prefix = '/html/1891234/';
-    const game = await serveDist(prefix, 'dist');
-    /* localhost and 127.0.0.1 are different origins to a browser, which
+      const prefix = '/html/1891234/';
+      const game = await serveDist(prefix, 'dist');
+      /* localhost and 127.0.0.1 are different origins to a browser, which
        is what makes the frame third-party here */
-    const host = await servePage(`http://localhost:${game.port}${prefix}#/read/1/0`);
+      const host = await servePage(`http://localhost:${game.port}${prefix}#/read/1/0`);
 
-    const failed = [];
-    page.on('response', (r) => {
-      if (r.status() >= 400) failed.push(`${r.status()} ${new URL(r.url()).pathname}`);
-    });
-    const pageErrors = [];
-    page.on('pageerror', (e) => pageErrors.push(e.message));
+      const failed = [];
+      page.on('response', (r) => {
+        if (r.status() >= 400) failed.push(`${r.status()} ${new URL(r.url()).pathname}`);
+      });
+      const pageErrors = [];
+      page.on('pageerror', (e) => pageErrors.push(e.message));
 
-    try {
-      await page.goto(`http://127.0.0.1:${host.port}/`);
-      const frame = page.frameLocator('#game');
+      try {
+        await page.goto(`http://127.0.0.1:${host.port}/`);
+        const frame = page.frameLocator('#game');
 
-      await frame.locator('.scene').waitFor({ timeout: 20_000 });
-      await expect(frame.locator('.sub-line')).not.toBeEmpty();
+        await frame.locator('.scene').waitFor({ timeout: 20_000 });
+        await expect(frame.locator('.sub-line')).not.toBeEmpty();
 
-      const width = await frame.locator('.plate').evaluate((img) => img.naturalWidth);
-      expect(width, 'the picture decoded inside the frame').toBeGreaterThan(0);
+        const width = await frame.locator('.plate').evaluate((img) => img.naturalWidth);
+        expect(width, 'the picture decoded inside the frame').toBeGreaterThan(0);
 
-      await frame.getByRole('button', { name: 'Next ›' }).click();
-      await expect(frame.locator('.count')).toHaveText(at(2));
+        await frame.getByRole('button', { name: 'Next ›' }).click();
+        await expect(frame.locator('.count')).toHaveText(at(2));
 
-      expect(failed, 'nothing 404d').toEqual([]);
-      expect(pageErrors, 'no uncaught errors').toEqual([]);
-    } finally {
-      await new Promise((r) => game.server.close(r));
-      await new Promise((r) => host.server.close(r));
+        expect(failed, 'nothing 404d').toEqual([]);
+        expect(pageErrors, 'no uncaught errors').toEqual([]);
+      } finally {
+        await new Promise((r) => game.server.close(r));
+        await new Promise((r) => host.server.close(r));
+      }
     }
-  });
+  );
 
   /* This one runs on EVERY engine, unlike the load check above. Whether a
      third-party frame may keep storage is decided by the browser, not by
      us: Safari blocks it by default and Chromium currently does not, so
      answering it once would answer it for the wrong device. The iPad is
      the case that matters. */
-  test('reports whether storage survives being third-party', async ({ page }) => {
-    const prefix = '/html/1891234/';
-    const game = await serveDist(prefix, 'dist');
-    const host = await servePage(`http://localhost:${game.port}${prefix}#/read/1/0`);
+  test(
+    'reports whether storage survives being third-party',
+    { tag: '@serial' },
+    async ({ page }) => {
+      const prefix = '/html/1891234/';
+      const game = await serveDist(prefix, 'dist');
+      const host = await servePage(`http://localhost:${game.port}${prefix}#/read/1/0`);
 
-    try {
-      await page.goto(`http://127.0.0.1:${host.port}/`);
-      const frame = page.frameLocator('#game');
-      await frame.locator('.scene').waitFor({ timeout: 20_000 });
+      try {
+        await page.goto(`http://127.0.0.1:${host.port}/`);
+        const frame = page.frameLocator('#game');
+        await frame.locator('.scene').waitFor({ timeout: 20_000 });
 
-      /* Not an assertion about the browser under test so much as a
+        /* Not an assertion about the browser under test so much as a
          record of what the app may rely on. If this is false, session
          resume and the outbox cannot use localStorage on itch and must
          fall back to something the frame is allowed to keep. */
-      const storage = await frame.locator('body').evaluate(() => {
-        try {
-          localStorage.setItem('probe', '1');
-          const ok = localStorage.getItem('probe') === '1';
-          localStorage.removeItem('probe');
-          return { available: ok, error: null };
-        } catch (e) {
-          return { available: false, error: String(e && e.name) };
-        }
-      });
+        const storage = await frame.locator('body').evaluate(() => {
+          try {
+            localStorage.setItem('probe', '1');
+            const ok = localStorage.getItem('probe') === '1';
+            localStorage.removeItem('probe');
+            return { available: ok, error: null };
+          } catch (e) {
+            return { available: false, error: String(e && e.name) };
+          }
+        });
 
-      expect(storage.available, `localStorage in a third-party frame: ${storage.error}`).toBe(
-        true
-      );
-    } finally {
-      await new Promise((r) => game.server.close(r));
-      await new Promise((r) => host.server.close(r));
+        expect(storage.available, `localStorage in a third-party frame: ${storage.error}`).toBe(
+          true
+        );
+      } finally {
+        await new Promise((r) => game.server.close(r));
+        await new Promise((r) => host.server.close(r));
+      }
     }
-  });
+  );
 });
