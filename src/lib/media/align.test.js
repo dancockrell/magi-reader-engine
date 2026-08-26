@@ -92,9 +92,15 @@ describe('against the whole book', () => {
 
   it('lights a real word for every cue of every recording', () => {
     const bad = [];
+    /* `continue` on a clip with no cues is right, and it is also how
+       this test could examine nothing: if the cue file failed to load,
+       every clip skips and the empty `bad` reads as a clean alignment
+       across the whole book. Counted, and asserted below. */
+    let aligned = 0;
     for (const { clip, text } of lines) {
       const cues = byClip[clip] || [];
       if (!cues.length) continue;
+      aligned++;
       const tokens = tok(text);
       const map = alignCues(tokens, cues);
       if (map.length !== cues.length) bad.push(`${clip}: ${map.length} of ${cues.length}`);
@@ -103,6 +109,7 @@ describe('against the whole book', () => {
         if (map[i] < map[i - 1]) bad.push(`${clip}: went backwards at ${i}`);
       }
     }
+    expect(aligned, 'every clip skipped, so nothing was aligned').toBeGreaterThan(50);
     expect(bad).toEqual([]);
   });
 

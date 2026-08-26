@@ -225,12 +225,17 @@ describe('the translations reach everything they are promised for', () => {
 describe('the questions are answerable', () => {
   it('every multiple-choice answer is one of its options', () => {
     const bad = [];
+    let checked = 0;
     for (const [unit, t] of Object.entries(book.teaching)) {
       (t.mc || []).forEach((q, i) => {
+        checked++;
         if (!Number.isInteger(q.correct) || !q.opts?.[q.correct])
           bad.push(`${unit}.mc[${i}] correct=${q.correct} of ${q.opts?.length}`);
       });
     }
+    /* A teaching layer with no questions passes this without looking at
+       one, and looks identical to a book whose answers are all sound. */
+    expect(checked, 'no questions were checked').toBeGreaterThan(20);
     expect(bad).toEqual([]);
   });
 

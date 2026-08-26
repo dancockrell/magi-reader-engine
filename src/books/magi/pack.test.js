@@ -100,9 +100,14 @@ describe('every recording this pack names is on disk', () => {
 
 describe('every picture this pack names is on disk', () => {
   it('finds the plate for every scene', () => {
-    const missing = [...new Set(beatsOfBook(book).map((b) => b.plate.src))].filter(
-      (src) => !src || !existsSync(`public/${src}`)
+    const named = [...new Set(beatsOfBook(book).map((b) => b.plate.src))];
+    /* A book with no plates passes the check below without examining
+       anything, and reads exactly like a book whose plates are all
+       present. Say how many were looked at. */
+    expect(named.length, 'no plates were checked, so the check below proves nothing').toBeGreaterThan(
+      5
     );
+    const missing = named.filter((src) => !src || !existsSync(`public/${src}`));
     expect(missing).toEqual([]);
   });
 });

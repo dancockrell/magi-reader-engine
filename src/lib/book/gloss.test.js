@@ -62,8 +62,15 @@ describe('an explained word can be looked up in the reader’s language', () => 
   };
 
   it('has every word, in every language the book offers', () => {
+    const words = glossedWords();
+    /* Two ways this passes without checking anything: no glossed words,
+       or no languages. Either makes the sweep below read as a clean
+       result when it examined nothing at all. */
+    expect(words.length, 'no glossed words to check').toBeGreaterThan(0);
+    expect(book.languages.length, 'no languages to check against').toBeGreaterThan(0);
+
     const missing = [];
-    for (const w of glossedWords()) {
+    for (const w of words) {
       for (const { code } of book.languages) {
         if (!wordTranslation(book, code, w)) missing.push(`${w}/${code}`);
       }
