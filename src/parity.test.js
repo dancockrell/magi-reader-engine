@@ -88,7 +88,12 @@ const INVENTORY = [
     name: 'collect, the no-setup gradebook',
     probe: () => has('ui/Gradebook.jsx', 'export default'),
   },
-  { name: 'xlsx written by hand', probe: () => has('lib/gradebook/xlsx.js', 'workbook') },
+  /* "written by hand" in the prototype's banner meant "without a
+     library", not "typed by a person" — the whole point is that it
+     writes a real .xlsx with no dependency. Said the accurate way, since
+     every commit here carries a Claude co-author trailer and a
+     craftsmanship claim beside that reads as concealment. */
+  { name: 'xlsx with no library', probe: () => has('lib/gradebook/xlsx.js', 'workbook') },
   { name: 'the outbox', probe: () => has('lib/class/outbox.js', 'export') },
   { name: 'apps script backend', probe: () => has('backend/backend.gs', 'function doPost') },
 
