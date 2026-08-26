@@ -25,14 +25,35 @@ const API =
  * what the reload is there to test. Each test gets a fresh context
  * anyway.
  */
-const withClass = (page, api = API) =>
-  page.addInitScript((url) => {
+const withClass = async (page, api = API) => {
+  /* Signing in now asks the Sheet who has this number, so a class set up
+     on this device also needs an answer to that — otherwise every test
+     that signs somebody in makes a real request to script.google.com
+     and waits for it. An empty list is a teacher who keeps no roster,
+     which is the case the sign-in must handle by taking what was
+     typed. */
+  await answerRoster(page);
+  await page.addInitScript((url) => {
     try {
       localStorage.setItem('reader.api.v1', url);
     } catch {
       /* a locked store is its own test */
     }
   }, api);
+};
+
+const rosterList = (list = []) => ({
+  status: 200,
+  contentType: 'application/json',
+  headers: { 'Access-Control-Allow-Origin': '*' },
+  body: JSON.stringify(list),
+});
+
+const answerRoster = (page, list = []) =>
+  page.route('https://script.google.com/**', async (route) => {
+    if (route.request().method() !== 'GET') return route.fallback();
+    await route.fulfill(rosterList(list));
+  });
 
 /**
  * Answer the Sheet, and record what it was sent.
@@ -52,6 +73,10 @@ const withClass = (page, api = API) =>
 async function catchSends(page, { ok = true } = {}) {
   const hits = [];
   await page.route('https://script.google.com/**', async (route) => {
+    /* The class-list check at sign-in is a GET and is not a hand-in.
+       Left to the roster handler, so `hits` stays what it says it is:
+       the work going to the teacher. */
+    if (route.request().method() === 'GET') return route.fallback();
     hits.push(route.request().method());
     if (!ok) return route.abort('failed');
     await route.fulfill({

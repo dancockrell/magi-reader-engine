@@ -1712,3 +1712,575 @@ main.practise {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ================= the class list at sign-in =================
+ *
+ * The confirmation replaces the form rather than sitting under it.
+ * One question, two answers, and the name large enough to be read at
+ * arm's length from a tablet on a desk — this is the moment that stops
+ * three students called Kevin from becoming three identical rows in a
+ * gradebook, and it is worth nothing if it is skimmed. */
+.signin-confirm {
+  gap: 14px;
+  justify-items: center;
+  text-align: center;
+}
+.signin-confirm-q {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.signin-confirm-who {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  justify-items: center;
+}
+.signin-confirm-name {
+  font-family: var(--serif);
+  font-size: 26px;
+  line-height: 1.2;
+  color: var(--parch);
+}
+.signin-confirm-nick {
+  font-family: var(--sans);
+  font-size: 14px;
+  color: var(--parch-dim);
+}
+.signin-confirm-from {
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--parch-faint);
+}
+
+/* Said quietly, and only while it is happening. A student is never
+   told the class list could not be reached: they are signed in either
+   way, and it is not a thing they can do anything about. */
+.signin-checking {
+  margin: 0;
+  min-height: 1.2em;
+  font-family: var(--sans);
+  font-size: 12px;
+  color: var(--parch-faint);
+  text-align: center;
+}
+.btn[aria-disabled='true'] {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+/* ================= the code the class scans ================= */
+/* Contrast first, and it is not the theme's. Everything else on this
+   screen is parchment on near-black; a QR code read by a phone camera
+   across a bright room wants the strongest edge available and the light
+   half wants to be the larger one, so this is the one place that ignores
+   the palette and prints dark on white. */
+.qr {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 232px;
+  border-radius: 6px;
+  /* the quiet zone is inside the viewBox, so the background must run to
+     the edge of the element and no padding may eat into it */
+  padding: 0;
+  background: #fff;
+}
+.qr-bg {
+  fill: #fff;
+}
+.qr-fg {
+  fill: #000;
+}
+.qr-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.qr-say {
+  flex: 1 1 260px;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+/* Projected: as big as the shorter side of the screen allows, because
+   the limit on reading it from the back row is how many pixels one
+   module gets. */
+.qr-big .qr.huge {
+  max-width: min(78vh, 78vw, 640px);
+  margin: 0 auto;
+}
+.qr-big .klass-note {
+  text-align: center;
+  max-width: none;
+}
+/* On paper the theme's dark background is not printed at all, and a code
+   drawn in the amber would come out grey. */
+@media print {
+  .qr {
+    max-width: 52mm;
+    break-inside: avoid;
+  }
+}
+
+/* ================= the learning guide =================
+   One document for two readers, and the only screen in this app that is
+   meant to leave it: a teacher files it, so it has to print as a plain
+   document rather than as a screenshot of a dark app.
+
+   Two rules earn their place here rather than in the component:
+
+   scroll-margin-top on the sections, because a contents jump lands at
+   the very top of its target and a heading flush against the window
+   edge reads as the wrong section.
+
+   No `scroll-behavior: smooth` anywhere. It animates a plain scrollTop
+   assignment too, so where the animation does not run — a hidden tab,
+   reduced motion, an embed that is not compositing — the jump silently
+   does nothing. The smoothness is applied per jump in Guide.jsx, which
+   can also turn it off when the reader has asked for less motion. */
+main.guide {
+  max-width: 1120px;
+  text-align: left;
+  font-family: var(--sans);
+  color: var(--parch-dim);
+  line-height: 1.7;
+}
+.guide-cover {
+  max-width: 68ch;
+  margin-bottom: 28px;
+}
+.guide-of {
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 0 0 8px;
+}
+.guide h1 {
+  font-family: var(--serif);
+  font-size: clamp(27px, 3.6vw, 38px);
+  color: var(--parch);
+  margin: 0 0 10px;
+}
+.guide-sub {
+  margin: 0;
+  max-width: 64ch;
+}
+.guide-wrap {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: clamp(20px, 3vw, 44px);
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .guide-wrap {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* Contents: beside the text on a wide screen, above it on a narrow one.
+   A sticky rail on a phone is just lost height. */
+.guide-toc {
+  position: sticky;
+  top: 12px;
+  border: 1px solid #2c2622;
+  border-radius: 12px;
+  background: var(--ink2);
+  padding: 14px 14px 16px;
+  font-size: 13.5px;
+}
+@media (max-width: 860px) {
+  .guide-toc {
+    position: static;
+  }
+}
+.guide-toc h2 {
+  margin: 0 0 10px;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.guide-toc-part {
+  margin: 12px 0 4px;
+  padding-top: 10px;
+  border-top: 1px solid #2c2622;
+}
+.guide-toc-part:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.guide-toc-part > b {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+.guide-toc-part > span {
+  display: block;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--parch-faint);
+  margin: 3px 0 6px;
+}
+.guide-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.guide-toc a {
+  display: block;
+  padding: 6px 8px;
+  border-radius: 7px;
+  color: var(--parch-dim);
+  text-decoration: none;
+  line-height: 1.35;
+}
+.guide-toc a:hover {
+  background: rgba(217, 160, 74, 0.12);
+  color: var(--parch);
+}
+.guide-toc-n {
+  display: inline-block;
+  width: 19px;
+  color: var(--amber);
+  opacity: 0.75;
+  font-variant-numeric: tabular-nums;
+}
+.guide-print {
+  width: 100%;
+  margin-top: 14px;
+  font-size: 12.5px;
+  padding: 9px 10px;
+  min-height: 0;
+}
+
+.guide-body {
+  min-width: 0;
+  font-size: 16px;
+}
+.guide-body section {
+  scroll-margin-top: 16px;
+}
+.guide-body section + section {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #241f1a;
+}
+.guide-part {
+  margin: 44px 0 6px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--ink2);
+  border: 1px solid #2c2622;
+  border-left: 3px solid var(--amber);
+}
+.guide-body > div:first-child .guide-part {
+  margin-top: 0;
+}
+.guide-part h2 {
+  font-family: var(--serif);
+  font-size: 21px;
+  color: var(--parch);
+  margin: 0 0 5px;
+}
+.guide-part p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--parch-faint);
+  max-width: 62ch;
+}
+.guide-body h3 {
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.6vw, 26px);
+  color: var(--parch);
+  margin: 26px 0 6px;
+}
+.guide-n {
+  color: var(--amber);
+  opacity: 0.8;
+  margin-right: 10px;
+  font-variant-numeric: tabular-nums;
+}
+.guide-body h4 {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin: 24px 0 8px;
+}
+.guide-body p {
+  margin: 0 0 13px;
+  max-width: 68ch;
+}
+.guide-lede {
+  font-size: 17px;
+  color: var(--parch);
+}
+.guide-note {
+  font-size: 14px;
+  color: var(--parch-faint);
+  border-left: 2px solid #3a332d;
+  padding-left: 14px;
+  max-width: 64ch;
+}
+.guide-body ul {
+  margin: 0 0 14px;
+  padding-left: 20px;
+  max-width: 68ch;
+}
+.guide-body li {
+  margin: 7px 0;
+}
+.guide-body li::marker {
+  color: var(--amber);
+  opacity: 0.7;
+}
+.guide-body b {
+  color: var(--parch);
+}
+.guide-backtop {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 12.5px;
+  color: var(--amber);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.guide-backtop:hover {
+  border-bottom-color: var(--amber);
+}
+
+/* A table wider than its column scrolls inside itself. The page never
+   scrolls sideways, which on a phone is how a document becomes
+   unreadable. */
+.guide-table {
+  overflow-x: auto;
+  border: 1px solid #2c2622;
+  border-radius: 11px;
+  margin: 12px 0 18px;
+}
+.guide-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+.guide-table th {
+  text-align: left;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  padding: 10px 14px;
+  background: #151210;
+  border-bottom: 1px solid #2c2622;
+  white-space: nowrap;
+}
+.guide-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #1e1a17;
+  vertical-align: top;
+  line-height: 1.55;
+}
+.guide-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* The plan, part by part. <details>, not an accordion: it opens with a
+   click, with a keyboard and with find-in-page, and none of that is
+   ours to write. Open by default, because a closed <details> is not in
+   the printed page in any browser and this document is made to print. */
+.guide-entry {
+  border: 1px solid #2c2622;
+  border-radius: 11px;
+  background: var(--ink2);
+  padding: 12px 16px;
+  margin: 0 0 10px;
+}
+.guide-entry summary {
+  cursor: pointer;
+  color: var(--parch);
+}
+.guide-entry summary::marker {
+  color: var(--amber);
+}
+.guide-entry-act {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--parch-faint);
+}
+.guide-entry-title {
+  font-family: var(--serif);
+  font-size: 18px;
+}
+.guide-entry-meta {
+  display: block;
+  font-size: 12px;
+  color: var(--parch-faint);
+}
+.guide-entry-cap {
+  margin: 8px 0 0;
+  font-style: italic;
+  color: var(--parch-faint);
+}
+.guide-entry-body {
+  margin: 10px 0 0;
+}
+.guide-entry-body dt {
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-top: 12px;
+}
+.guide-entry-body dd {
+  margin: 4px 0 0;
+  max-width: 68ch;
+}
+.guide-entry-body dd p {
+  margin: 0 0 8px;
+}
+.guide-asks {
+  margin: 0;
+  padding-left: 20px;
+}
+.guide-writes {
+  color: var(--parch);
+}
+
+/* ---------- printing it ----------
+   A teacher filing this needs a document, not a screenshot of an app:
+   black on white, no interface, and nothing that splits across a page
+   where it hurts. The bar goes for every screen, not only this one — a
+   row of navigation buttons has no meaning on paper. */
+@media print {
+  @page {
+    margin: 16mm;
+  }
+  html,
+  body {
+    background: #fff;
+    color: #000;
+  }
+  body {
+    display: block;
+    padding: 0;
+  }
+  .bar,
+  .guide-toc,
+  .guide-backtop,
+  .guide-print {
+    display: none !important;
+  }
+  main.guide {
+    max-width: none;
+    color: #1a1a1a;
+    font-size: 11pt;
+  }
+  .guide-wrap {
+    display: block;
+  }
+  .guide h1,
+  .guide-body h3,
+  .guide-part h2 {
+    color: #000;
+  }
+  .guide-of,
+  .guide-n,
+  .guide-body h4,
+  .guide-entry-body dt {
+    color: #6b4c12;
+  }
+  .guide-lede,
+  .guide-body b,
+  .guide-writes,
+  .guide-entry summary {
+    color: #000;
+  }
+  .guide-note,
+  .guide-sub,
+  .guide-part p,
+  .guide-entry-cap,
+  .guide-entry-meta,
+  .guide-entry-act {
+    color: #444;
+  }
+  /* A long section is allowed to run over a page break; the things that
+     read as one object are not. `page-break-*` as well as `break-*`,
+     because the older iPads a district still has understand only the
+     first of the two. */
+  .guide-body section {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+  .guide h1,
+  .guide-body h3,
+  .guide-body h4,
+  .guide-part h2 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+  .guide-entry,
+  .guide-table tr,
+  .guide-note {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  /* Each part starts a page, so Part Two can be filed on its own. */
+  .guide-part {
+    break-before: page;
+    page-break-before: always;
+    break-after: avoid;
+    page-break-after: avoid;
+    background: #f4f1ea;
+    border: 1px solid #bbb;
+    border-left: 3px solid #6b4c12;
+  }
+  .guide-body > div:first-child .guide-part {
+    break-before: auto;
+    page-break-before: auto;
+  }
+  .guide-body section + section {
+    border-top: 1px solid #ccc;
+  }
+  .guide-table {
+    border: 1px solid #999;
+    overflow-x: visible;
+  }
+  .guide-table th {
+    background: #eee;
+    color: #000;
+    border-bottom: 1px solid #999;
+    white-space: normal;
+  }
+  .guide-table td {
+    border-bottom: 1px solid #ddd;
+  }
+  .guide-entry {
+    background: #fff;
+    border: 1px solid #bbb;
+  }
+  /* The disclosure triangle is a control, and a control on paper is a
+     smudge. Two rules, not one selector list: a browser that does not
+     know the WebKit pseudo-element would drop the standard one with it. */
+  .guide-entry summary {
+    list-style: none;
+  }
+  .guide-entry summary::marker {
+    content: '';
+  }
+  .ui-tr {
+    opacity: 1;
+    color: #444;
+  }
+}

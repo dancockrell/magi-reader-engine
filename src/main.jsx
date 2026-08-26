@@ -39,6 +39,7 @@ import HandIn from './ui/HandIn.jsx';
 import Class from './ui/Class.jsx';
 import Gate from './ui/Gate.jsx';
 import Reader from './ui/Reader.jsx';
+import Guide from './ui/Guide.jsx';
 import VocabCard from './ui/VocabCard.jsx';
 import './styles.css';
 
@@ -312,18 +313,6 @@ function GateRoute() {
   );
 }
 
-/** Phases 5 and 6 fill these in; they are routes now so the doors work. */
-function NotYet({ what, phase }) {
-  return (
-    <main className="notyet">
-      <h1>{what}</h1>
-      <p>
-        Not built yet — it is phase {phase} of the plan. It is in the shipping reader today.
-      </p>
-    </main>
-  );
-}
-
 const router = createHashRouter([
   {
     path: '/',
@@ -337,7 +326,7 @@ const router = createHashRouter([
         path: 'class',
         element: <Class bookId={BOOK_ID} bookTitle={book.meta.title} />,
       },
-      { path: 'guide', element: <NotYet what="Learning guide" phase={6} /> },
+      { path: 'guide', element: <Guide book={book} /> },
       { path: '*', element: <Navigate to="/" replace /> },
     ],
   },
