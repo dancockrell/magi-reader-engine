@@ -443,7 +443,14 @@ export function guideOutline(book, opts = {}) {
                   : []),
                 {
                   lead: 'It is read aloud, always.',
-                  text: 'Recorded by people, so it sounds the same on every device. Three speeds.',
+                  /* This said "recorded by people". The narration is
+                     generated, and the README says so plainly, so the
+                     guide was telling families something this repository
+                     contradicts. The claim worth keeping is the one that
+                     is true: the audio is a file rather than the
+                     device's own voice, so every student hears the same
+                     reading at the same pace. */
+                  text: 'Recorded, not spoken by the device, so every student hears the same reading. Three speeds.',
                 },
                 {
                   lead: 'Larger text, higher contrast, and a reading ruler',

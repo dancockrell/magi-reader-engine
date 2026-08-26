@@ -26,6 +26,8 @@ import SpokenText from './SpokenText.jsx';
  * @param {string} [props.lang]
  * @param {Record<string,string>} [props.gloss]
  * @param {(w:string)=>string|null} [props.wordIn]
+ * @param {(w:string)=>void} [props.onTap]  a word looked up here counts too:
+ *   the dialogue carries the same glossary the narration does
  * @param {boolean} [props.playing]
  * @param {boolean} [props.muted]
  * @param {number} [props.rate]
@@ -42,6 +44,7 @@ export default function Speaker({
   lang = '',
   gloss = {},
   wordIn,
+  onTap,
   playing = false,
   muted = false,
   rate = 1,
@@ -100,6 +103,7 @@ export default function Speaker({
           lit={lit}
           gloss={gloss}
           wordIn={wordIn}
+          onTap={onTap}
           className="sp-text"
         />
         {translation ? (

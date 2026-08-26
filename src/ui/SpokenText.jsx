@@ -23,6 +23,8 @@ import { useId } from 'react';
  * @param {number} props.lit               which token is being said, or -1
  * @param {Record<string,string>} [props.gloss]  word (lowercase) to meaning
  * @param {(w:string)=>string|null} [props.wordIn] the meaning in the reader's language
+ * @param {(w:string)=>void} [props.onTap]  told which word was looked up, so the
+ *   practice screen can offer back the words this reader chose
  * @param {string} [props.className]
  * @param {string} [props.lang]
  */
@@ -31,6 +33,7 @@ export default function SpokenText({
   lit,
   gloss = {},
   wordIn,
+  onTap,
   className = 'sub-line',
   lang = 'en',
 }) {
@@ -66,11 +69,16 @@ export default function SpokenText({
           <span key={`${i}-${t}`} className={cls}>
             {/* React 19 knows these as camelCase props and writes the
                 lowercase attributes the platform actually reads. */}
+            {/* The popover is still declarative: the platform opens and
+                closes it, and onTap only records that the word was
+                looked up. Doing the opening in JS as well would be two
+                things fighting over one dialog. */}
             <button
               type="button"
               className="gl"
               popoverTarget={pop}
               popoverTargetAction="toggle"
+              onClick={onTap ? () => onTap(key) : undefined}
             >
               {t}
             </button>

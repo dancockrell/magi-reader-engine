@@ -26,6 +26,8 @@ body {
   padding: 16px;
 }
 main {
+  /* so the part prompt can sit over the frame without moving it */
+  position: relative;
   width: 100%;
   max-width: 1000px;
   /* Centred by auto margins rather than by align-items, which is not the
@@ -2282,5 +2284,61 @@ main.guide {
   .ui-tr {
     opacity: 1;
     color: #444;
+  }
+}
+
+/* ------------------------------------------------------------------
+   The one thing to look for in this part.
+
+   Every part carries a line for the first reading and another for the
+   second, and until now they rendered only in the printed guide. Sits
+   above the picture rather than over it: this is an instruction, not
+   part of the story, and a student should be able to tell which is
+   which without being told.
+   ------------------------------------------------------------------ */
+.aim {
+  /* Out of flow, on purpose.
+
+     This first sat above the picture and pushed it down, then let it
+     spring back on the next line: the "marching picture" the reader was
+     rebuilt to stop, and reader.spec.js caught it on all four engines.
+     A prompt that shifts the thing it is pointing at is worse than no
+     prompt.
+
+     Absolute, so the frame's box is identical whether the prompt is
+     there or not. Pointer events off, because it sits over the picture
+     and must never eat a tap meant for a word underneath it. */
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.7rem;
+  margin: 0;
+  padding: 0.5rem 0.8rem;
+  border-left: 3px solid var(--accent, #c9a227);
+  background: color-mix(in srgb, var(--bg, #17140f) 88%, transparent);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  pointer-events: none;
+}
+.aim-lead {
+  flex: 0 0 auto;
+  font-variant: small-caps;
+  letter-spacing: 0.06em;
+  opacity: 0.8;
+}
+.aim-said {
+  flex: 1 1 14rem;
+}
+.aim-tr {
+  flex: 1 1 100%;
+  opacity: 0.85;
+  font-style: italic;
+}
+@media print {
+  .aim {
+    background: none;
   }
 }

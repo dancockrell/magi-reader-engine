@@ -377,3 +377,46 @@ test.describe('moving by segment', () => {
     await expect(page.locator('.seg-count')).toHaveText(segment(2));
   });
 });
+
+test.describe('the one thing to look for', () => {
+  /* Authored per part, translated into every language the picker offers,
+     promised in the printed guide, and rendered nowhere but the guide
+     until now. A unit test proves which line is chosen; this proves a
+     student can see it. */
+  test('is on screen when a part begins, and gone once it is under way', async ({ page }) => {
+    await page.goto('/#/read/1/0');
+    const aim = page.locator('.aim');
+    await expect(aim).toBeVisible();
+    const first = (await aim.textContent()) || '';
+    expect(first.length, 'the prompt is there but empty').toBeGreaterThan(20);
+
+    /* Aimed once. Repeating it under every line would make it wallpaper. */
+    await page.getByRole('button', { name: 'Next ›' }).click();
+    await expect(page.locator('.aim')).toHaveCount(0);
+  });
+
+  test('changes when the next part starts, rather than repeating the first', async ({
+    page,
+  }) => {
+    await page.goto('/#/read/1/0');
+    const aim = page.locator('.aim');
+    await expect(aim).toBeVisible();
+    const first = (await aim.textContent()) || '';
+
+    /* Jump a whole segment rather than clicking through every line.
+       Asserted with not.toHaveText rather than by reading textContent a
+       second time: that read raced the re-render and compared the old
+       text against itself, failing for a reason that had nothing to do
+       with the app. */
+    await page.getByRole('button', { name: 'Next segment' }).click();
+    await expect(aim).toBeVisible();
+    await expect(aim).not.toHaveText(first);
+  });
+
+  test('is announced, not just painted', async ({ page }) => {
+    /* It arrives without the student doing anything, so a reader that
+       only paints it leaves a screen reader silent at every part. */
+    await page.goto('/#/read/1/0');
+    await expect(page.locator('.aim')).toHaveAttribute('role', 'status');
+  });
+});

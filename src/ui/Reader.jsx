@@ -6,6 +6,7 @@ import WritingCard from './WritingCard.jsx';
 import Speaker from './Speaker.jsx';
 import Finish from './Finish.jsx';
 import {
+  aimAt,
   trackFor,
   stepTrack,
   segmentsOf,
@@ -58,7 +59,8 @@ function openPopover() {
  * @param {(text:string)=>void} [props.onWrite]
  * @param {(beat:object)=>string|null} [props.translationFor]
  * @param {(text:string)=>string|null} [props.saidIn]   speech, translated
- * @param {(w:string)=>string|null} [props.wordIn]      a glossed word, translated
+ * @param {(w:string)=>string|null} [props.wordIn]
+ * @param {(w:string)=>void} [props.onTap]  told which word a student looked up      a glossed word, translated
  * @param {string} [props.lang]
  * @param {boolean} [props.muted]
  * @param {number} [props.rate]
@@ -76,6 +78,7 @@ export default function Reader({
   translationFor,
   saidIn,
   wordIn,
+  onTap,
   lang = '',
   muted = false,
   rate = 1,
@@ -114,6 +117,12 @@ export default function Reader({
   const i = stepTrack(track, index, 0);
   const stop = track[i];
   const where = whereIn(segments, i);
+
+  /* Which part's prompt to show, decided in lib and tested there. */
+  const aim = useMemo(() => {
+    const text = aimAt(book, pass, track, i);
+    return text ? { text, other: saidIn ? saidIn(text) : null } : null;
+  }, [book, pass, track, i, saidIn]);
 
   const go = useCallback(
     (delta) => {
@@ -203,6 +212,16 @@ export default function Reader({
 
   return (
     <main className="reader">
+      {/* Announced, because it arrives without the student doing
+          anything and a reader that only paints it leaves a screen
+          reader silent at the start of every part. */}
+      {aim ? (
+        <p className="aim" role="status">
+          <span className="aim-lead">Look for</span>
+          <span className="aim-said">{aim.text}</span>
+          {aim.other ? <span className="aim-tr">{aim.other}</span> : null}
+        </p>
+      ) : null}
       {stop.kind === 'line' ? (
         <Scene
           key={`${stop.clip ?? `${stop.unit}-${stop.i}`}#${again}`}
@@ -213,6 +232,7 @@ export default function Reader({
           lang={lang}
           gloss={stop.gloss}
           wordIn={wordIn}
+          onTap={onTap}
           audioBase={media.audio}
           cuesUrl={media.cues}
           playing={playing}
@@ -253,6 +273,7 @@ export default function Reader({
              explains are the words worth tapping while they do. */
           gloss={glossFor(stop.unit)}
           wordIn={wordIn}
+          onTap={onTap}
           audioBase={media.audio}
           cuesUrl={media.cues}
           playing={playing}

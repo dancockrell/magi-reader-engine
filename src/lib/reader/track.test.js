@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import book from '../../books/fixture/index.js';
-import { trackFor, stepTrack, segmentsOf, whereIn, jumpSegment } from './track.js';
+import { trackFor, stepTrack, segmentsOf, whereIn, jumpSegment, aimAt } from './track.js';
 import { questionsOf, promptsOf } from './assessment.js';
 import { beatsOfBook } from './beats.js';
 
@@ -166,5 +166,69 @@ describe('jumping by segment', () => {
     expect(jumpSegment(segs, 0, -1)).toBe(0);
     const last = segs[segs.length - 1];
     expect(jumpSegment(segs, last.from, 1)).toBe(last.from);
+  });
+});
+
+describe('the one thing to look for', () => {
+  /* Every part carries a `watch` line for reading one and a `focus` line
+     for reading two. Both were authored, translated into every language
+     the picker offers, and described in the printed guide as "before
+     each part you are told one thing to look for". Neither had ever been
+     rendered anywhere except the guide. */
+  it('gives the watch line at the start of a part in reading one', () => {
+    const track = trackFor(book, 1);
+    const text = aimAt(book, 1, track, 0);
+    expect(text).toBeTruthy();
+    expect(text).toBe(book.teaching[track[0].unit].watch);
+  });
+
+  it('gives the focus line in reading two, not the watch line', () => {
+    const track = trackFor(book, 2);
+    const first = track.findIndex((s) => s.unit);
+    const text = aimAt(book, 2, track, first);
+    expect(text).toBe(book.teaching[track[first].unit].focus);
+    expect(text).not.toBe(book.teaching[track[first].unit].watch);
+  });
+
+  it('says it once per part, not under every line', () => {
+    /* Repeating a prompt under every line turns it into wallpaper, and
+       the point of aiming attention is that it is aimed once. */
+    const track = trackFor(book, 1);
+    const shown = track.map((_, i) => aimAt(book, 1, track, i)).filter(Boolean);
+    const parts = new Set(track.map((s) => s.unit).filter(Boolean));
+    expect(shown).toHaveLength(parts.size);
+    expect(new Set(shown).size).toBe(shown.length);
+  });
+
+  it('lands on the first stop of each part, wherever that falls', () => {
+    const track = trackFor(book, 1);
+    for (let i = 0; i < track.length; i++) {
+      if (!aimAt(book, 1, track, i)) continue;
+      const before = i > 0 ? track[i - 1].unit : null;
+      expect(before, `part ${track[i].unit} announced mid-part`).not.toBe(track[i].unit);
+    }
+  });
+
+  it('says nothing in reading three, which is writing rather than looking', () => {
+    const track = trackFor(book, 3);
+    expect(track.map((_, i) => aimAt(book, 3, track, i)).filter(Boolean)).toEqual([]);
+  });
+
+  it('says nothing for a part that carries no prompt, rather than an empty one', () => {
+    const bare = { ...book, teaching: { ...book.teaching } };
+    const track = trackFor(book, 1);
+    const unit = track[0].unit;
+    bare.teaching[unit] = { ...bare.teaching[unit], watch: '   ' };
+    expect(aimAt(bare, 1, track, 0)).toBeNull();
+  });
+
+  it('never throws on a book or a position that is not there', () => {
+    for (const bad of [null, undefined, {}, { teaching: null }]) {
+      expect(() => aimAt(bad, 1, [], 0)).not.toThrow();
+      expect(aimAt(bad, 1, [], 0)).toBeNull();
+    }
+    const track = trackFor(book, 1);
+    expect(aimAt(book, 1, track, 9999)).toBeNull();
+    expect(aimAt(book, 1, null, 0)).toBeNull();
   });
 });

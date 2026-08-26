@@ -159,6 +159,41 @@ export function trackFor(book, pass = 1, opts = {}) {
  * @param {import('../types.js').Book|null|undefined} book
  * @param {string} id
  */
+/**
+ * The one thing to look for, at the moment a part begins.
+ *
+ * Every part carries a `watch` line for the first reading and a `focus`
+ * line for the second, both written as "before this bit, notice X". All
+ * fourteen parts of the shipping book have both, they are translated
+ * into every language the picker offers, and the printed guide tells
+ * students "before each part you are told one thing to look for".
+ *
+ * Nothing ever put them on screen. They rendered in the guide and
+ * nowhere else, so the mechanism the second reading is built around was
+ * authored, translated, documented, and invisible to every student who
+ * has used this.
+ *
+ * Returned only for the FIRST stop of a part. Repeating it under every
+ * line would turn a prompt into wallpaper, and the point of aiming
+ * attention is that it is aimed once.
+ *
+ * @param {object} book
+ * @param {number} pass
+ * @param {any[]} track
+ * @param {number} at
+ * @returns {string|null}
+ */
+export function aimAt(book, pass, track, at) {
+  if (pass !== 1 && pass !== 2) return null;
+  const stop = track?.[at];
+  if (!stop?.unit) return null;
+  /* the stop before it belonged to another part, or there is none */
+  if (at > 0 && track[at - 1]?.unit === stop.unit) return null;
+  const teaching = book?.teaching?.[stop.unit];
+  const text = pass === 1 ? teaching?.watch : teaching?.focus;
+  return typeof text === 'string' && text.trim() ? text : null;
+}
+
 export function unitLike(book, id) {
   return (book?.units || []).find((u) => u.id === id) || book?.info?.[id] || null;
 }

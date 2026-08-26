@@ -154,10 +154,16 @@ export default function VocabCard({ question, line, onAnswer, onNext, progress }
           <p>
             <b>{word}</b> — {question.item?.d}
           </p>
+          {/* "the author" rather than a name. This said "O. Henry",
+              which is true of one book and wrong in every other: a
+              student reading The Raven was told Poe's word was O.
+              Henry's. engine.test.js searches for book ids and let the
+              name straight through, so the guard now searches titles
+              and authors too. */}
           {question.kind === 'swap' && (
             <p className="v-swap">
               <b>{question.options.find((o) => o.ok)?.t}</b> would also work here — close enough
-              in this line, though not the word O.&nbsp;Henry chose.
+              in this line, though not the word the author chose.
             </p>
           )}
           {/* the sentence, on every kind, always */}

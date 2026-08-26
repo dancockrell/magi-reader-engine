@@ -14,6 +14,7 @@ import { defaultBook } from './books/index.js';
 import { lineFor } from './lib/vocab/text.js';
 import { wordsOf } from './lib/vocab/words.js';
 import { createSession, advance, answer, progressOf } from './lib/vocab/session.js';
+import { loadTapped, saveTapped, tap, practiceSet } from './lib/vocab/tapped.js';
 import { trackFor, stepTrack } from './lib/reader/track.js';
 import { translatorFor } from './lib/book/translate.js';
 import { rememberWhere, whereLeftOff, forgetWhere } from './lib/reader/resume.js';
@@ -151,6 +152,19 @@ function ReadingRoute() {
     rememberWhere(bookId, { pass: passNo, at: safe, of: track.length });
   }, [bookId, passNo, safe, track.length]);
 
+  /**
+   * A word looked up is a word to practise.
+   *
+   * Written straight to storage rather than held in state: nothing on
+   * this screen renders the list, so holding it would re-render the whole
+   * reading on every tap for nothing anyone can see. The practice screen
+   * reads it when it opens.
+   */
+  const onTap = useCallback(
+    (word) => saveTapped(bookId, tap(loadTapped(bookId), word)),
+    [bookId]
+  );
+
   /* ---- handing it in ---- */
   const [student, setStudent] = useState(() => loadStudent());
   const [handedIn, setHandedIn] = useState(() => new Set());
@@ -237,6 +251,7 @@ function ReadingRoute() {
       translationFor={translator ? translator.line : undefined}
       saidIn={translator ? translator.said : undefined}
       wordIn={translator ? translator.word : undefined}
+      onTap={onTap}
       lang={translator ? translator.lang : ''}
       muted={!settings.sound}
       rate={settings.pace}
@@ -246,11 +261,19 @@ function ReadingRoute() {
 }
 
 function PractiseRoute() {
-  const { book } = useBook();
+  const { book, id } = useBook();
   const ctx = useMemo(() => {
-    const all = wordsOf(book);
+    /* The words this student looked up, newest first, rather than ten at
+       random from the whole book. Three places in the app promised this
+       and none of them did it: a student who tapped four words in part
+       three was offered words from parts they had not reached, and told
+       those were the ones they had chosen.
+
+       A student who has tapped nothing still gets the whole glossary,
+       because an empty practice screen is worse than an unfocused one. */
+    const all = practiceSet(wordsOf(book), loadTapped(id));
     return { book, swaps: book.swaps, all };
-  }, [book]);
+  }, [book, id]);
   const [session, setSession] = useState(() => createSession(ctx));
   const onAnswer = useCallback(({ ok }) => setSession((s) => answer(s, ok)), []);
   const onNext = useCallback(() => setSession((s) => advance(ctx, s)), [ctx]);

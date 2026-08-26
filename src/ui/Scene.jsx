@@ -29,6 +29,7 @@ import SpokenText from './SpokenText.jsx';
  * @param {string} [props.lang]             BCP-47 tag for that translation
  * @param {Record<string,string>} [props.gloss]     the words this unit explains
  * @param {(w:string)=>string|null} [props.wordIn]  those meanings, translated
+ * @param {(w:string)=>void} [props.onTap]        told which word was looked up
  * @param {boolean} [props.playing]
  * @param {boolean} [props.muted]
  * @param {number} [props.rate]
@@ -47,6 +48,7 @@ export default function Scene({
   lang = '',
   gloss = {},
   wordIn,
+  onTap,
   playing = false,
   muted = false,
   rate = 1,
@@ -104,7 +106,13 @@ export default function Scene({
       )}
 
       <figcaption className="subs" aria-live="off">
-        <SpokenText tokens={tokens} lit={litIndex} gloss={gloss} wordIn={wordIn} />
+        <SpokenText
+          tokens={tokens}
+          lit={litIndex}
+          gloss={gloss}
+          wordIn={wordIn}
+          onTap={onTap}
+        />
         {translation ? (
           <p className="sub-tr" lang={lang || undefined}>
             {translation}
