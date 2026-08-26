@@ -137,6 +137,46 @@ describe('a word that means two things', () => {
   });
 });
 
+describe('the act review', () => {
+  /* A recap is marked exactly like a multiple-choice question, and was
+     validated far more loosely than one: a question and some options,
+     and nothing else. These are the cases that used to pass. */
+  const withRecap = (recap) => {
+    const b = good();
+    b.teaching = { s1: { recap } };
+    return b;
+  };
+  const ok = {
+    q: 'What has happened so far?',
+    opts: ['she sold it', 'he sold it'],
+    correct: 0,
+  };
+
+  it('accepts a well-formed one', () => {
+    expect(validateBook(withRecap(ok)).ok).toBe(true);
+  });
+
+  it('rejects an answer that is not one of the options', () => {
+    const { errors } = validateBook(withRecap({ ...ok, correct: 7 }));
+    expect(errors.some((e) => /is not one of/.test(e.message))).toBe(true);
+  });
+
+  it('rejects one with no answer at all', () => {
+    const { errors } = validateBook(withRecap({ q: ok.q, opts: ok.opts }));
+    expect(errors.some((e) => /is not one of/.test(e.message))).toBe(true);
+  });
+
+  it('rejects a single-option recap', () => {
+    const { errors } = validateBook(withRecap({ ...ok, opts: ['only this'], correct: 0 }));
+    expect(errors.some((e) => /at least two options/.test(e.message))).toBe(true);
+  });
+
+  it('rejects duplicate options', () => {
+    const { errors } = validateBook(withRecap({ ...ok, opts: ['same', 'same'] }));
+    expect(errors.some((e) => /duplicate options/.test(e.message))).toBe(true);
+  });
+});
+
 describe('multiple choice', () => {
   it('rejects a correct index outside the options', () => {
     const b = good();

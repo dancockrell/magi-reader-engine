@@ -34,7 +34,6 @@ describe('the package carries the whole book', () => {
       'guideVoice',
       'preshow',
       'wrenReactions',
-      'recaps',
       'dialogue',
       'cast',
       'languages',
@@ -67,11 +66,47 @@ describe('the package carries the whole book', () => {
     const inSource = section.split('"q":').length - 1;
 
     expect(inPackage).toBeGreaterThan(20);
-    /* every "q" in the source is an mc question, a written prompt or a
-       recap; the package must account for all of them */
+    /* Every "q" between `var TEACHING` and `var GUIDE_VOICE` is an mc
+       question or a written prompt. Recaps are NOT in that slice — the
+       source keeps them in their own `var RECAPS` — so they are counted
+       separately below. This sum used to carry a `+ recaps` term that
+       balanced only because it was always zero, which is what hid the
+       fact that no recap had ever reached the package. */
     const written = Object.values(book.teaching).filter((t) => t.sa).length;
-    const recaps = Object.values(book.teaching).filter((t) => t.recap).length;
-    expect(inPackage + written + recaps).toBe(inSource);
+    expect(inPackage + written).toBe(inSource);
+  });
+
+  it('kept the act reviews, and put them where the reader looks', () => {
+    /* Four act reviews were authored, extracted, shipped, and never once
+       put to a student: the tool wrote them to `book.recaps` and the
+       reader reads `teaching[id].recap`. Nothing failed. The pack
+       validated and the reading ran, and the only evidence was four
+       questions that existed and were never asked.
+
+       So this counts them at the source and follows them all the way to
+       the thing that builds a reading, rather than trusting that a key
+       exists. */
+    const start = legacy.indexOf('var RECAPS');
+    const end = legacy.indexOf('var DIALOGUE', start);
+    const inSource = legacy.slice(start, end).split('"q":').length - 1;
+    expect(inSource, 'the source has no recaps to check against').toBeGreaterThan(0);
+
+    const inPackage = Object.values(book.teaching).filter((t) => t.recap).length;
+    expect(inPackage).toBe(inSource);
+    expect(book.recaps, 'recaps must not also be left at the top level').toBeUndefined();
+
+    /* and they are answerable, which nothing validated before */
+    for (const [id, t] of Object.entries(book.teaching)) {
+      if (!t.recap) continue;
+      const opts = t.recap.opts || [];
+      expect(opts.length, `${id} recap has too few options`).toBeGreaterThan(1);
+      expect(
+        Number.isInteger(t.recap.correct) &&
+          t.recap.correct >= 0 &&
+          t.recap.correct < opts.length,
+        `${id} recap answers option ${t.recap.correct} of ${opts.length}`
+      ).toBe(true);
+    }
   });
 
   it('kept every character line', () => {

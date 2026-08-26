@@ -202,9 +202,32 @@ export function validateTeaching(teaching, unitIds, errors) {
       if (!keys.length) fail(errors, `${at}.sa`, 'nothing for the grader to look for');
     }
 
+    /**
+     * A recap is marked exactly like a multiple-choice question —
+     * `assessment.js` compares `choice === q.correct` for both — and
+     * until now it was validated far more loosely than one. It checked
+     * that a question and some options existed and stopped there, so a
+     * recap answering option 7 of 4, or offering a single option, or
+     * carrying no `correct` at all, passed the contract and reached a
+     * class as a question nobody could get right.
+     *
+     * Same marking, same checks.
+     */
     const recap = entry?.recap;
-    if (recap && (!recap.q || !(recap.opts || []).length))
-      fail(errors, `${at}.recap`, 'a recap with no question or no options');
+    if (recap) {
+      if (!recap.q) fail(errors, `${at}.recap`, 'a recap with no question');
+      const opts = recap.opts || [];
+      if (opts.length < 2)
+        fail(errors, `${at}.recap.opts`, 'a recap needs at least two options');
+      if (new Set(opts).size !== opts.length)
+        fail(errors, `${at}.recap.opts`, 'duplicate options');
+      if (!Number.isInteger(recap.correct) || recap.correct < 0 || recap.correct >= opts.length)
+        fail(
+          errors,
+          `${at}.recap.correct`,
+          `correct index ${recap.correct} is not one of ${opts.length} options`
+        );
+    }
   }
 }
 

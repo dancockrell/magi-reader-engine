@@ -213,10 +213,44 @@ if (content.cast && content.castArt) {
     if (content.castArt[id]) member.art = content.castArt[id];
   }
 }
-/* Folded, not dropped — and said so below, because a key that vanishes
-   between the extract and the summary reads as an extraction failure. */
-const folded = 'castArt' in content ? ['castArt'] : [];
+/**
+ * The act reviews, folded in where the engine actually looks for them.
+ *
+ * The prototype keeps them in `var RECAPS`, keyed by the unit that ends
+ * each act, and this tool used to hand them over as `book.recaps`. The
+ * engine reads a recap from `teaching[id].recap` and nothing anywhere
+ * reads `book.recaps`, so four authored act reviews travelled all the
+ * way into the shipping pack and were never once put to a student.
+ *
+ * Nothing failed. The pack validated, the reading ran, and the only
+ * evidence was four questions that existed and were never asked. That is
+ * the worst kind of defect this tool can produce, and it is the third of
+ * its kind: `SWAPS` stopped the run, `TEXT_UNITS.push` lost two thirds
+ * of a poem, and this lost a whole layer of teaching in silence.
+ *
+ * One place for a recap, and it is the place the engine reads.
+ */
+const foldedRecaps = [];
+if (content.recaps && content.teaching) {
+  for (const [unitId, recap] of Object.entries(content.recaps)) {
+    if (!recap) continue;
+    if (!content.teaching[unitId]) content.teaching[unitId] = {};
+    content.teaching[unitId].recap = recap;
+    foldedRecaps.push(unitId);
+  }
+}
+
+/* Folded, not dropped — and said WHERE below, because a key that
+   vanishes between the extract and the summary reads as an extraction
+   failure, and one that says it went somewhere it did not is worse. */
+/** @type {Record<string,string>} */
+const folded = {};
+if ('castArt' in content) folded.castArt = 'folded into cast';
 delete content.castArt;
+if (foldedRecaps.length) {
+  folded.recaps = `folded into teaching (${foldedRecaps.join(', ')})`;
+  delete content.recaps;
+}
 
 const titleMatch = /title\s*:\s*"([^"]+)"/.exec(src.slice(src.indexOf('var BOOK')));
 if (!titleMatch)
@@ -274,11 +308,7 @@ console.log(`units:   ${units.length}`);
 console.log(`swaps:   ${Object.keys(swaps).length}`);
 console.log(`plates:  ${Object.keys(plates).length}`);
 for (const key of Object.keys(CONTENT)) {
-  const how = folded.includes(key)
-    ? 'folded into cast'
-    : key in content
-      ? size(content[key])
-      : 'NOT A LITERAL';
+  const how = folded[key] || (key in content ? size(content[key]) : 'NOT A LITERAL');
   console.log(`${(key + ':').padEnd(9)}${how}`);
 }
 /* Said out loud rather than left as an empty object in the output. A

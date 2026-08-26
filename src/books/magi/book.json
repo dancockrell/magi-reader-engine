@@ -827,6 +827,19 @@
      "pulled down her hair",
      "full length"
     ]
+   },
+   "recap": {
+    "label": "Looking back — Act I",
+    "q": "Across these first three parts, what has actually happened?",
+    "opts": [
+     "Della has sold her hair and bought Jim's present.",
+     "Jim has come home early and found Della crying on the couch.",
+     "Della has counted her money, cried, and decided something she has not told us yet.",
+     "Della has borrowed the money she needs from the shopkeepers."
+    ],
+    "correct": 2,
+    "fb": "One dollar and eighty-seven cents, counted three times. A cry on the shabby couch. Then shining eyes at the mirror, and her hair let down to its full length. We have watched her decide — but nobody has said what the decision is.",
+    "wren": "Count, cry, mirror. She's decided something and the story won't tell us what. That's why you can't stop here."
    }
   },
   "s4": {
@@ -1092,6 +1105,19 @@
      "Quietness and value",
      "worthy of The Watch"
     ]
+   },
+   "recap": {
+    "label": "Looking back — Act II",
+    "q": "Across this act, what has Della actually traded — and for what?",
+    "opts": [
+     "Her months of small savings, in exchange for Jim's gold watch.",
+     "One of the two treasures of the house, to be worthy of the other.",
+     "Her old brown jacket and hat, for twenty-one dollars in a shop.",
+     "Nothing yet — she is still standing in front of the mirror, deciding."
+    ],
+    "correct": 1,
+    "fb": "The house holds two treasures: the watch and the hair. She sold hers to buy something 'even worthy of The Watch'. That is half of a shape — keep hold of it.",
+    "wren": "She sold one treasure to dress the other one. Hold that shape in your head. It's going to matter."
    }
   },
   "s7": {
@@ -1336,6 +1362,19 @@
      "it went for you",
      "sold and gone"
     ]
+   },
+   "recap": {
+    "label": "Looking back — Act III",
+    "q": "During the long stare at the door, what does Jim know that Della does not — and that we, the readers, do not know yet either?",
+    "opts": [
+     "That her hair is gone forever and will never grow back.",
+     "That he has lost his job and cannot buy her anything at all.",
+     "That the gift in his pocket was made for the hair she has just sold.",
+     "That Della has been hiding money from him all through the year."
+    ],
+    "correct": 2,
+    "fb": "His stare is 'not anger, nor surprise... nor horror' — he is holding combs for hair that no longer exists. We only find that out one scene later, and then the stare makes perfect sense.",
+    "wren": "He's not angry. He's doing a sum in his head that we can't see yet. Once you know about the combs, go back and read the stare again. It's a different scene."
    }
   },
   "s10": {
@@ -1582,6 +1621,19 @@
      "of all who give gifts",
      "they are the magi"
     ]
+   },
+   "recap": {
+    "label": "Looking back — the whole story",
+    "q": "Look at the shape of the twist. What do the two gifts do to each other?",
+    "opts": [
+     "Each gift points at the treasure the other person gave up.",
+     "Each gift turns out to be worth more money than they paid for it.",
+     "Jim's gift ruins the evening and Della's gift saves it.",
+     "The two gifts cancel out, so nothing in the story has really changed."
+    ],
+    "correct": 0,
+    "fb": "A chain for a watch that is sold; combs for hair that is cut. Both gifts are useless — and both are perfect, because each one says: I gave up my best thing for you.",
+    "wren": "Two useless presents. And they're the two most perfect presents in any story I know. Both of those things are true at the same time. That's the whole trick."
    }
   },
   "ohenry": {
@@ -2120,60 +2172,6 @@
    "text": "I'm watching it with you. And when you get to the last line — that's my favourite last line anywhere, so don't talk over it."
   }
  ],
- "recaps": {
-  "s3": {
-   "label": "Looking back — Act I",
-   "q": "Across these first three parts, what has actually happened?",
-   "opts": [
-    "Della has sold her hair and bought Jim's present.",
-    "Jim has come home early and found Della crying on the couch.",
-    "Della has counted her money, cried, and decided something she has not told us yet.",
-    "Della has borrowed the money she needs from the shopkeepers."
-   ],
-   "correct": 2,
-   "fb": "One dollar and eighty-seven cents, counted three times. A cry on the shabby couch. Then shining eyes at the mirror, and her hair let down to its full length. We have watched her decide — but nobody has said what the decision is.",
-   "wren": "Count, cry, mirror. She's decided something and the story won't tell us what. That's why you can't stop here."
-  },
-  "s6": {
-   "label": "Looking back — Act II",
-   "q": "Across this act, what has Della actually traded — and for what?",
-   "opts": [
-    "Her months of small savings, in exchange for Jim's gold watch.",
-    "One of the two treasures of the house, to be worthy of the other.",
-    "Her old brown jacket and hat, for twenty-one dollars in a shop.",
-    "Nothing yet — she is still standing in front of the mirror, deciding."
-   ],
-   "correct": 1,
-   "fb": "The house holds two treasures: the watch and the hair. She sold hers to buy something 'even worthy of The Watch'. That is half of a shape — keep hold of it.",
-   "wren": "She sold one treasure to dress the other one. Hold that shape in your head. It's going to matter."
-  },
-  "s9": {
-   "label": "Looking back — Act III",
-   "q": "During the long stare at the door, what does Jim know that Della does not — and that we, the readers, do not know yet either?",
-   "opts": [
-    "That her hair is gone forever and will never grow back.",
-    "That he has lost his job and cannot buy her anything at all.",
-    "That the gift in his pocket was made for the hair she has just sold.",
-    "That Della has been hiding money from him all through the year."
-   ],
-   "correct": 2,
-   "fb": "His stare is 'not anger, nor surprise... nor horror' — he is holding combs for hair that no longer exists. We only find that out one scene later, and then the stare makes perfect sense.",
-   "wren": "He's not angry. He's doing a sum in his head that we can't see yet. Once you know about the combs, go back and read the stare again. It's a different scene."
-  },
-  "s12": {
-   "label": "Looking back — the whole story",
-   "q": "Look at the shape of the twist. What do the two gifts do to each other?",
-   "opts": [
-    "Each gift points at the treasure the other person gave up.",
-    "Each gift turns out to be worth more money than they paid for it.",
-    "Jim's gift ruins the evening and Della's gift saves it.",
-    "The two gifts cancel out, so nothing in the story has really changed."
-   ],
-   "correct": 0,
-   "fb": "A chain for a watch that is sold; combs for hair that is cut. Both gifts are useless — and both are perfect, because each one says: I gave up my best thing for you.",
-   "wren": "Two useless presents. And they're the two most perfect presents in any story I know. Both of those things are true at the same time. That's the whole trick."
-  }
- },
  "dialogue": {
   "s1": [
    {
