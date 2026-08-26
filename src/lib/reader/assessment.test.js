@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeAll } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { describe, it, expect } from 'vitest';
+import book from '../../books/fixture/index.js';
 import {
   questionsOf,
   promptsOf,
@@ -17,16 +17,36 @@ import {
 import { gradeWritten, segments, words, looksForeign } from './grader.js';
 import { parseSubmission, autoColumns } from '../gradebook/submission.js';
 
-let book;
-beforeAll(() => {
-  book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-});
+/* The engine's own fixture book. Whether the shipping pack has enough
+   questions to be a real assessment is a fact about that pack, and
+   `extracted.test.js` checks it. What is checked here is that the engine
+   finds every question a pack carries, whatever pack it is handed. */
 
 describe('the questions in the book', () => {
-  it('finds a real assessment, not a handful', () => {
+  it('finds every question the book carries, including the recaps', () => {
+    /* Counted back off the raw teaching layer rather than written down,
+       because the failure this guards is questionsOf skipping a shape —
+       a recap, or a part that is taught but not read aloud. */
+    const expected = Object.values(book.teaching).reduce(
+      (n, t) => n + (t.mc?.length || 0) + (t.recap ? 1 : 0),
+      0
+    );
     const qs = questionsOf(book);
-    expect(qs.length).toBeGreaterThanOrEqual(20);
-    expect(promptsOf(book).length).toBeGreaterThanOrEqual(10);
+    expect(qs).toHaveLength(expected);
+    expect(expected, 'a book with nothing in it would pass too').toBeGreaterThan(10);
+    expect(qs.some((q) => q.kind === 'recap')).toBe(true);
+
+    const prompts = promptsOf(book);
+    expect(prompts).toHaveLength(Object.values(book.teaching).filter((t) => t.sa?.q).length);
+    expect(prompts.length).toBeGreaterThan(1);
+  });
+
+  it('asks about material that is taught but never read aloud', () => {
+    /* The background pages are not units. Losing their questions is
+       silent: the reading still works and the marks quietly do not add
+       up. */
+    const asked = new Set(questionsOf(book).map((q) => q.unit));
+    for (const id of Object.keys(book.info)) expect(asked.has(id), id).toBe(true);
   });
 
   it('gives every question a unique id', () => {
@@ -126,12 +146,14 @@ describe('the writing', () => {
   it('keeps what is typed, per prompt', () => {
     let w = startWriting(book);
     const first = w.prompts[0];
-    w = write(w, 'She sells her hair.');
-    expect(w.written[first.id]).toBe('She sells her hair.');
+    w = write(w, 'The stair was dark and cold.');
+    expect(w.written[first.id]).toBe('The stair was dark and cold.');
 
     w = moveWriting(w, 1);
     w = write(w, 'Something else.');
-    expect(w.written[first.id], 'the first answer is still there').toBe('She sells her hair.');
+    expect(w.written[first.id], 'the first answer is still there').toBe(
+      'The stair was dark and cold.'
+    );
   });
 
   it('does not run off either end', () => {
@@ -277,7 +299,7 @@ describe('what is handed in', () => {
   it('a written submission carries no automatic score, so nothing is counted twice', () => {
     /* the defect that capped perfect written work at 67% */
     let w = startWriting(book);
-    w = write(w, 'She sold her hair because she loved him more than she loved it.');
+    w = write(w, 'She lit it because nobody else was going to light it that winter.');
 
     const payload = buildSubmission({ book, pass: 3, student, writing: w });
     expect(payload.score).toBeNull();

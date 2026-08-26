@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeAll } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { describe, it, expect } from 'vitest';
+import book from '../../books/fixture/index.js';
 import { lineFor, blankWord, markWord, wordRe } from './text.js';
 import { wordsOf } from './words.js';
 import {
@@ -15,24 +15,27 @@ import {
 
 /**
  * The interesting tests here are not the unit ones — they are the sweep
- * at the bottom, which builds every kind of question for every real word
- * in the book and asserts the invariants that make a question answerable.
- * Toy fixtures cannot find "craved/coveted have two right answers"; the
- * real word list can.
+ * at the bottom, which builds every kind of question for every word in
+ * the book and asserts the invariants that make a question answerable.
+ *
+ * It runs against the engine's own fixture book, which was written to
+ * carry the shapes that break those invariants: a pair of words that
+ * substitute for each other, a glossed phrase of two words, a word
+ * explained two different ways in two different parts. A sketch of two
+ * units would find none of them.
+ *
+ * What a fixture cannot prove is that a REAL word list obeys the rules —
+ * "craved and coveted are each other's substitutes" was found by
+ * sweeping the shipping pack, not by inventing a case. So the same sweep
+ * runs against that pack in `books/magi/pack.test.js`, and this one
+ * proves the rules exist at all.
  */
 
-let book;
-let ctx;
-let items;
-
-beforeAll(() => {
-  book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-  /* The app's own word list, not a copy of it. The sweep below is only
-     worth anything if it asks questions about exactly the words the
-     reader would ask about. */
-  items = wordsOf(book).map((i) => ({ ...i, asked: 1 }));
-  ctx = { book, swaps: book.swaps, all: items };
-});
+/* The app's own word list, not a copy of it. The sweep below is only
+   worth anything if it asks questions about exactly the words the
+   reader would ask about. */
+const items = wordsOf(book).map((i) => ({ ...i, asked: 1 }));
+const ctx = { book, swaps: book.swaps, all: items };
 
 /* deterministic rng so a failure can be reproduced */
 const seeded = (seed) => () => {
@@ -69,7 +72,7 @@ describe('finding a word in its line', () => {
   });
 
   it('blanks every occurrence, not just the first', () => {
-    const out = blankWord('a coax and another coax', 'coax');
+    const out = blankWord('a wick and another wick', 'wick');
     expect(out).toBe('a ______ and another ______');
   });
 
@@ -85,8 +88,8 @@ describe('finding a word in its line', () => {
   });
 
   it('returns null rather than the plain line when the word is absent', () => {
-    expect(blankWord('nothing here', 'coax')).toBeNull();
-    expect(markWord('nothing here', 'coax')).toBeNull();
+    expect(blankWord('nothing here', 'wick')).toBeNull();
+    expect(markWord('nothing here', 'wick')).toBeNull();
   });
 
   it('finds a real line for every glossed word in the book', () => {
@@ -137,14 +140,19 @@ describe('substitution cannot have two right answers', () => {
     expect([...new Set(offenders)]).toEqual([]);
   });
 
-  it('specifically keeps craved and coveted apart', () => {
-    const craved = items.find((i) => i.w.toLowerCase() === 'craved');
-    if (!craved) return;
+  it('keeps a pair that substitutes both ways apart', () => {
+    /* The fixture glosses `glimmered` and `flickered` and records each
+       as the other's substitute, because that is the shape that made a
+       real question have two right answers. */
+    const item = items.find((i) => i.w.toLowerCase() === 'glimmered');
+    expect(item, 'the fixture no longer carries the both-ways pair').toBeTruthy();
+    expect(ctx.swaps.glimmered).toBe('flickered');
+    expect(ctx.swaps.flickered).toBe('glimmered');
     for (let s = 1; s < 40; s++) {
-      const words = distractorsFor(ctx, craved, 'swap', 3, seeded(s)).map((g) =>
+      const words = distractorsFor(ctx, item, 'swap', 3, seeded(s)).map((g) =>
         g.w.toLowerCase()
       );
-      expect(words).not.toContain('coveted');
+      expect(words).not.toContain('flickered');
     }
   });
 });

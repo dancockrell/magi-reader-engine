@@ -1,6 +1,9 @@
 import { describe, it, expect, beforeAll } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { validateBook, allUnitIds } from './validate.js';
+import { glossOf, linesOf } from '../reader/beats.js';
+import { lineTranslation, speechTranslation, wordTranslation } from './translate.js';
+import { preshowRun, helloRun, passIntroRun, talkFor, reactionsFor } from '../speech/script.js';
 
 /**
  * The whole book came out of the HTML, and nothing was left behind.
@@ -101,6 +104,86 @@ describe('the package carries the whole book', () => {
     const { ok, errors } = validateBook(book);
     expect(errors.slice(0, 10)).toEqual([]);
     expect(ok).toBe(true);
+  });
+});
+
+/**
+ * The translation coverage of THIS pack.
+ *
+ * These three used to live in `translate.test.js` and `gloss.test.js`,
+ * which now run against the engine's fixture book. The engine behaviour
+ * they were checking belongs there; what is left here is the part that
+ * was only ever a fact about this pack — that its four translations
+ * really do reach every line, every glossed word and every spoken turn.
+ * Moved rather than dropped, because a gap in any of them is a promise
+ * broken to a student mid-story.
+ */
+describe('the translations reach everything they are promised for', () => {
+  it('has every line of every unit, in every language the picker offers', () => {
+    const missing = [];
+    for (const u of book.units) {
+      const n = linesOf(u).length;
+      for (const { code } of book.languages) {
+        for (let i = 0; i < n; i++) {
+          if (!lineTranslation(book, code, u.id, i, n)) missing.push(`${u.id}/${code}/${i}`);
+        }
+      }
+    }
+    expect(missing).toEqual([]);
+  });
+
+  it('has every line either guide speaks', () => {
+    const spoken = [...preshowRun(book), ...helloRun(book)];
+    for (const p of [1, 2, 3]) spoken.push(...passIntroRun(book, p));
+    for (const id of [...book.units.map((u) => u.id), ...Object.keys(book.info)]) {
+      spoken.push(...talkFor(book, id));
+      spoken.push(...reactionsFor(book, id).values());
+    }
+
+    const missing = [];
+    for (const t of spoken) {
+      for (const { code } of book.languages) {
+        if (!speechTranslation(book, code, t.text)) missing.push(`${t.clip}/${code}`);
+      }
+    }
+    expect(missing).toEqual([]);
+    /* eighty-odd turns, so an empty list would not pass this quietly */
+    expect(spoken.length).toBeGreaterThan(50);
+  });
+
+  it('has every glossed word but the five this book never translated', () => {
+    /* Five of the sixty-nine were never translated. That is a gap in the
+       book, not in the code — and the code already does the right thing
+       with it: the pop-up shows the English meaning and simply leaves
+       the second line off. Named here so that five does not quietly
+       become thirty, and so anyone filling them in can find them. */
+    const NOT_TRANSLATED = ['beggar', 'pier glass', 'longitudinal', 'pluck', 'hashed'];
+
+    const words = new Set();
+    for (const u of book.units) for (const w of Object.keys(glossOf(u))) words.add(w);
+    expect(words.size).toBe(69);
+
+    const missing = [...words].filter((w) => !wordTranslation(book, 'ko', w));
+    expect(missing.sort()).toEqual([...NOT_TRANSLATED].sort());
+
+    /* and the ones with no translation still have their English meaning,
+       rather than a blank where a definition should be */
+    for (const w of NOT_TRANSLATED) {
+      const unit = book.units.find((u) => glossOf(u)[w]);
+      expect(glossOf(unit)[w], `${w} has no meaning at all`).toBeTruthy();
+    }
+  });
+
+  it('has all four languages wherever it has any', () => {
+    const words = new Set();
+    for (const u of book.units) for (const w of Object.keys(glossOf(u))) words.add(w);
+
+    const patchy = [];
+    for (const w of words) {
+      const got = book.languages.filter(({ code }) => wordTranslation(book, code, w));
+      if (got.length && got.length !== book.languages.length) patchy.push(w);
+    }
+    expect(patchy).toEqual([]);
   });
 });
 

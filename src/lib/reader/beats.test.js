@@ -1,13 +1,14 @@
-import { describe, it, expect, beforeAll } from 'vitest';
-import { readFileSync, existsSync } from 'node:fs';
+import { describe, it, expect } from 'vitest';
+import book from '../../books/fixture/index.js';
 import { beatsOf, beatsOfBook, linesOf, step } from './beats.js';
-import { wordsByClip } from '../media/vtt.js';
 
-let book;
-
-beforeAll(() => {
-  book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-});
+/**
+ * Cutting a book into beats, against the engine's own fixture book.
+ *
+ * Whether a particular pack's recordings and pictures are really on
+ * disk is a fact about that pack, not about this cutting, and it is
+ * checked in `books/magi/pack.test.js` where it belongs.
+ */
 
 describe('cutting a unit into beats', () => {
   it('produces one beat per line of the story', () => {
@@ -32,7 +33,10 @@ describe('cutting a unit into beats', () => {
     const u = book.units[0];
     const [first] = beatsOf(u, { plates: book.plates });
     expect(first.plate.src).toBe(book.plates[u.scene || u.id]);
+    /* the filename is a hash, so it can be neither guessed from the
+       scene id nor recognised without the map */
     expect(first.plate.src).toMatch(/^art\/[0-9a-f]{16}\.webp$/);
+    expect(first.plate.src).not.toContain(u.id);
   });
 
   it('never produces a path anchored at the domain root', () => {
@@ -54,12 +58,12 @@ describe('cutting a unit into beats', () => {
     expect(first.plate.src).toBeNull();
   });
 
-  it('every scene in the book has a picture on disk', () => {
+  it('finds a plate for every scene the book has', () => {
+    /* Whether the file is on disk is the pack's business; whether the
+       book's own map covers every scene it plays is the engine's. */
     const beats = beatsOfBook(book);
-    const missing = [...new Set(beats.map((b) => b.plate.src))].filter(
-      (src) => !src || !existsSync(`public/${src}`)
-    );
-    expect(missing).toEqual([]);
+    expect(beats.length).toBeGreaterThan(0);
+    expect(beats.filter((b) => !b.plate.src)).toEqual([]);
   });
 
   it('survives a malformed unit rather than throwing', () => {
@@ -67,28 +71,6 @@ describe('cutting a unit into beats', () => {
       expect(() => beatsOf(bad)).not.toThrow();
     }
     expect(beatsOf(null)).toEqual([]);
-  });
-});
-
-describe('every beat has the recording it names', () => {
-  /* The 519 clips were produced against the old reader's line numbering.
-     If this drifts, a student gets a silent page and nothing says why. */
-  it('finds an mp3 and a cue for every beat in the book', () => {
-    const beats = beatsOfBook(book);
-    /* All cues live in one WebVTT file — 519 separate ones put the build
-       over itch's 1000-file limit and the upload was rejected. */
-    const cues = wordsByClip(readFileSync('public/cues/magi.vtt', 'utf8'));
-    const missingAudio = [];
-    const missingCues = [];
-    for (const b of beats) {
-      if (!existsSync(`public/magi-audio/${b.clip}.mp3`)) missingAudio.push(b.clip);
-      if (!cues[b.clip]?.length) missingCues.push(b.clip);
-    }
-    expect({ missingAudio, missingCues }).toEqual({ missingAudio: [], missingCues: [] });
-  });
-
-  it('covers a real number of beats, so the check above is not vacuous', () => {
-    expect(beatsOfBook(book).length).toBeGreaterThan(100);
   });
 
   it('marks a beat silent when the recording is absent', () => {

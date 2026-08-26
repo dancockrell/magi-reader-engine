@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { validateBook, inlineGlosses, plainStanza } from './validate.js';
+import fixture from '../../books/fixture/index.js';
 
 /**
  * These tests are written from the generator's point of view: each case
@@ -201,5 +202,57 @@ describe('structure', () => {
     for (const bad of [null, undefined, 0, '', [], { units: [null] }]) {
       expect(() => validateBook(bad)).not.toThrow();
     }
+  });
+});
+
+describe('the engine’s own fixture book', () => {
+  /**
+   * The fixture is what most of the engine's tests now read against, so
+   * a defect in it reads as a defect in the engine. It has to satisfy
+   * the same contract a shipping pack does, and it has to keep the one
+   * fault it carries on purpose.
+   */
+  it('passes the contract with no errors', () => {
+    const { ok, errors } = validateBook(fixture);
+    expect(errors).toEqual([]);
+    expect(ok).toBe(true);
+  });
+
+  it('warns about the one word it explains two ways, and only that one', () => {
+    /* `still` is glossed "not moving" in part one and "even now" in
+       part four. Both are right, and the pair is there so that the
+       trainer's rule for dropping such a word and the glossary's rule
+       for keeping both are exercised by something. If this warning ever
+       disappears, that coverage has gone with it. */
+    const { warnings } = validateBook(fixture);
+    expect(warnings).toHaveLength(1);
+    expect(warnings[0].message).toMatch(/"still" is defined twice/);
+  });
+
+  it('is a whole book, not a sketch', () => {
+    /* A fixture that carries less than a real pack silently tests less
+       than the real pack did, and nothing says so. */
+    for (const part of [
+      'units',
+      'info',
+      'teaching',
+      'recaps',
+      'guideVoice',
+      'preshow',
+      'wrenReactions',
+      'dialogue',
+      'cast',
+      'swaps',
+      'plates',
+      'languages',
+      'lineTranslations',
+      'wordTranslations',
+      'uiTranslations',
+      'speechTranslations',
+    ]) {
+      expect(Object.keys(fixture[part] || {}).length, `${part} is missing`).toBeGreaterThan(0);
+    }
+    expect(validateBook(fixture).wordCount).toBeGreaterThan(20);
+    expect(fixture.languages.length).toBeGreaterThan(1);
   });
 });

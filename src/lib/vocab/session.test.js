@@ -1,14 +1,12 @@
-import { describe, it, expect, beforeAll } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { describe, it, expect } from 'vitest';
+import book from '../../books/fixture/index.js';
 import { createSession, advance, answer, liveWords, progressOf, RETIRE_AT } from './session.js';
 import { wordsOf } from './words.js';
 
-let ctx;
+/* The engine's own fixture book. A practice session is a queue and a
+   retirement rule; it does not care whose words are in it. */
 
-beforeAll(() => {
-  const book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-  ctx = { book, swaps: book.swaps, all: wordsOf(book) };
-});
+const ctx = { book, swaps: book.swaps, all: wordsOf(book) };
 
 const seeded = (s) => () => ((s = (s * 1664525 + 1013904223) % 4294967296), s / 4294967296);
 

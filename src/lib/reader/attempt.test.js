@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeAll } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { describe, it, expect } from 'vitest';
+import book from '../../books/fixture/index.js';
 import {
   loadAttempt,
   saveAttempt,
@@ -11,10 +11,8 @@ import {
 } from './attempt.js';
 import { startQuiz, current, answerQuestion, startWriting, write } from './assessment.js';
 
-let book;
-beforeAll(() => {
-  book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-});
+/* The engine's own fixture book: none of this is about a story, it is
+   about what a half-finished attempt in a browser store is worth. */
 
 /**
  * A localStorage that behaves, and one that does not.
@@ -52,12 +50,12 @@ function fakeStore(behaviour = 'ok') {
 
 describe('a device that will not save', () => {
   it('says so instead of pretending', () => {
-    expect(saveAttempt('magi', 2, { answers: {} }, fakeStore('full'))).toBe(false);
+    expect(saveAttempt('fixture', 2, { answers: {} }, fakeStore('full'))).toBe(false);
   });
 
   it('does not take the reading down with it', () => {
-    expect(loadAttempt('magi', 2, fakeStore('read-throws'))).toBeNull();
-    expect(clearAttempt('magi', 2, fakeStore('read-throws'))).toBe(true);
+    expect(loadAttempt('fixture', 2, fakeStore('read-throws'))).toBeNull();
+    expect(clearAttempt('fixture', 2, fakeStore('read-throws'))).toBe(true);
   });
 });
 
@@ -65,15 +63,15 @@ describe('what is in the store is input, not truth', () => {
   it('ignores junk left by something else', () => {
     const s = fakeStore();
     for (const junk of ['not json {', '"a string"', '[1,2,3]', 'null', '42']) {
-      s._map.set('reader.attempt.v2.magi.2', junk);
-      expect(loadAttempt('magi', 2, s)).toBeNull();
+      s._map.set('reader.attempt.v2.fixture.2', junk);
+      expect(loadAttempt('fixture', 2, s)).toBeNull();
     }
   });
 
   it('ignores an answers field that is not answers', () => {
     const s = fakeStore();
-    s._map.set('reader.attempt.v2.magi.2', JSON.stringify({ answers: ['a', 'b'] }));
-    expect(loadAttempt('magi', 2, s)).toBeNull();
+    s._map.set('reader.attempt.v2.fixture.2', JSON.stringify({ answers: ['a', 'b'] }));
+    expect(loadAttempt('fixture', 2, s)).toBeNull();
   });
 });
 
@@ -134,9 +132,9 @@ describe('picking a quiz back up', () => {
 describe('picking writing back up', () => {
   it('keeps what was typed', () => {
     let w = startWriting(book);
-    w = write(w, 'She sold her hair.');
+    w = write(w, 'The stair was dark and cold.');
     const back = restoreWriting(book, snapshotWriting(w));
-    expect(back.written[w.prompts[0].id]).toBe('She sold her hair.');
+    expect(back.written[w.prompts[0].id]).toBe('The stair was dark and cold.');
   });
 
   it('drops anything that is not text, and prompts that are gone', () => {
@@ -151,26 +149,26 @@ describe('round trip through a real store', () => {
     let q = startQuiz(book);
     q = answerQuestion(q, current(q).correct);
 
-    expect(saveAttempt('magi', 2, snapshotQuiz(q), s)).toBe(true);
-    const back = restoreQuiz(book, {}, loadAttempt('magi', 2, s));
+    expect(saveAttempt('fixture', 2, snapshotQuiz(q), s)).toBe(true);
+    const back = restoreQuiz(book, {}, loadAttempt('fixture', 2, s));
     expect(back.at).toBe(1);
 
-    clearAttempt('magi', 2, s);
-    expect(loadAttempt('magi', 2, s)).toBeNull();
+    clearAttempt('fixture', 2, s);
+    expect(loadAttempt('fixture', 2, s)).toBeNull();
   });
 
   it('keeps the two readings apart', () => {
     const s = fakeStore();
-    saveAttempt('magi', 2, { answers: { a: 1 } }, s);
-    saveAttempt('magi', 3, { written: { b: 'x' } }, s);
-    expect(loadAttempt('magi', 2, s).answers).toEqual({ a: 1 });
-    expect(loadAttempt('magi', 3, s).written).toEqual({ b: 'x' });
+    saveAttempt('fixture', 2, { answers: { a: 1 } }, s);
+    saveAttempt('fixture', 3, { written: { b: 'x' } }, s);
+    expect(loadAttempt('fixture', 2, s).answers).toEqual({ a: 1 });
+    expect(loadAttempt('fixture', 3, s).written).toEqual({ b: 'x' });
   });
 
   it('keeps two books apart, because this reader is meant to hold more than one', () => {
     const s = fakeStore();
-    saveAttempt('magi', 2, { answers: { a: 1 } }, s);
+    saveAttempt('fixture', 2, { answers: { a: 1 } }, s);
     saveAttempt('other', 2, { answers: { z: 9 } }, s);
-    expect(loadAttempt('magi', 2, s).answers).toEqual({ a: 1 });
+    expect(loadAttempt('fixture', 2, s).answers).toEqual({ a: 1 });
   });
 });

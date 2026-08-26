@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
+import fixture from '../../books/fixture/index.js';
 import { wordsOf } from './words.js';
 import { validateBook } from '../book/validate.js';
 
@@ -70,8 +70,15 @@ describe('the words the trainer may ask about', () => {
   it('agrees with the contract about how many words the trainer gets', () => {
     /* Two counts of the same thing, computed by different code in
        different modules. They drifting apart is exactly the failure that
-       three copies of this function used to hide. */
-    const book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-    expect(wordsOf(book).length).toBe(validateBook(book).wordCount);
+       three copies of this function used to hide.
+
+       Against a whole book rather than a two-unit sketch, because the
+       thing that makes them disagree is a shape only a complete pack
+       has: a word glossed twice, inline markup and a gloss list in the
+       same unit, a unit that explains nothing. The fixture has all
+       three, and `books/magi/pack.test.js` runs the same check against
+       the shipping pack. */
+    expect(wordsOf(fixture).length).toBe(validateBook(fixture).wordCount);
+    expect(wordsOf(fixture).length).toBeGreaterThan(20);
   });
 });

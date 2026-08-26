@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeAll } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { describe, it, expect } from 'vitest';
+import book from '../../books/fixture/index.js';
 import {
   guideOutline,
   sectionsOf,
@@ -10,10 +10,9 @@ import {
 } from './outline.js';
 import { questionsOf, promptsOf } from '../reader/assessment.js';
 
-let book;
-beforeAll(() => {
-  book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-});
+/* The engine's own fixture book. The guide owns no content — every
+   heading, count and word in it comes out of the pack — so testing it
+   against a title would only prove it works for that title. */
 
 /** Every string the document would put in front of a reader. */
 function everyString(value, out = []) {
@@ -106,7 +105,7 @@ describe('the guide is made from the book', () => {
     expect(outline.by).toBe('Nobody');
     expect(blob).toContain('the only part');
     expect(blob).toContain('it happens once');
-    expect(blob).not.toContain('della');
+    expect(blob).not.toContain('mira');
   });
 
   it('counts what is really in the book', () => {
@@ -198,7 +197,10 @@ describe('the guide contains no answer key', () => {
     const blob = blobOf(guideOutline(book));
     const leaked = [];
     for (const [id, t] of Object.entries(book.teaching)) {
-      for (const q of t.mc || []) {
+      /* Recaps as well as questions. A recap is asked in the second
+         reading like everything else, and it is the shape most likely
+         to be forgotten because not every pack has one. */
+      for (const q of [...(t.mc || []), ...(t.recap ? [t.recap] : [])]) {
         if (blob.includes(q.opts[q.correct].toLowerCase())) leaked.push(`${id} correct option`);
         if (blob.includes(q.fb.toLowerCase())) leaked.push(`${id} explanation`);
       }

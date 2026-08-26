@@ -1,0 +1,856 @@
+{
+  "meta": {
+    "id": "fixture",
+    "title": "The Lantern on the Stair",
+    "author": "The engine test suite",
+    "source": "written for the engine tests; not a book anybody published"
+  },
+  "units": [
+    {
+      "id": "p1",
+      "scene": "p1",
+      "act": "Act I — The Dark Stair",
+      "num": 1,
+      "title": "The Lamp Is Not Lit",
+      "caption": "A narrow stair, and no light on it.",
+      "stanzas": [
+        "The stair was full of {gloom|near darkness}, and nobody had lit the lamp.\nMira put one foot on the lowest {tread|the flat part of a step} and stopped.\nAbove her the landing was still and black.",
+        "Her fingers found the lamp and {fumbled|handled clumsily} with the catch.\nThe glass was thin and {brittle|hard and easily broken}, so she went slowly.\nSoot from last winter came away black on her thumb."
+      ],
+      "para": "Nobody has lit the stair lamp for a long time. Mira climbs to it in the dark, finds the glass dirty and easy to break, and takes her time.",
+      "gloss": [
+        ["landing", "the flat floor at the top of a stair"],
+        ["soot", "black powder left by smoke"],
+        ["still", "not moving"]
+      ]
+    },
+    {
+      "id": "p2",
+      "scene": "p2",
+      "act": "Act I — The Dark Stair",
+      "num": 2,
+      "title": "Mira Finds the Wick",
+      "caption": "A borrowed box of matches, and one short wick.",
+      "stanzas": [
+        "In the {watch house|a small hut where a guard sits} at the corner she begged a box of matches.\nThe old {wick|the cord in a lamp that burns} was short, but it was not finished yet.\nShe was {patient|willing to wait without complaining} with it, the way her mother had been.",
+        "Dry {tinder|dry stuff that catches fire quickly} first, then the flame would {kindle|to set alight} the rest.\nIt took four matches to kindle the wick at all.\nFor a moment the little lamp glimmered, and then it held."
+      ],
+      "para": "She asks for matches at the corner and works on the stub of wick that is left. It takes four matches, and then the lamp stays alight.",
+      "gloss": [["glimmered", "shone with a faint unsteady light"]]
+    },
+    {
+      "id": "p3",
+      "scene": "p3",
+      "act": "Act II — The Light Returns",
+      "num": 3,
+      "title": "The Neighbour Knocks",
+      "caption": "A bolted door, and somebody on the other side of it.",
+      "stanzas": [
+        "Two nights later the lamp {flickered|burned unsteadily} and a {stranger|someone you have never met} knocked.\nMira had {bolted|fastened shut with a metal bar} the door out of habit.\nShe was {hesitant|slow to act because of doubt}, and she opened it anyway.",
+        "He had come on an {errand|a short trip made to do one job} from the far end of the street.\nHis voice was low and {courteous|polite in a careful way}.\nHe asked who had been lighting the lamp on the stair."
+      ],
+      "para": "Two nights on, somebody knocks. Mira has locked the door out of habit; she is unsure, and she opens it anyway. The man wants to know who lights the lamp."
+    },
+    {
+      "id": "p4",
+      "scene": "p4",
+      "act": "Act II — The Light Returns",
+      "num": 4,
+      "title": "What the Lantern Was For",
+      "caption": "One small flame, and a whole row of houses using it.",
+      "stanzas": [
+        "After that the lamp on the stair was a {beacon|a light that guides people} for the whole row.\nLighting it became a {custom|something people always do} nobody had agreed to.\nMira was {grateful|glad about a kindness done to you} in a way she could not explain.",
+        "Winter {dwindled|grew smaller and smaller} and the evenings grew long again.\nThe little flame stayed {steadfast|firm and not changing} on its shelf.\nPeople still climbed the stair, and the light was still there."
+      ],
+      "para": "The lamp stops belonging to Mira. Everybody on the row steers by it, nobody arranged that, and it goes on burning after the winter ends.",
+      "gloss": [["still", "even now"]]
+    }
+  ],
+  "info": {
+    "notes": {
+      "id": "notes",
+      "scene": "notes",
+      "type": "info",
+      "act": "Between the readings",
+      "title": "Where this story came from",
+      "caption": "A page that is shown, not read aloud.",
+      "spoken": [
+        "This part is shown between the readings, and it is never read aloud.",
+        "It exists so that the reader has something to teach that is not a scene.",
+        "Everything on this page was written for the test suite."
+      ],
+      "html": "<h3>Not a real book</h3><p class=\"para\">Every word of <i>The Lantern on the Stair</i> was written so that the reading engine could be tested against a book that is complete and belongs to nobody.</p>"
+    },
+    "after": {
+      "id": "after",
+      "scene": "after",
+      "type": "info",
+      "act": "Between the readings",
+      "title": "What happened afterwards",
+      "caption": "A short page about the years after the story stops.",
+      "spoken": [
+        "A lamp on a stair is a small thing to give.",
+        "The people who climbed the stair never learned who lit it.",
+        "That is the whole of what happens afterwards."
+      ],
+      "html": "<h3>Afterwards</h3><p class=\"para\">The lamp went on being lit, and nobody on the row ever found out whose hand did it.</p>"
+    }
+  },
+  "swaps": {
+    "gloom": "darkness",
+    "brittle": "fragile",
+    "kindle": "ignite",
+    "glimmered": "flickered",
+    "flickered": "glimmered",
+    "stranger": "newcomer",
+    "hesitant": "unsure",
+    "errand": "task",
+    "courteous": "polite",
+    "beacon": "signal",
+    "custom": "habit",
+    "grateful": "thankful",
+    "dwindled": "shrank",
+    "steadfast": "constant"
+  },
+  "plates": {
+    "cover": "art/0718293a4b5c6d7e.webp",
+    "p1": "art/a1b2c3d4e5f60718.webp",
+    "p2": "art/b2c3d4e5f6071829.webp",
+    "p3": "art/c3d4e5f60718293a.webp",
+    "p4": "art/d4e5f60718293a4b.webp",
+    "notes": "art/e5f60718293a4b5c.webp",
+    "after": "art/f60718293a4b5c6d.webp"
+  },
+  "teaching": {
+    "p1": {
+      "watch": "A dark stair, and a lamp nobody has lit. Watch what Mira does with her hands.",
+      "focus": "Listen for what she touches first, and for what stops her going faster.",
+      "debrief": {
+        "ok": "Yes — the glass. Thin glass is the reason she slows down.",
+        "no": "Go back to the second stanza. Something in her hands is easy to break."
+      },
+      "writeIntro": "Say what the dark stair is like, then give one detail from the text as evidence.",
+      "mc": [
+        {
+          "q": "Why does Mira move slowly once she has found the lamp?",
+          "opts": [
+            "The stair is too narrow for her to hurry on.",
+            "The lamp glass is thin and brittle and could break.",
+            "She is listening for someone coming up behind her.",
+            "Her mother has told her never to touch the lamp."
+          ],
+          "correct": 1,
+          "fb": "The text says the glass was thin and brittle, so she went slowly. Nothing else on the stair is holding her back."
+        },
+        {
+          "q": "What does the soot on Mira's thumb tell you about the lamp?",
+          "opts": [
+            "It has been burning every night this week.",
+            "Somebody cleaned it earlier the same day.",
+            "It has not been lit or cleaned since last winter.",
+            "It has never been used at all."
+          ],
+          "correct": 2,
+          "fb": "The soot is from last winter, which means nobody has touched the lamp since then."
+        }
+      ],
+      "sa": {
+        "q": "What is the stair like before the lamp is lit? Use two details from the text.",
+        "hint": "One thing you can see, and one thing you can feel with your hands.",
+        "minWords": 12,
+        "core": [
+          ["dark", "darkness", "gloom", "black", "unlit"],
+          ["cold", "dusty", "soot", "dirty", "old"]
+        ],
+        "support": ["stair", "lamp", "landing", "tread"],
+        "phrases": ["full of gloom", "still and black"]
+      }
+    },
+    "p2": {
+      "watch": "She has one wick and no money. Watch how many matches it takes.",
+      "focus": "Listen for the number, and for who taught her to wait.",
+      "debrief": {
+        "ok": "Four. Four matches for one small flame.",
+        "no": "The number is in the second stanza, and it is not one."
+      },
+      "writeIntro": "Give the number first, then say what it shows about her evening.",
+      "mc": [
+        {
+          "q": "How many matches does it take to kindle the wick?",
+          "opts": [
+            "One, on the first try.",
+            "Two, because the first one blew out.",
+            "Four, one after another.",
+            "None, because the wick was already alight."
+          ],
+          "correct": 2,
+          "fb": "The text says it took four matches to kindle the wick at all."
+        },
+        {
+          "q": "Where does Mira get the matches?",
+          "opts": [
+            "She asks for them at the watch house on the corner.",
+            "She finds them on the landing beside the lamp.",
+            "The stranger at the door gives them to her.",
+            "She buys them from a shop at the end of the street."
+          ],
+          "correct": 0,
+          "fb": "She begs a box of matches in the watch house at the corner. The stranger has not arrived yet."
+        }
+      ],
+      "recap": {
+        "label": "Looking back — Act I",
+        "q": "By the end of the first act, what has Mira actually done?",
+        "opts": [
+          "She has met the stranger and learned his name.",
+          "She has found an unlit lamp and got it burning again.",
+          "She has given up on the lamp and gone back inside.",
+          "She has bought a new lamp for the stair."
+        ],
+        "correct": 1,
+        "fb": "A dark stair, a brittle glass, a short wick and four matches. The stranger does not knock until the next act.",
+        "wren": "One lamp, four matches. That is the whole first act."
+      },
+      "sa": {
+        "q": "Why does it matter that the wick was short but not finished?",
+        "hint": "Think about what she has, and about what she does not have.",
+        "minWords": 10,
+        "core": [
+          ["short", "little", "small", "almost gone", "nearly"],
+          ["enough", "still", "works", "can", "last"]
+        ],
+        "support": ["wick", "lamp", "flame", "match"],
+        "phrases": ["not finished yet"]
+      }
+    },
+    "p3": {
+      "watch": "Somebody is at the door. Watch what Mira does before she opens it.",
+      "focus": "Listen for the word that says she is not sure.",
+      "debrief": {
+        "ok": "Hesitant — and she opens the door anyway. Both things are true at once.",
+        "no": "Read the third line again. She doubts, and then she acts."
+      },
+      "writeIntro": "Say what she feels, then say what she does, and keep them in that order.",
+      "mc": [
+        {
+          "q": "What has Mira done to the door before the knock comes?",
+          "opts": [
+            "She has left it standing open for the neighbours.",
+            "She has bolted it, the way she always does.",
+            "She has propped it with the lamp to keep it shut.",
+            "She has painted it and left it to dry."
+          ],
+          "correct": 1,
+          "fb": "She had bolted the door out of habit — which is why opening it is a decision rather than a reflex."
+        },
+        {
+          "q": "Why has the stranger come to the door?",
+          "opts": [
+            "To complain about the smoke from the lamp.",
+            "To ask who has been lighting the lamp on the stair.",
+            "To borrow matches for a lamp of his own.",
+            "To deliver a letter to Mira's mother."
+          ],
+          "correct": 1,
+          "fb": "He asks who had been lighting the lamp on the stair. He is on an errand, but that is not the question he asks."
+        }
+      ],
+      "sa": {
+        "q": "Mira is hesitant and she opens the door anyway. What does that tell you about her?",
+        "hint": "Being unsure and being brave are not opposites here.",
+        "minWords": 12,
+        "core": [
+          ["brave", "courage", "bold", "not afraid", "anyway"],
+          ["unsure", "doubt", "hesitant", "nervous", "scared", "careful"]
+        ],
+        "support": ["door", "bolt", "knock", "stranger"],
+        "phrases": ["opened it anyway"]
+      }
+    },
+    "p4": {
+      "watch": "The last part. Watch what the lamp has turned into.",
+      "focus": "Listen for the word that means a light other people steer by.",
+      "debrief": {
+        "ok": "A beacon. One lamp on one stair, and the whole row uses it.",
+        "no": "It is in the first line of the last part, and the word is not lamp."
+      },
+      "writeIntro": "Name what the lamp has become, then say who it is for now.",
+      "mc": [
+        {
+          "q": "What has the lamp become by the end of the story?",
+          "opts": [
+            "A beacon that the whole row of houses steers by.",
+            "A nuisance that the neighbours want put out.",
+            "A private light that only Mira is allowed to use.",
+            "A signal that the watch house pays her to keep."
+          ],
+          "correct": 0,
+          "fb": "The lamp on the stair was a beacon for the whole row — it stopped being only hers the moment other people relied on it."
+        },
+        {
+          "q": "Why does the story call the lighting a custom nobody had agreed to?",
+          "opts": [
+            "Because the neighbours voted on it at a meeting.",
+            "Because Mira was paid to do it every evening.",
+            "Because it became a settled habit without anyone arranging it.",
+            "Because the watch house ordered her to keep it lit."
+          ],
+          "correct": 2,
+          "fb": "Nobody arranged it and nobody was asked. It simply became the thing that happened every evening."
+        }
+      ],
+      "recap": {
+        "label": "Looking back — Act II",
+        "q": "Across the second act, what changes about the lamp?",
+        "opts": [
+          "It goes out for good and the stair is dark again.",
+          "It stops being Mira's lamp and becomes everybody's.",
+          "It is moved from the stair into the watch house.",
+          "It is replaced by a larger lamp the stranger brings."
+        ],
+        "correct": 1,
+        "fb": "A stranger knocks to ask who lights it, and by the last part the whole row steers by it. The lamp does not change; who it belongs to does.",
+        "wren": "Same lamp. Different owner. Nobody signed anything."
+      },
+      "sa": {
+        "q": "Is Mira's lamp a small thing or a large one? Answer with what happens to the people on the stair.",
+        "hint": "There is no wrong answer here, but there has to be evidence in it.",
+        "minWords": 14,
+        "opinion": true,
+        "core": [
+          ["small", "little", "ordinary", "cheap", "simple"],
+          ["large", "big", "important", "matters", "whole row", "everyone", "beacon"]
+        ],
+        "support": ["stair", "neighbours", "custom", "light"],
+        "phrases": ["for the whole row"]
+      }
+    },
+    "notes": {
+      "watch": "A page between the readings. Nothing to do here but look.",
+      "focus": "Listen for who this book was written for.",
+      "debrief": {
+        "ok": "Right — for the reader itself, and not for a class.",
+        "no": "The last line of the page says who it was written for."
+      },
+      "writeIntro": "Say in one sentence what this page is for.",
+      "mc": [
+        {
+          "q": "Why is this page shown between the readings rather than read aloud?",
+          "opts": [
+            "Because it is background material and not a scene of the story.",
+            "Because the recording for it was lost.",
+            "Because it is too long to be read in one sitting.",
+            "Because only teachers are allowed to see it."
+          ],
+          "correct": 0,
+          "fb": "It is background material. It is taught and asked about like everything else, and it has no lines to play."
+        },
+        {
+          "q": "Who was this book written for?",
+          "opts": [
+            "A class of students in their first year.",
+            "The reading software itself, so that it can be tested.",
+            "The people who lived on Mira's stair.",
+            "A publisher who asked for a winter story."
+          ],
+          "correct": 1,
+          "fb": "It was written for the test suite. Nothing in it is a real book, and that is the point of it."
+        }
+      ],
+      "sa": {
+        "q": "What is the difference between this page and a part of the story?",
+        "hint": "One of them is read aloud. Say what the other one is for.",
+        "minWords": 10,
+        "core": [["not read", "silent", "no lines", "background", "between"]],
+        "support": ["page", "story", "part", "aloud"]
+      }
+    },
+    "after": {
+      "watch": "The last page. What happened after the story stopped.",
+      "focus": "Listen for what the neighbours never found out.",
+      "debrief": {
+        "ok": "They never learned who lit it — and it kept being lit.",
+        "no": "The middle line says what they never learned."
+      },
+      "writeIntro": "Say what the neighbours did not know, then say whether it mattered.",
+      "mc": [
+        {
+          "q": "What did the people who climbed the stair never learn?",
+          "opts": [
+            "Which of them had bolted the door.",
+            "Who had been lighting the lamp.",
+            "How much the matches had cost.",
+            "Where the watch house had gone."
+          ],
+          "correct": 1,
+          "fb": "They never learned who lit it. The lamp was there every evening and the reason for it was not."
+        },
+        {
+          "q": "What does this page add to the story?",
+          "opts": [
+            "It names the stranger and explains his errand.",
+            "It says the lamp was put out soon afterwards.",
+            "It says the giving went on without anyone being thanked.",
+            "It says Mira moved away from the street."
+          ],
+          "correct": 2,
+          "fb": "The giving carries on, unthanked and unexplained. Nothing else on this page is in the story at all."
+        }
+      ],
+      "sa": {
+        "q": "Does it matter that nobody knew who lit the lamp? Say why.",
+        "hint": "Think about what thanks would have changed, and what it would not.",
+        "minWords": 12,
+        "core": [
+          ["no", "not matter", "still", "anyway", "same"],
+          ["thanks", "thanked", "credit", "know", "knew", "name"]
+        ],
+        "support": ["lamp", "stair", "gift", "give"]
+      }
+    }
+  },
+  "recaps": {
+    "p2": {
+      "label": "Looking back — Act I",
+      "q": "By the end of the first act, what has Mira actually done?",
+      "opts": [
+        "She has met the stranger and learned his name.",
+        "She has found an unlit lamp and got it burning again.",
+        "She has given up on the lamp and gone back inside.",
+        "She has bought a new lamp for the stair."
+      ],
+      "correct": 1,
+      "fb": "A dark stair, a brittle glass, a short wick and four matches. The stranger does not knock until the next act.",
+      "wren": "One lamp, four matches. That is the whole first act."
+    },
+    "p4": {
+      "label": "Looking back — Act II",
+      "q": "Across the second act, what changes about the lamp?",
+      "opts": [
+        "It goes out for good and the stair is dark again.",
+        "It stops being Mira's lamp and becomes everybody's.",
+        "It is moved from the stair into the watch house.",
+        "It is replaced by a larger lamp the stranger brings."
+      ],
+      "correct": 1,
+      "fb": "A stranger knocks to ask who lights it, and by the last part the whole row steers by it. The lamp does not change; who it belongs to does.",
+      "wren": "Same lamp. Different owner. Nobody signed anything."
+    }
+  },
+  "guideVoice": {
+    "name": "Pip",
+    "hello": "You found the door. Pick a reading and we will start.",
+    "passIntro": {
+      "1": "First time through you only watch. Nothing is marked.",
+      "2": "This time I point at one thing, and then I ask about it.",
+      "3": "Last one. You write, in your own words."
+    },
+    "praise": ["That is the one.", "Right. Good.", "You were listening."],
+    "nudge": ["Not that one. Look again.", "Close. Read the line once more."],
+    "end": {
+      "1": "That is the whole story. Now we go back through it slowly.",
+      "2": "Good. Now the hard one: your own words.",
+      "3": "Done. Three times through."
+    }
+  },
+  "wrenLines": {},
+  "wrenReactions": {
+    "p1": [
+      { "at": 0, "state": "watch" },
+      { "at": 2, "state": "lean", "line": "No light. Of course there is no light." }
+    ],
+    "p2": [
+      { "at": 1, "state": "think", "line": "One wick. That is all she has." },
+      { "at": 5, "state": "delight" }
+    ],
+    "p3": [{ "at": 0, "state": "spooked", "line": "Someone is knocking. At this hour." }],
+    "p4": [
+      { "at": 0, "state": "hush" },
+      { "at": 5, "state": "moved", "line": "Still there. That is the whole point." }
+    ],
+    "notes": [{ "at": 0, "state": "knowing" }]
+  },
+  "preshow": [
+    {
+      "state": "happy",
+      "text": "This is The Lantern on the Stair. It is short, and none of it is true."
+    },
+    { "state": "talk", "text": "Four parts, two of them dark and two of them less so." },
+    { "state": "hush", "text": "Nothing to do in the first reading. Just watch." }
+  ],
+  "dialogue": {
+    "p1": [
+      { "who": "w", "state": "sulk", "text": "No lamp at all? On a stair?" },
+      {
+        "who": "p",
+        "text": "None. Somebody stopped lighting it, and nobody started again."
+      }
+    ],
+    "p2": [
+      { "who": "w", "state": "think", "text": "Four matches. I would have given up at two." },
+      {
+        "who": "p",
+        "text": "She had one wick and no second chance. That is why she was careful."
+      }
+    ],
+    "p3": [
+      {
+        "who": "w",
+        "state": "lean",
+        "text": "She bolted the door and then opened it. Which is it?"
+      },
+      { "who": "p", "text": "Both. Being careful and being brave are not opposites." }
+    ],
+    "p4": [
+      { "who": "w", "state": "moved", "text": "So the whole street uses her lamp now." },
+      { "who": "p", "text": "And none of them know whose it is. That is the ending." }
+    ],
+    "notes": [
+      { "who": "w", "state": "spooked", "text": "Wait — none of this is real?" },
+      {
+        "who": "p",
+        "text": "None of it. It is here so the reader can be tested on something."
+      }
+    ],
+    "after": [
+      { "who": "w", "state": "ache", "text": "Nobody ever thanked her." },
+      { "who": "p", "text": "No. The lamp went on being lit anyway." }
+    ]
+  },
+  "cast": {
+    "members": {
+      "wren": {
+        "id": "wren",
+        "name": "Pip",
+        "role": "guide",
+        "voice": "guide",
+        "side": "corner",
+        "blurb": "eleven, and asks the question you were going to ask",
+        "art": "art/18293a4b5c6d7e8f.webp"
+      },
+      "prof": {
+        "id": "prof",
+        "name": "Marlow",
+        "role": "reader",
+        "voice": "narration",
+        "side": "stage",
+        "blurb": "reads it slowly, because it is short",
+        "art": "art/293a4b5c6d7e8f90.webp"
+      }
+    }
+  },
+  "guide": {
+    "objectives": [
+      {
+        "objective": "Identify a detail in a scene and use it as evidence for a claim about it.",
+        "developed": "Second reading",
+        "evidenced": "Multiple-choice answers, per part"
+      },
+      {
+        "objective": "Explain in their own words why a character acts against their own hesitation.",
+        "developed": "Third reading",
+        "evidenced": "Written answer to part three"
+      }
+    ],
+    "standards": {
+      "framework": "A framework invented for this fixture, so that the alignment table has something to render.",
+      "rows": [
+        {
+          "code": "FX.1.1",
+          "text": "Cite a detail from the text in support of a stated inference.",
+          "where": "The Lamp Is Not Lit"
+        },
+        {
+          "code": "FX.1.2",
+          "text": "Describe how a character changes across a narrative.",
+          "where": "What the Lantern Was For"
+        }
+      ],
+      "note": "These codes belong to no real curriculum. They exist so that a pack which declares an alignment can be told from one which does not."
+    }
+  },
+  "languages": [
+    { "code": "es", "name": "Español", "en": "Spanish" },
+    { "code": "ko", "name": "한국어", "en": "Korean" }
+  ],
+  "lineTranslations": {
+    "p1": {
+      "es": [
+        "La escalera estaba llena de penumbra, y nadie había encendido la lámpara.",
+        "Mira puso un pie en el escalón más bajo y se detuvo.",
+        "Por encima de ella el rellano estaba inmóvil y negro.",
+        "Sus dedos encontraron la lámpara y buscaron torpemente el cierre.",
+        "El vidrio era fino y quebradizo, así que fue despacio.",
+        "El hollín del invierno pasado le quedó negro en el pulgar."
+      ],
+      "ko": [
+        "계단은 어둠으로 가득했고, 아무도 등불을 켜지 않았어요.",
+        "미라는 맨 아래 계단에 한 발을 올리고 멈췄어요.",
+        "그녀 위쪽 층계참은 고요하고 캄캄했어요.",
+        "손가락이 등불을 찾아 걸쇠를 서투르게 더듬었어요.",
+        "유리는 얇고 잘 깨져서, 그녀는 천천히 움직였어요.",
+        "지난 겨울의 그을음이 엄지손가락에 검게 묻어났어요."
+      ]
+    },
+    "p2": {
+      "es": [
+        "En la garita de la esquina pidió una caja de cerillas.",
+        "La mecha vieja era corta, pero aún no estaba acabada.",
+        "Fue paciente con ella, como lo había sido su madre.",
+        "Primero la yesca seca, y luego la llama encendería lo demás.",
+        "Hicieron falta cuatro cerillas para encender la mecha.",
+        "Por un momento la lamparita brilló débilmente, y luego se mantuvo."
+      ],
+      "ko": [
+        "모퉁이 초소에서 그녀는 성냥 한 갑을 얻었어요.",
+        "낡은 심지는 짧았지만, 아직 다 타지는 않았어요.",
+        "그녀는 어머니가 그랬던 것처럼 참을성 있게 다뤘어요.",
+        "먼저 마른 불쏘시개, 그다음 불꽃이 나머지를 붙일 거예요.",
+        "심지에 불을 붙이는 데 성냥 네 개가 들었어요.",
+        "잠시 작은 등불이 희미하게 빛나더니, 이내 자리를 잡았어요."
+      ]
+    },
+    "p3": {
+      "es": [
+        "Dos noches después la lámpara vaciló y un desconocido llamó a la puerta.",
+        "Mira había echado el cerrojo por costumbre.",
+        "Estaba dudosa, y aun así abrió.",
+        "Había venido con un recado desde el otro extremo de la calle.",
+        "Su voz era baja y cortés.",
+        "Preguntó quién había estado encendiendo la lámpara de la escalera."
+      ],
+      "ko": [
+        "이틀 밤 뒤 등불이 흔들렸고 낯선 사람이 문을 두드렸어요.",
+        "미라는 습관처럼 문에 빗장을 걸어 두었어요.",
+        "그녀는 망설였지만, 그래도 문을 열었어요.",
+        "그는 거리 저쪽 끝에서 심부름을 하러 왔어요.",
+        "그의 목소리는 낮고 정중했어요.",
+        "그는 누가 계단의 등불을 켜 왔는지 물었어요."
+      ]
+    },
+    "p4": {
+      "es": [
+        "Después de eso la lámpara de la escalera fue un faro para toda la hilera de casas.",
+        "Encenderla se convirtió en una costumbre que nadie había acordado.",
+        "Mira estaba agradecida de un modo que no sabía explicar.",
+        "El invierno menguó y las tardes volvieron a alargarse.",
+        "La pequeña llama siguió firme en su repisa.",
+        "La gente seguía subiendo la escalera, y la luz seguía allí."
+      ],
+      "ko": [
+        "그 뒤로 계단의 등불은 동네 전체의 등대가 되었어요.",
+        "그것을 켜는 일은 아무도 약속하지 않은 관습이 되었어요.",
+        "미라는 설명할 수 없는 방식으로 고마웠어요.",
+        "겨울이 줄어들고 저녁은 다시 길어졌어요.",
+        "작은 불꽃은 선반 위에서 변함없이 타올랐어요.",
+        "사람들은 여전히 계단을 올랐고, 불빛은 여전히 거기 있었어요."
+      ]
+    },
+    "notes": {
+      "es": [
+        "Esta parte se muestra entre las lecturas, y nunca se lee en voz alta.",
+        "Existe para que el lector tenga algo que enseñar que no sea una escena.",
+        "Todo lo que hay en esta página se escribió para las pruebas."
+      ],
+      "ko": [
+        "이 부분은 읽기 사이에 보여 주는 것이고, 소리 내어 읽지 않아요.",
+        "장면이 아닌 가르칠 거리를 리더에게 주려고 있는 거예요.",
+        "이 쪽에 있는 모든 것은 테스트를 위해 쓰였어요."
+      ]
+    },
+    "after": {
+      "es": [
+        "Una lámpara en una escalera es algo pequeño que dar.",
+        "Las personas que subían la escalera nunca supieron quién la encendía.",
+        "Eso es todo lo que ocurre después."
+      ],
+      "ko": [
+        "계단의 등불은 주기에 아주 작은 것이에요.",
+        "계단을 오르던 사람들은 누가 불을 켜는지 끝내 몰랐어요.",
+        "그 뒤에 일어난 일은 그게 전부예요."
+      ]
+    }
+  },
+  "wordTranslations": {
+    "gloom": { "es": "penumbra", "ko": "어둠", "fr": "pénombre" },
+    "tread": { "es": "escalón", "ko": "계단의 디딤판" },
+    "landing": { "es": "rellano", "ko": "층계참" },
+    "brittle": { "es": "quebradizo", "ko": "잘 깨지는" },
+    "fumbled": { "es": "manoseó torpemente", "ko": "서투르게 더듬었다" },
+    "soot": { "es": "hollín", "ko": "그을음" },
+    "still": { "es": "inmóvil", "ko": "움직이지 않는" },
+    "watch house": { "es": "garita", "ko": "초소" },
+    "wick": { "es": "mecha", "ko": "심지", "fr": "mèche" },
+    "patient": { "es": "paciente", "ko": "참을성 있는" },
+    "tinder": { "es": "yesca", "ko": "불쏘시개" },
+    "kindle": { "es": "encender", "ko": "불을 붙이다" },
+    "glimmered": { "es": "brilló débilmente", "ko": "희미하게 빛났다" },
+    "flickered": { "es": "parpadeó", "ko": "깜박였다" },
+    "stranger": { "es": "desconocido", "ko": "낯선 사람" },
+    "bolted": { "es": "echó el cerrojo", "ko": "빗장을 걸었다" },
+    "hesitant": { "es": "dudoso", "ko": "망설이는" },
+    "errand": { "es": "recado", "ko": "심부름" },
+    "courteous": { "es": "cortés", "ko": "정중한" },
+    "beacon": { "es": "faro", "ko": "등대", "fr": "phare" },
+    "custom": { "es": "costumbre", "ko": "관습" },
+    "grateful": { "es": "agradecido", "ko": "고마워하는" },
+    "dwindled": { "es": "menguó", "ko": "줄어들었다" },
+    "steadfast": { "es": "firme", "ko": "변함없는" }
+  },
+  "uiTranslations": {
+    "Class": { "es": "Clase", "ko": "수업" },
+    "Language": { "es": "Idioma", "ko": "언어" },
+    "Vocabulary": { "es": "Vocabulario", "ko": "어휘" },
+    "Menu": { "es": "Menú", "ko": "메뉴" },
+    "Learning guide": { "es": "Guía de aprendizaje", "ko": "학습 안내서" },
+    "Contents": { "es": "Índice", "ko": "목차" },
+    "Word": { "es": "Palabra", "ko": "단어" },
+    "What it means": { "es": "Qué significa", "ko": "뜻" },
+    "Met in": { "es": "Aparece en", "ko": "나오는 곳" },
+    "Reading": { "es": "Lectura", "ko": "읽기" },
+    "What happens": { "es": "Qué pasa", "ko": "무슨 일이 일어나는가" },
+    "What is asked": { "es": "Qué se pregunta", "ko": "무엇을 묻는가" }
+  },
+  "speechTranslations": {
+    "This is The Lantern on the Stair. It is short, and none of it is true.": {
+      "es": "Esto es La linterna de la escalera. Es corto, y nada de ello es cierto.",
+      "ko": "이건 «계단의 등불»이에요. 짧고, 하나도 실화가 아니에요."
+    },
+    "Four parts, two of them dark and two of them less so.": {
+      "es": "Cuatro partes, dos oscuras y dos menos oscuras.",
+      "ko": "네 부분인데, 둘은 어둡고 둘은 덜 어두워요."
+    },
+    "Nothing to do in the first reading. Just watch.": {
+      "es": "Nada que hacer en la primera lectura. Solo mira.",
+      "ko": "첫 번째 읽기에서는 할 일이 없어요. 그냥 보세요."
+    },
+    "You found the door. Pick a reading and we will start.": {
+      "es": "Encontraste la puerta. Elige una lectura y empezamos.",
+      "ko": "문을 찾았네요. 읽기를 하나 고르면 시작할게요."
+    },
+    "First time through you only watch. Nothing is marked.": {
+      "es": "La primera vez solo miras. No se califica nada.",
+      "ko": "처음에는 보기만 해요. 채점하지 않아요."
+    },
+    "This time I point at one thing, and then I ask about it.": {
+      "es": "Esta vez señalo una cosa, y luego pregunto por ella.",
+      "ko": "이번에는 제가 한 가지를 짚고, 그것에 대해 물어볼게요."
+    },
+    "Last one. You write, in your own words.": {
+      "es": "La última. Escribes, con tus propias palabras.",
+      "ko": "마지막이에요. 자기 말로 써 보세요."
+    },
+    "No light. Of course there is no light.": {
+      "es": "Sin luz. Cómo no, no hay luz.",
+      "ko": "불이 없네요. 당연히 불이 없죠."
+    },
+    "One wick. That is all she has.": {
+      "es": "Una mecha. Eso es todo lo que tiene.",
+      "ko": "심지 하나. 그게 가진 전부예요."
+    },
+    "Someone is knocking. At this hour.": {
+      "es": "Alguien está llamando. A estas horas.",
+      "ko": "누가 문을 두드려요. 이 시간에요."
+    },
+    "Still there. That is the whole point.": {
+      "es": "Sigue ahí. De eso se trata.",
+      "ko": "여전히 거기 있어요. 그게 핵심이에요."
+    },
+    "No lamp at all? On a stair?": {
+      "es": "¿Ninguna lámpara? ¿En una escalera?",
+      "ko": "등불이 아예 없다고요? 계단에요?"
+    },
+    "None. Somebody stopped lighting it, and nobody started again.": {
+      "es": "Ninguna. Alguien dejó de encenderla, y nadie volvió a empezar.",
+      "ko": "네, 없어요. 누군가 켜기를 그만뒀고, 아무도 다시 시작하지 않았죠."
+    },
+    "Four matches. I would have given up at two.": {
+      "es": "Cuatro cerillas. Yo lo habría dejado a las dos.",
+      "ko": "성냥 네 개라니. 저라면 두 개에서 포기했을 거예요."
+    },
+    "She had one wick and no second chance. That is why she was careful.": {
+      "es": "Tenía una mecha y ninguna segunda oportunidad. Por eso tuvo cuidado.",
+      "ko": "심지 하나뿐이고 두 번째 기회는 없었어요. 그래서 조심한 거예요."
+    },
+    "She bolted the door and then opened it. Which is it?": {
+      "es": "Echó el cerrojo y luego abrió. ¿En qué quedamos?",
+      "ko": "빗장을 걸고는 문을 열었네요. 어느 쪽이에요?"
+    },
+    "Both. Being careful and being brave are not opposites.": {
+      "es": "Las dos cosas. Ser prudente y ser valiente no son opuestos.",
+      "ko": "둘 다예요. 조심하는 것과 용감한 것은 반대말이 아니에요."
+    },
+    "So the whole street uses her lamp now.": {
+      "es": "Así que ahora toda la calle usa su lámpara.",
+      "ko": "이제 온 거리가 그녀의 등불을 쓰는 거네요."
+    },
+    "And none of them know whose it is. That is the ending.": {
+      "es": "Y ninguno sabe de quién es. Ese es el final.",
+      "ko": "그런데 누구의 것인지는 아무도 몰라요. 그게 결말이에요."
+    },
+    "Wait — none of this is real?": {
+      "es": "Espera, ¿nada de esto es real?",
+      "ko": "잠깐만요, 이게 전부 진짜가 아니라고요?"
+    },
+    "None of it. It is here so the reader can be tested on something.": {
+      "es": "Nada. Está aquí para que el lector pueda probarse con algo.",
+      "ko": "전부 아니에요. 리더를 시험할 무언가가 필요해서 있는 거예요."
+    },
+    "Nobody ever thanked her.": {
+      "es": "Nadie le dio las gracias nunca.",
+      "ko": "아무도 그녀에게 고맙다고 하지 않았어요."
+    },
+    "No. The lamp went on being lit anyway.": {
+      "es": "No. Aun así, la lámpara siguió encendiéndose.",
+      "ko": "네. 그래도 등불은 계속 켜졌어요."
+    },
+    "A dark stair, and a lamp nobody has lit. Watch what Mira does with her hands.": {
+      "es": "Una escalera oscura, y una lámpara que nadie ha encendido. Mira lo que hace ella con las manos.",
+      "ko": "어두운 계단, 아무도 켜지 않은 등불. 미라가 손으로 무엇을 하는지 보세요."
+    },
+    "Listen for what she touches first, and for what stops her going faster.": {
+      "es": "Escucha qué toca primero, y qué le impide ir más deprisa.",
+      "ko": "그녀가 무엇을 먼저 만지는지, 무엇이 그녀를 서두르지 못하게 하는지 들어 보세요."
+    },
+    "She has one wick and no money. Watch how many matches it takes.": {
+      "es": "Tiene una mecha y ningún dinero. Mira cuántas cerillas hacen falta.",
+      "ko": "심지 하나에 돈은 없어요. 성냥이 몇 개 드는지 보세요."
+    },
+    "Listen for the number, and for who taught her to wait.": {
+      "es": "Escucha el número, y quién le enseñó a esperar.",
+      "ko": "숫자를 잘 듣고, 누가 그녀에게 기다리는 법을 가르쳤는지 들어 보세요."
+    },
+    "Somebody is at the door. Watch what Mira does before she opens it.": {
+      "es": "Alguien está en la puerta. Mira lo que hace ella antes de abrir.",
+      "ko": "누가 문 앞에 있어요. 미라가 문을 열기 전에 무엇을 하는지 보세요."
+    },
+    "Listen for the word that says she is not sure.": {
+      "es": "Escucha la palabra que dice que no está segura.",
+      "ko": "그녀가 확신하지 못한다는 걸 알려 주는 낱말을 들어 보세요."
+    },
+    "The last part. Watch what the lamp has turned into.": {
+      "es": "La última parte. Mira en qué se ha convertido la lámpara.",
+      "ko": "마지막 부분이에요. 등불이 무엇이 되었는지 보세요."
+    },
+    "Listen for the word that means a light other people steer by.": {
+      "es": "Escucha la palabra que significa una luz que guía a los demás.",
+      "ko": "다른 사람들이 길잡이로 삼는 불빛을 뜻하는 낱말을 들어 보세요."
+    },
+    "A page between the readings. Nothing to do here but look.": {
+      "es": "Una página entre las lecturas. Aquí no hay nada que hacer salvo mirar.",
+      "ko": "읽기 사이의 한 쪽이에요. 여기서는 보는 것 말고 할 일이 없어요."
+    },
+    "Listen for who this book was written for.": {
+      "es": "Escucha para quién se escribió este libro.",
+      "ko": "이 책이 누구를 위해 쓰였는지 들어 보세요."
+    },
+    "The last page. What happened after the story stopped.": {
+      "es": "La última página. Lo que pasó cuando la historia se detuvo.",
+      "ko": "마지막 쪽이에요. 이야기가 끝난 뒤에 무슨 일이 있었는지요."
+    },
+    "Listen for what the neighbours never found out.": {
+      "es": "Escucha lo que los vecinos nunca llegaron a saber.",
+      "ko": "이웃들이 끝내 알지 못한 것이 무엇인지 들어 보세요."
+    }
+  }
+}

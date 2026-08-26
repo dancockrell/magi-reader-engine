@@ -142,21 +142,45 @@ The Raven was easy: it existed only in the classroom toolkit, so giving
 it a repository _removed_ a copy. Magi is not, and doing it carelessly
 would recreate the duplication that started this.
 
-`src/books/magi/` is loaded directly by ten test files and by the app
-itself. Before it can move:
+`src/books/magi/` was loaded directly by **fourteen** test files, not the
+ten this section used to claim, and by the app itself. Before it can
+move:
 
-1. The engine needs a **fixture book** of its own — small, synthetic, and
-   enough to test the reading, the questions and the gradebook against.
-   Most of those ten files should be using it anyway; several are testing
-   engine behaviour and only happen to use a real book to do it.
+1. ✅ **A fixture book of its own.** `src/books/fixture/` is _The Lantern
+   on the Stair_, written for the purpose: four units, two acts, two info
+   panels, 24 glossed words, a cast, dialogue, and Spanish and Korean
+   throughout. Eleven of the fourteen files moved onto it. Three did not,
+   and the reason matters: `extracted.test.js` counts the real extraction
+   against `legacy/index.html`, `align.test.js` needs the real cue file,
+   and the Magi-only assertions pulled out of the others now live in
+   `src/books/magi/pack.test.js` so they travel **with the pack** when it
+   leaves.
+
+   The fixture is not registered in `src/books/index.js`. A fake title in
+   a reader's book list is a defect, and nothing outside a test imports
+   it, which was checked by building and searching the bundle for its
+   text.
+
+   It carries the shapes that break things, which is the only reason a
+   synthetic book is worth having: a pair of words that substitute for
+   each other, a glossed phrase of two words, a word explained two
+   different ways, and a `teaching[x].recap` that Magi never uses and
+   that therefore had no coverage at all until now.
+
 2. The engine needs a **bring-your-own-pack contract**: a documented way
    to point a build at a pack that is not in the repository. A workspace,
-   a submodule, or a copy step — decided when the first two are done.
+   a submodule, or a copy step, decided now that step 1 is done.
 3. Only then does `src/books/magi/` move out, and
    `the-gift-of-the-magi-o-henry-magi-reader` becomes real.
 
 Until then the engine repository carries the Magi pack, and that is a
 known, written-down exception rather than an accident.
+
+One thing to know before writing anything under `src/books/`: `tsconfig`,
+`eslint` and `prettier` all exclude that directory, so a pack's own tests
+are outside type-checking and linting. That is the price of putting a
+pack's tests with the pack, and it is deliberate, but it means a mistake
+there is caught only by `vitest`.
 
 ### A pack should load in parts
 

@@ -1,13 +1,12 @@
 import { describe, it, expect, beforeAll } from 'vitest';
-import { readFileSync } from 'node:fs';
+import book from '../../books/fixture/index.js';
 import { trackFor, stepTrack, segmentsOf, whereIn, jumpSegment } from './track.js';
 import { questionsOf, promptsOf } from './assessment.js';
 import { beatsOfBook } from './beats.js';
 
-let book;
-beforeAll(() => {
-  book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-});
+/* The engine's own fixture book. A track is the same three readings
+   whatever pack it is built from, and testing it against a title only
+   proves it works for that title. */
 
 describe('every reading', () => {
   for (const pass of [1, 2, 3]) {
@@ -19,19 +18,25 @@ describe('every reading', () => {
     });
   }
 
-  it('gives every stop that asks something a picture to ask it about', () => {
-    /* the author page and the note on the afterlife are asked about too,
-       and showed a black rectangle where the picture should be */
+  it('gives a question about unread material a picture to ask it about', () => {
+    /* A question about a part that WAS read aloud follows that part's
+       lines, and the picture from the last of them is still on screen.
+       The background pages have no lines, so their questions have to
+       carry a picture of their own — and until they did, the author page
+       and the note on the afterlife showed a black rectangle. */
+    const read = new Set(book.units.map((u) => u.id));
     const missing = [];
+    let asked = 0;
     for (const pass of [1, 2, 3]) {
       for (const stop of trackFor(book, pass)) {
-        if (stop.kind === 'question' || stop.kind === 'prompt') {
-          if (!stop.plate?.src && !stop.unit.startsWith('s'))
-            missing.push(`${pass}:${stop.unit}`);
-        }
+        if (stop.kind !== 'question' && stop.kind !== 'prompt') continue;
+        if (read.has(stop.unit)) continue;
+        asked++;
+        if (!stop.plate?.src) missing.push(`${pass}:${stop.unit}`);
       }
     }
     expect(missing).toEqual([]);
+    expect(asked, 'a book with no background pages would pass too').toBeGreaterThan(0);
   });
 
   it('has nothing at all to show for a book with nothing in it', () => {

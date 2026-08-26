@@ -1,9 +1,9 @@
-import { describe, it, expect, beforeAll } from 'vitest';
-import { readFileSync } from 'node:fs';
+import { describe, it, expect } from 'vitest';
+import book from '../books/fixture/index.js';
 import { render, screen, within } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import Guide from './Guide.jsx';
-import { guideOutline, sectionsOf, anchorFor } from '../lib/guide/outline.js';
+import { guideOutline, sectionsOf, anchorFor, planOf } from '../lib/guide/outline.js';
 
 /**
  * "Done when it prints cleanly and its table of contents jumps."
@@ -13,12 +13,11 @@ import { guideOutline, sectionsOf, anchorFor } from '../lib/guide/outline.js';
  * something in the document to jump to, and that it is still a link — a
  * real href, so it works before the JavaScript settles, survives a
  * reload, and can be shared.
+ *
+ * Rendered from the engine's own fixture book. This component owns no
+ * content — every heading and count in it comes out of the pack — so a
+ * title would only prove it works for that title.
  */
-
-let book;
-beforeAll(() => {
-  book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-});
 
 /** Rendered at /guide, the way the app mounts it. */
 function open(props = {}) {
@@ -95,7 +94,10 @@ describe('the document', () => {
     const parts = /** @type {NodeListOf<HTMLDetailsElement>} */ (
       document.querySelectorAll('.guide-entry')
     );
-    expect(parts.length).toBeGreaterThan(10);
+    /* One per part the book teaches — the count comes from the book so
+       that a part silently missing from the plan fails here too. */
+    expect(parts).toHaveLength(planOf(book).length);
+    expect(parts.length).toBeGreaterThan(1);
     for (const p of parts) expect(p.open).toBe(true);
   });
 
@@ -111,7 +113,10 @@ describe('the document', () => {
     const lang = book.languages[0].code;
     open({ lang });
     const translated = document.querySelectorAll(`.guide-entry .ui-tr[lang="${lang}"]`);
-    expect(translated.length).toBeGreaterThan(10);
+    /* Two lines per part are quoted from the guides — what to watch for
+       and what to notice — and the pack translates both. */
+    expect(translated).toHaveLength(planOf(book, lang).length * 2);
+    expect(translated.length).toBeGreaterThan(1);
   });
 
   it('is English only when no language has been chosen', () => {

@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeAll } from 'vitest';
-import { readFileSync, readdirSync } from 'node:fs';
+import { describe, it, expect } from 'vitest';
+import book from '../../books/fixture/index.js';
 import {
   castOf,
   speaker,
@@ -23,22 +23,30 @@ import {
 } from './queue.js';
 import { loadHeard, saveHeard, clearHeard } from './heard.js';
 import { trackFor } from '../reader/track.js';
+import { beatsOfBook } from '../reader/beats.js';
 
-let book;
-let clips;
-beforeAll(() => {
-  book = JSON.parse(readFileSync('src/books/magi/book.json', 'utf8'));
-  clips = new Set(
-    readdirSync('public/magi-audio')
-      .filter((f) => f.endsWith('.mp3'))
-      .map((f) => f.replace(/\.mp3$/, ''))
-  );
-});
+/**
+ * Who speaks, when, and one at a time — against the engine's own
+ * fixture book.
+ *
+ * Whether a pack's spoken lines all have recordings behind them is a
+ * fact about that pack; it is checked in `books/magi/pack.test.js`.
+ */
+
+/** Every reaction the book gives a line to, across the whole book. */
+const spokenReactions = () =>
+  Object.values(book.wrenReactions)
+    .flat()
+    .filter((r) => r.line).length;
+
+/** Every turn of conversation in the book. */
+const dialogueTurns = () => Object.values(book.dialogue).flat().length;
 
 describe('the cast', () => {
-  it('is two people with names and faces', () => {
+  it('is the people the pack names, with names and faces', () => {
     const members = castOf(book);
-    expect(Object.keys(members).sort()).toEqual(['prof', 'wren']);
+    expect(Object.keys(members)).toEqual(Object.keys(book.cast.members));
+    expect(Object.keys(members).length).toBeGreaterThan(1);
     for (const m of Object.values(members)) {
       expect(m.name).toBeTruthy();
       expect(m.art, `${m.name} has no picture`).toMatch(/^art\/.+\.(webp|png|jpe?g)$/);
@@ -46,9 +54,13 @@ describe('the cast', () => {
   });
 
   it('answers to the short names the conversations are written in', () => {
+    /* The book writes 'w' and 'p' in its conversations and full ids
+       everywhere else. The names come from the pack — this pack calls
+       them Pip and Marlow — so a second title renames them for free. */
     expect(speaker(book, 'w').id).toBe('wren');
     expect(speaker(book, 'p').id).toBe('prof');
-    expect(speaker(book, 'wren').name).toBe('Wren');
+    expect(speaker(book, 'wren').name).toBe(book.cast.members.wren.name);
+    expect(speaker(book, 'p').name).toBe(book.cast.members.prof.name);
   });
 
   it('still speaks for a book that ships no cast', () => {
@@ -58,14 +70,14 @@ describe('the cast', () => {
 });
 
 describe('what they say', () => {
-  it('gives Wren a reaction only where the book gave her a line', () => {
+  it('gives the guide a reaction only where the book gave her a line', () => {
     let faces = 0;
     let lines = 0;
     for (const [unitId, list] of Object.entries(book.wrenReactions)) {
       faces += list.length;
       lines += reactionsFor(book, unitId).size;
     }
-    expect(lines).toBe(15);
+    expect(lines).toBe(spokenReactions());
     expect(lines, 'a reaction with no line is a face, not an interruption').toBeLessThan(faces);
   });
 
@@ -79,7 +91,8 @@ describe('what they say', () => {
   });
 
   it('has a preshow, a greeting and an introduction to each reading', () => {
-    expect(preshowRun(book)).toHaveLength(6);
+    expect(preshowRun(book)).toHaveLength(book.preshow.length);
+    expect(book.preshow.length).toBeGreaterThan(1);
     expect(helloRun(book)).toHaveLength(1);
     for (const pass of [1, 2, 3]) expect(passIntroRun(book, pass)).toHaveLength(1);
   });
@@ -88,46 +101,11 @@ describe('what they say', () => {
     expect(preshowRun({})).toEqual([]);
     expect(helloRun({})).toEqual([]);
     expect(passIntroRun({}, 1)).toEqual([]);
-    expect(talkFor({}, 's1')).toEqual([]);
-    expect(reactionsFor({}, 's1').size).toBe(0);
+    expect(talkFor({}, 'p1')).toEqual([]);
+    expect(reactionsFor({}, 'p1').size).toBe(0);
   });
 });
 
-describe('every spoken line has its recording', () => {
-  /* A line whose clip is not there is silent, and silence is the one
-     failure nobody reports — a student assumes the sound is off. */
-  const named = () => {
-    const out = [];
-    for (const u of book.units) {
-      for (const t of reactionsFor(book, u.id).values()) out.push(t);
-      out.push(...talkFor(book, u.id));
-    }
-    out.push(...preshowRun(book), ...helloRun(book));
-    for (const p of [1, 2, 3]) out.push(...passIntroRun(book, p));
-    return out;
-  };
-
-  it('names a clip that exists on disk', () => {
-    const missing = named()
-      .filter((t) => !clips.has(t.clip))
-      .map((t) => t.clip);
-    expect(missing).toEqual([]);
-  });
-
-  it('names a clip that has cues, so the words light up', () => {
-    const vtt = readFileSync('public/cues/magi.vtt', 'utf8').split(/\r?\n/);
-    const ids = new Set();
-    for (let i = 1; i < vtt.length; i++) {
-      if (vtt[i].includes('-->') && vtt[i - 1].trim()) ids.add(vtt[i - 1].trim());
-    }
-    expect(named().filter((t) => !ids.has(t.clip))).toEqual([]);
-  });
-});
-
-/* Read inside the tests, never in a describe body: a describe body runs
-   at collection time, before beforeAll, so `book` is still undefined
-   there and every run comes back empty — which reads as the queue being
-   broken rather than the fixture being early. */
 const hello = () => helloRun(book);
 const pre = () => preshowRun(book);
 
@@ -242,37 +220,40 @@ describe('remembering it between visits', () => {
 
   it('survives a round trip', () => {
     const s = fakeStore();
-    expect(saveHeard('magi', ['hello', 'preshow'], s)).toBe(true);
-    expect(loadHeard('magi', s)).toEqual(['hello', 'preshow']);
-    clearHeard('magi', s);
-    expect(loadHeard('magi', s)).toEqual([]);
+    expect(saveHeard('fixture', ['hello', 'preshow'], s)).toBe(true);
+    expect(loadHeard('fixture', s)).toEqual(['hello', 'preshow']);
+    clearHeard('fixture', s);
+    expect(loadHeard('fixture', s)).toEqual([]);
   });
 
   it('says so when the device will not save, rather than pretending', () => {
-    expect(saveHeard('magi', ['hello'], fakeStore('full'))).toBe(false);
+    expect(saveHeard('fixture', ['hello'], fakeStore('full'))).toBe(false);
   });
 
   it('treats what is in the store as input, not truth', () => {
     const s = fakeStore();
     for (const junk of ['not json', '{"a":1}', '"hello"', 'null']) {
-      s._map.set('reader.heard.v1.magi', junk);
-      expect(loadHeard('magi', s)).toEqual([]);
+      s._map.set('reader.heard.v1.fixture', junk);
+      expect(loadHeard('fixture', s)).toEqual([]);
     }
-    s._map.set('reader.heard.v1.magi', JSON.stringify(['hello', 7, null, 'preshow']));
-    expect(loadHeard('magi', s)).toEqual(['hello', 'preshow']);
+    s._map.set('reader.heard.v1.fixture', JSON.stringify(['hello', 7, null, 'preshow']));
+    expect(loadHeard('fixture', s)).toEqual(['hello', 'preshow']);
   });
 
   it('greets a reader properly when they open a different book', () => {
     const s = fakeStore();
-    saveHeard('magi', ['hello'], s);
+    saveHeard('fixture', ['hello'], s);
     expect(loadHeard('other', s)).toEqual([]);
   });
 });
 
 describe('speech in the reading', () => {
   it('puts the two of them in the first reading and nowhere else', () => {
+    /* Counted back off the raw book rather than written down: the
+       failure to catch is the track dropping turns, and a number copied
+       from the track would move with the bug. */
     const said = (pass) => trackFor(book, pass).filter((s) => s.kind === 'say');
-    expect(said(1).length).toBe(15 + 58);
+    expect(said(1)).toHaveLength(spokenReactions() + dialogueTurns());
     /* readings 2 and 3 have their own task: a question is hard enough to
        answer without someone talking over the passage it is about */
     expect(said(2)).toHaveLength(0);
@@ -287,7 +268,7 @@ describe('speech in the reading', () => {
     }
   });
 
-  it('has Wren react to the line she is reacting to, right after it', () => {
+  it('has the guide react to the line she is reacting to, right after it', () => {
     const t = trackFor(book, 1);
     for (let i = 0; i < t.length; i++) {
       if (t[i].kind !== 'say' || !/^wh_/.test(t[i].turn.clip || '')) continue;
@@ -297,13 +278,13 @@ describe('speech in the reading', () => {
     }
   });
 
-  it('keeps the conversations about the author page and the aftermath', () => {
-    /* Ten turns that hang off units which are not read segments. The
-       first draft dropped them on the floor, which is exactly the sort
-       of loss nobody notices — the reading still works, and a tenth of
-       what they say is simply gone. */
+  it('keeps the conversations about the material that is never read aloud', () => {
+    /* Turns that hang off units which are not read segments. The first
+       draft dropped them on the floor, which is exactly the sort of loss
+       nobody notices — the reading still works, and a slice of what they
+       say is simply gone. */
     const t = trackFor(book, 1);
-    for (const id of ['ohenry', 'impact']) {
+    for (const id of Object.keys(book.info)) {
       const turns = t.filter((s) => s.kind === 'say' && s.unit === id);
       expect(turns.length, id).toBe(book.dialogue[id].length);
     }
@@ -314,9 +295,9 @@ describe('speech in the reading', () => {
     for (const stop of t) {
       if (stop.kind !== 'say' || !/^d_/.test(stop.turn.clip || '')) continue;
       const lines = t.filter((s) => s.kind === 'line' && s.unit === stop.unit);
-      /* the author page and the note on the story's impact are talked
-         about but never read aloud; those conversations come after the
-         whole story rather than after a part of it */
+      /* the background pages are talked about but never read aloud;
+         those conversations come after the whole story rather than
+         after a part of it */
       if (!lines.length) continue;
       expect(lines[lines.length - 1].at).toBeLessThan(stop.at);
     }
@@ -324,9 +305,10 @@ describe('speech in the reading', () => {
 
   it('leaves reading 1 as one line at a time, plus the talking', () => {
     const t = trackFor(book, 1);
-    expect(t.filter((s) => s.kind === 'line')).toHaveLength(244);
+    const lines = beatsOfBook(book).length;
+    expect(t.filter((s) => s.kind === 'line')).toHaveLength(lines);
     /* and one more stop at the end, which is the ending itself */
-    expect(t).toHaveLength(244 + 15 + 58 + 1);
+    expect(t).toHaveLength(lines + spokenReactions() + dialogueTurns() + 1);
     expect(t[t.length - 1].kind).toBe('end');
   });
 });

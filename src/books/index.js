@@ -11,6 +11,13 @@ import magi from './magi/index.js';
  * commonest form of it.
  *
  * The list is ordered; the first is what the reader opens with.
+ *
+ * `books/fixture/` is deliberately NOT here. It is a whole, complete
+ * book that exists so the engine's tests have something to run against
+ * that is not a title — and this list is what the reader offers a
+ * student. A book nobody wrote appearing in that list is a defect, not
+ * a feature, so the fixture is imported by tests and by nothing else,
+ * which is also what keeps it out of the bundle.
  */
 export const BOOKS = [magi];
 
