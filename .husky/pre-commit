@@ -1,1 +1,93 @@
+# Block commits containing secrets, then run the linter.
+#
+# Every repo under dev/ has had a gitleaks pre-commit hook for a while.
+# This one did not, and it is the repo that gets published. It was missed
+# because the audit that found the others enumerated dev/, and this lives
+# in Downloads. The full history was scanned on 27 Aug 2026 and is clean
+# (56 commits, 30.43 MB), so the gate was absent rather than bypassed.
+#
+# FOUR THINGS THIS HAS TO GET RIGHT, each of which went wrong first.
+#
+# 1. The lookup must not end with `|| exit 0`. That is what the older
+#    hooks do, and it means a moved winget path turns every commit into a
+#    silent pass: a gate that reports success by not running.
+#
+# 2. A non-zero exit is NOT the same as "a secret was found". Measured:
+#    clean 0, leaks 1, bad invocation 126, and an unresolvable path also
+#    1. The first version printed "a secret was detected" for any
+#    failure, and did exactly that in testing when the binary could not
+#    execute -- nothing staged, nothing wrong. Blocked for the wrong
+#    reason is not blocked, and a scanner that cries secret when it has
+#    broken teaches people to bypass it.
+#
+# 3. Messages must go to STDERR. git does not show a hook's stdout here,
+#    so the first working version blocked correctly and printed nothing
+#    but "husky - pre-commit script failed (code 1)". gitleaks' own lines
+#    got through only because they are on stderr already. A correct
+#    refusal nobody can read is a mystery, and mysteries get bypassed.
+#
+# 4. `gitleaks` is a Windows binary and cannot resolve an MSYS path.
+#    Given /c/Users/... it prints FTL and scans zero bytes, which reads as
+#    a clean result to anyone watching the verdict rather than the byte
+#    count. `protect --staged` reads the index rather than a path, which
+#    sidesteps it here, but do not hand this binary a /c/ path elsewhere.
+
+GITLEAKS="/c/Users/Admin/AppData/Local/Microsoft/WinGet/Packages/Gitleaks.Gitleaks_Microsoft.Winget.Source_8wekyb3d8bbwe/gitleaks.exe"
+
+if [ ! -x "$GITLEAKS" ]; then
+    # `command -v` may return the name without .exe, which then fails to
+    # execute. Try the explicit form first.
+    GITLEAKS="$(command -v gitleaks.exe 2>/dev/null || command -v gitleaks 2>/dev/null)"
+fi
+
+if [ -z "$GITLEAKS" ] || [ ! -x "$GITLEAKS" ]; then
+    echo "" >&2
+    echo "COMMIT BLOCKED: the secret scanner could not be found." >&2
+    echo "" >&2
+    echo "  Looked for the winget install, then for gitleaks on PATH." >&2
+    echo "  Nothing ran, so nothing has been checked -- this commit has NOT" >&2
+    echo "  been scanned for secrets." >&2
+    echo "" >&2
+    echo "  Fix:    winget install Gitleaks.Gitleaks" >&2
+    echo "  Or:     edit the GITLEAKS path in .husky/pre-commit" >&2
+    echo "  Bypass: git commit --no-verify   (only if you are certain)" >&2
+    echo "" >&2
+    exit 1
+fi
+
+# Husky invokes hooks as `sh -e "$s"`, so ANY command returning non-zero
+# kills the script on the spot. Written as a plain assignment, the line
+# below exited here the moment gitleaks found something -- before the
+# exit code was read and before a single message printed. All the caller
+# saw was "husky - pre-commit script failed (code 1)", with gitleaks' own
+# stderr above it only because it had already been written.
+#
+# It blocked correctly and explained nothing, which cost most of an hour
+# to diagnose because the refusal looked like output suppression rather
+# than an early exit. A command inside an `if` condition is exempt from
+# -e, so this form survives to report what happened.
+if scan="$("$GITLEAKS" protect --staged --redact --no-banner 2>&1)"; then
+    status=0
+else
+    status=$?
+fi
+[ -n "$scan" ] && echo "$scan" >&2
+
+if [ "$status" -ne 0 ]; then
+    # Distinguish a finding from a broken tool.
+    if [ "$status" -eq 1 ] && echo "$scan" | grep -qi "leaks found"; then
+        echo "" >&2
+        echo "COMMIT BLOCKED: a secret was detected in your staged changes." >&2
+        echo "Remove it, or run 'git commit --no-verify' if it is a false positive." >&2
+    else
+        echo "" >&2
+        echo "COMMIT BLOCKED: the secret scanner FAILED TO RUN (exit $status)." >&2
+        echo "" >&2
+        echo "  This is not a finding. Nothing has been checked." >&2
+        echo "  Output is above. A path it cannot resolve is the usual cause." >&2
+        echo "  Bypass: git commit --no-verify   (only if you are certain)" >&2
+    fi
+    exit 1
+fi
+
 npx lint-staged
