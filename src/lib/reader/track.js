@@ -17,7 +17,7 @@ import { beatsOf } from './beats.js';
  * @property {string|null} [clip]
  * @property {{id:string,src:string|null,alt:string}} [plate]
  * @property {Record<string,string>} [gloss]
- * @property {import('../types.js').Visual} [visual]
+ * @property {import('../types.js').VisualPlan|null} [visual]
  */
 
 /**
