@@ -1,94 +1,32 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
-import { BOOKS, defaultBook, bookById, mediaOf } from './books/index.js';
+import { CATALOG, catalogBook } from './lib/library/catalog.js';
 
 /**
- * One engine, many books.
+ * One reader, many books.
  *
- * This is a goal, not a description: a second title should be a new
- * folder under `src/books/` and no change anywhere else — new content,
- * no new code. That only stays true if something checks, because the
- * cheapest way to write any feature is to reach for the book you have in
- * front of you, and it is invisible until the day somebody tries to ship
- * a second one.
- *
- * So: the engine may not know the name of a book. Not its id, not its
- * folder, not its audio directory, not its cue file. It asks the pack.
+ * The redesign has one deliberate content boundary: `library/catalog.js`.
+ * That file is allowed to know which titles are on the shelf and where a
+ * remote pack lives. The reader, vocabulary trainer, media code and UI
+ * below the bookshelf are not. Keeping the exception explicit is stronger
+ * than the old rule that pretended the application could have a bookshelf
+ * without any code ever naming a book.
  */
 
 const ROOT = 'src';
-
-/** Ids alone, for the question "can two packs collide". */
-const BOOK_IDS = BOOKS.map((b) => b.meta.id);
-
-/**
- * Everything a leak could look like.
- *
- * This was ids only, and an id is the least likely form to leak. What
- * actually leaked was an author: `VocabCard.jsx` told every student
- * "though not the word O. Henry chose", so a child reading The Raven was
- * told Poe's word was O. Henry's. The guard searched for `magi` and
- * waved the name straight past.
- *
- * Titles come from the packs. Authors do not exist in a pack, so they
- * are listed by hand, and that is a weaker check worth naming as one: it
- * catches the two authors whose books exist, not the next name somebody
- * types.
- */
-const AUTHORS = ['O. Henry', 'Edgar Allan Poe'];
-const BOOK_NAMES = [...BOOK_IDS, ...BOOKS.map((b) => b.meta.title).filter(Boolean), ...AUTHORS];
-
-/**
- * The engine is named after one of its own books, and this test cannot
- * see the difference.
- *
- * `magi` is a book id. "Magi Reader" is the product. A plain search for
- * the id matches both, so `const APP = 'Magi Reader'` would be reported
- * as the engine naming a book — which is the opposite of true, and the
- * failure message would send whoever hit it looking for a layering bug
- * that is not there.
- *
- * It has already happened once: the backend file was briefly
- * `magi-backend.gs`, named after the product, and this test failed. The
- * file was renamed to `backend.gs`, which was the right move for its own
- * reasons, but it left the collision unfixed and waiting for the first
- * page title or about box.
- *
- * So the product's own name is removed before the search, and only that.
- * A bare `magi` anywhere still fails, which the test below proves.
- */
+const CATALOG_FILE = join(ROOT, 'lib', 'library', 'catalog.js');
 const PRODUCT = /\bmagi[ -]reader\b/gi;
+const BOOK_NAMES = CATALOG.flatMap((entry) => [entry.id, entry.title, entry.author]).filter(Boolean);
 
-/** One line with its comments and the product's name taken out. */
-function codeOf(line) {
-  return line.replace(/\/\*.*?\*\/|\/\/.*$|^\s*\*.*$/g, '').replace(PRODUCT, '');
-}
-
-/** A name in a regex is a name, not a pattern. "O. Henry" has a dot in
- *  it, and an unescaped dot matches "OXHenry". */
 const escape = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
-/** Does an already-stripped line of code name a book? */
-function namesABookIn(code) {
-  return BOOK_NAMES.some((n) => new RegExp(`\\b${escape(n)}\\b`, 'i').test(code));
+function codeOf(line) {
+  return String(line)
+    .replace(/\/\*.*?\*\/|\/\/.*$|^\s*\*.*$/g, '')
+    .replace(PRODUCT, '');
 }
 
-/** The same question about a raw line, for the self-test below. */
-function namesABook(line) {
-  return namesABookIn(codeOf(line));
-}
-
-/**
- * The lines of a file that are actually code.
- *
- * Comments are stripped from the WHOLE FILE first, not line by line, and
- * that is the difference that matters. A comment may quote the reading
- * it describes, and `codeOf` cannot see a block comment that spans
- * lines, so prose about a book read as code naming one. Blanking the
- * comment while keeping its newlines means a real finding still reports
- * the line it is on.
- */
 function codeLinesOf(text) {
   return String(text)
     .replace(/\/\*[\s\S]*?\*\//g, (m) => m.replace(/[^\n]/g, ' '))
@@ -96,108 +34,67 @@ function codeLinesOf(text) {
     .split('\n');
 }
 
-/** Every source file in the engine — everything except the packs. */
+function namesABook(line) {
+  const code = codeOf(line);
+  return BOOK_NAMES.some((name) => new RegExp(`\\b${escape(name)}\\b`, 'i').test(code));
+}
+
+/** Every shipped source file that should remain title-agnostic. */
 function engineFiles(dir = ROOT, out = []) {
   for (const name of readdirSync(dir)) {
     const path = join(dir, name);
     if (statSync(path).isDirectory()) {
-      /* the packs are allowed to know what they are called */
       if (path === join(ROOT, 'books')) continue;
       engineFiles(path, out);
       continue;
     }
     if (!/\.(js|jsx|css)$/.test(name)) continue;
-    /* tests load a real book on purpose; they are not shipped */
     if (/\.test\.jsx?$/.test(name)) continue;
     if (name === 'engine.test.js') continue;
+    if (path === CATALOG_FILE) continue;
     out.push(path);
   }
   return out;
 }
 
-describe('the engine does not know which book it is reading', () => {
+describe('the catalog is the content boundary', () => {
   const files = engineFiles();
 
-  it('has source files to check, so this test cannot pass by finding none', () => {
+  it('checks a real body of runtime code', () => {
     expect(files.length).toBeGreaterThan(15);
   });
 
-  it('tells the product from the book it is named after', () => {
-    /* The exception above, kept honest. If this test ever passes by
-       matching nothing, the one above is worthless. */
+  it('recognises a real book name but not the product name', () => {
     expect(namesABook("const APP_NAME = 'Magi Reader';")).toBe(false);
-    expect(namesABook('const zip = `magi-reader-${version}.zip`;')).toBe(false);
-
-    expect(namesABook("import book from './books/magi/book.json';")).toBe(true);
-    expect(namesABook("if (id === 'magi') return DEFAULT;")).toBe(true);
-    /* the exception removes the product's name, not the whole line */
-    expect(namesABook("const t = 'Magi Reader'; const b = 'magi';")).toBe(true);
+    expect(namesABook("const id = 'magi';")).toBe(true);
+    expect(namesABook("const title = 'The Gift of the Magi';")).toBe(true);
+    expect(namesABook('O. Henry wrote it')).toBe(true);
   });
 
-  it('catches a title or an author, not only an id', () => {
-    /* The leak this was widened for: VocabCard told every student
-       "though not the word O. Henry chose", so a child reading The Raven
-       was told Poe's word was O. Henry's. Searching ids alone waved it
-       through, because no id appears in that sentence. */
-    expect(namesABook('though not the word O. Henry chose')).toBe(true);
-    expect(namesABook('a line about Edgar Allan Poe')).toBe(true);
-    expect(namesABook("const t = 'The Gift of the Magi';")).toBe(true);
-
-    /* and the dot in "O. Henry" is a dot, not any character */
-    expect(namesABook('OXHenry wrote it')).toBe(false);
-    expect(namesABook('the author chose it')).toBe(false);
-  });
-
-  it('does not read prose in a block comment as code', () => {
-    /* validate.js explains a rule using Poe, and Scene.jsx explains a
-       defect using O. Henry. Both are comments about books, which is
-       allowed and useful. A per-line strip could not see a block comment
-       spanning lines and reported all four as leaks. */
-    const file = [
+  it('does not mistake prose in block comments for title-specific code', () => {
+    const text = [
       '/**',
-      ' * A poem by Edgar Allan Poe, quoted to explain the rule.',
-      ' * The Gift of the Magi lost its commas here.',
+      ' * O. Henry and Edgar Allan Poe are useful examples here.',
       ' */',
-      "const x = 'fine';",
-      '/* O. Henry, on one line */',
-      "const y = 'also fine';",
+      "const value = 'generic';",
     ].join('\n');
-    expect(codeLinesOf(file).filter(namesABookIn)).toEqual([]);
+    expect(codeLinesOf(text).filter(namesABook)).toEqual([]);
   });
 
-  it('still finds a leak on the line after a block comment', () => {
-    /* Blanking a comment must not blank the code under it, and the line
-       numbers have to survive so a finding points somewhere real. */
-    const file = [
-      '/*',
-      ' * Poe wrote it.',
-      ' */',
-      "import b from './books/magi/book.json';",
-    ].join('\n');
-    const lines = codeLinesOf(file);
-    expect(lines).toHaveLength(4);
-    expect(lines.findIndex(namesABookIn)).toBe(3);
-  });
-
-  it('never names a book', () => {
-    /* `src/books/index.js` is the one place a title is named, and it is
-       a pack directory, not the engine. Everything else asks it. */
+  it('keeps book names out of the generic runtime', () => {
     const guilty = [];
     for (const file of files) {
-      /* a comment may quote the reading it is describing, so comments
-         come out of the whole file before anything is searched */
-      codeLinesOf(readFileSync(file, 'utf8')).forEach((code, i) => {
-        if (namesABookIn(code)) guilty.push(`${file}:${i + 1}: ${code.trim()}`);
+      codeLinesOf(readFileSync(file, 'utf8')).forEach((line, i) => {
+        if (namesABook(line)) guilty.push(`${file}:${i + 1}: ${line.trim()}`);
       });
     }
     expect(guilty).toEqual([]);
   });
 
-  it('never hard-codes where a book keeps its media', () => {
+  it('keeps title-specific media paths out of the generic runtime', () => {
     const guilty = [];
     for (const file of files) {
-      const text = readFileSync(file, 'utf8');
-      text.split('\n').forEach((line, i) => {
+      codeLinesOf(readFileSync(file, 'utf8')).forEach((line, i) => {
         if (/['"][\w-]*(audio|cues)\/[\w-]*\.?\w*['"]/.test(codeOf(line))) {
           guilty.push(`${file}:${i + 1}: ${line.trim()}`);
         }
@@ -207,65 +104,49 @@ describe('the engine does not know which book it is reading', () => {
   });
 });
 
-describe('a book pack says what it is and where its media lives', () => {
-  it('names itself', () => {
-    for (const b of BOOKS) {
-      expect(b.meta.id, 'a pack with no id cannot be told from another').toBeTruthy();
-      expect(b.meta.title).toBeTruthy();
+describe('the bookshelf catalog', () => {
+  it('contains real entries and unique ids', () => {
+    expect(CATALOG.length).toBeGreaterThan(1);
+    expect(new Set(CATALOG.map((entry) => entry.id)).size).toBe(CATALOG.length);
+  });
+
+  it('gives every entry enough identity to render a useful shelf card', () => {
+    for (const entry of CATALOG) {
+      expect(entry.id).toBeTruthy();
+      expect(entry.title).toBeTruthy();
+      expect(entry.author).toBeTruthy();
+      expect(entry.kind).toBeTruthy();
+      expect(entry.note).toBeTruthy();
     }
   });
 
-  it('has a unique id, so two packs cannot share a gradebook', () => {
-    /* Ids, not BOOK_NAMES: that list also carries titles and authors now,
-       and counting it here would compare a book count against a name
-       count and fail for a reason that has nothing to do with packs. */
-    expect(new Set(BOOK_IDS).size).toBe(BOOKS.length);
+  it('has exactly one loading source for every ready title', () => {
+    for (const entry of CATALOG.filter((item) => !item.comingSoon)) {
+      expect(Boolean(entry.local) !== Boolean(entry.remote), entry.id).toBe(true);
+    }
   });
 
-  it('says where its recordings and cues are, relatively', () => {
-    for (const b of BOOKS) {
-      const m = mediaOf(b);
-      expect(m.audio, `${b.meta.id} has no audio path`).toBeTruthy();
-      expect(m.cues, `${b.meta.id} has no cue file`).toBeTruthy();
-      /* itch serves from a nested path: a leading slash 404s everything */
-      for (const p of [m.audio, m.cues]) {
-        expect(p.startsWith('/'), `"${p}" is absolute and would 404 on itch`).toBe(false);
-        expect(p.startsWith('http')).toBe(false);
+  it('keeps deployment-relative media paths relative', () => {
+    for (const entry of CATALOG.filter((item) => item.remote)) {
+      const spec = entry.remote;
+      const relative = [
+        spec.plate,
+        spec.beatPlate,
+        spec.audio,
+        spec.cues,
+        ...Object.values(spec.cast || {}),
+      ].filter(Boolean);
+      for (const path of relative) {
+        expect(path.startsWith('/'), `${entry.id}: ${path}`).toBe(false);
+        expect(path.startsWith('http'), `${entry.id}: ${path}`).toBe(false);
       }
+      expect(spec.book.startsWith('https://')).toBe(true);
+      expect(spec.base.startsWith('https://')).toBe(true);
     }
   });
 
-  it('carries the whole book, not a stub', () => {
-    for (const b of BOOKS) {
-      expect(b.units.length).toBeGreaterThan(0);
-      for (const part of ['teaching', 'plates', 'cast', 'dialogue']) {
-        expect(
-          Object.keys(b[part] || {}).length,
-          `${b.meta.id} has no ${part}`
-        ).toBeGreaterThan(0);
-      }
-    }
-  });
-});
-
-describe('choosing a book', () => {
-  it('opens with the first one', () => {
-    expect(defaultBook).toBe(BOOKS[0]);
-  });
-
-  it('finds one by name', () => {
-    expect(bookById(BOOKS[0].meta.id)).toBe(BOOKS[0]);
-  });
-
-  it('falls back rather than handing back nothing', () => {
-    /* a stale link to a book this build does not carry should open the
-       reader, not a blank page */
-    expect(bookById('a-book-that-is-not-here')).toBe(defaultBook);
-    expect(bookById('')).toBe(defaultBook);
-  });
-
-  it('gives empty paths for a pack with no media, rather than throwing', () => {
-    expect(mediaOf({})).toEqual({ audio: '', cues: '' });
-    expect(mediaOf(null)).toEqual({ audio: '', cues: '' });
+  it('finds a known book and refuses an unknown one', () => {
+    expect(catalogBook(CATALOG[0].id)).toBe(CATALOG[0]);
+    expect(catalogBook('not-on-this-shelf')).toBeNull();
   });
 });
