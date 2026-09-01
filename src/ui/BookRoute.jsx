@@ -8,21 +8,12 @@ import Shell from './Shell.jsx';
 export default function BookRoute() {
   const { bookId = '' } = useParams();
   const entry = catalogBook(bookId);
-  const [state, setState] = useState(() => ({
-    book: entry?.local || null,
-    error: null,
-  }));
+  const [state, setState] = useState(() => ({ book: null, error: null }));
 
   useEffect(() => {
     let alive = true;
     if (!entry) {
       setState({ book: null, error: new Error('That book is not on this shelf.') });
-      return () => {
-        alive = false;
-      };
-    }
-    if (entry.local) {
-      setState({ book: entry.local, error: null });
       return () => {
         alive = false;
       };
@@ -58,9 +49,9 @@ export default function BookRoute() {
   if (!state.book) {
     return (
       <main className="book-load-state" aria-live="polite">
-        <p className="eyebrow">Getting the book</p>
+        <p className="eyebrow">Opening the book</p>
         <h1>{entry?.title || 'Book'}</h1>
-        <p>Fetching the book pack and its reading map from Git…</p>
+        <p>{entry?.remote ? 'Fetching the book pack from Git…' : 'Preparing your reading…'}</p>
       </main>
     );
   }
