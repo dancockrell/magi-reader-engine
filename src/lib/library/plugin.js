@@ -66,15 +66,10 @@ function withCatalogMeta(book, entry) {
     },
     preshow: framing.intro || book.preshow || [],
     afterword: framing.afterword || book.afterword || [],
+    explore: entry.explore || book.explore || {},
   };
 }
 
-/**
- * Turn a plain JSON book in a Git repository into a runtime pack.
- *
- * Plugins are deliberately data-only. The app fetches JSON and media; it
- * never installs or executes JavaScript from a book repository.
- */
 export async function loadRemoteBook(entry) {
   const spec = entry?.remote;
   if (!spec?.book || !spec?.base) throw new Error('This book has no readable plugin.');
@@ -133,10 +128,7 @@ export async function loadRemoteBook(entry) {
           audio: asset(spec.base, spec.audio || data.media?.audio || ''),
           cues: asset(spec.base, spec.cues || data.media?.cues || ''),
         },
-        plugin: {
-          source: spec.book,
-          fetchedAt: Date.now(),
-        },
+        plugin: { source: spec.book, fetchedAt: Date.now() },
       },
       entry
     );
