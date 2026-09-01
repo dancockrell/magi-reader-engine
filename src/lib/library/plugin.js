@@ -53,6 +53,19 @@ async function optionalJson(url) {
   return response.json();
 }
 
+function withCatalogMeta(book, entry) {
+  return {
+    ...book,
+    meta: {
+      ...(book.meta || {}),
+      id: book.meta?.id || entry.id,
+      title: book.meta?.title || entry.title,
+      author: book.meta?.author || entry.author || '',
+      kind: book.meta?.kind || entry.kind || '',
+    },
+  };
+}
+
 /**
  * Turn a plain JSON book in a Git repository into a runtime pack.
  *
@@ -107,27 +120,23 @@ export async function loadRemoteBook(entry) {
       if (member?.art) members[id] = { ...member, art: asset(spec.base, member.art) };
     }
 
-    return {
-      ...data,
-      meta: {
-        ...data.meta,
-        id: data.meta?.id || entry.id,
-        title: data.meta?.title || entry.title,
-        author: data.meta?.author || entry.author || '',
-        kind: data.meta?.kind || entry.kind || '',
+    return withCatalogMeta(
+      {
+        ...data,
+        plates,
+        storyboard,
+        cast: { ...(data.cast || {}), members },
+        media: {
+          audio: asset(spec.base, spec.audio || data.media?.audio || ''),
+          cues: asset(spec.base, spec.cues || data.media?.cues || ''),
+        },
+        plugin: {
+          source: spec.book,
+          fetchedAt: Date.now(),
+        },
       },
-      plates,
-      storyboard,
-      cast: { ...(data.cast || {}), members },
-      media: {
-        audio: asset(spec.base, spec.audio || data.media?.audio || ''),
-        cues: asset(spec.base, spec.cues || data.media?.cues || ''),
-      },
-      plugin: {
-        source: spec.book,
-        fetchedAt: Date.now(),
-      },
-    };
+      entry
+    );
   })();
 
   cache.set(entry.id, pending);
@@ -143,7 +152,7 @@ export async function loadRemoteBook(entry) {
 
 export async function loadCatalogBook(entry) {
   if (!entry) throw new Error('Book not found.');
-  if (entry.local) return entry.local;
+  if (entry.local) return withCatalogMeta(entry.local, entry);
   if (entry.remote) return loadRemoteBook(entry);
   throw new Error(`${entry.title} is on the shelf, but its book pack is not ready yet.`);
 }
