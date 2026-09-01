@@ -64,7 +64,7 @@
  */
 
 /**
- * One guide turn before or after a book.
+ * One Wren/Ambrose turn before or after a book.
  *
  * `clip: null` is meaningful: the text has been rewritten but its new
  * recording has not been produced yet, so the UI must not play an older
@@ -85,17 +85,17 @@
  * image/video generation pipeline.
  *
  * @typedef {object} VisualPlan
- * @property {string|null} [start]  approved first key image
- * @property {string|null} [end]    optional controlled second key image
- * @property {string|null} [clip]   optional finished silent visual clip
+ * @property {string|null} [start]
+ * @property {string|null} [end]
+ * @property {string|null} [clip]
  * @property {string|null} [poster]
  * @property {string} [alt]
  * @property {string} [shot]
  * @property {string} [camera]
  * @property {string} [action]
  * @property {string} [mood]
- * @property {number} [duration]    narration window in seconds
- * @property {string} [status]      production state such as todo/approved
+ * @property {number} [duration]
+ * @property {string} [status]
  */
 
 /** @typedef {Record<string, VisualPlan|VisualPlan[]|Record<string,VisualPlan>>} Storyboard */
@@ -119,11 +119,10 @@
 /**
  * A book package consumed by the solo reader.
  *
- * The active product contract is story text, media, vocabulary, optional
- * framing, optional Explore notes, and optional storyboard production
- * data. Legacy teaching/dialogue fields remain typed temporarily while
- * old extracted packs are migrated, but the solo story track does not
- * consult them.
+ * The active contract is literary text, media, vocabulary, optional
+ * framing, optional Explore notes and optional storyboard production
+ * data. Some extracted packs may still contain historical fields while
+ * their JSON is migrated; active reading code does not consult them.
  *
  * @typedef {object} Book
  * @property {{title:string,id?:string,source?:string,author?:string,by?:string,kind?:string}} meta
@@ -131,14 +130,14 @@
  * @property {Record<string,string>} [swaps]
  * @property {Record<string,string>} [plates]
  * @property {Storyboard} [storyboard]
- * @property {{audio?:string, cues?:string}} [media]
+ * @property {{audio?:string,cues?:string}} [media]
  * @property {{source?:string,fetchedAt?:number}} [plugin]
  * @property {ExploreNotes} [explore]
- * @property {Record<string,any>} [teaching] legacy extraction data
+ * @property {Record<string,any>} [teaching] historical extraction data
  * @property {Record<string,any>} [info]
  * @property {Record<string,any>} [recaps]
  * @property {{members:Record<string,CastMember>}} [cast]
- * @property {{name?:string, hello?:string, passIntro?:Record<string,string>}} [guideVoice]
+ * @property {{name?:string,hello?:string,passIntro?:Record<string,string>}} [guideVoice]
  * @property {FramingTurn[]} [preshow]
  * @property {FramingTurn[]} [afterword]
  * @property {Record<string,{at:number,state?:string,line?:string}[]>} [wrenReactions]
@@ -150,7 +149,7 @@
  */
 
 /**
- * Somebody who speaks.
+ * Somebody who speaks in framing conversation.
  * @typedef {object} CastMember
  * @property {string} id
  * @property {string} name
@@ -184,32 +183,6 @@
  * @property {Question|null} question
  * @property {boolean} awaitingNext
  * @property {boolean} done
- */
-
-/**
- * Legacy gradebook row. This type disappears with the classroom removal
- * pass; keeping it until then prevents dormant old modules from silently
- * breaking the integration branch before they are deleted together.
- * @typedef {object} Row
- * @property {string} [file]
- * @property {number} [pass]
- * @property {number} [autoRight]
- * @property {number} [autoTotal]
- * @property {string} cls
- * @property {string} no
- * @property {string} name
- * @property {string} assignment
- * @property {number|''} scoreNum
- * @property {number|''} totalNum
- * @property {number|''} percentNum
- * @property {number} minutes
- * @property {string} when
- * @property {number|string} retried
- * @property {number} [attempts]
- * @property {number|''} [priorScore]
- * @property {number|''} [priorPercent]
- * @property {boolean} [lowerThanPrior]
- * @property {any} payload
  */
 
 export {};
