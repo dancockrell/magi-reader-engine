@@ -1,7 +1,5 @@
 /** @typedef {{who:string, text:string, state?:string, clip?:string|null}} Turn */
 
-/** The house cast. Packs can replace portraits and other metadata, but
- * the reader presents the older expert as Wren's grandfather Ambrose. */
 export function castOf(book) {
   const members = book?.cast?.members;
   const base = members && Object.keys(members).length
@@ -29,11 +27,6 @@ export function speaker(book, who) {
   return members[id] || { id: String(id || 'wren'), name: '' };
 }
 
-/* ------------------------------------------------------------------
-   Legacy helpers. They are no longer inserted into the solo story track,
-   but remain readable while old book data is migrated.
-   ------------------------------------------------------------------ */
-
 export function reactionsFor(book, unitId) {
   /** @type {Map<number, Turn>} */
   const at = new Map();
@@ -58,37 +51,33 @@ export function talkFor(book, unitId) {
   }));
 }
 
-/* ------------------------------------------------------------------
-   Framing conversations. These are the only guide conversations the
-   solo product puts in the normal reading journey.
-   ------------------------------------------------------------------ */
+function clipOr(entry, fallback) {
+  return Object.hasOwn(entry || {}, 'clip') ? entry.clip : fallback;
+}
 
-/** Before the work. Old packs default these entries to Wren; new packs
- * may set `who: 'prof'` / `who: 'ambrose'` for a real conversation. */
+/** Before the work. New framing may deliberately set `clip: null` while
+ * its rewritten audio is still being produced; Speaker then presents the
+ * words without pretending an older recording matches them. */
 export function preshowRun(book) {
   return (book?.preshow || []).map((p, i) => ({
     who: speaker(book, p.who || 'wren').id,
     text: p.text,
     state: p.state || '',
-    clip: p.clip || `g_pre${i}`,
+    clip: clipOr(p, `g_pre${i}`),
   }));
 }
 
-/** After the final line. New packs should author `afterword` explicitly.
- * While the existing titles are migrated, an old `dialogue.impact`
- * conversation is treated as an afterword rather than interrupting the
- * story. That preserves useful expert material but puts it where readers
- * actually wanted commentary. */
 export function afterwordRun(book) {
   const source = Array.isArray(book?.afterword) && book.afterword.length
     ? book.afterword
     : book?.dialogue?.impact || [];
 
+  const authored = Array.isArray(book?.afterword) && book.afterword.length;
   return source.map((p, i) => ({
     who: speaker(book, p.who || (i % 2 ? 'prof' : 'wren')).id,
     text: p.text,
     state: p.state || '',
-    clip: p.clip || (book?.afterword ? `g_after${i}` : `d_impact_${i}`),
+    clip: clipOr(p, authored ? `g_after${i}` : `d_impact_${i}`),
   }));
 }
 
@@ -97,8 +86,6 @@ export function helloRun(book) {
   return text ? [{ who: 'wren', text, state: 'happy', clip: 'g_hello' }] : [];
 }
 
-/** Kept for compatibility with old data tooling; the solo UI does not
- * present reading passes anymore. */
 export function passIntroRun(book, pass) {
   const text = book?.guideVoice?.passIntro?.[String(pass)];
   return text ? [{ who: 'wren', text, state: 'talk', clip: `g_pass${pass}` }] : [];
