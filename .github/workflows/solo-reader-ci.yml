@@ -27,56 +27,10 @@ jobs:
         run: npm ci --ignore-scripts
 
       - name: Typecheck
-        id: typecheck
-        continue-on-error: true
-        shell: bash
-        run: |
-          set -o pipefail
-          npm run typecheck 2>&1 | tee ci-typecheck.log
+        run: npm run typecheck
 
       - name: Unit tests
-        id: tests
-        continue-on-error: true
-        shell: bash
-        run: |
-          set -o pipefail
-          npm test 2>&1 | tee ci-tests.log
+        run: npm test
 
       - name: Production build
-        id: build
-        continue-on-error: true
-        shell: bash
-        run: |
-          set -o pipefail
-          npm run build 2>&1 | tee ci-build.log
-
-      - name: Preserve typecheck diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: typecheck-diagnostics
-          path: ci-typecheck.log
-          if-no-files-found: ignore
-          retention-days: 7
-
-      - name: Preserve test diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-diagnostics
-          path: ci-tests.log
-          if-no-files-found: ignore
-          retention-days: 7
-
-      - name: Preserve build diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-diagnostics
-          path: ci-build.log
-          if-no-files-found: ignore
-          retention-days: 7
-
-      - name: Fail if a verification stage failed
-        if: steps.typecheck.outcome == 'failure' || steps.tests.outcome == 'failure' || steps.build.outcome == 'failure'
-        run: exit 1
+        run: npm run build
