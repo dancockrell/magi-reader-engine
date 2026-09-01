@@ -1,15 +1,8 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import book from './index.js';
 import { beatsOfBook } from '../../lib/reader/beats.js';
 import { wordsByClip } from '../../lib/media/vtt.js';
-import {
-  preshowRun,
-  helloRun,
-  passIntroRun,
-  talkFor,
-  reactionsFor,
-} from '../../lib/speech/script.js';
 import { wordsOf } from '../../lib/vocab/words.js';
 import { validateBook } from '../../lib/book/validate.js';
 import {
@@ -20,103 +13,60 @@ import {
 } from '../../lib/vocab/kinds.js';
 
 /**
- * What is true of THIS pack, and of no other.
- *
- * The engine's own tests moved to `books/fixture` so that the engine
- * could be tested without a title. What could not move is anything that
- * asks a question about this pack's own contents: whether its 519
- * recordings are on disk, whether its cue file names every clip, whether
- * its real word list can be quizzed without producing a question with
- * two right answers.
- *
- * Those are pack facts, so they live with the pack. When
- * `src/books/magi/` becomes its own repository this file goes with it,
- * and the engine repository loses nothing it was relying on.
- *
- * The sweeps below deliberately repeat rules the fixture also checks.
- * That is not duplication for its own sake: the fixture proves the rule
- * is implemented, and this proves this book obeys it. A generated pack
- * can break the second without touching the first.
+ * Facts about the bundled Gift of the Magi pack that source control can
+ * prove. Narration MP3s and the final WebP plates are deployment assets
+ * copied by the packaging pipeline, so CI validates their references and
+ * timing contracts rather than pretending those staging directories are
+ * committed to Git.
  */
 
-/* Deterministic, so a failure names a seed somebody can reproduce. */
 const seeded = (seed) => () => {
   seed = (seed * 1664525 + 1013904223) % 4294967296;
   return seed / 4294967296;
 };
 
-describe('every recording this pack names is on disk', () => {
-  /* A line whose clip is missing is silent, and silence is the one
-     failure nobody reports — a student assumes the sound is off. */
-
-  const clips = new Set(
-    readdirSync('public/magi-audio')
-      .filter((f) => f.endsWith('.mp3'))
-      .map((f) => f.replace(/\.mp3$/, ''))
-  );
-
-  /* All cues live in one WebVTT file — 519 separate ones put the build
-     over itch's 1000-file limit and the upload was rejected. */
+describe('the narration contract', () => {
   const cues = wordsByClip(readFileSync('public/cues/magi.vtt', 'utf8'));
+  const beats = beatsOfBook(book);
 
-  /** Every line the two of them speak, outside the narration. */
-  const spoken = () => {
-    const out = [...preshowRun(book), ...helloRun(book)];
-    for (const p of [1, 2, 3]) out.push(...passIntroRun(book, p));
-    for (const id of [...book.units.map((u) => u.id), ...Object.keys(book.info)]) {
-      out.push(...talkFor(book, id));
-      out.push(...reactionsFor(book, id).values());
-    }
-    return out;
-  };
-
-  it('has an mp3 and a cue for every beat of the story', () => {
-    /* The clips were produced against the old reader's line numbering.
-       If that drifts, a student gets a silent page and nothing says why. */
-    const missingAudio = [];
-    const missingCues = [];
-    for (const b of beatsOfBook(book)) {
-      if (!existsSync(`public/magi-audio/${b.clip}.mp3`)) missingAudio.push(b.clip);
-      if (!cues[b.clip]?.length) missingCues.push(b.clip);
-    }
-    expect({ missingAudio, missingCues }).toEqual({ missingAudio: [], missingCues: [] });
-  });
-
-  it('has an mp3 and a cue for every line the guides speak', () => {
-    const missingAudio = spoken()
-      .filter((t) => !clips.has(t.clip))
-      .map((t) => t.clip);
-    const missingCues = spoken()
-      .filter((t) => !cues[t.clip]?.length)
-      .map((t) => t.clip);
-    expect({ missingAudio, missingCues }).toEqual({ missingAudio: [], missingCues: [] });
-  });
-
-  it('covers a real number of clips, so the checks above are not vacuous', () => {
-    expect(beatsOfBook(book).length).toBeGreaterThan(100);
-    expect(spoken().length).toBeGreaterThan(50);
-  });
-});
-
-describe('every picture this pack names is on disk', () => {
-  it('finds the plate for every scene', () => {
-    const named = [...new Set(beatsOfBook(book).map((b) => b.plate.src))];
-    /* A book with no plates passes the check below without examining
-       anything, and reads exactly like a book whose plates are all
-       present. Say how many were looked at. */
-    expect(named.length, 'no plates were checked, so the check below proves nothing').toBeGreaterThan(
-      5
-    );
-    const missing = named.filter((src) => !src || !existsSync(`public/${src}`));
+  it('has a cue for every narrated story line', () => {
+    const missing = beats.filter((beat) => !cues[beat.clip]?.length).map((beat) => beat.clip);
     expect(missing).toEqual([]);
   });
+
+  it('checks a real amount of narration rather than passing vacuously', () => {
+    expect(beats.length).toBeGreaterThan(100);
+    expect(Object.keys(cues).length).toBeGreaterThan(beats.length);
+  });
+
+  it('keeps its deployment media paths relative', () => {
+    expect(book.media.audio).toBeTruthy();
+    expect(book.media.cues).toBeTruthy();
+    for (const path of [book.media.audio, book.media.cues]) {
+      expect(path.startsWith('/'), path).toBe(false);
+      expect(path.startsWith('http'), path).toBe(false);
+    }
+  });
 });
 
-describe('this pack’s own word list can be quizzed', () => {
-  /* The fixture proves the rules hold. This proves the sixty-odd real
-     words obey them — which is where "craved and coveted are each
-     other's substitutes" was found, and no toy fixture would have. */
-  const items = wordsOf(book).map((i) => ({ ...i, asked: 1 }));
+describe('the plate contract', () => {
+  it('resolves a real plate reference for every story line', () => {
+    const beats = beatsOfBook(book);
+    const missing = beats.filter((beat) => !beat.plate.src).map((beat) => `${beat.unit}:${beat.i}`);
+    expect(missing).toEqual([]);
+
+    const named = [...new Set(beats.map((beat) => beat.plate.src))];
+    expect(named.length, 'the pack collapsed to no distinct scene art').toBeGreaterThan(5);
+    for (const path of named) {
+      expect(path.startsWith('/'), path).toBe(false);
+      expect(path.startsWith('http'), path).toBe(false);
+      expect(path).toMatch(/^art\/.+\.(webp|png|jpe?g)$/i);
+    }
+  });
+});
+
+describe('this pack’s own word list can be practised', () => {
+  const items = wordsOf(book).map((item) => ({ ...item, asked: 1 }));
   const ctx = { book, swaps: book.swaps, all: items };
 
   it('agrees with the contract about how many words the trainer gets', () => {
@@ -126,23 +76,23 @@ describe('this pack’s own word list can be quizzed', () => {
   it('produces an answerable question for every word and every kind', () => {
     const problems = [];
     for (const item of items) {
-      for (const kind of kindsFor(ctx, item, items).filter((k) => k !== 'match')) {
-        for (let s = 1; s < 6; s++) {
-          const q = buildQuestion(ctx, kind, item, items, seeded(s));
-          const label = `${kind}/${item.w}/seed${s}`;
+      for (const kind of kindsFor(ctx, item, items).filter((value) => value !== 'match')) {
+        for (let seed = 1; seed < 6; seed++) {
+          const question = buildQuestion(ctx, kind, item, items, seeded(seed));
+          const label = `${kind}/${item.w}/seed${seed}`;
 
-          if (!q.prompt) problems.push(`${label}: empty prompt`);
+          if (!question.prompt) problems.push(`${label}: empty prompt`);
           if (kind === 'spell') {
-            if (!q.answer) problems.push(`${label}: no answer`);
+            if (!question.answer) problems.push(`${label}: no answer`);
           } else {
-            const correct = q.options.filter((o) => o.ok);
-            if (correct.length !== 1)
-              problems.push(`${label}: ${correct.length} correct options`);
-            const texts = q.options.map((o) => String(o.t).toLowerCase());
-            if (new Set(texts).size !== texts.length)
+            const correct = question.options.filter((option) => option.ok);
+            if (correct.length !== 1) problems.push(`${label}: ${correct.length} correct options`);
+            const texts = question.options.map((option) => String(option.t).toLowerCase());
+            if (new Set(texts).size !== texts.length) {
               problems.push(`${label}: duplicate options [${texts}]`);
+            }
           }
-          if (selfBetraying(q)) problems.push(`${label}: prompt contains the answer`);
+          if (selfBetraying(question)) problems.push(`${label}: prompt contains the answer`);
         }
       }
     }
@@ -150,14 +100,11 @@ describe('this pack’s own word list can be quizzed', () => {
   });
 
   it('specifically keeps craved and coveted apart', () => {
-    /* The two words substitute for each other, so neither may be a wrong
-       answer for the other: the question would have two right answers
-       and would punish the student who knew both. */
-    const craved = items.find((i) => i.w.toLowerCase() === 'craved');
+    const craved = items.find((item) => item.w.toLowerCase() === 'craved');
     expect(craved, 'the pack no longer glosses craved').toBeTruthy();
-    for (let s = 1; s < 40; s++) {
-      const words = distractorsFor(ctx, craved, 'swap', 3, seeded(s)).map((g) =>
-        g.w.toLowerCase()
+    for (let seed = 1; seed < 40; seed++) {
+      const words = distractorsFor(ctx, craved, 'swap', 3, seeded(seed)).map((item) =>
+        item.w.toLowerCase()
       );
       expect(words).not.toContain('coveted');
     }

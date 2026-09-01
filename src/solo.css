@@ -1,0 +1,376 @@
+.eyebrow {
+  margin: 0 0 0.45rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.68;
+}
+
+.bookshelf-page,
+.explore {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.bookshelf-page {
+  padding: clamp(2rem, 6vw, 5.5rem) 0 4rem;
+}
+
+.bookshelf-hero {
+  max-width: 760px;
+  margin-bottom: clamp(2.25rem, 5vw, 4.5rem);
+}
+
+.bookshelf-hero h1,
+.explore-hero h1,
+.solo-gate h1 {
+  margin: 0.15rem 0 0.8rem;
+  line-height: 1.02;
+}
+
+.bookshelf-hero > p:last-child,
+.explore-hero > p,
+.book-hero-copy .blurb,
+.house-note p {
+  max-width: 68ch;
+  line-height: 1.65;
+}
+
+.shelf {
+  border-top: 1px solid var(--line, rgba(127, 127, 127, 0.28));
+  padding-top: 1.25rem;
+}
+
+.shelf-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.shelf-head h2 {
+  margin: 0;
+}
+
+.shelf-note {
+  max-width: 28rem;
+  margin: 0;
+  opacity: 0.64;
+  text-align: right;
+}
+
+.book-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.book-card {
+  position: relative;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: 8px 1fr;
+  overflow: hidden;
+  border: 1px solid var(--line, rgba(127, 127, 127, 0.28));
+  border-radius: 14px;
+  background: var(--paper, rgba(255, 255, 255, 0.035));
+}
+
+.book-card.featured {
+  grid-column: span 2;
+}
+
+.book-spine {
+  background: currentColor;
+  opacity: 0.16;
+}
+
+.book-card-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.3rem 1.35rem 1.4rem;
+}
+
+.book-kind,
+.book-coming {
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.book-card h3 {
+  margin: 0.55rem 0 0.15rem;
+  font-size: clamp(1.3rem, 3vw, 1.85rem);
+  line-height: 1.08;
+}
+
+.book-author {
+  margin: 0;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.book-note {
+  flex: 1;
+  line-height: 1.5;
+  opacity: 0.82;
+}
+
+.book-coming {
+  margin-top: auto;
+}
+
+.brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.shelf-link {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  opacity: 0.65;
+}
+
+.solo-gate {
+  width: min(1040px, calc(100% - 2rem));
+  margin-inline: auto;
+  padding-bottom: 3rem;
+}
+
+.book-hero {
+  display: grid;
+  grid-template-columns: minmax(180px, 290px) 1fr;
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+}
+
+.solo-gate .cover {
+  width: 100%;
+  max-height: 440px;
+  object-fit: contain;
+}
+
+.book-by {
+  margin: -0.35rem 0 1.1rem;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.book-actions,
+.explore-actions,
+.finish-doors {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.resume-note {
+  font-size: 0.86rem;
+  opacity: 0.65;
+}
+
+.text-button {
+  border: 0;
+  background: none;
+  padding: 0.8rem 0;
+  color: inherit;
+  text-decoration: underline;
+  opacity: 0.62;
+  cursor: pointer;
+}
+
+.house-note {
+  max-width: 780px;
+  margin: 2.5rem auto 0;
+  padding: 1.2rem 1.35rem;
+  border-left: 3px solid currentColor;
+  background: rgba(127, 127, 127, 0.07);
+}
+
+.house-note p {
+  margin: 0.35rem 0 0;
+}
+
+.solo-reader .scene,
+.solo-reader .stage {
+  position: relative;
+}
+
+.visual-clip,
+.keyframe-pair,
+.keyframe-pair .keyframe {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.keyframe-pair {
+  position: relative;
+  overflow: hidden;
+}
+
+.keyframe-pair .keyframe {
+  position: absolute;
+  inset: 0;
+}
+
+.keyframe-pair .end {
+  opacity: 0;
+}
+
+.keyframe-pair.playing .end {
+  animation: solo-keyframe-crossfade var(--visual-duration, 5s) linear forwards;
+}
+
+@keyframes solo-keyframe-crossfade {
+  0%,
+  25% {
+    opacity: 0;
+  }
+  75%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.stillness .keyframe-pair .end,
+.stillness .keyframe-pair.playing .end {
+  animation: none;
+  opacity: 0;
+}
+
+.solo-finish {
+  max-width: 760px;
+  margin: auto;
+  align-self: center;
+}
+
+.solo-finish h2 {
+  margin-top: 0.2rem;
+}
+
+.explore {
+  padding: 2.5rem 0 5rem;
+}
+
+.explore-hero {
+  max-width: 780px;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line, rgba(127, 127, 127, 0.28));
+}
+
+.explore-section {
+  padding: 2.5rem 0;
+}
+
+.explore-section > h2 {
+  margin-top: 0.2rem;
+}
+
+.explore-section.lead {
+  max-width: 760px;
+}
+
+.explore-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.explore-card,
+.explore-beat {
+  border: 1px solid var(--line, rgba(127, 127, 127, 0.24));
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+  background: rgba(127, 127, 127, 0.045);
+}
+
+.explore-card h3,
+.explore-beat h3 {
+  margin-top: 0;
+}
+
+.explore-walkthrough {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.explore-beat {
+  display: grid;
+  grid-template-columns: 2.3rem 1fr;
+  gap: 0.8rem;
+}
+
+.explore-number {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  opacity: 0.55;
+  font-size: 0.82rem;
+}
+
+.ambrose-note {
+  margin-top: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid currentColor;
+  font-style: italic;
+}
+
+.muted,
+.section-intro {
+  opacity: 0.7;
+}
+
+.explore-footer {
+  padding-top: 2rem;
+  border-top: 1px solid var(--line, rgba(127, 127, 127, 0.28));
+}
+
+@media (max-width: 760px) {
+  .book-card.featured {
+    grid-column: span 1;
+  }
+
+  .shelf-head,
+  .book-hero {
+    display: block;
+  }
+
+  .shelf-note {
+    margin-top: 0.75rem;
+    text-align: left;
+  }
+
+  .solo-gate .cover {
+    max-height: 300px;
+    margin-bottom: 1.25rem;
+  }
+
+  .brand-wrap {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .keyframe-pair.playing .end {
+    animation: none;
+    opacity: 0;
+  }
+}

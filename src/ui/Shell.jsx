@@ -1,23 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import Overlay from './Overlay.jsx';
 import { UiLanguage, T } from './useUi.jsx';
 import { useBook } from './useBook.jsx';
-import { readJoin, saveApi } from '../lib/class/key.js';
 import { load, save, documentState, PACES } from '../lib/settings.js';
 
-/**
- * The frame every screen sits in.
- *
- * The doors are the ones the legacy reader has, in the same place and
- * the same order — Vocabulary, Learning guide, Class, Language, Settings
- * — because that arrangement is already familiar to anyone using it. The
- * difference is underneath: each is a route with a URL, so Back works,
- * a page can be bookmarked, and a teacher can send a link to exactly the
- * screen they mean.
- */
-
-/** @type {[string, string][]} */
 const READING_SETTINGS = [
   ['contrast', 'Higher contrast'],
   ['bigText', 'Larger text'],
@@ -36,7 +23,6 @@ function useSettings() {
     });
   }, []);
 
-  /* The document reflects the settings; nothing else reads them off it. */
   useEffect(() => {
     const reduced =
       typeof matchMedia === 'function' &&
@@ -50,66 +36,41 @@ function useSettings() {
   return { settings, set, couldNotSave };
 }
 
-/**
- * A link the teacher handed out points this device at their Sheet.
- *
- * Applied once and then taken out of the URL, so that a student who
- * bookmarks the reading does not carry the join code around with them,
- * and so a reload does not keep re-applying it.
- *
- * It can only ever set where work is sent — a join code carries no
- * identity, so no link can make anybody the teacher.
- */
-function useJoinLink() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const code = new URLSearchParams(location.search).get('join');
-    if (!code) return;
-
-    const read = readJoin(code);
-    if (read?.api) saveApi(read.api);
-
-    const rest = new URLSearchParams(location.search);
-    rest.delete('join');
-    navigate({ pathname: location.pathname, search: rest.toString() }, { replace: true });
-  }, [location.search, location.pathname, navigate]);
-}
-
 export default function Shell() {
-  const { book, title } = useBook();
+  const { book, id, title } = useBook();
   const { settings, set, couldNotSave } = useSettings();
   const [panel, setPanel] = useState(/** @type {null|'settings'|'language'} */ (null));
   const location = useLocation();
-  useJoinLink();
 
-  /* A route change closes any panel: leaving a screen with a modal still
-     open is how the legacy reader ended up with a guide that would not
-     shut. */
   useEffect(() => setPanel(null), [location.pathname]);
 
   const languages = useMemo(() => book.languages || [], [book]);
-  const reading = location.pathname.startsWith('/read');
+  const reading = location.pathname.includes('/read');
+  const home = `/book/${id}`;
 
   return (
     <UiLanguage book={book} lang={settings.language}>
-      <div className="app">
+      <div className="app solo-app">
         <header className="bar">
-          <Link to="/" className="brand">
-            <b>{title}</b>
-            <span className="sub">An illustrated reading</span>
-          </Link>
+          <div className="brand-wrap">
+            <Link to="/" className="shelf-link" aria-label="Back to bookshelf">
+              ‹ Bookshelf
+            </Link>
+            <Link to={home} className="brand">
+              <b>{title}</b>
+              <span className="sub">Read with Wren & Ambrose</span>
+            </Link>
+          </div>
 
-          <nav className="doors" aria-label="Sections">
-            <NavLink to="/practise" className="btn ghost">
+          <nav className="doors" aria-label="Book sections">
+            <NavLink to={`${home}/read/0`} className="btn ghost">
+              <T>Read</T>
+            </NavLink>
+            <NavLink to={`${home}/words`} className="btn ghost">
               <T>Vocabulary</T>
             </NavLink>
-            <NavLink to="/guide" className="btn ghost">
-              <T>Learning guide</T>
-            </NavLink>
-            <NavLink to="/class" className="btn ghost">
-              <T>Class</T>
+            <NavLink to={`${home}/explore`} className="btn ghost">
+              <T>Explore</T>
             </NavLink>
             <button
               type="button"
@@ -134,8 +95,8 @@ export default function Shell() {
 
         <Overlay open={panel === 'language'} onClose={() => setPanel(null)} title="Language">
           <p className="note">
-            The story stays in English. Your language appears underneath it, and on the words
-            you look up.
+            The original text stays in English. Your language can appear underneath it and in
+            word definitions.
           </p>
           <ul className="pick">
             <li>
@@ -164,7 +125,11 @@ export default function Shell() {
           </ul>
         </Overlay>
 
-        <Overlay open={panel === 'settings'} onClose={() => setPanel(null)} title="Settings">
+        <Overlay
+          open={panel === 'settings'}
+          onClose={() => setPanel(null)}
+          title="Reading settings"
+        >
           {couldNotSave && (
             <p className="note warn" role="status">
               This device will not let the reader remember settings, so these last only until
@@ -194,7 +159,7 @@ export default function Shell() {
                 checked={!!settings.sound}
                 onChange={(e) => set({ sound: e.target.checked })}
               />
-              Sound on
+              Narration on
             </label>
             <label className="check">
               <input
@@ -202,10 +167,10 @@ export default function Shell() {
                 checked={!!settings.motion}
                 onChange={(e) => set({ motion: e.target.checked })}
               />
-              Movement in the pictures
+              Animated scenes on
             </label>
 
-            <div className="pace" role="group" aria-label="Reading pace">
+            <div className="pace" role="group" aria-label="Narration pace">
               {PACES.map(([rate, label]) => (
                 <button
                   key={label}
@@ -220,11 +185,7 @@ export default function Shell() {
             </div>
           </fieldset>
 
-          {reading && (
-            <p className="note">
-              Changes apply to the reading behind this panel straight away.
-            </p>
-          )}
+          {reading && <p className="note">Changes apply to the reading immediately.</p>}
         </Overlay>
       </div>
     </UiLanguage>

@@ -10,8 +10,8 @@ import { defineConfig, devices } from '@playwright/test';
  *   - "19 of 19 controls have no focus indicator" — false. The automated
  *     tab had document.hasFocus() === false, so :focus matched nothing
  *     whatever the CSS said.
- *   - the hand-in progress bar never moved, because requestAnimationFrame
- *     does not fire in a backgrounded tab.
+ *   - narration and visual progress do not move reliably in a backgrounded
+ *     tab because requestAnimationFrame does not fire there.
  *   - contrast measured at 1.04:1 on text that is perfectly legible,
  *     because a semi-transparent background was treated as opaque.
  *
@@ -26,10 +26,9 @@ const BASE = 'http://127.0.0.1:5734';
  * Wren introduces the book on a first visit, and she is a modal, so
  * without this every test that opens the gate is testing its own way past
  * her instead of the thing it is about. A returning reader is also the
- * common case: a class opens this more than once.
+ * common case.
  *
- * The first visit is not untested — `people.spec.js` opts out of this and
- * tests exactly that, which is where it belongs.
+ * The solo-reader e2e coverage also exercises the introduction itself.
  */
 export const HEARD = {
   cookies: [],
@@ -82,8 +81,8 @@ export default defineConfig({
     screenshot: 'only-on-failure',
   },
 
-  /* All three engines, because the classroom has all three and they
-     disagree about exactly the things this reader depends on — focus
+  /* All three engines, because readers use all three and they disagree
+     about exactly the things this experience depends on — focus
      handling, flexbox sizing, and how a form field behaves when tapped.
      The iPad profile is WebKit, which is what most of these students
      actually hold. */
@@ -120,7 +119,7 @@ export default defineConfig({
        default, Playwright polls 127.0.0.1, and on a machine where those
        resolve differently the readiness check never succeeds — it just
        times out after a minute with no useful message. */
-    command: 'npx vite --port 5734 --strictPort --host 127.0.0.1',
+    command: 'vite --port 5734 --strictPort --host 127.0.0.1',
     url: BASE,
     reuseExistingServer: false,
     timeout: 60_000,
