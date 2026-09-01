@@ -20,7 +20,7 @@ export default function Bookshelf() {
             <p className="eyebrow">The bookshelf</p>
             <h2 id="your-books">Choose a book</h2>
           </div>
-          <p className="shelf-note">Books from Git are fetched only when you open them.</p>
+          <p className="shelf-note">Git books are fetched only when you open them.</p>
         </div>
 
         <ul className="book-grid">
@@ -34,6 +34,7 @@ export default function Bookshelf() {
                   <h3>{entry.title}</h3>
                   <p className="book-author">{entry.author}</p>
                   <p className="book-note">{entry.note}</p>
+                  {entry.mediaNote ? <p className="book-media-note">{entry.mediaNote}</p> : null}
                   {ready ? (
                     <Link className="btn primary" to={`/book/${entry.id}`}>
                       {entry.local ? 'Open book' : 'Get and open'}
