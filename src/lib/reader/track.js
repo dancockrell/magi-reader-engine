@@ -1,37 +1,31 @@
 import { beatsOf } from './beats.js';
-import { questionsOf, promptsOf } from './assessment.js';
-import { reactionsFor, talkFor } from '../speech/script.js';
 
 /**
- * One stop on a reading track.
+ * One stop in the literary work.
  *
- * The legacy classroom track can still contain dialogue, questions and
- * prompts because old tests and old packs know that shape. The solo reader
- * uses `storyTrack`, which deliberately contains only story lines and an
- * ending. Keeping those two contracts separate makes it impossible for an
- * old teaching field to accidentally interrupt a recreational reading.
+ * The solo reader has only two states: a narrated line and the ending.
+ * Questions, prompts, teacher instructions and mid-story guide dialogue
+ * are not valid track data anymore; framing lives before and after the
+ * work and commentary lives in Explore.
  *
  * @typedef {object} Stop
- * @property {'line'|'say'|'question'|'prompt'|'end'} kind
+ * @property {'line'|'end'} kind
  * @property {number} at
  * @property {string} unit
  * @property {number} [i]
  * @property {string} [line]
  * @property {string|null} [clip]
- * @property {{id:string, src:string|null, alt:string}} [plate]
+ * @property {{id:string,src:string|null,alt:string}} [plate]
  * @property {Record<string,string>} [gloss]
- * @property {object} [visual]
- * @property {import('../speech/script.js').Turn} [turn]
- * @property {any} [question]
- * @property {any} [prompt]
+ * @property {import('../types.js').Visual} [visual]
  */
 
 /**
- * The product track: the literary work, uninterrupted.
+ * Build the uninterrupted literary work.
  *
- * Wren and Ambrose belong before and after the work, and the deeper
- * explanation belongs in Explore. Nothing from `teaching`, `dialogue`,
- * `questions`, `writing`, or reaction data is consulted here.
+ * Nothing from legacy teaching, assessment or dialogue fields is read
+ * here. Old packs may still carry those fields while they are migrated;
+ * they cannot alter what a person sees while reading.
  *
  * @param {import('../types.js').Book|null|undefined} book
  * @param {Parameters<typeof beatsOf>[1]} [opts]
@@ -52,96 +46,12 @@ export function storyTrack(book, opts = {}) {
     }
   }
 
-  const lastUnit = out.length ? out[out.length - 1].unit : book?.units?.[0]?.id || '';
-  if (out.length) out.push({ kind: 'end', unit: lastUnit });
+  if (out.length) out.push({ kind: 'end', unit: out[out.length - 1].unit });
   return out.map((stop, at) => ({ ...stop, at }));
 }
 
-/**
- * Legacy three-pass track retained while the classroom code is being
- * removed from the repository. New product code should use `storyTrack`.
- *
- * @param {import('../types.js').Book|null|undefined} book
- * @param {number} [pass]
- * @param {Parameters<typeof beatsOf>[1]} [opts]
- * @returns {Stop[]}
- */
-export function trackFor(book, pass = 1, opts = {}) {
-  const merged = { plates: book?.plates || {}, storyboard: book?.storyboard || {}, ...opts };
-  const units = book?.units || [];
-
-  const questions = pass === 2 ? questionsOf(book) : [];
-  const prompts = pass === 3 ? promptsOf(book) : [];
-  const byUnit = (list) => {
-    const m = new Map();
-    for (const x of list) {
-      if (!m.has(x.unit)) m.set(x.unit, []);
-      m.get(x.unit).push(x);
-    }
-    return m;
-  };
-  const q = byUnit(questions);
-  const p = byUnit(prompts);
-
-  /** @type {Omit<Stop,'at'>[]} */
-  const out = [];
-  for (const u of units) {
-    const reacts = pass === 1 ? reactionsFor(book, u.id) : new Map();
-
-    for (const beat of beatsOf(u, merged)) {
-      out.push({ kind: 'line', unit: u.id, ...beat });
-      const r = reacts.get(beat.i);
-      if (r) out.push({ kind: 'say', unit: u.id, turn: r, plate: beat.plate });
-    }
-
-    if (pass === 1) {
-      for (const turn of talkFor(book, u.id)) out.push({ kind: 'say', unit: u.id, turn });
-    }
-    for (const x of q.get(u.id) || []) out.push({ kind: 'question', unit: u.id, question: x });
-    for (const x of p.get(u.id) || []) out.push({ kind: 'prompt', unit: u.id, prompt: x });
-  }
-
-  const placed = new Set(units.map((u) => u.id));
-  const extras = Object.keys(book?.info || {}).filter((id) => !placed.has(id));
-  const infoPlate = (id) => {
-    const info = book?.info?.[id];
-    const file = merged.plates[info?.scene || id];
-    if (!file) return undefined;
-    return {
-      id: info?.scene || id,
-      src: `${merged.base ?? ''}${file}`,
-      alt: info?.caption || info?.title || '',
-    };
-  };
-
-  if (pass === 1) {
-    for (const id of extras) {
-      const plate = infoPlate(id);
-      for (const turn of talkFor(book, id)) out.push({ kind: 'say', unit: id, turn, plate });
-    }
-  }
-  for (const x of questions)
-    if (!placed.has(x.unit)) out.push({ kind: 'question', unit: x.unit, question: x, plate: infoPlate(x.unit) });
-  for (const x of prompts)
-    if (!placed.has(x.unit)) out.push({ kind: 'prompt', unit: x.unit, prompt: x, plate: infoPlate(x.unit) });
-
-  const lastUnit = out.length ? out[out.length - 1].unit : units[0]?.id || '';
-  if (out.length) out.push({ kind: 'end', unit: lastUnit });
-  return out.map((stop, i) => ({ ...stop, at: i }));
-}
-
-export function aimAt(book, pass, track, at) {
-  if (pass !== 1 && pass !== 2) return null;
-  const stop = track?.[at];
-  if (!stop?.unit) return null;
-  if (at > 0 && track[at - 1]?.unit === stop.unit) return null;
-  const teaching = book?.teaching?.[stop.unit];
-  const text = pass === 1 ? teaching?.watch : teaching?.focus;
-  return typeof text === 'string' && text.trim() ? text : null;
-}
-
 export function unitLike(book, id) {
-  return (book?.units || []).find((u) => u.id === id) || book?.info?.[id] || null;
+  return (book?.units || []).find((unit) => unit.id === id) || null;
 }
 
 export function stepTrack(track, index, delta) {
@@ -150,15 +60,22 @@ export function stepTrack(track, index, delta) {
   return Math.max(0, Math.min(track.length - 1, want));
 }
 
+/**
+ * Turn line stops into visual story segments.
+ *
+ * The ending is outside this map by design: finishing the book is a new
+ * experience, not an extra line inside the final scene.
+ */
 export function segmentsOf(track, book) {
   const out = [];
   const index = new Map();
+
   for (const stop of track) {
     if (stop.kind === 'end') continue;
 
     if (!index.has(stop.unit)) {
       const unit = unitLike(book, stop.unit);
-      const seg = {
+      const segment = {
         id: stop.unit,
         act: unit?.act || '',
         title: unit?.title || stop.unit,
@@ -166,37 +83,29 @@ export function segmentsOf(track, book) {
         from: stop.at,
         to: stop.at,
         lines: 0,
-        said: 0,
-        asks: 0,
       };
-      index.set(stop.unit, seg);
-      out.push(seg);
+      index.set(stop.unit, segment);
+      out.push(segment);
     }
-    const seg = index.get(stop.unit);
-    seg.to = stop.at;
-    if (stop.kind === 'line') {
-      seg.lines += 1;
-      if (!seg.plate && stop.plate) seg.plate = stop.plate;
-    } else if (stop.kind === 'say') {
-      seg.said += 1;
-      if (!seg.plate && stop.plate) seg.plate = stop.plate;
-    } else {
-      seg.asks += 1;
-      if (!seg.plate && stop.plate) seg.plate = stop.plate;
-    }
+
+    const segment = index.get(stop.unit);
+    segment.to = stop.at;
+    segment.lines += 1;
+    if (!segment.plate && stop.plate) segment.plate = stop.plate;
   }
+
   return out;
 }
 
 export function whereIn(segments, at) {
-  const i = segments.findIndex((s) => at >= s.from && at <= s.to);
-  const seg = segments[i] ?? null;
+  const index = segments.findIndex((segment) => at >= segment.from && at <= segment.to);
+  const segment = segments[index] ?? null;
   return {
-    index: i,
-    segment: seg,
+    index,
+    segment,
     of: segments.length,
-    through: seg ? at - seg.from + 1 : 0,
-    span: seg ? seg.to - seg.from + 1 : 0,
+    through: segment ? at - segment.from + 1 : 0,
+    span: segment ? segment.to - segment.from + 1 : 0,
   };
 }
 
