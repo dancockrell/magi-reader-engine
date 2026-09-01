@@ -149,6 +149,11 @@ export function segmentsOf(track, book) {
   const out = [];
   const index = new Map();
   for (const stop of track) {
+    /* The ending is its own experience. It belongs after the final scene,
+       but it is not another line inside that scene and must not make the
+       progress display say, for example, “12 of 13” on the last line. */
+    if (stop.kind === 'end') continue;
+
     if (!index.has(stop.unit)) {
       const unit = unitLike(book, stop.unit);
       const seg = {
@@ -173,7 +178,7 @@ export function segmentsOf(track, book) {
     } else if (stop.kind === 'say') {
       seg.said += 1;
       if (!seg.plate && stop.plate) seg.plate = stop.plate;
-    } else if (stop.kind !== 'end') {
+    } else {
       seg.asks += 1;
       if (!seg.plate && stop.plate) seg.plate = stop.plate;
     }
