@@ -29,10 +29,10 @@ function openPopover() {
  */
 export default function Reader({
   index = 0,
-  onMove,
-  translationFor,
-  wordIn,
-  onTap,
+  onMove = undefined,
+  translationFor = undefined,
+  wordIn = undefined,
+  onTap = undefined,
   lang = '',
   muted = false,
   motion = true,
