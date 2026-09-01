@@ -54,6 +54,7 @@ async function optionalJson(url) {
 }
 
 function withCatalogMeta(book, entry) {
+  const framing = entry.framing || {};
   return {
     ...book,
     meta: {
@@ -63,6 +64,8 @@ function withCatalogMeta(book, entry) {
       author: book.meta?.author || entry.author || '',
       kind: book.meta?.kind || entry.kind || '',
     },
+    preshow: framing.intro || book.preshow || [],
+    afterword: framing.afterword || book.afterword || [],
   };
 }
 
