@@ -26,14 +26,8 @@ import Explore from './ui/Explore.jsx';
 import VocabCard from './ui/VocabCard.jsx';
 import { useBook } from './ui/useBook.jsx';
 import './styles.css';
+import './solo.css';
 
-/**
- * The actual reading.
- *
- * There is one reading now. No quiz pass, no writing pass, no teacher
- * submission state. The route owns only position, translation, playback
- * settings and the reader's personal vocabulary trail.
- */
 function ReadingRoute() {
   const { book, id: bookId, lineCounts } = useBook();
   const { beat = '0' } = useParams();
@@ -78,6 +72,7 @@ function ReadingRoute() {
       onTap={onTap}
       lang={translator ? translator.lang : ''}
       muted={!settings.sound}
+      motion={settings.motion}
       rate={settings.pace}
     />
   );
