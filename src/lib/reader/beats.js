@@ -1,5 +1,14 @@
 import { plainStanza, inlineGlosses } from '../book/validate.js';
 
+/**
+ * @typedef {object} BeatOptions
+ * @property {(id:string)=>boolean} [hasClip]
+ * @property {Record<string,string>} [plates]
+ * @property {Record<string,any>} [storyboard]
+ * @property {string} [base]
+ */
+
+/** @param {Partial<import('../types.js').Unit>|null|undefined} unit */
 export function linesOf(unit) {
   return (unit?.stanzas || [])
     .flatMap((sz) => plainStanza(String(sz)).split('\n'))
@@ -7,6 +16,7 @@ export function linesOf(unit) {
     .filter(Boolean);
 }
 
+/** @param {Partial<import('../types.js').Unit>|null|undefined} unit */
 export function glossOf(unit) {
   /** @type {Record<string,string>} */
   const out = {};
@@ -39,23 +49,11 @@ function visualFor(storyboard, unit, sceneId, i) {
  *
  * A book may supply only a plate, a line-specific plate, or a full visual
  * storyboard entry. Storyboard entries are intentionally descriptive as
- * well as playable so the same JSON can be handed to an art/video model:
+ * well as playable so the same JSON can be handed to an art/video model.
  *
- * {
- *   start: 'art/s1-0-a.webp',
- *   end: 'art/s1-0-b.webp',
- *   clip: 'video/s1-0.mp4',
- *   shot: 'medium close-up',
- *   camera: 'slow push toward Della',
- *   action: 'she counts the last pennies twice',
- *   mood: 'private worry, not melodrama',
- *   duration: 6
- * }
- *
- * `start` is the canonical key image. `end` is optional but strongly
- * preferred when a generated clip needs controlled motion. `clip` is the
- * finished visual animation; when it is absent the reader displays the
- * key image instead.
+ * @param {Partial<import('../types.js').Unit>|null|undefined} unit
+ * @param {BeatOptions} [opts]
+ * @returns {import('../types.js').Beat[]}
  */
 export function beatsOf(
   unit,
@@ -97,6 +95,10 @@ export function beatsOf(
   });
 }
 
+/**
+ * @param {import('../types.js').Book|null|undefined} book
+ * @param {BeatOptions} [opts]
+ */
 export function beatsOfBook(book, opts = {}) {
   const merged = {
     plates: book?.plates || {},
