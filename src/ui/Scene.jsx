@@ -71,6 +71,9 @@ export default function Scene({
   const hasVideo = motion && !!visual?.clip;
   const hasPair = motion && !hasVideo && !!visual?.end && !!(visual?.start || plate.src);
   const duration = Number(visual?.duration) > 0 ? Number(visual.duration) : 5;
+  const visualStyle = /** @type {import('react').CSSProperties & Record<string, string>} */ ({
+    '--visual-duration': `${duration}s`,
+  });
 
   return (
     <figure className="scene">
@@ -88,7 +91,7 @@ export default function Scene({
       ) : hasPair ? (
         <div
           className={'plate keyframe-pair' + (playing ? ' playing' : '')}
-          style={{ '--visual-duration': `${duration}s` }}
+          style={visualStyle}
           role="img"
           aria-label={plate.alt}
         >
