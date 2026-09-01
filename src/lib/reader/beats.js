@@ -1,15 +1,5 @@
 import { plainStanza, inlineGlosses } from '../book/validate.js';
 
-/**
- * A unit, cut into the beats the reader actually plays.
- *
- * One beat is one line of the story: a picture, the words, and the clip
- * that speaks them. The clip ids follow the book's own convention —
- * `n_<unit>_<n>`, numbered across the whole unit rather than restarting
- * per stanza, which is how the recordings are named.
- */
-
-/** @param {Partial<import('../types.js').Unit>|null|undefined} unit */
 export function linesOf(unit) {
   return (unit?.stanzas || [])
     .flatMap((sz) => plainStanza(String(sz)).split('\n'))
@@ -17,13 +7,6 @@ export function linesOf(unit) {
     .filter(Boolean);
 }
 
-/**
- * The words this unit glosses, and what they mean.
- *
- * The book writes them two ways — a `gloss` list on the unit, and
- * `{word|meaning}` inline in the stanzas. Both are the same promise:
- * this word is hard, here is what it means.
- */
 export function glossOf(unit) {
   /** @type {Record<string,string>} */
   const out = {};
@@ -41,15 +24,43 @@ export function glossOf(unit) {
 
 export const MEDIA_BASE = '';
 
+function visualFor(storyboard, unit, sceneId, i) {
+  if (!storyboard) return null;
+  const keyed = storyboard[`${sceneId}-${i}`] || storyboard[`${unit.id}-${i}`];
+  if (keyed) return keyed;
+  const grouped = storyboard[unit.id] || storyboard[sceneId];
+  if (Array.isArray(grouped)) return grouped[i] || null;
+  if (grouped && typeof grouped === 'object') return grouped[String(i)] || null;
+  return null;
+}
+
 /**
- * Build the playable line beats for one unit.
+ * Build one narrated line.
  *
- * The important art rule is line-first: `<scene>-<line>` wins when the
- * pack provides it, and the unit plate is only the fallback. That is the
- * seam the new storyboard pipeline uses — one or two strong key images
- * can be authored for every spoken line without changing reader code.
+ * A book may supply only a plate, a line-specific plate, or a full visual
+ * storyboard entry. Storyboard entries are intentionally descriptive as
+ * well as playable so the same JSON can be handed to an art/video model:
+ *
+ * {
+ *   start: 'art/s1-0-a.webp',
+ *   end: 'art/s1-0-b.webp',
+ *   clip: 'video/s1-0.mp4',
+ *   shot: 'medium close-up',
+ *   camera: 'slow push toward Della',
+ *   action: 'she counts the last pennies twice',
+ *   mood: 'private worry, not melodrama',
+ *   duration: 6
+ * }
+ *
+ * `start` is the canonical key image. `end` is optional but strongly
+ * preferred when a generated clip needs controlled motion. `clip` is the
+ * finished visual animation; when it is absent the reader displays the
+ * key image instead.
  */
-export function beatsOf(unit, { hasClip, plates = {}, base = MEDIA_BASE } = {}) {
+export function beatsOf(
+  unit,
+  { hasClip, plates = {}, storyboard = {}, base = MEDIA_BASE } = {}
+) {
   if (!unit?.id) return [];
   const lines = linesOf(unit);
   const sceneId = unit.scene || unit.id;
@@ -58,12 +69,22 @@ export function beatsOf(unit, { hasClip, plates = {}, base = MEDIA_BASE } = {}) 
 
   return lines.map((line, i) => {
     const clip = `n_${unit.id}_${i}`;
-    const file = plates[`${sceneId}-${i}`] || fallbackFile;
+    const lineFile = plates[`${sceneId}-${i}`] || plates[`${unit.id}-${i}`];
+    const file = lineFile || fallbackFile;
+    const authoredVisual = visualFor(storyboard, unit, sceneId, i);
+    const visual = authoredVisual
+      ? {
+          ...authoredVisual,
+          start: authoredVisual.start || (file ? `${base}${file}` : null),
+        }
+      : null;
+    const plateSrc = visual?.start || (file ? `${base}${file}` : null);
     const plate = {
-      id: plates[`${sceneId}-${i}`] ? `${sceneId}-${i}` : sceneId,
-      src: file ? `${base}${file}` : null,
-      alt: unit.caption || unit.title || 'Scene illustration',
+      id: lineFile ? `${sceneId}-${i}` : sceneId,
+      src: plateSrc,
+      alt: visual?.alt || unit.caption || unit.title || 'Scene illustration',
     };
+
     return {
       i,
       unit: unit.id,
@@ -71,12 +92,17 @@ export function beatsOf(unit, { hasClip, plates = {}, base = MEDIA_BASE } = {}) 
       clip: hasClip && !hasClip(clip) ? null : clip,
       plate,
       gloss,
+      visual,
     };
   });
 }
 
 export function beatsOfBook(book, opts = {}) {
-  const merged = { plates: book?.plates || {}, ...opts };
+  const merged = {
+    plates: book?.plates || {},
+    storyboard: book?.storyboard || {},
+    ...opts,
+  };
   return (book?.units || []).flatMap((u) => beatsOf(u, merged));
 }
 
