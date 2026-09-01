@@ -60,6 +60,11 @@ export function storyTrack(book, opts = {}) {
 /**
  * Legacy three-pass track retained while the classroom code is being
  * removed from the repository. New product code should use `storyTrack`.
+ *
+ * @param {import('../types.js').Book|null|undefined} book
+ * @param {number} [pass]
+ * @param {Parameters<typeof beatsOf>[1]} [opts]
+ * @returns {Stop[]}
  */
 export function trackFor(book, pass = 1, opts = {}) {
   const merged = { plates: book?.plates || {}, storyboard: book?.storyboard || {}, ...opts };
@@ -149,9 +154,6 @@ export function segmentsOf(track, book) {
   const out = [];
   const index = new Map();
   for (const stop of track) {
-    /* The ending is its own experience. It belongs after the final scene,
-       but it is not another line inside that scene and must not make the
-       progress display say, for example, “12 of 13” on the last line. */
     if (stop.kind === 'end') continue;
 
     if (!index.has(stop.unit)) {
