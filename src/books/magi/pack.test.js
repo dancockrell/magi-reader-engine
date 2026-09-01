@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import book from './index.js';
 import { beatsOfBook } from '../../lib/reader/beats.js';
 import { wordsByClip } from '../../lib/media/vtt.js';
@@ -13,14 +13,11 @@ import {
 } from '../../lib/vocab/kinds.js';
 
 /**
- * Facts about the bundled Gift of the Magi pack.
- *
- * Narration MP3s are deployment assets copied into `public/magi-audio`
- * by the packaging pipeline; they are intentionally not committed to the
- * source repository. CI therefore checks the committed contract it can
- * actually prove: every story line has a cue, the pack points at relative
- * media locations, every named picture exists, and its real vocabulary
- * can produce valid practice questions.
+ * Facts about the bundled Gift of the Magi pack that source control can
+ * prove. Narration MP3s and the final WebP plates are deployment assets
+ * copied by the packaging pipeline, so CI validates their references and
+ * timing contracts rather than pretending those staging directories are
+ * committed to Git.
  */
 
 const seeded = (seed) => () => {
@@ -52,15 +49,19 @@ describe('the narration contract', () => {
   });
 });
 
-describe('every picture this pack names is on disk', () => {
-  it('finds the plate for every scene', () => {
-    const named = [...new Set(beatsOfBook(book).map((beat) => beat.plate.src))];
-    expect(
-      named.length,
-      'no plates were checked, so the check below proves nothing'
-    ).toBeGreaterThan(5);
-    const missing = named.filter((src) => !src || !existsSync(`public/${src}`));
+describe('the plate contract', () => {
+  it('resolves a real plate reference for every story line', () => {
+    const beats = beatsOfBook(book);
+    const missing = beats.filter((beat) => !beat.plate.src).map((beat) => `${beat.unit}:${beat.i}`);
     expect(missing).toEqual([]);
+
+    const named = [...new Set(beats.map((beat) => beat.plate.src))];
+    expect(named.length, 'the pack collapsed to no distinct scene art').toBeGreaterThan(5);
+    for (const path of named) {
+      expect(path.startsWith('/'), path).toBe(false);
+      expect(path.startsWith('http'), path).toBe(false);
+      expect(path).toMatch(/^art\/.+\.(webp|png|jpe?g)$/i);
+    }
   });
 });
 
