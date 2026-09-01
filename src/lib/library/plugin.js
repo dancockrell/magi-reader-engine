@@ -17,12 +17,47 @@ function pattern(value, scene, line) {
     .replaceAll('{line}', String(line ?? ''));
 }
 
+function resolveVisual(base, visual) {
+  if (!visual || typeof visual !== 'object' || Array.isArray(visual)) return visual;
+  const out = { ...visual };
+  for (const key of ['start', 'end', 'clip', 'poster']) {
+    if (typeof out[key] === 'string') out[key] = asset(base, out[key]);
+  }
+  return out;
+}
+
+function resolveStoryboard(base, storyboard) {
+  if (!storyboard || typeof storyboard !== 'object') return {};
+  return Object.fromEntries(
+    Object.entries(storyboard).map(([key, value]) => {
+      if (Array.isArray(value)) return [key, value.map((v) => resolveVisual(base, v))];
+      if (value && typeof value === 'object') {
+        const looksLikeVisual = ['start', 'end', 'clip', 'poster', 'shot', 'camera', 'action', 'mood'].some(
+          (field) => Object.hasOwn(value, field)
+        );
+        if (looksLikeVisual) return [key, resolveVisual(base, value)];
+        return [
+          key,
+          Object.fromEntries(Object.entries(value).map(([line, v]) => [line, resolveVisual(base, v)])),
+        ];
+      }
+      return [key, value];
+    })
+  );
+}
+
+async function optionalJson(url) {
+  if (!url) return null;
+  const response = await fetch(url, { cache: 'no-cache' });
+  if (!response.ok) throw new Error(`Could not fetch book media plan (${response.status}).`);
+  return response.json();
+}
+
 /**
  * Turn a plain JSON book in a Git repository into a runtime pack.
  *
- * The repository owns the content and media naming. The app owns only
- * this small loading contract. Nothing is installed and no arbitrary
- * JavaScript is executed: a plugin is data plus media URLs.
+ * Plugins are deliberately data-only. The app fetches JSON and media; it
+ * never installs or executes JavaScript from a book repository.
  */
 export async function loadRemoteBook(entry) {
   const spec = entry?.remote;
@@ -34,8 +69,13 @@ export async function loadRemoteBook(entry) {
     if (!response.ok) throw new Error(`Could not fetch ${entry.title} (${response.status}).`);
     const data = await response.json();
 
-    const plates = { ...(data.plates || {}) };
-    const things = [...(data.units || []), ...Object.entries(data.info || {}).map(([id, x]) => ({ id, ...x }))];
+    const plates = Object.fromEntries(
+      Object.entries(data.plates || {}).map(([id, path]) => [id, asset(spec.base, path)])
+    );
+    const things = [
+      ...(data.units || []),
+      ...Object.entries(data.info || {}).map(([id, x]) => ({ id, ...x })),
+    ];
 
     if (spec.plate) {
       for (const thing of things) {
@@ -54,19 +94,34 @@ export async function loadRemoteBook(entry) {
       }
     }
 
+    const externalStoryboard = spec.storyboard
+      ? await optionalJson(asset(spec.base, spec.storyboard))
+      : null;
+    const storyboard = resolveStoryboard(spec.base, externalStoryboard || data.storyboard || {});
+
     const members = { ...(data.cast?.members || {}) };
     for (const [id, path] of Object.entries(spec.cast || {})) {
       members[id] = { ...(members[id] || { id }), art: asset(spec.base, path) };
     }
+    for (const [id, member] of Object.entries(members)) {
+      if (member?.art) members[id] = { ...member, art: asset(spec.base, member.art) };
+    }
 
     return {
       ...data,
-      meta: { ...data.meta, id: data.meta?.id || entry.id, title: data.meta?.title || entry.title },
+      meta: {
+        ...data.meta,
+        id: data.meta?.id || entry.id,
+        title: data.meta?.title || entry.title,
+        author: data.meta?.author || entry.author || '',
+        kind: data.meta?.kind || entry.kind || '',
+      },
       plates,
+      storyboard,
       cast: { ...(data.cast || {}), members },
       media: {
-        audio: asset(spec.base, spec.audio || ''),
-        cues: asset(spec.base, spec.cues || ''),
+        audio: asset(spec.base, spec.audio || data.media?.audio || ''),
+        cues: asset(spec.base, spec.cues || data.media?.cues || ''),
       },
       plugin: {
         source: spec.book,
