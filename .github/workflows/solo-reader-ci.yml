@@ -34,19 +34,6 @@ jobs:
           set -o pipefail
           npm run typecheck 2>&1 | tee ci-typecheck.log
 
-      - name: Preserve typecheck diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: typecheck-diagnostics
-          path: ci-typecheck.log
-          if-no-files-found: error
-          retention-days: 7
-
-      - name: Stop after a failed typecheck
-        if: steps.typecheck.outcome == 'failure'
-        run: exit 1
-
       - name: Unit tests
         id: tests
         continue-on-error: true
@@ -54,19 +41,6 @@ jobs:
         run: |
           set -o pipefail
           npm test 2>&1 | tee ci-tests.log
-
-      - name: Preserve test diagnostics
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: test-diagnostics
-          path: ci-tests.log
-          if-no-files-found: error
-          retention-days: 7
-
-      - name: Stop after failed unit tests
-        if: steps.tests.outcome == 'failure'
-        run: exit 1
 
       - name: Production build
         id: build
@@ -76,15 +50,33 @@ jobs:
           set -o pipefail
           npm run build 2>&1 | tee ci-build.log
 
+      - name: Preserve typecheck diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: typecheck-diagnostics
+          path: ci-typecheck.log
+          if-no-files-found: ignore
+          retention-days: 7
+
+      - name: Preserve test diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-diagnostics
+          path: ci-tests.log
+          if-no-files-found: ignore
+          retention-days: 7
+
       - name: Preserve build diagnostics
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: build-diagnostics
           path: ci-build.log
-          if-no-files-found: error
+          if-no-files-found: ignore
           retention-days: 7
 
-      - name: Stop after failed build
-        if: steps.build.outcome == 'failure'
+      - name: Fail if a verification stage failed
+        if: steps.typecheck.outcome == 'failure' || steps.tests.outcome == 'failure' || steps.build.outcome == 'failure'
         run: exit 1
