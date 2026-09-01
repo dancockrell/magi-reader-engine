@@ -3,9 +3,10 @@ import magi from '../../books/magi/index.js';
 /**
  * The bookshelf is deliberately small and curated.
  *
- * A catalog entry is not a bundled book. `local` is used only for the
- * title that ships with the app. Remote entries describe a Git-hosted
- * pack that is fetched only when the reader opens it.
+ * `local` is reserved for the title bundled with the app. Remote entries
+ * describe data and media that actually exist in Git; optional art and
+ * storyboard fields are added only when those assets are committed or
+ * otherwise published at stable URLs.
  */
 export const CATALOG = [
   {
@@ -23,15 +24,10 @@ export const CATALOG = [
     author: 'Edgar Allan Poe',
     kind: 'Poem',
     note: 'A midnight visitor, a grieving mind, and one word that will not leave.',
+    mediaNote: 'Narration and subtitles are ready. The recovered per-line art still needs publishing.',
     remote: {
       book: 'https://raw.githubusercontent.com/dancockrell/the-raven-edgar-allan-poe-magi-reader/main/pack/book.json',
       base: 'https://raw.githubusercontent.com/dancockrell/the-raven-edgar-allan-poe-magi-reader/main/pack/',
-      plate: 'art/plate-{scene}.webp',
-      beatPlate: 'art/beat-{scene}-{line}.webp',
-      cast: {
-        wren: 'art/cast-wren.webp',
-        prof: 'art/cast-prof.webp',
-      },
       audio: 'audio/',
       cues: 'cues/raven.vtt',
     },
