@@ -17,7 +17,9 @@ import { CATALOG, catalogBook } from './lib/library/catalog.js';
 const ROOT = 'src';
 const CATALOG_FILE = join(ROOT, 'lib', 'library', 'catalog.js');
 const PRODUCT = /\bmagi[ -]reader\b/gi;
-const BOOK_NAMES = CATALOG.flatMap((entry) => [entry.id, entry.title, entry.author]).filter(Boolean);
+const BOOK_NAMES = CATALOG.flatMap((entry) => [entry.id, entry.title, entry.author]).filter(
+  Boolean
+);
 
 const escape = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
@@ -123,6 +125,12 @@ describe('the bookshelf catalog', () => {
   it('has exactly one loading source for every ready title', () => {
     for (const entry of CATALOG.filter((item) => !item.comingSoon)) {
       expect(Boolean(entry.local) !== Boolean(entry.remote), entry.id).toBe(true);
+    }
+  });
+
+  it('lazy-loads bundled books instead of placing their packs in the shelf bundle', () => {
+    for (const entry of CATALOG.filter((item) => item.local)) {
+      expect(entry.local, entry.id).toBeTypeOf('function');
     }
   });
 

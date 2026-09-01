@@ -12,9 +12,7 @@ function asset(base, path) {
 }
 
 function pattern(value, scene, line) {
-  return value
-    .replaceAll('{scene}', String(scene))
-    .replaceAll('{line}', String(line ?? ''));
+  return value.replaceAll('{scene}', String(scene)).replaceAll('{line}', String(line ?? ''));
 }
 
 function resolveVisual(base, visual) {
@@ -32,13 +30,22 @@ function resolveStoryboard(base, storyboard) {
     Object.entries(storyboard).map(([key, value]) => {
       if (Array.isArray(value)) return [key, value.map((v) => resolveVisual(base, v))];
       if (value && typeof value === 'object') {
-        const looksLikeVisual = ['start', 'end', 'clip', 'poster', 'shot', 'camera', 'action', 'mood'].some(
-          (field) => Object.hasOwn(value, field)
-        );
+        const looksLikeVisual = [
+          'start',
+          'end',
+          'clip',
+          'poster',
+          'shot',
+          'camera',
+          'action',
+          'mood',
+        ].some((field) => Object.hasOwn(value, field));
         if (looksLikeVisual) return [key, resolveVisual(base, value)];
         return [
           key,
-          Object.fromEntries(Object.entries(value).map(([line, v]) => [line, resolveVisual(base, v)])),
+          Object.fromEntries(
+            Object.entries(value).map(([line, v]) => [line, resolveVisual(base, v)])
+          ),
         ];
       }
       return [key, value];
@@ -91,7 +98,8 @@ export async function loadRemoteBook(entry) {
     if (spec.plate) {
       for (const thing of things) {
         const scene = thing?.scene || thing?.id;
-        if (scene && !plates[scene]) plates[scene] = asset(spec.base, pattern(spec.plate, scene));
+        if (scene && !plates[scene])
+          plates[scene] = asset(spec.base, pattern(spec.plate, scene));
       }
       if (!plates.cover) plates.cover = asset(spec.base, pattern(spec.plate, 'cover'));
     }
@@ -108,7 +116,10 @@ export async function loadRemoteBook(entry) {
     const externalStoryboard = spec.storyboard
       ? await optionalJson(asset(spec.base, spec.storyboard))
       : null;
-    const storyboard = resolveStoryboard(spec.base, externalStoryboard || data.storyboard || {});
+    const storyboard = resolveStoryboard(
+      spec.base,
+      externalStoryboard || data.storyboard || {}
+    );
 
     const members = { ...(data.cast?.members || {}) };
     for (const [id, path] of Object.entries(spec.cast || {})) {
@@ -147,7 +158,10 @@ export async function loadRemoteBook(entry) {
 
 export async function loadCatalogBook(entry) {
   if (!entry) throw new Error('Book not found.');
-  if (entry.local) return withCatalogMeta(entry.local, entry);
+  if (entry.local) {
+    const book = typeof entry.local === 'function' ? await entry.local() : entry.local;
+    return withCatalogMeta(book, entry);
+  }
   if (entry.remote) return loadRemoteBook(entry);
   throw new Error(`${entry.title} is on the shelf, but its book pack is not ready yet.`);
 }

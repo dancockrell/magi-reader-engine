@@ -97,7 +97,11 @@ export default function Preshow({ talkKey, turns, title = 'Before we start' }) {
                   setS(next);
                 }}
               >
-                {isLast(s) ? (talkKey === 'final-thoughts' ? 'Close' : 'Let me read') : 'Next ›'}
+                {isLast(s)
+                  ? talkKey === 'final-thoughts'
+                    ? 'Close'
+                    : 'Let me read'
+                  : 'Next ›'}
               </button>
             </div>
           </>
@@ -114,7 +118,9 @@ export default function Preshow({ talkKey, turns, title = 'Before we start' }) {
           }}
         >
           <span aria-hidden="true">↻ </span>
-          {talkKey === 'final-thoughts' ? 'Wren & Ambrose’s final thoughts' : 'What Wren & Ambrose said'}
+          {talkKey === 'final-thoughts'
+            ? 'Wren & Ambrose’s final thoughts'
+            : 'What Wren & Ambrose said'}
         </button>
       ) : null}
     </>

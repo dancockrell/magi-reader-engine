@@ -1,119 +1,53 @@
 # Magi Reader
 
-An illustrated reading engine for language classrooms.
+Magi Reader is a warm, illustrated solo-reading experience for classic stories and poems.
 
-A public-domain story becomes a narrated, illustrated reading. The class goes
-through it three times — watch, questions, writing — and the work lands in the
-teacher's spreadsheet already half marked.
+The reader keeps the book uninterrupted: narration drives the timing, subtitles follow the spoken line, and difficult words are tappable without turning the story into a worksheet. Wren and Grandpa Ambrose welcome the reader before the book and return with final thoughts after the ending. Their deeper literary notes live in a separate Explore experience.
 
-The name comes from the first book, *The Gift of the Magi*. The engine does not
-care which book it is. A second title is a new folder. The second title is *The
-Raven*.
+## What ships
 
-![The reading, with Korean under the English and a glossed word marked](docs/reading.png)
+- A bookshelf with _The Gift of the Magi_ bundled for offline reading.
+- Git-hosted book packs, beginning with _The Raven_.
+- Narration, subtitles, clickable vocabulary, and a personal vocabulary trainer.
+- Per-line art, two-keyframe transitions, and optional finished silent visual clips.
+- Separate introductions, afterwords, and Explore notes for interested middle-school readers.
+- Storyboard production sheets and a timing-aware storyboard planning tool.
 
-## For a student
-
-The story is read aloud, line by line. The spoken word lights up from the media
-clock and a WebVTT file, not from a timer. Hard words are tappable in English
-and in the student's language. The whole interface can sit in Korean, Japanese,
-Thai or Spanish *under* the English, not instead of it.
-
-Place is remembered. Answers survive a reload. Hand-in is one button.
-
-## For a teacher
-
-Set up a class on any device. Nothing to log in to.
-
-Work arrives in a Google Sheet, or — if there is no Google in the room — in
-files that become a marking workbook. That workbook groups written answers by
-question, not by student. Marking thirty answers to one prompt needs one
-standard in your head.
-
-|                                                                             |                                                                                  |
-| --------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| ![A word tapped, with its meaning in English and Korean](docs/glossary.png) | ![Wren and Professor Ambrose discussing the part just read](docs/characters.png) |
-| A glossed word, in two languages                                            | Two characters, one at a time                                                    |
-| ![A quiz question, answered, with the explanation shown](docs/quiz.png)     | ![The teacher's panel: class key, Sheet link, collected work](docs/teacher.png)  |
-| An answer is final, and explains itself                                     | The teacher's side, end to end                                                   |
+The bundled Gift pack is lazy-loaded when the reader opens it, so the bookshelf does not download the whole book up front. Remote packs are fetched as data and media; the app does not execute JavaScript from book repositories.
 
 ## Run it
 
 ```bash
 npm install
-npm run dev            # the reader
-npm test               # 480 unit tests
-npm run e2e            # 635 end-to-end, four browser engines
-npm run release        # verify, then build an uploadable zip
+npm run dev
+npm test
+npm run build
+npm run verify
 ```
 
-`npm run release` will refuse a zip the host would reject. It has already
-caught a package with too many files in it.
+Create a storyboard skeleton from real book text and narration cues with `npm run storyboard:plan -- --help`.
 
-## Layout
+## Architecture
 
-```
-src/lib/            no DOM, no React, no timers
-  book/             pack contract, translation lookup
-  reader/           readings, beats, questions, grading
-  speech/           who says what, and when
-  class/            identity, class key, outbox, sending
-  gradebook/        submissions → rows → CSV → .xlsx
-  media/            WebVTT, lining a transcript up with the text
-src/ui/             React. Presentation only.
-src/books/<id>/     a book pack
-src/backend/        Apps Script a teacher pastes into their Sheet
-legacy/             the single-file prototype
-tools/              extract, check, release
+```text
+src/books/              bundled book packs
+src/lib/book/           book validation and vocabulary lookup
+src/lib/library/        bookshelf catalog and safe Git-pack loading
+src/lib/reader/         uninterrupted story track and reading state
+src/lib/media/          narration cues and visual timing
+src/ui/                 bookshelf, reader, vocabulary, and Explore UI
+docs/storyboards/       exact visual production sheets
+tools/                  book checks, release, cues, and storyboard planning
 ```
 
-`src/lib` being pure is why a 2,685-question sweep runs in under a second, and
-why a student attempt can be replayed in a test without drawing anything.
+`src/lib/library/catalog.js` is the deliberate content boundary: it knows which titles are on the shelf and where their packs live. The generic reader and UI do not hard-code book titles or book-specific media paths.
 
-`src/engine.test.js` walks every source file outside `src/books/` and fails if
-one names a book or hard-codes where that book keeps its audio.
+## Book plugins
 
-Prefer platform features over inventions. `<dialog>`, `popover`, `<progress>`,
-WebVTT, the History API. The three worst bugs in this project were all homemade
-versions of something the browser already had.
+A remote catalog entry points to a JSON book pack and a base media URL. The loader resolves narration, cues, cast art, plates, and storyboard media against that base, then adds the catalog's Wren/Ambrose framing and Explore notes.
 
-## The prototype is the spec
+The detailed pack contract is in `docs/BOOK-FORMAT.md`. New visual work should use the storyboard fields and the examples in `docs/storyboards/`.
 
-`legacy/index.html` is the last working single-file reader: 1.68 MB, frozen,
-guarded by a test that fails if the file changes. The `prototype` branch has
-the snapshots that got it there. The last commit on that branch and
-`legacy/index.html` on `main` are the same bytes.
+## License
 
-Every defect found by attacking the original is a test here, written before the
-equivalent piece was rebuilt:
-
-| test              | what it stops |
-| ----------------- | ------------- |
-| formula injection | `=HYPERLINK(...)` in a student answer running when the sheet opens |
-| leading zeros     | student `01` and `1` collapsing into one person in Excel |
-| date coercion     | a score of `9 / 10` read as 9 October |
-| written totals    | perfect writing scoring 67% because questions were counted twice |
-| resubmission      | a better grade replaced by a blank |
-| substitution      | `craved` / `coveted` used as each other's distractor |
-| endpoint shape    | a doctored class key sending a class's writing to a stranger's script |
-| modal keyboard    | arrow keys driving the reading behind an open panel |
-
-That last one came back twice — once as a `<dialog>`, once as a `popover`.
-Same test caught both.
-
-## Other things that matter in a classroom
-
-Tests run on Chromium, WebKit-as-iPad, Chromium-as-phone, and real Firefox.
-Some bugs exist on exactly one of those. An invisible popover ate taps on the
-iPad and nowhere else.
-
-The class key is Crockford base32 so it survives paper and wrong-case typing.
-The student link carries no identity and cannot open the gradebook.
-
-A student is never told a hand-in failed. They cannot fix the network. The work
-is written down first; retry is silent.
-
-## Licence
-
-MIT. The stories are public domain. Illustrations and recordings travel with
-the book pack.
+MIT. The included stories are public domain. Illustrations and recordings travel with their book packs.

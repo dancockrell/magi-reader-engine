@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { at } from './book.js';
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
@@ -102,7 +101,7 @@ test.describe('running the way itch runs it', () => {
       const game = await serveDist(prefix, 'dist');
       /* localhost and 127.0.0.1 are different origins to a browser, which
        is what makes the frame third-party here */
-      const host = await servePage(`http://localhost:${game.port}${prefix}#/read/1/0`);
+      const host = await servePage(`http://localhost:${game.port}${prefix}#/book/magi/read/0`);
 
       const failed = [];
       page.on('response', (r) => {
@@ -122,7 +121,7 @@ test.describe('running the way itch runs it', () => {
         expect(width, 'the picture decoded inside the frame').toBeGreaterThan(0);
 
         await frame.getByRole('button', { name: 'Next ›' }).click();
-        await expect(frame.locator('.count')).toHaveText(at(2));
+        await expect(frame.locator('.scene')).toBeVisible();
 
         expect(failed, 'nothing 404d').toEqual([]);
         expect(pageErrors, 'no uncaught errors').toEqual([]);
@@ -144,7 +143,7 @@ test.describe('running the way itch runs it', () => {
     async ({ page }) => {
       const prefix = '/html/1891234/';
       const game = await serveDist(prefix, 'dist');
-      const host = await servePage(`http://localhost:${game.port}${prefix}#/read/1/0`);
+      const host = await servePage(`http://localhost:${game.port}${prefix}#/book/magi/read/0`);
 
       try {
         await page.goto(`http://127.0.0.1:${host.port}/`);

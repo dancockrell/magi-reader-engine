@@ -71,7 +71,9 @@ describe('the storyboard', () => {
     expect(segments.reduce((count, segment) => count + segment.lines, 0)).toBe(
       beatsOfBook(book).length
     );
-    expect(segments.every((segment) => !('said' in segment) && !('asks' in segment))).toBe(true);
+    expect(segments.every((segment) => !('said' in segment) && !('asks' in segment))).toBe(
+      true
+    );
   });
 
   it('locates story positions and deliberately leaves the ending outside the storyboard', () => {
@@ -81,7 +83,9 @@ describe('the storyboard', () => {
 
     const second = segments[1];
     expect(whereIn(segments, second.from).segment.id).toBe(second.id);
-    expect(whereIn(segments, second.to)).toMatchObject({ through: second.to - second.from + 1 });
+    expect(whereIn(segments, second.to)).toMatchObject({
+      through: second.to - second.from + 1,
+    });
 
     const lastStory = track.length - 2;
     expect(whereIn(segments, lastStory).index).toBe(segments.length - 1);

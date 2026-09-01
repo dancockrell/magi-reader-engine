@@ -70,7 +70,8 @@ export default function Gate({ resume = null, onForget }) {
         <p>
           Wren loves a good story. Her grandfather Ambrose has spent a lifetime studying them.
           They will say hello before you begin and come back after the final line. If you want
-          the deeper conversation, Ambrose keeps that in Explore so it never interrupts the book.
+          the deeper conversation, Ambrose keeps that in Explore so it never interrupts the
+          book.
         </p>
       </section>
     </main>

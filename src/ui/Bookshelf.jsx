@@ -10,7 +10,7 @@ export default function Bookshelf() {
         <p>
           Illustrated readings with narration, subtitles, words you can tap, and a vocabulary
           trainer that remembers what you looked up. Wren and her grandfather Ambrose introduce
-          each book, then get out of the story's way.
+          each book, then get out of the story’s way.
         </p>
       </header>
 
@@ -34,7 +34,9 @@ export default function Bookshelf() {
                   <h3>{entry.title}</h3>
                   <p className="book-author">{entry.author}</p>
                   <p className="book-note">{entry.note}</p>
-                  {entry.mediaNote ? <p className="book-media-note">{entry.mediaNote}</p> : null}
+                  {entry.mediaNote ? (
+                    <p className="book-media-note">{entry.mediaNote}</p>
+                  ) : null}
                   {ready ? (
                     <Link className="btn primary" to={`/book/${entry.id}`}>
                       {entry.local ? 'Open book' : 'Get and open'}

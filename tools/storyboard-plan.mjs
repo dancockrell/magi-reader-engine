@@ -120,7 +120,9 @@ await fs.writeFile(outPath, `${JSON.stringify(plan, null, 2)}\n`, 'utf8');
 const units = Object.keys(plan.units);
 const lineCount = units.reduce((n, id) => n + plan.units[id].lines.length, 0);
 const missingDurations = units.flatMap((id) =>
-  plan.units[id].lines.filter((line) => !line.narration.duration).map((line) => line.narration.clip)
+  plan.units[id].lines
+    .filter((line) => !line.narration.duration)
+    .map((line) => line.narration.clip)
 );
 
 console.log(`Storyboard plan: ${lineCount} lines across ${units.length} unit(s).`);

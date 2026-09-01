@@ -111,7 +111,7 @@ describe('one framing queue, one owner', () => {
   });
 
   it('goes back without running off the front', () => {
-    let state = next(speak(createSpeech(), 'before', pre()));
+    const state = next(speak(createSpeech(), 'before', pre()));
     expect(speaking(back(state)).text).toBe(pre()[0].text);
     expect(back(back(state)).at).toBe(0);
   });
@@ -125,7 +125,7 @@ describe('one framing queue, one owner', () => {
 
 describe('dismissed framing stays dismissed', () => {
   it('does not immediately reopen something the reader closed', () => {
-    let state = close(speak(createSpeech(), 'before', pre()));
+    const state = close(speak(createSpeech(), 'before', pre()));
     expect(wasHeard(state, 'before')).toBe(true);
     expect(speak(state, 'before', pre()).open).toBe(false);
   });
@@ -137,7 +137,7 @@ describe('dismissed framing stays dismissed', () => {
   });
 
   it('does not restart an already-open conversation', () => {
-    let state = next(speak(createSpeech(), 'before', pre()));
+    const state = next(speak(createSpeech(), 'before', pre()));
     expect(speak(state, 'before', pre()).at).toBe(1);
   });
 

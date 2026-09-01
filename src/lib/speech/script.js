@@ -12,7 +12,9 @@ export function castOf(book) {
 
   const out = { ...base };
   if (out.prof) {
-    const old = String(out.prof.name || '').trim().toLowerCase();
+    const old = String(out.prof.name || '')
+      .trim()
+      .toLowerCase();
     out.prof = {
       ...out.prof,
       name:

@@ -19,7 +19,7 @@ export default function Explore() {
   return (
     <main className="explore">
       <header className="explore-hero">
-        <p className="eyebrow">Ambrose's notebook</p>
+        <p className="eyebrow">Ambrose’s notebook</p>
         <h1>Explore {title}</h1>
         <p>
           This is the conversation we deliberately kept out of the reading. Here we can stop,
@@ -58,7 +58,11 @@ export default function Explore() {
                 <span className="lens-kicker">{lens.kicker || 'Ambrose notices'}</span>
                 <h3>{lens.title}</h3>
                 <p>{lens.text}</p>
-                {lens.lookFor ? <p className="lens-look"><b>Look back at:</b> {lens.lookFor}</p> : null}
+                {lens.lookFor ? (
+                  <p className="lens-look">
+                    <b>Look back at:</b> {lens.lookFor}
+                  </p>
+                ) : null}
               </article>
             ))}
           </div>
@@ -86,7 +90,8 @@ export default function Explore() {
         <h2>Walk through the text</h2>
         <p className="section-intro">
           No quiz is hiding here. These notes are a second set of eyes: what is happening, what
-          the writer is doing, and what becomes more interesting when you read the passage again.
+          the writer is doing, and what becomes more interesting when you read the passage
+          again.
         </p>
         <div className="explore-walkthrough">
           {units.map((unit, i) => (
@@ -107,8 +112,9 @@ export default function Explore() {
 
       <footer className="explore-footer">
         <p>
-          Come here after a first reading. Once you already know what happens, you have attention
-          left over for the more interesting question: how did the writer make it happen?
+          Come here after a first reading. Once you already know what happens, you have
+          attention left over for the more interesting question: how did the writer make it
+          happen?
         </p>
         <Link className="btn" to="../">
           Back to the book

@@ -95,7 +95,12 @@ export default function Scene({
           role="img"
           aria-label={plate.alt}
         >
-          <img className="keyframe start" src={visual.start || plate.src} alt="" draggable="false" />
+          <img
+            className="keyframe start"
+            src={visual.start || plate.src}
+            alt=""
+            draggable="false"
+          />
           <img className="keyframe end" src={visual.end} alt="" draggable="false" />
         </div>
       ) : plate.src ? (

@@ -45,10 +45,7 @@ function ReadingRoute() {
 
   const wanted = Number.parseInt(beat, 10);
   const safe = stepTrack(track, Number.isFinite(wanted) ? wanted : 0, 0);
-  const go = useCallback(
-    (n) => navigate(`/book/${bookId}/read/${n}`),
-    [navigate, bookId]
-  );
+  const go = useCallback((n) => navigate(`/book/${bookId}/read/${n}`), [navigate, bookId]);
 
   useEffect(() => {
     rememberWhere(bookId, { pass: 1, at: safe, of: track.length });

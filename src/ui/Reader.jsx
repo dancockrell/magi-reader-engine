@@ -75,7 +75,8 @@ export default function Reader({
 
   useEffect(() => {
     const onKey = (e) => {
-      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement)
+        return;
       if (document.querySelector('dialog[open]') || openPopover()) return;
 
       if (e.key === ' ' && stop?.kind === 'line') {

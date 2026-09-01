@@ -95,8 +95,8 @@ export default function Shell() {
 
         <Overlay open={panel === 'language'} onClose={() => setPanel(null)} title="Language">
           <p className="note">
-            The original text stays in English. Your language can appear underneath it and in word
-            definitions.
+            The original text stays in English. Your language can appear underneath it and in
+            word definitions.
           </p>
           <ul className="pick">
             <li>
@@ -125,11 +125,15 @@ export default function Shell() {
           </ul>
         </Overlay>
 
-        <Overlay open={panel === 'settings'} onClose={() => setPanel(null)} title="Reading settings">
+        <Overlay
+          open={panel === 'settings'}
+          onClose={() => setPanel(null)}
+          title="Reading settings"
+        >
           {couldNotSave && (
             <p className="note warn" role="status">
-              This device will not let the reader remember settings, so these last only until you
-              close the page.
+              This device will not let the reader remember settings, so these last only until
+              you close the page.
             </p>
           )}
 
