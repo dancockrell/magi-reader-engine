@@ -71,7 +71,7 @@ describe('the storyboard', () => {
     expect(segments.reduce((count, segment) => count + segment.lines, 0)).toBe(
       beatsOfBook(book).length
     );
-    expect(segments.every((segment) => segment.said === 0 && segment.asks === 0)).toBe(true);
+    expect(segments.every((segment) => !('said' in segment) && !('asks' in segment))).toBe(true);
   });
 
   it('locates story positions and deliberately leaves the ending outside the storyboard', () => {
