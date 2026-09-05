@@ -1,5 +1,7 @@
 # The teaching design
 
+> **Historical classroom design (5 September 2026).** This records the rationale of the earlier classroom implementation. Its statements about required assessments, teacher workflows, and shipping behavior apply to that version, not the current solo product direction. Start with the [README](../README.md) and the linked solo redesign. Retain useful learning-design evidence without treating the three-pass classroom flow as a requirement.
+
 Why the Magi Reader works the way it does.
 
 This document is written for two people. One is a teacher or a district

@@ -1,119 +1,43 @@
 # Magi Reader
 
-An illustrated reading engine for language classrooms.
+Magi Reader's current direction is a polished solo literary reading experience: illustrated stories and poems, narration with synchronized text, tappable vocabulary, multilingual support, and a personal vocabulary trainer.
 
-A public-domain story becomes a narrated, illustrated reading. The class goes
-through it three times — watch, questions, writing — and the work lands in the
-teacher's spreadsheet already half marked.
+The story should remain uninterrupted. Wren and Grandpa Ambrose frame the book before and after; optional literary/context discussion belongs in a separate Explore experience.
 
-The name comes from the first book, *The Gift of the Magi*. The engine does not
-care which book it is. A second title is a new folder. The second title is *The
-Raven*.
+## Current direction and implementation status
 
-![The reading, with Korean under the English and a glossed word marked](docs/reading.png)
+**As of 5 September 2026, the solo redesign is in [draft PR #7](https://github.com/dancockrell/magi-reader-engine/pull/7), on `solo-reader-redesign`.** The default branch still contains the earlier classroom implementation. A checkout of `main` therefore does not yet give you the finished solo product. Consult the PR's current status and checks before assuming that transition has landed.
 
-## For a student
+New product work follows the solo direction. Class/teacher UI, sign-in and rosters, quiz/writing passes, hand-in/outbox flows, gradebooks, marking exports, and Apps Script are outside that direction. Do not restore them to satisfy old prototype-parity expectations.
 
-The story is read aloud, line by line. The spoken word lights up from the media
-clock and a WebVTT file, not from a timer. Hard words are tappable in English
-and in the student's language. The whole interface can sit in Korean, Japanese,
-Thai or Spanish *under* the English, not instead of it.
+The existing tests and old classroom code remain evidence for that implementation until the reviewed redesign replaces them. This documentation change does not merge the redesign or certify its full application suite.
 
-Place is remembered. Answers survive a reload. Hand-in is one button.
-
-## For a teacher
-
-Set up a class on any device. Nothing to log in to.
-
-Work arrives in a Google Sheet, or — if there is no Google in the room — in
-files that become a marking workbook. That workbook groups written answers by
-question, not by student. Marking thirty answers to one prompt needs one
-standard in your head.
-
-|                                                                             |                                                                                  |
-| --------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| ![A word tapped, with its meaning in English and Korean](docs/glossary.png) | ![Wren and Professor Ambrose discussing the part just read](docs/characters.png) |
-| A glossed word, in two languages                                            | Two characters, one at a time                                                    |
-| ![A quiz question, answered, with the explanation shown](docs/quiz.png)     | ![The teacher's panel: class key, Sheet link, collected work](docs/teacher.png)  |
-| An answer is final, and explains itself                                     | The teacher's side, end to end                                                   |
-
-## Run it
+## Run the checked-out version
 
 ```bash
 npm install
-npm run dev            # the reader
-npm test               # 480 unit tests
-npm run e2e            # 635 end-to-end, four browser engines
-npm run release        # verify, then build an uploadable zip
+npm run dev
+npm test
+npm run build
 ```
 
-`npm run release` will refuse a zip the host would reject. It has already
-caught a package with too many files in it.
+Read `package.json` on your branch for the actual checks and release scripts. Avoid copying historical test totals into acceptance claims: missing book media and branch-specific tests can change what a run covers.
 
-## Layout
+## Architecture and content
 
-```
-src/lib/            no DOM, no React, no timers
-  book/             pack contract, translation lookup
-  reader/           readings, beats, questions, grading
-  speech/           who says what, and when
-  class/            identity, class key, outbox, sending
-  gradebook/        submissions → rows → CSV → .xlsx
-  media/            WebVTT, lining a transcript up with the text
-src/ui/             React. Presentation only.
-src/books/<id>/     a book pack
-src/backend/        Apps Script a teacher pastes into their Sheet
-legacy/             the single-file prototype
-tools/              extract, check, release
-```
+The engine separates reusable reading behavior from book-specific text and media. The solo branch's README describes its bookshelf, safe Git-hosted data packs, uninterrupted story track, vocabulary, and storyboard tooling.
 
-`src/lib` being pure is why a 2,685-question sweep runs in under a second, and
-why a student attempt can be replayed in a test without drawing anything.
+On `main`, `src/lib/` still includes classroom and gradebook modules; `src/backend/` and `legacy/` retain the older implementation. These are not requirements for the solo architecture.
 
-`src/engine.test.js` walks every source file outside `src/books/` and fails if
-one names a book or hard-codes where that book keeps its audio.
+- [Book format](docs/BOOK-FORMAT.md) documents the contract on this branch. Use the solo branch's version when authoring for the redesign; its validator is the corresponding executable contract.
+- [Historical teaching design](docs/PEDAGOGY.md) preserves learning-design rationale and the earlier classroom decisions. It is not the current feature roadmap.
+- [Classroom toolkit](https://github.com/dancockrell/magi-reader-classroom-toolkit) preserves the original standalone classroom machinery.
+- [The Gift of the Magi](https://github.com/dancockrell/the-gift-of-the-magi-o-henry-magi-reader) and [The Raven](https://github.com/dancockrell/the-raven-edgar-allan-poe-magi-reader) preserve book content, media, and earlier packaging work. Check each pack's actual published assets before promising complete narration or art.
 
-Prefer platform features over inventions. `<dialog>`, `popover`, `<progress>`,
-WebVTT, the History API. The three worst bugs in this project were all homemade
-versions of something the browser already had.
+## History and documentation authority
 
-## The prototype is the spec
-
-`legacy/index.html` is the last working single-file reader: 1.68 MB, frozen,
-guarded by a test that fails if the file changes. The `prototype` branch has
-the snapshots that got it there. The last commit on that branch and
-`legacy/index.html` on `main` are the same bytes.
-
-Every defect found by attacking the original is a test here, written before the
-equivalent piece was rebuilt:
-
-| test              | what it stops |
-| ----------------- | ------------- |
-| formula injection | `=HYPERLINK(...)` in a student answer running when the sheet opens |
-| leading zeros     | student `01` and `1` collapsing into one person in Excel |
-| date coercion     | a score of `9 / 10` read as 9 October |
-| written totals    | perfect writing scoring 67% because questions were counted twice |
-| resubmission      | a better grade replaced by a blank |
-| substitution      | `craved` / `coveted` used as each other's distractor |
-| endpoint shape    | a doctored class key sending a class's writing to a stranger's script |
-| modal keyboard    | arrow keys driving the reading behind an open panel |
-
-That last one came back twice — once as a `<dialog>`, once as a `popover`.
-Same test caught both.
-
-## Other things that matter in a classroom
-
-Tests run on Chromium, WebKit-as-iPad, Chromium-as-phone, and real Firefox.
-Some bugs exist on exactly one of those. An invisible popover ate taps on the
-iPad and nowhere else.
-
-The class key is Crockford base32 so it survives paper and wrong-case typing.
-The student link carries no identity and cannot open the gradebook.
-
-A student is never told a hand-in failed. They cannot fix the network. The work
-is written down first; retry is silent.
+The frozen single-file prototype remains valuable regression and development history. It is no longer the product specification. The earlier README and classroom screenshots are preserved in Git; new documentation should explain the current reader rather than promote the retired assessment workflow.
 
 ## Licence
 
-MIT. The stories are public domain. Illustrations and recordings travel with
-the book pack.
+MIT. The stories are public domain. Illustrations and recordings travel with the book pack; inspect their provenance and distribution records separately.
