@@ -53,7 +53,12 @@ experience without Dan's confirmation.
 - AI-assisted imagery, animation, narration and music; disclose the actual tools
   and providers required by the chosen festival. Production records document
   Magnific/Kling video generation and image-generation-assisted reference edits.
-  Audit the original voice and score records before giving a complete tool list.
+  The score is **What Would You Sacrifice?**, Google Lyria 3 Pro via Magnific;
+  its provider record and source-file identity are verified in the
+  [sound-source audit](award-sound-pass.md#source-and-permissions-audit-6-september-2026).
+  The 244 original narration clips are preserved and verified, but their provider
+  and voice-use permission record remain unconfirmed. Do not invent a voice credit
+  or describe this as a complete, cleared tool list.
 - Generated takes were selected, rejected, reshot and assembled into a fixed
   timeline. Frame diagnostics assist inspection but do not determine artistic
   quality or independently approve a film.

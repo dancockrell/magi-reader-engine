@@ -76,3 +76,63 @@ show cumulative AAC padding at chapter joins. Timestamp-aware resampling removed
 that apparent drift. Do not cite the discarded raw-sample result as a film defect.
 No voice or public audio was changed by this read-only check. It does not prove
 every word, intelligibility or artistic sound quality; listening remains required.
+
+## Source and permissions audit, 6 September 2026
+
+The asset-curation pass distinguished the movie's actual 244 `n_sN_I.mp3`
+narration clips from unused guide, question and other legacy recordings. The
+dialogue manifest's complete list was checked, not a sample:
+
+- All 244 current production hashes match `sound/dialogue-manifest.json`.
+- All 244 publication-checkout copies match those production files.
+- All 244 preserved originals in `C:/Users/Admin/dev/magi-reader/magi-audio`
+  exist and match, with zero differences. Do not describe the voices as lost.
+- The original timing header identifies `build_voices.py`, cast `magi`,
+  fingerprint `484b698fda8f`. This identifies a build, not a voice provider,
+  performer, contract or permission. A probed narration MP3 had no format tags.
+- The current checkout, historical asset-copy script, documented original reader
+  and documented delivery archive were inspected. No voice builder, cast/provider
+  manifest or voice-use agreement was located there. The archive has 522 entries
+  and no `.py`/`.json`/README/license/cast/voice-named metadata entry; its existence
+  does not prove a license. Do not infer the provider from the perceived sound,
+  nearby software or a filename. Dan has been asked for the original voice project
+  or usage record. No replacement narration is authorized by this audit.
+
+### Score identity
+
+The provider creation record was retrieved again: **What Would You Sacrifice?**,
+creation `iGTnrjR3uK`, created 2 September 2026 at 08:35:39 UTC, Google Lyria 3 Pro,
+160 generation credits. Its musical brief specifies an instrumental chamber
+score, not a named performer's imitation. The recorded 176 seconds is rounded;
+the local audio record reports 175.595 seconds.
+
+Both `public/audio/magi-score.mp3` and the original
+`production/magnific/gift-of-the-magi/audio/raw/magi-score-candidate-01.mp3`
+have SHA-256
+`5964d2ee9e7c3e142be767fa73455a806fdf962031ad2767c9ecfc920237a1db`.
+The provider identity, local record and shipped source agree. No stock-library
+license or ElevenLabs music license should be substituted for this Lyria record.
+
+### Permission evidence, not legal clearance
+
+[Magnific's current AI terms](https://www.magnific.com/legal/terms-of-use),
+checked 6 September, distinguish subscribed output from free-account output;
+the subscription must be active when the output is generated. The Lyria section
+also incorporates Google's terms and prohibits misleading artist imitation.
+[Google's linked use policy](https://policies.google.com/terms/generative-ai/use-policy)
+was checked. This is a source record, not a legal opinion or certification.
+
+The account currently reports Premium+; that is not historical proof of its plan
+on the score's generation date or the dates of every source image/video. Retain
+the applicable subscription/transaction evidence and terms for those dates, plus
+input permissions and festival-specific rights requirements. Do not represent
+current terms or a credit charge as a complete chain of title.
+
+### What this pass did not do
+
+No audio generation, charge, deletion, remix, deployment, rights acceptance or
+festival submission. The available tools expose audio generation and media
+playback, but no usable model-side listening/analysis facility was found; project
+instructions also keep browser review muted. Consequently no sound-on artistic
+approval is claimed. The required listening and phrase-selection pass needs a
+sound-capable review workflow or a human editor before a final mix is admitted.

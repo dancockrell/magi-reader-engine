@@ -90,7 +90,8 @@ because a generation has already cost credits.
   replacements, rejection log and camera-setup correction. Also flags a pocket
   watch wrongly present with Della's chain and the following stove/table layout.
 - [Sound pass](film-edits/award-sound-pass.md): original-voice stem prepared for
-  a whole-film mix; listening and musical phrase selection are not yet complete.
+  a whole-film mix; all 244 originals and score source verified. Voice-provider
+  permissions, historical plan evidence, listening and phrase selection remain open.
 - [Prop continuity and consolidated assembly](film-edits/award-props-and-assembly-review.md):
   watch-excluding framing, tighter kitchen coverage, and correction of the earlier
   mistaken stove/table diagnosis. Local review assembly, not a public replacement.
