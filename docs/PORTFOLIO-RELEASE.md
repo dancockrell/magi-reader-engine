@@ -1,8 +1,19 @@
 # Portfolio release checklist
 
-## 0.9.1 correction
+## Current published delivery
 
-The current source targets `v0.9.1-portfolio`. See [the shot-level polish report](FILM-POLISH.md) for the four replacements, rejected takes and review limits.
+The application source targets **v0.9.6-portfolio**. The release was rechecked on
+6 September 2026 and is public, not a draft or prerelease. See
+[the v0.9.6 notes](RELEASE-0.9.6.md) for the latest published title treatment.
+Its complete movie runs approximately 14:51. The local
+[award candidate](AWARD-CANDIDATE.md) is separate work and has not replaced it.
+
+The checks below describe older releases at their recorded dates; their hashes,
+durations and CI runs are not evidence for the newer candidate.
+
+## 0.9.1 correction — historical
+
+The source at this checkpoint targeted `v0.9.1-portfolio`. See [the shot-level polish report](FILM-POLISH.md) for the four replacements, rejected takes and review limits.
 
 - Local unit tests: 344 passed; lint, typecheck and production build passed.
 - Complete corrected movie decoded without errors: H.264, 1920×1080, native 24 fps, 21,165 frames, 881.906 seconds.

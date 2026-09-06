@@ -9,8 +9,9 @@ const root = resolve(process.argv[2]);
 const bin = resolve(root, 'tools/ffmpeg/bin');
 const candidate = 'production/award-candidate/';
 const raw = 'production/magnific/gift-of-the-magi/scene-5/raw/';
-const hairRevision = process.argv.includes('--hair-r3');
-const output = resolve(root, candidate, hairRevision ? 'scene5-award-v2' : 'scene5-award-v1');
+const reactionRevision = process.argv.includes('--reaction-r1');
+const hairRevision = reactionRevision || process.argv.includes('--hair-r3');
+const output = resolve(root, candidate, reactionRevision ? 'scene5-award-v3' : hairRevision ? 'scene5-award-v2' : 'scene5-award-v1');
 const fps = 24;
 const shots = [
   { name: 'Resolve on the descent', path: candidate + 'departure-omni.mp4', in: 36, out: 144, creation: 'iGVtYXh3uK' },
@@ -18,7 +19,8 @@ const shots = [
   { name: 'The hair-goods address', path: raw + '02-shop-exterior-r3.mp4', in: 12, out: 228 },
   { name: 'Up toward the shop; cut before the landing turn', path: raw + 's5-stair-climb.mp4', in: 3, out: 84 },
   ...(hairRevision ? [
-    { name: 'Asking with hair still pinned', path: candidate + 'shop-conversation-r3.mp4', in: 0, out: 264, creation: '5j7ZB4TKxe' },
+    { name: 'Asking with hair still pinned', path: candidate + 'shop-conversation-r3.mp4', in: 0, out: reactionRevision ? 204 : 264, creation: '5j7ZB4TKxe' },
+    ...(reactionRevision ? [{ name: 'Sofronie answers; reaction coverage', path: candidate + 'sofronie-reply-r1.mp4', in: 0, out: 60, creation: 'iGVm7vJ3uK' }] : []),
     { name: 'Remove the hat once; begin unpinning', path: candidate + 'shop-reveal-r3.mp4', in: 0, out: 72, creation: 'JNGeHc5Oq4' },
     { name: 'Ellipsis to released hair and appraisal; exclude returned hat', path: raw + '05-inspection.mp4', in: 72, out: 240, crop: '1600:900:200:0', creation: 'XmQkO7nBfo' },
   ] : [

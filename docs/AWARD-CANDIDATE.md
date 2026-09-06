@@ -64,6 +64,8 @@ Rules checked 6 September 2026; recheck the exact entry terms before submitting.
 
 | Competition | Current fit / reason to hold |
 | --- | --- |
+| [AI Filmfest Athens 2026](https://www.aifilmfestathens.gr/en) | New lead checked 6 September: worldwide, 3–15 minutes, prior publication welcome; fully AI-generated visuals/audio required. Published late deadline 15 October (€45), event 6 November at Ellinikon Experience Centre. First edition: independently confirm organizer, venue, jury, exact entry terms and whether our titles/audio workflow qualifies. No entry approved. |
+| [AIMA London 2026](https://www.aimovieawards.org/) | New lead checked 6 September: AI-centred narrative films over two minutes; deadline 17 October; announced finalist screenings 7–8 November at IET London. Listed technical requirements match 1080p24 stereo. Named jury and prior Mallorca event are organizer claims to corroborate. Confirm runtime ceiling, fee and public-online eligibility; submission grants broad screening/online promotional use, so obtain explicit approval. |
 | [WAIFF LA USA](https://worldaifilmfestival.us/) | Published short categories cover 3–40 minutes and allow prior online distribution. Restricted to US-based creators; residence is unconfirmed. Requires a production journal and rights documentation. Investigate the current jury, screening, category classification and exact entry terms before recommending payment. Its WAIFF event in Cannes is not the Festival de Cannes. |
 | [ITU AI for Good Film Festival](https://aiforgood.itu.int/ai-for-good-film-festival/) | Do not target the current master: published limit is 1–10 minutes and its thematic emphasis is AI/global challenges. Selected finalists must not have the full film online before the event. Do not mutilate this adaptation or withdraw the portfolio release merely to fit. The page also contains conflicting 2027 event-date references. |
 | [Runway AI Film Festival 2026 terms](https://aif.runwayml.com/terms-film) | Historical judging benchmark only; the 2026 entry deadline has passed. Do not represent that edition as open or assume future eligibility. |
@@ -95,4 +97,9 @@ because a generation has already cost credits.
 - [Independent screening brief](film-edits/SCREENING-BRIEF.md): prepared, not sent.
 - [Continuity reshoots, second pass](film-edits/award-continuity-reshoots-r2.md):
   pinned-hair setup and one-time hat removal baked into scene-5 v2; failed reveal
-  tail and supper eyeline withheld. Not yet integrated into the full assembly.
+  tail and supper eyeline withheld. Superseded by the selective integration below.
+- [Reaction coverage and supper continuity](film-edits/award-reaction-and-supper-r3.md):
+  scene-5 v3 plus practical supper/insert coverage integrated into full assembly
+  v2; exported and checked locally, not published. Original soundtrack retained.
+- [Festival entry draft](film-edits/FESTIVAL-ENTRY-DRAFT.md): synopsis, biography
+  and disclosure prepared for approval; not submitted or rights-cleared.

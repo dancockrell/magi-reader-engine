@@ -1,0 +1,99 @@
+{
+  "status": "local editorial candidate; not published",
+  "fps": 24,
+  "frames": 1221,
+  "seconds": 50.875,
+  "filmStartSeconds": 286.208333,
+  "audio": "Unchanged v1 chapter mix; final sound review pending",
+  "shots": [
+    {
+      "name": "Resolve on the descent",
+      "path": "production/award-candidate/departure-omni.mp4",
+      "in": 36,
+      "out": 144,
+      "creation": "iGVtYXh3uK",
+      "sha256": "0c48d9e86c35f39baf103d34fa270a69ff8871cd272d40ea322152db12273e20",
+      "timelineStart": 0,
+      "timelineEnd": 4.5
+    },
+    {
+      "name": "A single outward departure",
+      "path": "production/award-candidate/departure-exterior-r2.mp4",
+      "in": 1,
+      "out": 193,
+      "creation": "3zMh05JREY",
+      "sha256": "cc5da7d11e8e01c8a78baa1afe7cd91d4be3fcf817a907d846223e4b42c87db7",
+      "timelineStart": 4.5,
+      "timelineEnd": 12.5
+    },
+    {
+      "name": "The hair-goods address",
+      "path": "production/magnific/gift-of-the-magi/scene-5/raw/02-shop-exterior-r3.mp4",
+      "in": 12,
+      "out": 228,
+      "sha256": "e1cb539e19a3020d3458a379a20d234ec4e5fd73b5632d528de2a05a7cc53018",
+      "timelineStart": 12.5,
+      "timelineEnd": 21.5
+    },
+    {
+      "name": "Up toward the shop; cut before the landing turn",
+      "path": "production/magnific/gift-of-the-magi/scene-5/raw/s5-stair-climb.mp4",
+      "in": 3,
+      "out": 84,
+      "sha256": "e9b34ba4149260b21272ec43dace28b3c8ea65ba2547eb4e614b3dc115eda97e",
+      "timelineStart": 21.5,
+      "timelineEnd": 24.875
+    },
+    {
+      "name": "Asking with hair still pinned",
+      "path": "production/award-candidate/shop-conversation-r3.mp4",
+      "in": 0,
+      "out": 204,
+      "creation": "5j7ZB4TKxe",
+      "sha256": "420028bbd7f22440a17e2015bfc47bb5bc437c8cb7b17a472913369e2e6903e6",
+      "timelineStart": 24.875,
+      "timelineEnd": 33.375
+    },
+    {
+      "name": "Sofronie answers; reaction coverage",
+      "path": "production/award-candidate/sofronie-reply-r1.mp4",
+      "in": 0,
+      "out": 60,
+      "creation": "iGVm7vJ3uK",
+      "sha256": "2b708148aa0db76cf53d334717431c8d80a5017a87a748d6fa27aed437690f7c",
+      "timelineStart": 33.375,
+      "timelineEnd": 35.875
+    },
+    {
+      "name": "Remove the hat once; begin unpinning",
+      "path": "production/award-candidate/shop-reveal-r3.mp4",
+      "in": 0,
+      "out": 72,
+      "creation": "JNGeHc5Oq4",
+      "sha256": "a26c8acf872e4d76853ce7cfa0d108a060280ba1e1d0df8356c43f1a65c5f64d",
+      "timelineStart": 35.875,
+      "timelineEnd": 38.875
+    },
+    {
+      "name": "Ellipsis to released hair and appraisal; exclude returned hat",
+      "path": "production/magnific/gift-of-the-magi/scene-5/raw/05-inspection.mp4",
+      "in": 72,
+      "out": 240,
+      "crop": "1600:900:200:0",
+      "creation": "XmQkO7nBfo",
+      "sha256": "128142d83d4711afedffb2c94945d59e197258f4d441736084ebe8f48aea7b80",
+      "timelineStart": 38.875,
+      "timelineEnd": 45.875
+    },
+    {
+      "name": "The decision; cut away before the haircut",
+      "path": "production/award-candidate/della-decision-r2.mp4",
+      "in": 0,
+      "out": 120,
+      "creation": "yinXzkyPW9",
+      "sha256": "d78ac7c9a900037e183edd2ec6a6c58aa9fb114b41de1a8b329e533cf1e249f1",
+      "timelineStart": 45.875,
+      "timelineEnd": 50.875
+    }
+  ]
+}

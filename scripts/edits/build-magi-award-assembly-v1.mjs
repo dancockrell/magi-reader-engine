@@ -7,14 +7,16 @@ import { spawnSync } from 'node:child_process';
 if (!process.argv[2]) throw new Error('Usage: node build-magi-award-assembly-v1.mjs <production-root>');
 const root = resolve(process.argv[2]);
 const dir = resolve(root, 'production/award-candidate');
-const output = resolve(dir, 'magi-award-assembly-v1.mp4');
+const revision2 = process.argv.includes('--revision-2');
+const stem = revision2 ? 'magi-award-assembly-v2' : 'magi-award-assembly-v1';
+const output = resolve(dir, stem + '.mp4');
 const inputs = [
   'public/video/films/magi-reader-film-final.mp4',
-  'production/award-candidate/scene5-award-v1.mp4',
+  revision2 ? 'production/award-candidate/scene5-award-v3.mp4' : 'production/award-candidate/scene5-award-v1.mp4',
   'production/magnific/gift-of-the-magi/scene-6/raw/08-chain-and-watch.mp4',
   'production/award-candidate/scene7-award-v1.mp4',
-  'production/magnific/gift-of-the-magi/scene-8/raw/01-coffee-pan.mp4',
-  'production/magnific/gift-of-the-magi/scene-8/raw/02-set-table.mp4',
+  revision2 ? 'production/award-candidate/supper-to-della-r1.mp4' : 'production/magnific/gift-of-the-magi/scene-8/raw/01-coffee-pan.mp4',
+  revision2 ? 'production/award-candidate/supper-insert-r2.mp4' : 'production/magnific/gift-of-the-magi/scene-8/raw/02-set-table.mp4',
 ];
 const shots = [
   { name:'Baseline opening through the two treasures', input:0, in:0, out:6869 },
@@ -22,8 +24,13 @@ const shots = [
   { name:'Baseline shopping and journey home', input:0, in:8090, out:9602 },
   { name:'Della imagines his pleasure; exclude the absent watch', input:2, in:0, out:230, crop:'1472:828:0:0' },
   { name:'Preparation and self-conscious inspection candidate', input:3, in:0, out:1281 },
-  { name:'Pan ready; release handle and leave the stove', input:4, in:132, out:180 },
-  { name:'Finish setting the table and turn toward the door', input:5, in:30, out:204 },
+  ...(revision2 ? [
+    { name:'Settle pan and look down; cut before wrong-direction glance', input:4, in:0, out:120 },
+    { name:'Supper ready; motivated insert, lamp-only table preserved', input:5, in:0, out:102 },
+  ] : [
+    { name:'Pan ready; release handle and leave the stove', input:4, in:132, out:180 },
+    { name:'Finish setting the table and turn toward the door', input:5, in:30, out:204 },
+  ]),
   { name:'Baseline clock through closing fade and credits', input:0, in:11335, out:21387 },
 ];
 function run(exe,args) {
@@ -53,6 +60,6 @@ filters.push(`${shots.map((_,i)=>`[v${i}]`).join('')}concat=n=${shots.length}:v=
 run('ffmpeg',['-y','-v','error',...inputs.flatMap(p=>['-i',p]),'-filter_complex',filters.join(';'),'-map','[picture]','-map','0:a:0','-c:v','libx264','-preset','medium','-crf','18','-pix_fmt','yuv420p','-c:a','copy','-movflags','+faststart',output]);
 if(Number(probe(output).nb_frames)!==frames)throw new Error('Assembly frame count changed.');
 run('ffmpeg',['-v','error','-i',output,'-f','null','-']);
-copyFileSync(resolve(root,'public/video/films/magi-reader-film-final.vtt'),resolve(dir,'magi-award-assembly-v1.vtt'));
-writeFileSync(resolve(dir,'magi-award-assembly-v1.json'),JSON.stringify({status:'local consolidated editorial review; not festival-ready or published',fps:24,frames,pictureSeconds:frames/24,audio:'Bitstream-copy of public baseline; final mix pending',outputSha256:createHash('sha256').update(readFileSync(output)).digest('hex'),sources,shots},null,2)+'\n');
+copyFileSync(resolve(root,'public/video/films/magi-reader-film-final.vtt'),resolve(dir,stem + '.vtt'));
+writeFileSync(resolve(dir,stem + '.json'),JSON.stringify({status:'local consolidated editorial review; not festival-ready or published',fps:24,frames,pictureSeconds:frames/24,audio:'Bitstream-copy of public baseline; final mix pending',outputSha256:createHash('sha256').update(readFileSync(output)).digest('hex'),sources,shots},null,2)+'\n');
 console.log(`Consolidated candidate: ${frames} frames. Public master unchanged.`);

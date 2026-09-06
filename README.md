@@ -21,7 +21,7 @@ No account, classroom workflow, explanatory host characters, or sentence-driven 
 
 This is a portfolio project by **Dan Cockrell**, combining application development with an AI-assisted film production workflow. Generated footage was treated as source material: selected, rejected, reshot and cut into an authored timeline.
 
-Picture, narration and music are baked into one film. The application does not stretch clips, loop shots or pause picture to catch individual sentences. The delivery is **1920 × 1080 at 24 fps**, approximately **14 minutes 42 seconds** including the closing coda.
+Picture, narration and music are baked into one film. The application does not stretch clips, loop shots or pause picture to catch individual sentences. The v0.9.6 delivery is **1920 × 1080 at 24 fps**, approximately **14 minutes 51 seconds** including titles and the closing coda.
 
 [Read the production case study](docs/FILM-PRODUCTION.md) · [Release checks](docs/PORTFOLIO-RELEASE.md)
 
