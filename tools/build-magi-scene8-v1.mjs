@@ -15,7 +15,7 @@ const shots = [
   { name: 'Jim climbs home', path: raw + '07-jim-stairs.mp4', in: 24, out: 120 },
   { name: 'A step on the stair', path: raw + '05-hears-step.mp4', in: 0, out: 132 },
   { name: 'A whispered prayer', path: raw + '06-prayer.mp4', in: 0, out: 240 },
-  { name: 'The door opens', path: raw + '08-door-open.mp4', in: 0, out: 132 },
+  { name: 'The door opens', path: 'production/polish-r4/raw/entrance.mp4', in: 0, out: 132 },
   { name: 'Young and burdened', path: raw + '10-jim-weary-r3.mp4', in: 48, out: 240 },
   { name: 'Della searches his face', path: raw + '11-della-search-r3.mp4', in: 48, out: 240 },
   { name: 'The stare', path: raw + '09-stare.mp4', in: 0, out: 192, crop: '1280:720:640:0' },

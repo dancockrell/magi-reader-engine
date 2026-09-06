@@ -9,7 +9,7 @@ const raw = 'production/magnific/gift-of-the-magi/scene-9/raw/';
 const output = resolve(root, 'public/video/films/magi-scene9-v1');
 const fps = 24;
 const shots = [
-  { name: 'Jim crosses the threshold', path: raw + '01-frozen-door-r2.mp4', in: 0, out: 144 },
+  { name: 'Jim listens inside with Della', path: 'production/polish-r4/raw/listening.mp4', in: 72, out: 216 },
   { name: 'Della explains', path: raw + '02-della-explains.mp4', in: 0, out: 240 },
   { name: 'It will grow again', path: raw + '13-reassurance-r3.mp4', in: 0, out: 240 },
   { name: 'A beautiful gift for Jim', path: raw + '10-look-at-me.mp4', in: 0, out: 240 },
@@ -19,8 +19,8 @@ const shots = [
   { name: 'Christmas Eve appeal to her husband', path: raw + '14-appeal-r3.mp4', in: 0, out: 240 },
   { name: 'Love cannot be counted', path: raw + '06-love-uncountable.mp4', in: 0, out: 240 },
   { name: 'The chops wait', path: raw + '07-chops-insert.mp4', in: 0, out: 120 },
-  { name: 'Jim wakes and embraces her', path: raw + '08-embrace-r3.mp4', in: 24, out: 120 },
-  { name: 'A ten second look away', path: raw + '09-window-breath.mp4', in: 0, out: 240 },
+  { name: 'Jim wakes and embraces her', path: 'production/polish-r4/raw/embrace-barehands.mp4', in: 12, out: 108, crop: '1280:720:400:0' },
+  { name: 'A ten second look away', path: 'production/polish-r4/raw/lamp.mp4', in: 0, out: 240 },
   { name: 'Back to the chops', path: raw + '11-check-chops.mp4', in: 0, out: 121 },
   { name: 'Jim softens', path: raw + '12-jim-softens.mp4', in: 0, out: 241 },
 ];
@@ -36,7 +36,11 @@ for (const shot of shots) {
   if (stream.r_frame_rate !== '24/1' || Number(stream.nb_frames) < shot.out) throw new Error(`Native 24fps / source-length gate failed: ${shot.path}`);
 }
 
-const filters = shots.map((shot, i) => `[${i}:v]trim=start_frame=${shot.in}:end_frame=${shot.out},setpts=PTS-STARTPTS,scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih),setsar=1,settb=AVTB[v${i}]`);
+const filters = shots.map((shot, i) =>
+  `[${i}:v]trim=start_frame=${shot.in}:end_frame=${shot.out},setpts=PTS-STARTPTS,` +
+  (shot.crop ? `crop=${shot.crop},` : '') +
+  `scale=1920:1080:force_original_aspect_ratio=decrease,pad=1920:1080:(ow-iw)/2:(oh-ih),setsar=1,settb=AVTB[v${i}]`
+);
 filters.push(`${shots.map((_, i) => `[v${i}]`).join('')}concat=n=${shots.length}:v=1:a=0[picture]`);
 let cursor = 0;
 for (const shot of shots) { shot.timelineStart = cursor / fps; cursor += shot.out - shot.in; shot.timelineEnd = cursor / fps; }

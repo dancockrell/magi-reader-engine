@@ -3,6 +3,7 @@ name: Solo reader CI
 on:
   push:
     branches:
+      - main
       - solo-reader-redesign
   pull_request:
     branches:
