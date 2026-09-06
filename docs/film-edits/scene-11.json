@@ -6,6 +6,9 @@
   "shots": [
     {
       "name": "Della remembers her gift",
+      "admission": "rejected-watch-present",
+      "review": "chain-without-watch-r13.md",
+      "rejectionReason": "Watch-like object attached to chain contradicts Jim having sold the watch. Replace; do not reuse this range in the next master.",
       "path": "production/magnific/gift-of-the-magi/scene-11/raw/01-della-chain.mp4",
       "in": 0,
       "out": 211,
