@@ -26,7 +26,7 @@ export default defineConfig({
   plugins: [react(), ...(single ? [viteSingleFile()] : []), {
     name: 'curated-reader-media',
     closeBundle() {
-      const files = ['art', 'magi-audio', 'cues', 'manifest.webmanifest', 'app-icon.svg', 'sw.js', 'video/films/magi-reader-film-final.vtt'];
+      const files = ['art', 'magi-audio', 'cues', 'manifest.webmanifest', 'app-icon.svg', 'app-icon-192.png', 'app-icon-512.png', 'sw.js', 'video/films/magi-reader-film-final.vtt'];
       mkdirSync('dist/video/films', { recursive: true });
       for (const file of files) {
         if (existsSync('public/' + file)) cpSync('public/' + file, 'dist/' + file, { recursive: true });
