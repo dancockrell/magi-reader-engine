@@ -89,3 +89,7 @@ because a generation has already cost credits.
   watch wrongly present with Della's chain and the following stove/table layout.
 - [Sound pass](film-edits/award-sound-pass.md): original-voice stem prepared for
   a whole-film mix; listening and musical phrase selection are not yet complete.
+- [Prop continuity and consolidated assembly](film-edits/award-props-and-assembly-review.md):
+  watch-excluding framing, tighter kitchen coverage, and correction of the earlier
+  mistaken stove/table diagnosis. Local review assembly, not a public replacement.
+- [Independent screening brief](film-edits/SCREENING-BRIEF.md): prepared, not sent.

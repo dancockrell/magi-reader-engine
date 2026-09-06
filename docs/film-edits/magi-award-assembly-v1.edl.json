@@ -1,0 +1,137 @@
+{
+  "status": "local consolidated editorial review; not festival-ready or published",
+  "fps": 24,
+  "frames": 21387,
+  "pictureSeconds": 891.125,
+  "audio": "Bitstream-copy of public baseline; final mix pending",
+  "outputSha256": "7ad4d33a92d92dced0f27b0a9ee0acf089d85bcc0ccad11d634e676bf52aba0a",
+  "sources": [
+    {
+      "path": "public/video/films/magi-reader-film-final.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "21387"
+      },
+      "sha256": "1d2d36254c255723c7b34fa019371e5c0e0e35710aeef1e07b0883b80ec96ed6"
+    },
+    {
+      "path": "production/award-candidate/scene5-award-v1.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "1221"
+      },
+      "sha256": "2ff7f74e4e295006700cf0c73d2b311f188b4e885664eb697091f5129847b5b4"
+    },
+    {
+      "path": "production/magnific/gift-of-the-magi/scene-6/raw/08-chain-and-watch.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "241"
+      },
+      "sha256": "0a4f4a8b4163422e977917328da8268f1f0fe3e452c594f544e6cb7ef82e7190"
+    },
+    {
+      "path": "production/award-candidate/scene7-award-v1.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "1281"
+      },
+      "sha256": "137563a8c4f45610615058e41a810e28f96e53aa121e0564737c4ec117a944c2"
+    },
+    {
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/01-coffee-pan.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "241"
+      },
+      "sha256": "91808114ed99c732aa51782bf3b3120cf90fb3ed938be38d56cb3b02d6442e92"
+    },
+    {
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/02-set-table.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "241"
+      },
+      "sha256": "7eea5c04c044b9e12c59568456f472cd6a368448d525de2d6ba2214f39ed3ef2"
+    }
+  ],
+  "shots": [
+    {
+      "name": "Baseline opening through the two treasures",
+      "input": 0,
+      "in": 0,
+      "out": 6869,
+      "timelineStartFrame": 0,
+      "timelineEndFrame": 6869
+    },
+    {
+      "name": "Departure and hair-sale candidate",
+      "input": 1,
+      "in": 0,
+      "out": 1221,
+      "timelineStartFrame": 6869,
+      "timelineEndFrame": 8090
+    },
+    {
+      "name": "Baseline shopping and journey home",
+      "input": 0,
+      "in": 8090,
+      "out": 9602,
+      "timelineStartFrame": 8090,
+      "timelineEndFrame": 9602
+    },
+    {
+      "name": "Della imagines his pleasure; exclude the absent watch",
+      "input": 2,
+      "in": 0,
+      "out": 230,
+      "crop": "1472:828:0:0",
+      "timelineStartFrame": 9602,
+      "timelineEndFrame": 9832
+    },
+    {
+      "name": "Preparation and self-conscious inspection candidate",
+      "input": 3,
+      "in": 0,
+      "out": 1281,
+      "timelineStartFrame": 9832,
+      "timelineEndFrame": 11113
+    },
+    {
+      "name": "Pan ready; release handle and leave the stove",
+      "input": 4,
+      "in": 132,
+      "out": 180,
+      "timelineStartFrame": 11113,
+      "timelineEndFrame": 11161
+    },
+    {
+      "name": "Finish setting the table and turn toward the door",
+      "input": 5,
+      "in": 30,
+      "out": 204,
+      "timelineStartFrame": 11161,
+      "timelineEndFrame": 11335
+    },
+    {
+      "name": "Baseline clock through closing fade and credits",
+      "input": 0,
+      "in": 11335,
+      "out": 21387,
+      "timelineStartFrame": 11335,
+      "timelineEndFrame": 21387
+    }
+  ]
+}
