@@ -11,7 +11,7 @@ const shots = [
   { name: 'The two treasures', path: raw + '01-two-treasures.mp4', in: 0, out: 223 },
   { name: 'Hair like brown water', path: raw + '02-hair.mp4', in: 0, out: 223 },
   { name: 'The Queen of Sheba', path: raw + '03-sheba.mp4', in: 0, out: 223 },
-  { name: 'The heirloom watch', path: raw + '04-watch.mp4', in: 0, out: 223 },
+  { name: 'The heirloom watch — supported open palm', path: 'production/polish-r5/raw/watch-omni.mp4', in: 0, out: 223 },
   { name: 'King Solomon', path: raw + '05-solomon.mp4', in: 0, out: 222 },
   { name: 'Pinned up again', path: raw + '06-repin.mp4', in: 0, out: 222 },
   { name: 'Two tears', path: raw + '07-tears.mp4', in: 39, out: 241 },

@@ -4,7 +4,7 @@
 
 O. Henry’s *The Gift of the Magi*, adapted into a narrated short film and a quiet, installable reading app.
 
-[**Open the app**](https://dancockrell.github.io/magi-reader-engine/) · [**Watch the film**](https://dancockrell.github.io/magi-reader-engine/film.html) · [**Download the 1080p film**](https://github.com/dancockrell/magi-reader-engine/releases/download/v0.9.1-portfolio/the-gift-of-the-magi.mp4)
+[**Open the app**](https://dancockrell.github.io/magi-reader-engine/) · [**Watch the film**](https://dancockrell.github.io/magi-reader-engine/film.html) · [**Download the 1080p film**](https://github.com/dancockrell/magi-reader-engine/releases/download/v0.9.2-portfolio/the-gift-of-the-magi.mp4)
 
 [![Della counting her savings](public/art/storyboard/s1/s1-a-counting.jpg)](https://dancockrell.github.io/magi-reader-engine/film.html)
 

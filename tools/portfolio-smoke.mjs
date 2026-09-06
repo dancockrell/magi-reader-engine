@@ -23,7 +23,7 @@ try {
     return player.play();
   });
   await page.waitForFunction(() => document.querySelector('video').currentTime > 1);
-  for (const seconds of [480, 494, 540, 610, 631, 638, 880]) {
+  for (const seconds of [244, 480, 494, 540, 610, 631, 638, 880]) {
     await video.evaluate((element, time) => { /** @type {HTMLVideoElement} */ (element).currentTime = time; }, seconds);
     await page.waitForFunction(time => {
       const v = document.querySelector('video');

@@ -4,6 +4,10 @@ The brief: turn a literary story into a coherent narrated film, then give viewer
 
 ## Editorial approach
 
+Reviews and reshoot briefs follow the [intent-led evaluation loop](EVALUATION-LOOP.md).
+Each correction carries a [shot review record](templates/SHOT-REVIEW.md) through
+diagnosis, generation, admission and verification of the delivered film.
+
 The narration is the story spine, but individual sentences do not control video playback. Clips are cut at native speed and assembled into one continuous film with its soundtrack. Major actions should land close to the corresponding narration without forcing every line to become a shot.
 
 The production process uses character and location anchors, short generated takes, ordered visual inspection, adjacent-frame diagnostics, reshoots, and explicit source-frame edit decisions. Automated motion reports flag candidates for review; they cannot certify believable acting, correct anatomy or narrative meaning.
