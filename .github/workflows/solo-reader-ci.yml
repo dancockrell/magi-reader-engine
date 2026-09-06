@@ -1,13 +1,17 @@
 name: Solo reader CI
 
+# Proposed changes run once through their pull request; main remains verified.
+# Manual branch runs are available once this workflow is on the default branch.
 on:
   push:
-    branches:
-      - main
-      - solo-reader-redesign
+    branches: [main]
   pull_request:
-    branches:
-      - main
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 
 jobs:
   verify:
