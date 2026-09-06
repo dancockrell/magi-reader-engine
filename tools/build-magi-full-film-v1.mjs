@@ -7,7 +7,7 @@ const ffmpeg = resolve(root, 'tools/ffmpeg/bin/ffmpeg.exe');
 const ffprobe = resolve(root, 'tools/ffmpeg/bin/ffprobe.exe');
 const fps = 24;
 const story = [
-  { unit: 1, file: 'public/video/films/magi-opening-v11-preview.mp4', frames: 1201 },
+  { unit: 1, file: 'public/video/films/magi-opening-v14-preview.mp4', frames: 1291, narrationOffset: 3.75 },
   { unit: 2, file: 'public/video/films/magi-scene2-v1-preview.mp4', frames: 1650 },
   { unit: 3, file: 'public/video/films/magi-scene3-v1-preview.mp4', frames: 2258 },
   { unit: 4, file: 'public/video/films/magi-scene4-v1-preview.mp4', frames: 1538 },
@@ -52,14 +52,14 @@ let sceneStart = 0; const cues = []; const unitReports = [];
 for (const scene of story) {
   const unit = book.units[scene.unit - 1];
   const lines = unit.stanzas.join('\n').split('\n').map((line) => line.replace(/\{([^|}]+)\|[^}]+\}/g, '$1'));
-  let voiceTime = 0;
+  let voiceTime = scene.narrationOffset || 0;
   lines.forEach((line, i) => {
     const voice = `public/magi-audio/n_s${scene.unit}_${i}.mp3`;
     const length = Number(run(ffprobe, ['-v','error','-show_entries','format=duration','-of','default=nokey=1:noprint_wrappers=1',voice]).trim());
     const start = sceneStart + voiceTime; voiceTime += length;
     cues.push(`${stamp(start)} --> ${stamp(sceneStart + voiceTime)}\n${line}\n`);
   });
-  unitReports.push({ unit: scene.unit, frames: scene.frames, pictureSeconds: scene.frames / fps, narrationSeconds: voiceTime, driftSeconds: scene.frames / fps - voiceTime });
+  unitReports.push({ unit: scene.unit, frames: scene.frames, pictureSeconds: scene.frames / fps, narrationOffset: scene.narrationOffset || 0, narrationSeconds: voiceTime - (scene.narrationOffset || 0), driftSeconds: scene.frames / fps - voiceTime });
   sceneStart += scene.frames / fps;
 }
 writeFileSync(resolve(root, vtt), 'WEBVTT\n\n' + cues.join('\n'));

@@ -23,7 +23,7 @@ try {
     return player.play();
   });
   await page.waitForFunction(() => document.querySelector('video').currentTime > 1);
-  for (const seconds of [244, 480, 494, 540, 610, 631, 638, 880]) {
+  for (const seconds of [2, 5, 7, 22, 54, 248, 498, 614, 642, 884.5]) {
     await video.evaluate((element, time) => { /** @type {HTMLVideoElement} */ (element).currentTime = time; }, seconds);
     await page.waitForFunction(time => {
       const v = document.querySelector('video');
@@ -38,5 +38,5 @@ try {
   if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) throw new Error('Mobile horizontal overflow');
   await page.screenshot({ path: 'test-results/portfolio/bookshelf-mobile.png', fullPage: true });
   if (errors.length) throw new Error(errors.join('\n'));
-  console.log(JSON.stringify({ base, desktop: true, mobile: true, text: true, remoteVideoPlayback: true, mutedReview: true, seekSeconds: [480,494,540,610,631,638,880], pageErrors: errors }));
+  console.log(JSON.stringify({ base, desktop: true, mobile: true, text: true, remoteVideoPlayback: true, mutedReview: true, seekSeconds: [2,5,7,22,54,248,498,614,642,884.5], pageErrors: errors }));
 } finally { await browser.close(); }
