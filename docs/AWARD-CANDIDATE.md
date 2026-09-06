@@ -131,6 +131,13 @@ because a generation has already cost credits.
   and after the embrace. Completed full export, changed joins and closing fade
   checked; baseline soundtrack and captions preserved. Local review only.
 - [Seated revelation timing](film-edits/award-revelation-timing-review.md):
-  closer review corrects a coarse-sample identity misreading: Jim is seated,
-  but his couch shot arrives about seven seconds after the narrated action.
-  Timing and the following standing reset remain to be corrected.
+  new seated Jim and matching standing Della coverage replaces the late couch
+  beat and standing reset. Exact ranges reviewed in baked local context and
+  the completed v6 export. No visible table/watch in the new coverage.
+- [Viewer findings: penny mechanics and Jim's ascent](film-edits/award-viewer-findings-r6.md):
+  merging-coin contact and wrong-side-of-banister geography replaced with new
+  physically legible setups. Native contact/footwork detail and contextual
+  cuts reviewed. Included in the completed local v6 export, not the public baseline.
+  [Full v6 verification](film-edits/award-viewer-findings-r6.md#full-assembly-v6-delivery-verification)
+  records the 21,387-frame decode, inspected changed joins, preserved audio and
+  captions, final fade and pinned source ranges. Sound and screening gates remain.

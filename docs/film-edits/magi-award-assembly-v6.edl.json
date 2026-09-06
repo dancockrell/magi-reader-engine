@@ -1,0 +1,136 @@
+{
+  "status": "local review only; not picture-locked, sound-approved or published",
+  "mode": "full",
+  "fps": 24,
+  "frames": 21387,
+  "baselineStartFrame": 0,
+  "pictureSeconds": 891.125,
+  "outputSha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+  "audio": "Baseline AAC bitstream copy",
+  "sources": [
+    {
+      "file": "magi-award-assembly-v5.mp4",
+      "sha256": "f94644244b0036b11d60f579108e75c2067f13a9922f51577ccac5b6033ab3e8",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "21387"
+      }
+    },
+    {
+      "file": "penny-isolated-r1.mp4",
+      "sha256": "2a4dd7f073f49e70950f60383d82fd95e1134a1de58077059642fe94008f5b29",
+      "probe": {
+        "width": 1916,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "145"
+      }
+    },
+    {
+      "file": "jim-ascent-r1.mp4",
+      "sha256": "ae624473916798c5a5e5f80ce5d9dce20212ba76f25114e222a35a6bdc16d585",
+      "probe": {
+        "width": 1916,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "121"
+      }
+    },
+    {
+      "file": "jim-revelation-r1.mp4",
+      "sha256": "fad6ce3e7617f181e82b7e98e0f09a9782061255116498b039d001160f316807",
+      "probe": {
+        "width": 1916,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "361"
+      }
+    },
+    {
+      "file": "della-listening-r1.mp4",
+      "sha256": "4b52792ee89b3c46c10997c0e2744191b7aebf7d008422cad6930d6342e0bd3d",
+      "probe": {
+        "width": 1916,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "241"
+      }
+    }
+  ],
+  "shots": [
+    {
+      "file": "magi-award-assembly-v5.mp4",
+      "start": 0,
+      "end": 819,
+      "reason": "Opening and third count setup",
+      "timelineStartFrame": 0,
+      "timelineEndFrame": 819
+    },
+    {
+      "file": "penny-isolated-r1.mp4",
+      "start": 0,
+      "end": 121,
+      "reason": "One isolated rigid penny",
+      "timelineStartFrame": 819,
+      "timelineEndFrame": 940
+    },
+    {
+      "file": "magi-award-assembly-v5.mp4",
+      "start": 940,
+      "end": 11569,
+      "reason": "Preserved film through Della waiting",
+      "timelineStartFrame": 940,
+      "timelineEndFrame": 11569
+    },
+    {
+      "file": "jim-ascent-r1.mp4",
+      "start": 0,
+      "end": 96,
+      "reason": "Jim climbs on the visible treads",
+      "timelineStartFrame": 11569,
+      "timelineEndFrame": 11665
+    },
+    {
+      "file": "magi-award-assembly-v5.mp4",
+      "start": 11665,
+      "end": 18957,
+      "reason": "Preserved hearing, gifts and request for watch",
+      "timelineStartFrame": 11665,
+      "timelineEndFrame": 18957
+    },
+    {
+      "file": "jim-revelation-r1.mp4",
+      "start": 0,
+      "end": 189,
+      "reason": "Jim seated at the narrated couch beat",
+      "timelineStartFrame": 18957,
+      "timelineEndFrame": 19146
+    },
+    {
+      "file": "della-listening-r1.mp4",
+      "start": 0,
+      "end": 229,
+      "reason": "Della listens before the watch disclosure",
+      "timelineStartFrame": 19146,
+      "timelineEndFrame": 19375
+    },
+    {
+      "file": "jim-revelation-r1.mp4",
+      "start": 189,
+      "end": 360,
+      "reason": "Jim reveals the sacrifice; distinct later source range",
+      "timelineStartFrame": 19375,
+      "timelineEndFrame": 19546
+    },
+    {
+      "file": "magi-award-assembly-v5.mp4",
+      "start": 19546,
+      "end": 21387,
+      "reason": "Magi conclusion and closing fade",
+      "timelineStartFrame": 19546,
+      "timelineEndFrame": 21387
+    }
+  ]
+}
