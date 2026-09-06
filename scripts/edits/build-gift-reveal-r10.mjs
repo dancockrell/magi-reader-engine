@@ -7,7 +7,10 @@ import {spawnSync} from 'node:child_process';
 // This excerpt stops before the still-unrepaired comforting coverage.
 if (!process.argv[2]) throw new Error('Supply the production root');
 const root=resolve(process.argv[2]), dir=resolve(root,'production/award-candidate');
-const name='gift-reveal-context-r10', output=resolve(dir,name+'.mp4');
+const mode=process.argv[3]??'r10';
+if(!['r10','comfort-r11'].includes(mode))throw new Error('Unknown edit mode');
+const comfort=mode==='comfort-r11';
+const name=comfort?'gift-reveal-context-r11':'gift-reveal-context-r10', output=resolve(dir,name+'.mp4');
 if(existsSync(output)) throw new Error('Preserve the existing reviewed render');
 const base=resolve(dir,'magi-award-assembly-v6.mp4');
 const sources=[
@@ -18,6 +21,7 @@ const sources=[
  ['unwrap-r10.mp4','826fa477b9a6b1b56501a63534fb25b8b1dee74510cd5400659624770a9de63e',1916],
  ['reaction-r10.mp4','8c1a9049d6186873090b0b9b496aa53dfe3bf03a9e09a314ea661ca55564c5d3',1916],
 ];
+if(comfort)sources.push(['comfort-r11.mp4','3841beb55099a884aecf2908497f3af4b71192b3f385a430f362ec7685343e8a',1916]);
 async function hash(file){const h=createHash('sha256');for await(const c of createReadStream(file)) h.update(c);return h.digest('hex');}
 function run(exe,args){const r=spawnSync(resolve(root,'tools/ffmpeg/bin/'+exe+'.exe'),args,{encoding:'utf8',windowsHide:true,maxBuffer:4*1024*1024});if(r.status!==0)throw new Error(r.stderr);return r.stdout;}
 const probe=file=>JSON.parse(run('ffprobe',['-v','error','-select_streams','v:0','-show_entries','stream=width,height,r_frame_rate,nb_frames','-of','json',file])).streams[0];
@@ -40,9 +44,10 @@ const edits=[
  {input:5,range:[12,180],frame:pad,note:'Continuous string/paper opening; stop before idle case tail'},
  {input:6,range:[0,240],frame:pad,note:'Delight becomes tears; look to Jim'},
 ];
+if(comfort)edits.push({input:7,range:[1,145],frame:pad,note:'Matching standing comfort; omit duplicate anchor frame, six native seconds'});
 for(const e of edits)if(e.input && Number(probe(resolve(dir,sources[e.input-1][0])).nb_frames)<e.range[1])throw new Error('Range exceeds source');
 const start=664.25,frames=edits.reduce((n,e)=>n+e.range[1]-e.range[0],0),duration=frames/24;
-if(frames!==1032)throw new Error('Edit timing changed');
+if(frames!==(comfort?1176:1032))throw new Error('Edit timing changed');
 const filters=edits.map((e,i)=>'['+e.input+':v]trim=start_frame='+e.range[0]+':end_frame='+e.range[1]+',setpts=PTS-STARTPTS,'+e.frame+',setsar=1,settb=AVTB[v'+i+']');
 filters.push(edits.map((_,i)=>'[v'+i+']').join('')+'concat=n='+edits.length+':v=1:a=0[v]');
 filters.push('[0:a]atrim=start=0:end='+duration+',asetpts=PTS-STARTPTS[a]');
@@ -62,6 +67,5 @@ const cues=readFileSync(resolve(dir,'magi-award-assembly-v6.vtt'),'utf8').split(
  return b<=0||a>=duration?[]:[stamp(Math.max(0,a))+' --> '+stamp(Math.min(duration,b))+'\n'+lines.slice(1).join('\n')];
 });
 writeFileSync(resolve(dir,name+'.vtt'),'WEBVTT\n\n'+cues.join('\n\n')+'\n');
-writeFileSync(resolve(dir,name+'.json'),JSON.stringify({status:'Local reviewed-range audition; comforting and remaining reveal still pending',baselineHash:baseHash,start,frames,fps:24,sources,edits,audio:'Original v6 mix excerpted and AAC re-encoded, no narrator retake',outputHash:await hash(output)},null,2)+'\n');
-console.log('43-second native-frame reveal excerpt baked and decoded; screening and public master unchanged.');
-
+writeFileSync(resolve(dir,name+'.json'),JSON.stringify({status:comfort?'Local comfort audition; comb reveal and remaining scene pending':'Local reviewed-range audition; comforting and remaining reveal still pending',baselineHash:baseHash,start,frames,fps:24,sources,edits,audio:'Original v6 mix excerpted and AAC re-encoded, no narrator retake',outputHash:await hash(output)},null,2)+'\n');
+console.log(duration+'-second native-frame reveal excerpt baked and decoded; screening and public master unchanged.');

@@ -1,7 +1,7 @@
 # Comfort continuation R11
 
-6 September 2026. Status: briefed and generation processing; NOT admitted,
-baked or published. Continues the R10 gift-reveal edit, not a new runtime.
+6 September 2026. Status: source reviewed; contextual bake reviewed,
+not published. Continues the R10 gift-reveal edit, not a new runtime.
 
 ## Intent and diagnosis
 
@@ -68,3 +68,34 @@ No output downloaded or reviewed yet. Local/public master and male narrator
 remain unchanged. Whole-film integration, sound review, independent assessment
 and festival eligibility are still outstanding; this is not an award-ready claim.
 
+### Completed take review (supersedes processing status above)
+
+Take completed; saved as production/award-candidate/comfort-r11.mp4.
+SHA256:3841beb55099a884aecf2908497f3af4b71192b3f385a430f362ec7685343e8a.
+1916x1080,193 native24 frames,no audio. Entire193 frames inspected in five
+ordered sheets; frames58–81 enlarged for cheek/coat and arm contact.
+Two adults throughout, same blue/cream costume and dark coat. Jim briefly
+inclines and she looks up, then accepts the embrace around frame70. Her grief
+continues rather than becoming abruptly cheerful. Breathing and small facial
+motion continue through the tail. No observed merged face or duplicate body.
+Diagnostic192 transitions: zero near-static,local jump or ABA flags. These
+diagnostics do not independently certify anatomy or acting.
+Admit [1,145),six seconds for contextual review: omit repeated starting anchor,
+retain native motion and pad two pixels per side. No retiming or freeze.
+Following comb shot remains unfilmed. Neither festival thread has a reply in
+the current check; only our sent enquiry is present in each.
+
+### Baked contextual review
+
+production/award-candidate/gift-reveal-context-r11.mp4:
+SHA256:420fa13cc85ea16cd6f4e6ffc70438dc9c3b7b4f3143d116b8cd38c028a5a718.
+1176 frames,49 seconds,1920x1080 native24; full decode passed. Originalv6
+mix excerpted and AAC re-encoded; no narrator retake. Matching VTT/JSON saved.
+Whole49-second one-second overview and twelve consecutive baked frames around
+the new join1032 inspected. No visible position reset at the reaction/comfort
+join. Comfort starts707.250; embrace develops about710.2 during the narrated
+comforting powers. Excerpt ends713.250,0.432 seconds after the combs clause
+begins, ready for the planned detail. No frozen endpoint is proposed.
+Other R10 ranges and crops unchanged. Full-speed sound-on independent review,
+following insert join and full-film master integration remain outstanding.
+Screening/public files untouched; this is a local49-second review excerpt.
