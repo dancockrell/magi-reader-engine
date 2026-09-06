@@ -12,6 +12,14 @@ The current source targets `v0.9.1-portfolio`. See [the shot-level polish report
 - Browser smoke review is muted and now includes 494, 540 and 638 seconds as well as the earlier checkpoints.
 - Publication is versioned rather than overwriting the original release's movie.
 
+Published verification on 6 September 2026:
+
+- [Release 0.9.1](https://github.com/dancockrell/magi-reader-engine/releases/tag/v0.9.1-portfolio) is public, not a draft or prerelease; all three assets are uploaded. GitHub's MP4 digest matches the reviewed local file above.
+- Source release commit: `b0aa5d5820153f42e91bc3f8a0c6cf2916508cc7`; [CI passed](https://github.com/dancockrell/magi-reader-engine/actions/runs/34006241783).
+- Pages delivery commit: `4279f1534cfb021aa6355692f2958d528606f3fb`; [deployment passed](https://github.com/dancockrell/magi-reader-engine/actions/runs/34006327046).
+- The same muted browser check passed against both the local production preview and the public Pages site: desktop, 390px bookshelf, text route, remote movie playback, seeks at 480/494/540/610/631/638/880 seconds, and zero page errors.
+- Release archive: 36,335,184 bytes. Previous release remains available for recovery.
+
 ## 0.9.0 historical release checks
 
 - [x] Complete waiting-scene export: entrance at scene time 38.500s, narration at 38.592s.
