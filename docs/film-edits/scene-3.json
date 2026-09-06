@@ -1,0 +1,115 @@
+{
+  "fps": 24,
+  "frames": 2258,
+  "duration": 94.08333333333333,
+  "narrationSeconds": 94.08,
+  "shots": [
+    {
+      "name": "The last coins",
+      "path": "production/magnific/gift-of-the-magi/scene-3/raw/01-counting.mp4",
+      "in": 0,
+      "out": 227,
+      "timelineStart": 0,
+      "timelineEnd": 9.458333333333334
+    },
+    {
+      "name": "Gray cat and gray fence",
+      "path": "production/magnific/gift-of-the-magi/scene-3/raw/02-cat-window-r2.mp4",
+      "in": 0,
+      "out": 227,
+      "timelineStart": 9.458333333333334,
+      "timelineEnd": 18.916666666666668
+    },
+    {
+      "name": "The narrow flat",
+      "path": "production/magnific/gift-of-the-magi/scene-3/raw/03-cross-room.mp4",
+      "in": 0,
+      "out": 227,
+      "timelineStart": 18.916666666666668,
+      "timelineEnd": 28.375
+    },
+    {
+      "name": "An idea arrives",
+      "path": "production/magnific/gift-of-the-magi/scene-3/raw/04-idea-r2.mp4",
+      "in": 0,
+      "out": 227,
+      "timelineStart": 28.375,
+      "timelineEnd": 37.833333333333336
+    },
+    {
+      "name": "The pier glass",
+      "path": "production/magnific/gift-of-the-magi/scene-3/raw/05-mirror.mp4",
+      "in": 0,
+      "out": 227,
+      "timelineStart": 37.833333333333336,
+      "timelineEnd": 47.291666666666664
+    },
+    {
+      "name": "First hairpin",
+      "path": "production/magnific/gift-of-the-magi/scene-3/raw/06-hairpin.mp4",
+      "in": 0,
+      "out": 227,
+      "timelineStart": 47.291666666666664,
+      "timelineEnd": 56.75
+    },
+    {
+      "name": "Hair loosens",
+      "path": "production/magnific/gift-of-the-magi/scene-3/raw/07-loosening.mp4",
+      "in": 0,
+      "out": 227,
+      "timelineStart": 56.75,
+      "timelineEnd": 66.20833333333333
+    },
+    {
+      "name": "The cascade",
+      "path": "production/magnific/gift-of-the-magi/scene-3/raw/08-cascade.mp4",
+      "in": 24,
+      "out": 241,
+      "timelineStart": 66.20833333333333,
+      "timelineEnd": 75.25
+    },
+    {
+      "name": "Weighing its value",
+      "path": "production/magnific/gift-of-the-magi/scene-3/raw/09-gather.mp4",
+      "in": 0,
+      "out": 226,
+      "timelineStart": 75.25,
+      "timelineEnd": 84.66666666666667
+    },
+    {
+      "name": "Resolve",
+      "path": "production/magnific/gift-of-the-magi/scene-3/raw/10-resolve.mp4",
+      "in": 0,
+      "out": 226,
+      "timelineStart": 84.66666666666667,
+      "timelineEnd": 94.08333333333333
+    }
+  ],
+  "voices": [
+    "public/magi-audio/n_s3_0.mp3",
+    "public/magi-audio/n_s3_1.mp3",
+    "public/magi-audio/n_s3_2.mp3",
+    "public/magi-audio/n_s3_3.mp3",
+    "public/magi-audio/n_s3_4.mp3",
+    "public/magi-audio/n_s3_5.mp3",
+    "public/magi-audio/n_s3_6.mp3",
+    "public/magi-audio/n_s3_7.mp3",
+    "public/magi-audio/n_s3_8.mp3",
+    "public/magi-audio/n_s3_9.mp3",
+    "public/magi-audio/n_s3_10.mp3",
+    "public/magi-audio/n_s3_11.mp3",
+    "public/magi-audio/n_s3_12.mp3",
+    "public/magi-audio/n_s3_13.mp3",
+    "public/magi-audio/n_s3_14.mp3",
+    "public/magi-audio/n_s3_15.mp3",
+    "public/magi-audio/n_s3_16.mp3",
+    "public/magi-audio/n_s3_17.mp3",
+    "public/magi-audio/n_s3_18.mp3",
+    "public/magi-audio/n_s3_19.mp3",
+    "public/magi-audio/n_s3_20.mp3",
+    "public/magi-audio/n_s3_21.mp3",
+    "public/magi-audio/n_s3_22.mp3",
+    "public/magi-audio/n_s3_23.mp3",
+    "public/magi-audio/n_s3_24.mp3"
+  ]
+}

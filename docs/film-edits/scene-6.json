@@ -1,0 +1,96 @@
+{
+  "fps": 24,
+  "frames": 1742,
+  "duration": 72.58333333333333,
+  "narrationSeconds": 72.6,
+  "shots": [
+    {
+      "name": "Searching the street",
+      "path": "production/magnific/gift-of-the-magi/scene-6/raw/01-street-search.mp4",
+      "in": 0,
+      "out": 228,
+      "timelineStart": 0,
+      "timelineEnd": 9.5
+    },
+    {
+      "name": "Turning the stores inside out",
+      "path": "production/magnific/gift-of-the-magi/scene-6/raw/02-jeweler-search.mp4",
+      "in": 0,
+      "out": 216,
+      "timelineStart": 9.5,
+      "timelineEnd": 18.5
+    },
+    {
+      "name": "Made for Jim",
+      "path": "production/magnific/gift-of-the-magi/scene-6/raw/03-chain-reveal.mp4",
+      "in": 0,
+      "out": 216,
+      "timelineStart": 18.5,
+      "timelineEnd": 27.5
+    },
+    {
+      "name": "Quietness and value",
+      "path": "production/magnific/gift-of-the-magi/scene-6/raw/04-chain-macro.mp4",
+      "in": 0,
+      "out": 192,
+      "timelineStart": 27.5,
+      "timelineEnd": 35.5
+    },
+    {
+      "name": "Worthy of the watch",
+      "path": "production/magnific/gift-of-the-magi/scene-6/raw/05-chain-recognition.mp4",
+      "in": 0,
+      "out": 216,
+      "timelineStart": 35.5,
+      "timelineEnd": 44.5
+    },
+    {
+      "name": "Twenty-one dollars",
+      "path": "production/magnific/gift-of-the-magi/scene-6/raw/06-transaction.mp4",
+      "in": 0,
+      "out": 216,
+      "timelineStart": 44.5,
+      "timelineEnd": 53.5
+    },
+    {
+      "name": "Home with eighty-seven cents",
+      "path": "production/magnific/gift-of-the-magi/scene-6/raw/07-hurry-home.mp4",
+      "in": 0,
+      "out": 228,
+      "timelineStart": 53.5,
+      "timelineEnd": 63
+    },
+    {
+      "name": "The old leather strap",
+      "path": "production/magnific/gift-of-the-magi/scene-6/raw/08-chain-and-watch.mp4",
+      "in": 0,
+      "out": 230,
+      "timelineStart": 63,
+      "timelineEnd": 72.58333333333333
+    }
+  ],
+  "voices": [
+    "public/magi-audio/n_s6_0.mp3",
+    "public/magi-audio/n_s6_1.mp3",
+    "public/magi-audio/n_s6_2.mp3",
+    "public/magi-audio/n_s6_3.mp3",
+    "public/magi-audio/n_s6_4.mp3",
+    "public/magi-audio/n_s6_5.mp3",
+    "public/magi-audio/n_s6_6.mp3",
+    "public/magi-audio/n_s6_7.mp3",
+    "public/magi-audio/n_s6_8.mp3",
+    "public/magi-audio/n_s6_9.mp3",
+    "public/magi-audio/n_s6_10.mp3",
+    "public/magi-audio/n_s6_11.mp3",
+    "public/magi-audio/n_s6_12.mp3",
+    "public/magi-audio/n_s6_13.mp3",
+    "public/magi-audio/n_s6_14.mp3",
+    "public/magi-audio/n_s6_15.mp3",
+    "public/magi-audio/n_s6_16.mp3",
+    "public/magi-audio/n_s6_17.mp3",
+    "public/magi-audio/n_s6_18.mp3",
+    "public/magi-audio/n_s6_19.mp3",
+    "public/magi-audio/n_s6_20.mp3",
+    "public/magi-audio/n_s6_21.mp3"
+  ]
+}

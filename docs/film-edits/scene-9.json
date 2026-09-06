@@ -1,0 +1,157 @@
+{
+  "fps": 24,
+  "frames": 2882,
+  "duration": 120.08333333333333,
+  "narrationSeconds": 120.07200000000003,
+  "shots": [
+    {
+      "name": "Jim crosses the threshold",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/01-frozen-door-r2.mp4",
+      "in": 0,
+      "out": 144,
+      "timelineStart": 0,
+      "timelineEnd": 6
+    },
+    {
+      "name": "Della explains",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/02-della-explains.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 6,
+      "timelineEnd": 16
+    },
+    {
+      "name": "It will grow again",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/13-reassurance-r3.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 16,
+      "timelineEnd": 26
+    },
+    {
+      "name": "A beautiful gift for Jim",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/10-look-at-me.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 26,
+      "timelineEnd": 36
+    },
+    {
+      "name": "You cut off your hair",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/03-cut-hair-question-r2.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 36,
+      "timelineEnd": 46
+    },
+    {
+      "name": "Sold and gone",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/04-sold-still-me.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 46,
+      "timelineEnd": 56
+    },
+    {
+      "name": "Looking for what is gone",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/05-looking-for-hair-r2.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 56,
+      "timelineEnd": 66
+    },
+    {
+      "name": "Christmas Eve appeal to her husband",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/14-appeal-r3.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 66,
+      "timelineEnd": 76
+    },
+    {
+      "name": "Love cannot be counted",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/06-love-uncountable.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 76,
+      "timelineEnd": 86
+    },
+    {
+      "name": "The chops wait",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/07-chops-insert.mp4",
+      "in": 0,
+      "out": 120,
+      "timelineStart": 86,
+      "timelineEnd": 91
+    },
+    {
+      "name": "Jim wakes and embraces her",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/08-embrace-r3.mp4",
+      "in": 24,
+      "out": 120,
+      "timelineStart": 91,
+      "timelineEnd": 95
+    },
+    {
+      "name": "A ten second look away",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/09-window-breath.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 95,
+      "timelineEnd": 105
+    },
+    {
+      "name": "Back to the chops",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/11-check-chops.mp4",
+      "in": 0,
+      "out": 121,
+      "timelineStart": 105,
+      "timelineEnd": 110.04166666666667
+    },
+    {
+      "name": "Jim softens",
+      "path": "production/magnific/gift-of-the-magi/scene-9/raw/12-jim-softens.mp4",
+      "in": 0,
+      "out": 241,
+      "timelineStart": 110.04166666666667,
+      "timelineEnd": 120.08333333333333
+    }
+  ],
+  "voices": [
+    "public/magi-audio/n_s9_0.mp3",
+    "public/magi-audio/n_s9_1.mp3",
+    "public/magi-audio/n_s9_2.mp3",
+    "public/magi-audio/n_s9_3.mp3",
+    "public/magi-audio/n_s9_4.mp3",
+    "public/magi-audio/n_s9_5.mp3",
+    "public/magi-audio/n_s9_6.mp3",
+    "public/magi-audio/n_s9_7.mp3",
+    "public/magi-audio/n_s9_8.mp3",
+    "public/magi-audio/n_s9_9.mp3",
+    "public/magi-audio/n_s9_10.mp3",
+    "public/magi-audio/n_s9_11.mp3",
+    "public/magi-audio/n_s9_12.mp3",
+    "public/magi-audio/n_s9_13.mp3",
+    "public/magi-audio/n_s9_14.mp3",
+    "public/magi-audio/n_s9_15.mp3",
+    "public/magi-audio/n_s9_16.mp3",
+    "public/magi-audio/n_s9_17.mp3",
+    "public/magi-audio/n_s9_18.mp3",
+    "public/magi-audio/n_s9_19.mp3",
+    "public/magi-audio/n_s9_20.mp3",
+    "public/magi-audio/n_s9_21.mp3",
+    "public/magi-audio/n_s9_22.mp3",
+    "public/magi-audio/n_s9_23.mp3",
+    "public/magi-audio/n_s9_24.mp3",
+    "public/magi-audio/n_s9_25.mp3",
+    "public/magi-audio/n_s9_26.mp3",
+    "public/magi-audio/n_s9_27.mp3",
+    "public/magi-audio/n_s9_28.mp3",
+    "public/magi-audio/n_s9_29.mp3",
+    "public/magi-audio/n_s9_30.mp3",
+    "public/magi-audio/n_s9_31.mp3",
+    "public/magi-audio/n_s9_32.mp3",
+    "public/magi-audio/n_s9_33.mp3",
+    "public/magi-audio/n_s9_34.mp3"
+  ]
+}

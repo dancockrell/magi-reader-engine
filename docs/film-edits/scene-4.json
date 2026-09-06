@@ -1,0 +1,84 @@
+{
+  "fps": 24,
+  "frames": 1538,
+  "duration": 64.08333333333333,
+  "narrationSeconds": 64.07999999999998,
+  "shots": [
+    {
+      "name": "The two treasures",
+      "path": "production/magnific/gift-of-the-magi/scene-4/raw/01-two-treasures.mp4",
+      "in": 0,
+      "out": 223,
+      "timelineStart": 0,
+      "timelineEnd": 9.291666666666666
+    },
+    {
+      "name": "Hair like brown water",
+      "path": "production/magnific/gift-of-the-magi/scene-4/raw/02-hair.mp4",
+      "in": 0,
+      "out": 223,
+      "timelineStart": 9.291666666666666,
+      "timelineEnd": 18.583333333333332
+    },
+    {
+      "name": "The Queen of Sheba",
+      "path": "production/magnific/gift-of-the-magi/scene-4/raw/03-sheba.mp4",
+      "in": 0,
+      "out": 223,
+      "timelineStart": 18.583333333333332,
+      "timelineEnd": 27.875
+    },
+    {
+      "name": "The heirloom watch",
+      "path": "production/magnific/gift-of-the-magi/scene-4/raw/04-watch.mp4",
+      "in": 0,
+      "out": 223,
+      "timelineStart": 27.875,
+      "timelineEnd": 37.166666666666664
+    },
+    {
+      "name": "King Solomon",
+      "path": "production/magnific/gift-of-the-magi/scene-4/raw/05-solomon.mp4",
+      "in": 0,
+      "out": 222,
+      "timelineStart": 37.166666666666664,
+      "timelineEnd": 46.416666666666664
+    },
+    {
+      "name": "Pinned up again",
+      "path": "production/magnific/gift-of-the-magi/scene-4/raw/06-repin.mp4",
+      "in": 0,
+      "out": 222,
+      "timelineStart": 46.416666666666664,
+      "timelineEnd": 55.666666666666664
+    },
+    {
+      "name": "Two tears",
+      "path": "production/magnific/gift-of-the-magi/scene-4/raw/07-tears.mp4",
+      "in": 39,
+      "out": 241,
+      "timelineStart": 55.666666666666664,
+      "timelineEnd": 64.08333333333333
+    }
+  ],
+  "voices": [
+    "public/magi-audio/n_s4_0.mp3",
+    "public/magi-audio/n_s4_1.mp3",
+    "public/magi-audio/n_s4_2.mp3",
+    "public/magi-audio/n_s4_3.mp3",
+    "public/magi-audio/n_s4_4.mp3",
+    "public/magi-audio/n_s4_5.mp3",
+    "public/magi-audio/n_s4_6.mp3",
+    "public/magi-audio/n_s4_7.mp3",
+    "public/magi-audio/n_s4_8.mp3",
+    "public/magi-audio/n_s4_9.mp3",
+    "public/magi-audio/n_s4_10.mp3",
+    "public/magi-audio/n_s4_11.mp3",
+    "public/magi-audio/n_s4_12.mp3",
+    "public/magi-audio/n_s4_13.mp3",
+    "public/magi-audio/n_s4_14.mp3",
+    "public/magi-audio/n_s4_15.mp3",
+    "public/magi-audio/n_s4_16.mp3",
+    "public/magi-audio/n_s4_17.mp3"
+  ]
+}

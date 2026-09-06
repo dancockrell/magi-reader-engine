@@ -1,0 +1,74 @@
+{
+  "fps": 24,
+  "frames": 1266,
+  "duration": 52.75,
+  "narrationSeconds": 52.751999999999995,
+  "shots": [
+    {
+      "name": "Della remembers her gift",
+      "path": "production/magnific/gift-of-the-magi/scene-11/raw/01-della-chain.mp4",
+      "in": 0,
+      "out": 211,
+      "timelineStart": 0,
+      "timelineEnd": 8.791666666666666
+    },
+    {
+      "name": "The platinum chain",
+      "path": "production/magnific/gift-of-the-magi/scene-11/raw/02-chain-macro.mp4",
+      "in": 0,
+      "out": 211,
+      "timelineStart": 8.791666666666666,
+      "timelineEnd": 17.583333333333332
+    },
+    {
+      "name": "Made for Jim",
+      "path": "production/magnific/gift-of-the-magi/scene-11/raw/03-chain-in-hand.mp4",
+      "in": 0,
+      "out": 211,
+      "timelineStart": 17.583333333333332,
+      "timelineEnd": 26.375
+    },
+    {
+      "name": "Give me your watch",
+      "path": "production/magnific/gift-of-the-magi/scene-11/raw/04-asks-watch.mp4",
+      "in": 0,
+      "out": 211,
+      "timelineStart": 26.375,
+      "timelineEnd": 35.166666666666664
+    },
+    {
+      "name": "Jim sits and smiles",
+      "path": "production/magnific/gift-of-the-magi/scene-11/raw/05-jim-sofa.mp4",
+      "in": 0,
+      "out": 211,
+      "timelineStart": 35.166666666666664,
+      "timelineEnd": 43.958333333333336
+    },
+    {
+      "name": "The watch is gone",
+      "path": "production/magnific/gift-of-the-magi/scene-11/raw/06-empty-pocket.mp4",
+      "in": 0,
+      "out": 211,
+      "timelineStart": 43.958333333333336,
+      "timelineEnd": 52.75
+    }
+  ],
+  "voices": [
+    "public/magi-audio/n_s11_0.mp3",
+    "public/magi-audio/n_s11_1.mp3",
+    "public/magi-audio/n_s11_2.mp3",
+    "public/magi-audio/n_s11_3.mp3",
+    "public/magi-audio/n_s11_4.mp3",
+    "public/magi-audio/n_s11_5.mp3",
+    "public/magi-audio/n_s11_6.mp3",
+    "public/magi-audio/n_s11_7.mp3",
+    "public/magi-audio/n_s11_8.mp3",
+    "public/magi-audio/n_s11_9.mp3",
+    "public/magi-audio/n_s11_10.mp3",
+    "public/magi-audio/n_s11_11.mp3",
+    "public/magi-audio/n_s11_12.mp3",
+    "public/magi-audio/n_s11_13.mp3",
+    "public/magi-audio/n_s11_14.mp3",
+    "public/magi-audio/n_s11_15.mp3"
+  ]
+}

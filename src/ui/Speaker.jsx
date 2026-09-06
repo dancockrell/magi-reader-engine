@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useCueTrack } from './useCueTrack.js';
 import { useSpokenLine } from './useSpokenLine.js';
 import SpokenText from './SpokenText.jsx';
@@ -32,6 +32,7 @@ import SpokenText from './SpokenText.jsx';
  * @param {boolean} [props.muted]
  * @param {number} [props.rate]
  * @param {()=>void} [props.onEnded]
+ * @param {()=>void} [props.onAudioUnavailable]
  * @param {string} [props.className]
  */
 export default function Speaker({
@@ -49,14 +50,20 @@ export default function Speaker({
   muted = false,
   rate = 1,
   onEnded,
+  onAudioUnavailable,
   className = '',
 }) {
   const audioRef = useRef(/** @type {HTMLAudioElement|null} */ (null));
+  const [faceUnavailable, setFaceUnavailable] = useState(false);
   const clip = turn?.clip || null;
   const { words, index } = useCueTrack(audioRef, clip, cuesUrl);
   /* The words are the book's, punctuation and all. The cue file is a
      transcript with none — see useSpokenLine. */
   const { tokens, lit } = useSpokenLine(turn?.text, words, index);
+
+  useEffect(() => {
+    setFaceUnavailable(false);
+  }, [who.art]);
 
   /* See Scene: `muted` is a DOM property React does not reflect, and
      playbackRate has no attribute at all. */
@@ -87,8 +94,13 @@ export default function Speaker({
       data-state={turn.state || undefined}
     >
       <div className="sp-face">
-        {who.art ? (
-          <img src={who.art} alt="" draggable="false" />
+        {who.art && !faceUnavailable ? (
+          <img
+            src={who.art}
+            alt=""
+            draggable="false"
+            onError={() => setFaceUnavailable(true)}
+          />
         ) : (
           <span className="sp-noface" aria-hidden="true">
             {(who.name || '?').slice(0, 1)}
@@ -119,6 +131,7 @@ export default function Speaker({
           src={`${audioBase}${clip}.mp3`}
           preload="auto"
           onEnded={onEnded}
+          onError={onAudioUnavailable}
           crossOrigin="anonymous"
         >
           <track kind="captions" srcLang="en" label="English" src={cuesUrl} />

@@ -1,0 +1,71 @@
+{
+  "fps": 24,
+  "frames": 1221,
+  "duration": 50.875,
+  "narrationSeconds": 50.85600000000001,
+  "shots": [
+    {
+      "name": "Down to the street",
+      "path": "production/magnific/gift-of-the-magi/scene-5/raw/01-stairs-down.mp4",
+      "in": 0,
+      "out": 204,
+      "timelineStart": 0,
+      "timelineEnd": 8.5
+    },
+    {
+      "name": "The hair-goods shop exterior",
+      "path": "production/magnific/gift-of-the-magi/scene-5/raw/02-shop-exterior-r3.mp4",
+      "in": 0,
+      "out": 204,
+      "timelineStart": 8.5,
+      "timelineEnd": 17
+    },
+    {
+      "name": "One flight up",
+      "path": "production/magnific/gift-of-the-magi/scene-5/raw/03-stairs-up.mp4",
+      "in": 0,
+      "out": 204,
+      "timelineStart": 17,
+      "timelineEnd": 25.5
+    },
+    {
+      "name": "Madame Sofronie",
+      "path": "production/magnific/gift-of-the-magi/scene-5/raw/04-sofronie-r2.mp4",
+      "in": 0,
+      "out": 203,
+      "timelineStart": 25.5,
+      "timelineEnd": 33.958333333333336
+    },
+    {
+      "name": "Twenty dollars",
+      "path": "production/magnific/gift-of-the-magi/scene-5/raw/05-inspection.mp4",
+      "in": 0,
+      "out": 203,
+      "timelineStart": 33.958333333333336,
+      "timelineEnd": 42.416666666666664
+    },
+    {
+      "name": "Give it to me quick",
+      "path": "production/magnific/gift-of-the-magi/scene-5/raw/06-cut-r2.mp4",
+      "in": 0,
+      "out": 203,
+      "timelineStart": 42.416666666666664,
+      "timelineEnd": 50.875
+    }
+  ],
+  "voices": [
+    "public/magi-audio/n_s5_0.mp3",
+    "public/magi-audio/n_s5_1.mp3",
+    "public/magi-audio/n_s5_2.mp3",
+    "public/magi-audio/n_s5_3.mp3",
+    "public/magi-audio/n_s5_4.mp3",
+    "public/magi-audio/n_s5_5.mp3",
+    "public/magi-audio/n_s5_6.mp3",
+    "public/magi-audio/n_s5_7.mp3",
+    "public/magi-audio/n_s5_8.mp3",
+    "public/magi-audio/n_s5_9.mp3",
+    "public/magi-audio/n_s5_10.mp3",
+    "public/magi-audio/n_s5_11.mp3",
+    "public/magi-audio/n_s5_12.mp3"
+  ]
+}

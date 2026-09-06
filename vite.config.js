@@ -3,6 +3,7 @@
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import { viteSingleFile } from 'vite-plugin-singlefile';
+import { cpSync, existsSync, mkdirSync } from 'node:fs';
 
 /**
  * Two build targets, because the reader has two lives.
@@ -22,8 +23,19 @@ const single = process.env.SINGLE === '1';
 
 export default defineConfig({
   base: './',
-  plugins: [react(), ...(single ? [viteSingleFile()] : [])],
+  plugins: [react(), ...(single ? [viteSingleFile()] : []), {
+    name: 'curated-reader-media',
+    closeBundle() {
+      const files = ['art', 'magi-audio', 'cues', 'manifest.webmanifest', 'app-icon.svg', 'app-icon-192.png', 'app-icon-512.png', 'sw.js', 'video/films/magi-reader-film-final.vtt'];
+      mkdirSync('dist/video/films', { recursive: true });
+      for (const file of files) {
+        if (existsSync('public/' + file)) cpSync('public/' + file, 'dist/' + file, { recursive: true });
+      }
+    },
+  }],
   build: {
+    copyPublicDir: false,
+    rollupOptions: { input: { app: 'index.html', film: 'film.html' } },
     target: 'es2019',
     assetsInlineLimit: single ? 100_000_000 : 4096,
     chunkSizeWarningLimit: 1200,

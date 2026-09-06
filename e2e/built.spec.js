@@ -1,5 +1,4 @@
 import { test, expect } from '@playwright/test';
-import { at } from './book.js';
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { extname, join, normalize } from 'node:path';
@@ -98,7 +97,7 @@ test.describe('the production build on a nested path', () => {
     });
 
     try {
-      await page.goto(`http://127.0.0.1:${port}${prefix}#/read/1/0`);
+      await page.goto(`http://127.0.0.1:${port}${prefix}#/book/magi/read/0`);
       await page.locator('.scene').waitFor({ timeout: 15_000 });
 
       /* the picture really decoded */
@@ -110,7 +109,7 @@ test.describe('the production build on a nested path', () => {
 
       /* and the reading advances */
       await page.getByRole('button', { name: 'Next ›' }).click();
-      await expect(page.locator('.count')).toHaveText(at(2));
+      await expect(page).toHaveURL(/#\/book\/magi\/read\/1$/);
 
       expect(missing).toEqual([]);
     } finally {

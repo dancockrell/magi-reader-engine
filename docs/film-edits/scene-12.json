@@ -1,0 +1,73 @@
+{
+  "fps": 24,
+  "frames": 1265,
+  "duration": 52.708333333333336,
+  "narrationSeconds": 52.70399999999999,
+  "shots": [
+    {
+      "name": "The Magi travel",
+      "path": "production/magnific/gift-of-the-magi/scene-12/raw/01-magi-travel.mp4",
+      "in": 0,
+      "out": 211,
+      "timelineStart": 0,
+      "timelineEnd": 8.791666666666666
+    },
+    {
+      "name": "Gold frankincense and myrrh",
+      "path": "production/magnific/gift-of-the-magi/scene-12/raw/02-ancient-gifts.mp4",
+      "in": 0,
+      "out": 211,
+      "timelineStart": 8.791666666666666,
+      "timelineEnd": 17.583333333333332
+    },
+    {
+      "name": "Two foolish wise children",
+      "path": "production/magnific/gift-of-the-magi/scene-12/raw/03-couple-gifts.mp4",
+      "in": 0,
+      "out": 211,
+      "timelineStart": 17.583333333333332,
+      "timelineEnd": 26.375
+    },
+    {
+      "name": "The exchanged gifts",
+      "path": "production/magnific/gift-of-the-magi/scene-12/raw/04-gifts-insert.mp4",
+      "in": 0,
+      "out": 211,
+      "timelineStart": 26.375,
+      "timelineEnd": 35.166666666666664
+    },
+    {
+      "name": "Supper together",
+      "path": "production/magnific/gift-of-the-magi/scene-12/raw/05-supper.mp4",
+      "in": 0,
+      "out": 211,
+      "timelineStart": 35.166666666666664,
+      "timelineEnd": 43.958333333333336
+    },
+    {
+      "name": "They are the Magi",
+      "path": "production/magnific/gift-of-the-magi/scene-12/raw/06-window-final.mp4",
+      "in": 0,
+      "out": 210,
+      "timelineStart": 43.958333333333336,
+      "timelineEnd": 52.708333333333336
+    }
+  ],
+  "voices": [
+    "public/magi-audio/n_s12_0.mp3",
+    "public/magi-audio/n_s12_1.mp3",
+    "public/magi-audio/n_s12_2.mp3",
+    "public/magi-audio/n_s12_3.mp3",
+    "public/magi-audio/n_s12_4.mp3",
+    "public/magi-audio/n_s12_5.mp3",
+    "public/magi-audio/n_s12_6.mp3",
+    "public/magi-audio/n_s12_7.mp3",
+    "public/magi-audio/n_s12_8.mp3",
+    "public/magi-audio/n_s12_9.mp3",
+    "public/magi-audio/n_s12_10.mp3",
+    "public/magi-audio/n_s12_11.mp3",
+    "public/magi-audio/n_s12_12.mp3",
+    "public/magi-audio/n_s12_13.mp3",
+    "public/magi-audio/n_s12_14.mp3"
+  ]
+}
