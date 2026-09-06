@@ -125,3 +125,12 @@ because a generation has already cost credits.
   generated clock face failed detail review; mandatory closer framing excludes
   it. Uncropped v3 rejected. Cooking-room continuity and sound/screening gates
   remain open; public v0.9.6 is unchanged.
+- [Full assembly v5: supper and emotional exchange](film-edits/award-supper-detail-r5.md#full-assembly-v5-delivery-verification):
+  new tight supper coverage removes the conflicting wide-room assertion; two
+  distinct close-performance ranges replace premature cooking during the offer
+  and after the embrace. Completed full export, changed joins and closing fade
+  checked; baseline soundtrack and captions preserved. Local review only.
+- [Seated revelation timing](film-edits/award-revelation-timing-review.md):
+  closer review corrects a coarse-sample identity misreading: Jim is seated,
+  but his couch shot arrives about seven seconds after the narrated action.
+  Timing and the following standing reset remain to be corrected.
