@@ -1,0 +1,14 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Title,Georgia,200,&H00DDE8EF,&H00DDE8EF,&HBF201812,&HAA000000,0,0,0,0,100,100,0,0,1,0,1,5,80,80,30,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.20,0:00:06.20,Title,,0,0,0,,{\move(960,250,960,160,0,1700)\fscx84\fscy84\blur9\t(0,1700,0.6,\fscx100\fscy100\blur0)\t(4850,6000,\fscx106\fscy106\blur5)\fad(650,950)}The Gift
+Dialogue: 1,0:00:00.65,0:00:06.20,Title,,0,0,0,,{\move(960,420,960,332,0,1700)\fs180\fscx84\fscy84\blur9\t(0,1700,0.6,\fscx100\fscy100\blur0)\t(4400,5550,\fscx106\fscy106\blur5)\fad(650,950)}of the Magi
+Dialogue: 1,0:00:01.85,0:00:06.00,Title,,0,0,0,,{\pos(960,446)\1c&H8DBAD4&\shad0\fscx0\t(0,1200,\fscx100)\fad(400,800)\p1}m 0 0 l 290 0 l 290 2 l 0 2
+Dialogue: 1,0:00:02.05,0:00:06.00,Title,,0,0,0,,{\move(960,510,960,492,0,1000)\fs42\fsp6\1c&HB1D3E6&\blur4\t(0,1000,\blur0)\fad(800,800)}O. HENRY
