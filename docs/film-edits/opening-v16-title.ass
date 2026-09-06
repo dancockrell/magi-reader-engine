@@ -1,0 +1,12 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Title,Georgia,86,&H00DDE8EF,&H00DDE8EF,&H80201812,&H90000000,0,0,0,0,100,100,0,0,1,1.5,1.5,5,120,120,30,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:00.35,0:00:06.20,Title,,0,0,0,,{\pos(960,122)\fad(1000,1000)}The Gift of the Magi
+Dialogue: 1,0:00:01.15,0:00:06.00,Title,,0,0,0,,{\pos(960,224)\fs32\fsp4\fad(1000,900)}O. HENRY

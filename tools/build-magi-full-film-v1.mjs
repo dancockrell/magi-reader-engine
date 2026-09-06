@@ -7,7 +7,7 @@ const ffmpeg = resolve(root, 'tools/ffmpeg/bin/ffmpeg.exe');
 const ffprobe = resolve(root, 'tools/ffmpeg/bin/ffprobe.exe');
 const fps = 24;
 const story = [
-  { unit: 1, file: 'public/video/films/magi-opening-v15-preview.mp4', frames: 1561, narrationOffset: 15 },
+  { unit: 1, file: 'public/video/films/magi-opening-v16-preview.mp4', frames: 1423, narrationOffset: 9.25 },
   { unit: 2, file: 'public/video/films/magi-scene2-v1-preview.mp4', frames: 1650 },
   { unit: 3, file: 'public/video/films/magi-scene3-v1-preview.mp4', frames: 2258 },
   { unit: 4, file: 'public/video/films/magi-scene4-v1-preview.mp4', frames: 1538 },
