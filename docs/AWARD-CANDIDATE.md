@@ -101,6 +101,20 @@ because a generation has already cost credits.
 
 ## Current work records
 
+- [Parcel release and script timing R9](film-edits/parcel-insert-r9.md):
+  dedicated native-motion tabletop insert shows release and landing near its
+  narration; baked with pocket lead-in and reassurance in a 16-second local
+  audition. Later unwrapping/reaction continuity remains open, not full lock.
+- [Parcel and reassurance R8](film-edits/parcel-script-continuity-r8.md):
+  two full toss takes rejected; closer reassurance framing retained locally.
+  Records premature unwrapping, costume drift and a rewrapped-parcel reset.
+- [Mirror and reunion continuity R7](film-edits/award-viewer-findings-r7.md):
+  matched continuation out of the dance retained as a local context audition;
+  mirror/decision/hair-release sequence still needs closer script alignment.
+- [Male narrator performance correction](film-edits/della-affectionate-retake-r1.md):
+  affectionate reading of Della's pet name requested; original provider/voice
+  identity still unresolved. Do not substitute a female voice or another narrator.
+
 - [Closing sound audition R1](film-edits/award-closing-sound-audition-r1.md):
   separate A/B excerpt with original voices and a new complete closing cue;
   video copied exactly from v6 with no re-encoding. Timing, decoding and levels

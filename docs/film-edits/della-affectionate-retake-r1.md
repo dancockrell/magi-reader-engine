@@ -66,3 +66,12 @@ scripts and Magi delivery archives did not locate a matching cast map or voice
 builder. Archive member lists were inspected without extraction; no matching
 Python/cast/voice/SSML entries were found. These are limited searches, not proof
 that the original voice settings no longer exist.
+
+Follow-up source-history check: the original `dev/magi-reader` Git history has
+no voice/cast builder path. The local `claude-agent` completed-job archive and
+the live `magi-reader-classroom-toolkit` source do contain Microsoft/edge-tts
+voice auditions and settings, but they explicitly target The Raven, not Magi.
+The toolkit currently selects Steffan for that poem; this is NOT evidence that
+Magi uses Steffan. No matching `build_voices.py` result was returned by the
+targeted account code search or toolkit path history. Do not infer Magi's voice
+from the adjacent project's casting. The original clip remains untouched.
