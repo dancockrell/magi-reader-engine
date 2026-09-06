@@ -68,7 +68,86 @@ states. A frozen keyframe with the wrong starting action would bake in the error
 - Full request explains apparent intent, contradictory handoff, desired path and
   landing, continuing parcel state, and the emotional transition into unwrapping.
 
+### Take 1 review and correction
+
+Both requests completed and their original MP4s were downloaded for editing.
+Each is 1920x1080, 241 frames at native 24 fps, with no sound requested.
+
+- `parcel-toss-r8.mp4`, SHA-256
+  `27824269fe596a9444720bce69539128694ae63d6f7a9f9312946103e7c80a57`:
+  rejected as a complete action. It begins with the parcel already visible,
+  and his hand accompanies it down to the tabletop. The landing detail does
+  not establish the required unsupported toss. The parcel does remain on the
+  table afterward, but that partial success does not satisfy the script.
+- Examined full take at 4 fps, all first 96 consecutive frames, and 18 enlarged
+  consecutive landing frames starting at source 3 seconds. Adjacent-frame audit:
+  7 near-static transitions around frames 41–49, two local-motion flags at
+  70–72 and no two-frame reversal flags. Those numerical results are not a
+  substitute for the failed withdrawal/release observation.
+- `parcel-reassurance-r8.mp4`, SHA-256
+  `c2d7c32de87c364c72ab9d41cb7846d2062514ca244ddc2a67a406c16b7187bd`:
+  full-frame take rejected because the parcel remains in his hands. The
+  reference pose persisted despite text requesting empty hands. Faces retain
+  tenderness and the final shared downward glance can motivate unwrapping.
+- A constant `1536:864:192:0` crop removes hands and parcel throughout the
+  inspected whole-take 2 fps crop overview. This is a closer two-shot with a
+  1.25x enlargement, not permission to reuse the uncropped source. Original
+  whole-take 4 fps overview and every-frame motion diagnostic inspected:
+  no near-static, local-jump or two-frame-reversal flags. Pending baked joins.
+
+### Starting-state repair and take 2
+
+The references depicted already-completed or contradictory actions. Repeating
+more negative instructions is not the right next step. Use an actual corrected
+starting frame for withdrawal, then require visible release before landing.
+
+Built-in image generation, following the imagegen skill's non-destructive edit
+workflow, produced `production/award-candidate/parcel-pocket-anchor-r8.png`.
+The result was visually inspected and copied into the production workspace.
+SHA-256: `4aa0303ebe9d950625ab471ffbcb281df260f54749b32e7bb29521b01a9d87da`.
+The frame now shows Jim's right hand inside his coat and a relaxed empty left
+hand, with the near tabletop clear. The same two characters and set remain.
+
+Image edit brief: change only Jim's forearms/hands and remove the visible parcel;
+place his right hand in his inner overcoat pocket, left arm relaxed with a bare
+empty hand. Preserve the two faces, wardrobe, camera, room, single lamp, lighting
+and grain. No package on the table. The purpose is an initial state BEFORE the
+withdrawal, rather than a performance that starts after it.
+
+Second video request `xS4cXwcjfW`, Kling 3.0 Omni, ten seconds, silent 1080p,
+950 credits, uses upload `tC5JiDTmZJ` as the actual starting keyframe. It explains
+why supporting the parcel down to the wood reads as placing, and specifies an
+economical underhand toss: fingers open and hand retracts BEFORE the package
+lands, then the wrapped parcel stays on the table. All earlier acceptance
+conditions remain in force. Total video generation charges this pass: 2,850
+credits. Image-generation cost is not reported by the built-in result.
+
 ## Delivery boundary
+
+### Additional continuity findings from full-size adjacent-shot inspection
+
+- `03-unwrap` introduces knitted gloves on Jim, whereas the preceding parcel
+  and reassurance sources show bare hands. Della's visible collar also changes.
+- `04-joy-tears` returns the parcel to a completely wrapped and tied state after
+  the preceding take has opened it. This contradicts the reveal even if the
+  reaction performance itself is strong.
+- `05-combs-reveal` returns to an open parcel and has Jim farther back by the
+  doorway. The new cut must earn or avoid the position reset.
+
+These are not fixed by the two requested takes. Do not declare the entire gift
+reveal repaired from fixing the toss alone. Further coverage/reframing must
+preserve open wrapping and costume state, including across the reaction cut.
+
+Further script landmarks for that next cut: unwrapping 692.754–696.570, joy
+696.570–699.570, tears 699.570–706.098, comforting 706.098–712.818, combs named
+712.818–717.354. The original equal-length assembly cuts to `05-combs-reveal`
+at 705.583 while Jim's comforting is still being described. Do not merely
+repeat the ten equal shot blocks in a new version; place performance coverage
+around these actual beats with fresh footage where necessary.
+
+The two authorized festival enquiry threads were also checked during this pass:
+both still contain only the sent enquiry, with no reply at time of checking.
+No duplicate mail, entry, fee or film sharing was performed.
 
 The old parcel source remains unchanged for comparison. Only reviewed ranges may
 enter an audition; the new sources are not admitted merely because generated.

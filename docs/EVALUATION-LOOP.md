@@ -110,6 +110,15 @@ a claim that the current published departure has been corrected.
 
 ## Other failure classes
 
+- **Reference-state conflict:** A gift-giving reference may preserve appealing
+  faces and tenderness while already showing a parcel in Jim's hands. Asking
+  for a shot that begins before he withdraws it conflicts with that visible
+  state. Even a reference-only request can retain the depicted pose; do not
+  assume prose will override it. Inspect the actual result and provider metadata
+  separately. Correct the starting image to the required pre-action state, then
+  reshoot from that frame. For a following reaction, compose the intended close
+  view before generation or document and inspect its mandatory crop; a crop's
+  admission never approves the contradictory uncropped source.
 - **Object mechanics:** A watch close-up seems intended to emphasize the valued
   heirloom. Preserve its prominence, but check that the suspension ring stays
   attached and that the grip is physically plausible throughout the take.
