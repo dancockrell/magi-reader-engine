@@ -79,3 +79,13 @@ states and must be reported separately.
 Follow [the intent-led evaluation loop](EVALUATION-LOOP.md) and retain rejected-take
 reasons. Never trade continuity for a beautiful frame or lower acceptance standards
 because a generation has already cost credits.
+
+## Current work records
+
+- [Departure and hair-sale candidate](film-edits/award-scene5-review.md): locally
+  baked contextual comparison; hair-state continuity still needs final review.
+- [Preparation and waiting](film-edits/award-scene7-review.md): performance-led
+  replacements, rejection log and camera-setup correction. Also flags a pocket
+  watch wrongly present with Della's chain and the following stove/table layout.
+- [Sound pass](film-edits/award-sound-pass.md): original-voice stem prepared for
+  a whole-film mix; listening and musical phrase selection are not yet complete.

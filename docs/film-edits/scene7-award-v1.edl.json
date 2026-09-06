@@ -1,0 +1,69 @@
+{
+  "status": "local editorial comparison; not published or final admission",
+  "fps": 24,
+  "frames": 1281,
+  "seconds": 53.375,
+  "filmStartSeconds": 409.666667,
+  "audio": "Existing comparison mix; final sound pass pending",
+  "shots": [
+    {
+      "name": "Prudence after arriving home",
+      "path": "production/magnific/gift-of-the-magi/scene-7/raw/01-arrival.mp4",
+      "in": 0,
+      "out": 201,
+      "sha256": "6db8eedb3aa556c57bd5f1f3eab63fd199fe50c79524040684a55f60e0941eea",
+      "timelineStart": 0,
+      "timelineEnd": 8.375
+    },
+    {
+      "name": "Practical concentration; work remains offscreen",
+      "path": "production/award-candidate/waiting-preparation-r2.mp4",
+      "in": 0,
+      "out": 240,
+      "creation": "lJi0V6ogv9",
+      "sha256": "ec4a88044fc7a718d365ef4813f2a1f269490389427cd38306cda27828ca10dd",
+      "timelineStart": 8.375,
+      "timelineEnd": 18.375
+    },
+    {
+      "name": "One act of care; discard lingering opening",
+      "path": "production/award-candidate/waiting-care-r1.mp4",
+      "in": 48,
+      "out": 168,
+      "creation": "SyRVWmsUb8",
+      "sha256": "9359db2c028e18dd5b53fedebddea328858d25fef6175b9d9d22e04cc02997cc",
+      "timelineStart": 18.375,
+      "timelineEnd": 23.375
+    },
+    {
+      "name": "The finished curls",
+      "path": "production/magnific/gift-of-the-magi/scene-7/raw/05-mirror-review-r2.mp4",
+      "in": 24,
+      "out": 216,
+      "sha256": "e0b07622a0923c5ab37a0e1c2b7ccdb7bfae1e1476a1f7986add0d82f0840a3d",
+      "timelineStart": 23.375,
+      "timelineEnd": 31.375
+    },
+    {
+      "name": "Critical inspection and fear of his response",
+      "path": "production/magnific/gift-of-the-magi/scene-7/raw/06-worry.mp4",
+      "in": 0,
+      "out": 240,
+      "crop": "1280:720:80:0",
+      "note": "Mandatory framing excludes the narratively impossible pocket watch; reduced detail requires review.",
+      "sha256": "c1f80683996ad9031f4b92135c1eca7000302a2ab7a13aa4bd5683aabdd549b7",
+      "timelineStart": 31.375,
+      "timelineEnd": 41.375
+    },
+    {
+      "name": "A brave smile, then what else could I do?",
+      "path": "production/award-candidate/waiting-portrait-r1.mp4",
+      "in": 0,
+      "out": 288,
+      "creation": "bxwRNMk5Y2",
+      "sha256": "7b5f072739907b65b5914e08e59db1ce09c39d9cf2987a38937853f5e73600ad",
+      "timelineStart": 41.375,
+      "timelineEnd": 53.375
+    }
+  ]
+}
