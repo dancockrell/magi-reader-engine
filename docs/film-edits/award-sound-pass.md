@@ -57,3 +57,22 @@ Whole-file decoding passed. Listening and comparison with picture are pending.
 5. Measure integrated loudness, peaks and channel behavior as delivery checks,
    not substitutes for listening. Confirm festival-specific deliverables later.
 6. Verify the score, effects and voice-use rights against actual source records.
+
+## Timing diagnostic, 6 September 2026
+
+`scripts/edits/check-dialogue-alignment.py` compares six-second windows near the
+opening, middle and ending of each of the twelve chapters with the public mix.
+The [36-window report](dialogue-alignment-v1.json) uses timestamp-aware decoding
+and transient correlation. Across those windows the mixed film follows the stem
+by approximately 26.3 ms, with no accumulating chapter drift in this measurement.
+That is less than one picture frame, but exceeds this diagnostic's conservative
+20 ms flag threshold. Correlation also varies because this compares clean voice
+against a compressed music/voice mixture. Flags remain visible, not relabeled
+as a clean listening pass. Investigate or explicitly conform this uniform offset
+when building the final mix; do not retime the voice performance.
+
+An initial raw-sample comparison ignored presentation timestamps and appeared to
+show cumulative AAC padding at chapter joins. Timestamp-aware resampling removed
+that apparent drift. Do not cite the discarded raw-sample result as a film defect.
+No voice or public audio was changed by this read-only check. It does not prove
+every word, intelligibility or artistic sound quality; listening remains required.

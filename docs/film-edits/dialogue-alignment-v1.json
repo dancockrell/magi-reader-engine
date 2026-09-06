@@ -1,0 +1,332 @@
+{
+  "status": "diagnostic only; not a listening or artistic approval",
+  "method": "Timestamp-aware 24 kHz mono first-difference cross-correlation, +/-750 ms search",
+  "stemSha256": "ef4a105069cd26800f1631d97731fcc55006ad14673824151ec647daa4652d78",
+  "windows": [
+    {
+      "chapter": 1,
+      "window": "opening",
+      "startSeconds": 9.65,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.5522168316100751,
+      "timingFlag": true
+    },
+    {
+      "chapter": 1,
+      "window": "middle",
+      "startSeconds": 29.645833333333332,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.7792930919459626,
+      "timingFlag": true
+    },
+    {
+      "chapter": 1,
+      "window": "ending",
+      "startSeconds": 52.891666666666666,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.5916877675274508,
+      "timingFlag": true
+    },
+    {
+      "chapter": 2,
+      "window": "opening",
+      "startSeconds": 59.69166666666666,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.6600849739305853,
+      "timingFlag": true
+    },
+    {
+      "chapter": 2,
+      "window": "middle",
+      "startSeconds": 93.66666666666666,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.6715288721655087,
+      "timingFlag": true
+    },
+    {
+      "chapter": 2,
+      "window": "ending",
+      "startSeconds": 121.64166666666667,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.7797894372239451,
+      "timingFlag": true
+    },
+    {
+      "chapter": 3,
+      "window": "opening",
+      "startSeconds": 128.44166666666666,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.7654388403481872,
+      "timingFlag": true
+    },
+    {
+      "chapter": 3,
+      "window": "middle",
+      "startSeconds": 175.08333333333331,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.7452552470784894,
+      "timingFlag": true
+    },
+    {
+      "chapter": 3,
+      "window": "ending",
+      "startSeconds": 215.72499999999997,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.7141075725030844,
+      "timingFlag": true
+    },
+    {
+      "chapter": 4,
+      "window": "opening",
+      "startSeconds": 222.525,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.7165411119536765,
+      "timingFlag": true
+    },
+    {
+      "chapter": 4,
+      "window": "middle",
+      "startSeconds": 254.16666666666666,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.6035614072018864,
+      "timingFlag": true
+    },
+    {
+      "chapter": 4,
+      "window": "ending",
+      "startSeconds": 279.80833333333334,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.6204062797896148,
+      "timingFlag": true
+    },
+    {
+      "chapter": 5,
+      "window": "opening",
+      "startSeconds": 286.6083333333333,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.7385605054811546,
+      "timingFlag": true
+    },
+    {
+      "chapter": 5,
+      "window": "middle",
+      "startSeconds": 311.6458333333333,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.7435505536768426,
+      "timingFlag": true
+    },
+    {
+      "chapter": 5,
+      "window": "ending",
+      "startSeconds": 330.68333333333334,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.6502222992376296,
+      "timingFlag": true
+    },
+    {
+      "chapter": 6,
+      "window": "opening",
+      "startSeconds": 337.4833333333333,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.6885893960270227,
+      "timingFlag": true
+    },
+    {
+      "chapter": 6,
+      "window": "middle",
+      "startSeconds": 373.375,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.6224003668314045,
+      "timingFlag": true
+    },
+    {
+      "chapter": 6,
+      "window": "ending",
+      "startSeconds": 403.26666666666665,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.6654270415425803,
+      "timingFlag": true
+    },
+    {
+      "chapter": 7,
+      "window": "opening",
+      "startSeconds": 410.06666666666666,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.7253435268599322,
+      "timingFlag": true
+    },
+    {
+      "chapter": 7,
+      "window": "middle",
+      "startSeconds": 436.3541666666667,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.7154638598180839,
+      "timingFlag": true
+    },
+    {
+      "chapter": 7,
+      "window": "ending",
+      "startSeconds": 456.6416666666667,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.5959240671750426,
+      "timingFlag": true
+    },
+    {
+      "chapter": 8,
+      "window": "opening",
+      "startSeconds": 463.44166666666666,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.6204462087536594,
+      "timingFlag": true
+    },
+    {
+      "chapter": 8,
+      "window": "middle",
+      "startSeconds": 505.6041666666667,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.6437988397587259,
+      "timingFlag": true
+    },
+    {
+      "chapter": 8,
+      "window": "ending",
+      "startSeconds": 541.7666666666667,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.6248878337581641,
+      "timingFlag": true
+    },
+    {
+      "chapter": 9,
+      "window": "opening",
+      "startSeconds": 548.5666666666666,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.8208447114793949,
+      "timingFlag": true
+    },
+    {
+      "chapter": 9,
+      "window": "middle",
+      "startSeconds": 608.2083333333333,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.5887168534709525,
+      "timingFlag": true
+    },
+    {
+      "chapter": 9,
+      "window": "ending",
+      "startSeconds": 661.8499999999999,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.6522964843302141,
+      "timingFlag": true
+    },
+    {
+      "chapter": 10,
+      "window": "opening",
+      "startSeconds": 668.65,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.7806786576780341,
+      "timingFlag": true
+    },
+    {
+      "chapter": 10,
+      "window": "middle",
+      "startSeconds": 714.9583333333334,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.7602751830135687,
+      "timingFlag": true
+    },
+    {
+      "chapter": 10,
+      "window": "ending",
+      "startSeconds": 755.2666666666667,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.692366385281434,
+      "timingFlag": true
+    },
+    {
+      "chapter": 11,
+      "window": "opening",
+      "startSeconds": 762.0666666666666,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.6466396847951187,
+      "timingFlag": true
+    },
+    {
+      "chapter": 11,
+      "window": "middle",
+      "startSeconds": 788.0416666666666,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.668874061672741,
+      "timingFlag": true
+    },
+    {
+      "chapter": 11,
+      "window": "ending",
+      "startSeconds": 808.0166666666667,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.6700038644251917,
+      "timingFlag": true
+    },
+    {
+      "chapter": 12,
+      "window": "opening",
+      "startSeconds": 814.8166666666666,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.7495631310818058,
+      "timingFlag": true
+    },
+    {
+      "chapter": 12,
+      "window": "middle",
+      "startSeconds": 840.7708333333333,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.291666666666668,
+      "transientCorrelation": 0.6592536635921074,
+      "timingFlag": true
+    },
+    {
+      "chapter": 12,
+      "window": "ending",
+      "startSeconds": 860.7249999999999,
+      "durationSeconds": 6,
+      "mixedFilmLagMs": 26.333333333333332,
+      "transientCorrelation": 0.6466106449253328,
+      "timingFlag": true
+    }
+  ],
+  "flaggedWindows": 36
+}

@@ -93,3 +93,6 @@ because a generation has already cost credits.
   watch-excluding framing, tighter kitchen coverage, and correction of the earlier
   mistaken stove/table diagnosis. Local review assembly, not a public replacement.
 - [Independent screening brief](film-edits/SCREENING-BRIEF.md): prepared, not sent.
+- [Continuity reshoots, second pass](film-edits/award-continuity-reshoots-r2.md):
+  pinned-hair setup and one-time hat removal baked into scene-5 v2; failed reveal
+  tail and supper eyeline withheld. Not yet integrated into the full assembly.
