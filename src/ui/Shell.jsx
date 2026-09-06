@@ -38,6 +38,7 @@ function useSettings() {
 
 export default function Shell() {
   const { book, id, title } = useBook();
+  const author = book.meta?.author || book.meta?.by || '';
   const { settings, set, couldNotSave } = useSettings();
   const [panel, setPanel] = useState(/** @type {null|'settings'|'language'} */ (null));
   const location = useLocation();
@@ -47,6 +48,20 @@ export default function Shell() {
   const languages = useMemo(() => book.languages || [], [book]);
   const reading = location.pathname.includes('/read');
   const home = `/book/${id}`;
+  const filmView = !!book.cinematicFilm && reading && !location.search.includes('view=text');
+
+  if (filmView) return (
+    <UiLanguage book={book} lang={settings.language}>
+      <div className="film-app">
+        <header className="film-toolbar">
+          <Link to="/" aria-label="Back to bookshelf">‹ Bookshelf</Link>
+          <div className="film-heading"><b>{title}</b><span>{author}</span></div>
+          <Link to={`${home}/read/0?view=text`}>Read text</Link>
+        </header>
+        <Outlet context={{ settings, set }} />
+      </div>
+    </UiLanguage>
+  );
 
   return (
     <UiLanguage book={book} lang={settings.language}>
@@ -58,7 +73,7 @@ export default function Shell() {
             </Link>
             <Link to={home} className="brand">
               <b>{title}</b>
-              <span className="sub">Read with Wren & Ambrose</span>
+              <span className="sub">{author ? `by ${author}` : 'Illustrated reading'}</span>
             </Link>
           </div>
 
@@ -68,9 +83,6 @@ export default function Shell() {
             </NavLink>
             <NavLink to={`${home}/words`} className="btn ghost">
               <T>Vocabulary</T>
-            </NavLink>
-            <NavLink to={`${home}/explore`} className="btn ghost">
-              <T>Explore</T>
             </NavLink>
             <button
               type="button"

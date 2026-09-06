@@ -1,0 +1,12 @@
+{
+  "id": "./",
+  "name": "Magi Reader",
+  "short_name": "Magi",
+  "description": "A film to watch. A story to read.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#151613",
+  "theme_color": "#151613",
+  "icons": [{"src": "app-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}]
+}

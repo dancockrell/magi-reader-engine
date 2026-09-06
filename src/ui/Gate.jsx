@@ -1,28 +1,47 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Preshow from './Preshow.jsx';
-import { preshowRun } from '../lib/speech/script.js';
-import { throughOf } from '../lib/reader/resume.js';
+import { loadTapped } from '../lib/vocab/tapped.js';
+import { readingOverview } from '../lib/reader/overview.js';
 import { useBook } from './useBook.jsx';
 
 /**
  * A book's front door.
  *
  * This is not a lesson selector anymore. It offers one obvious thing —
- * read the work — and keeps vocabulary practice and Ambrose's deeper
- * notes available without making either a prerequisite.
+ * read the work — with optional vocabulary practice kept out of the film.
  */
 export default function Gate({ resume = null, onForget }) {
   const { book, id, title } = useBook();
   const cover = book.plates?.cover;
-  const turns = useMemo(() => preshowRun(book), [book]);
   const author = book.meta?.author || book.meta?.by || '';
   const kind = book.meta?.kind || 'Illustrated reading';
+  const [coverUnavailable, setCoverUnavailable] = useState(false);
+  const overview = useMemo(
+    () => readingOverview(book, resume, loadTapped(id)),
+    [book, id, resume]
+  );
+
+  useEffect(() => {
+    setCoverUnavailable(false);
+  }, [cover]);
 
   return (
     <main className="gate solo-gate">
       <section className="book-hero">
-        {cover ? <img className="cover" src={cover} alt="" /> : null}
+        {cover && !coverUnavailable ? (
+          <img
+            className="cover"
+            src={cover}
+            alt={`${title} cover`}
+            onError={() => setCoverUnavailable(true)}
+          />
+        ) : (
+          <div className="cover cover-fallback" role="img" aria-label={`${title} cover`}>
+            <span>{kind}</span>
+            <b>{title}</b>
+            {author ? <i>{author}</i> : null}
+          </div>
+        )}
         <div className="book-hero-copy">
           <p className="eyebrow">{kind}</p>
           <h1>{title}</h1>
@@ -32,25 +51,42 @@ export default function Gate({ resume = null, onForget }) {
             and difficult words are there when you want them — tap one without leaving the page.
           </p>
 
-          <div className="book-actions">
+          <dl className="book-overview" aria-label="Book at a glance">
+            <div>
+              <dt>Reading</dt>
+              <dd>
+                About {overview.minutes} minutes · {overview.scenes} scenes
+              </dd>
+            </div>
+            <div>
+              <dt>Narration</dt>
+              <dd>
+                {overview.narration ? 'Available with subtitles' : 'Read at your own pace'}
+              </dd>
+            </div>
+            <div>
+              <dt>Your words</dt>
+              <dd>
+                {overview.tapped
+                  ? `${overview.tapped} saved for practice`
+                  : 'Tap difficult words while reading'}
+              </dd>
+            </div>
+          </dl>
+
+          <div className="book-actions primary-actions">
             {resume ? (
               <>
                 <Link className="btn primary" to={`/book/${id}/read/${resume.at}`}>
                   Continue reading ›
                 </Link>
-                <span className="resume-note">{throughOf(resume)}% through</span>
+                <span className="resume-note">{overview.progress}% through</span>
               </>
             ) : (
               <Link className="btn primary" to={`/book/${id}/read/0`}>
                 Start reading ›
               </Link>
             )}
-            <Link className="btn" to={`/book/${id}/words`}>
-              Practise vocabulary
-            </Link>
-            <Link className="btn ghost" to={`/book/${id}/explore`}>
-              Explore the book
-            </Link>
           </div>
 
           {resume ? (
@@ -61,18 +97,25 @@ export default function Gate({ resume = null, onForget }) {
         </div>
       </section>
 
-      {turns.length ? (
-        <Preshow talkKey="preshow" turns={turns} title="Before you begin" />
-      ) : null}
-
-      <section className="house-note" aria-label="About Wren and Ambrose">
-        <b>Wren & Grandpa Ambrose</b>
-        <p>
-          Wren loves a good story. Her grandfather Ambrose has spent a lifetime studying them.
-          They will say hello before you begin and come back after the final line. If you want
-          the deeper conversation, Ambrose keeps that in Explore so it never interrupts the
-          book.
-        </p>
+      <section className="book-options" aria-labelledby="more-with-book">
+        <div className="book-options-head">
+          <p className="eyebrow">Optional</p>
+          <h2 id="more-with-book">More ways into the book</h2>
+          <p>Neither interrupts the reading, and neither is required before you begin.</p>
+        </div>
+        <Link className="book-option" to={`/book/${id}/words`}>
+          <span className="book-option-kicker">Vocabulary</span>
+          <b>
+            {overview.tapped
+              ? `Practise ${overview.tapped} saved words`
+              : 'Practise vocabulary'}
+          </b>
+          <span>
+            {overview.tapped
+              ? 'Start with the words you chose while reading.'
+              : 'Open the full word set now, or build your own by tapping words in the story.'}
+          </span>
+        </Link>
       </section>
     </main>
   );

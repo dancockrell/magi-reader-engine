@@ -21,6 +21,8 @@ export default function Preshow({ talkKey, turns, title = 'Before we start' }) {
   const { book, id: bookId, media } = useBook();
   const [s, setS] = useState(() => createSpeech(loadHeard(bookId)));
   const [playing, setPlaying] = useState(false);
+  const [audioUnavailable, setAudioUnavailable] = useState(false);
+  const [retry, setRetry] = useState(0);
 
   useEffect(() => {
     setS((cur) => speak(cur, talkKey, turns));
@@ -33,6 +35,10 @@ export default function Preshow({ talkKey, turns, title = 'Before we start' }) {
   const turn = speaking(s);
   const p = progressOf(s);
   const recorded = !!turn?.clip;
+
+  useEffect(() => {
+    setAudioUnavailable(false);
+  }, [turn?.clip]);
 
   return (
     <>
@@ -47,13 +53,25 @@ export default function Preshow({ talkKey, turns, title = 'Before we start' }) {
       >
         {turn ? (
           <>
+            {/* Next and Back replace this conversation in place. This
+                stable live region gives that change the same meaning to
+                a screen-reader user without repeating every highlighted
+                word from the timed subtitle. */}
+            <p className="sr-only preshow-status" role="status" aria-atomic="true">
+              {speaker(book, turn.who)?.name || turn.who}: {turn.text}
+            </p>
+
             <Speaker
-              key={turn.clip || `${talkKey}-${p.at}`}
+              key={`${turn.clip || `${talkKey}-${p.at}`}#${retry}`}
               turn={turn}
               who={speaker(book, turn.who)}
               audioBase={media.audio}
               cuesUrl={media.cues}
               playing={playing && recorded}
+              onAudioUnavailable={() => {
+                setPlaying(false);
+                setAudioUnavailable(true);
+              }}
               onEnded={() => {
                 if (isLast(s)) setPlaying(false);
                 setS(next);
@@ -73,7 +91,7 @@ export default function Preshow({ talkKey, turns, title = 'Before we start' }) {
                 ‹ Back
               </button>
 
-              {recorded ? (
+              {recorded && !audioUnavailable ? (
                 <button
                   type="button"
                   className="btn"
@@ -82,9 +100,27 @@ export default function Preshow({ talkKey, turns, title = 'Before we start' }) {
                 >
                   {playing ? 'Pause' : 'Listen'}
                 </button>
+              ) : recorded ? (
+                <button
+                  type="button"
+                  className="btn"
+                  onClick={() => {
+                    setAudioUnavailable(false);
+                    setRetry((n) => n + 1);
+                    setPlaying(true);
+                  }}
+                >
+                  Try narration
+                </button>
               ) : (
-                <span className="preshow-textonly">Voice recording to come</span>
+                <span className="preshow-textonly">Read at your pace</span>
               )}
+
+              {audioUnavailable ? (
+                <span className="preshow-textonly" role="status">
+                  Voice unavailable — read along below
+                </span>
+              ) : null}
 
               <span className="preshow-count">
                 {p.at} of {p.of}

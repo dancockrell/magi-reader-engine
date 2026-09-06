@@ -1,40 +1,48 @@
-import { useMemo } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Preshow from './Preshow.jsx';
-import { afterwordRun } from '../lib/speech/script.js';
 import { useBook } from './useBook.jsx';
+import CreditsReel from './CreditsReel.jsx';
 
 /** The reader has finished the literary work. Nothing is scored here. */
-export default function Finish() {
+export default function Finish({ muted = false, motion = true }) {
   const { book, id, title } = useBook();
-  const turns = useMemo(() => afterwordRun(book), [book]);
+  const [creditsDone, setCreditsDone] = useState(!book.credits?.cards?.length);
+
+  if (!creditsDone) {
+    return (
+      <CreditsReel
+        credits={book.credits}
+        title={title}
+        muted={muted}
+        motion={motion}
+        onDone={() => setCreditsDone(true)}
+      />
+    );
+  }
 
   return (
     <section className="finish solo-finish">
       <p className="eyebrow">The final line</p>
       <h2>That is {title}.</h2>
       <p className="finish-next">
-        A story is allowed to end before somebody explains it. Sit with it for a moment if you
-        want. Wren and Grandpa Ambrose have a few final thoughts, and the deeper notes are there
-        only if you choose to open them.
+        Take a moment with the ending. You can read it again, or practise the words you saved.
       </p>
 
-      {turns.length ? (
-        <Preshow talkKey="final-thoughts" turns={turns} title="After the last line" />
+      {book.credits?.cards?.length ? (
+        <button className="btn ghost" type="button" onClick={() => setCreditsDone(false)}>
+          Replay credits
+        </button>
       ) : null}
 
       <div className="finish-doors">
-        <Link className="btn primary" to={`/book/${id}/explore`}>
-          Explore the book ›
+        <Link className="btn primary" to={`/book/${id}/read/0`}>
+          Read again
         </Link>
         <Link className="btn" to={`/book/${id}/words`}>
           Practise the words
         </Link>
-        <Link className="btn ghost" to={`/book/${id}/read/0`}>
-          Read again
-        </Link>
-        <Link className="btn ghost" to={`/book/${id}`}>
-          Back to the book
+        <Link className="btn ghost" to="/">
+          Back to the bookshelf
         </Link>
       </div>
     </section>

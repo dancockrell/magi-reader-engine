@@ -74,6 +74,10 @@ function withCatalogMeta(book, entry) {
     preshow: framing.intro || book.preshow || [],
     afterword: framing.afterword || book.afterword || [],
     explore: entry.explore || book.explore || {},
+    // A shelf entry may provide an engine-shipped pre-cut film for a remote
+    // data-only book pack. The reader owns playback; the remote pack never
+    // supplies executable behavior or controls its timeline.
+    cinematicFilm: entry.cinematicFilm || book.cinematicFilm || '',
   };
 }
 

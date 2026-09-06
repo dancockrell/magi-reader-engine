@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { useCueTrack } from './useCueTrack.js';
 import { useSpokenLine } from './useSpokenLine.js';
 import SpokenText from './SpokenText.jsx';
@@ -15,6 +15,8 @@ import SpokenText from './SpokenText.jsx';
 export default function Scene({
   plate,
   visual = null,
+  film = '',
+  filmLoop = true,
   motion = true,
   line,
   clip,
@@ -23,16 +25,33 @@ export default function Scene({
   translation = null,
   lang = '',
   gloss = {},
-  wordIn,
-  onTap,
+  wordIn = undefined,
+  onTap = undefined,
   playing = false,
+  restartToken = 0,
   muted = false,
   rate = 1,
-  onEnded,
+  onEnded = undefined,
+  onFilmEnded = undefined,
+  onAudioUnavailable = undefined,
+  onPlaybackBlocked = undefined,
 }) {
   const audioRef = useRef(null);
-  const videoRef = useRef(null);
+  const filmRef = useRef(null);
+  const [audioUnavailable, setAudioUnavailable] = useState(false);
+  const [imageUnavailable, setImageUnavailable] = useState(false);
+  const [failedFilm, setFailedFilm] = useState('');
+  const [, setAudioDuration] = useState(0);
   const { words, index } = useCueTrack(audioRef, clip, cuesUrl);
+
+  useEffect(() => {
+    setAudioUnavailable(false);
+    setAudioDuration(0);
+  }, [clip, audioBase]);
+
+  useEffect(() => {
+    setImageUnavailable(false);
+  }, [plate.src]);
 
   useEffect(() => {
     const el = audioRef.current;
@@ -44,32 +63,30 @@ export default function Scene({
   useEffect(() => {
     const el = audioRef.current;
     if (!el) return;
+    if (restartToken) el.currentTime = 0;
+  }, [restartToken]);
+
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el) return;
     if (playing) {
       const p = el.play();
-      if (p && typeof p.catch === 'function') p.catch(() => {});
+      if (p && typeof p.catch === 'function') p.catch(() => onPlaybackBlocked?.());
     } else {
       el.pause();
     }
-  }, [playing, clip]);
+  }, [playing, clip, restartToken, onPlaybackBlocked]);
 
-  /* Visual clips follow the narration but do not control it. A shorter
-     clip simply rests on its last frame; a longer one is paused when the
-     narration advances to the next line. */
   useEffect(() => {
-    const el = videoRef.current;
+    const el = filmRef.current;
     if (!el) return;
-    el.playbackRate = rate;
-    if (playing && motion) {
-      const p = el.play();
-      if (p && typeof p.catch === 'function') p.catch(() => {});
-    } else {
-      el.pause();
-    }
-  }, [playing, motion, rate, visual?.clip]);
+    const p = el.play();
+    if (p && typeof p.catch === 'function') p.catch(() => {});
+  }, [film, motion, failedFilm]);
 
   const { tokens, lit: litIndex } = useSpokenLine(line, words, index);
-  const hasVideo = motion && !!visual?.clip;
-  const hasPair = motion && !hasVideo && !!visual?.end && !!(visual?.start || plate.src);
+  const hasFilm = motion && !!film && failedFilm !== film;
+  const hasPair = motion && !hasFilm && !!visual?.end && !!(visual?.start || plate.src);
   const duration = Number(visual?.duration) > 0 ? Number(visual.duration) : 5;
   const visualStyle = /** @type {import('react').CSSProperties & Record<string, string>} */ ({
     '--visual-duration': `${duration}s`,
@@ -77,16 +94,24 @@ export default function Scene({
 
   return (
     <figure className="scene">
-      {hasVideo ? (
+      {imageUnavailable && !hasFilm ? (
+        <div className="plate missing" role="img" aria-label={plate.alt}>
+          <span aria-hidden="true">Illustration unavailable</span>
+        </div>
+      ) : hasFilm ? (
         <video
-          ref={videoRef}
+          ref={filmRef}
           className="plate visual-clip"
-          src={visual.clip}
-          poster={visual.start || plate.src || undefined}
+          src={film}
+          poster={plate.src || undefined}
           aria-label={plate.alt}
+          loop={filmLoop}
+          autoPlay
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
+          onEnded={onFilmEnded}
+          onError={() => setFailedFilm(film)}
         />
       ) : hasPair ? (
         <div
@@ -100,11 +125,24 @@ export default function Scene({
             src={visual.start || plate.src}
             alt=""
             draggable="false"
+            onError={() => setImageUnavailable(true)}
           />
-          <img className="keyframe end" src={visual.end} alt="" draggable="false" />
+          <img
+            className="keyframe end"
+            src={visual.end}
+            alt=""
+            draggable="false"
+            onError={() => setImageUnavailable(true)}
+          />
         </div>
       ) : plate.src ? (
-        <img className="plate" src={plate.src} alt={plate.alt} draggable="false" />
+        <img
+          className="plate"
+          src={plate.src}
+          alt={plate.alt}
+          draggable="false"
+          onError={() => setImageUnavailable(true)}
+        />
       ) : (
         <div className="plate missing" role="img" aria-label={plate.alt} />
       )}
@@ -124,12 +162,35 @@ export default function Scene({
         ) : null}
       </figcaption>
 
+      {motion && film && failedFilm === film ? (
+        <p className="media-note" role="status">
+          Film unavailable — the illustrated reading can continue.{' '}
+          <button type="button" className="btn ghost" onClick={() => setFailedFilm('')}>
+            Retry film
+          </button>
+        </p>
+      ) : null}
+
+      {audioUnavailable ? (
+        <p className="media-note" role="status">
+          Narration unavailable — you can still read.
+        </p>
+      ) : null}
+
       {clip ? (
         <audio
           ref={audioRef}
           src={`${audioBase}${clip}.mp3`}
           preload="auto"
+          onLoadedMetadata={(event) => {
+            const duration = Number(event.currentTarget.duration);
+            setAudioDuration(Number.isFinite(duration) && duration > 0 ? duration : 0);
+          }}
           onEnded={onEnded}
+          onError={() => {
+            setAudioUnavailable(true);
+            onAudioUnavailable?.();
+          }}
           crossOrigin="anonymous"
         >
           <track kind="captions" srcLang="en" label="English" src={cuesUrl} />

@@ -211,6 +211,15 @@ a:focus-visible,
   color: inherit;
   cursor: pointer;
 }
+.where-act {
+  color: var(--amber);
+  font-size: 0.82em;
+  font-weight: 750;
+}
+.seg-open:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
 .seg-open:hover .title {
   color: var(--amber);
 }
@@ -229,6 +238,66 @@ a:focus-visible,
 .transport .btn.ghost.jump:hover:not(:disabled) {
   color: var(--parch);
   border-color: #4a4038;
+}
+
+@media (max-width: 560px) {
+  .transport {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-areas:
+      'back play next'
+      'jump-prev again jump-next';
+    gap: 8px;
+  }
+  .transport .btn {
+    min-width: 0;
+    padding-inline: 8px;
+  }
+  .transport-back {
+    grid-area: back;
+  }
+  .transport .play {
+    grid-area: play;
+  }
+  .transport-next {
+    grid-area: next;
+  }
+  .jump-prev {
+    grid-area: jump-prev;
+  }
+  .transport-again {
+    grid-area: again;
+  }
+  .jump-next {
+    grid-area: jump-next;
+  }
+  .where {
+    display: block;
+  }
+  .seg-open {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 12px;
+    justify-content: stretch;
+    padding: 10px 12px;
+    border: 1px solid #3a322b;
+    border-radius: 10px;
+    background: rgba(23, 19, 15, 0.72);
+    text-align: left;
+  }
+  .where-act {
+    grid-column: 1 / -1;
+  }
+  .where .title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .where .count {
+    white-space: nowrap;
+    text-align: right;
+  }
 }
 
 /* ---------- the picture, held still while a question is answered ---------- */
@@ -1342,6 +1411,27 @@ a:focus-visible,
   overflow: hidden;
   clip: rect(0 0 0 0);
   white-space: nowrap;
+}
+
+.media-note {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 3;
+  margin: 0;
+  padding: 0.45rem 0.75rem;
+  background: color-mix(in srgb, var(--bg, #17140f) 92%, transparent);
+  color: var(--text, #f6f0e3);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.plate.missing {
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: linear-gradient(145deg, #27231d, #16130f);
+  color: color-mix(in srgb, var(--text, #f6f0e3) 72%, transparent);
+  text-align: center;
 }
 .done {
   text-align: center;

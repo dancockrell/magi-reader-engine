@@ -8,6 +8,7 @@ import {
   useNavigate,
   useOutletContext,
   useParams,
+  useSearchParams,
 } from 'react-router-dom';
 
 import { lineFor } from './lib/vocab/text.js';
@@ -16,19 +17,20 @@ import { createSession, advance, answer, progressOf } from './lib/vocab/session.
 import { loadTapped, saveTapped, tap, practiceSet } from './lib/vocab/tapped.js';
 import { storyTrack, stepTrack } from './lib/reader/track.js';
 import { translatorFor } from './lib/book/translate.js';
-import { rememberWhere, whereLeftOff, forgetWhere } from './lib/reader/resume.js';
+import { rememberWhere } from './lib/reader/resume.js';
 
 import Bookshelf from './ui/Bookshelf.jsx';
 import BookRoute from './ui/BookRoute.jsx';
-import Gate from './ui/Gate.jsx';
 import Reader from './ui/Reader.jsx';
-import Explore from './ui/Explore.jsx';
+import FilmReader from './ui/FilmReader.jsx';
 import VocabCard from './ui/VocabCard.jsx';
 import { useBook } from './ui/useBook.jsx';
 import './styles.css';
 import './solo.css';
+import './cinema.css';
 
 function ReadingRoute() {
+  const [search] = useSearchParams();
   const { book, id: bookId, lineCounts } = useBook();
   const { beat = '0' } = useParams();
   const navigate = useNavigate();
@@ -45,7 +47,8 @@ function ReadingRoute() {
 
   const wanted = Number.parseInt(beat, 10);
   const safe = stepTrack(track, Number.isFinite(wanted) ? wanted : 0, 0);
-  const go = useCallback((n) => navigate(`/book/${bookId}/read/${n}`), [navigate, bookId]);
+  const textView = search.get('view') === 'text';
+  const go = useCallback((n) => navigate(`/book/${bookId}/read/${n}${textView ? '?view=text' : ''}`), [navigate, bookId, textView]);
 
   useEffect(() => {
     rememberWhere(bookId, { pass: 1, at: safe, of: track.length });
@@ -60,6 +63,8 @@ function ReadingRoute() {
     return <Navigate to={`/book/${bookId}/read/${safe}`} replace />;
   }
 
+  if (book.cinematicFilm && search.get('view') !== 'text') return <FilmReader />;
+
   return (
     <Reader
       index={safe}
@@ -69,7 +74,7 @@ function ReadingRoute() {
       onTap={onTap}
       lang={translator ? translator.lang : ''}
       muted={!settings.sound}
-      motion={settings.motion}
+      motion={false}
       rate={settings.pace}
     />
   );
@@ -124,31 +129,17 @@ function PractiseRoute() {
   );
 }
 
-function GateRoute() {
-  const { id: bookId } = useBook();
-  const [where, setWhere] = useState(() => whereLeftOff(bookId));
-  return (
-    <Gate
-      resume={where}
-      onForget={() => {
-        forgetWhere(bookId);
-        setWhere(null);
-      }}
-    />
-  );
-}
-
 const router = createHashRouter([
   { path: '/', element: <Bookshelf /> },
   {
     path: '/book/:bookId',
     element: <BookRoute />,
     children: [
-      { index: true, element: <GateRoute /> },
+      { index: true, element: <Navigate to="read/0" replace /> },
       { path: 'read/:beat', element: <ReadingRoute /> },
       { path: 'read', element: <Navigate to="read/0" replace /> },
       { path: 'words', element: <PractiseRoute /> },
-      { path: 'explore', element: <Explore /> },
+      { path: 'explore', element: <Navigate to="../read/0" replace /> },
     ],
   },
   { path: '*', element: <Navigate to="/" replace /> },

@@ -83,6 +83,7 @@
 
 .book-card.featured {
   grid-column: span 2;
+  grid-template-columns: 8px minmax(240px, 0.92fr) minmax(0, 1.08fr);
 }
 
 .book-spine {
@@ -95,6 +96,19 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 1.3rem 1.35rem 1.4rem;
+}
+
+.book-card-visual {
+  min-height: 300px;
+  overflow: hidden;
+  background: #15100c;
+}
+
+.book-card-visual img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .book-kind,
@@ -118,6 +132,27 @@
   opacity: 0.7;
 }
 
+.book-status {
+  margin: 0.8rem 0 -0.2rem;
+  padding: 0.24rem 0.48rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.book-status.preview {
+  color: var(--accent, #c9a227);
+}
+
+.book-card.offline,
+.book-card.coming {
+  opacity: 0.68;
+}
+
 .book-note {
   flex: 1;
   line-height: 1.5;
@@ -126,6 +161,39 @@
 
 .book-coming {
   margin-top: auto;
+}
+
+.book-load-state {
+  width: min(620px, calc(100% - 2rem));
+  margin: clamp(3rem, 12vh, 8rem) auto;
+  padding: 1.5rem;
+  border: 1px solid var(--line, rgba(127, 127, 127, 0.28));
+  border-radius: 14px;
+  background: var(--paper, rgba(255, 255, 255, 0.035));
+}
+
+.book-load-state progress {
+  width: min(100%, 24rem);
+}
+
+.book-load-note {
+  max-width: 52ch;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  opacity: 0.68;
+}
+
+.book-load-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
+}
+
+.book-offline-wait {
+  align-self: center;
+  font-size: 0.86rem;
+  opacity: 0.7;
 }
 
 .brand-wrap {
@@ -160,6 +228,39 @@
   object-fit: contain;
 }
 
+.cover-fallback {
+  aspect-ratio: 3 / 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 0.45rem;
+  padding: clamp(1.1rem, 4vw, 2rem);
+  border: 1px solid var(--line, rgba(127, 127, 127, 0.28));
+  background:
+    radial-gradient(circle at 30% 20%, rgba(201, 162, 39, 0.16), transparent 35%),
+    linear-gradient(145deg, #29231a, #15120e);
+  color: #f6f0e3;
+  text-align: left;
+}
+
+.cover-fallback span {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+
+.cover-fallback b {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  line-height: 1;
+}
+
+.cover-fallback i {
+  opacity: 0.72;
+}
+
 .book-by {
   margin: -0.35rem 0 1.1rem;
   font-style: italic;
@@ -174,6 +275,41 @@
   align-items: center;
   gap: 0.65rem;
   margin-top: 1.25rem;
+}
+
+.book-overview {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.25rem 0 0;
+}
+
+.book-overview > div {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  gap: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--line, rgba(127, 127, 127, 0.22));
+}
+
+.book-overview dt {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  opacity: 0.58;
+}
+
+.book-overview dd {
+  margin: 0;
+}
+
+.primary-actions {
+  margin-top: 1.5rem;
+}
+
+.primary-actions .btn.primary {
+  min-width: min(100%, 14rem);
+  justify-content: center;
 }
 
 .resume-note {
@@ -199,6 +335,58 @@
   background: rgba(127, 127, 127, 0.07);
 }
 
+.book-options {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 1rem;
+  margin: 2.5rem auto 0;
+}
+
+.book-options-head {
+  padding: 0.4rem 1rem 0 0;
+}
+
+.book-options-head h2 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.book-options-head > p:last-child {
+  line-height: 1.5;
+  opacity: 0.68;
+}
+
+.book-option {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  min-height: 145px;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--line, rgba(127, 127, 127, 0.28));
+  border-radius: 12px;
+  background: rgba(127, 127, 127, 0.045);
+  color: inherit;
+  text-decoration: none;
+}
+
+.book-option:hover {
+  border-color: currentColor;
+  background: rgba(127, 127, 127, 0.08);
+}
+
+.book-option-kicker {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.58;
+}
+
+.book-option > span:last-child {
+  line-height: 1.45;
+  opacity: 0.72;
+}
+
 .house-note p {
   margin: 0.35rem 0 0;
 }
@@ -206,6 +394,124 @@
 .solo-reader .scene,
 .solo-reader .stage {
   position: relative;
+}
+
+/* ---------- approved opening master ----------
+   The title card is a separate editorial beat. Physical book action is
+   baked into the reviewed video; CSS only crossfades its ending into Scene 1. */
+.opening-master {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: min(68vh, calc(100dvh - 260px));
+  overflow: hidden;
+  border: 1px solid #2b2520;
+  border-radius: 14px;
+  background: #070606;
+}
+
+.opening-master video,
+.opening-still-image,
+.opening-title-card,
+.opening-title-poster,
+.opening-match-frame {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.opening-match-frame {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+  background: #070606;
+}
+
+.opening-master.book-phase.dissolving .opening-match-frame,
+.opening-master.still .opening-match-frame {
+  opacity: 1;
+}
+
+.opening-title-card {
+  position: relative;
+  isolation: isolate;
+  background: #070606;
+}
+
+.opening-title-poster {
+  position: absolute;
+  inset: 0;
+  opacity: 0.72;
+}
+
+.opening-title-shade {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 56%, rgba(96, 62, 26, 0.13), transparent 48%),
+    linear-gradient(90deg, rgba(5, 4, 4, 0.78), rgba(5, 4, 4, 0.42), rgba(5, 4, 4, 0.78));
+}
+
+.opening-title-copy {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  padding: 2rem;
+  text-align: center;
+  color: #fff1d1;
+  text-shadow: 0 2px 18px #000;
+}
+
+.opening-title-copy span {
+  font: 800 clamp(0.64rem, 1.3vw, 0.78rem)/1 var(--sans);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber, #d9a04a);
+}
+
+.opening-title-copy h1 {
+  max-width: 13ch;
+  margin: 0.42rem 0 0.2rem;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-weight: 650;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.opening-title-copy p {
+  margin: 0;
+  font: italic clamp(0.92rem, 2vw, 1.22rem)/1.3 var(--serif);
+  color: #d8cbb3;
+}
+
+.opening-master-skip {
+  position: absolute;
+  z-index: 5;
+  right: 0.8rem;
+  bottom: 0.7rem;
+  padding: 0.48rem 0.68rem;
+  border: 1px solid rgba(255, 241, 209, 0.22);
+  border-radius: 999px;
+  background: rgba(5, 4, 5, 0.58);
+  color: rgba(255, 241, 209, 0.78);
+  font: 750 0.68rem/1 var(--sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.opening-master-skip:hover,
+.opening-master-skip:focus-visible {
+  border-color: var(--amber, #d9a04a);
+  color: #fff1d1;
 }
 
 .visual-clip,
@@ -259,6 +565,134 @@
 
 .solo-finish h2 {
   margin-top: 0.2rem;
+}
+
+/* ---------- literary end credits ---------- */
+.credit-reel {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: min(68vh, calc(100dvh - 260px));
+  overflow: hidden;
+  border: 1px solid #2b2520;
+  border-radius: 14px;
+  background: #070606;
+}
+
+.credit-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  animation: credit-image-in 1.2s ease both;
+}
+
+.credit-shade {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: end;
+  justify-items: center;
+  padding: clamp(3.5rem, 9vw, 7rem) clamp(1.2rem, 7vw, 5rem) clamp(2.7rem, 6vw, 4.5rem);
+  text-align: center;
+  background: linear-gradient(
+    to top,
+    rgba(5, 4, 5, 0.96) 3%,
+    rgba(5, 4, 5, 0.68) 36%,
+    transparent 72%
+  );
+  animation: credit-copy-in 0.9s 0.15s ease both;
+}
+
+.credit-kicker {
+  margin: 0 0 0.42rem;
+  font: 800 clamp(0.64rem, 1.2vw, 0.76rem)/1 var(--sans);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber, #d9a04a);
+}
+
+.credit-shade h2 {
+  max-width: 19ch;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.65rem, 4.5vw, 3.7rem);
+  line-height: 1.02;
+  color: #fff1d1;
+  text-wrap: balance;
+  text-shadow: 0 2px 12px #000;
+}
+
+.credit-shade > p:last-child {
+  max-width: 58ch;
+  margin: 0.75rem 0 0;
+  font: 500 clamp(0.9rem, 1.8vw, 1.15rem)/1.5 var(--serif);
+  color: #d8cbb3;
+  text-wrap: balance;
+}
+
+.credit-progress {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 0.85rem;
+  display: flex;
+  gap: 0.38rem;
+  transform: translateX(-50%);
+}
+
+.credit-progress span {
+  width: 1.5rem;
+  height: 2px;
+  background: rgba(255, 241, 209, 0.22);
+}
+
+.credit-progress .current {
+  background: var(--amber, #d9a04a);
+}
+
+.credit-skip {
+  position: absolute;
+  z-index: 4;
+  right: 0.8rem;
+  top: 0.7rem;
+  padding: 0.48rem 0.68rem;
+  border: 1px solid rgba(255, 241, 209, 0.22);
+  border-radius: 999px;
+  background: rgba(5, 4, 5, 0.58);
+  color: rgba(255, 241, 209, 0.78);
+  font: 750 0.68rem/1 var(--sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.credit-skip:hover,
+.credit-skip:focus-visible {
+  border-color: var(--amber, #d9a04a);
+  color: #fff1d1;
+}
+
+@keyframes credit-image-in {
+  from {
+    opacity: 0;
+    transform: scale(1.025);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes credit-copy-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .explore {
@@ -336,6 +770,11 @@
   opacity: 0.7;
 }
 
+/* A compact library workspace, not a marketing-page masthead. */
+.bookshelf-page .bookshelf-hero { padding-top: 24px; padding-bottom: 24px; }
+.bookshelf-page .bookshelf-hero h1 { font-size: clamp(32px, 4vw, 48px); margin: 14px 0; }
+.bookshelf-page .bookshelf-hero > p:last-child { margin-bottom: 0; }
+
 .explore-footer {
   padding-top: 2rem;
   border-top: 1px solid var(--line, rgba(127, 127, 127, 0.28));
@@ -344,6 +783,17 @@
 @media (max-width: 760px) {
   .book-card.featured {
     grid-column: span 1;
+    grid-template-columns: 8px 1fr;
+  }
+
+  .book-card.featured .book-card-visual {
+    grid-column: 2;
+    min-height: 210px;
+    max-height: 42vh;
+  }
+
+  .book-card.featured .book-card-copy {
+    grid-column: 2;
   }
 
   .shelf-head,
@@ -365,6 +815,14 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 0.2rem;
+  }
+
+  .book-options {
+    grid-template-columns: 1fr;
+  }
+
+  .book-options-head {
+    padding-right: 0;
   }
 }
 

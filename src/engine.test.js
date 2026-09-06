@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { CATALOG, catalogBook } from './lib/library/catalog.js';
 
 /**
- * One reader, many books.
+ * One focused reader with a clean book boundary.
  *
  * The redesign has one deliberate content boundary: `library/catalog.js`.
  * That file is allowed to know which titles are on the shelf and where a
@@ -17,8 +17,13 @@ import { CATALOG, catalogBook } from './lib/library/catalog.js';
 const ROOT = 'src';
 const CATALOG_FILE = join(ROOT, 'lib', 'library', 'catalog.js');
 const PRODUCT = /\bmagi[ -]reader\b/gi;
-const BOOK_NAMES = CATALOG.flatMap((entry) => [entry.id, entry.title, entry.author]).filter(
-  Boolean
+const BOOK_NAMES = CATALOG.flatMap((entry) => [
+  ...(entry.id.length >= 4 ? [entry.id] : []),
+  ...(entry.title.length >= 4 ? [entry.title] : []),
+  entry.author,
+]).filter(Boolean);
+const SHORT_BOOK_TITLES = CATALOG.map((entry) => entry.title).filter(
+  (title) => title && title.length < 4
 );
 
 const escape = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -38,7 +43,10 @@ function codeLinesOf(text) {
 
 function namesABook(line) {
   const code = codeOf(line);
-  return BOOK_NAMES.some((name) => new RegExp(`\\b${escape(name)}\\b`, 'i').test(code));
+  return (
+    BOOK_NAMES.some((name) => new RegExp(`(?<!\\w)${escape(name)}(?!\\w)`, 'i').test(code)) ||
+    SHORT_BOOK_TITLES.some((title) => new RegExp(`(['"])${escape(title)}\\1`, 'i').test(code))
+  );
 }
 
 /** Every shipped source file that should remain title-agnostic. */
@@ -66,17 +74,19 @@ describe('the catalog is the content boundary', () => {
     expect(files.length).toBeGreaterThan(15);
   });
 
-  it('recognises a real book name but not the product name', () => {
+  it('recognises the flagship book but not unrelated titles or the product name', () => {
     expect(namesABook("const APP_NAME = 'Magi Reader';")).toBe(false);
     expect(namesABook("const id = 'magi';")).toBe(true);
     expect(namesABook("const title = 'The Gift of the Magi';")).toBe(true);
     expect(namesABook('O. Henry wrote it')).toBe(true);
+    expect(namesABook("const title = 'If';")).toBe(false);
+    expect(namesABook('if (ready) return book;')).toBe(false);
   });
 
   it('does not mistake prose in block comments for title-specific code', () => {
     const text = [
       '/**',
-      ' * O. Henry and Edgar Allan Poe are useful examples here.',
+      ' * O. Henry is a useful example here.',
       ' */',
       "const value = 'generic';",
     ].join('\n');
@@ -107,8 +117,9 @@ describe('the catalog is the content boundary', () => {
 });
 
 describe('the bookshelf catalog', () => {
-  it('contains real entries and unique ids', () => {
-    expect(CATALOG.length).toBeGreaterThan(1);
+  it('contains only the flagship title with a unique id', () => {
+    expect(CATALOG).toHaveLength(1);
+    expect(CATALOG[0].id).toBe('magi');
     expect(new Set(CATALOG.map((entry) => entry.id)).size).toBe(CATALOG.length);
   });
 
@@ -156,5 +167,14 @@ describe('the bookshelf catalog', () => {
   it('finds a known book and refuses an unknown one', () => {
     expect(catalogBook(CATALOG[0].id)).toBe(CATALOG[0]);
     expect(catalogBook('not-on-this-shelf')).toBeNull();
+  });
+
+  it('does not expose removed sample titles', () => {
+    expect(catalogBook('raven')).toBeNull();
+    expect(catalogBook('if')).toBeNull();
+    expect(catalogBook('three-little-pigs')).toBeNull();
+    expect(catalogBook('tortoise-and-hare')).toBeNull();
+    expect(catalogBook('lion-and-mouse')).toBeNull();
+    expect(catalogBook('rikki-tikki-tavi')).toBeNull();
   });
 });

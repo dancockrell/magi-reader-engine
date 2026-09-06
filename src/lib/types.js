@@ -88,6 +88,7 @@
  * @property {string|null} [start]
  * @property {string|null} [end]
  * @property {string|null} [clip]
+ * @property {number} [clipStart] Seconds into a shared source clip where this line begins.
  * @property {string|null} [poster]
  * @property {string} [alt]
  * @property {string} [shot]
@@ -99,6 +100,23 @@
  */
 
 /** @typedef {Record<string, VisualPlan|VisualPlan[]|Record<string,VisualPlan>>} Storyboard */
+
+/**
+ * One card in the wordless end-credit reel.
+ * @typedef {object} CreditCard
+ * @property {string} kicker
+ * @property {string} title
+ * @property {string} text
+ * @property {string} image
+ * @property {string} [alt]
+ */
+
+/**
+ * @typedef {object} BookCredits
+ * @property {CreditCard[]} cards
+ * @property {string} [score]
+ * @property {number} [scoreCue]
+ */
 
 /**
  * One optional literary lens in Ambrose's Explore notes.
@@ -130,6 +148,12 @@
  * @property {Record<string,string>} [swaps]
  * @property {Record<string,string>} [plates]
  * @property {Storyboard} [storyboard]
+ * @property {string} [cinematicFilm] One pre-cut film that the reader displays without timing control.
+ * @property {string} [cinematicCaptions] Caption track for the authored film.
+ * @property {string} [cinematicPoster] Film poster before playback.
+ * @property {boolean} [cinematicLoop] Whether that film may restart after reaching its end.
+ * @property {{video:string,titlePoster?:string,poster?:string,scene?:string,dissolveAt?:number,duration?:number}} [opening]
+ * @property {BookCredits} [credits]
  * @property {{audio?:string,cues?:string}} [media]
  * @property {{source?:string,fetchedAt?:number}} [plugin]
  * @property {ExploreNotes} [explore]

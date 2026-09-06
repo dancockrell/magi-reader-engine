@@ -22,6 +22,8 @@ dev*.log
 #
 # When the art becomes something we author rather than extract, this
 # decision should be revisited — probably with git-lfs.
-public/art/
-public/magi-audio/
+# Curated reading media now ships with source for reproducible builds.
 public/vtt/
+public/video/**/*.mp4
+production/
+tools/ffmpeg/

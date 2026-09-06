@@ -1,53 +1,46 @@
 # Magi Reader
 
-Magi Reader is a warm, illustrated solo-reading experience for classic stories and poems.
+**A film to watch. A story to read.**
 
-The reader keeps the book uninterrupted: narration drives the timing, subtitles follow the spoken line, and difficult words are tappable without turning the story into a worksheet. Wren and Grandpa Ambrose welcome the reader before the book and return with final thoughts after the ending. Their deeper literary notes live in a separate Explore experience.
+O. Henry’s *The Gift of the Magi*, adapted into a narrated short film and a quiet, installable reading app.
 
-## What ships
+[**Open the app**](https://dancockrell.github.io/magi-reader-engine/) · [**Watch the film**](https://dancockrell.github.io/magi-reader-engine/film.html) · [**Download the 1080p film**](https://github.com/dancockrell/magi-reader-engine/releases/download/v0.9.0-portfolio/the-gift-of-the-magi.mp4)
 
-- A bookshelf with _The Gift of the Magi_ bundled for offline reading.
-- Git-hosted book packs, beginning with _The Raven_.
-- Narration, subtitles, clickable vocabulary, and a personal vocabulary trainer.
-- Per-line art, two-keyframe transitions, and optional finished silent visual clips.
-- Separate introductions, afterwords, and Explore notes for interested middle-school readers.
-- Storyboard production sheets and a timing-aware storyboard planning tool.
+[![Della counting her savings](public/art/storyboard/s1/s1-a-counting.jpg)](https://dancockrell.github.io/magi-reader-engine/film.html)
 
-The bundled Gift pack is lazy-loaded when the reader opens it, so the bookshelf does not download the whole book up front. Remote packs are fetched as data and media; the app does not execute JavaScript from book repositories.
+## The experience
 
-## Run it
+- **Watch:** the complete narrated film, with English captions, seeking, volume and fullscreen controls.
+- **Read:** the original story at your own pace, with vocabulary support.
+- **Keep a bookshelf:** one adaptation is the focus. Other titles are deferred.
+- **Install:** use your browser’s install-app command where supported. The film streams on demand; downloading the MP4 is the reliable offline viewing option.
 
-```bash
-npm install
+No account, classroom workflow, explanatory host characters, or sentence-driven video playback.
+
+## The work behind the film
+
+This is a portfolio project by **Dan Cockrell**, combining application development with an AI-assisted film production workflow. Generated footage was treated as source material: selected, rejected, reshot and cut into an authored timeline.
+
+Picture, narration and music are baked into one film. The application does not stretch clips, loop shots or pause picture to catch individual sentences. The delivery is **1920 × 1080 at 24 fps**, approximately **14 minutes 42 seconds** including the closing coda.
+
+[Read the production case study](docs/FILM-PRODUCTION.md) · [Release checks](docs/PORTFOLIO-RELEASE.md)
+
+## Run locally
+
+```sh
+npm ci
 npm run dev
 npm test
+npm run typecheck
 npm run build
-npm run verify
 ```
 
-Create a storyboard skeleton from real book text and narration cues with `npm run storyboard:plan -- --help`.
+The repository includes reading media and captions. Download the film from Releases and place it at `public/video/films/magi-reader-film-final.mp4` for local playback. Production builds use the release-hosted film; set `VITE_FILM_URL` to supply a different delivery URL.
 
-## Architecture
+The app is `index.html`; the standalone cinema presentation is `film.html`. Both are built together. Raw generations and intermediate renders are kept outside the shipped app.
 
-```text
-src/books/              bundled book packs
-src/lib/book/           book validation and vocabulary lookup
-src/lib/library/        bookshelf catalog and safe Git-pack loading
-src/lib/reader/         uninterrupted story track and reading state
-src/lib/media/          narration cues and visual timing
-src/ui/                 bookshelf, reader, vocabulary, and Explore UI
-docs/storyboards/       exact visual production sheets
-tools/                  book checks, release, cues, and storyboard planning
-```
+## Credits and license
 
-`src/lib/library/catalog.js` is the deliberate content boundary: it knows which titles are on the shelf and where their packs live. The generic reader and UI do not hard-code book titles or book-specific media paths.
+Story: **O. Henry**. Adaptation, editing and application: **Dan Cockrell**. Visuals, narration and score use AI-assisted production.
 
-## Book plugins
-
-A remote catalog entry points to a JSON book pack and a base media URL. The loader resolves narration, cues, cast art, plates, and storyboard media against that base, then adds the catalog's Wren/Ambrose framing and Explore notes.
-
-The detailed pack contract is in `docs/BOOK-FORMAT.md`. New visual work should use the storyboard fields and the examples in `docs/storyboards/`.
-
-## License
-
-MIT. The included stories are public domain. Illustrations and recordings travel with their book packs.
+Application code is MIT licensed. The story is public domain in the United States. Generated media is separate from the code license; contact the project author about reuse.

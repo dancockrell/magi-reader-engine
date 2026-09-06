@@ -31,6 +31,22 @@ describe('catalog book loading', () => {
       preshow: entry.framing.intro,
       afterword: entry.framing.afterword,
       explore: entry.explore,
+      cinematicFilm: '',
     });
+  });
+
+  it('lets a catalog entry provide an engine-owned film for a remote-style pack', async () => {
+    const entry = {
+      id: 'remote-book',
+      title: 'Remote title',
+      author: 'Remote author',
+      kind: 'Poem',
+      cinematicFilm: 'video/films/remote-film.mp4',
+      local: { meta: {}, units: [] },
+    };
+
+    const loaded = await loadCatalogBook(entry);
+
+    expect(loaded.cinematicFilm).toBe('video/films/remote-film.mp4');
   });
 });
