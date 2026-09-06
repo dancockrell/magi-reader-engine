@@ -1,0 +1,164 @@
+{
+  "status": "local consolidated editorial review; not festival-ready or published",
+  "fps": 24,
+  "frames": 21387,
+  "pictureSeconds": 891.125,
+  "audio": "Bitstream-copy of public baseline; final mix pending",
+  "outputSha256": "56ccd357965c0a65b77e147bc440c351aea174805ec20ad04af041e12a35bdda",
+  "sources": [
+    {
+      "path": "public/video/films/magi-reader-film-final.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "21387"
+      },
+      "sha256": "1d2d36254c255723c7b34fa019371e5c0e0e35710aeef1e07b0883b80ec96ed6"
+    },
+    {
+      "path": "production/award-candidate/scene5-award-v4.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "1221"
+      },
+      "sha256": "c3cced2d6856f8d51100228945d3b4f681895c32751c6a9ab50dd7dbecde54bb"
+    },
+    {
+      "path": "production/magnific/gift-of-the-magi/scene-6/raw/08-chain-and-watch.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "241"
+      },
+      "sha256": "0a4f4a8b4163422e977917328da8268f1f0fe3e452c594f544e6cb7ef82e7190"
+    },
+    {
+      "path": "production/award-candidate/scene7-award-v1.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "1281"
+      },
+      "sha256": "137563a8c4f45610615058e41a810e28f96e53aa121e0564737c4ec117a944c2"
+    },
+    {
+      "path": "production/award-candidate/supper-to-della-r1.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "241"
+      },
+      "sha256": "b0229d4f429dc658c83af2be7c96a613c5e334fc751f63a70363c3209328087e"
+    },
+    {
+      "path": "production/award-candidate/supper-insert-r2.mp4",
+      "probe": {
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "121"
+      },
+      "sha256": "9abb1f2bf4012729fcebfe480862c5fce64e9155ecf4a3899cc484f2e915d881"
+    },
+    {
+      "path": "production/award-candidate/waiting-room-r1.mp4",
+      "probe": {
+        "width": 1916,
+        "height": 1080,
+        "r_frame_rate": "24/1",
+        "nb_frames": "193"
+      },
+      "sha256": "61fc5b073a9047c78cdf3e2a9945de61899f412ae04784b7244cee5d18e22dcd"
+    }
+  ],
+  "shots": [
+    {
+      "name": "Baseline opening through the two treasures",
+      "input": 0,
+      "in": 0,
+      "out": 6869,
+      "timelineStartFrame": 0,
+      "timelineEndFrame": 6869
+    },
+    {
+      "name": "Departure and hair-sale candidate",
+      "input": 1,
+      "in": 0,
+      "out": 1221,
+      "timelineStartFrame": 6869,
+      "timelineEndFrame": 8090
+    },
+    {
+      "name": "Baseline shopping and journey home",
+      "input": 0,
+      "in": 8090,
+      "out": 9602,
+      "timelineStartFrame": 8090,
+      "timelineEndFrame": 9602
+    },
+    {
+      "name": "Della imagines his pleasure; exclude the absent watch",
+      "input": 2,
+      "in": 0,
+      "out": 230,
+      "crop": "1472:828:0:0",
+      "timelineStartFrame": 9602,
+      "timelineEndFrame": 9832
+    },
+    {
+      "name": "Preparation and self-conscious inspection candidate",
+      "input": 3,
+      "in": 0,
+      "out": 1281,
+      "timelineStartFrame": 9832,
+      "timelineEndFrame": 11113
+    },
+    {
+      "name": "Settle pan and look down; cut before wrong-direction glance",
+      "input": 4,
+      "in": 0,
+      "out": 120,
+      "timelineStartFrame": 11113,
+      "timelineEndFrame": 11233
+    },
+    {
+      "name": "Supper ready; motivated insert, lamp-only table preserved",
+      "input": 5,
+      "in": 0,
+      "out": 102,
+      "timelineStartFrame": 11233,
+      "timelineEndFrame": 11335
+    },
+    {
+      "name": "Baseline clock; established room",
+      "input": 0,
+      "in": 11335,
+      "out": 11383,
+      "timelineStartFrame": 11335,
+      "timelineEndFrame": 11383
+    },
+    {
+      "name": "Della gathers the chain in the matched room",
+      "input": 6,
+      "in": 0,
+      "out": 186,
+      "crop": "1440:810:0:50",
+      "timelineStartFrame": 11383,
+      "timelineEndFrame": 11569
+    },
+    {
+      "name": "Baseline Jim on the stairs through closing fade and credits",
+      "input": 0,
+      "in": 11569,
+      "out": 21387,
+      "timelineStartFrame": 11569,
+      "timelineEndFrame": 21387
+    }
+  ]
+}

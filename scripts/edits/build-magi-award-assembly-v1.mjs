@@ -7,16 +7,19 @@ import { spawnSync } from 'node:child_process';
 if (!process.argv[2]) throw new Error('Usage: node build-magi-award-assembly-v1.mjs <production-root>');
 const root = resolve(process.argv[2]);
 const dir = resolve(root, 'production/award-candidate');
-const revision2 = process.argv.includes('--revision-2');
-const stem = revision2 ? 'magi-award-assembly-v2' : 'magi-award-assembly-v1';
+const revision4 = process.argv.includes('--revision-4');
+const revision3 = revision4 || process.argv.includes('--revision-3');
+const revision2 = revision3 || process.argv.includes('--revision-2');
+const stem = revision4 ? 'magi-award-assembly-v4' : revision3 ? 'magi-award-assembly-v3' : revision2 ? 'magi-award-assembly-v2' : 'magi-award-assembly-v1';
 const output = resolve(dir, stem + '.mp4');
 const inputs = [
   'public/video/films/magi-reader-film-final.mp4',
-  revision2 ? 'production/award-candidate/scene5-award-v3.mp4' : 'production/award-candidate/scene5-award-v1.mp4',
+  revision3 ? 'production/award-candidate/scene5-award-v4.mp4' : revision2 ? 'production/award-candidate/scene5-award-v3.mp4' : 'production/award-candidate/scene5-award-v1.mp4',
   'production/magnific/gift-of-the-magi/scene-6/raw/08-chain-and-watch.mp4',
   'production/award-candidate/scene7-award-v1.mp4',
   revision2 ? 'production/award-candidate/supper-to-della-r1.mp4' : 'production/magnific/gift-of-the-magi/scene-8/raw/01-coffee-pan.mp4',
   revision2 ? 'production/award-candidate/supper-insert-r2.mp4' : 'production/magnific/gift-of-the-magi/scene-8/raw/02-set-table.mp4',
+  ...(revision3 ? ['production/award-candidate/waiting-room-r1.mp4'] : []),
 ];
 const shots = [
   { name:'Baseline opening through the two treasures', input:0, in:0, out:6869 },
@@ -31,7 +34,13 @@ const shots = [
     { name:'Pan ready; release handle and leave the stove', input:4, in:132, out:180 },
     { name:'Finish setting the table and turn toward the door', input:5, in:30, out:204 },
   ]),
-  { name:'Baseline clock through closing fade and credits', input:0, in:11335, out:21387 },
+  ...(revision3 ? [
+    { name:'Baseline clock; established room', input:0, in:11335, out:11383 },
+    { name:'Della gathers the chain in the matched room', input:6, in:0, out:186, ...(revision4 ? { crop:'1440:810:0:50' } : {}) },
+    { name:'Baseline Jim on the stairs through closing fade and credits', input:0, in:11569, out:21387 },
+  ] : [
+    { name:'Baseline clock through closing fade and credits', input:0, in:11335, out:21387 },
+  ]),
 ];
 function run(exe,args) {
   const r=spawnSync(resolve(root,'tools/ffmpeg/bin',exe+'.exe'),args,{cwd:root,encoding:'utf8',maxBuffer:8*1024*1024});

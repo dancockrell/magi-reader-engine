@@ -72,6 +72,18 @@ Rules checked 6 September 2026; recheck the exact entry terms before submitting.
 
 ## Approval and evidence boundaries
 
+Corroboration check, 6 September: the search-indexed snapshot of
+[Felipe Galvão's own professional site](https://felipegalvao.cc/)
+lists him as a 2026 Mallorca AI Movie Awards jury member and panel speaker.
+Direct page retrieval timed out, so refresh the live page before relying on this
+for a submission recommendation.
+This is a first-person participant record separate from AIMA's promotional site,
+supporting some prior-event activity; it does not verify the forthcoming London
+venue booking, jury attendance, audience size or prestige. Targeted searches of
+the named venue domains did not locate a confirming London/Athens event page.
+That search result is inconclusive, not proof that either event is invalid.
+Do not upgrade either lead to an approved paid submission on this evidence alone.
+
 The award outcome depends on an external jury. No award, acceptance, submission,
 fee payment, rights clearance or independent review has happened under this plan.
 Generation is a candidate, not admission. A repaired passage is not a verified
@@ -107,4 +119,9 @@ because a generation has already cost credits.
 - [Shop-stair costume correction](film-edits/award-stair-costume-r4.md): wardrobe
   mismatch confirmed; first reshoot rejected for shortened skirt/distorted shoe;
   reviewed full-body ascent range baked into scene-5 v4, with an earlier cut
-  inside for Della to collect herself. Full-film v2 and public version unchanged.
+  inside for Della to collect herself. Integrated into the newer local assembly below.
+- [Full assembly v4 and matched-room waiting](film-edits/award-props-and-assembly-review.md#full-assembly-v4-delivery-verification):
+  scene-5 v4 and a new waiting performance integrated and export-checked. The
+  generated clock face failed detail review; mandatory closer framing excludes
+  it. Uncropped v3 rejected. Cooking-room continuity and sound/screening gates
+  remain open; public v0.9.6 is unchanged.
