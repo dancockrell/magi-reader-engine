@@ -1,4 +1,5 @@
 import { chromium } from '@playwright/test';
+/* global document, innerWidth */
 import { mkdirSync } from 'node:fs';
 const base = process.env.PORTFOLIO_URL || 'http://127.0.0.1:5181/';
 mkdirSync('test-results/portfolio', { recursive: true });
@@ -16,15 +17,15 @@ try {
   await page.goto(new URL('film.html', base).href);
   await page.waitForFunction(() => document.querySelector('video')?.readyState >= 1, null, { timeout: 60000 });
   const video = page.locator('video');
-  await video.evaluate(element => element.play());
+  await video.evaluate(element => /** @type {HTMLVideoElement} */ (element).play());
   await page.waitForFunction(() => document.querySelector('video').currentTime > 1);
   for (const seconds of [480, 610, 631, 880]) {
-    await video.evaluate((element, time) => { element.currentTime = time; }, seconds);
+    await video.evaluate((element, time) => { /** @type {HTMLVideoElement} */ (element).currentTime = time; }, seconds);
     await page.waitForFunction(time => {
       const v = document.querySelector('video');
       return !v.seeking && v.readyState >= 2 && v.currentTime >= time;
     }, seconds, { timeout: 60000 });
-    await video.evaluate(element => element.pause());
+    await video.evaluate(element => /** @type {HTMLVideoElement} */ (element).pause());
     await page.screenshot({ path: 'test-results/portfolio/film-' + seconds + '.png' });
   }
   await page.setViewportSize({ width: 390, height: 844 });
