@@ -35,3 +35,26 @@ short hair, lowers her hands toward the table, then takes Jim's hands. It does
 not visibly hug the combs to her bosom as narrated at746.106–748.650. Do not
 admit it for that beat merely because her general expression is affectionate.
 The matching comb-held reaction remains a required shot before scene completion.
+
+
+## R12 filmed insert request
+
+6 September 2026: queued take6ATabP2iJO,760 credits,Kling3Omni,8sec,
+1080p16:9,no audio. Actual start keyframe cptkSwi0eP is this inspected anchor.
+Plan and current catalog verified. Same model as adjacent new footage selected;
+plan's generic missing-anchor question resolved by the existing inspected file.
+
+### Exact video prompt
+
+A single continuous eight-second cinematic insert, starting exactly from this image. Modern photoreal COLOR period drama set in New York 1905, not vintage film patina. Exactly three rigid amber tortoiseshell hair combs with jeweled scrolling rims lie in the same open dark rectangular case on torn brown wrapping on the worn wooden table. One larger back comb and two side combs, matching the reference. The single brass oil lamp remains behind the case, softly out of focus; cool window light enters from left.
+It seems the earlier insert intended to let us appreciate Jim's precious gift, but changed the wrapping and lamp setup. Preserve the appreciation while keeping this established physical arrangement. Della has just been comforted after discovering that the beautiful combs are for the hair she sold. This quiet detail gives the audience time to understand her loss; it is not a flashy product advertisement.
+The camera makes a modest smooth lateral slide to the right, about ten centimeters, with a very slight push toward the central comb. The combs, case, lid, paper and string remain physically stationary. Natural parallax and gently changing specular reflections reveal the material; the distant lamp flame flickers softly. Keep all three comb bodies readable throughout, crisp distinct teeth and stable rims. No object rotates, slides, melts, grows, merges or multiplies. No hands or people enter. No new props, no paper change, no labels or text, no cuts, no transition, no freeze, no speed ramp, no oscillating camera. End still moving gently in the same direction. No generated audio.
+
+### Admission requirements
+
+Inspect entire take in native consecutive frames, enlarged teeth/rims, case,
+wrapping and parallax. Exactly three stable combs; continuous one-way camera
+travel; no deformation or duplicate props; native24fps or higher. Compare to
+unwrap and comfort, then bake a selected range at about713.250, within0.432sec
+of the combs clause. Do not automatically keep eight seconds or freeze the tail.
+No source or full-film admission yet. Follow the same live job, no duplicate.
