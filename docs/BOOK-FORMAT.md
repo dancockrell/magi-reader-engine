@@ -1,5 +1,7 @@
 # The book pack format
 
+> **Version scope:** this is the pack contract for the classroom-era code on this branch. For new solo-reader packs, use [the contract on `solo-reader-redesign`](https://github.com/dancockrell/magi-reader-engine/blob/solo-reader-redesign/docs/BOOK-FORMAT.md) and its matching validator. Questions and teaching passes below are not a mandate to restore classroom features. The [README](../README.md) explains the transition.
+
 The engine reads books. It does not contain one. Everything a particular
 title is made of, the text, the pictures, the glossary, the questions, the
 translations and the two characters who talk about it, arrives as a pack.

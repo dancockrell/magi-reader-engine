@@ -44,3 +44,8 @@ The app is `index.html`; the standalone cinema presentation is `film.html`. Both
 Story: **O. Henry**. Adaptation, editing and application: **Dan Cockrell**. Visuals, narration and score use AI-assisted production.
 
 Application code is MIT licensed. The story is public domain in the United States. Generated media is separate from the code license; contact the project author about reuse.
+
+
+## Project history
+
+[Historical teaching design](docs/PEDAGOGY.md) preserves earlier classroom research; it is not the current app specification. The film-first solo reader supersedes that interface without erasing its Git history.
