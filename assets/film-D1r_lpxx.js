@@ -1,0 +1,1 @@
+import"./modulepreload-polyfill-P2Xu9kJm.js";import{i as e,n as t,r as n,t as r}from"./film-delivery-BENmjnDb.js";var i=document.querySelector(`video`);i.src=e,i.poster=n,document.querySelector(`track`).src=r,document.querySelector(`#download`).setAttribute(`href`,t),i.addEventListener(`error`,()=>{document.querySelector(`#playback-error`).removeAttribute(`hidden`)});
