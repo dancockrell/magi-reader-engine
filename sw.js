@@ -1,4 +1,4 @@
-const CACHE = 'magi-shell-portfolio-6';
+const CACHE = 'magi-shell-portfolio-7';
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(['./', './manifest.webmanifest', './app-icon.svg'])));
 });
