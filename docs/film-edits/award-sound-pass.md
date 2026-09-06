@@ -1,6 +1,12 @@
 # Sound pass — preserve the voices, shape the film
 
-Status: original-dialogue stem prepared; new mix not made or published.
+Status: original-dialogue stem prepared; a separate closing audition is now
+baked, not listened to or approved. No new full-film mix or public replacement.
+
+Latest: [Closing sound audition R1](award-closing-sound-audition-r1.md) tests a
+single continuous newly generated cue after Jim's admission, with original
+voices and an exact copied picture range. It is a listening candidate, not a
+resolution of the sound-on gates below.
 
 ## Direction
 

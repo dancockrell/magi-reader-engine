@@ -96,6 +96,11 @@ because a generation has already cost credits.
 
 ## Current work records
 
+- [Closing sound audition R1](film-edits/award-closing-sound-audition-r1.md):
+  separate A/B excerpt with original voices and a new complete closing cue;
+  video copied exactly from v6 with no re-encoding. Timing, decoding and levels
+  checked, but musical phrasing, emotional fit and sound-on approval remain open.
+
 - [Departure and hair-sale candidate](film-edits/award-scene5-review.md): locally
   baked contextual comparison; hair-state continuity still needs final review.
 - [Preparation and waiting](film-edits/award-scene7-review.md): performance-led
