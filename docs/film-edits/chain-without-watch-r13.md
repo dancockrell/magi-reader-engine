@@ -79,8 +79,25 @@ Magnific `iGVfPYF3uK`: ten-second Kling 3.0 Omni, 1080p, 16:9,
 sound disabled, 950 credits. Exact start-frame upload `yinISlIPW9` from
 `della-chain-only-anchor-r13.png` (SHA256
 `8695efb887fa4557cd8ebec59246c134c437e79d94ac52ef580e2847571b6e0e`).
-Queued, not reviewed or admitted. Continue polling the same identifier;
-do not restart on an observation timeout.
+Completed and downloaded as `production/award-candidate/della-chain-only-r13.mp4`.
+SHA256 `bdf5093956be17f63f708038a7fd216c83f74115712d27a9622aaff7e1f44d31`.
+241 frames, native 24 fps, 1916x1080, no audio stream. No active job remains.
+
+Review: all 241 frames in six ordered sheets; full-size frames at 3 and 6 seconds.
+Chain remains watch-free, she looks down then back to Jim and smiles. Both hands
+keep the end fittings. The complete uncropped source is NOT admitted: a sliver
+of a cream-shirted figure enters the extreme right edge, inconsistent with Jim's
+coat. Do not reuse the uncropped version. Diagnostic `della-chain-r13-audit.json`
+reports 240 adjacent transitions, 22 near-static, 7 sustained-motion, zero jump
+or A-B-A candidates; this is not a prop/topology certificate.
+
+Prepared eight-second framed audition `della-chain-r13-framed.mp4` from [0,192),
+fixed crop `1792:1008:0:0`, Lanczos scale to1920x1080. No retiming or frozen padding.
+SHA256 `a63d95a32ffcddec8aa4020661bbf439770d43bf9bd2595d2815f2feed6617db`.
+Full decode passed; 2fps baked overview inspected. The crop removes the unwanted
+edge figure while preserving face, both hands and the whole chain. No source
+range is finally admitted until contextual joins, narration and fine link motion
+are checked in the assembled scene. Neither audition nor raw take is published.
 
 Exact video prompt:
 
@@ -108,6 +125,14 @@ Evidence lives under `production/award-candidate/*-r13-review.jpg`,
   revelation with seated Jim/listening Della coverage. Preserve that repair.
 
 ### Starting frame generated, not a completed motion replacement
+
+Additional source03 review: all 241 native frames examined in six ordered
+`chain-handoff-r13-ordered-*.jpg` sheets, plus hand detail frames [72,96) in
+`chain-handoff-r13-grip.jpg`. Continuous body movement and bare hands are visible;
+Della withdraws her hands after placing linked metal in Jim's palm. No obvious
+watch appears in this reviewed handoff. Fine chain topology and its design match
+to the new take remain uncertain at overview resolution, so no source range is
+admitted yet. Do not mistake this qualified finding for a completed new cut.
 
 Built-in ImageGen; output copied into production as
 `production/award-candidate/della-chain-only-anchor-r13.png`.
