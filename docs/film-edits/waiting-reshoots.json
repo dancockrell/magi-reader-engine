@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-06",
+  "credits": 2600,
+  "model": "Kling 2.5",
+  "takes": [
+    {"creation": "EbLyDwbuuO", "file": "10-jim-weary-r3.mp4", "sourceFrames": [48,240]},
+    {"creation": "N20oxeG6D9", "file": "11-della-search-r3.mp4", "sourceFrames": [48,240]},
+    {"creation": "fHxJVSkCDY", "file": "12-jim-silence-r3.mp4", "sourceFrames": [48,241]},
+    {"creation": "VXvbNQvMMU", "file": "13-della-fear-r3.mp4", "sourceFrames": [0,218]}
+  ],
+  "review": "Ordered visual inspection and adjacent-frame diagnostics; smiling lead-ins excluded from Jim reactions. Existing stare cropped to upper-body composition.",
+  "nativeFps": 24,
+  "sceneFrames": 2043,
+  "rules": ["No retiming", "No loop or inserted hold", "Narration unchanged"]
+}
