@@ -16,8 +16,9 @@ const filter = [
   '[v0][v1]xfade=transition=fade:duration=0.75:offset=7.75[x1]',
   '[x1][v2]xfade=transition=fade:duration=0.75:offset=15.5,' +
     "subtitles=production/magnific/gift-of-the-magi/credits-v1.ass," +
-    // Story ends at 857.875s: fade picture and lettering together at 14:40–14:41.
-    "fade=t=out:st=22.125:d=1[credits]",
+    // Two-second exit relative to the coda, independent of intro length.
+    // Fade lettering with picture, then leave a short black tail for the score.
+    "fade=t=out:st=21.125:d=2[credits]",
   '[3:a]atrim=duration=24,asetpts=PTS-STARTPTS,volume=0.16,afade=t=in:d=1,afade=t=out:st=21:d=3[score]',
 ];
 const result = spawnSync(ffmpeg, [

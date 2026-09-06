@@ -1,0 +1,107 @@
+{
+  "fps": 24,
+  "frames": 1561,
+  "duration": 65.04166666666667,
+  "scope": "Separate 15-second music-only title and book prologue; gentle dip through black into story; original story edit and voices intact",
+  "narrationOffset": 15,
+  "prologue": {
+    "titleSeconds": 6,
+    "bookIn": 0,
+    "bookOut": 240,
+    "revealOverlapSeconds": 1,
+    "exitFadeSeconds": 0.75
+  },
+  "video": "public/video/films/magi-opening-v15-silent.mp4",
+  "preview": "public/video/films/magi-opening-v15-preview.mp4",
+  "voiceFiles": [
+    "public/magi-audio/n_s1_0.mp3",
+    "public/magi-audio/n_s1_1.mp3",
+    "public/magi-audio/n_s1_2.mp3",
+    "public/magi-audio/n_s1_3.mp3",
+    "public/magi-audio/n_s1_4.mp3",
+    "public/magi-audio/n_s1_5.mp3",
+    "public/magi-audio/n_s1_6.mp3",
+    "public/magi-audio/n_s1_7.mp3",
+    "public/magi-audio/n_s1_8.mp3",
+    "public/magi-audio/n_s1_9.mp3",
+    "public/magi-audio/n_s1_10.mp3",
+    "public/magi-audio/n_s1_11.mp3",
+    "public/magi-audio/n_s1_12.mp3",
+    "public/magi-audio/n_s1_13.mp3",
+    "public/magi-audio/n_s1_14.mp3",
+    "public/magi-audio/n_s1_15.mp3"
+  ],
+  "shots": [
+    {
+      "name": "The first count — first voice",
+      "path": "production/magnific/gift-of-the-magi/scene-1/raw/s1-pennies-v8.mp4",
+      "in": 0,
+      "out": 48,
+      "timelineStart": 15
+    },
+    {
+      "name": "Della at the table",
+      "path": "production/magnific/gift-of-the-magi/scene-1/v10/s1-counting-clean-v10-raw.mp4",
+      "in": 0,
+      "out": 121,
+      "timelineStart": 17
+    },
+    {
+      "name": "Pennies saved",
+      "path": "production/magnific/gift-of-the-magi/scene-1/raw/s1-pennies-v8.mp4",
+      "in": 48,
+      "out": 120,
+      "timelineStart": 22.041666666666668
+    },
+    {
+      "name": "The walk home",
+      "path": "production/magnific/gift-of-the-magi/scene-1/raw/s1-winter-walk-v8.mp4",
+      "in": 0,
+      "out": 121,
+      "timelineStart": 25.041666666666664
+    },
+    {
+      "name": "The cost of saving — Della reaction",
+      "path": "production/polish-r6/della-reaction.mp4",
+      "in": 0,
+      "out": 197,
+      "crop": "1440:810:100:0",
+      "timelineStart": 30.083333333333336
+    },
+    {
+      "name": "Third count setup",
+      "path": "public/video/storyboard/s1/s1-c-recount.mp4",
+      "in": 0,
+      "out": 38,
+      "timelineStart": 38.29166666666667
+    },
+    {
+      "name": "The final penny",
+      "path": "production/magnific/gift-of-the-magi/scene-1/v10/s1-recount-v10-raw.mp4",
+      "in": 0,
+      "out": 121,
+      "timelineStart": 39.875
+    },
+    {
+      "name": "Toward the sofa",
+      "path": "production/magnific/gift-of-the-magi/scene-1/v10/s1-turn-to-sofa-v10-raw.mp4",
+      "in": 0,
+      "out": 121,
+      "timelineStart": 44.91666666666667
+    },
+    {
+      "name": "The collapse",
+      "path": "production/magnific/gift-of-the-magi/scene-1/v10/s1-sofa-cry-v10-raw.mp4",
+      "in": 0,
+      "out": 121,
+      "timelineStart": 49.958333333333336
+    },
+    {
+      "name": "Sobs, sniffles, smiles",
+      "path": "production/magnific/gift-of-the-magi/scene-1/raw/s1-tear-v8.mp4",
+      "in": 0,
+      "out": 241,
+      "timelineStart": 55
+    }
+  ]
+}
