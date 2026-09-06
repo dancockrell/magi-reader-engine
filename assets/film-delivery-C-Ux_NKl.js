@@ -1,0 +1,1 @@
+var e=`https://github.com/dancockrell/magi-reader-engine/releases/download/v0.9.5-portfolio/the-gift-of-the-magi.mp4`,t=e,n=`video/films/magi-reader-film-final.vtt`,r=`art/storyboard/s1/s1-a-counting.jpg`;export{t as i,e as n,r,n as t};
