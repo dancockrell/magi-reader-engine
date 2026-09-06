@@ -1,0 +1,115 @@
+{
+  "fps": 24,
+  "frames": 2242,
+  "duration": 93.41666666666667,
+  "narrationSeconds": 93.43200000000002,
+  "shots": [
+    {
+      "name": "The parcel",
+      "path": "production/magnific/gift-of-the-magi/scene-10/raw/01-parcel.mp4",
+      "in": 0,
+      "out": 224,
+      "timelineStart": 0,
+      "timelineEnd": 9.333333333333334
+    },
+    {
+      "name": "Nothing could change my love",
+      "path": "production/magnific/gift-of-the-magi/scene-10/raw/02-reassurance.mp4",
+      "in": 0,
+      "out": 224,
+      "timelineStart": 9.333333333333334,
+      "timelineEnd": 18.666666666666668
+    },
+    {
+      "name": "Della unwraps it",
+      "path": "production/magnific/gift-of-the-magi/scene-10/raw/03-unwrap.mp4",
+      "in": 0,
+      "out": 224,
+      "timelineStart": 18.666666666666668,
+      "timelineEnd": 28
+    },
+    {
+      "name": "Joy and tears",
+      "path": "production/magnific/gift-of-the-magi/scene-10/raw/04-joy-tears.mp4",
+      "in": 0,
+      "out": 224,
+      "timelineStart": 28,
+      "timelineEnd": 37.333333333333336
+    },
+    {
+      "name": "The combs",
+      "path": "production/magnific/gift-of-the-magi/scene-10/raw/05-combs-reveal.mp4",
+      "in": 0,
+      "out": 225,
+      "timelineStart": 37.333333333333336,
+      "timelineEnd": 46.708333333333336
+    },
+    {
+      "name": "The Broadway window",
+      "path": "production/magnific/gift-of-the-magi/scene-10/raw/06-shop-memory.mp4",
+      "in": 0,
+      "out": 225,
+      "timelineStart": 46.708333333333336,
+      "timelineEnd": 56.083333333333336
+    },
+    {
+      "name": "Jeweled tortoiseshell",
+      "path": "production/magnific/gift-of-the-magi/scene-10/raw/07-combs-macro.mp4",
+      "in": 0,
+      "out": 224,
+      "timelineStart": 56.083333333333336,
+      "timelineEnd": 65.41666666666667
+    },
+    {
+      "name": "Too short for them",
+      "path": "production/magnific/gift-of-the-magi/scene-10/raw/08-mirror-combs.mp4",
+      "in": 0,
+      "out": 224,
+      "timelineStart": 65.41666666666667,
+      "timelineEnd": 74.75
+    },
+    {
+      "name": "Jim comforts her",
+      "path": "production/magnific/gift-of-the-magi/scene-10/raw/09-comfort.mp4",
+      "in": 0,
+      "out": 224,
+      "timelineStart": 74.75,
+      "timelineEnd": 84.08333333333333
+    },
+    {
+      "name": "My hair grows fast",
+      "path": "production/magnific/gift-of-the-magi/scene-10/raw/10-hair-grows.mp4",
+      "in": 0,
+      "out": 224,
+      "timelineStart": 84.08333333333333,
+      "timelineEnd": 93.41666666666667
+    }
+  ],
+  "voices": [
+    "public/magi-audio/n_s10_0.mp3",
+    "public/magi-audio/n_s10_1.mp3",
+    "public/magi-audio/n_s10_2.mp3",
+    "public/magi-audio/n_s10_3.mp3",
+    "public/magi-audio/n_s10_4.mp3",
+    "public/magi-audio/n_s10_5.mp3",
+    "public/magi-audio/n_s10_6.mp3",
+    "public/magi-audio/n_s10_7.mp3",
+    "public/magi-audio/n_s10_8.mp3",
+    "public/magi-audio/n_s10_9.mp3",
+    "public/magi-audio/n_s10_10.mp3",
+    "public/magi-audio/n_s10_11.mp3",
+    "public/magi-audio/n_s10_12.mp3",
+    "public/magi-audio/n_s10_13.mp3",
+    "public/magi-audio/n_s10_14.mp3",
+    "public/magi-audio/n_s10_15.mp3",
+    "public/magi-audio/n_s10_16.mp3",
+    "public/magi-audio/n_s10_17.mp3",
+    "public/magi-audio/n_s10_18.mp3",
+    "public/magi-audio/n_s10_19.mp3",
+    "public/magi-audio/n_s10_20.mp3",
+    "public/magi-audio/n_s10_21.mp3",
+    "public/magi-audio/n_s10_22.mp3",
+    "public/magi-audio/n_s10_23.mp3",
+    "public/magi-audio/n_s10_24.mp3"
+  ]
+}

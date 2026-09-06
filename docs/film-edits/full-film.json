@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "date": "2026-09-06",
+  "rules": [
+    "Native 24 fps picture throughout",
+    "No holds, loops, reversals, interpolation, or speed fitting",
+    "Continuous authored movie; reader logic does not control picture timing"
+  ],
+  "storyFrames": 20589,
+  "storySeconds": 857.875,
+  "creditsSeconds": 24.01,
+  "deliverySeconds": 881.906,
+  "units": [
+    {
+      "unit": 1,
+      "frames": 1201,
+      "pictureSeconds": 50.041666666666664,
+      "narrationSeconds": 50.04,
+      "driftSeconds": 0.0016666666666651508
+    },
+    {
+      "unit": 2,
+      "frames": 1650,
+      "pictureSeconds": 68.75,
+      "narrationSeconds": 68.76000000000002,
+      "driftSeconds": -0.010000000000019327
+    },
+    {
+      "unit": 3,
+      "frames": 2258,
+      "pictureSeconds": 94.08333333333333,
+      "narrationSeconds": 94.08,
+      "driftSeconds": 0.0033333333333303017
+    },
+    {
+      "unit": 4,
+      "frames": 1538,
+      "pictureSeconds": 64.08333333333333,
+      "narrationSeconds": 64.07999999999998,
+      "driftSeconds": 0.0033333333333445125
+    },
+    {
+      "unit": 5,
+      "frames": 1221,
+      "pictureSeconds": 50.875,
+      "narrationSeconds": 50.85600000000001,
+      "driftSeconds": 0.018999999999991246
+    },
+    {
+      "unit": 6,
+      "frames": 1742,
+      "pictureSeconds": 72.58333333333333,
+      "narrationSeconds": 72.6,
+      "driftSeconds": -0.01666666666666572
+    },
+    {
+      "unit": 7,
+      "frames": 1281,
+      "pictureSeconds": 53.375,
+      "narrationSeconds": 53.37599999999999,
+      "driftSeconds": -0.000999999999990564
+    },
+    {
+      "unit": 8,
+      "frames": 2043,
+      "pictureSeconds": 85.125,
+      "narrationSeconds": 85.12799999999999,
+      "driftSeconds": -0.002999999999985903
+    },
+    {
+      "unit": 9,
+      "frames": 2882,
+      "pictureSeconds": 120.08333333333333,
+      "narrationSeconds": 120.07200000000003,
+      "driftSeconds": 0.011333333333297446
+    },
+    {
+      "unit": 10,
+      "frames": 2242,
+      "pictureSeconds": 93.41666666666667,
+      "narrationSeconds": 93.43200000000002,
+      "driftSeconds": -0.015333333333344967
+    },
+    {
+      "unit": 11,
+      "frames": 1266,
+      "pictureSeconds": 52.75,
+      "narrationSeconds": 52.751999999999995,
+      "driftSeconds": -0.001999999999995339
+    },
+    {
+      "unit": 12,
+      "frames": 1265,
+      "pictureSeconds": 52.708333333333336,
+      "narrationSeconds": 52.70399999999999,
+      "driftSeconds": 0.004333333333342182
+    }
+  ],
+  "output": "public/video/films/magi-reader-film-final.mp4",
+  "captions": "public/video/films/magi-reader-film-final.vtt"
+}

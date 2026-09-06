@@ -1,0 +1,73 @@
+{
+  "fps": 24,
+  "frames": 1281,
+  "duration": 53.375,
+  "narrationSeconds": 53.37599999999999,
+  "shots": [
+    {
+      "name": "Excitement gives way to prudence",
+      "path": "production/magnific/gift-of-the-magi/scene-7/raw/01-arrival.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 0,
+      "timelineEnd": 10
+    },
+    {
+      "name": "Approaching the mirror",
+      "path": "production/magnific/gift-of-the-magi/scene-7/raw/02-mirror-r3.mp4",
+      "in": 79,
+      "out": 241,
+      "timelineStart": 10,
+      "timelineEnd": 16.75
+    },
+    {
+      "name": "Smoothing her own short hair",
+      "path": "production/magnific/gift-of-the-magi/scene-7/raw/03-smoothing-r3.mp4",
+      "in": 0,
+      "out": 216,
+      "timelineStart": 16.75,
+      "timelineEnd": 25.75
+    },
+    {
+      "name": "The final curl",
+      "path": "production/magnific/gift-of-the-magi/scene-7/raw/04-final-curl-r2.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 25.75,
+      "timelineEnd": 35.75
+    },
+    {
+      "name": "A schoolboy in the glass",
+      "path": "production/magnific/gift-of-the-magi/scene-7/raw/05-mirror-review-r2.mp4",
+      "in": 0,
+      "out": 216,
+      "timelineStart": 35.75,
+      "timelineEnd": 44.75
+    },
+    {
+      "name": "What could I do?",
+      "path": "production/magnific/gift-of-the-magi/scene-7/raw/06-worry.mp4",
+      "in": 0,
+      "out": 207,
+      "timelineStart": 44.75,
+      "timelineEnd": 53.375
+    }
+  ],
+  "voices": [
+    "public/magi-audio/n_s7_0.mp3",
+    "public/magi-audio/n_s7_1.mp3",
+    "public/magi-audio/n_s7_2.mp3",
+    "public/magi-audio/n_s7_3.mp3",
+    "public/magi-audio/n_s7_4.mp3",
+    "public/magi-audio/n_s7_5.mp3",
+    "public/magi-audio/n_s7_6.mp3",
+    "public/magi-audio/n_s7_7.mp3",
+    "public/magi-audio/n_s7_8.mp3",
+    "public/magi-audio/n_s7_9.mp3",
+    "public/magi-audio/n_s7_10.mp3",
+    "public/magi-audio/n_s7_11.mp3",
+    "public/magi-audio/n_s7_12.mp3",
+    "public/magi-audio/n_s7_13.mp3",
+    "public/magi-audio/n_s7_14.mp3"
+  ]
+}

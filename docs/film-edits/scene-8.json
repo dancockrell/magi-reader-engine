@@ -1,0 +1,133 @@
+{
+  "fps": 24,
+  "frames": 2043,
+  "duration": 85.125,
+  "narrationSeconds": 85.12799999999999,
+  "shots": [
+    {
+      "name": "Coffee and the chops",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/01-coffee-pan.mp4",
+      "in": 0,
+      "out": 222,
+      "timelineStart": 0,
+      "timelineEnd": 9.25
+    },
+    {
+      "name": "Jim was never late",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/03-clock-seven.mp4",
+      "in": 0,
+      "out": 48,
+      "timelineStart": 9.25,
+      "timelineEnd": 11.25
+    },
+    {
+      "name": "Waiting with the chain",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/04-waiting-chain.mp4",
+      "in": 0,
+      "out": 186,
+      "timelineStart": 11.25,
+      "timelineEnd": 19
+    },
+    {
+      "name": "Jim climbs home",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/07-jim-stairs.mp4",
+      "in": 24,
+      "out": 120,
+      "timelineStart": 19,
+      "timelineEnd": 23
+    },
+    {
+      "name": "A step on the stair",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/05-hears-step.mp4",
+      "in": 0,
+      "out": 132,
+      "timelineStart": 23,
+      "timelineEnd": 28.5
+    },
+    {
+      "name": "A whispered prayer",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/06-prayer.mp4",
+      "in": 0,
+      "out": 240,
+      "timelineStart": 28.5,
+      "timelineEnd": 38.5
+    },
+    {
+      "name": "The door opens",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/08-door-open.mp4",
+      "in": 0,
+      "out": 132,
+      "timelineStart": 38.5,
+      "timelineEnd": 44
+    },
+    {
+      "name": "Young and burdened",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/10-jim-weary-r3.mp4",
+      "in": 48,
+      "out": 240,
+      "timelineStart": 44,
+      "timelineEnd": 52
+    },
+    {
+      "name": "Della searches his face",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/11-della-search-r3.mp4",
+      "in": 48,
+      "out": 240,
+      "timelineStart": 52,
+      "timelineEnd": 60
+    },
+    {
+      "name": "The stare",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/09-stare.mp4",
+      "in": 0,
+      "out": 192,
+      "crop": "1280:720:640:0",
+      "timelineStart": 60,
+      "timelineEnd": 68
+    },
+    {
+      "name": "An expression she cannot read",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/13-della-fear-r3.mp4",
+      "in": 0,
+      "out": 218,
+      "timelineStart": 68,
+      "timelineEnd": 77.08333333333333
+    },
+    {
+      "name": "Jim cannot find words",
+      "path": "production/magnific/gift-of-the-magi/scene-8/raw/12-jim-silence-r3.mp4",
+      "in": 48,
+      "out": 241,
+      "timelineStart": 77.08333333333333,
+      "timelineEnd": 85.125
+    }
+  ],
+  "voices": [
+    "public/magi-audio/n_s8_0.mp3",
+    "public/magi-audio/n_s8_1.mp3",
+    "public/magi-audio/n_s8_2.mp3",
+    "public/magi-audio/n_s8_3.mp3",
+    "public/magi-audio/n_s8_4.mp3",
+    "public/magi-audio/n_s8_5.mp3",
+    "public/magi-audio/n_s8_6.mp3",
+    "public/magi-audio/n_s8_7.mp3",
+    "public/magi-audio/n_s8_8.mp3",
+    "public/magi-audio/n_s8_9.mp3",
+    "public/magi-audio/n_s8_10.mp3",
+    "public/magi-audio/n_s8_11.mp3",
+    "public/magi-audio/n_s8_12.mp3",
+    "public/magi-audio/n_s8_13.mp3",
+    "public/magi-audio/n_s8_14.mp3",
+    "public/magi-audio/n_s8_15.mp3",
+    "public/magi-audio/n_s8_16.mp3",
+    "public/magi-audio/n_s8_17.mp3",
+    "public/magi-audio/n_s8_18.mp3",
+    "public/magi-audio/n_s8_19.mp3",
+    "public/magi-audio/n_s8_20.mp3",
+    "public/magi-audio/n_s8_21.mp3",
+    "public/magi-audio/n_s8_22.mp3",
+    "public/magi-audio/n_s8_23.mp3",
+    "public/magi-audio/n_s8_24.mp3",
+    "public/magi-audio/n_s8_25.mp3"
+  ]
+}
