@@ -41,6 +41,22 @@ Exact corrective prompt:
 
 ## Acceptance before use
 
+### Motion test queued
+
+After reinspection, overhang alone is not grounds to reject the anchor: a
+supported chain can drape over the palm edge. The question is contact and
+gravity during movement. Test a small offering motion without tilting the palm
+or changing grip. This is a hypothesis to verify, not a declaration of realism.
+
+Magnific `N20aGPv6D9`, eight seconds Kling3Omni1080p,16:9,no sound,760 credits.
+Start-frame upload `xS4TwXcjfW`, matching production anchor SHA256
+`d48df908bdbc34ccb23e95d80957b03fb90d70a62c2fffe18612429a6db4f55c`.
+Queued; poll this same identifier until terminal. No video range admitted yet.
+
+Exact motion prompt:
+
+> One continuous eight-second photorealistic insert for The Gift of the Magi, a realistic 1905 domestic period film, NOT fantasy. Exact supplied starting image: Della's bare open palm holds a simple silver platinum chain, supported by the palm and fingers with its lower curve draped naturally over the hand edge. It seems the intended beat is her proud, loving offer of this modest gift. She does not know Jim has sold his watch. There is only the chain, never a watch or pendant. Preserve the chain's total length, individual oval link size, two small empty end fittings, single U and actual contact points with her skin. The palm faces upward enough to support the chain. For the first three seconds her forearm advances very gently a few centimeters toward screen right as she offers it, keeping the same upward-facing palm angle. The supported chain moves with the hand and the loose lower curve responds with only a tiny physically natural settling, not a swing or changing length. Her fingers remain relaxed and separated as in the reference, no new grip, closing fist or rearranging links. Over the remaining five seconds there is natural breathing movement in the arm as the camera makes a very slow small physical lateral drift, enough for subtle parallax of the familiar blurred window/cabinet and ordinary changing silver highlights. Keep the whole hand and entire chain including both end fittings within frame. The chain neither floats away from the hand nor slides through skin; no additional loop, strand, stretching, merging, disappearing or extra ornament. Exact worn blue-green cuff, skin texture and restrained warm/cool lighting. No other hand or person enters. No dramatic sparkle, mist, magical glow, gold disc, watch, jewelry box, trembling grief, large gestures, zoom effect, transition, slow motion, reverse, freeze, loop, text, voice, sound or music. Native real-time action.
+
 Chain geometry and fittings must match the adjacent Della performance; all links
 remain connected and distinct from skin. The hand must support the chain, not
 levitate it. Retain gentle offering motion and ordinary highlights, no jewelry
