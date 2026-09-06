@@ -4,7 +4,34 @@ Checked 6 September 2026. Eligibility enquiries sent with Dan's explicit approva
 no entry, payment, agreement or film transfer. These findings supersede the initial October-17-only AIMA
 planning assumption and unqualified fifteen-minute Athens fit.
 
-## AIMA London: first option to clarify
+## AIMA London: organizer eligibility reply received
+
+Update: reply from `info@aimovieawards.org`, 6 September 2026 at 15:02 UTC,
+read directly from the authorized enquiry thread. Gmail thread
+`1a076957b1e5f4d4`, reply `1a0773dacb0b10b3`. The following organizer answers
+supersede the unresolved eligibility questions in the historical web review below:
+
+- The English-language 14:51 short, including titles and credits, is eligible
+  for Best AI Short provided AI was meaningfully used in its creation.
+- Final submission deadline: **10 October 2026**.
+- Prior full-film availability on a public portfolio site is allowed; no
+  premiere requirement for that category.
+- Single-category fee: EUR 30 direct or EUR 35 FilmFreeway. Further category
+  fees apply only if voluntarily entering additional categories.
+- The organizer says entry alone does not authorize complete-film online
+  publication. Broader streaming, catalogue inclusion or distribution requires
+  a separate optional agreement. Festival-context use remains subject to rules.
+
+This is an organizer clarification, not legal advice or acceptance of terms.
+Compare the actual entry agreement with this answer before Dan approves an entry;
+do not silently accept contradictory terms. No entry, fee, film transfer or
+distribution authorization has occurred. Film quality, provenance, independent
+screening and London program/jury verification remain open gates.
+
+Athens thread `1a07695d18da9e5e` still contained only the sent enquiry at this
+same check; its category/runtime hold remains in force.
+
+### Historical web review (questions resolved above where indicated)
 
 The [direct submission form](https://www.aimovieawards.org/submit/) lists
 10 October as the closing date and currently shows EUR 30 for Best AI Short.
@@ -58,7 +85,8 @@ unresolved. This is an eligibility hold, not an accusation of illegitimacy.
 
 1. Dan authorized eligibility enquiries. Separate emails to AIMA and Athens were
    sent and verified in Sent on 6 September. No film, private production files or
-   screening link accompanied them. Written eligibility answers remain pending.
+   screening link accompanied them. AIMA has now answered as recorded above;
+   Athens remains pending.
 2. Sound-on approval of the closing audition and an experienced independent
    screening remain production gates; fee eligibility cannot substitute for them.
 3. Confirm voice-use provenance and applicable asset permissions. Country of
