@@ -14,3 +14,20 @@ Dependencies, caches, duplicated build output and installed FFmpeg binaries are
 excluded. Source and editing history are preserved in Git. Earlier releases remain
 available. This is a current-version publication, not a claim of final artistic
 approval or completion of every outstanding correction.
+
+## Restore
+
+1. Clone this repository to recover source, edit scripts and their Git history.
+2. Download the film, captions, all 14 `production-NNN.zip` files,
+   `production-manifest.json` and `SHA256SUMS.txt` from this release.
+3. Verify each ZIP against `SHA256SUMS.txt`, then extract all ZIPs into a single
+   production folder, preserving their relative paths. These are independent
+   archives, not split ZIP volumes. The manifest identifies the archive and
+   SHA-256 hash for each of the 3,084 preserved files.
+4. Install the Node dependencies and FFmpeg separately. Some historical edit
+   scripts use absolute production paths; supply or adjust their documented
+   paths to the restored production folder before rebuilding.
+
+`scripts/verify-production-backup.ps1` compares local backup files with GitHub's
+remote release sizes and SHA-256 digests. No production cache or installed
+dependency is needed to recover the authored work.
