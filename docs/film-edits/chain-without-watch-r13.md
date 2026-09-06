@@ -70,3 +70,42 @@ leaving a dangling chain that conceals the same contradictory action.
 
 Admitted replacement: none. New generation: none. Public film unchanged.
 The original source is retained for provenance, not approved for reuse.
+
+## Source review and corrected anchor, same-day follow-up
+
+Reviewed five ordered overview sheets at 2 fps, covering 0-9.5 seconds of
+scene-11 sources 02 through 06, plus full-size source03 at 7 seconds and source04
+at 3 seconds. Each source is 241 frames at 24 fps (10.042 seconds); terminal
+frames after 9.5 seconds and native adjacent-frame motion are not yet reviewed.
+Evidence lives under `production/award-candidate/*-r13-review.jpg`,
+`chain-handoff-r13-detail.png`, and `watch-request-r13-detail.png`.
+
+- 02: chain visible across fingers; parts extend beyond the lower image edge.
+  No watch visible in these samples, but unseen ends cannot prove its absence.
+- 03: standing Jim receives a chain in bare hands, with a warm expression.
+  Full-size 7-second frame shows linked metal, not an obvious watch. Retain as
+  potential coverage, not admitted: exact grip mechanics and chain design need
+  native review. The preceding rejected shot seats Jim, making that old join wrong.
+- 04: full-size 3-second frame shows Jim wearing black fingerless gloves.
+  This contradicts the script and the preceding bare-handed shot. Reject the
+  uncropped source for the next master; no corrective crop is admitted here.
+- 05: Jim already seated, Della standing. 06 returns him to standing. This is a
+  defect in the historical source sequence, NOT a new finding that the v6 ending
+  still does it: `build-magi-award-polish-r6.mjs` already replaces that later
+  revelation with seated Jim/listening Della coverage. Preserve that repair.
+
+### Starting frame generated, not a completed motion replacement
+
+Built-in ImageGen; output copied into production as
+`production/award-candidate/della-chain-only-anchor-r13.png`.
+Original: `exec-f774cd57-98a6-494a-bdd4-fc29ccaae5c3.png`.
+The returned image was inspected: Della faces right/up toward standing Jim,
+short brown curls and blue-green/cream costume retained; one silver-colored
+chain forms a U between two bare hands, with small empty fittings and no watch.
+This framing protects her hopeful expression without implying seated Jim.
+Still-image acceptance is provisional: motion, links/grip detail, adjacent
+costume continuity and final narrative timing remain unverified.
+
+Exact generation prompt:
+
+> Use case: identity-preserve. Asset: starting frame for a photorealistic 1905 period short-film reshoot. Image 1 is the identity, costume, lighting and room reference, not the required handoff pose. It seems the old sequence intended to show Della's delighted pride in her gift, but a watch attached to the chain defeats the story: Jim has secretly sold his watch. Preserve the tender performance while showing only the simple chain she bought. Reframe to a waist-up medium shot of Della alone in her same standing position on the left of the conversation axis, facing screen RIGHT toward Jim outside frame. Keep her exact young adult face, short brown curls, worn blue-green dress, cream collar, natural skin and window-side light. The same window and cabinet stay behind her, softly focused, no redesigned room. Her expression is hopeful with a small loving smile, not shock; she does not yet know he sold the watch. Both bare hands are visible at mid torso, about 18 cm apart, each delicately supporting one end fitting of ONE fine plain silver-colored platinum fob chain. The chain hangs in one shallow relaxed U between her hands, every part visible against her dark dress, with two tiny functional end clips and no attached object. This is a modest short watch chain, not a necklace: plain linked metal, no pendants, medallions, watches, jewels, extra strands or ornamental weight. Physically plausible fingers, no glove, no intersection of links with skin. Keep scene modest and intimate, not product advertising. Jim and the tabletop are outside this closer composition. 16:9 landscape, modern natural-color period cinematography, restrained warm and cool light matching reference, no text, no borders, no mist or new props.

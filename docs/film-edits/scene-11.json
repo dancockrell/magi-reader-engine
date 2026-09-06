@@ -33,6 +33,9 @@
     },
     {
       "name": "Give me your watch",
+      "admission": "rejected-glove-continuity",
+      "review": "chain-without-watch-r13.md",
+      "rejectionReason": "Jim wears fingerless gloves despite the script and adjacent bare-handed coverage. No corrective crop admitted.",
       "path": "production/magnific/gift-of-the-magi/scene-11/raw/04-asks-watch.mp4",
       "in": 0,
       "out": 211,
