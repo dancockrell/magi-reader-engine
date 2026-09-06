@@ -104,3 +104,7 @@ because a generation has already cost credits.
   v2; exported and checked locally, not published. Original soundtrack retained.
 - [Festival entry draft](film-edits/FESTIVAL-ENTRY-DRAFT.md): synopsis, biography
   and disclosure prepared for approval; not submitted or rights-cleared.
+- [Shop-stair costume correction](film-edits/award-stair-costume-r4.md): wardrobe
+  mismatch confirmed; first reshoot rejected for shortened skirt/distorted shoe;
+  reviewed full-body ascent range baked into scene-5 v4, with an earlier cut
+  inside for Della to collect herself. Full-film v2 and public version unchanged.

@@ -100,3 +100,30 @@ is withheld for this kitchen/clock passage pending that correction.
 
 The [assembly manifest](magi-award-assembly-v1.edl.json) records source hashes and
 exact frame ranges. No public movie, app deployment or festival entry changed.
+
+## Room geography follow-up — confirmed defect, not angle uncertainty
+
+Full-size inspection of scene-8 anchors `01-coffee-pan.jpg`,
+`03-seven-clock.jpg` and `04-waiting-chain.jpg`, followed by the actual waiting
+source and baked full-assembly v2 at 7:52.292–8:02.292, confirms incompatible
+stove forms in the corresponding area beside the mantel/entrance: the broad
+flat-topped cooking range becomes a round ornamental parlor stove. Do not
+explain this away as two stoves without footage establishing both.
+
+The baked waiting shot at 7:57 also visibly includes prepared food on a side
+surface at far right, although the central table remains lamp-only. Thus the
+earlier lamp-only observation is true only of that central table; it does not
+certify that all food/props match. The previous cooking insert shows uncooked
+chops. The waiting angle additionally reveals an interior stair/rail behind
+Della not legible in the earlier room angle. Its physical relationship to the
+door and window requires resolution, not an invented architectural explanation.
+
+Apparent intent: supper preparation gives way to Della alone, apprehensively
+holding the chain. Preserve the performance and the attention shift to waiting.
+The failure is independent room generation, not missing runtime synchronization.
+Next structural correction should use the established room and one matched
+camera axis across cooking, clock and waiting, with raw chops kept on the
+cooking surface until the later supper beat. Do not reshoot all three from
+independent anchors or treat the new insert's stable objects as full-sequence
+approval. The full v2 remains a comparison, with this passage withheld from
+picture lock.
