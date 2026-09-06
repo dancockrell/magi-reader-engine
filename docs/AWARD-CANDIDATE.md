@@ -64,13 +64,18 @@ Rules checked 6 September 2026; recheck the exact entry terms before submitting.
 
 | Competition | Current fit / reason to hold |
 | --- | --- |
-| [AI Filmfest Athens 2026](https://www.aifilmfestathens.gr/en) | New lead checked 6 September: worldwide, 3–15 minutes, prior publication welcome; fully AI-generated visuals/audio required. Published late deadline 15 October (€45), event 6 November at Ellinikon Experience Centre. First edition: independently confirm organizer, venue, jury, exact entry terms and whether our titles/audio workflow qualifies. No entry approved. |
-| [AIMA London 2026](https://www.aimovieawards.org/) | New lead checked 6 September: AI-centred narrative films over two minutes; deadline 17 October; announced finalist screenings 7–8 November at IET London. Listed technical requirements match 1080p24 stereo. Named jury and prior Mallorca event are organizer claims to corroborate. Confirm runtime ceiling, fee and public-online eligibility; submission grants broad screening/online promotional use, so obtain explicit approval. |
+| [AI Filmfest Athens 2026](https://www.aifilmfestathens.gr/en) | Eligibility hold: general 3–15-minute rules conflict with FilmFreeway's ten-minute category. Regular dates also differ; late date is 15 October. Written runtime/category, prior-publication and generated-content clarification requested with Dan's authorization on 6 September. No entry approved. |
+| [AIMA London 2026](https://www.aimovieawards.org/) | First lead to clarify. Use 10 October conservatively: submission form/dates conflict with October 17 in other rules text. Direct Best Short fee €30 versus FilmFreeway €35. Municipal post-event evidence corroborates April Mallorca activity, not London's future booking or prestige. Written runtime, date, prior-publication and online-use clarification requested with Dan's authorization on 6 September. No entry approved. |
 | [WAIFF LA USA](https://worldaifilmfestival.us/) | Published short categories cover 3–40 minutes and allow prior online distribution. Restricted to US-based creators; residence is unconfirmed. Requires a production journal and rights documentation. Investigate the current jury, screening, category classification and exact entry terms before recommending payment. Its WAIFF event in Cannes is not the Festival de Cannes. |
 | [ITU AI for Good Film Festival](https://aiforgood.itu.int/ai-for-good-film-festival/) | Do not target the current master: published limit is 1–10 minutes and its thematic emphasis is AI/global challenges. Selected finalists must not have the full film online before the event. Do not mutilate this adaptation or withdraw the portfolio release merely to fit. The page also contains conflicting 2027 event-date references. |
 | [Runway AI Film Festival 2026 terms](https://aif.runwayml.com/terms-film) | Historical judging benchmark only; the 2026 entry deadline has passed. Do not represent that edition as open or assume future eligibility. |
 
 ## Approval and evidence boundaries
+
+See [verification R2](film-edits/festival-verification-r2.md) and the
+[sent-enquiry record](film-edits/festival-eligibility-questions.md) for the current
+deadline conflicts, recipient verification and limited authorized contact.
+No film was shared with either organizer. Replies and entry approval are pending.
 
 Corroboration check, 6 September: the search-indexed snapshot of
 [Felipe Galvão's own professional site](https://felipegalvao.cc/)
