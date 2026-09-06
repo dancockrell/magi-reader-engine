@@ -58,3 +58,23 @@ travel; no deformation or duplicate props; native24fps or higher. Compare to
 unwrap and comfort, then bake a selected range at about713.250, within0.432sec
 of the combs clause. Do not automatically keep eight seconds or freeze the tail.
 No source or full-film admission yet. Follow the same live job, no duplicate.
+
+## Completed insert review
+
+Take completed, saved production/award-candidate/combs-insert-r12.mp4.
+SHA256:bf0a3838760cf93a3ccc6c1194b2480d206839911b2c78bf664368be09ce4dc3.
+1916x1080,193native24 frames,no audio. All193 frames inspected in five ordered
+sheets; frame120 fullsize inspected for distinct teeth,rims,case and wrapping.
+Three stable comb bodies and wrapping persist. Camera begins nearly stationary
+then travels continuously. Diagnostic58 near-static transitions,all before67;
+zero jump or ABA flags. Do NOT admit the full eight seconds or call it uniformly
+moving. Selected[72,192),five seconds,excludes that lead; no diagnostic near-static
+flags in selected range. Pad2px each side. Contextual bake in progress at713.250,
+0.432sec after combs clause. The following reaction/return coverage remains open.
+
+Context bake completed:gift-reveal-context-r12.mp4,SHA256
+f2c4c96dc876714480b75bd40591a356a3ac352abb386749eee2dd5718614754.
+1296frames54sec1920x1080native24,full decode passed; matchingVTT/JSON.
+Twelve native frames around new cut1176 inspected: embrace to ordinary gift
+detail, no ghosted transition or repeated lead. End718.250 is excerpt boundary,
+not a freeze or film ending. Old R11 range/crops preserved. Not published.

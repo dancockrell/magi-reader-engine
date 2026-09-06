@@ -41,3 +41,36 @@ The companion static-object insert job6ATabP2iJO remains processing, confirmed
 by the same live handle. No duplicate requested. Neither this image nor that
 pending take has been baked into the master. Narrator audio unchanged.
 
+## Performance request
+
+Full-resolution anchor reviewed before request: three separate comb bodies,
+fingers support the lower sides, no obvious finger passing through a tooth.
+This does not certify the coming motion. Preserve grip rather than choreographing
+re-grips. Uploaded actual starting image1lyW8hXr4r.
+TakeSyReEizUb8,10sec1080p16:9,Kling3Omni,noaudio,950credits,processing.
+Catalog and plan read. Plan mistakenly interpreted blue/cream as hair colors;
+explicitly corrected to brown hair and blue/cream clothing in actual prompt.
+Require same two adults,three rigid combs,visible unbroken lift to chest,
+dim-eyed affectionate smile,then inspect whole take and next-shot transition.
+No looping,retiming,freeze or premature admission.
+
+### Completed take review
+
+SyReEizUb8 completed; saved production/award-candidate/della-cherishes-r12.mp4.
+SHA256:f770030cc55e91bfa6fd1e22e5faed081522d544544b763dc7e8aa8afb4ce445.
+241native24 frames; all inspected in six ordered sheets, frame106 inspected
+full size for hands/comb contact. Three rims remain visible when hands cross;
+the gift stays between palms and dress. One coherent lift around2–4seconds;
+small smile develops6–8seconds, eyes lift towardJim near8seconds. No hair
+touch, handoff, extra person or wardrobe change observed. Diagnostic240
+transitions:1nearstatic,0localjump,0ABA. Next contextual placement and seam
+review required before admission; not yet baked. Candidate starting near744
+could place chest contact around748 and upward look around752 withoutretiming.
+Do not append directly after718.250: the intervening description/yearning
+coverage remains unresolved and must not be bridged with a hold or loop.
+
+### Exact video prompt
+
+One continuous ten-second performance starting exactly from the provided image. Modern photoreal COLOR cinematography, a modest New York apartment in1905. Same Della with short BROWN curls, blue dress and broad cream collar, at left; adult husband Jim's dark overcoat shoulder soft foreground at right. Same window, light, room and camera side. Her hair is brown, not blue. She holds exactly THREE small amber jeweled combs in both bare hands as shown.
+It seems the earlier hair-touching scene aimed for restored affection, but it omitted the script's meaningful action: she hugs Jim's gift to her bosom despite no longer having the long hair to wear it. Preserve vulnerability and affection by letting this specific object carry the performance.
+For the first two seconds she looks down at the combs with wet eyes. Then, without changing her secure two-handed grip, she gently raises the three combs together and draws them against the fabric of her chest below the collar. Both forearms fold naturally inward; the rigid combs remain between her hands and dress, not inside her body. The three distinct rims remain visible together. She takes a small settling breath. Still holding them close, she lifts her eyes to Jim at screen right; her expression slowly becomes a brave affectionate little smile through tears. End in this living, tender pose, with natural breathing, not a frozen still. Restrained camera, slight continuous drift only; keep face and hands readable. She does not touch her hair, put the combs into her short hair, hand them to Jim, lower them again, or clasp Jim's hands. Only these two adults; no child or other figure. Preserve exactly three rigid combs with distinct teeth and jeweled rims; no merging, bending, duplication, disappearance or changing grip. No wardrobe change, no scene change, no cuts, no dissolves, no slow motion, no reverse, no added text. No speech or generated audio.
