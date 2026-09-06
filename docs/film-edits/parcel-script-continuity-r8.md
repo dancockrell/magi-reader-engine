@@ -1,7 +1,8 @@
 # R8 — the parcel belongs on the table
 
 6 September 2026. Local v6 viewer correction around 11:13.
-Status: source diagnosis complete; two replacement takes requested for review.
+Status: all three video requests completed; both tosses rejected. A cropped
+reassurance-only context is baked and visually reviewed, not a finished scene.
 No change to the user's current v6 screening or the public film.
 
 ## Context and meaning
@@ -123,6 +124,50 @@ conditions remain in force. Total video generation charges this pass: 2,850
 credits. Image-generation cost is not reported by the built-in result.
 
 ## Delivery boundary
+
+### Take 2 result: reject, do not repeat the same wide setup
+
+`xS4cXwcjfW` completed. `parcel-toss-r8b.mp4`, SHA-256
+`7fbab1987d12cc62d1bbac24ceeefef196ff773115626cc75af21e2eaca5162b`,
+contains 241 native 24 fps frames. The corrected anchor does produce withdrawal
+from his coat around 3.3 seconds, but the object becomes a thin envelope-like
+fold rather than the established wrapped bundle. During 5–7 seconds his hand
+carries it down to the wood; the inspected sequence still does not establish
+an unsupported toss. Shape and action fail the predeclared conditions.
+
+Inspected the whole take at 4 fps, full-size 3.6-second parcel detail and 48
+consecutive enlarged release-region frames starting at 5 seconds. The audit
+reported 13 near-static transitions (near frames 0–9 and 26–30), no local-jump
+and no two-frame reversal flags. Clean reversal statistics do not rescue the
+object/action failures. Neither toss was included in the baked context.
+
+Next setup must simplify the task into dedicated pocket and tabletop coverage,
+with a fixed parcel design and short visible release/landing. Do not request
+another long two-person wide to perform withdrawal, throw and reassurance.
+All three R8 generation jobs are terminal; no R8 generation remains pending.
+
+### Reassurance-only context and baked review
+
+- File: `production/award-candidate/parcel-context-r8-reassurance-only.mp4`.
+- SHA-256: `22cbbac83e6b8dedde1e48f85bf942b51512e0fda24fdc0be5385a26d86bc062`.
+- Exactly 960 frames, 40 seconds, 1920x1080 at native 24 fps; builder frame-count
+  check and complete decode passed. Matching VTT and JSON preserve provenance.
+- Context begins at v6 frame 15942 (11:04.250). Only baseline [16262,16486)
+  changes: 11:17.583–11:26.917, or 13.333–22.667 seconds inside the excerpt.
+- New source is reassurance [0,224), mandatory crop `1536:864:192:0`, enlarged
+  1.25x. No looping, frozen padding, retiming, reversed footage or dissolves.
+- Original v6 mixed audio excerpted and re-encoded; no narrator or music retake.
+- Whole baked 40-second overview inspected at 1 fps; twelve consecutive native
+  frames inspected around both replacement boundaries (excerpt frames 320/544).
+  Incoming cut preserves screen sides but changes from the handoff to a closer
+  face view. Outgoing shared downward glance motivates the table view visually.
+- This does NOT pass the whole-scene story/continuity gate: the incoming handoff
+  remains wrong, and unwrapping still begins at 686.917, before its action line
+  at 692.754. The later glove/collar and rewrapped-parcel problems remain visible.
+  The close-up is retained for audition; the scene is not admitted to the master.
+- Builder: `scripts/edits/build-parcel-context-r8.mjs`. Resource use capped at two
+  decoder/encoder threads and one filter worker. User screening and public film
+  unchanged. No independent sound-on or real-time audience approval claimed.
 
 ### Additional continuity findings from full-size adjacent-shot inspection
 
