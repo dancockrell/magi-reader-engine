@@ -73,6 +73,19 @@ The original source is retained for provenance, not approved for reuse.
 
 ## Source review and corrected anchor, same-day follow-up
 
+### Motion take queued
+
+Magnific `iGVfPYF3uK`: ten-second Kling 3.0 Omni, 1080p, 16:9,
+sound disabled, 950 credits. Exact start-frame upload `yinISlIPW9` from
+`della-chain-only-anchor-r13.png` (SHA256
+`8695efb887fa4557cd8ebec59246c134c437e79d94ac52ef580e2847571b6e0e`).
+Queued, not reviewed or admitted. Continue polling the same identifier;
+do not restart on an observation timeout.
+
+Exact video prompt:
+
+> One continuous ten-second photorealistic period-film shot, using the supplied frame as the exact starting composition. It seems the intended beat is Della's delighted pride in the thoughtful gift she bought for Jim. Earlier coverage attached a watch to the chain and spoiled the central sacrifice. Jim has secretly sold his watch; Della does not know this yet. She is presenting ONLY the simple platinum chain. Preserve her tender hope, not sadness or premature recognition. Della remains standing, facing screen RIGHT toward Jim standing outside frame. Seconds 0-3: she lowers her eyes to admire the chain and raises both hands together just a few centimeters, keeping their separation and supporting one small end fitting in each hand. The single fine silver chain hangs naturally in a shallow U, both ends empty. Seconds 3-6: she looks back up toward Jim with a small eager smile and inclines her upper body slightly toward him, showing the gift without handing it away. Seconds 6-10: her smile softens into affectionate expectation with quiet breathing and a natural blink. Her hands retain the same gentle grip throughout, no finger rearrangement or release. Keep the entire chain and both hands visible; linked metal remains one connected chain, no changing length, thickness or branching. No watch, pendant, medallion, necklace, ornament, gold disc, gloves or added prop. Keep exact face, short brown curls, cream collar, blue-green dress, cabinet, window and mixed cool/warm lighting from the start frame. Jim and the table remain outside this medium close composition; no person enters. Restrained natural acting, no speech mime, crying, broad grin, repeated nodding or swaying. Locked camera, native real-time movement, no slow motion, frozen padding, loop, reversal, dissolve, text, voice, music or sound.
+
 Reviewed five ordered overview sheets at 2 fps, covering 0-9.5 seconds of
 scene-11 sources 02 through 06, plus full-size source03 at 7 seconds and source04
 at 3 seconds. Each source is 241 frames at 24 fps (10.042 seconds); terminal
