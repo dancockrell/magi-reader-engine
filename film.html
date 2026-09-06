@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#11120f" />
+  <meta name="description" content="Watch The Gift of the Magi — a narrated adaptation of O. Henry’s Christmas story." />
+  <title>The Gift of the Magi — A film by Dan Cockrell</title>
+  <link rel="icon" href="./app-icon.svg" />
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#11120f;color:#eee9df;font:16px/1.5 system-ui,sans-serif}
+    header,footer{max-width:1440px;margin:auto;padding:20px 28px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+    a{color:#d7ba7c;text-underline-offset:5px}h1{font:normal clamp(24px,4vw,42px)/1.2 Georgia,serif;margin:0}header p{margin:6px 0 0;color:#bbb4a5}
+    main{max-width:1600px;margin:auto}video{display:block;width:100%;max-height:76vh;background:#000}
+    footer{font-size:14px;color:#bcb7aa;flex-wrap:wrap}.links{display:flex;gap:24px}a:focus-visible{outline:2px solid #d7ba7c;outline-offset:5px}
+    @media(max-width:600px){header{align-items:flex-start;padding:20px}header>a{white-space:nowrap;font-size:14px}footer{padding:20px}}
+  </style>
+  <script type="module" crossorigin src="./assets/film-D3v8SKVr.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-P2Xu9kJm.js">
+  <link rel="modulepreload" crossorigin href="./assets/film-delivery-KmIpMarW.js">
+</head>
+<body>
+  <header><div><h1>The Gift of the Magi</h1><p>O. Henry · A narrated short film</p></div><a href="./">Open the app</a></header>
+  <main><video id="film" controls playsinline preload="metadata" aria-label="The Gift of the Magi, complete narrated film"><track id="captions" kind="captions" srclang="en" label="English" default /></video></main>
+  <footer><span>Adapted and edited by Dan Cockrell · Story by O. Henry</span><div class="links"><a id="download">Download the film</a><a href="https://github.com/dancockrell/magi-reader-engine">Source &amp; production notes</a></div><p id="playback-error" hidden>Playback could not start. You can download the complete film using the link above.</p></footer>
+</body>
+</html>
