@@ -5,6 +5,11 @@ eligibility, independent endorsement, or an award.
 
 ## Aim and current position
 
+Latest local correction: [gift reveal R10](film-edits/gift-reveal-r10.md) joins
+the reviewed parcel toss to new matching unwrapping and emotional close-up in a
+43-second baked context. Matching comfort and the remaining comb reveal are
+still pending. This is not a replacement of the public or full local master.
+
 Make a moving, coherent short film that can compete on filmmaking, not merely
 demonstrate an AI pipeline. The dramatic spine is Della choosing to risk how she
 is seen in order to express love, followed by the recognition of Jim's matching
