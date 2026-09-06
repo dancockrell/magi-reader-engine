@@ -2,11 +2,11 @@
 
 ## Current published delivery
 
-The application source targets **v0.9.6-portfolio**. The release was rechecked on
-6 September 2026 and is public, not a draft or prerelease. See
-[the v0.9.6 notes](RELEASE-0.9.6.md) for the latest published title treatment.
-Its complete movie runs approximately 14:51. The local
-[award candidate](AWARD-CANDIDATE.md) is separate work and has not replaced it.
+The current delivery is **v0.9.7-current**: the latest complete assembly (v6),
+approximately 14:51, with matching captions. The live app and standalone film
+page now use this release. See [current release notes](RELEASE-0.9.7.md).
+Later scene edits and their sources are preserved as production backup assets;
+they are not falsely represented as an already assembled newer full film.
 
 The checks below describe older releases at their recorded dates; their hashes,
 durations and CI runs are not evidence for the newer candidate.

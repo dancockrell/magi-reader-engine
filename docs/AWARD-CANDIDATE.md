@@ -5,18 +5,18 @@ eligibility, independent endorsement, or an award.
 
 ## Aim and current position
 
-Latest local correction: [gift reveal R10](film-edits/gift-reveal-r10.md) joins
-the reviewed parcel toss to new matching unwrapping and emotional close-up in a
-43-second baked context. Matching comfort and the remaining comb reveal are
-still pending. This is not a replacement of the public or full local master.
+Publication update, 7 September 2026: the latest complete assembly (v6) is now
+published as **v0.9.7-current**. Later scene corrections through R15 are preserved
+in the production backup, with their individual review limits. They have not
+all been integrated into a newer full assembly. See [release notes](RELEASE-0.9.7.md).
 
 Make a moving, coherent short film that can compete on filmmaking, not merely
 demonstrate an AI pipeline. The dramatic spine is Della choosing to risk how she
 is seen in order to express love, followed by the recognition of Jim's matching
 sacrifice. Protect that performance and the warmth of their relationship.
 
-Current public baseline: **v0.9.6-portfolio**, approximately 14:51, native 24 fps,
-1920×1080, stereo. Keep it stable while the candidate is edited and reviewed.
+Current public baseline: **v0.9.7-current**, approximately 14:51, native 24 fps,
+1920×1080, stereo. Historical entries below describe their state at the time.
 The technical delivery is not proof of artistic readiness. The previous review
 sampled the whole film and examined specific defects densely; it was not a full
 uninterrupted, sound-on independent screening.
