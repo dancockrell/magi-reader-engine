@@ -91,6 +91,14 @@ Continuation through 08:00 resolves the earlier pending hair-result question: cu
 - Choose one consistent set for window memory, gift reveal, handling and ending only after whole-film/inventory review. Memory insert itself is legitimate; changing the treasured object's design is not.
 - Preserve Della's distressed acting and Jim's concern; verify a readable joy-to-loss transition with sound before final pacing decisions.
 
+## Gift handling and chain presentation through 12:48
+
+- Enlarged4416 at 736 seconds confirms a watch and chain on the table during Della's comb-to-hair performance. Jim has sold the watch; this setup cannot be admitted unchanged. Any expression-only crop requires full-range source inspection, not a promise that it hides the problem.
+- Enlarged4488 at 748 seconds confirms turquoise elongated handled grooming items on the couch-shot table, a fourth incompatible gift family. Della holds a pale rectangular item rather than clearly hugging the established combs. Its precise identity is unknown. Preserve emotional comfort while restoring the actual treasured gift.
+- Della is standing from about752.333 through the narrated leap at756.618. Plan seated comfort, renewed delight and chain presentation as a coherent action sequence.
+- At761.667 the film cuts to Jim seated and gloved, wrapping absent, coins on the table. Enlarged4584 confirms Della lifts a complete dial-faced watch on a chain. Her joy seems intended to communicate loving generosity, but the prop negates the sacrifice. Replace the incompatible action with chain-only presentation on her open palm, after inventory review.
+- No source ranges are admitted by this pass. The original no-gloves requirement, persistent comb identity and absent sold watch remain mandatory constraints.
+
 ## Deferred / not grounds for reshoot
 
 - Solomon timing: earlier 1.603-second observed overlap was not a defect by itself. Continued review establishes a total tail of about 6.2 seconds; assess in moving sequence with sound before prescribing its endpoint.
