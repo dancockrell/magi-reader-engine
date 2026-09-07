@@ -14,6 +14,9 @@ Provisional synthesis, not an admitted source list. Baseline v6; current detaile
 
 ## Candidate families — not canonical yet
 
+**Story-critical prop correction:** in the home-appraisal shot around 06:40–06:49.583, Della lifts a gold watch attached to the chain (enlarged sample 2448). Her purchase is chain-only; the narration imagines how Jim could use it, not an accomplished fitting. Preserve delight only in a clean expression span or compatible chain-only footage. Do not invent access to Jim's watch.
+
+
 | Family | Useful evidence | Compatibility question |
 | --- | --- | --- |
 | Blue-green dress / cream collar | Opening, couch, household welcome | Preserve character and established apartment relationships. |
