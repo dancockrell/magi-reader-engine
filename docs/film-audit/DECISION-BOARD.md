@@ -53,6 +53,13 @@ Continuation through 08:00 resolves the earlier pending hair-result question: cu
 - Which exact watch, chain and comb designs remain compatible across the complete film?
 - Are proposed timing changes actually better in normal-speed viewing with sound? No exact caption-bound cuts without that check.
 
+## Arrival appeal: confirmed repairs through 09:48
+
+- Reconcile the table departure narrated at 548.167 with preceding standing coverage; solve the entire approach, not an isolated table insert.
+- Native-confirmed action-match breaks at 574.167 and 584.167 seconds interrupt Della's otherwise valuable appeal. Evidence: audit native sheets 013774-013786 and 014014-014026, all frames inspected. Choose compatible action or reaction coverage rather than dissolving over incompatible poses.
+- Enlarged sample 3518 confirms Jim's knitted glove during the hair reaction. This conflicts with the story's explicit lack of gloves and the reviewed bare-handed ascent. Do not admit this shot unchanged. Earlier cuff uncertainty is not proof of when the glove first appeared.
+- Preserve Della's tentative coat contact and Jim's hesitant attention. A compatible closer reaction may bridge gracefully, but any crop or substitute must pass full source review; do not assume it hides the glove throughout.
+
 ## Deferred / not grounds for reshoot
 
 - Solomon timing: earlier 1.603-second observed overlap was not a defect by itself. Continued review establishes a total tail of about 6.2 seconds; assess in moving sequence with sound before prescribing its endpoint.

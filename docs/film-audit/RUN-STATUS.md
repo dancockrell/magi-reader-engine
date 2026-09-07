@@ -12,7 +12,9 @@ This is an audit in progress, not a new finished cut. No film changes or generat
 
 ## Review position
 
-Accepted sequential coverage: **00:00–09:00**, samples **0–3239**; next cursor **3240** of 5,347. This is approximately 60.6% of the sampled film, not a whole-film verdict.
+Accepted sequential coverage: **00:00–09:48**, samples **0–3527**; next cursor **3528** of 5,347. This is approximately 66.0% of the sampled film, not a whole-film verdict.
+
+The 09:00–09:48 pass protects Della's vulnerable appeal and Jim's restrained reaction, but identifies three specific continuity repairs. The narrated departure from the table at 548.167 seconds conflicts with preceding standing coverage. Adjacent native frames confirm pose/framing jumps at 574.167 (13779 to 13780, hands gathered to arms extended) and 584.167 seconds (14019 to 14020, hands gathered to arms dropped). All 12 frames in each native detail sheet were inspected. Enlarged sample 3518 at 586.333 seconds clearly establishes Jim's knitted glove, contradicting the explicit no-gloves detail and bare-handed stair arrival. Earlier low-edge cuff ambiguity remains unresolved rather than retrospectively asserted. Preserve emotional intent and seek compatible action/reaction coverage during inventory review; no dissolves, crops or reshoots are approved by this finding. Receipts 003240, 003312, 003384 and 003456 accepted. No master changes, generation, source admission or publication; next is 09:48.
 
 The worried close-up and developing couch performance are promising material to protect. Merchant-street footage may function as a recollection of saving pennies, but walking is a weaker illustration of bargaining. The isolated-penny replacement has a supplemental native-frame check; the apparent extra disk at 37.500 seconds resolves as the fingertip when enlarged. No final source selection follows from those observations alone.
 
