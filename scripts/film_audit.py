@@ -370,6 +370,12 @@ def native_detail(root, state, start, end):
 def verified_source_review(root, sha):
     """Derive completion from the source audit, never an admission checkbox."""
     source = root/'sources'/sha
+    # A retained range of the exact reviewed master is already sampled by the
+    # complete main audit. Reuse its original receipts, not copied/fictional
+    # source receipts. load() still verifies the actual movie digest; all
+    # coverage and per-escalation admission checks remain identical.
+    if (root/'state.json').is_file() and read(root/'state.json').get('movie_sha256') == sha:
+        source = root
     if not (source/'state.json').is_file():
         raise ValueError('Missing source review state')
     state = load(source)

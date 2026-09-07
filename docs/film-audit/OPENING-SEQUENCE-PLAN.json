@@ -1,0 +1,553 @@
+{
+  "schema": "magi-opening-sequence-design-v1",
+  "status": "exact-selections-not-renderable",
+  "created": "2026-09-08",
+  "scope": "Replacement opening selection plan only; no source admission, render, spend or publication.",
+  "production_root": "../magi-reader-solo-current/magi-reader-engine-solo-reader-redesign",
+  "evidence_root": "../magi-film-audit-20260907/opening-build-evidence",
+  "frame_convention": "24fps; integer half-open [start,end) native and timeline ranges; normal forward playback only.",
+  "timeline": [
+    0,
+    1423
+  ],
+  "duration_seconds": 59.291666666666664,
+  "narration_entrance_frame": 222,
+  "sources": [
+    {
+      "id": "book",
+      "path": "production/magnific/gift-of-the-magi/scene-1/v11/s1-book-opening-v11-raw.mp4",
+      "frame_count": 241,
+      "sha256": "653f0240bd62d4c13be2eb805dd104674ca0c00bb4ae5b74bea72c16b5ca9f09",
+      "native_fps": 24,
+      "proposed_range": [
+        0,
+        222
+      ],
+      "mandatory_crop_xywh": null,
+      "admission_status": "proposed-only-parent-registration-required",
+      "evidence": {
+        "sample_stride_native_frames": 4,
+        "sample_count": 61,
+        "all_six_fps_sheets_visually_inspected": true,
+        "sheets": [
+          "s1-book-opening-v11-raw-01.jpg",
+          "s1-book-opening-v11-raw-02.jpg"
+        ]
+      }
+    },
+    {
+      "id": "counting-wide",
+      "path": "production/magnific/gift-of-the-magi/scene-1/v10/s1-counting-clean-v10-raw.mp4",
+      "frame_count": 121,
+      "sha256": "869188cadfd30eb47dcc9ebd09b640f295d7ef05dc4015531be3cb9ccd44533b",
+      "native_fps": 24,
+      "proposed_range": [
+        0,
+        121
+      ],
+      "mandatory_crop_xywh": null,
+      "admission_status": "proposed-only-parent-registration-required",
+      "evidence": {
+        "sample_stride_native_frames": 4,
+        "sample_count": 31,
+        "all_six_fps_sheets_visually_inspected": true,
+        "sheets": [
+          "s1-counting-clean-v10-raw-01.jpg"
+        ]
+      }
+    },
+    {
+      "id": "pennies",
+      "path": "production/magnific/gift-of-the-magi/scene-1/raw/s1-pennies-v8.mp4",
+      "frame_count": 121,
+      "sha256": "94264ebb0aa51e8e04c7f7fe69e12c29c40103308529032524159ee768bbb3bf",
+      "native_fps": 24,
+      "proposed_range": [
+        0,
+        120
+      ],
+      "mandatory_crop_xywh": null,
+      "admission_status": "proposed-only-parent-registration-required",
+      "evidence": {
+        "sample_stride_native_frames": 4,
+        "sample_count": 31,
+        "all_six_fps_sheets_visually_inspected": true,
+        "sheets": [
+          "s1-pennies-v8-01.jpg"
+        ]
+      }
+    },
+    {
+      "id": "winter-walk",
+      "path": "production/magnific/gift-of-the-magi/scene-1/raw/s1-winter-walk-v8.mp4",
+      "frame_count": 121,
+      "sha256": "730ec30d45bac827c19b8500477d7079b705b44bd95070613cecf6b7a239cdb1",
+      "native_fps": 24,
+      "proposed_range": [
+        0,
+        121
+      ],
+      "mandatory_crop_xywh": null,
+      "admission_status": "proposed-only-parent-registration-required",
+      "evidence": {
+        "sample_stride_native_frames": 4,
+        "sample_count": 31,
+        "all_six_fps_sheets_visually_inspected": true,
+        "sheets": [
+          "s1-winter-walk-v8-01.jpg"
+        ]
+      }
+    },
+    {
+      "id": "reaction",
+      "path": "production/polish-r6/della-reaction.mp4",
+      "frame_count": 241,
+      "sha256": "e2d5c6e4025e198715d28fcd7d0c3ebee60e5d6893d72b59849c36d983f4c281",
+      "native_fps": 24,
+      "proposed_range": [
+        0,
+        215
+      ],
+      "mandatory_crop_xywh": [
+        100,
+        0,
+        1440,
+        810
+      ],
+      "admission_status": "proposed-only-parent-registration-required",
+      "evidence": {
+        "sample_stride_native_frames": 4,
+        "sample_count": 61,
+        "all_six_fps_sheets_visually_inspected": true,
+        "sheets": [
+          "reaction-cropped-01.jpg",
+          "reaction-cropped-02.jpg"
+        ]
+      }
+    },
+    {
+      "id": "recount-wide",
+      "path": "public/video/storyboard/s1/s1-c-recount.mp4",
+      "frame_count": 145,
+      "sha256": "0c1396d278174d7a6229b409db60ec7a350438378dea68804d2286040adb1be9",
+      "native_fps": 24,
+      "proposed_range": [
+        0,
+        38
+      ],
+      "mandatory_crop_xywh": null,
+      "admission_status": "proposed-only-parent-registration-required",
+      "evidence": {
+        "sample_stride_native_frames": 4,
+        "sample_count": 37,
+        "all_six_fps_sheets_visually_inspected": true,
+        "sheets": [
+          "s1-c-recount-01.jpg",
+          "s1-c-recount-02.jpg"
+        ]
+      }
+    },
+    {
+      "id": "isolated-penny",
+      "path": "production/award-candidate/penny-isolated-r1.mp4",
+      "frame_count": 145,
+      "sha256": "2a4dd7f073f49e70950f60383d82fd95e1134a1de58077059642fe94008f5b29",
+      "native_fps": 24,
+      "proposed_range": [
+        0,
+        121
+      ],
+      "mandatory_crop_xywh": null,
+      "admission_status": "proposed-only-parent-registration-required",
+      "evidence": {
+        "sample_stride_native_frames": 4,
+        "sample_count": 37,
+        "all_six_fps_sheets_visually_inspected": true,
+        "sheets": [
+          "penny-isolated-r1-01.jpg",
+          "penny-isolated-r1-02.jpg"
+        ]
+      }
+    },
+    {
+      "id": "turn-to-sofa",
+      "path": "production/magnific/gift-of-the-magi/scene-1/v10/s1-turn-to-sofa-v10-raw.mp4",
+      "frame_count": 121,
+      "sha256": "6cf9c6d8735be5c1e7aa490addb9c8c5797b978105b9c61636f4e5d9dcb20897",
+      "native_fps": 24,
+      "proposed_range": [
+        0,
+        121
+      ],
+      "mandatory_crop_xywh": null,
+      "admission_status": "proposed-only-parent-registration-required",
+      "evidence": {
+        "sample_stride_native_frames": 4,
+        "sample_count": 31,
+        "all_six_fps_sheets_visually_inspected": true,
+        "sheets": [
+          "s1-turn-to-sofa-v10-raw-01.jpg"
+        ]
+      }
+    },
+    {
+      "id": "sofa-cry",
+      "path": "production/magnific/gift-of-the-magi/scene-1/v10/s1-sofa-cry-v10-raw.mp4",
+      "frame_count": 121,
+      "sha256": "c6e3b602a107959e312fe7b39c38547608443ec2cff5b8e744d67aff429da18d",
+      "native_fps": 24,
+      "proposed_range": [
+        0,
+        121
+      ],
+      "mandatory_crop_xywh": null,
+      "admission_status": "proposed-only-parent-registration-required",
+      "evidence": {
+        "sample_stride_native_frames": 4,
+        "sample_count": 31,
+        "all_six_fps_sheets_visually_inspected": true,
+        "sheets": [
+          "s1-sofa-cry-v10-raw-01.jpg"
+        ]
+      }
+    },
+    {
+      "id": "tear",
+      "path": "production/magnific/gift-of-the-magi/scene-1/raw/s1-tear-v8.mp4",
+      "frame_count": 241,
+      "sha256": "6dc8d62d51b5c661d7956fed70edbd21c9d9bc24b94bdfc41485e19f83c6ce05",
+      "native_fps": 24,
+      "proposed_range": [
+        0,
+        241
+      ],
+      "mandatory_crop_xywh": null,
+      "admission_status": "proposed-only-parent-registration-required",
+      "evidence": {
+        "sample_stride_native_frames": 4,
+        "sample_count": 61,
+        "all_six_fps_sheets_visually_inspected": true,
+        "sheets": [
+          "s1-tear-v8-01.jpg",
+          "s1-tear-v8-02.jpg"
+        ]
+      }
+    }
+  ],
+  "shots": [
+    {
+      "id": "O01",
+      "timeline": [
+        0,
+        204
+      ],
+      "source": "book",
+      "source_range": [
+        0,
+        204
+      ],
+      "beat": "Music-only title over the opening book.",
+      "join_out": "18-frame deliberate book-to-live dissolve"
+    },
+    {
+      "id": "O02",
+      "timeline": [
+        204,
+        222
+      ],
+      "kind": "transition",
+      "layers": [
+        {
+          "source": "book",
+          "source_range": [
+            204,
+            222
+          ],
+          "opacity": "1-to-0"
+        },
+        {
+          "source": "counting-wide",
+          "source_range": [
+            0,
+            18
+          ],
+          "opacity": "0-to-1"
+        }
+      ],
+      "beat": "Enter Della's room before the first spoken words.",
+      "join_out": "Continuous incoming source, no seek or restart"
+    },
+    {
+      "id": "O03",
+      "timeline": [
+        222,
+        325
+      ],
+      "source": "counting-wide",
+      "source_range": [
+        18,
+        121
+      ],
+      "beat": "Della and her limited money; narration enters on frame222.",
+      "join_out": "Cut from room geography to money detail"
+    },
+    {
+      "id": "O04",
+      "timeline": [
+        325,
+        445
+      ],
+      "source": "pennies",
+      "source_range": [
+        0,
+        120
+      ],
+      "beat": "Small coins handled carefully; preserve a single continuous five-second insert.",
+      "join_out": "Cut to remembered savings context, not a matched physical action"
+    },
+    {
+      "id": "O05",
+      "timeline": [
+        445,
+        566
+      ],
+      "source": "winter-walk",
+      "source_range": [
+        0,
+        121
+      ],
+      "beat": "Illustrate the remembered shopkeeping/savings context, not her later present-tense departure.",
+      "join_out": "Return to the present and her worried face"
+    },
+    {
+      "id": "O06",
+      "timeline": [
+        566,
+        781
+      ],
+      "source": "reaction",
+      "source_range": [
+        0,
+        215
+      ],
+      "beat": "The emotional cost of having so little; worried face rather than more counting coverage.",
+      "mandatory_crop_xywh": [
+        100,
+        0,
+        1440,
+        810
+      ],
+      "join_out": "Cut back to the third count"
+    },
+    {
+      "id": "O07",
+      "timeline": [
+        781,
+        819
+      ],
+      "source": "recount-wide",
+      "source_range": [
+        0,
+        38
+      ],
+      "beat": "Re-establish Della and the table for the recount.",
+      "join_out": "Wide-to-detail cut"
+    },
+    {
+      "id": "O08",
+      "timeline": [
+        819,
+        940
+      ],
+      "source": "isolated-penny",
+      "source_range": [
+        0,
+        121
+      ],
+      "beat": "One coin slides away from the group and is released, remaining a distinct object.",
+      "join_out": "Deliberate time ellipsis to standing Della; do not imply continuous finger motion"
+    },
+    {
+      "id": "O09",
+      "timeline": [
+        940,
+        1061
+      ],
+      "source": "turn-to-sofa",
+      "source_range": [
+        0,
+        121
+      ],
+      "beat": "Della leaves the table and lowers herself onto the sofa.",
+      "join_out": "Cut after she has sat; do not repeat the descent"
+    },
+    {
+      "id": "O10",
+      "timeline": [
+        1061,
+        1182
+      ],
+      "source": "sofa-cry",
+      "source_range": [
+        0,
+        121
+      ],
+      "beat": "Her distress becomes a private sob.",
+      "join_out": "Move closer with a modest time ellipsis; check hand-state jump at native speed"
+    },
+    {
+      "id": "O11",
+      "timeline": [
+        1182,
+        1423
+      ],
+      "source": "tear",
+      "source_range": [
+        0,
+        241
+      ],
+      "beat": "Stay with her face and tear; tenderness, not another prop insert.",
+      "join_out": "Existing first-section handover at frame1423; parent must check next section"
+    }
+  ],
+  "title": {
+    "reuse_assets": [
+      "production/magnific/gift-of-the-magi/opening-v17-title.ass"
+    ],
+    "recipe_reference": "tools/build-magi-opening-v17.mjs",
+    "direction": "Retain the existing large animated two-line title and author, and feathered lighting shade. Title clears by about6.2seconds. No black card or new small banner.",
+    "book_to_story_dissolve": [
+      204,
+      222
+    ],
+    "change_from_v17": "Move the18-frame transition from9.25–10 to8.5–9.25seconds and make the incoming image the wide Della shot, not misaligned close-up hands."
+  },
+  "audio": {
+    "preserve": "Frozen full-film narration and continuous music mix; do not substitute a preview's terminal fade-out.",
+    "narration_offset_seconds": 9.25,
+    "narration_abridgment": false,
+    "music_asset": "public/audio/magi-score.mp3",
+    "music_sha256": "5964d2ee9e7c3e142be767fa73455a806fdf962031ad2767c9ecfc920237a1db",
+    "reference_opening_gain": "Existingv17 recipe:0.30 before7.25s, falling to0.11 at10.25s, one-second opening fade-in. Preserve existing whole-film mix unless sound-on screening establishes a specific adjustment.",
+    "screening_status": "Not performed for this proposed assembly; music phrasing/ducking not yet approved."
+  },
+  "native_evidence": [
+    {
+      "source": "pennies",
+      "range": [
+        0,
+        120
+      ],
+      "sheets": [
+        "pennies-native-01.jpg",
+        "pennies-native-02.jpg",
+        "pennies-native-03.jpg",
+        "pennies-native-04.jpg",
+        "pennies-native-05.jpg"
+      ],
+      "finding": "No merging observed in all120 consecutive frames at the inspected crop resolution."
+    },
+    {
+      "source": "book",
+      "range": [
+        48,
+        156
+      ],
+      "sheets": [
+        "book-native48-01.jpg",
+        "book-native48-02.jpg",
+        "book-native48-03.jpg"
+      ],
+      "finding": "Page-turn escalation inspected consecutively; no abrupt page/hand relocation observed at sheet resolution."
+    },
+    {
+      "source": "turn-to-sofa",
+      "range": [
+        48,
+        100
+      ],
+      "sheets": [
+        "sofa-contact-native48-01.jpg",
+        "sofa-contact-native48-02.jpg"
+      ],
+      "finding": "Visible chair clearance and sit reviewed; skirt occludes exact hip geometry."
+    }
+  ],
+  "generation_gaps": [],
+  "generation_gap_statement": "No confirmed irreducible new-footage gap in this opening selection. This does not certify the unrendered transition or final source admissions.",
+  "remaining_checks": [
+    "Parent serial registration of source receipts, exact hashes/ranges/crops and escalation dispositions; these sheets alone do not make an admission.",
+    "Inspect the18-frame composed transition consecutively for illustrated/live register ghosting; it is a world transition, not a continuity repair.",
+    "Native-frame cuts at325,445,566,781,819,940,1061,1182 and section handover1423; inspect actual rendered frames, not merely raw endpoints.",
+    "Screen opening and adjacent section at normal speed with narration/music in a non-disruptive setup; preserve9.25-second first voice.",
+    "No rendering until the complete film plan and mandatory inventory/admission requirements are satisfied."
+  ],
+  "fallback": {
+    "condition": "Only if the planned book-to-wide dissolve reads as a visible double exposure in the actual composed check.",
+    "method": "A clean cut at frame222, keeping existing large title and book through222; no black padding.",
+    "first_ranges": [
+      {
+        "source": "book",
+        "timeline": [
+          0,
+          222
+        ],
+        "source_range": [
+          0,
+          222
+        ]
+      },
+      {
+        "source": "counting-wide",
+        "timeline": [
+          222,
+          343
+        ],
+        "source_range": [
+          0,
+          121
+        ]
+      },
+      {
+        "source": "pennies",
+        "timeline": [
+          343,
+          463
+        ],
+        "source_range": [
+          0,
+          120
+        ]
+      },
+      {
+        "source": "winter-walk",
+        "timeline": [
+          463,
+          584
+        ],
+        "source_range": [
+          0,
+          121
+        ]
+      },
+      {
+        "source": "reaction",
+        "timeline": [
+          584,
+          781
+        ],
+        "source_range": [
+          0,
+          197
+        ],
+        "mandatory_crop_xywh": [
+          100,
+          0,
+          1440,
+          810
+        ]
+      }
+    ],
+    "remainder": "O07 onward unchanged; do not silently alternate versions."
+  }
+}

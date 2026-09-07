@@ -109,9 +109,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\s1-c-recount.mp4"
       ],
-      "category": "reserve-pool-not-yet-selected",
-      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "0c48d9e86c35f39baf103d34fa270a69ff8871cd272d40ea322152db12273e20",
@@ -325,17 +325,17 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\penny-isolated-r1.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "2b708148aa0db76cf53d334717431c8d80a5017a87a748d6fa27aed437690f7c",
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\sofronie-reply-r1.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -397,8 +397,8 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\10-jim-weary-r3.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -802,9 +802,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\04-asks-watch.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "602eabf5d13fc24abbbb658447b21e9886a428ccf2f77ce05b0a6ccc20c02d48",
@@ -856,8 +856,8 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\supper-detail-r1.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -865,9 +865,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v11\\s1-book-opening-v11-raw.mp4"
       ],
-      "category": "reserve-pool-not-yet-selected",
-      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "68c7cbe35a014f63b2773c1b4e1f1c4b063c30b0f975473bddcaa309329f5b03",
@@ -910,9 +910,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v10\\s1-turn-to-sofa-v10-raw.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "6db8eedb3aa556c57bd5f1f3eab63fd199fe50c79524040684a55f60e0941eea",
@@ -928,9 +928,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-tear-v8.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "6e8d45ea096d1202f17fb68da8256b4a907b35fa862aea5d3c74519dce7b4482",
@@ -946,8 +946,8 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\02-chain-macro.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -982,9 +982,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-winter-walk-v8.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "73e63f5aead92d0a61b17a839f33f6e7b55a56ca32c327b6d1c12989a315075f",
@@ -1054,8 +1054,8 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\waiting-portrait-r1.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -1135,9 +1135,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4"
       ],
-      "category": "derived-film-reference-not-new-coverage",
-      "reason": "Assembly/delivery export. Preserve as provenance, not an independent take.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "85e111ce68a02cdef7aeae282f1b62c2f9851d3563a712fd420fa5fd006453b7",
@@ -1153,9 +1153,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v10\\s1-counting-clean-v10-raw.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "871b31ee68dbe599bdc8d0de50ea6bade38999fd5c3c0a605b9f65bf533f7941",
@@ -1315,9 +1315,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-pennies-v8.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "9572722a79a72010853bc6ab1adfeec47e1b09c20200ccd190428bb9e0ac5744",
@@ -1378,8 +1378,8 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r4\\raw\\embrace-barehands.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -1433,8 +1433,8 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\01-della-chain.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -1706,9 +1706,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\della-chain-only-r13.mp4"
       ],
-      "category": "reserve-pool-not-yet-selected",
-      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "be4c4a830a91d5db91700f68ebe58f3b6fc50407649ff9c4ebcafbcb5ffdc63c",
@@ -1805,9 +1805,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v10\\s1-sofa-cry-v10-raw.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "c85e477e48a7f25c40ccbad58bb3d4312d9cea86df78a928e11d0b47c5cce10c",
@@ -1958,9 +1958,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r6\\della-reaction.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "e5f838650c7b0af97200bc10b221805f9cf344c229eeb4fb2bab3878cd69a8ca",

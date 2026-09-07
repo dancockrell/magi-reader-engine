@@ -49,3 +49,11 @@ Serial inputs: `admit-selected-della-cherishes-r12.json` (parent registered) and
 Viewed all61full and61cropped samples of scene11 `03-chain-in-hand`, then all87actual cropped native48–134 at `[928,0,960,540]`. The full source transfers the chain prematurely and is not selected. The exact portrait range contains only adult tied-collar Jim, looking down-left with a small warming smile; no hand, chain, watch, or Della enters. Earlier native24has fingers at the lower crop edge and later212has his own hand, so those times are not approved.
 
 Use48–135exclusive at753–756.625. This is a quiet editorial reaction under Della's reassurance, not a claim that his original action concerned combs. Prepared `admit-selected-jim-response-crop.json` for serial registration. CB06now contains this exact source range. Jim0–168revision has meanwhile been registered by the parent. No retakes or render were made.
+
+## Finite pickup briefs ready, no dispatch
+
+`finite_pickups` in the same sequence JSON now contains two single-action briefs with existing reference paths, acceptance criteria and zero automatic retries. CB04uses an actually inspected downcast portrait (reaction sample42/native168), not the earlier smiling frame or a reference already holding combs. CB07begins from the actually inspected final cherishing frame (sample60/native240), with the canonical comb-case image used only for object design.
+
+Live Magnific catalog checked8September: `bytedance-seedance-pro-2.0` supports1080p and integer4–15second durations. Prefer **8s+6s**, not2x6 (too short for6.5s CB04) and not2x8 (spends two extra seconds on a simpler action). Three local reference images exist; provider upload identifiers are not yet prepared. References and start/end keyframes are mutually exclusive for this model, so the briefs specify image references only.
+
+At the previous completed price of700credits/second,8+6 estimates9800credits. With proposed ending15+10 and chain8, the shared estimate is32900of33000. **This is not a current quote or a locked all-film allocation.** The live catalog exposes no tariff and the generate tool has no dry-run price check; an official-page search did not establish the exact current tariff. Parent must verify price and resolve all-film allocation before dispatch. No credits spent here.

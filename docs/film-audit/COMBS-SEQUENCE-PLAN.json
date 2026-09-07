@@ -71,7 +71,7 @@
     {
       "id": "CB06", "start": 18072, "end": 18159,
       "seconds": [753.0, 756.625], "beat_ids": ["B039"],
-      "status": "reviewed-awaiting-serial-admission",
+      "status": "reuse-admitted-range",
       "source_sha256": "91b7f625736d565568000ce9344f69bf955b7a57f14ad7815a068bd4fd0fb3b1",
       "source_in": 48, "source_out": 135, "crop_xywh": [928, 0, 960, 540],
       "purpose": "Jim receives her reassurance that her hair grows quickly. Preserve her loving line over his face.",
@@ -93,5 +93,50 @@
       "generation_required": "No matching action selected from reviewed candidates. Highest story-action gap in this lane; one planned pickup may be necessary, not yet commissioned."
     }
   ],
+  "finite_pickups": {
+    "status": "briefs-ready-not-dispatched-not-a-locked-all-film-budget",
+    "catalog_checked": "2026-09-08 via Magnific video_models_list",
+    "slug": "bytedance-seedance-pro-2.0",
+    "resolution": "1080p",
+    "aspect_ratio": "16:9",
+    "with_sound_effects": false,
+    "camera_motion": "static",
+    "reference_mode": "image references only; do not combine with start/end keyframes",
+    "take_count_total": 2,
+    "automatic_retries": 0,
+    "selected_configuration": "CB04 eight seconds, CB07 six seconds; two separate single-action takes",
+    "duration_comparison": [
+      {"configuration": "2x6seconds", "generated_seconds": 12, "usable": false, "reason": "Six seconds cannot supply CB04's6.5seconds without forbidden extension."},
+      {"configuration": "7+6seconds", "generated_seconds": 13, "usable": true, "estimated_credits": 9100, "reason": "Minimum integer durations; CB04 has only0.5seconds total edit handles, unnecessarily risky for the finite round."},
+      {"configuration": "8+6seconds", "generated_seconds": 14, "usable": true, "estimated_credits": 9800, "reason": "Preferred:1.5seconds CB04 handles andabout0.958seconds CB07 handles; maintains1080pPro quality."},
+      {"configuration": "8+8seconds", "generated_seconds": 16, "usable": true, "estimated_credits": 11200, "reason": "Extra2seconds on simple remembering action are lower priority than remaining whole-film coverage."}
+    ],
+    "estimate_basis": "Prior completed1080pPro10second generation cost7000credits;700/second extrapolation only. Live model catalog supplies supported durations/resolutions/references but no prices; generate API has no dry-run quote. This is NOT a current quoted price. Official-page search did not establish an exact current credit tariff.",
+    "shared_budget_example": "Combs8+6 plus proposed ending15+10 plus chain8 =47seconds; at prior700/second,32900credits, leaving100of33000. This is an unverified joint estimate, not authorization or a locked complete-film plan. Other gaps may change allocation. Parent must verify actual quote/account and all-film coverage before dispatch.",
+    "shots": [
+      {
+        "id": "CB04-pickup", "duration": 8, "target_native_frames": 156,
+        "target_film_seconds": [736.5, 743.0],
+        "reference_images": [
+          {"path": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/priority-batch-01/reaction-r10-crop-0-0-1728-972/frames/000042.jpg", "role": "Actually inspected downcast native168 portrait: same Della, short curls, broad ivory collar, teal dress and light; excludes contradictory wrapped parcel. Single reference avoids importing premature held-combs pose."}
+        ],
+        "prompt": "One continuous eight-second cinematic shot for The Gift of the Magi, matched to the supplied existing film. It seems the useful intent is to show how much Jim's gift means to Della while she realizes she cannot wear it yet. Preserve that tenderness without restarting the unwrapping or introducing another comb design. Medium close-up of the same young adult Della, short dark curls, teal dress and its broad turned ivory collar, screen-left facing Jim offscreen right. Cold window daylight left, soft amber oil-lamp light, the same worn apartment. Frame from upper chest upward; the table and all gift objects stay BELOW frame. Begin with her hands below frame and eyes lowered toward the already-open comb case. She breathes through the last tears, lets her eyes rest on the gift, and quietly gathers herself. Her expression is sorrow touched by gratitude, not a grin or fresh theatrical sob. In the final two seconds she inclines forward slightly and reaches both hands below the lower frame to take her combs. End while her eyes are still down and her shoulders settle; the following separately edited shot will show the combs in her hands. Static camera, continuous natural motion, no internal cut, no camera orbit, no duplicate person, no visible gift or watch, no title, no speech, no music or generated sound.",
+        "acceptance": "At least156consecutive native24fps frames of downcast tender performance and below-frame reach. Same short curls and broad ivory collar throughout. No gift/parcel edge enters. Begin after any initialization, cut before any new smile that duplicates cherishing. Preserve forward motion and no frozen handles.",
+        "fallback_if_failed": "No retry. Use approved coverage only if parent can make a physically and emotionally coherent alternative; otherwise report this remaining6.5second gap. Never reinsert wrong-neckline04-joy-tears."
+      },
+      {
+        "id": "CB07-pickup", "duration": 6, "target_native_frames": 121,
+        "target_film_seconds": [756.625, 761.6666666667],
+        "reference_images": [
+          {"path": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/priority-batch-01/della-cherishes-r12/frames/000060.jpg", "role": "Start-state anchor: Della smiles upward, hands around the same three combs at her bosom; Jim's shoulder right."},
+          {"path": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/priority-batch-01/combs-insert-r12/frames/000000.jpg", "role": "Exact three-comb design only; keep one larger central and two smaller round jeweled amber crests, no extra set in the background."}
+        ],
+        "prompt": "One continuous six-second cinematic reaction and retrieval setup for The Gift of the Magi. Match the supplied film frame precisely: the same adult Della with short dark curls, teal dress and broad ivory collar, at screen-left; adult Jim is only the familiar shoulder at right, still standing. She starts just as in reference1, smiling through tears toward her husband with the same three amber jeweled combs clasped to her bosom. It seems the important intent is to recover her eagerness to give Jim HIS present, not turn this into a random dance or magically produce his sold watch. Let that thought visibly arrive: a quick brightening of her eyes and a small spontaneous straightening as she remembers. She looks down, gently lowers the three combs together below frame onto the nearby table, releases them only after they are below the frame, then turns her shoulders toward the tabletop at her left and reaches below frame for the still-unseen chain. End on her purposeful reaching movement, ready for the next separate shot of her offering the chain. Keep camera at chest-and-face height, so the receiving tabletop and chain stay below view; preserve the recognizable comb crests until they naturally exit downward. The combs are not replaced, duplicated or handed to Jim. No watch exists here: Jim has sold it. No seated Jim, no costume change, no internal cut, no sudden zoom or orbit, no theatrical leap across the room, no speech, no music or generated sound. Natural forward motion throughout.",
+        "acceptance": "At least121consecutive native24fps frames: held-combs start, readable remembering, continuous lowering out of frame, then directed reach. Three crests remain consistent until genuine occlusion, no airborne release or instantly empty hands. No premature chain/watch, no second set, no seated Jim. Cut to next chain coverage on motivated reaching movement.",
+        "fallback_if_failed": "No retry. Preserve the existing cherishing and Jim response, and report the missing motivated retrieval rather than inserting the old watch-and-chain dance."
+      }
+    ],
+    "pre_dispatch": "Local reference paths exist but are not provider upload IDs. Upload only these approved images through supported upload workflow; pin returned identifiers. Parent must close all-film coverage, reconcile shared finite budget and verify quote before generating. Do not use more reference imagery carrying contradictory object state."
+  },
   "delivery_check": "No recut or render. Adjacent montage and original narration/music need normal-speed review after whole-film plan closes. Source range admission does not certify assembled joins."
 }

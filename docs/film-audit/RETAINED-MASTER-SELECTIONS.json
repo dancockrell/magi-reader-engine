@@ -1,0 +1,259 @@
+{
+  "schema_version": 1,
+  "status": "ready_for_serial_master_range_admission_not_rendered",
+  "movie_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+  "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+  "fps": 24,
+  "bounds": "native frames; start inclusive, end exclusive",
+  "original_main_review": {
+    "state_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\state.json",
+    "cursor": 5347,
+    "samples": 5347,
+    "receipt_count": 75
+  },
+  "purpose": "Reuse unchanged film already independently reviewed; do not repeat its raw-ancestor review or call unselected material defective by omission.",
+  "rules": [
+    "Preserve original master timeline positions and narration alignment.",
+    "No retiming, reverse, loop, freeze, new crop, or duplicated source use.",
+    "Selections are scoped picture admissions, not whole-film completion or final sound approval.",
+    "RM03 and RM04 are contiguous: preserve existing native cut11113."
+  ],
+  "selected_native_frames": 959,
+  "selections": [
+    {
+      "id": "RM01",
+      "start": 1423,
+      "end": 1536,
+      "beat_ids": [
+        "B004"
+      ],
+      "title": "Recovery and motivated look toward the room",
+      "entities": [
+        "DELLA"
+      ],
+      "reason": "Preserve the quiet hurt and recovery, followed by her motivated look-away. Hands have already lowered before this retained interval. No money or gift state changes. Stop before the incompatible-room dissolve.",
+      "compatibility": "Pre-sale pinned brown hair, teal bodice and cream collar; seated in established recovery close-up. Retain original time, not later post-haircut use.",
+      "concerns": [
+        "Outgoing replacement room must respect her look toward the window. The 64-second dissolve is excluded; no approval of changed room topology."
+      ],
+      "frame_count": 113,
+      "duration_seconds": 4.708333333333333,
+      "timeline_start_frame": 1423,
+      "timeline_end_frame": 1536,
+      "evidence": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\000288.json",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\000360.json",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\packets\\000360-00.jpg"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\000288.json",
+          "sha256": "dc66b23dbbcd658bf9986159c37586ea362baa54a08478ded9c8bef7c98f700b"
+        },
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\000360.json",
+          "sha256": "f1db2a586273e2fea15164441c120da5254e3bdc3fb8661dd44c3ed436f90edd"
+        }
+      ],
+      "status": "selected_picture_reuse_existing_master_review"
+    },
+    {
+      "id": "RM02",
+      "start": 7670,
+      "end": 7730,
+      "beat_ids": [
+        "B015"
+      ],
+      "title": "Sofronie appraises Della",
+      "entities": [
+        "SOFRONIE",
+        "DELLA"
+      ],
+      "reason": "The steady appraising response preserves the practical transaction and does not villainize the shopkeeper. Close framing avoids the prior wide shot's ground-floor geography; no hand/hat removal occurs inside selection.",
+      "compatibility": "Sofronie dark pulled-back hair, black high-neck dress and gold brooch; blurred brown Della hat on left foreground. Maintain matching screen direction and use before hat removal.",
+      "concerns": [
+        "Does not clear the adjacent street-level shop window or later hat-lift contact. Incoming and outgoing shop coverage must match this shopkeeper and hat."
+      ],
+      "frame_count": 60,
+      "duration_seconds": 2.5,
+      "timeline_start_frame": 7670,
+      "timeline_end_frame": 7730,
+      "evidence": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\001872.json",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\007668-007674\\sheet-00.jpg",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\007728-007734\\sheet-00.jpg"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\001872.json",
+          "sha256": "47cab76ca88b4927a63babd4f50083007dc68ced56611fd9bc21b381bd99175a"
+        }
+      ],
+      "status": "selected_picture_reuse_existing_master_review"
+    },
+    {
+      "id": "RM03",
+      "start": 10825,
+      "end": 11113,
+      "beat_ids": [
+        "B021"
+      ],
+      "title": "Della reassures herself before Jim arrives",
+      "entities": [
+        "DELLA"
+      ],
+      "reason": "Her faint smile, lowered eyes and tentative upward look preserve vulnerable self-reassurance. Short curls are already established, with no detached hair or gift mechanics. This is an intact continuous reaction, not a substitute image stretched to speech.",
+      "compatibility": "Della alone, short tight curls, cream collar and teal dress, blue-door close background. Preserve self-talk narration at original master timing; no present offscreen Jim is implied by edit.",
+      "concerns": [
+        "Picture-retention decision, not final sound-on approval: original review specifically reserves vocal intention and pacing. Preserve self-directed delivery; do not imply Jim is already in room."
+      ],
+      "frame_count": 288,
+      "duration_seconds": 12.0,
+      "timeline_start_frame": 10825,
+      "timeline_end_frame": 11113,
+      "evidence": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002664.json",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002736.json",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\010824-010830\\sheet-00.jpg",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\011112-011118\\sheet-00.jpg"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002664.json",
+          "sha256": "97bf8f47081ce93e57bde72c3b0b6ed19bde25a0986adfc47dd84edc18237e0d"
+        },
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002736.json",
+          "sha256": "74e6a1fee93aeaf077a18d18d1f61d409b09a5b4b58633bf8e766234b1df64a5"
+        }
+      ],
+      "status": "selected_picture_reuse_existing_master_review"
+    },
+    {
+      "id": "RM04",
+      "start": 11113,
+      "end": 11323,
+      "beat_ids": [
+        "B022"
+      ],
+      "title": "Dinner ready for Jim, not yet cooked",
+      "entities": [
+        "DINNER"
+      ],
+      "reason": "The cream coffee pot, empty pan and uncooked chops accurately stage practical loving care. Continuous camera movement retains object forms and raw food state. Native boundary excludes the subsequent incompatible clock-room wide.",
+      "compatibility": "Cream enamel pot with dark rim, empty black frying pan, raw pink chops on plate. Use before Jim arrives and before cooking; no cooked dinner or new diners.",
+      "concerns": [
+        "Preserve the existing self-talk-to-dinner cut at frame11113. Following waiting coverage must still establish her position by the door."
+      ],
+      "frame_count": 210,
+      "duration_seconds": 8.75,
+      "timeline_start_frame": 11113,
+      "timeline_end_frame": 11323,
+      "evidence": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002736.json",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002808.json",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\011112-011118\\sheet-00.jpg",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\011320-011326\\sheet-00.jpg"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002736.json",
+          "sha256": "74e6a1fee93aeaf077a18d18d1f61d409b09a5b4b58633bf8e766234b1df64a5"
+        },
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002808.json",
+          "sha256": "e30d59f9b9a6af92fc29b5bd8ba28eb69199a4a7564797b57b9af3f8c5df9f73"
+        }
+      ],
+      "status": "selected_picture_reuse_existing_master_review"
+    },
+    {
+      "id": "RM05",
+      "start": 12169,
+      "end": 12361,
+      "beat_ids": [
+        "B025"
+      ],
+      "title": "Jim's tired, restrained first reaction",
+      "entities": [
+        "JIM"
+      ],
+      "reason": "Preserve understated fatigue and uncertainty rather than introducing menace or extra dependants. The complete face reaction has stable costume and no visible hand/parcel action. Native endpoints exclude the preceding open-door handling and next chain-handling shot.",
+      "compatibility": "Jim dark overcoat, brown waistcoat and dark tie; adult husband only, no baby. This is the tied entry costume family, not the open-collar stair or final sofa family.",
+      "concerns": [
+        "Upstream open-collar-to-tie and door-closure continuity is NOT cleared by this close-up. Incoming edit must use compatible costume/geography or legitimate ellipsis."
+      ],
+      "frame_count": 192,
+      "duration_seconds": 8.0,
+      "timeline_start_frame": 12169,
+      "timeline_end_frame": 12361,
+      "evidence": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\003024.json",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\012168-012174\\sheet-00.jpg",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\012360-012366\\sheet-00.jpg"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\003024.json",
+          "sha256": "bea834b7123d8071edaba515a5ae98cf57caf2759158010dfda7ff3aa8844d36"
+        }
+      ],
+      "status": "selected_picture_reuse_existing_master_review"
+    },
+    {
+      "id": "RM06",
+      "start": 15340,
+      "end": 15436,
+      "beat_ids": [
+        "B031",
+        "B032"
+      ],
+      "title": "The two-person embrace",
+      "entities": [
+        "DELLA",
+        "JIM",
+        "COUPLE-EMBRACE"
+      ],
+      "reason": "Protect the valuable relief in Della's face and cheek settling against Jim. All96 selected native frames inspected sequentially: two adults throughout; hand rises onto shoulder, fingers settle and cheek contact develops continuously. No child, extra head, backwards reset or observed hand split at inspection scale.",
+      "compatibility": "Della short curls, teal dress and cream collar; Jim dark overcoat, tied collar before contact. Della remains left, Jim right; bare hand rests on shoulder. No gifts or sold watch.",
+      "concerns": [
+        "The outgoing ordinary-object cutaway still needs its own lamp/set decision; it is not admitted here. Keep affectionate approach at existing narrative cue, not a repeat elsewhere."
+      ],
+      "frame_count": 96,
+      "duration_seconds": 4.0,
+      "timeline_start_frame": 15340,
+      "timeline_end_frame": 15436,
+      "evidence": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\003816.json",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\015338-015436\\sheet-00.jpg",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\015338-015436\\sheet-01.jpg",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\015338-015436\\sheet-02.jpg"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\003816.json",
+          "sha256": "bd39579547ab7353e3deec212c87f6c3029542bfc20a49f7493b61d598092c5d"
+        }
+      ],
+      "status": "selected_picture_reuse_existing_master_review"
+    }
+  ],
+  "not_selected_this_pass": [
+    {
+      "start": 10034,
+      "end": 10274,
+      "reason": "Della's anxious grooming face is valuable reserve, but lower-edge hand motion and missing procedure coverage were not fully resolved; no new retake mandate."
+    },
+    {
+      "start": 11571,
+      "end": 11665,
+      "reason": "Correct-direction Jim ascent already has native evidence; retain as conditional reserve pending parcel/collar continuity, not a reason to reshoot all stairs."
+    },
+    {
+      "start": 15436,
+      "end": 15676,
+      "reason": "Ordinary privacy lamp has correct meaning, but comparison with established lamp/set remains open; do not label it a ghost."
+    }
+  ],
+  "selected_seconds": 39.958333333333336
+}

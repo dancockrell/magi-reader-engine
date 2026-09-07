@@ -17,17 +17,84 @@ def write(path, data):
     Path(path).write_text(json.dumps(data, indent=2)+'\n', encoding='utf-8')
 
 
+def candidate_sources(choice):
+    """Enumerate actual picture sources, including both sides of a transition."""
+    if choice.get('kind') == 'transition':
+        return choice.get('layers', [])
+    return [choice] if choice.get('source_sha256') else []
+
+
+def opening_overrides(opening):
+    """Translate the scoped opening design without inventing padding or seeks."""
+    if opening['timeline'] != [0, 1423] or opening['narration_entrance_frame'] != 222:
+        raise ValueError('Opening must preserve its section handover and narration entrance')
+    sources = {s['id']: s for s in opening['sources']}
+
+    def source(layer):
+        raw = sources[layer['source']]
+        return {'source': raw['path'], 'source_sha256': raw['sha256'],
+                'source_in': layer['source_range'][0],
+                'source_out': layer['source_range'][1],
+                'source_frames': raw['frame_count'],
+                'crop_xywh': raw['mandatory_crop_xywh'],
+                **({'opacity': layer['opacity']} if 'opacity' in layer else {})}
+
+    result = []
+    for s in opening['shots']:
+        choice = {'section_shot_id': s['id'], 'section': 'opening',
+                  'start': s['timeline'][0], 'end': s['timeline'][1],
+                  'purpose': s['beat'], 'join_out': s['join_out']}
+        if s.get('kind') == 'transition':
+            choice.update(kind='transition', transition='dissolve',
+                          layers=[source(layer) for layer in s['layers']])
+        else:
+            choice.update(source(s))
+        if s['id'] == 'O01':
+            choice['title_design'] = opening['title']
+        result.append({'start': choice['start'], 'end': choice['end'],
+                       'selected_candidate': choice})
+    return result
+
+
 def validate(plan):
     cursor = 0
-    for shot in plan['shots']:
+    for index, shot in enumerate(plan['shots']):
         if shot['start'] != cursor or shot['end'] <= cursor:
             raise ValueError('Plan timeline gap/overlap')
         if not shot['beats'] or not shot['tasks'] or not shot['treatment']:
             raise ValueError('Unplanned interval')
         choice = shot.get('selected_candidate')
-        if choice and choice.get('source_sha256'):
-            if choice['source_out']-choice['source_in'] != shot['end']-shot['start']:
-                raise ValueError('Candidate would require retiming')
+        if choice:
+            if choice.get('kind') == 'transition':
+                layers = choice.get('layers', [])
+                if (choice.get('source_sha256') or len(layers) != 2 or
+                        choice.get('transition') != 'dissolve' or
+                        [x.get('opacity') for x in layers] != ['1-to-0', '0-to-1']):
+                    raise ValueError('Transition must explicitly define its two picture layers')
+                if choice.get('section') == 'opening':
+                    if index == 0 or index+1 == len(plan['shots']):
+                        raise ValueError('Opening transition needs both neighboring shots')
+                    before=plan['shots'][index-1].get('selected_candidate',{})
+                    after=plan['shots'][index+1].get('selected_candidate',{})
+                    outgoing,incoming=layers
+                    if (before.get('source_sha256') != outgoing.get('source_sha256') or
+                            before.get('source_out') != outgoing.get('source_in') or
+                            after.get('source_sha256') != incoming.get('source_sha256') or
+                            after.get('source_in') != incoming.get('source_out') or
+                            before.get('crop_xywh') != outgoing.get('crop_xywh') or
+                            after.get('crop_xywh') != incoming.get('crop_xywh')):
+                        raise ValueError('Opening dissolve must continue both native sources without restarting')
+            for source in candidate_sources(choice):
+                if (not source.get('source_sha256') or
+                        type(source.get('source_in')) is not int or
+                        type(source.get('source_out')) is not int or
+                        source['source_in'] < 0 or
+                        source['source_out'] <= source['source_in']):
+                    raise ValueError('Candidate requires exact native bounds and a pinned source')
+                if source['source_out']-source['source_in'] != shot['end']-shot['start']:
+                    raise ValueError('Candidate would require retiming')
+                if source.get('source_frames') is not None and source['source_out'] > source['source_frames']:
+                    raise ValueError('Candidate exceeds native source length')
         cursor = shot['end']
     if cursor != plan['frames']:
         raise ValueError('Incomplete film')
@@ -107,9 +174,22 @@ def main():
     parcel = decisions['parcel_slots']
     closing = read('docs/film-audit/ENDING-SEQUENCE-PLAN.json')['shots']
     combs = read('docs/film-audit/COMBS-SEQUENCE-PLAN.json')['shots']
-    overrides = [{**s,'selected_candidate':s} for s in parcel+combs+closing]
+    opening = read('docs/film-audit/OPENING-SEQUENCE-PLAN.json')
+    chain = read('docs/film-audit/CHAIN-SEQUENCE-PLAN.json')['shots']
+    retained_plan = read('docs/film-audit/RETAINED-MASTER-SELECTIONS.json')
+    retained = [{**s, 'source': retained_plan['source_path'],
+                 'source_sha256': retained_plan['movie_sha256'],
+                 'source_in': s['start'], 'source_out': s['end'],
+                 'crop_xywh': None, 'purpose': s['reason'],
+                 'status': 'source-admitted-context-pending'}
+                for s in retained_plan['selections']]
+    overrides = opening_overrides(opening) + [{**s,'selected_candidate':s}
+                for s in retained+parcel+combs+chain+closing]
     for override in overrides:
-        choice=override['selected_candidate']
+      container=override['selected_candidate']
+      # Unpinned legacy named choices still need resolving; gaps remain gaps.
+      choices=candidate_sources(container) if container.get('kind')=='transition' else [container]
+      for choice in choices:
         matches=[i for i in inventory if (choice.get('source_sha256')==i['sha256']
                  or (not choice.get('source_sha256') and
                      Path(choice.get('source') or '').name==Path(i['path']).name))]
@@ -150,6 +230,8 @@ def main():
         label=shot.get('historic_cut',{}).get('name','')
         if label in decisions.get('shot_overrides',{}):
             shot['treatment']=[decisions['shot_overrides'][label]]
+        if shot.get('selected_candidate',{}).get('section') == 'opening':
+            shot['treatment']=[shot['selected_candidate']['purpose']]
         shot['required_state']=[decisions['beats'][b['id']]['state'] for b in beats]
         shot['story_purpose']=[b['purpose'] for b in beats]
         shot['evidence']=sorted(set(i['evidence'] for b in beats for i in b['review_intervals']
@@ -164,6 +246,8 @@ def main():
           'warning':'Complete timeline planning coverage is not complete source admission. '
           'Historic composite cut metadata remains provisional. Retain directives are conditional, not art approval.',
           'beat_decisions':decisions['beats'],'tasks':decisions['tasks'],'shots':cuts}
+    plan['opening_audio'] = opening['audio']
+    plan['opening_narration_entrance_frame'] = opening['narration_entrance_frame']
     validate(plan)
     write(args.output,plan)
     # Fast human navigation, no hidden allocation by word timing.
@@ -175,11 +259,15 @@ def main():
         choice=s.get('selected_candidate',{})
         label=(choice.get('source') or choice.get('source_path') or
                s.get('historic_cut',{}).get('name') or 'UNRESOLVED COVERAGE')
+        if choice.get('kind') == 'transition':
+            label = '18-frame book-to-Della dissolve: ' + ' + '.join(
+                f"{Path(layer['source']).name} [{layer['source_in']},{layer['source_out']}) {layer['opacity']}"
+                for layer in choice['layers'])
         lines.append('| '+s['id']+' | '+f"{s['start']/24:.3f}–{s['end']/24:.3f}"+' | '+label+' | '+','.join(s['beats'])+' | '+
             '; '.join(s['treatment']).replace('|','/')+' **Tasks:** '+','.join(s['tasks'])+' |')
     args.output.with_suffix('.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
-    selected={s['selected_candidate']['source_sha256'] for s in cuts
-              if s.get('selected_candidate',{}).get('source_sha256')}
+    selected={source['source_sha256'] for s in cuts
+              for source in candidate_sources(s.get('selected_candidate',{}))}
     baseline_hashes=set(components)|set(registry)
     current_hashes={s['current_reference']['source_sha256'] for s in cuts if s.get('current_reference')}
     historic_paths={str((args.production/s['historic_cut']['path']).resolve()).lower()

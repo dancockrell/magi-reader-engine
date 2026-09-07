@@ -2,7 +2,7 @@ import copy
 import tempfile
 import unittest
 from pathlib import Path
-from film_audit import digest, resolve_beats, validate_receipt, validate_plan, source_decision, supplemental_context, write
+from film_audit import digest, resolve_beats, validate_receipt, validate_plan, source_decision, supplemental_context, verified_source_review, write
 
 
 class ReviewGates(unittest.TestCase):
@@ -101,6 +101,26 @@ class ReviewGates(unittest.TestCase):
         root,source,state,receipt,record,path=self.source_fixture()
         source_decision(root,{'phase':'inventory-review-required'},path)
         self.assertTrue((root/'source-decisions'/f'{record["sha256"]}.json').exists())
+
+    def test_exact_master_reuses_original_completed_review(self):
+        root,source,state,receipt,record,path=self.source_fixture()
+        write(root/'state.json',state)
+        write(root/'reviews'/'000000.json',receipt)
+        (source/'state.json').unlink()
+        checked,receipts=verified_source_review(root,record['sha256'])
+        self.assertEqual(receipts[0][0],root/'reviews'/'000000.json')
+        source_decision(root,{'phase':'inventory-review-required'},path)
+        state['cursor']=0
+        write(root/'state.json',state)
+        with self.assertRaisesRegex(ValueError,'incomplete'):
+            verified_source_review(root,record['sha256'])
+
+    def test_different_source_cannot_borrow_master_review(self):
+        root,source,state,receipt,record,path=self.source_fixture()
+        write(root/'state.json',{**state,'movie_sha256':'other'})
+        (source/'state.json').unlink()
+        with self.assertRaisesRegex(ValueError,'Missing source'):
+            verified_source_review(root,record['sha256'])
 
     def test_missing_source_receipt_rejects_checkbox(self):
         root,source,state,receipt,record,path=self.source_fixture()

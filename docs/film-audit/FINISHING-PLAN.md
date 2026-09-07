@@ -23,6 +23,10 @@ No new credit spend this turn. No bake/publication yet. Native inspection outsid
 
 ## Current execution state — 8 September
 
+Latest parallel-build integration:29source hashes have restricted admissions. The unified candidate now has115intervals across the same21,387frames; opening, parcel, combs, chain and ending are integrated, plus959unchanged master frames whose original75review receipts are reused directly. No duplicate raw-ancestor review is implied. The earlier16-hash/114-interval entries below describe the previous integration checkpoint.60film tests pass; no new export or publication.
+
+Browser price check now confirms Seedance2.0 1080p16:9 silent single-output quotes:15s10,500;10s7,000;8s5,600;6s4,200. Proposed5takes15+10+8+6+8 total32,900credits. Final reference-loaded prices and remaining full-film selections still need checking before dispatch; no charges. See FINAL-PICKUP-PRICE-CHECK.json. Narrator source clip is identified but exact provider voice is not; NARRATION-POLISH.md records that specific missing input. Mirror/hair sequence selection is continuing in parallel.
+
 The shared ending and the other two priority pickups now have formal source-range admissions; consult FINAL-ROUND-REGISTER.md rather than the historical pending status above. Sixteen source hashes are admitted in total, including the pocket reach, cropped reassurance, cropped joy-to-grief reaction, comfort, combs embrace and Jim revelation/response. The reaction now retains its upward glance through native240; its original198-frame admission is preserved in hash-addressed revision history. ENDING-SEQUENCE-PLAN.json now reserves exactly360frames for the domestic coda after extending the genuinely moving ancient-gifts source by25reviewed frames; no padding or repeated performance.
 
 The current master has a verified nested source map covering its full 21,387 frames. Resolve remaining opaque baseline sections, carry the established source decisions into an every-shot plan, and finish the unresolved coverage before baking. Mapping is provenance, not fresh visual approval. No new film has been rendered or published during this pass.

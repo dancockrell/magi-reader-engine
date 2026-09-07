@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-08",
+  "status": "browser-quoted-no-generation-or-spend",
+  "source": "https://www.magnific.com/app/ai-video-generator",
+  "method": "Main assistant selected Seedance 2.0, 1080, 16:9, sound OFF, one output, and a temporary text-only period-film draft. Read the calculated Generate button after each duration change. Never clicked Generate; cleared draft and closed own hidden tab.",
+  "model_display_name": "Seedance 2.0",
+  "settings": {"resolution": "1080", "aspect_ratio": "16:9", "sound": false, "outputs": 1, "reference_count": 0},
+  "quotes": [{"seconds":15,"credits":10500},{"seconds":10,"credits":7000},{"seconds":8,"credits":5600},{"seconds":6,"credits":4200}],
+  "proposed_five_take_total": {"durations_seconds":[15,10,8,6,8],"credits":32900,"remaining_allowance":33000,"unallocated":100},
+  "qualification": "Current browser quotes, not a guarantee of API pricing or future prices. Final references and actual prompts must be configured and cost rechecked before dispatch. Whole-film remaining selections and the finite shared shot list still need closure. No automatic retry or additional round.",
+  "unlimited_observation": "Kling 2.5 displayed Unlimited in the browser model picker. This does not establish Seedance unlimited access or authorize substituting a lower-quality model for the final performances."
+}

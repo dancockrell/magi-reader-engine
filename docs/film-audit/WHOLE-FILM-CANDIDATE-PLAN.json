@@ -418,53 +418,53 @@
   "shots": [
     {
       "start": 0,
-      "end": 222,
-      "current_reference": {
-        "source_sha256": "3373be75f24fd81401c83ff344e44974483229a159294e2555e04618b37ba25a",
+      "end": 204,
+      "selected_candidate": {
+        "section_shot_id": "O01",
+        "section": "opening",
+        "start": 0,
+        "end": 204,
+        "purpose": "Music-only title over the opening book.",
+        "join_out": "18-frame deliberate book-to-live dissolve",
+        "source": "production/magnific/gift-of-the-magi/scene-1/v11/s1-book-opening-v11-raw.mp4",
+        "source_sha256": "653f0240bd62d4c13be2eb805dd104674ca0c00bb4ae5b74bea72c16b5ca9f09",
         "source_in": 0,
-        "source_out": 222,
-        "timeline_start": 0,
-        "timeline_end": 819,
-        "crop_pipeline": [],
-        "provenance": [
+        "source_out": 204,
+        "source_frames": 241,
+        "crop_xywh": null,
+        "title_design": {
+          "reuse_assets": [
+            "production/magnific/gift-of-the-magi/opening-v17-title.ass"
+          ],
+          "recipe_reference": "tools/build-magi-opening-v17.mjs",
+          "direction": "Retain the existing large animated two-line title and author, and feathered lighting shade. Title clears by about6.2seconds. No black card or new small banner.",
+          "book_to_story_dissolve": [
+            204,
+            222
+          ],
+          "change_from_v17": "Move the18-frame transition from9.25\u201310 to8.5\u20139.25seconds and make the incoming image the wide Della shot, not misaligned close-up hands."
+        },
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v11\\s1-book-opening-v11-raw.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-opening-v17-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Opening and third count setup"
+            "start": 0,
+            "end": 222,
+            "crop": null,
+            "entity_compatibility": "Book is an invitation before B000 yields to B001, not a physical object added to Della's counting scene. Keep this on the music-only title side of the adaptation; do not narrate pennies over a lingering unrelated printed page."
           }
         ]
-      },
-      "historic_cut": {
-        "start": 0,
-        "end": 222,
-        "name": "Book and title composite",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\opening-v17-edit.json",
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
       "id": "F001",
       "beats": [
         "B000"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 222,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T01",
         "T15"
       ],
       "treatment": [
-        "Retain book-led title concept; inspect page turn and finish composition-led handover before first count. Do not add black lead-in."
+        "Music-only title over the opening book."
       ],
       "required_state": [
         "Book/title; music only; no spoken title."
@@ -481,66 +481,77 @@
       "next": "F002"
     },
     {
-      "start": 222,
-      "end": 270,
-      "current_reference": {
-        "source_sha256": "3373be75f24fd81401c83ff344e44974483229a159294e2555e04618b37ba25a",
-        "source_in": 222,
-        "source_out": 270,
-        "timeline_start": 0,
-        "timeline_end": 819,
-        "crop_pipeline": [],
-        "provenance": [
+      "start": 204,
+      "end": 222,
+      "selected_candidate": {
+        "section_shot_id": "O02",
+        "section": "opening",
+        "start": 204,
+        "end": 222,
+        "purpose": "Enter Della's room before the first spoken words.",
+        "join_out": "Continuous incoming source, no seek or restart",
+        "kind": "transition",
+        "transition": "dissolve",
+        "layers": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-opening-v17-preview.mp4"
+            "source": "production/magnific/gift-of-the-magi/scene-1/v11/s1-book-opening-v11-raw.mp4",
+            "source_sha256": "653f0240bd62d4c13be2eb805dd104674ca0c00bb4ae5b74bea72c16b5ca9f09",
+            "source_in": 204,
+            "source_out": 222,
+            "source_frames": 241,
+            "crop_xywh": null,
+            "opacity": "1-to-0",
+            "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v11\\s1-book-opening-v11-raw.mp4",
+            "ledger_status": "admit",
+            "ledger_ranges": [
+              {
+                "start": 0,
+                "end": 222,
+                "crop": null,
+                "entity_compatibility": "Book is an invitation before B000 yields to B001, not a physical object added to Della's counting scene. Keep this on the music-only title side of the adaptation; do not narrate pennies over a lingering unrelated printed page."
+              }
+            ]
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Opening and third count setup"
+            "source": "production/magnific/gift-of-the-magi/scene-1/v10/s1-counting-clean-v10-raw.mp4",
+            "source_sha256": "869188cadfd30eb47dcc9ebd09b640f295d7ef05dc4015531be3cb9ccd44533b",
+            "source_in": 0,
+            "source_out": 18,
+            "source_frames": 121,
+            "crop_xywh": null,
+            "opacity": "0-to-1",
+            "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v10\\s1-counting-clean-v10-raw.mp4",
+            "ledger_status": "admit",
+            "ledger_ranges": [
+              {
+                "start": 0,
+                "end": 121,
+                "crop": null,
+                "entity_compatibility": "B001 establishes Della and the geography before the five-second coin detail; it is also the incoming side of the book transition. She is alone counting small resources, with hair not yet sold and no future gift introduced. Tiny denominations are not certified from this wide image."
+              }
+            ]
           }
         ]
       },
-      "historic_cut": {
-        "start": 222,
-        "end": 270,
-        "name": "The first count \u2014 first voice",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\opening-v17-edit.json",
-        "path": "production/magnific/gift-of-the-magi/scene-1/raw/s1-pennies-v8.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 48,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
       "id": "F002",
       "beats": [
-        "B001"
+        "B000"
       ],
-      "component_subrange": {
-        "in": 222,
-        "out": 270,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T01",
         "T15"
       ],
       "treatment": [
-        "Keep grounded wide counting and worried face; remove any merging-coin portion after native contact check. Use only intact coin insert ranges."
+        "Enter Della's room before the first spoken words."
       ],
       "required_state": [
-        "Della long pinned hair, teal/ivory; distinct coins, same total."
+        "Book/title; music only; no spoken title."
       ],
       "story_purpose": [
-        "Close counting: readable separate coins, controlled fingers, effort and insufficiency."
+        "Music and book-led title invite us into the intimate story; yield to Della before counting begins."
       ],
       "evidence": [
-        "000000.json:shots[1]"
+        "000000.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
@@ -548,57 +559,42 @@
       "next": "F003"
     },
     {
-      "start": 270,
-      "end": 391,
-      "current_reference": {
-        "source_sha256": "3373be75f24fd81401c83ff344e44974483229a159294e2555e04618b37ba25a",
-        "source_in": 270,
-        "source_out": 391,
-        "timeline_start": 0,
-        "timeline_end": 819,
-        "crop_pipeline": [],
-        "provenance": [
+      "start": 222,
+      "end": 325,
+      "selected_candidate": {
+        "section_shot_id": "O03",
+        "section": "opening",
+        "start": 222,
+        "end": 325,
+        "purpose": "Della and her limited money; narration enters on frame222.",
+        "join_out": "Cut from room geography to money detail",
+        "source": "production/magnific/gift-of-the-magi/scene-1/v10/s1-counting-clean-v10-raw.mp4",
+        "source_sha256": "869188cadfd30eb47dcc9ebd09b640f295d7ef05dc4015531be3cb9ccd44533b",
+        "source_in": 18,
+        "source_out": 121,
+        "source_frames": 121,
+        "crop_xywh": null,
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v10\\s1-counting-clean-v10-raw.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-opening-v17-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Opening and third count setup"
+            "start": 0,
+            "end": 121,
+            "crop": null,
+            "entity_compatibility": "B001 establishes Della and the geography before the five-second coin detail; it is also the incoming side of the book transition. She is alone counting small resources, with hair not yet sold and no future gift introduced. Tiny denominations are not certified from this wide image."
           }
         ]
-      },
-      "historic_cut": {
-        "start": 270,
-        "end": 391,
-        "name": "Della at the table",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\opening-v17-edit.json",
-        "path": "production/magnific/gift-of-the-magi/scene-1/v10/s1-counting-clean-v10-raw.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 121,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
       "id": "F003",
       "beats": [
         "B001"
       ],
-      "component_subrange": {
-        "in": 270,
-        "out": 391,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T01",
         "T15"
       ],
       "treatment": [
-        "Keep grounded wide counting and worried face; remove any merging-coin portion after native contact check. Use only intact coin insert ranges."
+        "Della and her limited money; narration enters on frame222."
       ],
       "required_state": [
         "Della long pinned hair, teal/ivory; distinct coins, same total."
@@ -607,9 +603,9 @@
         "Close counting: readable separate coins, controlled fingers, effort and insufficiency."
       ],
       "evidence": [
+        "000000.json:shots[1]",
         "000000.json:shots[2]",
-        "000072.json:shots[0]",
-        "000072.json:shots[1]"
+        "000072.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
@@ -617,57 +613,95 @@
       "next": "F004"
     },
     {
-      "start": 391,
-      "end": 463,
-      "current_reference": {
-        "source_sha256": "3373be75f24fd81401c83ff344e44974483229a159294e2555e04618b37ba25a",
-        "source_in": 391,
-        "source_out": 463,
-        "timeline_start": 0,
-        "timeline_end": 819,
-        "crop_pipeline": [],
-        "provenance": [
+      "start": 325,
+      "end": 445,
+      "selected_candidate": {
+        "section_shot_id": "O04",
+        "section": "opening",
+        "start": 325,
+        "end": 445,
+        "purpose": "Small coins handled carefully; preserve a single continuous five-second insert.",
+        "join_out": "Cut to remembered savings context, not a matched physical action",
+        "source": "production/magnific/gift-of-the-magi/scene-1/raw/s1-pennies-v8.mp4",
+        "source_sha256": "94264ebb0aa51e8e04c7f7fe69e12c29c40103308529032524159ee768bbb3bf",
+        "source_in": 0,
+        "source_out": 120,
+        "source_frames": 121,
+        "crop_xywh": null,
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-pennies-v8.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-opening-v17-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Opening and third count setup"
+            "start": 0,
+            "end": 120,
+            "crop": null,
+            "entity_compatibility": "B001 money detail carries the care spent on small resources, after the wide has established whose hand this is. Supports counting, not an invented purchase or sudden new money. Exact denomination total is not asserted from generated coin inscriptions."
           }
         ]
-      },
-      "historic_cut": {
-        "start": 391,
-        "end": 463,
-        "name": "Pennies saved",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\opening-v17-edit.json",
-        "path": "production/magnific/gift-of-the-magi/scene-1/raw/s1-pennies-v8.mp4",
-        "original_declared_raw_in": 48,
-        "original_declared_raw_out": 120,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
       "id": "F004",
       "beats": [
         "B001"
       ],
-      "component_subrange": {
-        "in": 391,
-        "out": 463,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T01",
         "T15"
       ],
       "treatment": [
-        "Keep grounded wide counting and worried face; remove any merging-coin portion after native contact check. Use only intact coin insert ranges."
+        "Small coins handled carefully; preserve a single continuous five-second insert."
+      ],
+      "required_state": [
+        "Della long pinned hair, teal/ivory; distinct coins, same total."
+      ],
+      "story_purpose": [
+        "Close counting: readable separate coins, controlled fingers, effort and insufficiency."
+      ],
+      "evidence": [
+        "000072.json:shots[0]",
+        "000072.json:shots[1]"
+      ],
+      "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
+      "status": "candidate-plan-blocked-not-renderable",
+      "previous": "F003",
+      "next": "F005"
+    },
+    {
+      "start": 445,
+      "end": 566,
+      "selected_candidate": {
+        "section_shot_id": "O05",
+        "section": "opening",
+        "start": 445,
+        "end": 566,
+        "purpose": "Illustrate the remembered shopkeeping/savings context, not her later present-tense departure.",
+        "join_out": "Return to the present and her worried face",
+        "source": "production/magnific/gift-of-the-magi/scene-1/raw/s1-winter-walk-v8.mp4",
+        "source_sha256": "730ec30d45bac827c19b8500477d7079b705b44bd95070613cecf6b7a239cdb1",
+        "source_in": 0,
+        "source_out": 121,
+        "source_frames": 121,
+        "crop_xywh": null,
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-winter-walk-v8.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 121,
+            "crop": null,
+            "entity_compatibility": "B001 merchant/savings recollection only; not the later urgent departure to sell hair and not a shot of a transaction actually taking place. An associative past-shopping insert is permissible under savings narration. Her lack of the later brown coat/hat must not be carried into that separate departure sequence."
+          }
+        ]
+      },
+      "id": "F005",
+      "beats": [
+        "B001"
+      ],
+      "tasks": [
+        "T01",
+        "T15"
+      ],
+      "treatment": [
+        "Illustrate the remembered shopkeeping/savings context, not her later present-tense departure."
       ],
       "required_state": [
         "Della long pinned hair, teal/ivory; distinct coins, same total."
@@ -681,132 +715,57 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F003",
-      "next": "F005"
-    },
-    {
-      "start": 463,
-      "end": 584,
-      "current_reference": {
-        "source_sha256": "3373be75f24fd81401c83ff344e44974483229a159294e2555e04618b37ba25a",
-        "source_in": 463,
-        "source_out": 584,
-        "timeline_start": 0,
-        "timeline_end": 819,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-opening-v17-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Opening and third count setup"
-          }
-        ]
-      },
-      "historic_cut": {
-        "start": 463,
-        "end": 584,
-        "name": "The walk home",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\opening-v17-edit.json",
-        "path": "production/magnific/gift-of-the-magi/scene-1/raw/s1-winter-walk-v8.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 121,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F005",
-      "beats": [
-        "B001"
-      ],
-      "component_subrange": {
-        "in": 463,
-        "out": 584,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
-      "tasks": [
-        "T01",
-        "T15"
-      ],
-      "treatment": [
-        "Retain the brief shopping/walking recollection as context for pennies painstakingly saved, conditional on matching costume and physical continuity. Return to the worried table performance afterward; do not replace it with more counting solely because the caption beat spans this interval."
-      ],
-      "required_state": [
-        "Della long pinned hair, teal/ivory; distinct coins, same total."
-      ],
-      "story_purpose": [
-        "Close counting: readable separate coins, controlled fingers, effort and insufficiency."
-      ],
-      "evidence": [
-        "000072.json:shots[2]",
-        "000144.json:shots[0]",
-        "000144.json:shots[1]"
-      ],
-      "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F004",
       "next": "F006"
     },
     {
-      "start": 584,
+      "start": 566,
       "end": 781,
-      "current_reference": {
-        "source_sha256": "3373be75f24fd81401c83ff344e44974483229a159294e2555e04618b37ba25a",
-        "source_in": 584,
-        "source_out": 781,
-        "timeline_start": 0,
-        "timeline_end": 819,
-        "crop_pipeline": [],
-        "provenance": [
+      "selected_candidate": {
+        "section_shot_id": "O06",
+        "section": "opening",
+        "start": 566,
+        "end": 781,
+        "purpose": "The emotional cost of having so little; worried face rather than more counting coverage.",
+        "join_out": "Cut back to the third count",
+        "source": "production/polish-r6/della-reaction.mp4",
+        "source_sha256": "e2d5c6e4025e198715d28fcd7d0c3ebee60e5d6893d72b59849c36d983f4c281",
+        "source_in": 0,
+        "source_out": 215,
+        "source_frames": 241,
+        "crop_xywh": [
+          100,
+          0,
+          1440,
+          810
+        ],
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r6\\della-reaction.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-opening-v17-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Opening and third count setup"
+            "start": 0,
+            "end": 215,
+            "crop": [
+              100,
+              0,
+              1440,
+              810
+            ],
+            "entity_compatibility": "B001 reaction restores Della's worried face between remembered savings and the third count. Admit only the mandatory crop and native0-215. Uncropped banknotes conflict with the intended penny-counting coverage. Cropped face supplies reaction without claiming she possesses visible paper money."
           }
         ]
-      },
-      "historic_cut": {
-        "start": 584,
-        "end": 781,
-        "name": "The cost of saving \u2014 Della reaction",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\opening-v17-edit.json",
-        "path": "production/polish-r6/della-reaction.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 197,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
       "id": "F006",
       "beats": [
         "B001",
         "B002"
       ],
-      "component_subrange": {
-        "in": 584,
-        "out": 781,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T01",
         "T15"
       ],
       "treatment": [
-        "Keep grounded wide counting and worried face; remove any merging-coin portion after native contact check. Use only intact coin insert ranges.",
-        "Make the third count and her recognition of insufficiency readable; preserve disappointed reaction rather than more decorative coin angles."
+        "The emotional cost of having so little; worried face rather than more counting coverage."
       ],
       "required_state": [
         "Della long pinned hair, teal/ivory; distinct coins, same total.",
@@ -817,6 +776,8 @@
         "A third count confirms the same total; her disappointment motivates the next action."
       ],
       "evidence": [
+        "000072.json:shots[2]",
+        "000144.json:shots[0]",
         "000144.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
@@ -827,55 +788,40 @@
     {
       "start": 781,
       "end": 819,
-      "current_reference": {
-        "source_sha256": "3373be75f24fd81401c83ff344e44974483229a159294e2555e04618b37ba25a",
-        "source_in": 781,
-        "source_out": 819,
-        "timeline_start": 0,
-        "timeline_end": 819,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-opening-v17-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Opening and third count setup"
-          }
-        ]
-      },
-      "historic_cut": {
+      "selected_candidate": {
+        "section_shot_id": "O07",
+        "section": "opening",
         "start": 781,
         "end": 819,
-        "name": "Third count setup",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\opening-v17-edit.json",
-        "path": "public/video/storyboard/s1/s1-c-recount.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 38,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
+        "purpose": "Re-establish Della and the table for the recount.",
+        "join_out": "Wide-to-detail cut",
+        "source": "public/video/storyboard/s1/s1-c-recount.mp4",
+        "source_sha256": "0c1396d278174d7a6229b409db60ec7a350438378dea68804d2286040adb1be9",
+        "source_in": 0,
+        "source_out": 38,
+        "source_frames": 145,
+        "crop_xywh": null,
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\s1-c-recount.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 38,
+            "crop": null,
+            "entity_compatibility": "Use only native0-38 to orient the third count B002 before the isolated-penny detail. Repeated counting is required by the story; this is not replayed source footage. Distinct take and framing variations do not certify precise unchanged coin layout."
+          }
+        ]
       },
       "id": "F007",
       "beats": [
         "B002"
       ],
-      "component_subrange": {
-        "in": 781,
-        "out": 819,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T01",
         "T15"
       ],
       "treatment": [
-        "Make the third count and her recognition of insufficiency readable; preserve disappointed reaction rather than more decorative coin angles."
+        "Re-establish Della and the table for the recount."
       ],
       "required_state": [
         "Same coins and costume; no multiplying money."
@@ -896,44 +842,40 @@
     {
       "start": 819,
       "end": 940,
-      "current_reference": {
+      "selected_candidate": {
+        "section_shot_id": "O08",
+        "section": "opening",
+        "start": 819,
+        "end": 940,
+        "purpose": "One coin slides away from the group and is released, remaining a distinct object.",
+        "join_out": "Deliberate time ellipsis to standing Della; do not imply continuous finger motion",
+        "source": "production/award-candidate/penny-isolated-r1.mp4",
         "source_sha256": "2a4dd7f073f49e70950f60383d82fd95e1134a1de58077059642fe94008f5b29",
         "source_in": 0,
         "source_out": 121,
-        "timeline_start": 819,
-        "timeline_end": 940,
-        "crop_pipeline": [],
-        "provenance": [
+        "source_frames": 145,
+        "crop_xywh": null,
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\penny-isolated-r1.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "One isolated rigid penny"
+            "start": 0,
+            "end": 121,
+            "crop": null,
+            "entity_compatibility": "B002 third-count detail, ending before the late rising hands; the following standing Della is an intentional time ellipsis. No extra coin is conjured or fused in the inspected selected frames. It does not claim to count the full dollar amount on screen."
           }
         ]
-      },
-      "historic_cut": {
-        "start": 0,
-        "end": 121,
-        "name": "penny-isolated-r1.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
       "id": "F008",
       "beats": [
         "B002"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 121,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T01",
         "T15"
       ],
       "treatment": [
-        "Make the third count and her recognition of insufficiency readable; preserve disappointed reaction rather than more decorative coin angles."
+        "One coin slides away from the group and is released, remaining a distinct object."
       ],
       "required_state": [
         "Same coins and costume; no multiplying money."
@@ -954,58 +896,42 @@
     {
       "start": 940,
       "end": 1061,
-      "current_reference": {
-        "source_sha256": "3373be75f24fd81401c83ff344e44974483229a159294e2555e04618b37ba25a",
-        "source_in": 940,
-        "source_out": 1061,
-        "timeline_start": 940,
-        "timeline_end": 1423,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-opening-v17-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
-          }
-        ]
-      },
-      "historic_cut": {
+      "selected_candidate": {
+        "section_shot_id": "O09",
+        "section": "opening",
         "start": 940,
         "end": 1061,
-        "name": "Toward the sofa",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\opening-v17-edit.json",
-        "path": "production/magnific/gift-of-the-magi/scene-1/v10/s1-turn-to-sofa-v10-raw.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 121,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
+        "purpose": "Della leaves the table and lowers herself onto the sofa.",
+        "join_out": "Cut after she has sat; do not repeat the descent",
+        "source": "production/magnific/gift-of-the-magi/scene-1/v10/s1-turn-to-sofa-v10-raw.mp4",
+        "source_sha256": "6cf9c6d8735be5c1e7aa490addb9c8c5797b978105b9c61636f4e5d9dcb20897",
+        "source_in": 0,
+        "source_out": 121,
+        "source_frames": 121,
+        "crop_xywh": null,
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v10\\s1-turn-to-sofa-v10-raw.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 121,
+            "crop": null,
+            "entity_compatibility": "B003 moves from counting to the couch; do not pretend its standing start directly continues a finger movement in the previous shot. The story requires withdrawing from the money to cry on the shabby couch. This supplies the spatial move without reversing or replaying her sit."
+          }
+        ]
       },
       "id": "F009",
       "beats": [
         "B002",
         "B003"
       ],
-      "component_subrange": {
-        "in": 940,
-        "out": 1061,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T01",
         "T02",
         "T15"
       ],
       "treatment": [
-        "Make the third count and her recognition of insufficiency readable; preserve disappointed reaction rather than more decorative coin angles.",
-        "Preserve withdrawal to sofa and the cry as one causal movement; allow the tearful performance its uninterrupted clean duration."
+        "Della leaves the table and lowers herself onto the sofa."
       ],
       "required_state": [
         "Same coins and costume; no multiplying money.",
@@ -1026,55 +952,40 @@
     {
       "start": 1061,
       "end": 1182,
-      "current_reference": {
-        "source_sha256": "3373be75f24fd81401c83ff344e44974483229a159294e2555e04618b37ba25a",
-        "source_in": 1061,
-        "source_out": 1182,
-        "timeline_start": 940,
-        "timeline_end": 1423,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-opening-v17-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
-          }
-        ]
-      },
-      "historic_cut": {
+      "selected_candidate": {
+        "section_shot_id": "O10",
+        "section": "opening",
         "start": 1061,
         "end": 1182,
-        "name": "The collapse",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\opening-v17-edit.json",
-        "path": "production/magnific/gift-of-the-magi/scene-1/v10/s1-sofa-cry-v10-raw.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 121,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
+        "purpose": "Her distress becomes a private sob.",
+        "join_out": "Move closer with a modest time ellipsis; check hand-state jump at native speed",
+        "source": "production/magnific/gift-of-the-magi/scene-1/v10/s1-sofa-cry-v10-raw.mp4",
+        "source_sha256": "c6e3b602a107959e312fe7b39c38547608443ec2cff5b8e744d67aff429da18d",
+        "source_in": 0,
+        "source_out": 121,
+        "source_frames": 121,
+        "crop_xywh": null,
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v10\\s1-sofa-cry-v10-raw.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 121,
+            "crop": null,
+            "entity_compatibility": "B003 follows the completed sit and lets the sob begin before closer tear coverage. She cries alone on the shabby couch, without a child, Jim or future gift entering early."
+          }
+        ]
       },
       "id": "F010",
       "beats": [
         "B003"
       ],
-      "component_subrange": {
-        "in": 1061,
-        "out": 1182,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T02",
         "T15"
       ],
       "treatment": [
-        "Preserve withdrawal to sofa and the cry as one causal movement; allow the tearful performance its uninterrupted clean duration."
+        "Her distress becomes a private sob."
       ],
       "required_state": [
         "Della leaves table for established shabby sofa."
@@ -1094,55 +1005,40 @@
     {
       "start": 1182,
       "end": 1423,
-      "current_reference": {
-        "source_sha256": "3373be75f24fd81401c83ff344e44974483229a159294e2555e04618b37ba25a",
-        "source_in": 1182,
-        "source_out": 1423,
-        "timeline_start": 940,
-        "timeline_end": 1423,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-opening-v17-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
-          }
-        ]
-      },
-      "historic_cut": {
+      "selected_candidate": {
+        "section_shot_id": "O11",
+        "section": "opening",
         "start": 1182,
         "end": 1423,
-        "name": "Sobs, sniffles, smiles",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\opening-v17-edit.json",
-        "path": "production/magnific/gift-of-the-magi/scene-1/raw/s1-tear-v8.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 241,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
+        "purpose": "Stay with her face and tear; tenderness, not another prop insert.",
+        "join_out": "Existing first-section handover at frame1423; parent must check next section",
+        "source": "production/magnific/gift-of-the-magi/scene-1/raw/s1-tear-v8.mp4",
+        "source_sha256": "6dc8d62d51b5c661d7956fed70edbd21c9d9bc24b94bdfc41485e19f83c6ce05",
+        "source_in": 0,
+        "source_out": 241,
+        "source_frames": 241,
+        "crop_xywh": null,
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-tear-v8.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 241,
+            "crop": null,
+            "entity_compatibility": "B003 close view after the wider sob; incoming hand-state difference is a cut with a modest ellipsis, not a matched continuous gesture. Continues the early crying beat before recovery. Nothing suggests cut hair, received combs or an extra person."
+          }
+        ]
       },
       "id": "F011",
       "beats": [
         "B003"
       ],
-      "component_subrange": {
-        "in": 1182,
-        "out": 1423,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T02",
         "T15"
       ],
       "treatment": [
-        "Preserve withdrawal to sofa and the cry as one causal movement; allow the tearful performance its uninterrupted clean duration."
+        "Stay with her face and tear; tenderness, not another prop insert."
       ],
       "required_state": [
         "Della leaves table for established shabby sofa."
@@ -1159,11 +1055,155 @@
       "next": "F012"
     },
     {
+      "id": "F012",
       "start": 1423,
+      "end": 1536,
+      "beat_ids": [
+        "B004"
+      ],
+      "title": "Recovery and motivated look toward the room",
+      "entities": [
+        "DELLA"
+      ],
+      "reason": "Preserve the quiet hurt and recovery, followed by her motivated look-away. Hands have already lowered before this retained interval. No money or gift state changes. Stop before the incompatible-room dissolve.",
+      "compatibility": "Pre-sale pinned brown hair, teal bodice and cream collar; seated in established recovery close-up. Retain original time, not later post-haircut use.",
+      "concerns": [
+        "Outgoing replacement room must respect her look toward the window. The 64-second dissolve is excluded; no approval of changed room topology."
+      ],
+      "frame_count": 113,
+      "duration_seconds": 4.708333333333333,
+      "timeline_start_frame": 1423,
+      "timeline_end_frame": 1536,
+      "evidence": [
+        "000288.json:shots[1]",
+        "000360.json:shots[0]"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\000288.json",
+          "sha256": "dc66b23dbbcd658bf9986159c37586ea362baa54a08478ded9c8bef7c98f700b"
+        },
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\000360.json",
+          "sha256": "f1db2a586273e2fea15164441c120da5254e3bdc3fb8661dd44c3ed436f90edd"
+        }
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+      "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+      "source_in": 1423,
+      "source_out": 1536,
+      "crop_xywh": null,
+      "purpose": "Preserve the quiet hurt and recovery, followed by her motivated look-away. Hands have already lowered before this retained interval. No money or gift state changes. Stop before the incompatible-room dissolve.",
+      "selected_candidate": {
+        "id": "RM01",
+        "start": 1423,
+        "end": 1536,
+        "beat_ids": [
+          "B004"
+        ],
+        "title": "Recovery and motivated look toward the room",
+        "entities": [
+          "DELLA"
+        ],
+        "reason": "Preserve the quiet hurt and recovery, followed by her motivated look-away. Hands have already lowered before this retained interval. No money or gift state changes. Stop before the incompatible-room dissolve.",
+        "compatibility": "Pre-sale pinned brown hair, teal bodice and cream collar; seated in established recovery close-up. Retain original time, not later post-haircut use.",
+        "concerns": [
+          "Outgoing replacement room must respect her look toward the window. The 64-second dissolve is excluded; no approval of changed room topology."
+        ],
+        "frame_count": 113,
+        "duration_seconds": 4.708333333333333,
+        "timeline_start_frame": 1423,
+        "timeline_end_frame": 1536,
+        "evidence": [
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\000288.json",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\000360.json",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\packets\\000360-00.jpg"
+        ],
+        "evidence_receipts": [
+          {
+            "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\000288.json",
+            "sha256": "dc66b23dbbcd658bf9986159c37586ea362baa54a08478ded9c8bef7c98f700b"
+          },
+          {
+            "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\000360.json",
+            "sha256": "f1db2a586273e2fea15164441c120da5254e3bdc3fb8661dd44c3ed436f90edd"
+          }
+        ],
+        "status": "source-admitted-context-pending",
+        "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+        "source_in": 1423,
+        "source_out": 1536,
+        "crop_xywh": null,
+        "purpose": "Preserve the quiet hurt and recovery, followed by her motivated look-away. Hands have already lowered before this retained interval. No money or gift state changes. Stop before the incompatible-room dissolve.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 1423,
+            "end": 1536,
+            "crop": null,
+            "entity_compatibility": "Pre-sale pinned brown hair, teal bodice and cream collar; seated in established recovery close-up. Retain original time, not later post-haircut use."
+          },
+          {
+            "start": 7670,
+            "end": 7730,
+            "crop": null,
+            "entity_compatibility": "Sofronie dark pulled-back hair, black high-neck dress and gold brooch; blurred brown Della hat on left foreground. Maintain matching screen direction and use before hat removal."
+          },
+          {
+            "start": 10825,
+            "end": 11113,
+            "crop": null,
+            "entity_compatibility": "Della alone, short tight curls, cream collar and teal dress, blue-door close background. Preserve self-talk narration at original master timing; no present offscreen Jim is implied by edit."
+          },
+          {
+            "start": 11113,
+            "end": 11323,
+            "crop": null,
+            "entity_compatibility": "Cream enamel pot with dark rim, empty black frying pan, raw pink chops on plate. Use before Jim arrives and before cooking; no cooked dinner or new diners."
+          },
+          {
+            "start": 12169,
+            "end": 12361,
+            "crop": null,
+            "entity_compatibility": "Jim dark overcoat, brown waistcoat and dark tie; adult husband only, no baby. This is the tied entry costume family, not the open-collar stair or final sofa family."
+          },
+          {
+            "start": 15340,
+            "end": 15436,
+            "crop": null,
+            "entity_compatibility": "Della short curls, teal dress and cream collar; Jim dark overcoat, tied collar before contact. Della remains left, Jim right; bare hand rests on shoulder. No gifts or sold watch."
+          }
+        ]
+      },
+      "beats": [
+        "B004"
+      ],
+      "tasks": [
+        "T02",
+        "T15"
+      ],
+      "treatment": [
+        "Select worn-room details from the established apartment; replace incompatible flat reveal near64 seconds instead of treating it as another room."
+      ],
+      "required_state": [
+        "Same modest flat; Della recovering offscreen."
+      ],
+      "story_purpose": [
+        "A tactful look around the modest flat while she recovers; not new plot."
+      ],
+      "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
+      "previous": "F011",
+      "next": "F013"
+    },
+    {
+      "start": 1536,
       "end": 1537,
       "current_reference": {
         "source_sha256": "2e748c9dc6e59a19846dae30b748546ccf6d344f7b31833ecd493a9e051a277a",
-        "source_in": 0,
+        "source_in": 113,
         "source_out": 114,
         "timeline_start": 1423,
         "timeline_end": 3073,
@@ -1194,14 +1234,14 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F012",
+      "id": "F013",
       "beats": [
         "B004"
       ],
       "component_subrange": {
-        "in": 0,
+        "in": 113,
         "out": 114,
-        "offset_from_original_historic_start": 0,
+        "offset_from_original_historic_start": 113,
         "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
       },
       "tasks": [
@@ -1218,13 +1258,12 @@
         "A tactful look around the modest flat while she recovers; not new plot."
       ],
       "evidence": [
-        "000288.json:shots[1]",
         "000360.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F011",
-      "next": "F013"
+      "previous": "F012",
+      "next": "F014"
     },
     {
       "start": 1537,
@@ -1262,7 +1301,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F013",
+      "id": "F014",
       "beats": [
         "B004"
       ],
@@ -1293,8 +1332,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F012",
-      "next": "F014"
+      "previous": "F013",
+      "next": "F015"
     },
     {
       "start": 1777,
@@ -1332,7 +1371,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F014",
+      "id": "F015",
       "beats": [
         "B004",
         "B005"
@@ -1365,8 +1404,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F013",
-      "next": "F015"
+      "previous": "F014",
+      "next": "F016"
     },
     {
       "start": 1897,
@@ -1404,7 +1443,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F015",
+      "id": "F016",
       "beats": [
         "B005"
       ],
@@ -1433,8 +1472,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F014",
-      "next": "F016"
+      "previous": "F015",
+      "next": "F017"
     },
     {
       "start": 1937,
@@ -1472,7 +1511,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F016",
+      "id": "F017",
       "beats": [
         "B005"
       ],
@@ -1501,8 +1540,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F015",
-      "next": "F017"
+      "previous": "F016",
+      "next": "F018"
     },
     {
       "start": 2057,
@@ -1540,7 +1579,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F017",
+      "id": "F018",
       "beats": [
         "B005"
       ],
@@ -1570,8 +1609,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F016",
-      "next": "F018"
+      "previous": "F017",
+      "next": "F019"
     },
     {
       "start": 2275,
@@ -1609,7 +1648,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F018",
+      "id": "F019",
       "beats": [
         "B005"
       ],
@@ -1641,8 +1680,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F017",
-      "next": "F019"
+      "previous": "F018",
+      "next": "F020"
     },
     {
       "start": 2515,
@@ -1680,7 +1719,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F019",
+      "id": "F020",
       "beats": [
         "B005",
         "B006"
@@ -1713,8 +1752,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F018",
-      "next": "F020"
+      "previous": "F019",
+      "next": "F021"
     },
     {
       "start": 2743,
@@ -1752,7 +1791,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F020",
+      "id": "F021",
       "beats": [
         "B006"
       ],
@@ -1780,8 +1819,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F019",
-      "next": "F021"
+      "previous": "F020",
+      "next": "F022"
     },
     {
       "start": 2833,
@@ -1819,7 +1858,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F021",
+      "id": "F022",
       "beats": [
         "B006"
       ],
@@ -1848,8 +1887,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F020",
-      "next": "F022"
+      "previous": "F021",
+      "next": "F023"
     },
     {
       "start": 3073,
@@ -1887,7 +1926,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F022",
+      "id": "F023",
       "beats": [
         "B007"
       ],
@@ -1919,8 +1958,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F021",
-      "next": "F023"
+      "previous": "F022",
+      "next": "F024"
     },
     {
       "start": 3300,
@@ -1958,7 +1997,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F023",
+      "id": "F024",
       "beats": [
         "B007"
       ],
@@ -1989,8 +2028,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F022",
-      "next": "F024"
+      "previous": "F023",
+      "next": "F025"
     },
     {
       "start": 3527,
@@ -2028,7 +2067,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F024",
+      "id": "F025",
       "beats": [
         "B007"
       ],
@@ -2058,8 +2097,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F023",
-      "next": "F025"
+      "previous": "F024",
+      "next": "F026"
     },
     {
       "start": 3754,
@@ -2097,7 +2136,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F025",
+      "id": "F026",
       "beats": [
         "B007"
       ],
@@ -2127,8 +2166,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F024",
-      "next": "F026"
+      "previous": "F025",
+      "next": "F027"
     },
     {
       "start": 3981,
@@ -2166,7 +2205,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F026",
+      "id": "F027",
       "beats": [
         "B007",
         "B008"
@@ -2204,8 +2243,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F025",
-      "next": "F027"
+      "previous": "F026",
+      "next": "F028"
     },
     {
       "start": 4208,
@@ -2243,7 +2282,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F027",
+      "id": "F028",
       "beats": [
         "B008",
         "B009"
@@ -2277,8 +2316,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F026",
-      "next": "F028"
+      "previous": "F027",
+      "next": "F029"
     },
     {
       "start": 4435,
@@ -2316,7 +2355,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F028",
+      "id": "F029",
       "beats": [
         "B009"
       ],
@@ -2345,8 +2384,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F027",
-      "next": "F029"
+      "previous": "F028",
+      "next": "F030"
     },
     {
       "start": 4662,
@@ -2384,7 +2423,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F029",
+      "id": "F030",
       "beats": [
         "B009"
       ],
@@ -2413,8 +2452,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F028",
-      "next": "F030"
+      "previous": "F029",
+      "next": "F031"
     },
     {
       "start": 4879,
@@ -2452,7 +2491,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F030",
+      "id": "F031",
       "beats": [
         "B009",
         "B010"
@@ -2485,8 +2524,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F029",
-      "next": "F031"
+      "previous": "F030",
+      "next": "F032"
     },
     {
       "start": 5105,
@@ -2524,7 +2563,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F031",
+      "id": "F032",
       "beats": [
         "B010"
       ],
@@ -2554,8 +2593,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F030",
-      "next": "F032"
+      "previous": "F031",
+      "next": "F033"
     },
     {
       "start": 5331,
@@ -2593,7 +2632,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F032",
+      "id": "F033",
       "beats": [
         "B011"
       ],
@@ -2623,8 +2662,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F031",
-      "next": "F033"
+      "previous": "F032",
+      "next": "F034"
     },
     {
       "start": 5554,
@@ -2662,7 +2701,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F033",
+      "id": "F034",
       "beats": [
         "B011"
       ],
@@ -2693,8 +2732,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F032",
-      "next": "F034"
+      "previous": "F033",
+      "next": "F035"
     },
     {
       "start": 5777,
@@ -2732,7 +2771,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F034",
+      "id": "F035",
       "beats": [
         "B011"
       ],
@@ -2762,8 +2801,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F033",
-      "next": "F035"
+      "previous": "F034",
+      "next": "F036"
     },
     {
       "start": 6000,
@@ -2801,7 +2840,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F035",
+      "id": "F036",
       "beats": [
         "B011"
       ],
@@ -2832,8 +2871,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F034",
-      "next": "F036"
+      "previous": "F035",
+      "next": "F037"
     },
     {
       "start": 6223,
@@ -2871,7 +2910,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F036",
+      "id": "F037",
       "beats": [
         "B011",
         "B012"
@@ -2906,8 +2945,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F035",
-      "next": "F037"
+      "previous": "F036",
+      "next": "F038"
     },
     {
       "start": 6445,
@@ -2945,7 +2984,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F037",
+      "id": "F038",
       "beats": [
         "B012"
       ],
@@ -2976,8 +3015,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F036",
-      "next": "F038"
+      "previous": "F037",
+      "next": "F039"
     },
     {
       "start": 6667,
@@ -3015,7 +3054,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F038",
+      "id": "F039",
       "beats": [
         "B012"
       ],
@@ -3045,8 +3084,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F037",
-      "next": "F039"
+      "previous": "F038",
+      "next": "F040"
     },
     {
       "start": 6869,
@@ -3081,7 +3120,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F039",
+      "id": "F040",
       "beats": [
         "B013"
       ],
@@ -3111,8 +3150,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F038",
-      "next": "F040"
+      "previous": "F039",
+      "next": "F041"
     },
     {
       "start": 6977,
@@ -3147,7 +3186,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F040",
+      "id": "F041",
       "beats": [
         "B013"
       ],
@@ -3176,8 +3215,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F039",
-      "next": "F041"
+      "previous": "F040",
+      "next": "F042"
     },
     {
       "start": 7169,
@@ -3212,7 +3251,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F041",
+      "id": "F042",
       "beats": [
         "B013",
         "B014"
@@ -3246,8 +3285,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F040",
-      "next": "F042"
+      "previous": "F041",
+      "next": "F043"
     },
     {
       "start": 7385,
@@ -3282,7 +3321,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F042",
+      "id": "F043",
       "beats": [
         "B014"
       ],
@@ -3311,8 +3350,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F041",
-      "next": "F043"
+      "previous": "F042",
+      "next": "F044"
     },
     {
       "start": 7445,
@@ -3347,7 +3386,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F043",
+      "id": "F044",
       "beats": [
         "B014",
         "B015"
@@ -3382,52 +3421,130 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F042",
-      "next": "F044"
+      "previous": "F043",
+      "next": "F045"
     },
     {
+      "id": "F045",
       "start": 7670,
       "end": 7730,
-      "current_reference": {
-        "source_sha256": "2b708148aa0db76cf53d334717431c8d80a5017a87a748d6fa27aed437690f7c",
-        "source_in": 0,
-        "source_out": 60,
-        "timeline_start": 7670,
-        "timeline_end": 7730,
-        "crop_pipeline": [],
-        "provenance": [
+      "beat_ids": [
+        "B015"
+      ],
+      "title": "Sofronie appraises Della",
+      "entities": [
+        "SOFRONIE",
+        "DELLA"
+      ],
+      "reason": "The steady appraising response preserves the practical transaction and does not villainize the shopkeeper. Close framing avoids the prior wide shot's ground-floor geography; no hand/hat removal occurs inside selection.",
+      "compatibility": "Sofronie dark pulled-back hair, black high-neck dress and gold brooch; blurred brown Della hat on left foreground. Maintain matching screen direction and use before hat removal.",
+      "concerns": [
+        "Does not clear the adjacent street-level shop window or later hat-lift contact. Incoming and outgoing shop coverage must match this shopkeeper and hat."
+      ],
+      "frame_count": 60,
+      "duration_seconds": 2.5,
+      "timeline_start_frame": 7670,
+      "timeline_end_frame": 7730,
+      "evidence": [
+        "001872.json:shots[1]",
+        "001872.json:shots[2]"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\001872.json",
+          "sha256": "47cab76ca88b4927a63babd4f50083007dc68ced56611fd9bc21b381bd99175a"
+        }
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+      "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+      "source_in": 7670,
+      "source_out": 7730,
+      "crop_xywh": null,
+      "purpose": "The steady appraising response preserves the practical transaction and does not villainize the shopkeeper. Close framing avoids the prior wide shot's ground-floor geography; no hand/hat removal occurs inside selection.",
+      "selected_candidate": {
+        "id": "RM02",
+        "start": 7670,
+        "end": 7730,
+        "beat_ids": [
+          "B015"
+        ],
+        "title": "Sofronie appraises Della",
+        "entities": [
+          "SOFRONIE",
+          "DELLA"
+        ],
+        "reason": "The steady appraising response preserves the practical transaction and does not villainize the shopkeeper. Close framing avoids the prior wide shot's ground-floor geography; no hand/hat removal occurs inside selection.",
+        "compatibility": "Sofronie dark pulled-back hair, black high-neck dress and gold brooch; blurred brown Della hat on left foreground. Maintain matching screen direction and use before hat removal.",
+        "concerns": [
+          "Does not clear the adjacent street-level shop window or later hat-lift contact. Incoming and outgoing shop coverage must match this shopkeeper and hat."
+        ],
+        "frame_count": 60,
+        "duration_seconds": 2.5,
+        "timeline_start_frame": 7670,
+        "timeline_end_frame": 7730,
+        "evidence": [
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\001872.json",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\007668-007674\\sheet-00.jpg",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\007728-007734\\sheet-00.jpg"
+        ],
+        "evidence_receipts": [
           {
-            "edl": "docs/film-edits/scene5-award-v4.edl.json",
-            "shot": "Sofronie answers; reaction coverage"
+            "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\001872.json",
+            "sha256": "47cab76ca88b4927a63babd4f50083007dc68ced56611fd9bc21b381bd99175a"
+          }
+        ],
+        "status": "source-admitted-context-pending",
+        "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+        "source_in": 7670,
+        "source_out": 7730,
+        "crop_xywh": null,
+        "purpose": "The steady appraising response preserves the practical transaction and does not villainize the shopkeeper. Close framing avoids the prior wide shot's ground-floor geography; no hand/hat removal occurs inside selection.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 1423,
+            "end": 1536,
+            "crop": null,
+            "entity_compatibility": "Pre-sale pinned brown hair, teal bodice and cream collar; seated in established recovery close-up. Retain original time, not later post-haircut use."
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Departure and hair-sale candidate"
+            "start": 7670,
+            "end": 7730,
+            "crop": null,
+            "entity_compatibility": "Sofronie dark pulled-back hair, black high-neck dress and gold brooch; blurred brown Della hat on left foreground. Maintain matching screen direction and use before hat removal."
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 10825,
+            "end": 11113,
+            "crop": null,
+            "entity_compatibility": "Della alone, short tight curls, cream collar and teal dress, blue-door close background. Preserve self-talk narration at original master timing; no present offscreen Jim is implied by edit."
+          },
+          {
+            "start": 11113,
+            "end": 11323,
+            "crop": null,
+            "entity_compatibility": "Cream enamel pot with dark rim, empty black frying pan, raw pink chops on plate. Use before Jim arrives and before cooking; no cooked dinner or new diners."
+          },
+          {
+            "start": 12169,
+            "end": 12361,
+            "crop": null,
+            "entity_compatibility": "Jim dark overcoat, brown waistcoat and dark tie; adult husband only, no baby. This is the tied entry costume family, not the open-collar stair or final sofa family."
+          },
+          {
+            "start": 15340,
+            "end": 15436,
+            "crop": null,
+            "entity_compatibility": "Della short curls, teal dress and cream collar; Jim dark overcoat, tied collar before contact. Della remains left, Jim right; bare hand rests on shoulder. No gifts or sold watch."
           }
         ]
       },
-      "historic_cut": {
-        "start": 0,
-        "end": 60,
-        "name": "sofronie-reply-r1.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F044",
       "beats": [
         "B015"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 60,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T05",
         "T15"
@@ -3441,14 +3558,9 @@
       "story_purpose": [
         "A direct transaction: question, hat removal, long hair appraisal, twenty dollars, urgent acceptance."
       ],
-      "evidence": [
-        "001872.json:shots[1]",
-        "001872.json:shots[2]"
-      ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F043",
-      "next": "F045"
+      "previous": "F044",
+      "next": "F046"
     },
     {
       "start": 7730,
@@ -3483,7 +3595,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F045",
+      "id": "F046",
       "beats": [
         "B015"
       ],
@@ -3512,8 +3624,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F044",
-      "next": "F046"
+      "previous": "F045",
+      "next": "F047"
     },
     {
       "start": 7802,
@@ -3557,7 +3669,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F046",
+      "id": "F047",
       "beats": [
         "B015"
       ],
@@ -3586,8 +3698,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F045",
-      "next": "F047"
+      "previous": "F046",
+      "next": "F048"
     },
     {
       "start": 7970,
@@ -3622,7 +3734,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F047",
+      "id": "F048",
       "beats": [
         "B015"
       ],
@@ -3652,8 +3764,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F046",
-      "next": "F048"
+      "previous": "F047",
+      "next": "F049"
     },
     {
       "start": 8090,
@@ -3691,7 +3803,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F048",
+      "id": "F049",
       "beats": [
         "B016"
       ],
@@ -3721,8 +3833,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F047",
-      "next": "F049"
+      "previous": "F048",
+      "next": "F050"
     },
     {
       "start": 8318,
@@ -3760,7 +3872,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F049",
+      "id": "F050",
       "beats": [
         "B016",
         "B017"
@@ -3796,8 +3908,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F048",
-      "next": "F050"
+      "previous": "F049",
+      "next": "F051"
     },
     {
       "start": 8534,
@@ -3835,7 +3947,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F050",
+      "id": "F051",
       "beats": [
         "B017"
       ],
@@ -3865,8 +3977,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F049",
-      "next": "F051"
+      "previous": "F050",
+      "next": "F052"
     },
     {
       "start": 8750,
@@ -3904,7 +4016,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F051",
+      "id": "F052",
       "beats": [
         "B017"
       ],
@@ -3934,8 +4046,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F050",
-      "next": "F052"
+      "previous": "F051",
+      "next": "F053"
     },
     {
       "start": 8942,
@@ -3973,7 +4085,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F052",
+      "id": "F053",
       "beats": [
         "B017"
       ],
@@ -4002,8 +4114,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F051",
-      "next": "F053"
+      "previous": "F052",
+      "next": "F054"
     },
     {
       "start": 9158,
@@ -4041,7 +4153,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F053",
+      "id": "F054",
       "beats": [
         "B017",
         "B018"
@@ -4075,8 +4187,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F052",
-      "next": "F054"
+      "previous": "F053",
+      "next": "F055"
     },
     {
       "start": 9374,
@@ -4114,7 +4226,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F054",
+      "id": "F055",
       "beats": [
         "B018"
       ],
@@ -4144,8 +4256,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F053",
-      "next": "F055"
+      "previous": "F054",
+      "next": "F056"
     },
     {
       "start": 9602,
@@ -4185,7 +4297,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F055",
+      "id": "F056",
       "beats": [
         "B018"
       ],
@@ -4215,8 +4327,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F054",
-      "next": "F056"
+      "previous": "F055",
+      "next": "F057"
     },
     {
       "start": 9832,
@@ -4251,7 +4363,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F056",
+      "id": "F057",
       "beats": [
         "B019"
       ],
@@ -4279,8 +4391,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F055",
-      "next": "F057"
+      "previous": "F056",
+      "next": "F058"
     },
     {
       "start": 10033,
@@ -4315,7 +4427,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F057",
+      "id": "F058",
       "beats": [
         "B019"
       ],
@@ -4345,8 +4457,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F056",
-      "next": "F058"
+      "previous": "F057",
+      "next": "F059"
     },
     {
       "start": 10273,
@@ -4381,7 +4493,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F058",
+      "id": "F059",
       "beats": [
         "B019",
         "B020"
@@ -4415,8 +4527,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F057",
-      "next": "F059"
+      "previous": "F058",
+      "next": "F060"
     },
     {
       "start": 10393,
@@ -4451,7 +4563,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F059",
+      "id": "F060",
       "beats": [
         "B020"
       ],
@@ -4480,8 +4592,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F058",
-      "next": "F060"
+      "previous": "F059",
+      "next": "F061"
     },
     {
       "start": 10585,
@@ -4525,7 +4637,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F060",
+      "id": "F061",
       "beats": [
         "B020",
         "B021"
@@ -4559,52 +4671,138 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F059",
-      "next": "F061"
+      "previous": "F060",
+      "next": "F062"
     },
     {
+      "id": "F062",
       "start": 10825,
       "end": 11113,
-      "current_reference": {
-        "source_sha256": "7b5f072739907b65b5914e08e59db1ce09c39d9cf2987a38937853f5e73600ad",
-        "source_in": 0,
-        "source_out": 288,
-        "timeline_start": 10825,
-        "timeline_end": 11113,
-        "crop_pipeline": [],
-        "provenance": [
+      "beat_ids": [
+        "B021"
+      ],
+      "title": "Della reassures herself before Jim arrives",
+      "entities": [
+        "DELLA"
+      ],
+      "reason": "Her faint smile, lowered eyes and tentative upward look preserve vulnerable self-reassurance. Short curls are already established, with no detached hair or gift mechanics. This is an intact continuous reaction, not a substitute image stretched to speech.",
+      "compatibility": "Della alone, short tight curls, cream collar and teal dress, blue-door close background. Preserve self-talk narration at original master timing; no present offscreen Jim is implied by edit.",
+      "concerns": [
+        "Picture-retention decision, not final sound-on approval: original review specifically reserves vocal intention and pacing. Preserve self-directed delivery; do not imply Jim is already in room."
+      ],
+      "frame_count": 288,
+      "duration_seconds": 12.0,
+      "timeline_start_frame": 10825,
+      "timeline_end_frame": 11113,
+      "evidence": [
+        "002664.json:shots[0]",
+        "002664.json:shots[1]",
+        "002736.json:shots[0]"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002664.json",
+          "sha256": "97bf8f47081ce93e57bde72c3b0b6ed19bde25a0986adfc47dd84edc18237e0d"
+        },
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002736.json",
+          "sha256": "74e6a1fee93aeaf077a18d18d1f61d409b09a5b4b58633bf8e766234b1df64a5"
+        }
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+      "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+      "source_in": 10825,
+      "source_out": 11113,
+      "crop_xywh": null,
+      "purpose": "Her faint smile, lowered eyes and tentative upward look preserve vulnerable self-reassurance. Short curls are already established, with no detached hair or gift mechanics. This is an intact continuous reaction, not a substitute image stretched to speech.",
+      "selected_candidate": {
+        "id": "RM03",
+        "start": 10825,
+        "end": 11113,
+        "beat_ids": [
+          "B021"
+        ],
+        "title": "Della reassures herself before Jim arrives",
+        "entities": [
+          "DELLA"
+        ],
+        "reason": "Her faint smile, lowered eyes and tentative upward look preserve vulnerable self-reassurance. Short curls are already established, with no detached hair or gift mechanics. This is an intact continuous reaction, not a substitute image stretched to speech.",
+        "compatibility": "Della alone, short tight curls, cream collar and teal dress, blue-door close background. Preserve self-talk narration at original master timing; no present offscreen Jim is implied by edit.",
+        "concerns": [
+          "Picture-retention decision, not final sound-on approval: original review specifically reserves vocal intention and pacing. Preserve self-directed delivery; do not imply Jim is already in room."
+        ],
+        "frame_count": 288,
+        "duration_seconds": 12.0,
+        "timeline_start_frame": 10825,
+        "timeline_end_frame": 11113,
+        "evidence": [
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002664.json",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002736.json",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\010824-010830\\sheet-00.jpg",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\011112-011118\\sheet-00.jpg"
+        ],
+        "evidence_receipts": [
           {
-            "edl": "docs/film-edits/scene7-award-v1.edl.json",
-            "shot": "A brave smile, then what else could I do?"
+            "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002664.json",
+            "sha256": "97bf8f47081ce93e57bde72c3b0b6ed19bde25a0986adfc47dd84edc18237e0d"
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Preparation and self-conscious inspection candidate"
+            "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002736.json",
+            "sha256": "74e6a1fee93aeaf077a18d18d1f61d409b09a5b4b58633bf8e766234b1df64a5"
+          }
+        ],
+        "status": "source-admitted-context-pending",
+        "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+        "source_in": 10825,
+        "source_out": 11113,
+        "crop_xywh": null,
+        "purpose": "Her faint smile, lowered eyes and tentative upward look preserve vulnerable self-reassurance. Short curls are already established, with no detached hair or gift mechanics. This is an intact continuous reaction, not a substitute image stretched to speech.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 1423,
+            "end": 1536,
+            "crop": null,
+            "entity_compatibility": "Pre-sale pinned brown hair, teal bodice and cream collar; seated in established recovery close-up. Retain original time, not later post-haircut use."
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 7670,
+            "end": 7730,
+            "crop": null,
+            "entity_compatibility": "Sofronie dark pulled-back hair, black high-neck dress and gold brooch; blurred brown Della hat on left foreground. Maintain matching screen direction and use before hat removal."
+          },
+          {
+            "start": 10825,
+            "end": 11113,
+            "crop": null,
+            "entity_compatibility": "Della alone, short tight curls, cream collar and teal dress, blue-door close background. Preserve self-talk narration at original master timing; no present offscreen Jim is implied by edit."
+          },
+          {
+            "start": 11113,
+            "end": 11323,
+            "crop": null,
+            "entity_compatibility": "Cream enamel pot with dark rim, empty black frying pan, raw pink chops on plate. Use before Jim arrives and before cooking; no cooked dinner or new diners."
+          },
+          {
+            "start": 12169,
+            "end": 12361,
+            "crop": null,
+            "entity_compatibility": "Jim dark overcoat, brown waistcoat and dark tie; adult husband only, no baby. This is the tied entry costume family, not the open-collar stair or final sofa family."
+          },
+          {
+            "start": 15340,
+            "end": 15436,
+            "crop": null,
+            "entity_compatibility": "Della short curls, teal dress and cream collar; Jim dark overcoat, tied collar before contact. Della remains left, Jim right; bare hand rests on shoulder. No gifts or sold watch."
           }
         ]
       },
-      "historic_cut": {
-        "start": 0,
-        "end": 288,
-        "name": "waiting-portrait-r1.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F061",
       "beats": [
         "B021"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 288,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T07",
         "T15"
@@ -4618,55 +4816,139 @@
       "story_purpose": [
         "Vulnerable self-address to reflection; loving reason for sacrifice, not literal threat."
       ],
-      "evidence": [
-        "002664.json:shots[0]",
-        "002664.json:shots[1]",
-        "002736.json:shots[0]"
-      ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F060",
-      "next": "F062"
+      "previous": "F061",
+      "next": "F063"
     },
     {
+      "id": "F063",
       "start": 11113,
       "end": 11323,
-      "current_reference": {
-        "source_sha256": "643819f9a715389b76904e599e597b6197d9899dea8592da8b120b776f6cbb94",
-        "source_in": 31,
-        "source_out": 241,
-        "timeline_start": 11113,
-        "timeline_end": 11323,
-        "crop_pipeline": [],
-        "provenance": [
+      "beat_ids": [
+        "B022"
+      ],
+      "title": "Dinner ready for Jim, not yet cooked",
+      "entities": [
+        "DINNER"
+      ],
+      "reason": "The cream coffee pot, empty pan and uncooked chops accurately stage practical loving care. Continuous camera movement retains object forms and raw food state. Native boundary excludes the subsequent incompatible clock-room wide.",
+      "compatibility": "Cream enamel pot with dark rim, empty black frying pan, raw pink chops on plate. Use before Jim arrives and before cooking; no cooked dinner or new diners.",
+      "concerns": [
+        "Preserve the existing self-talk-to-dinner cut at frame11113. Following waiting coverage must still establish her position by the door."
+      ],
+      "frame_count": 210,
+      "duration_seconds": 8.75,
+      "timeline_start_frame": 11113,
+      "timeline_end_frame": 11323,
+      "evidence": [
+        "002736.json:shots[0]",
+        "002736.json:shots[1]",
+        "002808.json:shots[0]"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002736.json",
+          "sha256": "74e6a1fee93aeaf077a18d18d1f61d409b09a5b4b58633bf8e766234b1df64a5"
+        },
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002808.json",
+          "sha256": "e30d59f9b9a6af92fc29b5bd8ba28eb69199a4a7564797b57b9af3f8c5df9f73"
+        }
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+      "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+      "source_in": 11113,
+      "source_out": 11323,
+      "crop_xywh": null,
+      "purpose": "The cream coffee pot, empty pan and uncooked chops accurately stage practical loving care. Continuous camera movement retains object forms and raw food state. Native boundary excludes the subsequent incompatible clock-room wide.",
+      "selected_candidate": {
+        "id": "RM04",
+        "start": 11113,
+        "end": 11323,
+        "beat_ids": [
+          "B022"
+        ],
+        "title": "Dinner ready for Jim, not yet cooked",
+        "entities": [
+          "DINNER"
+        ],
+        "reason": "The cream coffee pot, empty pan and uncooked chops accurately stage practical loving care. Continuous camera movement retains object forms and raw food state. Native boundary excludes the subsequent incompatible clock-room wide.",
+        "compatibility": "Cream enamel pot with dark rim, empty black frying pan, raw pink chops on plate. Use before Jim arrives and before cooking; no cooked dinner or new diners.",
+        "concerns": [
+          "Preserve the existing self-talk-to-dinner cut at frame11113. Following waiting coverage must still establish her position by the door."
+        ],
+        "frame_count": 210,
+        "duration_seconds": 8.75,
+        "timeline_start_frame": 11113,
+        "timeline_end_frame": 11323,
+        "evidence": [
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002736.json",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002808.json",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\011112-011118\\sheet-00.jpg",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\011320-011326\\sheet-00.jpg"
+        ],
+        "evidence_receipts": [
           {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Coffee and empty pan; tight detail without conflicting room"
+            "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002736.json",
+            "sha256": "74e6a1fee93aeaf077a18d18d1f61d409b09a5b4b58633bf8e766234b1df64a5"
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\002808.json",
+            "sha256": "e30d59f9b9a6af92fc29b5bd8ba28eb69199a4a7564797b57b9af3f8c5df9f73"
+          }
+        ],
+        "status": "source-admitted-context-pending",
+        "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+        "source_in": 11113,
+        "source_out": 11323,
+        "crop_xywh": null,
+        "purpose": "The cream coffee pot, empty pan and uncooked chops accurately stage practical loving care. Continuous camera movement retains object forms and raw food state. Native boundary excludes the subsequent incompatible clock-room wide.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 1423,
+            "end": 1536,
+            "crop": null,
+            "entity_compatibility": "Pre-sale pinned brown hair, teal bodice and cream collar; seated in established recovery close-up. Retain original time, not later post-haircut use."
+          },
+          {
+            "start": 7670,
+            "end": 7730,
+            "crop": null,
+            "entity_compatibility": "Sofronie dark pulled-back hair, black high-neck dress and gold brooch; blurred brown Della hat on left foreground. Maintain matching screen direction and use before hat removal."
+          },
+          {
+            "start": 10825,
+            "end": 11113,
+            "crop": null,
+            "entity_compatibility": "Della alone, short tight curls, cream collar and teal dress, blue-door close background. Preserve self-talk narration at original master timing; no present offscreen Jim is implied by edit."
+          },
+          {
+            "start": 11113,
+            "end": 11323,
+            "crop": null,
+            "entity_compatibility": "Cream enamel pot with dark rim, empty black frying pan, raw pink chops on plate. Use before Jim arrives and before cooking; no cooked dinner or new diners."
+          },
+          {
+            "start": 12169,
+            "end": 12361,
+            "crop": null,
+            "entity_compatibility": "Jim dark overcoat, brown waistcoat and dark tie; adult husband only, no baby. This is the tied entry costume family, not the open-collar stair or final sofa family."
+          },
+          {
+            "start": 15340,
+            "end": 15436,
+            "crop": null,
+            "entity_compatibility": "Della short curls, teal dress and cream collar; Jim dark overcoat, tied collar before contact. Della remains left, Jim right; bare hand rests on shoulder. No gifts or sold watch."
           }
         ]
       },
-      "historic_cut": {
-        "start": 31,
-        "end": 241,
-        "name": "supper-detail-r1.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F062",
       "beats": [
         "B022"
       ],
-      "component_subrange": {
-        "in": 31,
-        "out": 241,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T07",
         "T15"
@@ -4680,15 +4962,9 @@
       "story_purpose": [
         "Coffee ready, hot pan waiting for uncooked chops; establish stove/table/door geography."
       ],
-      "evidence": [
-        "002736.json:shots[0]",
-        "002736.json:shots[1]",
-        "002808.json:shots[0]"
-      ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F061",
-      "next": "F063"
+      "previous": "F062",
+      "next": "F064"
     },
     {
       "start": 11323,
@@ -4719,7 +4995,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F063",
+      "id": "F064",
       "beats": [
         "B022",
         "B023"
@@ -4753,8 +5029,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F062",
-      "next": "F064"
+      "previous": "F063",
+      "next": "F065"
     },
     {
       "start": 11383,
@@ -4794,7 +5070,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F064",
+      "id": "F065",
       "beats": [
         "B023"
       ],
@@ -4825,8 +5101,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F063",
-      "next": "F065"
+      "previous": "F064",
+      "next": "F066"
     },
     {
       "start": 11569,
@@ -4853,7 +5129,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F065",
+      "id": "F066",
       "beats": [
         "B023"
       ],
@@ -4883,8 +5159,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F064",
-      "next": "F066"
+      "previous": "F065",
+      "next": "F067"
     },
     {
       "start": 11665,
@@ -4922,7 +5198,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F066",
+      "id": "F067",
       "beats": [
         "B023",
         "B024"
@@ -4956,8 +5232,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F065",
-      "next": "F067"
+      "previous": "F066",
+      "next": "F068"
     },
     {
       "start": 11797,
@@ -4995,7 +5271,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F067",
+      "id": "F068",
       "beats": [
         "B024"
       ],
@@ -5025,8 +5301,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F066",
-      "next": "F068"
+      "previous": "F067",
+      "next": "F069"
     },
     {
       "start": 12037,
@@ -5064,7 +5340,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F068",
+      "id": "F069",
       "beats": [
         "B024",
         "B025"
@@ -5098,55 +5374,128 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F067",
-      "next": "F069"
+      "previous": "F068",
+      "next": "F070"
     },
     {
+      "id": "F070",
       "start": 12169,
       "end": 12361,
-      "current_reference": {
-        "source_sha256": "2f47adc8c506232ffa6e480dbf351251e40b257bcd6355e1ff396cb4daa6e240",
-        "source_in": 1056,
-        "source_out": 1248,
-        "timeline_start": 11665,
-        "timeline_end": 13156,
-        "crop_pipeline": [],
-        "provenance": [
+      "beat_ids": [
+        "B025"
+      ],
+      "title": "Jim's tired, restrained first reaction",
+      "entities": [
+        "JIM"
+      ],
+      "reason": "Preserve understated fatigue and uncertainty rather than introducing menace or extra dependants. The complete face reaction has stable costume and no visible hand/parcel action. Native endpoints exclude the preceding open-door handling and next chain-handling shot.",
+      "compatibility": "Jim dark overcoat, brown waistcoat and dark tie; adult husband only, no baby. This is the tied entry costume family, not the open-collar stair or final sofa family.",
+      "concerns": [
+        "Upstream open-collar-to-tie and door-closure continuity is NOT cleared by this close-up. Incoming edit must use compatible costume/geography or legitimate ellipsis."
+      ],
+      "frame_count": 192,
+      "duration_seconds": 8.0,
+      "timeline_start_frame": 12169,
+      "timeline_end_frame": 12361,
+      "evidence": [
+        "003024.json:shots[0]",
+        "003024.json:shots[1]"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\003024.json",
+          "sha256": "bea834b7123d8071edaba515a5ae98cf57caf2759158010dfda7ff3aa8844d36"
+        }
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+      "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+      "source_in": 12169,
+      "source_out": 12361,
+      "crop_xywh": null,
+      "purpose": "Preserve understated fatigue and uncertainty rather than introducing menace or extra dependants. The complete face reaction has stable costume and no visible hand/parcel action. Native endpoints exclude the preceding open-door handling and next chain-handling shot.",
+      "selected_candidate": {
+        "id": "RM05",
+        "start": 12169,
+        "end": 12361,
+        "beat_ids": [
+          "B025"
+        ],
+        "title": "Jim's tired, restrained first reaction",
+        "entities": [
+          "JIM"
+        ],
+        "reason": "Preserve understated fatigue and uncertainty rather than introducing menace or extra dependants. The complete face reaction has stable costume and no visible hand/parcel action. Native endpoints exclude the preceding open-door handling and next chain-handling shot.",
+        "compatibility": "Jim dark overcoat, brown waistcoat and dark tie; adult husband only, no baby. This is the tied entry costume family, not the open-collar stair or final sofa family.",
+        "concerns": [
+          "Upstream open-collar-to-tie and door-closure continuity is NOT cleared by this close-up. Incoming edit must use compatible costume/geography or legitimate ellipsis."
+        ],
+        "frame_count": 192,
+        "duration_seconds": 8.0,
+        "timeline_start_frame": 12169,
+        "timeline_end_frame": 12361,
+        "evidence": [
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\003024.json",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\012168-012174\\sheet-00.jpg",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\012360-012366\\sheet-00.jpg"
+        ],
+        "evidence_receipts": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene8-v1-preview.mp4"
+            "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\003024.json",
+            "sha256": "bea834b7123d8071edaba515a5ae98cf57caf2759158010dfda7ff3aa8844d36"
+          }
+        ],
+        "status": "source-admitted-context-pending",
+        "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+        "source_in": 12169,
+        "source_out": 12361,
+        "crop_xywh": null,
+        "purpose": "Preserve understated fatigue and uncertainty rather than introducing menace or extra dependants. The complete face reaction has stable costume and no visible hand/parcel action. Native endpoints exclude the preceding open-door handling and next chain-handling shot.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 1423,
+            "end": 1536,
+            "crop": null,
+            "entity_compatibility": "Pre-sale pinned brown hair, teal bodice and cream collar; seated in established recovery close-up. Retain original time, not later post-haircut use."
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline Jim on the stairs through Della declaring her love"
+            "start": 7670,
+            "end": 7730,
+            "crop": null,
+            "entity_compatibility": "Sofronie dark pulled-back hair, black high-neck dress and gold brooch; blurred brown Della hat on left foreground. Maintain matching screen direction and use before hat removal."
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
+            "start": 10825,
+            "end": 11113,
+            "crop": null,
+            "entity_compatibility": "Della alone, short tight curls, cream collar and teal dress, blue-door close background. Preserve self-talk narration at original master timing; no present offscreen Jim is implied by edit."
+          },
+          {
+            "start": 11113,
+            "end": 11323,
+            "crop": null,
+            "entity_compatibility": "Cream enamel pot with dark rim, empty black frying pan, raw pink chops on plate. Use before Jim arrives and before cooking; no cooked dinner or new diners."
+          },
+          {
+            "start": 12169,
+            "end": 12361,
+            "crop": null,
+            "entity_compatibility": "Jim dark overcoat, brown waistcoat and dark tie; adult husband only, no baby. This is the tied entry costume family, not the open-collar stair or final sofa family."
+          },
+          {
+            "start": 15340,
+            "end": 15436,
+            "crop": null,
+            "entity_compatibility": "Della short curls, teal dress and cream collar; Jim dark overcoat, tied collar before contact. Della remains left, Jim right; bare hand rests on shoulder. No gifts or sold watch."
           }
         ]
       },
-      "historic_cut": {
-        "start": 1056,
-        "end": 1248,
-        "name": "Young and burdened",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-8/raw/10-jim-weary-r3.mp4",
-        "original_declared_raw_in": 48,
-        "original_declared_raw_out": 240,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F069",
       "beats": [
         "B025"
       ],
-      "component_subrange": {
-        "in": 1056,
-        "out": 1248,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T07",
         "T15"
@@ -5160,14 +5509,9 @@
       "story_purpose": [
         "Jim enters and closes the same door. Bare hands, worn coat, no visible watch or child."
       ],
-      "evidence": [
-        "003024.json:shots[0]",
-        "003024.json:shots[1]"
-      ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F068",
-      "next": "F070"
+      "previous": "F069",
+      "next": "F071"
     },
     {
       "start": 12361,
@@ -5205,7 +5549,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F070",
+      "id": "F071",
       "beats": [
         "B025",
         "B026"
@@ -5240,8 +5584,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F069",
-      "next": "F071"
+      "previous": "F070",
+      "next": "F072"
     },
     {
       "start": 12553,
@@ -5279,7 +5623,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F071",
+      "id": "F072",
       "beats": [
         "B026"
       ],
@@ -5310,8 +5654,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F070",
-      "next": "F072"
+      "previous": "F071",
+      "next": "F073"
     },
     {
       "start": 12745,
@@ -5349,7 +5693,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F072",
+      "id": "F073",
       "beats": [
         "B026"
       ],
@@ -5381,8 +5725,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F071",
-      "next": "F073"
+      "previous": "F072",
+      "next": "F074"
     },
     {
       "start": 12963,
@@ -5420,7 +5764,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F073",
+      "id": "F074",
       "beats": [
         "B026"
       ],
@@ -5450,8 +5794,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F072",
-      "next": "F074"
+      "previous": "F073",
+      "next": "F075"
     },
     {
       "start": 13156,
@@ -5489,7 +5833,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F074",
+      "id": "F075",
       "beats": [
         "B027"
       ],
@@ -5518,8 +5862,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F073",
-      "next": "F075"
+      "previous": "F074",
+      "next": "F076"
     },
     {
       "start": 13300,
@@ -5557,7 +5901,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F075",
+      "id": "F076",
       "beats": [
         "B027"
       ],
@@ -5586,8 +5930,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F074",
-      "next": "F076"
+      "previous": "F075",
+      "next": "F077"
     },
     {
       "start": 13540,
@@ -5625,7 +5969,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F076",
+      "id": "F077",
       "beats": [
         "B027"
       ],
@@ -5653,8 +5997,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F075",
-      "next": "F077"
+      "previous": "F076",
+      "next": "F078"
     },
     {
       "start": 13780,
@@ -5692,7 +6036,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F077",
+      "id": "F078",
       "beats": [
         "B027",
         "B028"
@@ -5726,8 +6070,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F076",
-      "next": "F078"
+      "previous": "F077",
+      "next": "F079"
     },
     {
       "start": 14020,
@@ -5765,7 +6109,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F078",
+      "id": "F079",
       "beats": [
         "B028"
       ],
@@ -5795,8 +6139,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F077",
-      "next": "F079"
+      "previous": "F078",
+      "next": "F080"
     },
     {
       "start": 14260,
@@ -5834,7 +6178,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F079",
+      "id": "F080",
       "beats": [
         "B028",
         "B029"
@@ -5868,8 +6212,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F078",
-      "next": "F080"
+      "previous": "F079",
+      "next": "F081"
     },
     {
       "start": 14500,
@@ -5907,7 +6251,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F080",
+      "id": "F081",
       "beats": [
         "B029"
       ],
@@ -5937,8 +6281,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F079",
-      "next": "F081"
+      "previous": "F080",
+      "next": "F082"
     },
     {
       "start": 14740,
@@ -5976,7 +6320,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F081",
+      "id": "F082",
       "beats": [
         "B029",
         "B030"
@@ -6011,8 +6355,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F080",
-      "next": "F082"
+      "previous": "F081",
+      "next": "F083"
     },
     {
       "start": 14980,
@@ -6050,7 +6394,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F082",
+      "id": "F083",
       "beats": [
         "B030"
       ],
@@ -6080,8 +6424,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F081",
-      "next": "F083"
+      "previous": "F082",
+      "next": "F084"
     },
     {
       "start": 15220,
@@ -6112,7 +6456,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F083",
+      "id": "F084",
       "beats": [
         "B030",
         "B031"
@@ -6147,56 +6491,136 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F082",
-      "next": "F084"
+      "previous": "F083",
+      "next": "F085"
     },
     {
+      "id": "F085",
       "start": 15340,
       "end": 15436,
-      "current_reference": {
-        "source_sha256": "04e544119c4b233360049230fe18535f8404fdd7be31b6f89e21f2372f5e0433",
-        "source_in": 2184,
-        "source_out": 2280,
-        "timeline_start": 15340,
-        "timeline_end": 15676,
-        "crop_pipeline": [],
-        "provenance": [
+      "beat_ids": [
+        "B031",
+        "B032"
+      ],
+      "title": "The two-person embrace",
+      "entities": [
+        "DELLA",
+        "JIM",
+        "COUPLE-EMBRACE"
+      ],
+      "reason": "Protect the valuable relief in Della's face and cheek settling against Jim. All96 selected native frames inspected sequentially: two adults throughout; hand rises onto shoulder, fingers settle and cheek contact develops continuously. No child, extra head, backwards reset or observed hand split at inspection scale.",
+      "compatibility": "Della short curls, teal dress and cream collar; Jim dark overcoat, tied collar before contact. Della remains left, Jim right; bare hand rests on shoulder. No gifts or sold watch.",
+      "concerns": [
+        "The outgoing ordinary-object cutaway still needs its own lamp/set decision; it is not admitted here. Keep affectionate approach at existing narrative cue, not a repeat elsewhere."
+      ],
+      "frame_count": 96,
+      "duration_seconds": 4.0,
+      "timeline_start_frame": 15340,
+      "timeline_end_frame": 15436,
+      "evidence": [
+        "003816.json:shots[0]",
+        "003816.json:shots[1]"
+      ],
+      "evidence_receipts": [
+        {
+          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\003816.json",
+          "sha256": "bd39579547ab7353e3deec212c87f6c3029542bfc20a49f7493b61d598092c5d"
+        }
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+      "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+      "source_in": 15340,
+      "source_out": 15436,
+      "crop_xywh": null,
+      "purpose": "Protect the valuable relief in Della's face and cheek settling against Jim. All96 selected native frames inspected sequentially: two adults throughout; hand rises onto shoulder, fingers settle and cheek contact develops continuously. No child, extra head, backwards reset or observed hand split at inspection scale.",
+      "selected_candidate": {
+        "id": "RM06",
+        "start": 15340,
+        "end": 15436,
+        "beat_ids": [
+          "B031",
+          "B032"
+        ],
+        "title": "The two-person embrace",
+        "entities": [
+          "DELLA",
+          "JIM",
+          "COUPLE-EMBRACE"
+        ],
+        "reason": "Protect the valuable relief in Della's face and cheek settling against Jim. All96 selected native frames inspected sequentially: two adults throughout; hand rises onto shoulder, fingers settle and cheek contact develops continuously. No child, extra head, backwards reset or observed hand split at inspection scale.",
+        "compatibility": "Della short curls, teal dress and cream collar; Jim dark overcoat, tied collar before contact. Della remains left, Jim right; bare hand rests on shoulder. No gifts or sold watch.",
+        "concerns": [
+          "The outgoing ordinary-object cutaway still needs its own lamp/set decision; it is not admitted here. Keep affectionate approach at existing narrative cue, not a repeat elsewhere."
+        ],
+        "frame_count": 96,
+        "duration_seconds": 4.0,
+        "timeline_start_frame": 15340,
+        "timeline_end_frame": 15436,
+        "evidence": [
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\003816.json",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\015338-015436\\sheet-00.jpg",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\015338-015436\\sheet-01.jpg",
+          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\015338-015436\\sheet-02.jpg"
+        ],
+        "evidence_receipts": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene9-v1-preview.mp4"
+            "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\003816.json",
+            "sha256": "bd39579547ab7353e3deec212c87f6c3029542bfc20a49f7493b61d598092c5d"
+          }
+        ],
+        "status": "source-admitted-context-pending",
+        "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+        "source_in": 15340,
+        "source_out": 15436,
+        "crop_xywh": null,
+        "purpose": "Protect the valuable relief in Della's face and cheek settling against Jim. All96 selected native frames inspected sequentially: two adults throughout; hand rises onto shoulder, fingers settle and cheek contact develops continuously. No child, extra head, backwards reset or observed hand split at inspection scale.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 1423,
+            "end": 1536,
+            "crop": null,
+            "entity_compatibility": "Pre-sale pinned brown hair, teal bodice and cream collar; seated in established recovery close-up. Retain original time, not later post-haircut use."
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Preserved embrace and discreet look away"
+            "start": 7670,
+            "end": 7730,
+            "crop": null,
+            "entity_compatibility": "Sofronie dark pulled-back hair, black high-neck dress and gold brooch; blurred brown Della hat on left foreground. Maintain matching screen direction and use before hat removal."
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
+            "start": 10825,
+            "end": 11113,
+            "crop": null,
+            "entity_compatibility": "Della alone, short tight curls, cream collar and teal dress, blue-door close background. Preserve self-talk narration at original master timing; no present offscreen Jim is implied by edit."
+          },
+          {
+            "start": 11113,
+            "end": 11323,
+            "crop": null,
+            "entity_compatibility": "Cream enamel pot with dark rim, empty black frying pan, raw pink chops on plate. Use before Jim arrives and before cooking; no cooked dinner or new diners."
+          },
+          {
+            "start": 12169,
+            "end": 12361,
+            "crop": null,
+            "entity_compatibility": "Jim dark overcoat, brown waistcoat and dark tie; adult husband only, no baby. This is the tied entry costume family, not the open-collar stair or final sofa family."
+          },
+          {
+            "start": 15340,
+            "end": 15436,
+            "crop": null,
+            "entity_compatibility": "Della short curls, teal dress and cream collar; Jim dark overcoat, tied collar before contact. Della remains left, Jim right; bare hand rests on shoulder. No gifts or sold watch."
           }
         ]
       },
-      "historic_cut": {
-        "start": 2184,
-        "end": 2280,
-        "name": "Jim wakes and embraces her",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\edit-v1.json",
-        "path": "production/polish-r4/raw/embrace-barehands.mp4",
-        "original_declared_raw_in": 12,
-        "original_declared_raw_out": 108,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F084",
       "beats": [
         "B031",
         "B032"
       ],
-      "component_subrange": {
-        "in": 2184,
-        "out": 2280,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T08",
         "T10",
@@ -6214,14 +6638,9 @@
         "Jim awakens into a coherent two-person embrace.",
         "Discreet ordinary cutaway grants privacy. No ghost, supernatural object or conspicuous spectacle."
       ],
-      "evidence": [
-        "003816.json:shots[0]",
-        "003816.json:shots[1]"
-      ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F083",
-      "next": "F085"
+      "previous": "F084",
+      "next": "F086"
     },
     {
       "start": 15436,
@@ -6259,7 +6678,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F085",
+      "id": "F086",
       "beats": [
         "B032"
       ],
@@ -6290,8 +6709,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F084",
-      "next": "F086"
+      "previous": "F085",
+      "next": "F087"
     },
     {
       "start": 15676,
@@ -6322,7 +6741,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F086",
+      "id": "F087",
       "beats": [
         "B032"
       ],
@@ -6352,8 +6771,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F085",
-      "next": "F087"
+      "previous": "F086",
+      "next": "F088"
     },
     {
       "start": 15797,
@@ -6391,7 +6810,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F087",
+      "id": "F088",
       "beats": [
         "B032"
       ],
@@ -6422,8 +6841,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F086",
-      "next": "F088"
+      "previous": "F087",
+      "next": "F089"
     },
     {
       "start": 16038,
@@ -6453,7 +6872,7 @@
           }
         ]
       },
-      "id": "F088",
+      "id": "F089",
       "beats": [
         "B033"
       ],
@@ -6474,8 +6893,8 @@
         "003960.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F087",
-      "next": "F089"
+      "previous": "F088",
+      "next": "F090"
     },
     {
       "start": 16110,
@@ -6505,7 +6924,7 @@
           }
         ]
       },
-      "id": "F089",
+      "id": "F090",
       "beats": [
         "B033",
         "B034"
@@ -6531,8 +6950,8 @@
         "004032.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F088",
-      "next": "F090"
+      "previous": "F089",
+      "next": "F091"
     },
     {
       "start": 16182,
@@ -6579,7 +6998,7 @@
           }
         ]
       },
-      "id": "F090",
+      "id": "F091",
       "beats": [
         "B034"
       ],
@@ -6601,8 +7020,8 @@
         "004032.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F089",
-      "next": "F091"
+      "previous": "F090",
+      "next": "F092"
     },
     {
       "start": 16350,
@@ -6660,7 +7079,7 @@
           }
         ]
       },
-      "id": "F091",
+      "id": "F092",
       "beats": [
         "B034"
       ],
@@ -6681,8 +7100,8 @@
         "004032.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F090",
-      "next": "F092"
+      "previous": "F091",
+      "next": "F093"
     },
     {
       "start": 16404,
@@ -6729,7 +7148,7 @@
           }
         ]
       },
-      "id": "F092",
+      "id": "F093",
       "beats": [
         "B034"
       ],
@@ -6751,8 +7170,8 @@
         "004104.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F091",
-      "next": "F093"
+      "previous": "F092",
+      "next": "F094"
     },
     {
       "start": 16476,
@@ -6782,7 +7201,7 @@
           }
         ]
       },
-      "id": "F093",
+      "id": "F094",
       "beats": [
         "B034",
         "B035"
@@ -6809,8 +7228,8 @@
         "004104.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F092",
-      "next": "F094"
+      "previous": "F093",
+      "next": "F095"
     },
     {
       "start": 16686,
@@ -6857,7 +7276,7 @@
           }
         ]
       },
-      "id": "F094",
+      "id": "F095",
       "beats": [
         "B035",
         "B036"
@@ -6885,8 +7304,8 @@
         "004176.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F093",
-      "next": "F095"
+      "previous": "F094",
+      "next": "F096"
     },
     {
       "start": 16926,
@@ -6916,7 +7335,7 @@
           }
         ]
       },
-      "id": "F095",
+      "id": "F096",
       "beats": [
         "B036"
       ],
@@ -6940,11 +7359,11 @@
         "004248.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F094",
-      "next": "F096"
+      "previous": "F095",
+      "next": "F097"
     },
     {
-      "id": "F096",
+      "id": "F097",
       "start": 17076,
       "end": 17316,
       "seconds": [
@@ -7027,11 +7446,11 @@
         "004320.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F095",
-      "next": "F097"
+      "previous": "F096",
+      "next": "F098"
     },
     {
-      "id": "F097",
+      "id": "F098",
       "start": 17316,
       "end": 17484,
       "seconds": [
@@ -7136,11 +7555,11 @@
         "004320.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F096",
-      "next": "F098"
+      "previous": "F097",
+      "next": "F099"
     },
     {
-      "id": "F098",
+      "id": "F099",
       "start": 17484,
       "end": 17676,
       "seconds": [
@@ -7216,11 +7635,11 @@
         "004392.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F097",
-      "next": "F099"
+      "previous": "F098",
+      "next": "F100"
     },
     {
-      "id": "F099",
+      "id": "F100",
       "start": 17676,
       "end": 17832,
       "seconds": [
@@ -7284,11 +7703,11 @@
         "004392.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F098",
-      "next": "F100"
+      "previous": "F099",
+      "next": "F101"
     },
     {
-      "id": "F100",
+      "id": "F101",
       "start": 17832,
       "end": 18072,
       "seconds": [
@@ -7372,11 +7791,11 @@
         "004464.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F099",
-      "next": "F101"
+      "previous": "F100",
+      "next": "F102"
     },
     {
-      "id": "F101",
+      "id": "F102",
       "start": 18072,
       "end": 18159,
       "seconds": [
@@ -7414,7 +7833,7 @@
         "beat_ids": [
           "B039"
         ],
-        "status": "reviewed-awaiting-serial-admission",
+        "status": "reuse-admitted-range",
         "source_sha256": "91b7f625736d565568000ce9344f69bf955b7a57f14ad7815a068bd4fd0fb3b1",
         "source_in": 48,
         "source_out": 135,
@@ -7444,6 +7863,17 @@
               540
             ],
             "entity_compatibility": "Adult tied-collar Jim only, down-left gaze and small smile. No visible hands, chain, watch, or Della. Portrait-only use; never infer unshown chain possession from this admission."
+          },
+          {
+            "start": 135,
+            "end": 183,
+            "crop": [
+              928,
+              0,
+              960,
+              540
+            ],
+            "entity_compatibility": "Adult tied-collar Jim portrait only, looking down-left with restrained smile. All48 native cropped frames checked: no hands, chain, watch or Della enters. Does not approve full-source premature possession transfer."
           }
         ]
       },
@@ -7468,11 +7898,11 @@
         "004536.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F100",
-      "next": "F102"
+      "previous": "F101",
+      "next": "F103"
     },
     {
-      "id": "F102",
+      "id": "F103",
       "start": 18159,
       "end": 18280,
       "seconds": [
@@ -7531,55 +7961,41 @@
         "004536.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F101",
-      "next": "F103"
+      "previous": "F102",
+      "next": "F104"
     },
     {
+      "id": "F104",
       "start": 18280,
-      "end": 18491,
-      "current_reference": {
-        "source_sha256": "ad7da8142696992e0013356e53d62ed36fe265fbe8ec91dd6326dc52ae966afa",
-        "source_in": 0,
-        "source_out": 211,
-        "timeline_start": 18280,
-        "timeline_end": 18957,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene11-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline Jim softens through closing fade and credits"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
-          }
-        ]
+      "end": 18472,
+      "start_seconds": 761.6666666666666,
+      "end_seconds": 769.6666666666666,
+      "start_frame": 18280,
+      "end_frame": 18472,
+      "source": null,
+      "source_sha256": null,
+      "crop_xywh": null,
+      "status": "candidate-plan-blocked-not-renderable",
+      "pickup_id": "CHAIN-PALM-ONE-TAKE",
+      "purpose": "Della presents her own gift on a truly open left palm. She retains possession; no watch is attached.",
+      "selected_candidate": {
+        "id": "CH01",
+        "start": 18280,
+        "end": 18472,
+        "start_seconds": 761.6666666666666,
+        "end_seconds": 769.6666666666666,
+        "start_frame": 18280,
+        "end_frame": 18472,
+        "source": null,
+        "source_sha256": null,
+        "crop_xywh": null,
+        "status": "finite-pickup-not-generated",
+        "pickup_id": "CHAIN-PALM-ONE-TAKE",
+        "purpose": "Della presents her own gift on a truly open left palm. She retains possession; no watch is attached."
       },
-      "historic_cut": {
-        "start": 0,
-        "end": 211,
-        "name": "Della remembers her gift",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-11/raw/01-della-chain.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 211,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F103",
       "beats": [
         "B041"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 211,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T06",
         "T12",
@@ -7599,57 +8015,170 @@
         "004608.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F102",
-      "next": "F104"
+      "previous": "F103",
+      "next": "F105"
     },
     {
-      "start": 18491,
-      "end": 18702,
-      "current_reference": {
-        "source_sha256": "ad7da8142696992e0013356e53d62ed36fe265fbe8ec91dd6326dc52ae966afa",
-        "source_in": 211,
-        "source_out": 422,
-        "timeline_start": 18280,
-        "timeline_end": 18957,
-        "crop_pipeline": [],
-        "provenance": [
+      "id": "F105",
+      "start": 18472,
+      "end": 18520,
+      "start_seconds": 769.6666666666666,
+      "end_seconds": 771.6666666666666,
+      "start_frame": 18472,
+      "end_frame": 18520,
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-11/raw/03-chain-in-hand.mp4",
+      "source_sha256": "91b7f625736d565568000ce9344f69bf955b7a57f14ad7815a068bd4fd0fb3b1",
+      "source_in": 135,
+      "source_out": 183,
+      "source_in_seconds": 5.625,
+      "source_out_seconds": 7.625,
+      "source_in_frame": 135,
+      "source_out_frame": 183,
+      "crop_xywh": [
+        928,
+        0,
+        960,
+        540
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "../magi-film-audit-20260907/admit-revision-jim-chain-response.json",
+      "purpose": "Jim receives the gesture emotionally, with a small downward smile. Hands and objects excluded. A reaction cut provides a natural ellipsis before Della lifts the chain to display its workmanship.",
+      "reservation": "Does not overlap CB06 native48\u2013135. Wide source handover is not approved.",
+      "selected_candidate": {
+        "id": "CH02",
+        "start": 18472,
+        "end": 18520,
+        "start_seconds": 769.6666666666666,
+        "end_seconds": 771.6666666666666,
+        "start_frame": 18472,
+        "end_frame": 18520,
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-11/raw/03-chain-in-hand.mp4",
+        "source_sha256": "91b7f625736d565568000ce9344f69bf955b7a57f14ad7815a068bd4fd0fb3b1",
+        "source_in": 135,
+        "source_out": 183,
+        "source_in_seconds": 5.625,
+        "source_out_seconds": 7.625,
+        "source_in_frame": 135,
+        "source_out_frame": 183,
+        "crop_xywh": [
+          928,
+          0,
+          960,
+          540
+        ],
+        "status": "selected-admitted",
+        "admission_input": "../magi-film-audit-20260907/admit-revision-jim-chain-response.json",
+        "purpose": "Jim receives the gesture emotionally, with a small downward smile. Hands and objects excluded. A reaction cut provides a natural ellipsis before Della lifts the chain to display its workmanship.",
+        "reservation": "Does not overlap CB06 native48\u2013135. Wide source handover is not approved.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\03-chain-in-hand.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene11-v1-preview.mp4"
+            "start": 48,
+            "end": 135,
+            "crop": [
+              928,
+              0,
+              960,
+              540
+            ],
+            "entity_compatibility": "Adult tied-collar Jim only, down-left gaze and small smile. No visible hands, chain, watch, or Della. Portrait-only use; never infer unshown chain possession from this admission."
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline Jim softens through closing fade and credits"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
+            "start": 135,
+            "end": 183,
+            "crop": [
+              928,
+              0,
+              960,
+              540
+            ],
+            "entity_compatibility": "Adult tied-collar Jim portrait only, looking down-left with restrained smile. All48 native cropped frames checked: no hands, chain, watch or Della enters. Does not approve full-source premature possession transfer."
           }
         ]
       },
-      "historic_cut": {
-        "start": 211,
-        "end": 422,
-        "name": "The platinum chain",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-11/raw/02-chain-macro.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 211,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
+      "beats": [
+        "B041"
+      ],
+      "tasks": [
+        "T06",
+        "T12",
+        "T15"
+      ],
+      "treatment": [
+        "Replace watch-on-chain presentation with readable same-chain open palm. Existing failed r15 and tall strand macro cannot supply that action."
+      ],
+      "required_state": [
+        "Chain only, same links/fittings; no sold watch."
+      ],
+      "story_purpose": [
+        "The SAME chain offered eagerly in an open palm; no watch, no ornament change."
+      ],
+      "evidence": [
+        "004608.json:shots[0]",
+        "004608.json:shots[1]"
+      ],
+      "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
+      "previous": "F104",
+      "next": "F106"
+    },
+    {
+      "id": "F106",
+      "start": 18520,
+      "end": 18760,
+      "start_seconds": 771.6666666666666,
+      "end_seconds": 781.6666666666666,
+      "start_frame": 18520,
+      "end_frame": 18760,
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/della-chain-only-r13.mp4",
+      "source_sha256": "bdf5093956be17f63f708038a7fd216c83f74115712d27a9622aaff7e1f44d31",
+      "source_in": 0,
+      "source_out": 240,
+      "source_in_seconds": 0,
+      "source_out_seconds": 10,
+      "source_in_frame": 0,
+      "source_out_frame": 240,
+      "crop_xywh": null,
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "../magi-film-audit-20260907/admit-selected-della-chain-r13.json",
+      "purpose": "Della studies her gift then looks warmly toward Jim. Her smile opens around the dandy line at775.611, preserving the best performance rather than replacing it.",
+      "restriction": "Visible simple pale U-chain family only. Tiny fittings partly held; no hidden endpoint certification, no unapproved macro intercut.",
+      "selected_candidate": {
+        "id": "CH03",
+        "start": 18520,
+        "end": 18760,
+        "start_seconds": 771.6666666666666,
+        "end_seconds": 781.6666666666666,
+        "start_frame": 18520,
+        "end_frame": 18760,
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/della-chain-only-r13.mp4",
+        "source_sha256": "bdf5093956be17f63f708038a7fd216c83f74115712d27a9622aaff7e1f44d31",
+        "source_in": 0,
+        "source_out": 240,
+        "source_in_seconds": 0,
+        "source_out_seconds": 10,
+        "source_in_frame": 0,
+        "source_out_frame": 240,
+        "crop_xywh": null,
+        "status": "selected-admitted",
+        "admission_input": "../magi-film-audit-20260907/admit-selected-della-chain-r13.json",
+        "purpose": "Della studies her gift then looks warmly toward Jim. Her smile opens around the dandy line at775.611, preserving the best performance rather than replacing it.",
+        "restriction": "Visible simple pale U-chain family only. Tiny fittings partly held; no hidden endpoint certification, no unapproved macro intercut.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\della-chain-only-r13.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 240,
+            "crop": null,
+            "entity_compatibility": "All61 ordered source samples and all241 native frames personally inspected, including enlarged96 and180. One fine pale chain forms a simple U between partly held small ring/clasp fittings; no watch or new branch visible. Contact remains continuous through her natural shifts. Exact obscured terminal detail is UNKNOWN, not certified. Restrict use to this medium performance and matching visible-family pickup: do not intercut an incompatible macro or infer hidden decoration. Prior jeweler/waiting macro identity question remains outside this range admission; retain only separately admitted compatible views."
+          }
+        ]
       },
-      "id": "F104",
       "beats": [
         "B041",
         "B042"
       ],
-      "component_subrange": {
-        "in": 211,
-        "out": 422,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T06",
         "T12",
@@ -7668,130 +8197,85 @@
         "Her proud delight and imagined usefulness; preserve his loving attention."
       ],
       "evidence": [
-        "004608.json:shots[0]",
-        "004608.json:shots[1]"
-      ],
-      "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F103",
-      "next": "F105"
-    },
-    {
-      "start": 18702,
-      "end": 18913,
-      "current_reference": {
-        "source_sha256": "ad7da8142696992e0013356e53d62ed36fe265fbe8ec91dd6326dc52ae966afa",
-        "source_in": 422,
-        "source_out": 633,
-        "timeline_start": 18280,
-        "timeline_end": 18957,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene11-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline Jim softens through closing fade and credits"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
-          }
-        ]
-      },
-      "historic_cut": {
-        "start": 422,
-        "end": 633,
-        "name": "Made for Jim",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-11/raw/03-chain-in-hand.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 211,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F105",
-      "beats": [
-        "B042"
-      ],
-      "component_subrange": {
-        "in": 422,
-        "out": 633,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
-      "tasks": [
-        "T06",
-        "T12",
-        "T15"
-      ],
-      "treatment": [
-        "Preserve Della's proud r13 expression if its chain identity is resolved; consider inspected Jim portrait crop for loving attention, not chain transfer."
-      ],
-      "required_state": [
-        "Chain remains Della's offered gift; Jim loving, no gloves/watch."
-      ],
-      "story_purpose": [
-        "Her proud delight and imagined usefulness; preserve his loving attention."
-      ],
-      "evidence": [
         "004608.json:shots[1]",
         "004608.json:shots[2]",
         "004680.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F104",
-      "next": "F106"
+      "previous": "F105",
+      "next": "F107"
     },
     {
-      "start": 18913,
+      "id": "F107",
+      "start": 18760,
       "end": 18957,
-      "current_reference": {
-        "source_sha256": "ad7da8142696992e0013356e53d62ed36fe265fbe8ec91dd6326dc52ae966afa",
-        "source_in": 633,
-        "source_out": 677,
-        "timeline_start": 18280,
-        "timeline_end": 18957,
-        "crop_pipeline": [],
-        "provenance": [
+      "start_seconds": 781.6666666666666,
+      "end_seconds": 789.875,
+      "start_frame": 18760,
+      "end_frame": 18957,
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-11/raw/04-asks-watch.mp4",
+      "source_sha256": "5fdb7d6b1694b522255245bb611671a39cfa9e9bf0ada4b4e4fe99736155e4a6",
+      "source_in": 0,
+      "source_out": 197,
+      "source_in_seconds": 0,
+      "source_out_seconds": 8.208333333333334,
+      "source_in_frame": 0,
+      "source_out_frame": 197,
+      "crop_xywh": [
+        960,
+        0,
+        960,
+        540
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "../magi-film-audit-20260907/admit-selected-jim-asks-watch-crop.json",
+      "purpose": "Jim listens, lowers his eyes and keeps a private gentle smile as Della asks to see the chain on his watch. No watch produced, no false transfer shown.",
+      "restriction": "Portrait-only; full-source costume and hand action excluded. Not footage of sitting.",
+      "selected_candidate": {
+        "id": "CH04",
+        "start": 18760,
+        "end": 18957,
+        "start_seconds": 781.6666666666666,
+        "end_seconds": 789.875,
+        "start_frame": 18760,
+        "end_frame": 18957,
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-11/raw/04-asks-watch.mp4",
+        "source_sha256": "5fdb7d6b1694b522255245bb611671a39cfa9e9bf0ada4b4e4fe99736155e4a6",
+        "source_in": 0,
+        "source_out": 197,
+        "source_in_seconds": 0,
+        "source_out_seconds": 8.208333333333334,
+        "source_in_frame": 0,
+        "source_out_frame": 197,
+        "crop_xywh": [
+          960,
+          0,
+          960,
+          540
+        ],
+        "status": "selected-admitted",
+        "admission_input": "../magi-film-audit-20260907/admit-selected-jim-asks-watch-crop.json",
+        "purpose": "Jim listens, lowers his eyes and keeps a private gentle smile as Della asks to see the chain on his watch. No watch produced, no false transfer shown.",
+        "restriction": "Portrait-only; full-source costume and hand action excluded. Not footage of sitting.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\04-asks-watch.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene11-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline Jim softens through closing fade and credits"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
+            "start": 0,
+            "end": 197,
+            "crop": [
+              960,
+              0,
+              960,
+              540
+            ],
+            "entity_compatibility": "All61 wide and61 cropped samples inspected; all197 actual cropped native0\u2013196 inspected. Wide has Della wrong neckline and her hands at Jim waist: excluded. Fixed portrait960,0,960,540 removes her, hands and objects. Jim looks left then lowers gaze naturally, small private smile, dark coat and tied collar; no watch/chain/hand enters crop."
           }
         ]
       },
-      "historic_cut": {
-        "start": 633,
-        "end": 844,
-        "name": "Give me your watch",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-11/raw/04-asks-watch.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 211,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F106",
       "beats": [
         "B042"
       ],
-      "component_subrange": {
-        "in": 633,
-        "out": 677,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T06",
         "T12",
@@ -7811,12 +8295,11 @@
         "004680.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F105",
-      "next": "F107"
+      "previous": "F106",
+      "next": "F108"
     },
     {
-      "id": "F107",
+      "id": "F108",
       "start": 18957,
       "end": 19317,
       "source": "jim-revelation-r1.mp4",
@@ -7885,11 +8368,11 @@
         "004824.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F106",
-      "next": "F108"
+      "previous": "F107",
+      "next": "F109"
     },
     {
-      "id": "F108",
+      "id": "F109",
       "start": 19317,
       "end": 19557,
       "source": "final-round-01/della-understanding.mp4",
@@ -7953,11 +8436,11 @@
         "004824.json:shots[2]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F107",
-      "next": "F109"
+      "previous": "F108",
+      "next": "F110"
     },
     {
-      "id": "F109",
+      "id": "F110",
       "start": 19557,
       "end": 19768,
       "source": "scene-12/raw/01-magi-travel.mp4",
@@ -8014,11 +8497,11 @@
         "004896.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F108",
-      "next": "F110"
+      "previous": "F109",
+      "next": "F111"
     },
     {
-      "id": "F110",
+      "id": "F111",
       "start": 19768,
       "end": 20004,
       "source": "scene-12/raw/02-ancient-gifts.mp4",
@@ -8075,11 +8558,11 @@
         "004968.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F109",
-      "next": "F111"
+      "previous": "F110",
+      "next": "F112"
     },
     {
-      "id": "F111",
+      "id": "F112",
       "start": 20004,
       "end": 20364,
       "status": "candidate-plan-blocked-not-renderable",
@@ -8192,11 +8675,11 @@
         "005040.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F110",
-      "next": "F112"
+      "previous": "F111",
+      "next": "F113"
     },
     {
-      "id": "F112",
+      "id": "F113",
       "start": 20364,
       "end": 20604,
       "source": "final-round-01/shared-ending.mp4",
@@ -8260,11 +8743,11 @@
         "005112.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F111",
-      "next": "F113"
+      "previous": "F112",
+      "next": "F114"
     },
     {
-      "id": "F113",
+      "id": "F114",
       "start": 20604,
       "end": 20812,
       "rejected_source": "scene-12/raw/06-window-final.mp4",
@@ -8307,11 +8790,11 @@
         "005184.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F112",
-      "next": "F114"
+      "previous": "F113",
+      "next": "F115"
     },
     {
-      "id": "F114",
+      "id": "F115",
       "start": 20812,
       "end": 21387,
       "status": "candidate-plan-blocked-not-renderable",
@@ -8363,8 +8846,18 @@
         "005328.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F113",
+      "previous": "F114",
       "next": null
     }
-  ]
+  ],
+  "opening_audio": {
+    "preserve": "Frozen full-film narration and continuous music mix; do not substitute a preview's terminal fade-out.",
+    "narration_offset_seconds": 9.25,
+    "narration_abridgment": false,
+    "music_asset": "public/audio/magi-score.mp3",
+    "music_sha256": "5964d2ee9e7c3e142be767fa73455a806fdf962031ad2767c9ecfc920237a1db",
+    "reference_opening_gain": "Existingv17 recipe:0.30 before7.25s, falling to0.11 at10.25s, one-second opening fade-in. Preserve existing whole-film mix unless sound-on screening establishes a specific adjustment.",
+    "screening_status": "Not performed for this proposed assembly; music phrasing/ducking not yet approved."
+  },
+  "opening_narration_entrance_frame": 222
 }

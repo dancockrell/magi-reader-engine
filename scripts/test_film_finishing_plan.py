@@ -1,6 +1,6 @@
 import unittest
 from pathlib import Path
-from build_film_finishing_plan import read, validate
+from build_film_finishing_plan import read, validate, candidate_sources
 
 
 class FinishingPlanTests(unittest.TestCase):
@@ -12,6 +12,27 @@ class FinishingPlanTests(unittest.TestCase):
         validate(self.plan)
         self.assertEqual(self.plan['frames'],21387)
         self.assertEqual(len(self.plan['beat_decisions']),47)
+
+    def test_retained_master_keeps_its_original_time(self):
+        sha='852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b'
+        retained=[s for s in self.plan['shots']
+                  if s.get('selected_candidate',{}).get('source_sha256')==sha]
+        self.assertEqual(sum(s['end']-s['start'] for s in retained),959)
+        for s in retained:
+            c=s['selected_candidate']
+            self.assertEqual((c['source_in'],c['source_out']),(s['start'],s['end']))
+            self.assertIsNone(c['crop_xywh'])
+
+    def test_chain_section_keeps_palm_gap_and_continuous_performance(self):
+        shots=[s for s in self.plan['shots'] if 18280 <= s['start'] < 18957]
+        self.assertEqual(len(shots),4)
+        self.assertEqual(sum(s['end']-s['start'] for s in shots),677)
+        self.assertFalse(shots[0]['selected_candidate'].get('source_sha256'))
+        self.assertEqual(shots[0]['end']-shots[0]['start'],192)
+        della=[s for s in shots if s['selected_candidate'].get('source_sha256')==
+               'bdf5093956be17f63f708038a7fd216c83f74115712d27a9622aaff7e1f44d31']
+        self.assertEqual(len(della),1)
+        self.assertEqual(della[0]['end']-della[0]['start'],240)
 
     def test_not_renderable_or_admitted_by_planning(self):
         self.assertIn('NOT-final-or-renderable',self.plan['status'])
@@ -48,16 +69,70 @@ class FinishingPlanTests(unittest.TestCase):
 
     def test_every_selected_existing_source_is_hash_pinned(self):
         for shot in self.plan['shots']:
-            candidate=shot.get('selected_candidate',{})
-            if candidate.get('source_in') is not None:
+            for candidate in candidate_sources(shot.get('selected_candidate',{})):
                 self.assertEqual(len(candidate['source_sha256']),64)
                 self.assertTrue(candidate['source_path'])
 
     def test_recollection_is_not_overwritten_by_caption_overlap(self):
-        by_id={s['id']:s for s in self.plan['shots']}
-        self.assertIn('walking recollection',by_id['F005']['treatment'][0])
-        self.assertIn('wages/affection',by_id['F018']['treatment'][0])
-        self.assertIn('reduced-wages',by_id['F019']['treatment'][0])
+        walk=next(s for s in self.plan['shots'] if
+                  s.get('selected_candidate',{}).get('section_shot_id')=='O05')
+        self.assertIn('remembered',walk['treatment'][0])
+        self.assertIn('not her later',walk['treatment'][0])
+        treatments=[t for s in self.plan['shots'] for t in s['treatment']]
+        self.assertTrue(any('wages/affection' in t for t in treatments))
+        self.assertTrue(any('reduced-wages' in t for t in treatments))
+
+    def test_opening_is_exact_and_counting_never_restarts(self):
+        shots=[s for s in self.plan['shots'] if s['start'] < 1423]
+        self.assertEqual(len(shots),11)
+        self.assertEqual(shots[-1]['end'],1423)
+        self.assertEqual(self.plan['opening_narration_entrance_frame'],222)
+        transition=shots[1]
+        self.assertEqual((transition['start'],transition['end']),(204,222))
+        layers=transition['selected_candidate']['layers']
+        self.assertEqual([(x['source_in'],x['source_out']) for x in layers],
+                         [(204,222),(0,18)])
+        wide=shots[2]['selected_candidate']
+        self.assertEqual(wide['source_sha256'],layers[1]['source_sha256'])
+        self.assertEqual((wide['source_in'],wide['source_out']),(18,121))
+        self.assertEqual(shots[2]['end']-transition['start'],121)
+        for shot in shots:
+            for source in candidate_sources(shot['selected_candidate']):
+                self.assertEqual(source['ledger_status'],'admit')
+
+    def test_transition_missing_layer_fails(self):
+        self.plan['shots'][1]['selected_candidate']['layers'].pop()
+        with self.assertRaises(ValueError):validate(self.plan)
+
+    def test_transition_layer_retiming_fails(self):
+        self.plan['shots'][1]['selected_candidate']['layers'][1]['source_out']+=1
+        with self.assertRaises(ValueError):validate(self.plan)
+
+    def test_counting_restart_after_dissolve_fails(self):
+        source=self.plan['shots'][2]['selected_candidate']
+        source['source_in']-=18
+        source['source_out']-=18
+        with self.assertRaises(ValueError):validate(self.plan)
+
+    def test_transition_unpinned_layer_fails(self):
+        self.plan['shots'][1]['selected_candidate']['layers'][1]['source_sha256']=None
+        with self.assertRaises(ValueError):validate(self.plan)
+
+    def test_transition_invalid_opacity_fails(self):
+        self.plan['shots'][1]['selected_candidate']['layers'][1]['opacity']='1-to-0'
+        with self.assertRaises(ValueError):validate(self.plan)
+
+    def test_opening_native_source_overflow_fails(self):
+        source=self.plan['shots'][0]['selected_candidate']
+        source['source_in']+=1000
+        source['source_out']+=1000
+        with self.assertRaises(ValueError):validate(self.plan)
+
+    def test_reaction_retains_mandatory_crop(self):
+        reaction=next(s['selected_candidate'] for s in self.plan['shots'] if
+                      s.get('selected_candidate',{}).get('section_shot_id')=='O06')
+        self.assertEqual(reaction['crop_xywh'],[100,0,1440,810])
+        self.assertEqual((reaction['source_in'],reaction['source_out']),(0,215))
 
     def test_clipped_historical_bounds_are_separate(self):
         shot=next(s for s in self.plan['shots'] if s.get('component_subrange'))

@@ -1,6 +1,25 @@
 # Chain continuity review — 8 September
 
-Status: four additional whole-source six-fps reviews and five cross-source tagged details. No source admission, render or new commission.
+Status: exact four-shot chain sequence now prepared in CHAIN-SEQUENCE-PLAN.json.485 existing native frames selected;192 frames remain one finite8s open-palm pickup. Parent confirms all three chain admission inputs serially registered. No generation, spend or render by this lane. Earlier review notes below remain historical evidence, not the current selection status.
+
+## Executable selection — final build pass
+
+| Film time | Selection | What it achieves |
+|---|---|---|
+|761.667–769.667|One new8s open-palm take, not generated|Whole chain supported by Della's open left palm; no watch or handover. Exact positive-action brief and two inspected r13 reference paths are in the JSON.|
+|769.667–771.667|03-chain-in-hand native135–183, fixed crop928,0,960,540|Unused2s of Jim's tender response; no hands, chain or watch visible. Does not repeat CB06 native48–135.|
+|771.667–781.667|della-chain-only-r13 native0–240|Preserves10s of proud affection. Della raises her gaze and smiles around the dandy line at775.611.|
+|781.667–789.875|04-asks-watch native0–197, fixed crop960,0,960,540|Jim listens and looks down with a private smile. His sold watch never appears.|
+
+The reaction between palm and r13 provides a motivated editorial ellipsis while Della adjusts her gift for display; it is not a synthetic transformation or a visible handover. Keep the original narration continuous. The four shots cover677frames exactly at24fps; no slowdown, repeat or hold supplies runtime.
+
+Actual inspection completed: all61 r13 six-fps samples and all241 native frames, with96 and180 enlarged; all61 wide and61 portrait samples for04-asks-watch plus all197 selected portrait native frames; all48 additional native135–182 for03-chain-in-hand. Source-scoped evidence and inputs are external under magi-film-audit-20260907. No global inventory writes were made by this agent.
+
+R13 visibly carries one fine pale U-chain between small partly held fittings. The earlier phrase 'two arcs' does not establish an extra attached strand; perspective/folding must not be called branching without evidence. No new branch or watch appeared in the inspected native sequence. Hidden fittings remain UNKNOWN. This selection approves the visible medium-shot family, not an exact unseen clasp and not the previously unresolved merchant macro. The new palm brief preserves simplicity and forbids inventing an elaborate fob.
+
+**Ending boundary remains explicit:**04-asks-watch is standing portrait coverage, not a sit. Existing05-jim-sofa is already seated. An elliptical cut under the sitting narration can be editorially valid, but the ending owner must resolve the tied-collar/standing to open-collar/seated setup intentionally, or include the action within its already planned take. No extra automatic retake requested.
+
+Finite pickup is5600credits for8s: parent reports this live browser quote for Seedance2.0,1080p16:9,soundOFF on8September. This lane did not personally inspect the quote. Recheck with final references loaded. Proposed shared47s would estimate32900, but this is not a locked all-film plan. Parent resolves remaining coverage before spending.
 
 ## Intent and story
 

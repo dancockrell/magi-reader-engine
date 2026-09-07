@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "status": "existing-source-selections-admitted-one-finite-pickup-not-generated",
+  "fps": 24,
+  "start": 18280,
+  "end": 18957,
+  "start_seconds": 761.6666666666666,
+  "end_seconds": 789.875,
+  "total_frames": 677,
+  "selected_existing_frames": 485,
+  "missing_frames": 192,
+  "rules": ["Native speed only; no holds, reverse, loops or fitted runtime", "One pale fine platinum chain; no watch after sale", "Do not substitute old upright-hand macros for open-palm action", "Hidden fittings remain unknown: do not invent an elaborate fob or approve incompatible macro identity", "All joins remain subject to assembled native review"],
+  "shots": [
+    {
+      "id": "CH01", "start": 18280, "end": 18472, "start_seconds": 761.6666666666666, "end_seconds": 769.6666666666666,
+      "start_frame": 18280, "end_frame": 18472,
+      "source": null, "source_sha256": null, "crop_xywh": null,
+      "status": "finite-pickup-not-generated", "pickup_id": "CHAIN-PALM-ONE-TAKE",
+      "purpose": "Della presents her own gift on a truly open left palm. She retains possession; no watch is attached."
+    },
+    {
+      "id": "CH02", "start": 18472, "end": 18520, "start_seconds": 769.6666666666666, "end_seconds": 771.6666666666666,
+      "start_frame": 18472, "end_frame": 18520,
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-11/raw/03-chain-in-hand.mp4",
+      "source_sha256": "91b7f625736d565568000ce9344f69bf955b7a57f14ad7815a068bd4fd0fb3b1",
+      "source_in": 135, "source_out": 183, "source_in_seconds": 5.625, "source_out_seconds": 7.625, "source_in_frame": 135, "source_out_frame": 183,
+      "crop_xywh": [928,0,960,540], "status": "selected-admitted",
+      "admission_input": "../magi-film-audit-20260907/admit-revision-jim-chain-response.json",
+      "purpose": "Jim receives the gesture emotionally, with a small downward smile. Hands and objects excluded. A reaction cut provides a natural ellipsis before Della lifts the chain to display its workmanship.",
+      "reservation": "Does not overlap CB06 native48–135. Wide source handover is not approved."
+    },
+    {
+      "id": "CH03", "start": 18520, "end": 18760, "start_seconds": 771.6666666666666, "end_seconds": 781.6666666666666,
+      "start_frame": 18520, "end_frame": 18760,
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/della-chain-only-r13.mp4",
+      "source_sha256": "bdf5093956be17f63f708038a7fd216c83f74115712d27a9622aaff7e1f44d31",
+      "source_in": 0, "source_out": 240, "source_in_seconds": 0, "source_out_seconds": 10, "source_in_frame": 0, "source_out_frame": 240,
+      "crop_xywh": null, "status": "selected-admitted",
+      "admission_input": "../magi-film-audit-20260907/admit-selected-della-chain-r13.json",
+      "purpose": "Della studies her gift then looks warmly toward Jim. Her smile opens around the dandy line at775.611, preserving the best performance rather than replacing it.",
+      "restriction": "Visible simple pale U-chain family only. Tiny fittings partly held; no hidden endpoint certification, no unapproved macro intercut."
+    },
+    {
+      "id": "CH04", "start": 18760, "end": 18957, "start_seconds": 781.6666666666666, "end_seconds": 789.875,
+      "start_frame": 18760, "end_frame": 18957,
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-11/raw/04-asks-watch.mp4",
+      "source_sha256": "5fdb7d6b1694b522255245bb611671a39cfa9e9bf0ada4b4e4fe99736155e4a6",
+      "source_in": 0, "source_out": 197, "source_in_seconds": 0, "source_out_seconds": 8.208333333333334, "source_in_frame": 0, "source_out_frame": 197,
+      "crop_xywh": [960,0,960,540], "status": "selected-admitted",
+      "admission_input": "../magi-film-audit-20260907/admit-selected-jim-asks-watch-crop.json",
+      "purpose": "Jim listens, lowers his eyes and keeps a private gentle smile as Della asks to see the chain on his watch. No watch produced, no false transfer shown.",
+      "restriction": "Portrait-only; full-source costume and hand action excluded. Not footage of sitting."
+    }
+  ],
+  "finite_pickups": [
+    {
+      "id": "CHAIN-PALM-ONE-TAKE", "dispatch_status": "not-authorized-by-parent-for-dispatch-yet",
+      "takes": 1, "automatic_retries": 0, "duration_seconds": 8,
+      "model": "bytedance-seedance-pro-2.0", "resolution": "1080p", "aspect_ratio": "16:9", "camera_motion": "static", "with_sound_effects": false,
+      "reference_paths": [
+        "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/sources/bdf5093956be17f63f708038a7fd216c83f74115712d27a9622aaff7e1f44d31/native/000000-000120/000096.jpg",
+        "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/sources/bdf5093956be17f63f708038a7fd216c83f74115712d27a9622aaff7e1f44d31/native/000120-000241/000180.jpg"
+      ],
+      "reference_roles": ["Same Della, teal/ivory costume, cropped hair and fine pale chain; reference is not the required final hand pose", "Same face, warm eyeline toward Jim and visible small ring/clasp family; partly hidden details must not be elaborated"],
+      "prompt": "A single continuous eight-second performance in this exact modest1900 New York apartment, matching both reference images. Della is the same young adult woman with short chestnut curls and teal dress with ivory collar, standing left of frame and facing her adult husband Jim just offscreen right. It seems the earlier gift shots aimed to express her eager loving pride by making the chain prominent; preserve that tenderness, but the story specifically needs her open palm, not an upright closed hand or a chain transfer. Frame her from waist to above her head, with BOTH hands and the ENTIRE small gift clearly inside the composition. She begins with one fine pale platinum chain held lightly by her right fingertips above her empty OPEN horizontal left palm. She gently lowers its length onto that palm as a loose supported curve, her left fingers relaxed and separated, and lets the last small plain ring/clasp rest there too. The same single chain remains physically continuous with unchanged tiny links and fittings; it has no pendant, watch, branching strand or elaborate ornament. She keeps the open palm extended slightly toward Jim, looks from the gift up to his eyes and gives an eager affectionate smile. This is a private present she chose with love, not a sales demonstration. Her right fingertips remain lightly near one end; the chain stays in HER hand throughout. Calm unbroken natural movement at native frame rate, tiny breath and a warm look, no gesture reset or frozen hold. Camera stays still, hands remain unobscured, plain window light and warm room tones match the references. No other person enters, no combs or loose coins, no pocket watch anywhere, no words, subtitles or dialogue. End still offering the chain in her visibly open left palm and looking to Jim.",
+      "acceptance": ["Full chain supported on OPEN left palm, not merely dangling below it", "Same short-haired Della and teal/ivory costume", "Single physically continuous pale chain with no appearing branch/watch/ornament", "Tiny terminal details match what is visible; unseen details not made elaborate", "Native movement and contact inspected sequentially; no fixed holds or reverse bounce", "Pickup to Jim reaction and back to r13 reviewed as an assembled three-shot action"],
+      "estimated_credits": 5600,
+      "estimate_basis": "Parent reports live browser Seedance2.0 1080p16:9 soundOFF8s quote5600 on2026-09-08. This agent did not observe quote personally. Recheck with final references loaded before dispatch; no generation occurred in this lane.",
+      "shared_budget_note": "Together with proposed combs8+6 and ending15+10,47seconds would estimate32900 of33000 shared remaining. NOT a locked all-film plan or permission to spend; parent resolves other coverage first."
+    }
+  ],
+  "handoff_to_ending": {
+    "time": 789.875,
+    "unresolved": "Selected ending starts seated Jim, while CH04 ends standing tied collar. Existing05-jim-sofa is already seated and has other wide continuity problems; it is not a sitting action. Parent must explicitly accept an elliptical cut under the sitting narration or include the sit/collar transition in the existing planned ending take. Do not silently label the portrait as sitting or commission an extra automatic take."
+  }
+}
