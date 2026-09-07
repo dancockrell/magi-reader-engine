@@ -24,3 +24,13 @@ Four sources inspected in full at six samples per second: combs-insert-r12 (49 s
 5. At 756.618, move to remembering and presenting the chain. Never restore Jim's sold watch, and do not move the affectionate hair gesture ahead of the grief it resolves.
 
 No new generation, bake, live-site change or credit spend in this review. Formal rejection records are saved externally; source admission and full contextual motion/audio review remain separate gates.
+
+## Follow-through: gift design locked, boxed insert admitted
+
+The external entity ledger now locks `DELLA-COMBS` to `amber-three-circular-jewel-crests-v1`: three dark-mottled amber combs, larger rounded back crest and two smaller side crests, dark oval central stones with pale jeweled rings and pale/pink rims. The choice preserves the existing scripted cherishing performance, rather than choosing the newest asset by default. Detailed comparison inspected old insert frames0/96/192, new reveal frames0/120/239, and cherishing frames0/48/96. Hidden tooth counts are not asserted.
+
+All49 six-fps samples of combs-insert-r12 were reviewed through the formal source workflow; native108–179 additionally inspected in order. The changing viewpoint is continuous in that range. Source `bf0a3838760cf93a3ccc6c1194b2480d206839911b2c78bf664368be09ce4dc3` is now admitted at native0–192 exclusive (eight seconds), with no crop. This is an available range, not a requirement to use eight seconds. Its position must precede Della removing the combs.
+
+New reveal native204–239 also inspected in sequence and frame239 at full resolution: the three crest motifs and separate teeth remain readable in that inspected ending. This adds evidence but does not itself complete that source's admission.
+
+The ledger explicitly forbids returning the combs to the box after they are held without showing placement, substituting another design, or restoring the sold watch. Design lock does not automatically admit motion or certify joins. Four source hashes now have restricted admissions: parcel throw, unwrapping, cropped Jim reassurance, and this boxed-comb insert. No new credits spent or film rendered.
