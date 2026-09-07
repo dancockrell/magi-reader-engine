@@ -14,6 +14,8 @@ Supplemental detail from the latest pass: enlarged sample 4167 clearly shows Jim
 
 ## Review position
 
+Inventory phase has begun. User permits one final planned retake round, not zero and not endless iterations; see FINAL-ROUND-REGISTER.md and PROTOCOL.md. First candidate source bdf50939 (Della chain-only performance) has all61 sampled frames reviewed; native contact and identity comparison remain open, so no admission. Final take count and credit ceiling remain unlocked. No generation or film edit.
+
 Accepted sequential coverage: **00:00–14:51.125**, all **5,347 samples** (0–5346); cursor **5347**. The complete six-per-second visual pass is finished. This is not source admission, normal-speed sound-on approval, or a finished-film verdict.
 
 Final pass: enlarged5052 confirms watch and single ornate comb on paper beside bread/jam; enlarged5106 confirms watch and plain comb beside chops. These ending setups remain incompatible with sale and persistent gift design, despite strong shared laughter. Exterior retreat begins858.5; final narration ends867.121 on that warm-window idea. Credits then revisit riders, window combs and exterior with small upper-left text. Credit factual claims and intended-size readability need verification. Picture and text fade together around889–890.5, with black to891.125; a closing fade is present, not yet sound-on certified. Receipts005040,005112,005184,005256,005328 accepted. No edits, generation, admission or publication. Next: source inventory and whole-film decision synthesis, carrying all unresolved native and audio checks forward.

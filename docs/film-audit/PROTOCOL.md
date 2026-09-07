@@ -2,6 +2,10 @@
 
 No new generation, recut, render or publication during the audit. Preserve v0.9.7.
 
+## Final-round constraint — user clarification
+
+One more planned round of retakes is authorized after inventory and the complete edit plan, not endless iterative generation. Lock every requested shot, reference family, starting/ending state, finite take count and total credit ceiling before dispatch. No automatic additional round if a take fails: finish with planned alternatives and existing coverage, or explicitly report a consequential remaining gap. The list and credit ceiling are not yet locked. Preserve the narration unless the user separately authorizes abridgment. This constraint governs step9 below and supersedes any implication of unlimited correction cycles.
+
 1. Read the complete source independently. Record action, subtext, physical state,
    audience knowledge, permissible ellipsis, and adaptation discrepancies.
 2. Write the complete text-led beat storyboard before inspecting this cut again.
