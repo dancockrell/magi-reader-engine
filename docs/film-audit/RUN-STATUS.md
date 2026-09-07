@@ -4,6 +4,8 @@ This is an audit in progress, not a new finished cut. No film changes or generat
 
 ## Completed preparation
 
+Supplemental detail from the latest pass: enlarged sample 4167 clearly shows Jim wearing a knitted glove again during unwrapping, after bare-handed parcel handling. Recorded in supplemental/unwrapping-gloves-confirmation.json; source selection must resolve this additional costume/script conflict.
+
 - Independent reading of the complete original story, recorded in STORY-READING.md.
 - 47 text-led beats, resolved against the frozen film's captions.
 - All 5,347 six-per-second samples extracted from the 24 fps v6 master.

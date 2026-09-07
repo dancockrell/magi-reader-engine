@@ -79,6 +79,7 @@ Continuation through 08:00 resolves the earlier pending hair-result question: cu
 - Confirmed wrong starting state at 668.250: native frame 16038 begins with parcel already outside coat. All 12 frames in native sheet 016036-016048 inspected. Pocket extraction is not established.
 - Jim holds/offers the parcel during and after the explicit table-throw sentence instead of throwing it. Subsequent reassurance still has wrapping in his hand (enlarged 4070). The table destination only appears at the seated unwrapping cut around 687. Plan this entire sequence, not separate patches.
 - Bare hands during parcel handling (enlarged 4010) conflict with earlier gloved hair touch. Maintain the original no-gloves requirement.
+- Enlarged unwrapping sample 4167 also clearly shows a knitted glove on Jim's hanging hand beside the lamp: gloves return after bare-handed parcel handling. Supplemental unwrapping-gloves-confirmation.json carries this observation forward without altering the accepted receipt.
 - Compare bulky parcel, smaller hand-held wrapping and table package as one named object. Do not canonize comb design from the still-unclear wide unwrapping frame (4167).
 - Preserve the warm reassurance and focused anticipation. Complete native string/paper/contact checks and the upcoming reaction/reveal review before source selection.
 
