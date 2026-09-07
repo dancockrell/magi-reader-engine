@@ -41,6 +41,8 @@ Provisional synthesis, not an admitted source list. Baseline v6; current detaile
 
 ## Questions that change the edit
 
+First-reaction pass through 09:00: preserve Jim's restrained unreadable gaze and the couple-only interpretation of family. The open door persists after narrated closure. Repeated Della reaction coverage warrants source-range comparison and sound-on pacing review; do not mistake dramatic stillness for technical freezes, or call source duplication without verifying it. Costume comparison should include stair collar versus entry tie.
+
 Arrival continuity through 08:24: current stair clip was inspected at native rate (11572–11667); Jim remains on the stair side and ascends, not the historical wrong-side action. Track his openly carried brown parcel into later pocket extraction. Prayer shot's smoother side/back bob and already-open doorway need reconciliation with curled result and subsequent opening insert. Do not discard the current ascent on an outdated diagnosis.
 
 Continuation through 08:00 resolves the earlier pending hair-result question: curls appear around 07:13, acceptably near their narration. Preserve the vulnerable self-examination and self-talk. The chain-only waiting shot around 07:54–08:00 (enlarged sample 2856) offers a script-compatible emotional use of the gift; do not confuse it with the incorrect watch scene. Dinner remains uncooked as required. Mirror/clock/set consistency and fine chain/contact checks still need source review.

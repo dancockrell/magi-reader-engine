@@ -12,7 +12,7 @@ This is an audit in progress, not a new finished cut. No film changes or generat
 
 ## Review position
 
-Accepted sequential coverage: **00:00–08:24**, samples **0–3023**; next cursor **3024** of 5,347. This is approximately 56.6% of the sampled film, not a whole-film verdict.
+Accepted sequential coverage: **00:00–09:00**, samples **0–3239**; next cursor **3240** of 5,347. This is approximately 60.6% of the sampled film, not a whole-film verdict.
 
 The worried close-up and developing couch performance are promising material to protect. Merchant-street footage may function as a recollection of saving pennies, but walking is a weaker illustration of bargaining. The isolated-penny replacement has a supplemental native-frame check; the apparent extra disk at 37.500 seconds resolves as the fingertip when enlarged. No final source selection follows from those observations alone.
 
@@ -37,6 +37,8 @@ The 06:36–07:12 pass finds a consequential prop/story error: Della lifts a sma
 The 07:12–08:00 continuation resolves the pending curled-result question: tight curls appear at about 433.083 seconds, roughly two seconds into the result narration, within loose-sync tolerance. No detached-hair curling was observed in the reviewed grooming passage. Vulnerable self-talk remains with adult Della rather than literal schoolboy/chorus-girl imagery. Coffee, empty pan and uncooked chops match dinner readiness. At about 474.292 seconds Della waits at the table edge with chain alone, confirmed in enlarged sample 2856: this is a promising alternative to the earlier unsupported watch handling. Fine chain identity/contact and mirror/clock/set compatibility remain pending. Receipts 002592, 002664, 002736 and 002808 accepted. Next starts at 08:00; no film edit or generation.
 
 The 08:00–08:24 pass includes a native review of all 96 frames 11572–11667 plus enlarged samples 2898/2910: current Jim ascends on the stair side left of the banister, unlike the historical wrong-side screenshot. Do not transfer that old diagnosis to this version. He carries a brown parcel in both bare hands; it is not visible when he enters, leaving stowing/coat-pocket continuity pending. Prayer coverage has smoother bob-like side/back hair than the established curls (enlarged sample 3000), and an already-open doorway precedes the separate opening insert. Preserve vulnerability while resolving hair/door families. Receipts 002880 and 002952 accepted. Next begins 08:24, during arrival. No edit, generation or publication.
+
+The 08:24–09:00 pass extends the door issue: Jim releases the knob without closing it, and the doorway remains open in later reaction coverage. Coat/tie appearance should be compared with the stair shot's open collar. The restrained stare, adult couple-only interpretation of 'family', and nonliteral setter metaphor are worth protecting. Repeated Della reaction framing may flatten progression, but exact source duplication and sound-on pacing remain unverified: this is an inventory/editorial opportunity, not a confirmed repeated-frame defect. Receipts 003024, 003096 and 003168 accepted. Next starts 09:00. No film alteration, spending or publication.
 
 ## Resume exactly here
 
