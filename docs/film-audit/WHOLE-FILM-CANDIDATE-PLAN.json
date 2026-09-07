@@ -6431,7 +6431,7 @@
       "source": "parcel-toss-r8b.mp4",
       "source_in": 0,
       "source_out": 72,
-      "purpose": "Pocket extraction; cut before wrong flattened parcel",
+      "purpose": "Pocket reach; cut before wrong flattened parcel becomes visible",
       "status": "candidate-plan-blocked-not-renderable",
       "selected_candidate": {
         "start": 16038,
@@ -6439,12 +6439,19 @@
         "source": "parcel-toss-r8b.mp4",
         "source_in": 0,
         "source_out": 72,
-        "purpose": "Pocket extraction; cut before wrong flattened parcel",
-        "status": "candidate-admission-pending",
+        "purpose": "Pocket reach; cut before wrong flattened parcel becomes visible",
+        "status": "source-admitted-context-pending",
         "source_sha256": "7fbab1987d12cc62d1bbac24ceeefef196ff773115626cc75af21e2eaca5162b",
         "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\parcel-toss-r8b.mp4",
-        "ledger_status": "unreviewed",
-        "ledger_ranges": []
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 72,
+            "crop": null,
+            "entity_compatibility": "Della left/Jim right, short curls, teal/ivory, tied-collar Jim and bare hands. No visible gift before cut. Requires compatible doorway geography; no later flat parcel admitted."
+          }
+        ]
       },
       "id": "F088",
       "beats": [
@@ -6776,7 +6783,13 @@
       "source": "reaction-r10.mp4",
       "source_in": 0,
       "source_out": 198,
-      "purpose": "Joy to grief; inner lid opens during reaction ellipsis",
+      "crop_xywh": [
+        0,
+        0,
+        1728,
+        972
+      ],
+      "purpose": "Joy to grief; mandatory crop excludes tied package; inner lid opens during reaction ellipsis",
       "status": "candidate-plan-blocked-not-renderable",
       "selected_candidate": {
         "start": 16686,
@@ -6784,12 +6797,30 @@
         "source": "reaction-r10.mp4",
         "source_in": 0,
         "source_out": 198,
-        "purpose": "Joy to grief; inner lid opens during reaction ellipsis",
-        "status": "candidate-admission-pending",
+        "crop_xywh": [
+          0,
+          0,
+          1728,
+          972
+        ],
+        "purpose": "Joy to grief; mandatory crop excludes tied package; inner lid opens during reaction ellipsis",
+        "status": "source-admitted-context-pending",
         "source_sha256": "8c1a9049d6186873090b0b9b496aa53dfe3bf03a9e09a314ea661ca55564c5d3",
         "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\reaction-r10.mp4",
-        "ledger_status": "unreviewed",
-        "ledger_ranges": []
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 198,
+            "crop": [
+              0,
+              0,
+              1728,
+              972
+            ],
+            "entity_compatibility": "Della short curls/teal/ivory at left, Jim shoulder at right; downward look toward offscreen combs. Mandatory crop excludes tied package throughout admitted range. Keep same axis into comfort."
+          }
+        ]
       },
       "id": "F094",
       "beats": [

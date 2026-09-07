@@ -73,13 +73,13 @@
     "B046": {"edit":"Play admitted shared ending once; replace incompatible swept-hair window woman, correct credit imagery and finish musical fade to black.","state":"Short-curled Della and Jim together, no restored watch; final black.","tasks":["T13","T14","T15"]}
   },
   "parcel_slots": [
-    {"start":16038,"end":16110,"source":"parcel-toss-r8b.mp4","source_in":0,"source_out":72,"purpose":"Pocket extraction; cut before wrong flattened parcel","status":"candidate-admission-pending"},
+    {"start":16038,"end":16110,"source":"parcel-toss-r8b.mp4","source_in":0,"source_out":72,"purpose":"Pocket reach; cut before wrong flattened parcel becomes visible","status":"source-admitted-context-pending"},
     {"start":16110,"end":16182,"source":"parcel-insert-r9.mp4","source_in":24,"source_out":96,"purpose":"Release and landing on table","status":"source-admitted-context-pending"},
     {"start":16182,"end":16350,"source":"parcel-reassurance-r8.mp4","source_in":0,"source_out":168,"crop_xywh":[240,0,1440,810],"purpose":"Warm reassurance with parcel excluded","status":"candidate-admission-pending"},
     {"start":16350,"end":16404,"source":"02-reassurance.mp4","source_in":168,"source_out":222,"crop_xywh":[736,0,1184,666],"purpose":"Jim's intimate reaction","status":"source-admitted-context-pending"},
     {"start":16404,"end":16476,"source":"parcel-reassurance-r8.mp4","source_in":168,"source_out":240,"crop_xywh":[240,0,1440,810],"purpose":"Finish reassurance without re-presenting parcel","status":"candidate-admission-pending"},
     {"start":16476,"end":16686,"source":"unwrap-r10.mp4","source_in":0,"source_out":210,"purpose":"Paper opens to closed inner case","status":"source-admitted-context-pending"},
-    {"start":16686,"end":16884,"source":"reaction-r10.mp4","source_in":0,"source_out":198,"purpose":"Joy to grief; inner lid opens during reaction ellipsis","status":"candidate-admission-pending"},
+    {"start":16686,"end":16884,"source":"reaction-r10.mp4","source_in":0,"source_out":198,"crop_xywh":[0,0,1728,972],"purpose":"Joy to grief; mandatory crop excludes tied package; inner lid opens during reaction ellipsis","status":"source-admitted-context-pending"},
     {"start":16884,"end":17076,"source":"comfort-r11.mp4","source_in":0,"source_out":192,"purpose":"Jim comforts Della without a doorway reset","status":"candidate-admission-pending"}
   ]
 }

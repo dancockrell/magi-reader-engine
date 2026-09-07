@@ -335,10 +335,16 @@ def call_reviewer(root, state, reading):
 def native_detail(root, state, start, end):
     if not 0 <= start < end <= state['frames'] or end-start > 240:
         raise ValueError('Native inspection is limited to one <=10-second range per request')
-    output = root/'native'/f'{start:06d}-{end:06d}'
+    crop=state.get('mandatory_crop_xywh')
+    if crop is not None and (len(crop)!=4 or any(type(v) is not int for v in crop)
+                             or min(crop[:2])<0 or min(crop[2:])<=0):
+        raise ValueError('Invalid mandatory native crop')
+    folder='native' if crop is None else 'native-crop-'+'-'.join(map(str,crop))
+    output = root/folder/f'{start:06d}-{end:06d}'
     output.mkdir(parents=True, exist_ok=True)
     subprocess.run([state['ffmpeg'], '-hide_banner', '-loglevel', 'error',
         '-threads','2','-ss',str(start/24),'-i',state['movie'],'-an',
+        *(['-vf',f'crop={crop[2]}:{crop[3]}:{crop[0]}:{crop[1]}'] if crop else []),
         '-frames:v',str(end-start),'-fps_mode','passthrough','-q:v','2',
         '-threads','2','-filter_threads','1','-start_number',str(start),
         '-y',str(output/'%06d.jpg')],check=True)
@@ -346,7 +352,7 @@ def native_detail(root, state, start, end):
     if len([p for p in output.glob('*.jpg') if p.stem.isdigit()]) != end-start:
         raise ValueError('Native detail frame count mismatch')
     write(output/'provenance.json',{'movie_sha256':state['movie_sha256'],
-        'native_start':start,'native_end_exclusive':end,'fps':24,
+        'native_start':start,'native_end_exclusive':end,'fps':24,'crop_xywh':crop,
         'status':'extracted, not visually reviewed'})
     from PIL import Image, ImageDraw
     for page, offset in enumerate(range(start,end,36)):

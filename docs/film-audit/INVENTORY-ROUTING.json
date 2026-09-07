@@ -1090,9 +1090,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\parcel-toss-r8b.mp4"
       ],
-      "category": "selected-candidate-admission-required",
-      "reason": "Named by the consolidated edit; no eligibility inferred from its selection.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "813f695d5e06a1a06659df36edceef56c81a528649d5e62f9d74852f47419a9f",
@@ -1234,9 +1234,9 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\reaction-r10.mp4"
       ],
-      "category": "selected-candidate-admission-required",
-      "reason": "Named by the consolidated edit; no eligibility inferred from its selection.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "8c80bb4365f6b886461f203c38aeec23af2167ccd1f33f2a0d6daf49aa7c31c5",

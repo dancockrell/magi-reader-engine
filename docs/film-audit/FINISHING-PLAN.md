@@ -23,7 +23,7 @@ No new credit spend this turn. No bake/publication yet. Native inspection outsid
 
 ## Current execution state — 8 September
 
-The shared ending and the other two priority pickups now have formal source-range admissions; consult FINAL-ROUND-REGISTER.md rather than the historical pending status above. Nine source hashes are admitted in total. ENDING-SEQUENCE-PLAN.json explicitly leaves a 385-frame domestic-coda gap unresolved; this must not be padded by a repeated performance or the rejected watch-on-table footage.
+The shared ending and the other two priority pickups now have formal source-range admissions; consult FINAL-ROUND-REGISTER.md rather than the historical pending status above. Eleven source hashes are admitted in total, including the later pocket reach and mandatory-cropped joy-to-grief reaction. ENDING-SEQUENCE-PLAN.json explicitly leaves a 385-frame domestic-coda gap unresolved; this must not be padded by a repeated performance or the rejected watch-on-table footage.
 
 The current master has a verified nested source map covering its full 21,387 frames. Resolve remaining opaque baseline sections, carry the established source decisions into an every-shot plan, and finish the unresolved coverage before baking. Mapping is provenance, not fresh visual approval. No new film has been rendered or published during this pass.
 

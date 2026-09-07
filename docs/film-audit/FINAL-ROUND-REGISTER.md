@@ -71,6 +71,8 @@ Exact full-film salvage duration, chain design and final shot list remain unreso
 
 ## Closing coverage review — 8 September
 
+Later parcel selection:11source hashes now have restricted admissions. Added pocket reach7fbab198 native0–72 and reaction8c1a9049 native0–198 with mandatory crop0,0,1728,972. The original reaction's tied package is excluded, not approved. Both complete source receipts and native evidence are recorded. Whole-film plan regenerated from current ledger; remaining allowance33,000unchanged. No new bake/publication.
+
 Two more sources admitted, bringing the total to nine hashes: scene12/raw/01-magi-travel (2ee0b7e7) and 02-ancient-gifts (8a0bc891), each native0–211 exclusive, no crop. Each full61-sample source review is recorded; travel additionally has all211native frames inspected. These cover17.583seconds of proposed historical comparison, not a newly rendered scene.
 
 Jim-revelation native0–71 and288–335 plus enlarged30,45,300 show a continuous bare-handed rise behind his head and lowering, with motion blur rather than an observed duplicate-hand jump. Formal source admission still pending. Exterior06-window-final remains unadmitted: enlarged initial frame shows a differently styled supper couple. See CLOSING-COVERAGE-REVIEW.md. No new spending, bake or publication.

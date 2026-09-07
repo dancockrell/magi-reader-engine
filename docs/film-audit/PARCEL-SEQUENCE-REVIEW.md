@@ -91,6 +91,14 @@ The closer view belongs INSIDE the longer reassurance moment, before the two-sho
 
 ## Parcel and wrapping admission
 
+### Later selection update — 8 September
+
+Pocket source7fbab198 is now admitted only native0–72 exclusive, no crop. All61samples and all72selected native frames viewed, with frame71 enlarged. This establishes a reach into the coat, NOT completed extraction. Cut before the flat incompatible parcel appears; the following admitted thick-parcel insert supplies the actual release and landing. Open doorway/background still requires contextual reconciliation.
+
+Reaction8c1a9049 is now admitted only native0–198 exclusive with mandatory crop `[0,0,1728,972]` (x,y,width,height). Enlarged original samples24/42 revealed a pale tied package at the lower edge, so earlier uncropped-selection assumptions are superseded. All61full and cropped samples, full-size cropped24, and all198actual cropped native frames were inspected. The fixed crop excludes the package and preserves joy around1.5–4seconds, fading smile around4.5–6, and grief afterward. No retake or animation repair. The figure and shoulder stay separate in the reviewed range.
+
+Evidence: audit/priority-batch-01/reaction-r10-crop-0-0-1728-972/native-crop-0-0-1728-972/000000-000198, six sheets. The older `native/000000-000198` in that helper folder is UNCROPPED evidence and is not crop verification. The helper now honors mandatory crop in an explicitly named separate output folder and records crop provenance. Formal source receipts/decisions for both hashes are in the external audit. Source admission does not approve assembled joins or narration pacing. Reassurance and comfort remain pending.
+
 The table-throw source was formally reviewed31/31 samples plus native24–95 and enlarged landed parcel. Range24–96 admitted, uncropped. Wrapping-removal source was formally reviewed61/61 samples plus all240 native frames0–239 in seven sheets. Hands remove loose string, work paper open, expose closed dark box, and settle. Range0–210 admitted; the final settled tail is omitted to bring Della's joy and grief closer to their narrated changes.
 
 Enlarged first/last unwrap frames and new comb-reveal frame0 were compared. Brown paper, crossed twine and dark case form a compatible material family, but apparent case proportions vary with perspective; exact dimensions have not been measured. The case opening is not present in the source. The edit deliberately leaves that action offscreen during the face reaction and reveals the open case later, following comfort. Do not claim the source depicts an opening lid. Both source decisions are preserved in the external audit/source-decisions directory with exact SHA and native bounds. No new credits or export this pass.

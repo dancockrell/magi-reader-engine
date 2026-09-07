@@ -37,7 +37,7 @@ for index, name in enumerate(names):
         if min(x,y)<0 or min(w,h)<=0 or x+w>meta['width'] or y+h>meta['height'] or w*9!=h*16:
             raise SystemExit('Crop must be an in-bounds 16:9 rectangle')
         state['mandatory_crop_xywh'] = args.crop
-        state['native_detail_note'] = 'film_audit.native_detail extracts the uncropped source; do not mistake that for crop approval'
+        state['native_detail_note'] = 'film_audit.native_detail honors mandatory_crop_xywh in a separate native-crop directory; older native directories remain uncropped. Extraction is not approval.'
     write(root/'state.json', state)
     if args.crop:
         frames = root/'frames'
