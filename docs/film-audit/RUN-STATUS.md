@@ -12,7 +12,7 @@ This is an audit in progress, not a new finished cut. No film changes or generat
 
 ## Review position
 
-Accepted sequential coverage: **00:00–04:24**, samples **0–1583**; next cursor **1584** of 5,347. This is approximately 29.6% of the sampled film, not a whole-film verdict.
+Accepted sequential coverage: **00:00–05:00**, samples **0–1799**; next cursor **1800** of 5,347. This is approximately 33.7% of the sampled film, not a whole-film verdict.
 
 The worried close-up and developing couch performance are promising material to protect. Merchant-street footage may function as a recollection of saving pennies, but walking is a weaker illustration of bargaining. The isolated-penny replacement has a supplemental native-frame check; the apparent extra disk at 37.500 seconds resolves as the fingertip when enlarged. No final source selection follows from those observations alone.
 
@@ -23,6 +23,10 @@ Supplemental findings and corrections are now carried into each subsequent revie
 Audit workspace: `../magi-film-audit-20260907` relative to this checkout. It contains state.json, immutable accepted reviews, entity observations, inventory.json, frame evidence and supplemental reviews. The frozen film hash is `852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b`.
 
 The 03:00–04:24 pass confirms the mirror/decision/hair-release sequence is out of order, identifies smoke rising from the table watch and a conflicting window reflection, and distinguishes the narrator's hypothetical royal comparisons from actual story events. A separate native check of the palm-supported watch found no visible detached bow in that short interval, but its enlarged dial markings remain malformed. See [03:00–04:24 findings](FINDINGS-0300-0424.md). No source was admitted and no film was changed.
+
+Critic corrections are implemented in PROTOCOL.md and [the decision board](DECISION-BOARD.md). Source admission now checks actual complete source receipt coverage, source digest and native bounds, plus dispositions of source escalations; 18 workflow tests pass. Higher-rate source support remains unimplemented, explicitly a tooling limit rather than an artistic rejection. No normal-speed sound-on editorial screening was performed in this pass, so timing judgments remain provisional.
+
+The 04:24–05:00 pass finds that the Solomon tail actually continues to about 268.583 seconds, approximately 6.2 seconds after the narration returns to hair. This extends the evidence, but still does not mandate an exact caption cut. Della's hesitation and the outward face-led departure are promising material to protect. The sampled departure goes down and out, not the historical wrong-direction action. Stair contact and camera/door geometry still need native checks. Next is the shop entrance at 05:00.
 
 ## Resume exactly here
 

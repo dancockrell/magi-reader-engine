@@ -41,3 +41,12 @@ No new generation, recut, render or publication during the audit. Preserve v0.9.
 The script enforces ordering and completeness of records, not the honesty or
 artistic correctness of a review. It must not manufacture semantic acceptance.
 Inventory completion and final shot planning remain mandatory after film review.
+
+## Critic corrections — 7 September
+
+- Separate confirmed physical/story contradictions from timing hypotheses and acceptable offsets. Caption landmarks orient the film; they are not mandatory cut points. Approximately two or three seconds of anticipation or overlap can work. Judge the gesture and sequence, not a sentence boundary alone.
+- Retain six-per-second inspection for continuity. Before turning a pacing or emotional hypothesis into a final edit requirement, review the surrounding moving sequence at normal speed with narration and music in a non-disruptive listening setup. If not performed, keep the hypothesis unresolved. Do not autoplay sound in the user's tabs.
+- Keep `DECISION-BOARD.md` concise: ranked defects, candidate visual families, protected performances, possible reuse, and questions that affect selection. Source filenames or latest generation dates cannot choose a canonical design.
+- Source admission derives completed coverage from pinned source state and consecutive receipts, verifies source digest and native bounds, and requires dispositions of source escalations. These structural checks cannot certify truthful semantic judgment.
+- Higher-than-24-fps sources are not artistically disqualified. Current source sampler is limited to 24 fps; extend native timestamp sampling before considering other rates for admission. Never reshoot merely because this tool lacks support.
+- Classify inventory by potential use before detailed source review. Exclude redundant assembly exports and irrelevant material with reasons; inspect promising candidates fully before admitting ranges.

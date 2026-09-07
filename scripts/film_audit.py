@@ -361,6 +361,33 @@ def native_detail(root, state, start, end):
     print(output.resolve())
 
 
+def verified_source_review(root, sha):
+    """Derive completion from the source audit, never an admission checkbox."""
+    source = root/'sources'/sha
+    if not (source/'state.json').is_file():
+        raise ValueError('Missing source review state')
+    state = load(source)
+    if (state['movie_sha256'] != sha or
+            state['phase'] != 'inventory-review-required' or
+            state['cursor'] != state['samples']):
+        raise ValueError('Source sampling review is incomplete or mismatched')
+    if state['samples'] != math.ceil(state['frames']/state['stride']):
+        raise ValueError('Source sample count disagrees with native bounds')
+    cursor, receipts = 0, []
+    for path in sorted((source/'reviews').glob('*.json')):
+        receipt = read(path)
+        end = min(cursor + state['packet_samples'], state['samples'])
+        if (cursor >= state['samples'] or path.stem != f'{cursor:06d}' or
+                receipt.get('movie_sha256') != sha or
+                receipt.get('sample_start') != cursor or receipt.get('sample_end') != end):
+            raise ValueError('Source receipts have missing, stale or overlapping coverage')
+        receipts.append((path, receipt))
+        cursor = end
+    if cursor != state['samples']:
+        raise ValueError('Source receipts do not cover the complete source')
+    return state, receipts
+
+
 def source_decision(root, state, record_path):
     if state['phase'] != 'inventory-review-required':
         raise ValueError('Complete the whole-film review before selecting reusable sources')
@@ -378,15 +405,38 @@ def source_decision(root, state, record_path):
         if not Path(evidence).is_file():
             raise ValueError('Missing source-review evidence')
     if record['status']=='admit':
+        source_state, receipts = verified_source_review(root, record['sha256'])
         ranges=record.get('admitted_ranges',[])
-        if not ranges or not record.get('sample_review_complete'):
+        if not ranges:
             raise ValueError('Reuse requires complete source sampling review and exact ranges')
         for span in ranges:
-            if not (isinstance(span.get('start'),int) and isinstance(span.get('end'),int)
-                    and 0<=span['start']<span['end']):
+            if not (type(span.get('start')) is int and type(span.get('end')) is int
+                    and 0<=span['start']<span['end']<=source_state['frames']):
                 raise ValueError('Source admission requires native integer bounds')
             if not span.get('entity_compatibility') or 'crop' not in span:
                 raise ValueError('Record compatible entities and mandatory crop (or null)')
+        # Require a disposition of each source-review concern. Excluding a concern
+        # is possible only when its native interval is outside ALL admitted spans.
+        resolutions = record.get('escalation_resolutions', {})
+        for path, receipt in receipts:
+            for index, concern in enumerate(receipt.get('escalations', [])):
+                key = f'{path.stem}:{index}'
+                resolution = resolutions.get(key, {})
+                if resolution.get('status') == 'excluded-range':
+                    interval = concern.get('seconds')
+                    if not interval or len(interval) != 2 or interval[1] <= interval[0]:
+                        raise ValueError('Cannot exclude an escalation without valid time bounds')
+                    lo, hi = interval[0]*source_state['fps'], interval[1]*source_state['fps']
+                    if any(r['start'] < hi and r['end'] > lo for r in ranges):
+                        raise ValueError('Unresolved escalation overlaps admitted range')
+                elif (resolution.get('status') != 'resolved' or
+                      len(resolution.get('finding', '')) < 30 or
+                      not resolution.get('evidence') or
+                      not all(Path(p).is_file() for p in resolution['evidence'])):
+                    raise ValueError(f'Unresolved source escalation: {key}')
+        record['sample_review_complete'] = True
+        record['source_review_receipts'] = [
+            {'path': str(p.resolve()), 'sha256': digest(p)} for p, _ in receipts]
     for item in matches:
         if item['status']!='unreviewed':
             raise ValueError('Existing disposition requires a new audit revision, not overwrite')
