@@ -67,6 +67,13 @@ Continuation through 08:00 resolves the earlier pending hair-result question: cu
 - The cut into lapel contact around 614.167 omits the couple's return from separated positions. Evaluate a coherent return, preserving the warm close performance. Do not automatically label every omitted approach an error without normal-speed context.
 - The Christmas Eve 'boy' passage shows the adult husband and wife, no child. The loving vocal delivery remains an outstanding listening check; visual review cannot certify an audio fix.
 
+## Embrace and privacy through 11:00
+
+- Protect the relieved two-person embrace around 639.167–643.167. Enlarged sample 3849 and all six-per-second sheets show only Jim and Della, not the historical extra-person/baby error. Full native contact review remains required.
+- Protect the meaning of the ordinary lamp cutaway around 643.167–653.167: ten seconds of discretion, no apparition. Enlarged sample 3864 establishes a distinct prop observation; compare lamp identity and room location before admission.
+- Check framing/hand-position change near 624.167 and possible repeated source families across lapel/reaction shots. Do not call looping from similar staging alone.
+- Preserve the warmer reaction after the embrace. Money-versus-love narration does not require literal inserts of money, mathematicians or magi.
+
 ## Deferred / not grounds for reshoot
 
 - Solomon timing: earlier 1.603-second observed overlap was not a defect by itself. Continued review establishes a total tail of about 6.2 seconds; assess in moving sequence with sound before prescribing its endpoint.
