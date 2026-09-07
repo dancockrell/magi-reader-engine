@@ -530,6 +530,36 @@ def validate_plan(root, state, plan_path):
     print('Complete shot plan structurally validated. Spending still requires explicit execution; no media changed.')
 
 
+def register_source(root, state, record_path):
+    """Append one retrieved take without rebuilding or resetting the pinned inventory."""
+    if state['phase'] != 'inventory-review-required':
+        raise ValueError('Complete the whole-film review before extending inventory')
+    record = read(record_path)
+    path = Path(record['path']).resolve()
+    if not path.is_file() or path.suffix.lower() != '.mp4':
+        raise ValueError('Explicit existing MP4 required')
+    sha = digest(path)
+    if sha != record.get('sha256'):
+        raise ValueError('Retrieved source digest does not match registration')
+    if not record.get('creation_identifier') or len(record.get('reason', '')) < 40:
+        raise ValueError('Provider identifier and registration reason required')
+    items = read(root/'inventory.json')
+    for item in items:
+        if Path(item['path']).resolve() == path:
+            if item['sha256'] != sha:
+                raise ValueError('Existing inventory path changed; do not overwrite its history')
+            print('Source already registered; existing disposition preserved.')
+            return
+    if any(item['sha256'] == sha for item in items):
+        raise ValueError('Source hash already inventoried under another path; use its existing record')
+    write(root/'registrations'/f'{sha}.json', record)
+    items.append({'path': str(path), 'sha256': sha, 'bytes': path.stat().st_size,
+                  'status': 'unreviewed', 'admitted_ranges': [], 'entity_ids': [],
+                  'reason': None})
+    write(root/'inventory.json', items)
+    print('Retrieved source registered as unreviewed; all prior decisions preserved.')
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--audit', required=True)
@@ -545,6 +575,7 @@ def main():
     sub.add_parser('call-reviewer').add_argument('--reading', required=True)
     p=sub.add_parser('native-detail'); p.add_argument('start',type=int); p.add_argument('end',type=int)
     sub.add_parser('source-decision').add_argument('record')
+    sub.add_parser('register-source').add_argument('record')
     p=sub.add_parser('init-source'); p.add_argument('sha'); p.add_argument('--beats',nargs='+',required=True); p.add_argument('--ffprobe',required=True)
     sub.add_parser('validate-plan').add_argument('plan')
     args=parser.parse_args(); root=Path(args.audit)
@@ -559,6 +590,7 @@ def main():
     elif args.command=='call-reviewer': return call_reviewer(root,state,args.reading)
     elif args.command=='native-detail': native_detail(root,state,args.start,args.end)
     elif args.command=='source-decision': source_decision(root,state,args.record)
+    elif args.command=='register-source': register_source(root,state,args.record)
     elif args.command=='init-source': init_source(root,state,args.sha,args.beats,args.ffprobe)
     elif args.command=='validate-plan': validate_plan(root,state,args.plan)
     else: print(json.dumps(state, indent=2))

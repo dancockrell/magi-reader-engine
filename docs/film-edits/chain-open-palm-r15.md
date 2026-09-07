@@ -1,8 +1,8 @@
 # Matched open-palm insert R15
 
-6 September 2026. Starting-image development only; not animated, admitted,
-baked into the sequence or published. Continue from R14's successful open-palm
-timing, not the historical long-chain insert.
+6 September 2026 production history; status verified 7 September: completed take
+retrieved and rejected after ordered review. Not admitted, baked or published.
+Historical starting-image and commissioning records below are retained.
 
 ## Intent and correction
 
@@ -63,3 +63,29 @@ levitate it. Retain gentle offering motion and ordinary highlights, no jewelry
 advertisement sparkle, handoff or conjured object. Require complete native-frame
 review and actual R14-context replacement before any admission. No freezes,
 repeated frames, speed fitting or concealing the watch just outside the frame.
+
+## Retrieved result — 7 September
+
+Provider `creations_get` confirms N20aGPv6D9 completed on6September, with760credits
+in its metadata. This was an already commissioned take, not a new expense against
+the additional33,000-credit remainder. Downloaded to production/award-candidate/
+chain-open-palm-r15.mp4, SHA2ddddf0253ed6d23d0548ac8a54e94f4afdb6b6f945dbd37840ee637ae08cb64.
+1916x1080,24fps,193frames. The old queued status above is historical, not active.
+
+All49 six-fps samples and all193 native frames inspected in order. Full-size
+native0/96/192 inspected for geometry. The hand advances gently without an
+observed gross bounce; no watch appears. However, the starting single U develops
+an additional short chain arc beneath the fingers, visible in native96 and192,
+meeting the right-hand strand. This is an observed topology failure, not a claim
+about the generator's reasoning. Exact onset has not been isolated.
+
+It seems the take intended to preserve the readable offering and modest gift;
+that restraint works. The nearly front-facing palm and overhang leave ambiguous
+support/occlusion, and the later extra strand makes the actual object unreliable.
+Reject the whole source for the final cut; do not stretch a short opening to fill
+the gap or automatically order another take. Source decision saved by hash in
+the external audit. If the complete shot plan ultimately needs this pickup,
+prefer a genuinely upward-facing supported palm, camera looking down enough to
+see the whole single chain resting on skin, with both functional ends visible.
+Carry the exact chosen chain identity into that brief. This is a structural
+option for the finite retake plan, not a new commission.
