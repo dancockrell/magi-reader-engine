@@ -14,7 +14,9 @@ Supplemental detail from the latest pass: enlarged sample 4167 clearly shows Jim
 
 ## Review position
 
-Accepted sequential coverage: **00:00–13:24**, samples **0–4823**; next cursor **4824** of 5,347. This is approximately 90.2% of the sampled film, not a whole-film verdict.
+Accepted sequential coverage: **00:00–14:00**, samples **0–5039**; next cursor **5040** of 5,347. This is approximately 94.3% of the sampled film, not a whole-film verdict.
+
+The 13:24–14:00 pass preserves Jim's modest disclosure without a visible watch in his close-up. Consider Della recognition coverage before coda as an emotional opportunity, not a literal-script requirement. Magi riders from814.5 and camp gifts from823.333 are justified narrator comparisons; native camel gait remains pending. Return to adult couple at832 is appropriate, but enlarged5004 at834 confirms a complete watch and chain on their table after explicit sale, Jim's returning gloves/tie, and two densely jeweled arched combs requiring comparison with prior families. Shared smiles are valuable; unchanged watch-bearing setup is incompatible. Receipts004824,004896,004968 accepted. No film edits, generation, admission or publication; next14:00.
 
 The 12:48–13:24 pass follows the incorrect watch dance to770.5, then identifies useful hand-chain coverage through779.333 (enlarged4632). The lower chain leaves the image, so hidden-end absence and exact fittings are not certified. Standing gift transfer is promising but needs native hand/chain checks; a closer contact reset at788.333 remains an escalation. At790 Jim is already on the couch, his collar now open without the previous tie. The omitted sit-down and costume require reconciliation, but his hands-behind-head smile and Della's subsequent listening reaction are script-relevant performances worth protecting. Slight anticipation of the narrated gesture is not a forced-sync defect. Receipts004608,004680,004752 accepted. No edits, generation, admission or publication; next13:24.
 

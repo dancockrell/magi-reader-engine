@@ -106,6 +106,14 @@ Continuation through 08:00 resolves the earlier pending hair-result question: cu
 - At790 Jim is already seated and his collar is open without the previous tie. Reconcile costume and missing sit-down. His hands-behind-head smile is faithful and close enough to its narrated phrase; preserve this performance rather than imposing sentence-driven synchronization.
 - Della's listening reaction from797.833 is motivated. Assess its development through the upcoming watch-sale disclosure with sound before deciding duration or reuse.
 
+## Disclosure and coda through 14:00
+
+- Preserve Jim's modest sale disclosure; consider existing Della recognition reaction before leaving the couple. This is emotional editorial opportunity, not missing mandatory action.
+- Magi riders and camp gifts are text-supported comparisons. Do not literalize the manger into the domestic story or treat adult couple as incorrect for the narrator's affectionate children metaphor. Native camel gait/contact and sound-on coda pacing remain pending.
+- Ending couple shot begins832. Enlarged5004 at834 confirms a watch attached to chain on table after its explicit sale, plus Jim's returning gloves and tie. Reject unchanged setup.
+- Tag COMBS-ENDING-DENSE-JEWELS: two amber-toothed arched combs with dense pale jeweled crests. Compare against all prior observed families before selecting one persistent set.
+- Shared smiles communicate love well. Preserve that intention with chain alone and consistent unusable combs; restoring the watch destroys the sacrifice rather than completing it.
+
 ## Deferred / not grounds for reshoot
 
 - Solomon timing: earlier 1.603-second observed overlap was not a defect by itself. Continued review establishes a total tail of about 6.2 seconds; assess in moving sequence with sound before prescribing its endpoint.
