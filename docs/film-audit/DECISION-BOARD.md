@@ -114,6 +114,15 @@ Continuation through 08:00 resolves the earlier pending hair-result question: cu
 - Tag COMBS-ENDING-DENSE-JEWELS: two amber-toothed arched combs with dense pale jeweled crests. Compare against all prior observed families before selecting one persistent set.
 - Shared smiles communicate love well. Preserve that intention with chain alone and consistent unusable combs; restoring the watch destroys the sacrifice rather than completing it.
 
+## Final passage and credit tail: complete visual pass
+
+- Watch persists in table insert840.833–849.667 (enlarged5052) and shared dinner849.667–858.5 (enlarged5106). Single ornate comb changes to plain brown comb. Reject unchanged setups; preserve shared laughter only through fully reviewed compatible coverage.
+- Dinner ellipsis is legitimate. Native food/hand contact remains pending if any performance range is proposed for reuse.
+- Exterior retreat858.5–867.167 gives final words a warm domestic image. Preserve this closing intention; compare window geography with interior sources.
+- Literary credit montage follows: riders/title, window combs/cast, exterior/book note. Match canonical comb family even in credits; verify historical text and readable typography before release.
+- Fade is visibly present around889–890.5 with black tail to891.125. Do not diagnose missing fade. Sound-on score decay and final normal-speed rendering remain unverified.
+- All5347 six-per-second samples reviewed. Source inventory admission and complete shot plan remain required before any generation or editing.
+
 ## Deferred / not grounds for reshoot
 
 - Solomon timing: earlier 1.603-second observed overlap was not a defect by itself. Continued review establishes a total tail of about 6.2 seconds; assess in moving sequence with sound before prescribing its endpoint.

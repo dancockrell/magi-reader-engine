@@ -14,7 +14,9 @@ Supplemental detail from the latest pass: enlarged sample 4167 clearly shows Jim
 
 ## Review position
 
-Accepted sequential coverage: **00:00–14:00**, samples **0–5039**; next cursor **5040** of 5,347. This is approximately 94.3% of the sampled film, not a whole-film verdict.
+Accepted sequential coverage: **00:00–14:51.125**, all **5,347 samples** (0–5346); cursor **5347**. The complete six-per-second visual pass is finished. This is not source admission, normal-speed sound-on approval, or a finished-film verdict.
+
+Final pass: enlarged5052 confirms watch and single ornate comb on paper beside bread/jam; enlarged5106 confirms watch and plain comb beside chops. These ending setups remain incompatible with sale and persistent gift design, despite strong shared laughter. Exterior retreat begins858.5; final narration ends867.121 on that warm-window idea. Credits then revisit riders, window combs and exterior with small upper-left text. Credit factual claims and intended-size readability need verification. Picture and text fade together around889–890.5, with black to891.125; a closing fade is present, not yet sound-on certified. Receipts005040,005112,005184,005256,005328 accepted. No edits, generation, admission or publication. Next: source inventory and whole-film decision synthesis, carrying all unresolved native and audio checks forward.
 
 The 13:24–14:00 pass preserves Jim's modest disclosure without a visible watch in his close-up. Consider Della recognition coverage before coda as an emotional opportunity, not a literal-script requirement. Magi riders from814.5 and camp gifts from823.333 are justified narrator comparisons; native camel gait remains pending. Return to adult couple at832 is appropriate, but enlarged5004 at834 confirms a complete watch and chain on their table after explicit sale, Jim's returning gloves/tie, and two densely jeweled arched combs requiring comparison with prior families. Shared smiles are valuable; unchanged watch-bearing setup is incompatible. Receipts004824,004896,004968 accepted. No film edits, generation, admission or publication; next14:00.
 
