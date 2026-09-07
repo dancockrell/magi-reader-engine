@@ -74,6 +74,14 @@ Continuation through 08:00 resolves the earlier pending hair-result question: cu
 - Check framing/hand-position change near 624.167 and possible repeated source families across lapel/reaction shots. Do not call looping from similar staging alone.
 - Preserve the warmer reaction after the embrace. Money-versus-love narration does not require literal inserts of money, mathematicians or magi.
 
+## Parcel sequence through 11:36
+
+- Confirmed wrong starting state at 668.250: native frame 16038 begins with parcel already outside coat. All 12 frames in native sheet 016036-016048 inspected. Pocket extraction is not established.
+- Jim holds/offers the parcel during and after the explicit table-throw sentence instead of throwing it. Subsequent reassurance still has wrapping in his hand (enlarged 4070). The table destination only appears at the seated unwrapping cut around 687. Plan this entire sequence, not separate patches.
+- Bare hands during parcel handling (enlarged 4010) conflict with earlier gloved hair touch. Maintain the original no-gloves requirement.
+- Compare bulky parcel, smaller hand-held wrapping and table package as one named object. Do not canonize comb design from the still-unclear wide unwrapping frame (4167).
+- Preserve the warm reassurance and focused anticipation. Complete native string/paper/contact checks and the upcoming reaction/reveal review before source selection.
+
 ## Deferred / not grounds for reshoot
 
 - Solomon timing: earlier 1.603-second observed overlap was not a defect by itself. Continued review establishes a total tail of about 6.2 seconds; assess in moving sequence with sound before prescribing its endpoint.
