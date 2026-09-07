@@ -27,3 +27,5 @@ public/vtt/
 public/video/**/*.mp4
 production/
 tools/ffmpeg/
+__pycache__/
+*.pyc

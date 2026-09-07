@@ -4,6 +4,15 @@ Working instruction for film review, generation briefs and revision cycles.
 This protocol also applies to app/design diagnosis where competing requirements
 produce a locally plausible but globally wrong result.
 
+## Current production order — 7 September 2026
+
+For this film, [the complete ordered audit](film-audit/PROTOCOL.md) now precedes
+any further generation or patching. Read the whole story, lock the text-led
+storyboard, inspect the complete film at six sampled frames per second, maintain
+named-element identity/state records, review existing inventory, and plan every
+shot before spending on replacements. The local correction loop below is still
+required, but it cannot substitute for that whole-film design and review pass.
+
 ## Principle
 
 Begin with the constructive purpose the result appears to serve:
