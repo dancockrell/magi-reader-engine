@@ -19,6 +19,13 @@ Status: planning, not a generation order. One final planned round; no new genera
 - Limitation: chest-height handling is not the complete open-palm offering action. Native chain/finger/endpoints and comparison with jeweler/waiting chain unresolved.
 - Decision: promising performance coverage, NOT admitted. May pair with compatible existing open-palm detail and avoid a retake of this performance.
 
+## Inventory routing and chain-native follow-up
+
+- Reproducible inventory queue now groups241 paths into235 unique hashes:37 derived/context exports,41 gift/ending-priority sources,1 quarantine-only hash and156 remaining story sources. Categories route review only; filenames do not admit or reject art. A hash with a raw alias is not discarded just because another alias is an export/quarantine path.
+- All241 native frames of chain-only source bdf50939 inspected in eight sheets. No visible rewind, pose jump, disappearing watch or gross hand discontinuity at sheet scale. Enlarged source sample20 plus master2190 (jeweler) and2856 (waiting) compared.
+- Broad pale simple-link appearance is compatible, but exact clasps/fittings and tiny finger-link contact remain unresolved. Record in source native-review.json; no unsupported exact-identity match and no admission yet.
+- Next source work should compare gift families and inspect remaining chain details, not reshoot the promising Della expression. Queue is audit/inventory-queue.json; original inventory dispositions remain unchanged.
+
 ## Non-negotiable delivery boundaries
 
 No post-sale watch; one consistent comb set and chain; no literal child for boy or foolish children; maintain story action and geography. No freezes, loops, reverse playback or speed-fitting. Crops require full-range inspection. Finite planned alternatives must serve real coverage gaps, not unbounded beauty variations.
