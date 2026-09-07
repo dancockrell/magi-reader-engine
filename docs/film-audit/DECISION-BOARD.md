@@ -8,6 +8,8 @@ Provisional synthesis, not an admitted source list. Baseline v6; current detaile
 2. Watch-table shot: smoke-like emission and mismatched arm reflection. Investigate a clean earlier portion, or existing compatible watch footage.
 3. Room changes and body resets: incompatible apartment layouts around 01:04; native-confirmed resets around 02:47.750 and 02:50.750. Avoid mixing contradictory set families.
 4. Name-card framing jump at 01:32.750: native-confirmed. Find a clean span or substitute coverage.
+5. Hair-sale continuity at about 05:25.125: Sofronie's face/build and costume change between conversation and appraisal, alongside a different shop setup. Select one compatible performance/set family rather than conceal a character substitution with a transition.
+6. Sale-to-shopping costume change around 05:37.125: cream blouse/dark skirt becomes teal dress under the brown jacket. The offscreen haircut is valid; the unexplained wardrobe switch is a separate compatibility problem.
 
 ## Candidate families — not canonical yet
 
@@ -18,6 +20,9 @@ Provisional synthesis, not an admitted source list. Baseline v6; current detaile
 | Narrow wall mirror between windows | Earlier approach footage | Text-compatible placement, but remove actual resets and verify room. |
 | Freestanding / tabletop mirrors | Later hair-display performances | Distinct props; do not call all of them the same pier glass. |
 | Palm-supported gold watch | About 04:10–04:19 | Local ring check promising; compare case/dial at intended scale and later appearances. |
+| Sofronie A: broad face, dark high collar, round brooch | Counter conversation before 05:25.125 | Wig-display shop family; protect restrained businesslike performance. |
+| Sofronie B: slimmer angular face, rear bun, dark lapelled garment | Hair appraisal after 05:25.125 | Different face and shop presentation; cannot silently substitute for A. |
+| Pale linked chain on dark velvet | Enlarged sample 2148 / 05:58 | Track link shape, end fittings and decoration in later gift shots; material not visually certifiable. |
 
 ## Protect / possible reuse
 
@@ -27,6 +32,7 @@ Provisional synthesis, not an admitted source list. Baseline v6; current detaile
 - Hesitation around 04:38–04:46 and outward departure around 04:46–04:59: promising emotional cost followed by purposeful action. Native physical checks remain; do not confuse this departure with the older inward-running error.
 - Paired hair/watch composition: strong idea; only a physically sound range can survive.
 - Royal metaphors: narrator's imagined wit, not literal household events. Evaluate rhythm rather than reject automatically.
+- Della's quiet discovery at the jeweler around 05:56–06:00: attentive and personal, not ostentatious. Source-level physical review remains required.
 
 ## Questions that change the edit
 
