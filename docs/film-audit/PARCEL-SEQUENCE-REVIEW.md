@@ -91,6 +91,14 @@ The closer view belongs INSIDE the longer reassurance moment, before the two-sho
 
 ## Parcel and wrapping admission
 
+### Current edit selection — glance preserved
+
+Reassurance c2d7c32d now admits native0–240 with mandatory crop240,0,1440,810. Comfort3841beb5 now admits0–192 without crop. Complete source receipts cover61/61 and49/49 samples respectively; reassurance's actual cropped168–203 and comfort's native0–95 were additionally inspected. Both remain subject to contextual edit approval.
+
+The earlier reaction-to-comfort cut removed Della's upward glance. Supplemental actual cropped native198–239 now viewed consecutively: she looks down through207, raises her eyes208–211 and settles on Jim through239. Full-size239 and comfort0 preserve the same emotional pose and screen direction, though the mandatory reaction crop produces a modest framing change. No parcel reappears. This is a usable editorial handover to test, not yet a sound-on join approval.
+
+Reaction admission is extended to0–240 with the SAME mandatory crop. The original decision is retained byte-for-byte under source-decisions/history/8c1a9049...; a hash-pinned revision records the additional evidence. No review receipt was rewritten. Candidate timing is now reaction695.250–705.250 and comfort705.250–711.500 (native0–150), preserving the reveal entrance711.500. The extra1.75seconds come from the settled embrace tail, not retiming or duplicated footage. This current selection supersedes the provisional timing table below where it differs.
+
 ### Later selection update — 8 September
 
 Pocket source7fbab198 is now admitted only native0–72 exclusive, no crop. All61samples and all72selected native frames viewed, with frame71 enlarged. This establishes a reach into the coat, NOT completed extraction. Cut before the flat incompatible parcel appears; the following admitted thick-parcel insert supplies the actual release and landing. Open doorway/background still requires contextual reconciliation.

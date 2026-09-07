@@ -103,15 +103,16 @@ def main():
             b=a+hi-lo
             cuts.append({'start':a,'end':b,'current_reference':{
                 **span,'source_in':lo,'source_out':hi}, 'historic_cut':item})
-    # Replace the designed parcel and ending sections, preserving every frame.
+    # Independent section work feeds this one timeline, including explicit gaps.
     parcel = decisions['parcel_slots']
     closing = read('docs/film-audit/ENDING-SEQUENCE-PLAN.json')['shots']
-    overrides = [{**s,'selected_candidate':s} for s in parcel+closing]
+    combs = read('docs/film-audit/COMBS-SEQUENCE-PLAN.json')['shots']
+    overrides = [{**s,'selected_candidate':s} for s in parcel+combs+closing]
     for override in overrides:
         choice=override['selected_candidate']
         matches=[i for i in inventory if (choice.get('source_sha256')==i['sha256']
                  or (not choice.get('source_sha256') and
-                     Path(choice.get('source','')).name==Path(i['path']).name))]
+                     Path(choice.get('source') or '').name==Path(i['path']).name))]
         if matches:
             if len(set(i['sha256'] for i in matches))!=1:
                 raise ValueError('Ambiguous candidate name; pin an explicit hash')
@@ -171,7 +172,9 @@ def main():
         '',f'{len(cuts)} candidate intervals; 47 story beats; 21,387 native frames. No new render or spending.',
         '', '| Interval | Time | Existing reference or proposed candidate | Story | Treatment / blocker |','|---|---|---|---|---|']
     for s in cuts:
-        label=s.get('selected_candidate',{}).get('source',s.get('historic_cut',{}).get('name','UNRESOLVED COVERAGE'))
+        choice=s.get('selected_candidate',{})
+        label=(choice.get('source') or choice.get('source_path') or
+               s.get('historic_cut',{}).get('name') or 'UNRESOLVED COVERAGE')
         lines.append('| '+s['id']+' | '+f"{s['start']/24:.3f}–{s['end']/24:.3f}"+' | '+label+' | '+','.join(s['beats'])+' | '+
             '; '.join(s['treatment']).replace('|','/')+' **Tasks:** '+','.join(s['tasks'])+' |')
     args.output.with_suffix('.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')

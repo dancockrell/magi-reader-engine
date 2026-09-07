@@ -6,6 +6,49 @@
   "timeline_start": 18957,
   "timeline_end": 21387,
   "note": "Exact proposed timing at normal speed. Source admission and contextual audiovisual approval are separate. This is not the complete final-shot-plan and cannot be submitted as one.",
+  "finite_closing_pickups": {
+    "status": "ready-briefs-await-combined-final-round-allocation-no-spend",
+    "take_count": 2,
+    "automatic_retries": 0,
+    "model": "bytedance-seedance-pro-2.0",
+    "resolution": "1080p",
+    "aspect_ratio": "16:9",
+    "with_sound_effects": false,
+    "generated_seconds": 25,
+    "planned_used_frames": 568,
+    "proposed_credit_ceiling": 18000,
+    "estimated_credits": 17500,
+    "price_basis": "Read-only provider check8September: model catalog supports15seconds and10seconds at1080p; completed shared-ending creationw42kFSq7EI metadata confirms actual10second cost7000. The15second10500 estimate extrapolates that rate, not a fresh quote. No dry-run quote field exists in exposed video_generate. Parent must reconcile allocation with whole-film33000 remainder before dispatch; this18000 is a proposed subcap, not new authority.",
+    "provider_plan_corrections": "Provider planning response suggested another embrace, new character sheets and open white shirt alone. Do not follow those generic suggestions: approved identities/room already exist; Jim keeps dark coat and brown waistcoat over open cream collar; existing shared-ending already performs the lean. No new sheets or incidental music/SFX generation.",
+    "timing_solution": "Use25 additional existing native ancient-gifts frames, changing C04 end19979 to20004. The new15second domestic take then exactly fills20004–20364. C06 remains20364–20604 and is used once. C07 uses first208frames of a10second retreat, leaving32frames/1.333seconds of trim handle. No speed fitting, duplicate frames or narration shift.",
+    "required_existing_revision": "../magi-film-audit-20260907/admit-revision-ancient-gifts-closing-20260908.json",
+    "anchors": {
+      "before_lean": {"path": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/priority-batch-01/shared-ending/native/000000-000001/000000.jpg", "sha256": "4422c16a240d0d776b1109275c1952ed61819c667a6d9f028c514427280b5817", "source_sha256": "898dd17709a1734428d3e3d8f10965c82293082ce4c751f90d5ff8538f1e73c4", "native_frame": 0, "role": "Identity, costume, sofa, window and pre-lean posture reference; not a request to replay existing action."},
+      "after_lean": {"path": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/priority-batch-01/shared-ending/native/000239-000240/000239.jpg", "sha256": "c9785b7180e3626c7bd851f38ac1fea2f2315faae03aeab81f6aa4353b5da3e1", "source_sha256": "898dd17709a1734428d3e3d8f10965c82293082ce4c751f90d5ff8538f1e73c4", "native_frame": 239, "role": "Exact outgoing last admitted frame; start keyframe for retreat. Upload local extraction, not approximate provider endframe240."}
+    },
+    "takes": [
+      {
+        "id": "C05-domestic-resolution-final-round",
+        "duration": 15,
+        "timeline": [20004,20364],
+        "target_native_range": [0,360],
+        "reference_mode": "references.image before_lean; no simultaneous keyframes",
+        "camera": "New medium two-shot at seated eye height, 30 degrees toward Della's side while remaining on the same side of their axis; one gentle physical approach. Della stays left and Jim right.",
+        "prompt": "One uninterrupted15-second photorealistic1900s period-film shot, The Gift of the Magi. The reference image gives the EXACT two adult identities, clothing, sofa, cracked plaster and winter window. Della has short brown curls, teal-blue dress and ivory collar. Jim has the same dark coat and brown waistcoat over an OPEN cream shirt collar. Story: both have learned that each sold a treasure to buy the other's gift. The treasured thing now is their ordinary life together, not an object. It seems earlier closing images tried to celebrate love by displaying gifts, but returned the sold watch. Preserve the generosity through a NEW shared moment, not possessions. Compose a medium seated two-shot30degrees toward Della's side, still Della screen-left and Jim screen-right, both faces readable, sofa and window in their correct places. Begin already seated side by side, upright with a little breathing space, Jim's arm resting along the sofa behind her as in the reference. Della exhales softly, glances at the modest room, then turns back to him. He catches that glance with a small affectionate smile. She answers with a restrained almost-laugh, and their shoulders settle comfortably close. Finish upright meeting each other's eyes, ready for the following closer shot. Keep her head off his shoulder throughout: the NEXT shot owns that one final lean. No repeated embrace, kiss, sobbing or broad laughter. Hands and laps stay naturally below the lower edge; no table, gifts, watch, chain, combs, package or food enters frame. One gentle physical camera approach, native real-time continuous forward motion. Natural blinking and breathing, stable faces and anatomy, exactly two adults. Silent, no dialogue, lip-sync, music, captions or titles. No internal edits, dissolves, fades, loops, frozen poses, reverse movement or slow motion.",
+        "acceptance": "Distinct new shared performance, not duplicate of C06; no grief restart; same costume/identity and Della-left/Jim-right; no head-on-shoulder until C06;360native forward frames usable. Inspect incoming historical cut and outgoing medium-to-close upright posture at normal speed."
+      },
+      {
+        "id": "C07-final-room-retreat-final-round",
+        "duration": 10,
+        "timeline": [20604,20812],
+        "target_native_range": [0,208],
+        "reference_mode": "keyframes.start after_lean; no references[]; no imposed end keyframe",
+        "camera": "Straight slow dolly backward INTO the room from the supplied front-facing sofa camera. Window stays BEHIND the couple. Stop at a medium-wide composition; do not travel through sofa, wall or window.",
+        "prompt": "One uninterrupted10-second continuation of the supplied exact first frame, photorealistic The Gift of the Magi period film. Preserve the two adult faces and their settled pose: Della on screen-left rests her short brown curls against Jim's shoulder, Jim screen-right inclines his head toward hers with a small warm smile. Same teal-blue dress and ivory collar; same dark coat, brown waistcoat and OPEN cream collar; same worn blue-green sofa, cracked plaster and cold winter window BEHIND them. They have understood each other's sacrifice and remain quietly together. It seems the old exterior retreat intended to give this household a loving farewell, but changed the woman and the room. Preserve that farewell by retreating within the real room rather than inventing another household. From this exact close framing, the camera immediately begins a very slow straight physical dolly backward into the room, away from the sofa. The window stays behind Jim; the camera never crosses the sofa, wall or glass. Over eight seconds reveal only more of the same sofa, surrounding plaster, curtain and modest bare floor, ending in a composed medium-wide view of the two still resting close. Their heads do not separate and repeat the lean; only natural breathing, subtle blinking and a soft living smile. Keep their hands relaxed below the main focus, empty; no tabletop or gifts in the widening composition. No watch, chain, combs, package, baby, third person, tie or changed hair. Do not turn this into supper. Gentle continuous native motion, stable architecture, no sudden zoom. Silent: no dialogue, lip-sync or music. No internal cuts, dissolves, fade, black, loop, freeze, reverse or slow motion. Leave the final living image for the editor's later end-of-film fade.",
+        "acceptance": "Exact lastframe continuation without reset; camera retreat begins promptly so selected208frames contain the move; Della retains resting posture once, same two adults and open collar; no newly exposed conflicting props/geography. No exterior conversion. Editor owns eventual fade, not generator."
+      }
+    ]
+  },
   "shots": [
     {
       "id": "C01",
@@ -15,7 +58,8 @@
       "source_sha256": "fad6ce3e7617f181e82b7e98e0f09a9782061255116498b039d001160f316807",
       "source_in": 0,
       "source_out": 360,
-      "status": "native-hands-reviewed-formal-source-admission-pending",
+      "status": "source-admitted-context-pending",
+      "admission_input": "../magi-film-audit-20260907/admit-selected-jim-revelation-r1.json",
       "beats": [
         "B043",
         "B044"
@@ -59,27 +103,27 @@
     {
       "id": "C04",
       "start": 19768,
-      "end": 19979,
+      "end": 20004,
       "source": "scene-12/raw/02-ancient-gifts.mp4",
       "source_sha256": "8a0bc8912fb595cf58c6e64bed117d44961427209dd73b88c176638cf0385506",
       "source_in": 0,
-      "source_out": 211,
+      "source_out": 236,
       "status": "source-admitted-context-pending",
       "beats": [
         "B045"
       ],
-      "purpose": "The historical gifts, then return to Jim and Della before the narrator names the flat.",
+      "purpose": "Historical gifts remain through833.5 during exchange/duplication sentence ending834.817. Return to Jim and Della before the flat is named. Extra25nativeframes reviewed and extension admitted; no retiming.",
       "join": "Ancient objects must not be confused with household gifts."
     },
     {
       "id": "C05",
-      "start": 19979,
+      "start": 20004,
       "end": 20364,
-      "status": "unresolved-coverage-gap",
+      "status": "finite-pickup-brief-ready-not-generated",
       "beats": [
         "B045"
       ],
-      "purpose": "Sixteen and one twenty-fourth seconds of the adult couple's shared sacrifice, without the watch or incompatible gifts.",
+      "purpose": "Fifteen seconds of the adult couple's shared sacrifice, without the watch or incompatible gifts. Original385frame gap reduced by25 reviewed ancient-gifts frames, not stretched footage.",
       "rejected_alternatives": [
         "03-couple-gifts: sold watch, gloves/tie reset",
         "04-gifts-insert: sold watch and incompatible comb",
@@ -91,7 +135,13 @@
         "Emotion should deepen into affection, not restart grief.",
         "Normal-speed distinct footage; no duplication of C02 or C06."
       ],
-      "next_action": "Resolve from compatible unused performance ranges or name finite pickups in full-film retake plan; no automatic generation."
+      "next_action": "Use finite_closing_pickups C05 brief: one15second take, not generated yet. C04 extra25frames are now admitted, leaving exactly360 new frames here. Coordinate with one10second C07 take; no automatic retries.",
+      "newly_checked_alternatives": [
+        {"source": "supper-detail-r1.mp4", "sha256": "643819f9a715389b76904e599e597b6197d9899dea8592da8b120b776f6cbb94", "decision": "reserve-for-preparation-not-happy-coda", "reason": "Whole61samples: uncooked chops on plate beside empty pan and coffee pot; supplies preparation, not the couple's emotional resolution."},
+        {"source": "supper-to-della-r1.mp4", "sha256": "b0229d4f429dc658c83af2be7c96a613c5e334fc751f63a70363c3209328087e", "decision": "reserve-for-waiting-not-happy-coda", "reason": "Whole61samples: pan handle release, tilt up to consistent short-curled Della; she looks offscreen with concern rather than post-revelation happiness."},
+        {"source": "chops-offer-r1.mp4", "sha256": "4e2ce1aae074b8809aa707ac7d281147330bafd11c15fbfb67bc2000c7996a96", "decision": "not-selected-for-ending", "reason": "Whole61samples: standing Jim wears a tie, reversing the seated/open-collar state in C01; Della watches him anxiously."},
+        {"source": "della-listening-r1.mp4", "sha256": "4b52792ee89b3c46c10997c0e2744191b7aebf7d008422cad6930d6342e0bd3d", "decision": "reserve-before-revelation-not-after", "reason": "Whole61samples: concerned listening throughout; would restart uncertainty after C02 has resolved it."}
+      ]
     },
     {
       "id": "C06",
@@ -113,14 +163,13 @@
       "id": "C07",
       "start": 20604,
       "end": 20812,
-      "source": "scene-12/raw/06-window-final.mp4",
-      "source_in": 0,
-      "source_out": 208,
-      "status": "identity-and-geography-conflict-not-admitted",
+      "rejected_source": "scene-12/raw/06-window-final.mp4",
+      "rejected_source_sha256": "53b90b27d339c685276f76211b63a8a30bfa257e888cb1e9d478e1d384ae86b7",
+      "status": "finite-pickup-brief-ready-not-generated",
       "beats": [
         "B046"
       ],
-      "purpose": "Exterior retreat carries final words through867.167; warm household rather than extra prop display.",
+      "purpose": "One10second room retreat from exact C06 lastframe; select first208nativeframes to carry final words through867.167. Window stays behind couple: no camera passage through sofa/window, no incompatible exterior people.",
       "join": "All61samples and enlarged starting frame reviewed8September. Exterior shows a supper-table couple, not the seated sofa composition; woman's swept-back hair and dark costume differ from short-curled teal/ivory Della. Warm mood is useful but identity and window geography cannot be assumed. Keep slot unresolved; do not approve because figures are small."
     },
     {

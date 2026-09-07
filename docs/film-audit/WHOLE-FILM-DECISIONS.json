@@ -16,7 +16,7 @@
     "T07": "Preparation/waiting/arrival: preserve attached-hair curling and correct ascent. Reconcile collar, hidden parcel, seated waiting, apartment door closure and subsequent approach.",
     "T08": "Appeal: preserve couple movement then use compatible face coverage through questions; remove gloves, side resets and haze. Do not crossfade over incompatible bodies.",
     "T09": "Voice: redo the male narrator's Christmas Eve boy passage with tender intimate address, preserving words and surrounding voice character; listen in context before replacing.",
-    "T10": "Parcel: execute designed pocket-to-table-to-unwrapped sequence; admit remaining extraction/reassurance/reaction/comfort ranges and inspect action joins.",
+    "T10": "Parcel: execute admitted pocket-to-table-to-unwrapped sequence; preserve the reaction's upward glance before comfort and inspect action joins, framing and sound in context.",
     "T11": "Combs: use only three amber circular-jeweled crests. Complete sad-ownership, same-combs hug and remembering coverage; do not return to a full box after removal.",
     "T12": "Chain-to-disclosure: open palm and proud performance, then Jim settles only once; bridge standing tied collar to seated open collar without reset.",
     "T13": "Ending: use admitted recognition and shared ending once each. Resolve 385-frame domestic-coda gap and incompatible final-window woman; no sold watch or wrong combs.",
@@ -75,11 +75,11 @@
   "parcel_slots": [
     {"start":16038,"end":16110,"source":"parcel-toss-r8b.mp4","source_in":0,"source_out":72,"purpose":"Pocket reach; cut before wrong flattened parcel becomes visible","status":"source-admitted-context-pending"},
     {"start":16110,"end":16182,"source":"parcel-insert-r9.mp4","source_in":24,"source_out":96,"purpose":"Release and landing on table","status":"source-admitted-context-pending"},
-    {"start":16182,"end":16350,"source":"parcel-reassurance-r8.mp4","source_in":0,"source_out":168,"crop_xywh":[240,0,1440,810],"purpose":"Warm reassurance with parcel excluded","status":"candidate-admission-pending"},
+    {"start":16182,"end":16350,"source":"parcel-reassurance-r8.mp4","source_in":0,"source_out":168,"crop_xywh":[240,0,1440,810],"purpose":"Warm reassurance with parcel excluded","status":"source-admitted-context-pending"},
     {"start":16350,"end":16404,"source":"02-reassurance.mp4","source_in":168,"source_out":222,"crop_xywh":[736,0,1184,666],"purpose":"Jim's intimate reaction","status":"source-admitted-context-pending"},
-    {"start":16404,"end":16476,"source":"parcel-reassurance-r8.mp4","source_in":168,"source_out":240,"crop_xywh":[240,0,1440,810],"purpose":"Finish reassurance without re-presenting parcel","status":"candidate-admission-pending"},
+    {"start":16404,"end":16476,"source":"parcel-reassurance-r8.mp4","source_in":168,"source_out":240,"crop_xywh":[240,0,1440,810],"purpose":"Finish reassurance without re-presenting parcel","status":"source-admitted-context-pending"},
     {"start":16476,"end":16686,"source":"unwrap-r10.mp4","source_in":0,"source_out":210,"purpose":"Paper opens to closed inner case","status":"source-admitted-context-pending"},
-    {"start":16686,"end":16884,"source":"reaction-r10.mp4","source_in":0,"source_out":198,"crop_xywh":[0,0,1728,972],"purpose":"Joy to grief; mandatory crop excludes tied package; inner lid opens during reaction ellipsis","status":"source-admitted-context-pending"},
-    {"start":16884,"end":17076,"source":"comfort-r11.mp4","source_in":0,"source_out":192,"purpose":"Jim comforts Della without a doorway reset","status":"candidate-admission-pending"}
+    {"start":16686,"end":16926,"source":"reaction-r10.mp4","source_in":0,"source_out":240,"crop_xywh":[0,0,1728,972],"purpose":"Joy to grief then upward appeal; mandatory crop excludes tied package; retain the glance before comfort","status":"source-admitted-context-pending"},
+    {"start":16926,"end":17076,"source":"comfort-r11.mp4","source_in":0,"source_out":150,"purpose":"Jim comforts upward-looking Della; trim settled embrace tail, not her glance; check modest framing change at join","status":"source-admitted-context-pending"}
   ]
 }

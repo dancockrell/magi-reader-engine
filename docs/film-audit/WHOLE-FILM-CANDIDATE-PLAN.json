@@ -408,7 +408,7 @@
     "T07": "Preparation/waiting/arrival: preserve attached-hair curling and correct ascent. Reconcile collar, hidden parcel, seated waiting, apartment door closure and subsequent approach.",
     "T08": "Appeal: preserve couple movement then use compatible face coverage through questions; remove gloves, side resets and haze. Do not crossfade over incompatible bodies.",
     "T09": "Voice: redo the male narrator's Christmas Eve boy passage with tender intimate address, preserving words and surrounding voice character; listen in context before replacing.",
-    "T10": "Parcel: execute designed pocket-to-table-to-unwrapped sequence; admit remaining extraction/reassurance/reaction/comfort ranges and inspect action joins.",
+    "T10": "Parcel: execute admitted pocket-to-table-to-unwrapped sequence; preserve the reaction's upward glance before comfort and inspect action joins, framing and sound in context.",
     "T11": "Combs: use only three amber circular-jeweled crests. Complete sad-ownership, same-combs hug and remembering coverage; do not return to a full box after removal.",
     "T12": "Chain-to-disclosure: open palm and proud performance, then Jim settles only once; bridge standing tied collar to seated open collar without reset.",
     "T13": "Ending: use admitted recognition and shared ending once each. Resolve 385-frame domestic-coda gap and incompatible final-window woman; no sold watch or wrong combs.",
@@ -6561,11 +6561,23 @@
           810
         ],
         "purpose": "Warm reassurance with parcel excluded",
-        "status": "candidate-admission-pending",
+        "status": "source-admitted-context-pending",
         "source_sha256": "c2d7c32de87c364c72ab9d41cb7846d2062514ca244ddc2a67a406c16b7187bd",
         "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\parcel-reassurance-r8.mp4",
-        "ledger_status": "unreviewed",
-        "ledger_ranges": []
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 240,
+            "crop": [
+              240,
+              0,
+              1440,
+              810
+            ],
+            "entity_compatibility": "Della left/Jim right, short curls, teal/ivory, tied-collar Jim. Mandatory crop excludes parcel and hands; background doorway remains a contextual geography task. Range supports two nonoverlapping pieces, not a loop."
+          }
+        ]
       },
       "id": "F090",
       "beats": [
@@ -6624,6 +6636,17 @@
         "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\02-reassurance.mp4",
         "ledger_status": "admit",
         "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 168,
+            "crop": [
+              736,
+              0,
+              1184,
+              666
+            ],
+            "entity_compatibility": "Adult Jim in tied collar looks screen-left to Della; brief hand gestures at crop left, no visible parcel/chain/watch. Della is offscreen, so this supports a loving reaction rather than a new physical gift exchange. Same doorway remains in background; do not claim a new entry."
+          },
           {
             "start": 168,
             "end": 222,
@@ -6688,11 +6711,23 @@
           810
         ],
         "purpose": "Finish reassurance without re-presenting parcel",
-        "status": "candidate-admission-pending",
+        "status": "source-admitted-context-pending",
         "source_sha256": "c2d7c32de87c364c72ab9d41cb7846d2062514ca244ddc2a67a406c16b7187bd",
         "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\parcel-reassurance-r8.mp4",
-        "ledger_status": "unreviewed",
-        "ledger_ranges": []
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 240,
+            "crop": [
+              240,
+              0,
+              1440,
+              810
+            ],
+            "entity_compatibility": "Della left/Jim right, short curls, teal/ivory, tied-collar Jim. Mandatory crop excludes parcel and hands; background doorway remains a contextual geography task. Range supports two nonoverlapping pieces, not a loop."
+          }
+        ]
       },
       "id": "F092",
       "beats": [
@@ -6779,31 +6814,31 @@
     },
     {
       "start": 16686,
-      "end": 16884,
+      "end": 16926,
       "source": "reaction-r10.mp4",
       "source_in": 0,
-      "source_out": 198,
+      "source_out": 240,
       "crop_xywh": [
         0,
         0,
         1728,
         972
       ],
-      "purpose": "Joy to grief; mandatory crop excludes tied package; inner lid opens during reaction ellipsis",
+      "purpose": "Joy to grief then upward appeal; mandatory crop excludes tied package; retain the glance before comfort",
       "status": "candidate-plan-blocked-not-renderable",
       "selected_candidate": {
         "start": 16686,
-        "end": 16884,
+        "end": 16926,
         "source": "reaction-r10.mp4",
         "source_in": 0,
-        "source_out": 198,
+        "source_out": 240,
         "crop_xywh": [
           0,
           0,
           1728,
           972
         ],
-        "purpose": "Joy to grief; mandatory crop excludes tied package; inner lid opens during reaction ellipsis",
+        "purpose": "Joy to grief then upward appeal; mandatory crop excludes tied package; retain the glance before comfort",
         "status": "source-admitted-context-pending",
         "source_sha256": "8c1a9049d6186873090b0b9b496aa53dfe3bf03a9e09a314ea661ca55564c5d3",
         "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\reaction-r10.mp4",
@@ -6811,14 +6846,14 @@
         "ledger_ranges": [
           {
             "start": 0,
-            "end": 198,
+            "end": 240,
             "crop": [
               0,
               0,
               1728,
               972
             ],
-            "entity_compatibility": "Della short curls/teal/ivory at left, Jim shoulder at right; downward look toward offscreen combs. Mandatory crop excludes tied package throughout admitted range. Keep same axis into comfort."
+            "entity_compatibility": "Della short curls/teal/ivory at left, Jim shoulder at right; downward look toward offscreen combs. Mandatory crop excludes tied package throughout admitted range. Keep same axis into comfort. Extension198\u2013240: eyes remain down through207, lift208\u2013211, settle on Jim through239; no parcel enters crop."
           }
         ]
       },
@@ -6854,25 +6889,32 @@
       "next": "F095"
     },
     {
-      "start": 16884,
+      "start": 16926,
       "end": 17076,
       "source": "comfort-r11.mp4",
       "source_in": 0,
-      "source_out": 192,
-      "purpose": "Jim comforts Della without a doorway reset",
+      "source_out": 150,
+      "purpose": "Jim comforts upward-looking Della; trim settled embrace tail, not her glance; check modest framing change at join",
       "status": "candidate-plan-blocked-not-renderable",
       "selected_candidate": {
-        "start": 16884,
+        "start": 16926,
         "end": 17076,
         "source": "comfort-r11.mp4",
         "source_in": 0,
-        "source_out": 192,
-        "purpose": "Jim comforts Della without a doorway reset",
-        "status": "candidate-admission-pending",
+        "source_out": 150,
+        "purpose": "Jim comforts upward-looking Della; trim settled embrace tail, not her glance; check modest framing change at join",
+        "status": "source-admitted-context-pending",
         "source_sha256": "3841beb55099a884aecf2908497f3af4b71192b3f385a430f362ec7685343e8a",
         "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\comfort-r11.mp4",
-        "ledger_status": "unreviewed",
-        "ledger_ranges": []
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 192,
+            "crop": null,
+            "entity_compatibility": "Della short curls teal/ivory left, Jim shoulder right and bare hand; no gifts in frame. Only grief/comfort context. Reaction-to-upward-glance join unresolved."
+          }
+        ]
       },
       "id": "F095",
       "beats": [
@@ -6902,52 +6944,66 @@
       "next": "F096"
     },
     {
+      "id": "F096",
       "start": 17076,
-      "end": 17159,
-      "current_reference": {
-        "source_sha256": "7be8581e461c95e154a14c5b1d490ac95d2e550d99f49e60c0fcfe138edeb58f",
-        "source_in": 1038,
-        "source_out": 1121,
-        "timeline_start": 16038,
-        "timeline_end": 18280,
-        "crop_pipeline": [],
-        "provenance": [
+      "end": 17316,
+      "seconds": [
+        711.5,
+        721.5
+      ],
+      "beat_ids": [
+        "B036",
+        "B037"
+      ],
+      "source_sha256": "c053541f0d27eee05abaf0fa848a5bdd035df593865f4bdedbae2e29aea1de91",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": null,
+      "status": "candidate-plan-blocked-not-renderable",
+      "purpose": "The gift is revealed: the three canonical combs, not a new shop-window set.",
+      "start_state": "All three combs in open black case, brown wrapper on table; Jim has already given it.",
+      "end_state": "Same three combs remain in case.",
+      "join_in": "Leave preceding embrace for the object that caused tears; case was opened offscreen during the reaction/comfort.",
+      "join_out": "Cut to the giver's affectionate attention, not another consecutive insert.",
+      "narration_alignment": "Reveal anticipates For there lay The Combs at712.818 by1.318seconds.",
+      "selected_candidate": {
+        "id": "CB01",
+        "start": 17076,
+        "end": 17316,
+        "seconds": [
+          711.5,
+          721.5
+        ],
+        "beat_ids": [
+          "B036",
+          "B037"
+        ],
+        "source_sha256": "c053541f0d27eee05abaf0fa848a5bdd035df593865f4bdedbae2e29aea1de91",
+        "source_in": 0,
+        "source_out": 240,
+        "crop_xywh": null,
+        "status": "reuse-admitted-range",
+        "purpose": "The gift is revealed: the three canonical combs, not a new shop-window set.",
+        "start_state": "All three combs in open black case, brown wrapper on table; Jim has already given it.",
+        "end_state": "Same three combs remain in case.",
+        "join_in": "Leave preceding embrace for the object that caused tears; case was opened offscreen during the reaction/comfort.",
+        "join_out": "Cut to the giver's affectionate attention, not another consecutive insert.",
+        "narration_alignment": "Reveal anticipates For there lay The Combs at712.818 by1.318seconds.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\final-round-01\\combs-reveal.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene10-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline Jim softens through closing fade and credits"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
+            "start": 0,
+            "end": 240,
+            "crop": null,
+            "entity_compatibility": "DELLA-COMBS amber-three-circular-jewel-crests-v1, all three still in open case. Only before removal; do not restore boxed state after Della hugs them."
           }
         ]
       },
-      "historic_cut": {
-        "start": 896,
-        "end": 1121,
-        "name": "The combs",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-10/raw/05-combs-reveal.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 225,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F096",
       "beats": [
         "B036",
         "B037"
       ],
-      "component_subrange": {
-        "in": 1038,
-        "out": 1121,
-        "offset_from_original_historic_start": 142,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T10",
         "T11",
@@ -6966,59 +7022,102 @@
         "The SAME side-and-back set, tortoiseshell and jewelled rims; detail and faces carry value and loss."
       ],
       "evidence": [
-        "004248.json:shots[0]"
+        "004248.json:shots[0]",
+        "004248.json:shots[1]",
+        "004320.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F095",
       "next": "F097"
     },
     {
-      "start": 17159,
-      "end": 17384,
-      "current_reference": {
-        "source_sha256": "7be8581e461c95e154a14c5b1d490ac95d2e550d99f49e60c0fcfe138edeb58f",
-        "source_in": 1121,
-        "source_out": 1346,
-        "timeline_start": 16038,
-        "timeline_end": 18280,
-        "crop_pipeline": [],
-        "provenance": [
+      "id": "F097",
+      "start": 17316,
+      "end": 17484,
+      "seconds": [
+        721.5,
+        728.5
+      ],
+      "beat_ids": [
+        "B037"
+      ],
+      "source_sha256": "40a9eba1de3685e1b0d0405087fc6bc4631d4d7cf7685c6a6f72ed0ec388b6e6",
+      "source_in": 0,
+      "source_out": 168,
+      "crop_xywh": [
+        736,
+        0,
+        1184,
+        666
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "purpose": "Let the cost and desire live in Jim's loving attention rather than18consecutive seconds of product photography.",
+      "start_state": "Jim looks screen-left toward offscreen Della; gifts remain offscreen.",
+      "end_state": "His small open-hand emphasis lowers and he remains attentive.",
+      "join_in": "Object-to-giver cut preserves Della-left/Jim-right axis.",
+      "join_out": "Return to canonical object detail after his gesture settles.",
+      "narration_alignment": "Supports remembered desire and value, not lip-sync; check in full narration screening.",
+      "admission_input": "../../../magi-film-audit-20260907/admit-revision-jim-combs-portrait.json",
+      "reuse_exclusion": "B034 already uses168\u2013222 of this source; this range is disjoint and cannot be used again elsewhere.",
+      "selected_candidate": {
+        "id": "CB02",
+        "start": 17316,
+        "end": 17484,
+        "seconds": [
+          721.5,
+          728.5
+        ],
+        "beat_ids": [
+          "B037"
+        ],
+        "source_sha256": "40a9eba1de3685e1b0d0405087fc6bc4631d4d7cf7685c6a6f72ed0ec388b6e6",
+        "source_in": 0,
+        "source_out": 168,
+        "crop_xywh": [
+          736,
+          0,
+          1184,
+          666
+        ],
+        "status": "reuse-admitted-range",
+        "purpose": "Let the cost and desire live in Jim's loving attention rather than18consecutive seconds of product photography.",
+        "start_state": "Jim looks screen-left toward offscreen Della; gifts remain offscreen.",
+        "end_state": "His small open-hand emphasis lowers and he remains attentive.",
+        "join_in": "Object-to-giver cut preserves Della-left/Jim-right axis.",
+        "join_out": "Return to canonical object detail after his gesture settles.",
+        "narration_alignment": "Supports remembered desire and value, not lip-sync; check in full narration screening.",
+        "admission_input": "../../../magi-film-audit-20260907/admit-revision-jim-combs-portrait.json",
+        "reuse_exclusion": "B034 already uses168\u2013222 of this source; this range is disjoint and cannot be used again elsewhere.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\02-reassurance.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene10-v1-preview.mp4"
+            "start": 0,
+            "end": 168,
+            "crop": [
+              736,
+              0,
+              1184,
+              666
+            ],
+            "entity_compatibility": "Adult Jim in tied collar looks screen-left to Della; brief hand gestures at crop left, no visible parcel/chain/watch. Della is offscreen, so this supports a loving reaction rather than a new physical gift exchange. Same doorway remains in background; do not claim a new entry."
           },
           {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline Jim softens through closing fade and credits"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
+            "start": 168,
+            "end": 222,
+            "crop": [
+              736,
+              0,
+              1184,
+              666
+            ],
+            "entity_compatibility": "Tied-collar adult Jim, looking screen-left; compatible with parcel-reassurance-r8, not later open-collar sofa footage. No visible parcel, watch or combs in mandatory crop."
           }
         ]
       },
-      "historic_cut": {
-        "start": 1121,
-        "end": 1346,
-        "name": "The Broadway window",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-10/raw/06-shop-memory.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 225,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F097",
       "beats": [
         "B037"
       ],
-      "component_subrange": {
-        "in": 1121,
-        "out": 1346,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T11",
         "T15"
@@ -7033,62 +7132,71 @@
         "The SAME side-and-back set, tortoiseshell and jewelled rims; detail and faces carry value and loss."
       ],
       "evidence": [
-        "004248.json:shots[0]",
-        "004248.json:shots[1]",
         "004320.json:shots[0]",
         "004320.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F096",
       "next": "F098"
     },
     {
-      "start": 17384,
-      "end": 17608,
-      "current_reference": {
-        "source_sha256": "7be8581e461c95e154a14c5b1d490ac95d2e550d99f49e60c0fcfe138edeb58f",
-        "source_in": 1346,
-        "source_out": 1570,
-        "timeline_start": 16038,
-        "timeline_end": 18280,
-        "crop_pipeline": [],
-        "provenance": [
+      "id": "F098",
+      "start": 17484,
+      "end": 17676,
+      "seconds": [
+        728.5,
+        736.5
+      ],
+      "beat_ids": [
+        "B037"
+      ],
+      "source_sha256": "bf0a3838760cf93a3ccc6c1194b2480d206839911b2c78bf664368be09ce4dc3",
+      "source_in": 0,
+      "source_out": 192,
+      "crop_xywh": null,
+      "status": "candidate-plan-blocked-not-renderable",
+      "purpose": "Return to the same jeweled rims and amber teeth as the narration describes their unattainable value.",
+      "start_state": "Three combs still in open case.",
+      "end_state": "Three combs still in open case.",
+      "join_in": "The intervening Jim portrait separates two related moving object views; no repeated frames or direct camera reset.",
+      "join_out": "Cut to Della for the loss of the hair, not an incompatible mirror or a watch.",
+      "narration_alignment": "Object remains visible during the description; no return to this full case after CB05.",
+      "selected_candidate": {
+        "id": "CB03",
+        "start": 17484,
+        "end": 17676,
+        "seconds": [
+          728.5,
+          736.5
+        ],
+        "beat_ids": [
+          "B037"
+        ],
+        "source_sha256": "bf0a3838760cf93a3ccc6c1194b2480d206839911b2c78bf664368be09ce4dc3",
+        "source_in": 0,
+        "source_out": 192,
+        "crop_xywh": null,
+        "status": "reuse-admitted-range",
+        "purpose": "Return to the same jeweled rims and amber teeth as the narration describes their unattainable value.",
+        "start_state": "Three combs still in open case.",
+        "end_state": "Three combs still in open case.",
+        "join_in": "The intervening Jim portrait separates two related moving object views; no repeated frames or direct camera reset.",
+        "join_out": "Cut to Della for the loss of the hair, not an incompatible mirror or a watch.",
+        "narration_alignment": "Object remains visible during the description; no return to this full case after CB05.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\combs-insert-r12.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene10-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline Jim softens through closing fade and credits"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
+            "start": 0,
+            "end": 192,
+            "crop": null,
+            "entity_compatibility": "Three amber jeweled circular-crested combs in dark open case on brown wrapping/twine; valid only before removal. No watch. Never follow a shot holding all three combs with this boxed state unless placement is actually shown."
           }
         ]
       },
-      "historic_cut": {
-        "start": 1346,
-        "end": 1570,
-        "name": "Jeweled tortoiseshell",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-10/raw/07-combs-macro.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 224,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F098",
       "beats": [
         "B037"
       ],
-      "component_subrange": {
-        "in": 1346,
-        "out": 1570,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T11",
         "T15"
@@ -7104,60 +7212,58 @@
       ],
       "evidence": [
         "004320.json:shots[1]",
-        "004392.json:shots[0]"
+        "004392.json:shots[0]",
+        "004392.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F097",
       "next": "F099"
     },
     {
-      "start": 17608,
-      "end": 17832,
-      "current_reference": {
-        "source_sha256": "7be8581e461c95e154a14c5b1d490ac95d2e550d99f49e60c0fcfe138edeb58f",
-        "source_in": 1570,
-        "source_out": 1794,
-        "timeline_start": 16038,
-        "timeline_end": 18280,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene10-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline Jim softens through closing fade and credits"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
-          }
-        ]
-      },
-      "historic_cut": {
-        "start": 1570,
-        "end": 1794,
-        "name": "Too short for them",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-10/raw/08-mirror-combs.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 224,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
       "id": "F099",
+      "start": 17676,
+      "end": 17832,
+      "seconds": [
+        736.5,
+        743.0
+      ],
+      "beat_ids": [
+        "B037",
+        "B038"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "source": null,
+      "source_sha256": null,
+      "purpose": "Della absorbs the cost and the absence of her hair; preserve a quiet downcast face.",
+      "required_start": "Canonical short curls and wide ivory collar, Della screen-left; combs in case offscreen.",
+      "required_end": "She looks down and takes the three combs below frame, so CB05 may begin holding them.",
+      "candidate_excluded": "Old04-joy-tears high crop removes wrapped parcel but retains visibly different narrow V/laced neckline. Do not use for duration.",
+      "generation_required": "Not established until remaining face inventory checked; this is a named6.5second selection gap.",
+      "selected_candidate": {
+        "id": "CB04",
+        "start": 17676,
+        "end": 17832,
+        "seconds": [
+          736.5,
+          743.0
+        ],
+        "beat_ids": [
+          "B037",
+          "B038"
+        ],
+        "status": "coverage-selection-gap",
+        "source": null,
+        "source_sha256": null,
+        "purpose": "Della absorbs the cost and the absence of her hair; preserve a quiet downcast face.",
+        "required_start": "Canonical short curls and wide ivory collar, Della screen-left; combs in case offscreen.",
+        "required_end": "She looks down and takes the three combs below frame, so CB05 may begin holding them.",
+        "candidate_excluded": "Old04-joy-tears high crop removes wrapped parcel but retains visibly different narrow V/laced neckline. Do not use for duration.",
+        "generation_required": "Not established until remaining face inventory checked; this is a named6.5second selection gap."
+      },
       "beats": [
         "B037",
         "B038"
       ],
-      "component_subrange": {
-        "in": 1570,
-        "out": 1794,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T11",
         "T15"
@@ -7175,61 +7281,75 @@
         "Ownership and lost hair coexist. Do not insert a different comb design to fill narration."
       ],
       "evidence": [
-        "004392.json:shots[0]",
         "004392.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F098",
       "next": "F100"
     },
     {
+      "id": "F100",
       "start": 17832,
-      "end": 18056,
-      "current_reference": {
-        "source_sha256": "7be8581e461c95e154a14c5b1d490ac95d2e550d99f49e60c0fcfe138edeb58f",
-        "source_in": 1794,
-        "source_out": 2018,
-        "timeline_start": 16038,
-        "timeline_end": 18280,
-        "crop_pipeline": [],
-        "provenance": [
+      "end": 18072,
+      "seconds": [
+        743.0,
+        753.0
+      ],
+      "beat_ids": [
+        "B038",
+        "B039"
+      ],
+      "source_sha256": "f770030cc55e91bfa6fd1e22e5faed081522d544544b763dc7e8aa8afb4ce445",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": null,
+      "status": "candidate-plan-blocked-not-renderable",
+      "purpose": "Preserve the complete action from grief to holding the gift at her heart and smiling through tears.",
+      "start_state": "Della already holds the three canonical combs below her chest, looking down.",
+      "end_state": "Three combs clasped to her bosom; she smiles upward to Jim.",
+      "join_in": "Removal from case occurs below frame in the preceding coverage; no extra full-box insert after pickup.",
+      "join_out": "Cut on the settled upward smile to Jim's response, not to empty hands or another tear reset.",
+      "narration_alignment": "Hug forms about747.2, approximately1.1seconds after746.106 landmark. Tearful smile follows749\u2013753.",
+      "reuse_exclusion": "Use this performance once only; neither loop its held ending nor restart its grief.",
+      "selected_candidate": {
+        "id": "CB05",
+        "start": 17832,
+        "end": 18072,
+        "seconds": [
+          743.0,
+          753.0
+        ],
+        "beat_ids": [
+          "B038",
+          "B039"
+        ],
+        "source_sha256": "f770030cc55e91bfa6fd1e22e5faed081522d544544b763dc7e8aa8afb4ce445",
+        "source_in": 0,
+        "source_out": 240,
+        "crop_xywh": null,
+        "status": "reuse-admitted-range",
+        "purpose": "Preserve the complete action from grief to holding the gift at her heart and smiling through tears.",
+        "start_state": "Della already holds the three canonical combs below her chest, looking down.",
+        "end_state": "Three combs clasped to her bosom; she smiles upward to Jim.",
+        "join_in": "Removal from case occurs below frame in the preceding coverage; no extra full-box insert after pickup.",
+        "join_out": "Cut on the settled upward smile to Jim's response, not to empty hands or another tear reset.",
+        "narration_alignment": "Hug forms about747.2, approximately1.1seconds after746.106 landmark. Tearful smile follows749\u2013753.",
+        "reuse_exclusion": "Use this performance once only; neither loop its held ending nor restart its grief.",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\della-cherishes-r12.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene10-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline Jim softens through closing fade and credits"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
+            "start": 0,
+            "end": 240,
+            "crop": null,
+            "entity_compatibility": "Short-curl Della teal/ivory at left faces adult Jim at right. Three canonical amber round-jeweled combs change state from held below chest to held against bosom. Never restore three combs to their case after this use."
           }
         ]
       },
-      "historic_cut": {
-        "start": 1794,
-        "end": 2018,
-        "name": "Jim comforts her",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-10/raw/09-comfort.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 224,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F100",
       "beats": [
         "B038",
         "B039"
       ],
-      "component_subrange": {
-        "in": 1794,
-        "out": 2018,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T11",
         "T15"
@@ -7252,82 +7372,167 @@
         "004464.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F099",
       "next": "F101"
     },
     {
-      "start": 18056,
-      "end": 18280,
-      "current_reference": {
-        "source_sha256": "7be8581e461c95e154a14c5b1d490ac95d2e550d99f49e60c0fcfe138edeb58f",
-        "source_in": 2018,
-        "source_out": 2242,
-        "timeline_start": 16038,
-        "timeline_end": 18280,
-        "crop_pipeline": [],
-        "provenance": [
+      "id": "F101",
+      "start": 18072,
+      "end": 18159,
+      "seconds": [
+        753.0,
+        756.625
+      ],
+      "beat_ids": [
+        "B039"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "source_sha256": "91b7f625736d565568000ce9344f69bf955b7a57f14ad7815a068bd4fd0fb3b1",
+      "source_in": 48,
+      "source_out": 135,
+      "crop_xywh": [
+        928,
+        0,
+        960,
+        540
+      ],
+      "purpose": "Jim receives her reassurance that her hair grows quickly. Preserve her loving line over his face.",
+      "start_state": "Adult tied-collar Jim looks down-left; Della and all hands/objects outside the crop.",
+      "end_state": "A small, restrained smile; no chain exchange or watch display.",
+      "join_in": "Her upward tearful smile leads to his quiet appreciation. Editorial reaction coverage, not proof of the original clip's hidden action.",
+      "join_out": "His response provides the cutaway during which Della can prepare to set the combs down before remembering.",
+      "narration_alignment": "Della's hair-regrowth reassurance continues over Jim; no sentence-driven control or retiming.",
+      "admission_input": "../../../magi-film-audit-20260907/admit-selected-jim-response-crop.json",
+      "selected_candidate": {
+        "id": "CB06",
+        "start": 18072,
+        "end": 18159,
+        "seconds": [
+          753.0,
+          756.625
+        ],
+        "beat_ids": [
+          "B039"
+        ],
+        "status": "reviewed-awaiting-serial-admission",
+        "source_sha256": "91b7f625736d565568000ce9344f69bf955b7a57f14ad7815a068bd4fd0fb3b1",
+        "source_in": 48,
+        "source_out": 135,
+        "crop_xywh": [
+          928,
+          0,
+          960,
+          540
+        ],
+        "purpose": "Jim receives her reassurance that her hair grows quickly. Preserve her loving line over his face.",
+        "start_state": "Adult tied-collar Jim looks down-left; Della and all hands/objects outside the crop.",
+        "end_state": "A small, restrained smile; no chain exchange or watch display.",
+        "join_in": "Her upward tearful smile leads to his quiet appreciation. Editorial reaction coverage, not proof of the original clip's hidden action.",
+        "join_out": "His response provides the cutaway during which Della can prepare to set the combs down before remembering.",
+        "narration_alignment": "Della's hair-regrowth reassurance continues over Jim; no sentence-driven control or retiming.",
+        "admission_input": "../../../magi-film-audit-20260907/admit-selected-jim-response-crop.json",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\03-chain-in-hand.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene10-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline Jim softens through closing fade and credits"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved hearing, gifts and request for watch"
+            "start": 48,
+            "end": 135,
+            "crop": [
+              928,
+              0,
+              960,
+              540
+            ],
+            "entity_compatibility": "Adult tied-collar Jim only, down-left gaze and small smile. No visible hands, chain, watch, or Della. Portrait-only use; never infer unshown chain possession from this admission."
           }
         ]
       },
-      "historic_cut": {
-        "start": 2018,
-        "end": 2242,
-        "name": "My hair grows fast",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-10/raw/10-hair-grows.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 224,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F101",
       "beats": [
-        "B039",
-        "B040"
+        "B039"
       ],
-      "component_subrange": {
-        "in": 2018,
-        "out": 2242,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T11",
-        "T12",
         "T15"
       ],
       "treatment": [
-        "Select reviewed cherishing take for same-combs hug and recovering smile after formal contact admission; never show full case afterward.",
-        "Find an actual seated-to-remembering rise or an expressive motivated bridge; do not claim already-standing coverage depicts her leap."
+        "Select reviewed cherishing take for same-combs hug and recovering smile after formal contact admission; never show full case afterward."
       ],
       "required_state": [
-        "Three canonical combs leave case for her hands and bosom.",
-        "Combs kept safe; chain not yet shown to Jim."
+        "Three canonical combs leave case for her hands and bosom."
       ],
       "story_purpose": [
-        "Hold same combs to bosom, tearful smile upward, reassure Jim about regrowth.",
-        "An energetic remembering beat turns her attention to Jim's still-unseen gift."
+        "Hold same combs to bosom, tearful smile upward, reassure Jim about regrowth."
       ],
       "evidence": [
         "004464.json:shots[1]",
         "004536.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F100",
       "next": "F102"
+    },
+    {
+      "id": "F102",
+      "start": 18159,
+      "end": 18280,
+      "seconds": [
+        756.625,
+        761.6666666667
+      ],
+      "beat_ids": [
+        "B040"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "source": null,
+      "source_sha256": null,
+      "purpose": "Della suddenly remembers Jim's gift and moves to retrieve the chain.",
+      "required_start": "Combs held at chest, adult Jim beside her.",
+      "required_end": "She has set combs down below frame and turns/reaches for chain; no watch.",
+      "candidate_excluded": "10-hair-grows shows empty hands touching hair then taking Jim's hand; it neither preserves held combs nor depicts remembering. Old scene11/01-della-chain was also viewed in all61samples: she already holds a watch-and-chain above a seated Jim and circles the table; wrong object state, premature sitting and narrow neckline. No selected remembering coverage.",
+      "generation_required": "No matching action selected from reviewed candidates. Highest story-action gap in this lane; one planned pickup may be necessary, not yet commissioned.",
+      "selected_candidate": {
+        "id": "CB07",
+        "start": 18159,
+        "end": 18280,
+        "seconds": [
+          756.625,
+          761.6666666667
+        ],
+        "beat_ids": [
+          "B040"
+        ],
+        "status": "coverage-selection-gap",
+        "source": null,
+        "source_sha256": null,
+        "purpose": "Della suddenly remembers Jim's gift and moves to retrieve the chain.",
+        "required_start": "Combs held at chest, adult Jim beside her.",
+        "required_end": "She has set combs down below frame and turns/reaches for chain; no watch.",
+        "candidate_excluded": "10-hair-grows shows empty hands touching hair then taking Jim's hand; it neither preserves held combs nor depicts remembering. Old scene11/01-della-chain was also viewed in all61samples: she already holds a watch-and-chain above a seated Jim and circles the table; wrong object state, premature sitting and narrow neckline. No selected remembering coverage.",
+        "generation_required": "No matching action selected from reviewed candidates. Highest story-action gap in this lane; one planned pickup may be necessary, not yet commissioned."
+      },
+      "beats": [
+        "B040"
+      ],
+      "tasks": [
+        "T11",
+        "T12",
+        "T15"
+      ],
+      "treatment": [
+        "Find an actual seated-to-remembering rise or an expressive motivated bridge; do not claim already-standing coverage depicts her leap."
+      ],
+      "required_state": [
+        "Combs kept safe; chain not yet shown to Jim."
+      ],
+      "story_purpose": [
+        "An energetic remembering beat turns her attention to Jim's still-unseen gift."
+      ],
+      "evidence": [
+        "004536.json:shots[0]"
+      ],
+      "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
+      "previous": "F101",
+      "next": "F103"
     },
     {
       "start": 18280,
@@ -7365,7 +7570,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F102",
+      "id": "F103",
       "beats": [
         "B041"
       ],
@@ -7395,8 +7600,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F101",
-      "next": "F103"
+      "previous": "F102",
+      "next": "F104"
     },
     {
       "start": 18491,
@@ -7434,7 +7639,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F103",
+      "id": "F104",
       "beats": [
         "B041",
         "B042"
@@ -7468,8 +7673,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F102",
-      "next": "F104"
+      "previous": "F103",
+      "next": "F105"
     },
     {
       "start": 18702,
@@ -7507,7 +7712,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F104",
+      "id": "F105",
       "beats": [
         "B042"
       ],
@@ -7538,8 +7743,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F103",
-      "next": "F105"
+      "previous": "F104",
+      "next": "F106"
     },
     {
       "start": 18913,
@@ -7577,7 +7782,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F105",
+      "id": "F106",
       "beats": [
         "B042"
       ],
@@ -7607,11 +7812,11 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F104",
-      "next": "F106"
+      "previous": "F105",
+      "next": "F107"
     },
     {
-      "id": "F106",
+      "id": "F107",
       "start": 18957,
       "end": 19317,
       "source": "jim-revelation-r1.mp4",
@@ -7619,6 +7824,7 @@
       "source_in": 0,
       "source_out": 360,
       "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "../magi-film-audit-20260907/admit-selected-jim-revelation-r1.json",
       "beats": [
         "B043",
         "B044"
@@ -7634,7 +7840,8 @@
         "source_sha256": "fad6ce3e7617f181e82b7e98e0f09a9782061255116498b039d001160f316807",
         "source_in": 0,
         "source_out": 360,
-        "status": "native-hands-reviewed-formal-source-admission-pending",
+        "status": "source-admitted-context-pending",
+        "admission_input": "../magi-film-audit-20260907/admit-selected-jim-revelation-r1.json",
         "beats": [
           "B043",
           "B044"
@@ -7643,8 +7850,15 @@
         "join": "Incoming must establish seated/open-collar Jim, not a costume jump; outgoing cut on his attention to Della.",
         "entity_state": "Jim seated, bare hands, open collar, no visible gifts.",
         "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\jim-revelation-r1.mp4",
-        "ledger_status": "unreviewed",
-        "ledger_ranges": []
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 360,
+            "crop": null,
+            "entity_compatibility": "Adult Jim, bare hands, open collar, seated sofa, no gifts/watch. Requires seated/open-collar incoming continuity; compatible opposing eyeline for Della-understanding."
+          }
+        ]
       },
       "tasks": [
         "T12",
@@ -7671,11 +7885,11 @@
         "004824.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F105",
-      "next": "F107"
+      "previous": "F106",
+      "next": "F108"
     },
     {
-      "id": "F107",
+      "id": "F108",
       "start": 19317,
       "end": 19557,
       "source": "final-round-01/della-understanding.mp4",
@@ -7739,11 +7953,11 @@
         "004824.json:shots[2]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F106",
-      "next": "F108"
+      "previous": "F107",
+      "next": "F109"
     },
     {
-      "id": "F108",
+      "id": "F109",
       "start": 19557,
       "end": 19768,
       "source": "scene-12/raw/01-magi-travel.mp4",
@@ -7800,45 +8014,45 @@
         "004896.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F107",
-      "next": "F109"
+      "previous": "F108",
+      "next": "F110"
     },
     {
-      "id": "F109",
+      "id": "F110",
       "start": 19768,
-      "end": 19979,
+      "end": 20004,
       "source": "scene-12/raw/02-ancient-gifts.mp4",
       "source_sha256": "8a0bc8912fb595cf58c6e64bed117d44961427209dd73b88c176638cf0385506",
       "source_in": 0,
-      "source_out": 211,
+      "source_out": 236,
       "status": "candidate-plan-blocked-not-renderable",
       "beats": [
         "B045"
       ],
-      "purpose": "The historical gifts, then return to Jim and Della before the narrator names the flat.",
+      "purpose": "Historical gifts remain through833.5 during exchange/duplication sentence ending834.817. Return to Jim and Della before the flat is named. Extra25nativeframes reviewed and extension admitted; no retiming.",
       "join": "Ancient objects must not be confused with household gifts.",
       "selected_candidate": {
         "id": "C04",
         "start": 19768,
-        "end": 19979,
+        "end": 20004,
         "source": "scene-12/raw/02-ancient-gifts.mp4",
         "source_sha256": "8a0bc8912fb595cf58c6e64bed117d44961427209dd73b88c176638cf0385506",
         "source_in": 0,
-        "source_out": 211,
+        "source_out": 236,
         "status": "source-admitted-context-pending",
         "beats": [
           "B045"
         ],
-        "purpose": "The historical gifts, then return to Jim and Della before the narrator names the flat.",
+        "purpose": "Historical gifts remain through833.5 during exchange/duplication sentence ending834.817. Return to Jim and Della before the flat is named. Extra25nativeframes reviewed and extension admitted; no retiming.",
         "join": "Ancient objects must not be confused with household gifts.",
         "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-12\\raw\\02-ancient-gifts.mp4",
         "ledger_status": "admit",
         "ledger_ranges": [
           {
             "start": 0,
-            "end": 211,
+            "end": 236,
             "crop": null,
-            "entity_compatibility": "Historical comparison only; do not identify these travelers or objects as the modern household or its gifts."
+            "entity_compatibility": "Ancient chest/resin/vessel only during explicit Magi comparison; not household gifts."
           }
         ]
       },
@@ -7861,18 +8075,18 @@
         "004968.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F108",
-      "next": "F110"
+      "previous": "F109",
+      "next": "F111"
     },
     {
-      "id": "F110",
-      "start": 19979,
+      "id": "F111",
+      "start": 20004,
       "end": 20364,
       "status": "candidate-plan-blocked-not-renderable",
       "beats": [
         "B045"
       ],
-      "purpose": "Sixteen and one twenty-fourth seconds of the adult couple's shared sacrifice, without the watch or incompatible gifts.",
+      "purpose": "Fifteen seconds of the adult couple's shared sacrifice, without the watch or incompatible gifts. Original385frame gap reduced by25 reviewed ancient-gifts frames, not stretched footage.",
       "rejected_alternatives": [
         "03-couple-gifts: sold watch, gloves/tie reset",
         "04-gifts-insert: sold watch and incompatible comb",
@@ -7884,16 +8098,42 @@
         "Emotion should deepen into affection, not restart grief.",
         "Normal-speed distinct footage; no duplication of C02 or C06."
       ],
-      "next_action": "Resolve from compatible unused performance ranges or name finite pickups in full-film retake plan; no automatic generation.",
+      "next_action": "Use finite_closing_pickups C05 brief: one15second take, not generated yet. C04 extra25frames are now admitted, leaving exactly360 new frames here. Coordinate with one10second C07 take; no automatic retries.",
+      "newly_checked_alternatives": [
+        {
+          "source": "supper-detail-r1.mp4",
+          "sha256": "643819f9a715389b76904e599e597b6197d9899dea8592da8b120b776f6cbb94",
+          "decision": "reserve-for-preparation-not-happy-coda",
+          "reason": "Whole61samples: uncooked chops on plate beside empty pan and coffee pot; supplies preparation, not the couple's emotional resolution."
+        },
+        {
+          "source": "supper-to-della-r1.mp4",
+          "sha256": "b0229d4f429dc658c83af2be7c96a613c5e334fc751f63a70363c3209328087e",
+          "decision": "reserve-for-waiting-not-happy-coda",
+          "reason": "Whole61samples: pan handle release, tilt up to consistent short-curled Della; she looks offscreen with concern rather than post-revelation happiness."
+        },
+        {
+          "source": "chops-offer-r1.mp4",
+          "sha256": "4e2ce1aae074b8809aa707ac7d281147330bafd11c15fbfb67bc2000c7996a96",
+          "decision": "not-selected-for-ending",
+          "reason": "Whole61samples: standing Jim wears a tie, reversing the seated/open-collar state in C01; Della watches him anxiously."
+        },
+        {
+          "source": "della-listening-r1.mp4",
+          "sha256": "4b52792ee89b3c46c10997c0e2744191b7aebf7d008422cad6930d6342e0bd3d",
+          "decision": "reserve-before-revelation-not-after",
+          "reason": "Whole61samples: concerned listening throughout; would restart uncertainty after C02 has resolved it."
+        }
+      ],
       "selected_candidate": {
         "id": "C05",
-        "start": 19979,
+        "start": 20004,
         "end": 20364,
-        "status": "unresolved-coverage-gap",
+        "status": "finite-pickup-brief-ready-not-generated",
         "beats": [
           "B045"
         ],
-        "purpose": "Sixteen and one twenty-fourth seconds of the adult couple's shared sacrifice, without the watch or incompatible gifts.",
+        "purpose": "Fifteen seconds of the adult couple's shared sacrifice, without the watch or incompatible gifts. Original385frame gap reduced by25 reviewed ancient-gifts frames, not stretched footage.",
         "rejected_alternatives": [
           "03-couple-gifts: sold watch, gloves/tie reset",
           "04-gifts-insert: sold watch and incompatible comb",
@@ -7905,7 +8145,33 @@
           "Emotion should deepen into affection, not restart grief.",
           "Normal-speed distinct footage; no duplication of C02 or C06."
         ],
-        "next_action": "Resolve from compatible unused performance ranges or name finite pickups in full-film retake plan; no automatic generation."
+        "next_action": "Use finite_closing_pickups C05 brief: one15second take, not generated yet. C04 extra25frames are now admitted, leaving exactly360 new frames here. Coordinate with one10second C07 take; no automatic retries.",
+        "newly_checked_alternatives": [
+          {
+            "source": "supper-detail-r1.mp4",
+            "sha256": "643819f9a715389b76904e599e597b6197d9899dea8592da8b120b776f6cbb94",
+            "decision": "reserve-for-preparation-not-happy-coda",
+            "reason": "Whole61samples: uncooked chops on plate beside empty pan and coffee pot; supplies preparation, not the couple's emotional resolution."
+          },
+          {
+            "source": "supper-to-della-r1.mp4",
+            "sha256": "b0229d4f429dc658c83af2be7c96a613c5e334fc751f63a70363c3209328087e",
+            "decision": "reserve-for-waiting-not-happy-coda",
+            "reason": "Whole61samples: pan handle release, tilt up to consistent short-curled Della; she looks offscreen with concern rather than post-revelation happiness."
+          },
+          {
+            "source": "chops-offer-r1.mp4",
+            "sha256": "4e2ce1aae074b8809aa707ac7d281147330bafd11c15fbfb67bc2000c7996a96",
+            "decision": "not-selected-for-ending",
+            "reason": "Whole61samples: standing Jim wears a tie, reversing the seated/open-collar state in C01; Della watches him anxiously."
+          },
+          {
+            "source": "della-listening-r1.mp4",
+            "sha256": "4b52792ee89b3c46c10997c0e2744191b7aebf7d008422cad6930d6342e0bd3d",
+            "decision": "reserve-before-revelation-not-after",
+            "reason": "Whole61samples: concerned listening throughout; would restart uncertainty after C02 has resolved it."
+          }
+        ]
       },
       "tasks": [
         "T13",
@@ -7926,11 +8192,11 @@
         "005040.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F109",
-      "next": "F111"
+      "previous": "F110",
+      "next": "F112"
     },
     {
-      "id": "F111",
+      "id": "F112",
       "start": 20364,
       "end": 20604,
       "source": "final-round-01/shared-ending.mp4",
@@ -7994,39 +8260,33 @@
         "005112.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F110",
-      "next": "F112"
+      "previous": "F111",
+      "next": "F113"
     },
     {
-      "id": "F112",
+      "id": "F113",
       "start": 20604,
       "end": 20812,
-      "source": "scene-12/raw/06-window-final.mp4",
-      "source_in": 0,
-      "source_out": 208,
+      "rejected_source": "scene-12/raw/06-window-final.mp4",
+      "rejected_source_sha256": "53b90b27d339c685276f76211b63a8a30bfa257e888cb1e9d478e1d384ae86b7",
       "status": "candidate-plan-blocked-not-renderable",
       "beats": [
         "B046"
       ],
-      "purpose": "Exterior retreat carries final words through867.167; warm household rather than extra prop display.",
+      "purpose": "One10second room retreat from exact C06 lastframe; select first208nativeframes to carry final words through867.167. Window stays behind couple: no camera passage through sofa/window, no incompatible exterior people.",
       "join": "All61samples and enlarged starting frame reviewed8September. Exterior shows a supper-table couple, not the seated sofa composition; woman's swept-back hair and dark costume differ from short-curled teal/ivory Della. Warm mood is useful but identity and window geography cannot be assumed. Keep slot unresolved; do not approve because figures are small.",
       "selected_candidate": {
         "id": "C07",
         "start": 20604,
         "end": 20812,
-        "source": "scene-12/raw/06-window-final.mp4",
-        "source_in": 0,
-        "source_out": 208,
-        "status": "identity-and-geography-conflict-not-admitted",
+        "rejected_source": "scene-12/raw/06-window-final.mp4",
+        "rejected_source_sha256": "53b90b27d339c685276f76211b63a8a30bfa257e888cb1e9d478e1d384ae86b7",
+        "status": "finite-pickup-brief-ready-not-generated",
         "beats": [
           "B046"
         ],
-        "purpose": "Exterior retreat carries final words through867.167; warm household rather than extra prop display.",
-        "join": "All61samples and enlarged starting frame reviewed8September. Exterior shows a supper-table couple, not the seated sofa composition; woman's swept-back hair and dark costume differ from short-curled teal/ivory Della. Warm mood is useful but identity and window geography cannot be assumed. Keep slot unresolved; do not approve because figures are small.",
-        "source_sha256": "53b90b27d339c685276f76211b63a8a30bfa257e888cb1e9d478e1d384ae86b7",
-        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-12\\raw\\06-window-final.mp4",
-        "ledger_status": "unreviewed",
-        "ledger_ranges": []
+        "purpose": "One10second room retreat from exact C06 lastframe; select first208nativeframes to carry final words through867.167. Window stays behind couple: no camera passage through sofa/window, no incompatible exterior people.",
+        "join": "All61samples and enlarged starting frame reviewed8September. Exterior shows a supper-table couple, not the seated sofa composition; woman's swept-back hair and dark costume differ from short-curled teal/ivory Della. Warm mood is useful but identity and window geography cannot be assumed. Keep slot unresolved; do not approve because figures are small."
       },
       "tasks": [
         "T13",
@@ -8047,11 +8307,11 @@
         "005184.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F111",
-      "next": "F113"
+      "previous": "F112",
+      "next": "F114"
     },
     {
-      "id": "F113",
+      "id": "F114",
       "start": 20812,
       "end": 21387,
       "status": "candidate-plan-blocked-not-renderable",
@@ -8103,7 +8363,7 @@
         "005328.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F112",
+      "previous": "F113",
       "next": null
     }
   ]

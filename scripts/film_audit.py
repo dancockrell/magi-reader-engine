@@ -443,12 +443,29 @@ def source_decision(root, state, record_path):
         record['sample_review_complete'] = True
         record['source_review_receipts'] = [
             {'path': str(p.resolve()), 'sha256': digest(p)} for p, _ in receipts]
+    decision_path = root/'source-decisions'/f'{record["sha256"]}.json'
+    if any(item['status'] != 'unreviewed' for item in matches):
+        # Explicit, hash-pinned revisions preserve the earlier judgment. All
+        # ordinary source/receipt/escalation checks above still apply.
+        previous = digest(decision_path) if decision_path.is_file() else None
+        if (not previous or record.get('supersedes_decision_sha256') != previous
+                or len(record.get('revision_reason', '')) < 40):
+            raise ValueError('Existing disposition requires a hash-pinned audit revision, not overwrite')
+        # The full prior-decision digest is the identity; shorten the directory
+        # component to remain usable under Windows legacy path limits.
+        history = root/'source-decisions'/'history'/record['sha256'][:16]/f'{previous}.json'
+        if history.exists() and digest(history) != previous:
+            raise ValueError('Prior decision history has changed')
+        history.parent.mkdir(parents=True, exist_ok=True)
+        if not history.exists():
+            shutil.copyfile(decision_path, history)
+        record['superseded_decision_path'] = str(history.resolve())
+    elif record.get('supersedes_decision_sha256'):
+        raise ValueError('Cannot revise a source without an existing disposition')
     for item in matches:
-        if item['status']!='unreviewed':
-            raise ValueError('Existing disposition requires a new audit revision, not overwrite')
         item.update(record)
     write(inventory_path,items)
-    write(root/'source-decisions'/f'{record["sha256"]}.json',record)
+    write(decision_path,record)
     print('Source decision recorded; no edit or generation performed.')
 
 

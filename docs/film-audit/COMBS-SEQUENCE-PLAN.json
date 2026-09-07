@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "status": "precise-sequence-candidate-with-explicit-coverage-gaps-not-renderable",
+  "fps": 24,
+  "timeline": [17076, 18280],
+  "parent_plan": "WHOLE-FILM-CANDIDATE-PLAN.json",
+  "purpose": "Replace F096–F101 with one coherent comb family and gratitude that follows loss. This is a scoped input to the parent plan, not a parallel whole-film authority.",
+  "selected_frames": 927,
+  "unselected_frames": 277,
+  "shots": [
+    {
+      "id": "CB01", "start": 17076, "end": 17316,
+      "seconds": [711.5, 721.5], "beat_ids": ["B036", "B037"],
+      "source_sha256": "c053541f0d27eee05abaf0fa848a5bdd035df593865f4bdedbae2e29aea1de91",
+      "source_in": 0, "source_out": 240, "crop_xywh": null, "status": "reuse-admitted-range",
+      "purpose": "The gift is revealed: the three canonical combs, not a new shop-window set.",
+      "start_state": "All three combs in open black case, brown wrapper on table; Jim has already given it.",
+      "end_state": "Same three combs remain in case.",
+      "join_in": "Leave preceding embrace for the object that caused tears; case was opened offscreen during the reaction/comfort.",
+      "join_out": "Cut to the giver's affectionate attention, not another consecutive insert.",
+      "narration_alignment": "Reveal anticipates For there lay The Combs at712.818 by1.318seconds."
+    },
+    {
+      "id": "CB02", "start": 17316, "end": 17484,
+      "seconds": [721.5, 728.5], "beat_ids": ["B037"],
+      "source_sha256": "40a9eba1de3685e1b0d0405087fc6bc4631d4d7cf7685c6a6f72ed0ec388b6e6",
+      "source_in": 0, "source_out": 168, "crop_xywh": [736, 0, 1184, 666], "status": "reuse-admitted-range",
+      "purpose": "Let the cost and desire live in Jim's loving attention rather than18consecutive seconds of product photography.",
+      "start_state": "Jim looks screen-left toward offscreen Della; gifts remain offscreen.",
+      "end_state": "His small open-hand emphasis lowers and he remains attentive.",
+      "join_in": "Object-to-giver cut preserves Della-left/Jim-right axis.",
+      "join_out": "Return to canonical object detail after his gesture settles.",
+      "narration_alignment": "Supports remembered desire and value, not lip-sync; check in full narration screening.",
+      "admission_input": "../../../magi-film-audit-20260907/admit-revision-jim-combs-portrait.json",
+      "reuse_exclusion": "B034 already uses168–222 of this source; this range is disjoint and cannot be used again elsewhere."
+    },
+    {
+      "id": "CB03", "start": 17484, "end": 17676,
+      "seconds": [728.5, 736.5], "beat_ids": ["B037"],
+      "source_sha256": "bf0a3838760cf93a3ccc6c1194b2480d206839911b2c78bf664368be09ce4dc3",
+      "source_in": 0, "source_out": 192, "crop_xywh": null, "status": "reuse-admitted-range",
+      "purpose": "Return to the same jeweled rims and amber teeth as the narration describes their unattainable value.",
+      "start_state": "Three combs still in open case.", "end_state": "Three combs still in open case.",
+      "join_in": "The intervening Jim portrait separates two related moving object views; no repeated frames or direct camera reset.",
+      "join_out": "Cut to Della for the loss of the hair, not an incompatible mirror or a watch.",
+      "narration_alignment": "Object remains visible during the description; no return to this full case after CB05."
+    },
+    {
+      "id": "CB04", "start": 17676, "end": 17832,
+      "seconds": [736.5, 743.0], "beat_ids": ["B037", "B038"],
+      "status": "coverage-selection-gap", "source": null, "source_sha256": null,
+      "purpose": "Della absorbs the cost and the absence of her hair; preserve a quiet downcast face.",
+      "required_start": "Canonical short curls and wide ivory collar, Della screen-left; combs in case offscreen.",
+      "required_end": "She looks down and takes the three combs below frame, so CB05 may begin holding them.",
+      "candidate_excluded": "Old04-joy-tears high crop removes wrapped parcel but retains visibly different narrow V/laced neckline. Do not use for duration.",
+      "generation_required": "Not established until remaining face inventory checked; this is a named6.5second selection gap."
+    },
+    {
+      "id": "CB05", "start": 17832, "end": 18072,
+      "seconds": [743.0, 753.0], "beat_ids": ["B038", "B039"],
+      "source_sha256": "f770030cc55e91bfa6fd1e22e5faed081522d544544b763dc7e8aa8afb4ce445",
+      "source_in": 0, "source_out": 240, "crop_xywh": null, "status": "reuse-admitted-range",
+      "purpose": "Preserve the complete action from grief to holding the gift at her heart and smiling through tears.",
+      "start_state": "Della already holds the three canonical combs below her chest, looking down.",
+      "end_state": "Three combs clasped to her bosom; she smiles upward to Jim.",
+      "join_in": "Removal from case occurs below frame in the preceding coverage; no extra full-box insert after pickup.",
+      "join_out": "Cut on the settled upward smile to Jim's response, not to empty hands or another tear reset.",
+      "narration_alignment": "Hug forms about747.2, approximately1.1seconds after746.106 landmark. Tearful smile follows749–753.",
+      "reuse_exclusion": "Use this performance once only; neither loop its held ending nor restart its grief."
+    },
+    {
+      "id": "CB06", "start": 18072, "end": 18159,
+      "seconds": [753.0, 756.625], "beat_ids": ["B039"],
+      "status": "reviewed-awaiting-serial-admission",
+      "source_sha256": "91b7f625736d565568000ce9344f69bf955b7a57f14ad7815a068bd4fd0fb3b1",
+      "source_in": 48, "source_out": 135, "crop_xywh": [928, 0, 960, 540],
+      "purpose": "Jim receives her reassurance that her hair grows quickly. Preserve her loving line over his face.",
+      "start_state": "Adult tied-collar Jim looks down-left; Della and all hands/objects outside the crop.",
+      "end_state": "A small, restrained smile; no chain exchange or watch display.",
+      "join_in": "Her upward tearful smile leads to his quiet appreciation. Editorial reaction coverage, not proof of the original clip's hidden action.",
+      "join_out": "His response provides the cutaway during which Della can prepare to set the combs down before remembering.",
+      "narration_alignment": "Della's hair-regrowth reassurance continues over Jim; no sentence-driven control or retiming.",
+      "admission_input": "../../../magi-film-audit-20260907/admit-selected-jim-response-crop.json"
+    },
+    {
+      "id": "CB07", "start": 18159, "end": 18280,
+      "seconds": [756.625, 761.6666666667], "beat_ids": ["B040"],
+      "status": "coverage-selection-gap", "source": null, "source_sha256": null,
+      "purpose": "Della suddenly remembers Jim's gift and moves to retrieve the chain.",
+      "required_start": "Combs held at chest, adult Jim beside her.",
+      "required_end": "She has set combs down below frame and turns/reaches for chain; no watch.",
+      "candidate_excluded": "10-hair-grows shows empty hands touching hair then taking Jim's hand; it neither preserves held combs nor depicts remembering. Old scene11/01-della-chain was also viewed in all61samples: she already holds a watch-and-chain above a seated Jim and circles the table; wrong object state, premature sitting and narrow neckline. No selected remembering coverage.",
+      "generation_required": "No matching action selected from reviewed candidates. Highest story-action gap in this lane; one planned pickup may be necessary, not yet commissioned."
+    }
+  ],
+  "delivery_check": "No recut or render. Adjacent montage and original narration/music need normal-speed review after whole-film plan closes. Source range admission does not certify assembled joins."
+}

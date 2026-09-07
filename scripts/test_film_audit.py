@@ -110,6 +110,28 @@ class ReviewGates(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'receipts'):
             source_decision(root,{'phase':'inventory-review-required'},path)
 
+    def test_revision_preserves_prior_decision_and_requires_exact_parent(self):
+        root,source,state,receipt,record,path=self.source_fixture()
+        phase={'phase':'inventory-review-required'}
+        source_decision(root,phase,path)
+        current=root/'source-decisions'/f'{record["sha256"]}.json'
+        prior=current.read_bytes()
+        parent=digest(current)
+        record['admitted_ranges'][0]['end']=72
+        record['revision_reason']='Additional consecutive frames reviewed to preserve the upward glance into the next shot.'
+        record['supersedes_decision_sha256']='stale'
+        write(path,record)
+        with self.assertRaisesRegex(ValueError,'hash-pinned'):
+            source_decision(root,phase,path)
+        self.assertEqual(current.read_bytes(),prior)
+        record['supersedes_decision_sha256']=parent
+        write(path,record)
+        source_decision(root,phase,path)
+        archived=root/'source-decisions'/'history'/record['sha256'][:16]/f'{parent}.json'
+        self.assertEqual(archived.read_bytes(),prior)
+        with self.assertRaisesRegex(ValueError,'hash-pinned'):
+            source_decision(root,phase,path)
+
     def test_out_of_bounds_source_admission(self):
         root,source,state,receipt,record,path=self.source_fixture()
         record['admitted_ranges'][0]['end']=999999999
