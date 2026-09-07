@@ -83,6 +83,14 @@ Continuation through 08:00 resolves the earlier pending hair-result question: cu
 - Compare bulky parcel, smaller hand-held wrapping and table package as one named object. Do not canonize comb design from the still-unclear wide unwrapping frame (4167).
 - Preserve the warm reassurance and focused anticipation. Complete native string/paper/contact checks and the upcoming reaction/reveal review before source selection.
 
+## Gift reaction and comb identity through 12:12
+
+- Reaction shot returns opened parcel to tied shut (enlarged4188). Maintain irreversible unwrapping state.
+- At705.583, native16933–16934 reset Jim from comforting beside Della to distant doorway and reopen the package. All12 frames inspected. Comforting narration needs intimate action, not arrival-like distance.
+- Three distinct named comb observations: COMBS-TABLE-SCROLL (4284, broad dark scrollwork crest); COMBS-WINDOW-COLORED (4302, pair with narrow pink/blue gemstone bands); COMBS-TRIO-CIRCULAR (4356, three broad amber plates with circular jeweled motifs). These are incompatible identity families, not approved interchangeable inserts.
+- Choose one consistent set for window memory, gift reveal, handling and ending only after whole-film/inventory review. Memory insert itself is legitimate; changing the treasured object's design is not.
+- Preserve Della's distressed acting and Jim's concern; verify a readable joy-to-loss transition with sound before final pacing decisions.
+
 ## Deferred / not grounds for reshoot
 
 - Solomon timing: earlier 1.603-second observed overlap was not a defect by itself. Continued review establishes a total tail of about 6.2 seconds; assess in moving sequence with sound before prescribing its endpoint.
