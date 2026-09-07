@@ -60,6 +60,13 @@ Continuation through 08:00 resolves the earlier pending hair-result question: cu
 - Enlarged sample 3518 confirms Jim's knitted glove during the hair reaction. This conflicts with the story's explicit lack of gloves and the reviewed bare-handed ascent. Do not admit this shot unchanged. Earlier cuff uncertainty is not proof of when the glove first appeared.
 - Preserve Della's tentative coat contact and Jim's hesitant attention. A compatible closer reaction may bridge gracefully, but any crop or substitute must pass full source review; do not assume it hides the glove throughout.
 
+## Continuation through 10:24
+
+- At 594.167 seconds, native frames 14259 to 14260 reset Jim and Della to their earlier sides against the same room. Preserve the visible crossing before it and seek compatible closer reaction coverage. This is not an ordinary reverse angle.
+- Room inspection around 604–614 has a narrative reason, but a low haze plume develops near Jim's legs around 612.5–614. Enlarged sample 3678 and native sheet 014708-014720 confirm it. Review clean source ranges before prescribing replacement.
+- The cut into lapel contact around 614.167 omits the couple's return from separated positions. Evaluate a coherent return, preserving the warm close performance. Do not automatically label every omitted approach an error without normal-speed context.
+- The Christmas Eve 'boy' passage shows the adult husband and wife, no child. The loving vocal delivery remains an outstanding listening check; visual review cannot certify an audio fix.
+
 ## Deferred / not grounds for reshoot
 
 - Solomon timing: earlier 1.603-second observed overlap was not a defect by itself. Continued review establishes a total tail of about 6.2 seconds; assess in moving sequence with sound before prescribing its endpoint.
