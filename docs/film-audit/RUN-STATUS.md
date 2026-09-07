@@ -70,7 +70,7 @@ The 08:00–08:24 pass includes a native review of all 96 frames 11572–11667 p
 
 The 08:24–09:00 pass extends the door issue: Jim releases the knob without closing it, and the doorway remains open in later reaction coverage. Coat/tie appearance should be compared with the stair shot's open collar. The restrained stare, adult couple-only interpretation of 'family', and nonliteral setter metaphor are worth protecting. Repeated Della reaction framing may flatten progression, but exact source duplication and sound-on pacing remain unverified: this is an inventory/editorial opportunity, not a confirmed repeated-frame defect. Receipts 003024, 003096 and 003168 accepted. Next starts 09:00. No film alteration, spending or publication.
 
-## Resume exactly here
+## Historical review procedure (superseded cursor)
 
 From the repository root, use `python scripts/film_audit.py --audit ../magi-film-audit-20260907` followed by:
 
@@ -80,8 +80,10 @@ From the repository root, use `python scripts/film_audit.py --audit ../magi-film
 4. Read the returned JSON and inspect every listed sheet. Inspect full-sized or native neighboring frames for specific unresolved details.
 5. `submit <returned-answer-path>` only after that supervision. Supplement rather than overwrite accepted observations.
 
-Repeat through the entire film. Then review source inventory against the story and persistent designs, and produce a complete shot plan before any reshoots or edits. Do not convert extracted-frame count into a claim of visual review, or provisional reuse opportunities into admitted source ranges.
+The sequential review has since completed all 5,347 samples. Do not restart it from the historical cursor above. Review source inventory against the story and persistent designs, and produce a complete shot plan. Do not convert extracted-frame count into a claim of visual review, or provisional reuse opportunities into admitted source ranges.
 
 ## Remaining work
 
-Whole-film sequential review; escalation checks; canonical design selection and cross-shot comparisons; source-level reuse/rejection decisions; a complete frame-bounded shot plan with narrative and emotional purposes; only then bounded reshoots and assembly. The Python gates prevent early inventory admission and final-plan approval, but the assistant remains responsible for semantic and visual judgment.
+Current authority: FINISHING-PLAN.md and FINAL-ROUND-REGISTER.md. Whole-film review is complete; seven source hashes have admitted ranges. The three priority pickups are among those admissions. The parcel section and disclosure-to-closing section have partial frame-bounded plans, not a finished movie plan. Source-level continuity decisions, remaining coverage, sound review and contextual joins remain open.
+
+On 8 September, the hash-verified source map resolved v6 through v5 and the scene 5/7 sub-edits: 33 mapped ranges, 29 verified files, all 21,387 frames (891.125 seconds). These are provenance ranges, not 33 approved shots. Older assembled baseline sections remain opaque until their provenance is confirmed. SOURCE-MAP-BINDINGS.json is the reproducible input; ../magi-film-audit-20260907/current-source-map.json is its generated output. Historical builder filenames alone are not proof that current bytes match their cut lists. No new render, publication or credit expenditure resulted from this mapping pass.

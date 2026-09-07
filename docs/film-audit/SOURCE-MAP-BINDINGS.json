@@ -1,0 +1,12 @@
+{
+  "master_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+  "edls": [
+    {"output_sha256":"852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b","edl":"docs/film-edits/magi-award-assembly-v6.edl.json"},
+    {"output_sha256":"f94644244b0036b11d60f579108e75c2067f13a9922f51577ccac5b6033ab3e8","edl":"docs/film-edits/magi-award-assembly-v5.edl.json"},
+    {"output_sha256":"c3cced2d6856f8d51100228945d3b4f681895c32751c6a9ab50dd7dbecde54bb","edl":"docs/film-edits/scene5-award-v4.edl.json"},
+    {"output_sha256":"137563a8c4f45610615058e41a810e28f96e53aa121e0564737c4ec117a944c2","edl":"docs/film-edits/scene7-award-v1.edl.json"}
+  ],
+  "additional_files": [
+    {"sha256":"1d2d36254c255723c7b34fa019371e5c0e0e35710aeef1e07b0883b80ec96ed6","path":"../magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/public/video/films/magi-reader-film-final.mp4"}
+  ]
+}
