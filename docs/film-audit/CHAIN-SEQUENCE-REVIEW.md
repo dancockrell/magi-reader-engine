@@ -25,3 +25,13 @@ Establish the chain's visible link and fitting design in one readable shot, then
 Different apparent size under perspective is a question, not automatically a morph. Actual branch creation, a watch appearing, changed terminal fittings or a demonstrably incompatible design is a rejection condition. An occluded fitting remains unknown, not verified.
 
 Next decision: choose compatible existing open-palm coverage or name one specific missing shot in the finite final-round plan. Canonical chain remains unset until this comparison resolves. No new credit spending or publication occurred.
+
+## Remaining existing scene11 candidates checked
+
+Both full61-sample sequences were inspected, two sheets each, plus enlarged sample24.
+
+- `02-chain-macro`, SHA6ef3d5bb5339449736905fc90ed75e828df63c9eba84293cd401bd7b04eb2fdb: upright hand with multiple long strands running below frame; hand closes and reopens. It seems intended to make the gift prominent, but it does not show the required whole chain supported on an open palm. End fittings remain outside the readable composition. No admission.
+- `03-chain-in-hand`, SHA91b7f625736d565568000ce9344f69bf955b7a57f14ad7815a068bd4fd0fb3b1: Della lowers the chain into Jim's hand, withdraws and he examines it. This changes possession without supplying her open-palm presentation. Do not use this as the missing scripted action.
+- The latter's mandatory crop `[928,0,960,540]` (x,y,width,height) was also inspected across all61samples and enlarged sample30. Native48–168 is a promising five-second Jim reaction excluding chain/hands from the visible composition. It preserves touched attention without making a possession claim. It is **not admitted**; native edge checks, eyeline/context and formal source gate remain. A cropped reaction does not approve the wide take.
+
+These findings now belong to T06/T12 in WHOLE-FILM-DECISIONS.json, not a separate generation queue. The one open-palm coverage gap remains unresolved. No retake has been commissioned for it.

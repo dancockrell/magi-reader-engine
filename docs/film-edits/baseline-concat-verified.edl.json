@@ -1,0 +1,125 @@
+{
+  "fps": 24,
+  "frames": 21387,
+  "outputSha256": "1d2d36254c255723c7b34fa019371e5c0e0e35710aeef1e07b0883b80ec96ed6",
+  "verification": "Every ordered H264 coded-picture packet SHA256 matches concat components after removing non-picture NAL types 6/7/8/9. Native24 and packet/frame counts verified. Remuxed parameter-set identity, audio, decoded quality and artistic approval not inferred.",
+  "shots": [
+    {
+      "name": "magi-opening-v17-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-opening-v17-preview.mp4",
+      "sha256": "3373be75f24fd81401c83ff344e44974483229a159294e2555e04618b37ba25a",
+      "timelineStartFrame": 0,
+      "timelineEndFrame": 1423,
+      "in": 0,
+      "out": 1423
+    },
+    {
+      "name": "magi-scene2-v1-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-scene2-v1-preview.mp4",
+      "sha256": "2e748c9dc6e59a19846dae30b748546ccf6d344f7b31833ecd493a9e051a277a",
+      "timelineStartFrame": 1423,
+      "timelineEndFrame": 3073,
+      "in": 0,
+      "out": 1650
+    },
+    {
+      "name": "magi-scene3-v1-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-scene3-v1-preview.mp4",
+      "sha256": "e78dba0ebb65805d99b7464d6f44ccb93c95a3fdd27ae00a0d2b74f45e21a409",
+      "timelineStartFrame": 3073,
+      "timelineEndFrame": 5331,
+      "in": 0,
+      "out": 2258
+    },
+    {
+      "name": "magi-scene4-v1-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-scene4-v1-preview.mp4",
+      "sha256": "5c45e16902b07cbca79f17b5928f2bba7acb6294975fc24be79479ee74f8573f",
+      "timelineStartFrame": 5331,
+      "timelineEndFrame": 6869,
+      "in": 0,
+      "out": 1538
+    },
+    {
+      "name": "magi-scene5-v1-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-scene5-v1-preview.mp4",
+      "sha256": "fb020a5f242b38bc024fc39a6412aa59c9d8426f1d2ca375626945c1c62c4dac",
+      "timelineStartFrame": 6869,
+      "timelineEndFrame": 8090,
+      "in": 0,
+      "out": 1221
+    },
+    {
+      "name": "magi-scene6-v1-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-scene6-v1-preview.mp4",
+      "sha256": "955f4174dbf48d5333c5fd7566ecb20c24f63fb1ba6e2b8daab97560c2474513",
+      "timelineStartFrame": 8090,
+      "timelineEndFrame": 9832,
+      "in": 0,
+      "out": 1742
+    },
+    {
+      "name": "magi-scene7-v1-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-scene7-v1-preview.mp4",
+      "sha256": "b5696181ab2ec66db04b448826fe19f191e46064a87532450fb7ffecda6cb092",
+      "timelineStartFrame": 9832,
+      "timelineEndFrame": 11113,
+      "in": 0,
+      "out": 1281
+    },
+    {
+      "name": "magi-scene8-v1-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-scene8-v1-preview.mp4",
+      "sha256": "2f47adc8c506232ffa6e480dbf351251e40b257bcd6355e1ff396cb4daa6e240",
+      "timelineStartFrame": 11113,
+      "timelineEndFrame": 13156,
+      "in": 0,
+      "out": 2043
+    },
+    {
+      "name": "magi-scene9-v1-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-scene9-v1-preview.mp4",
+      "sha256": "04e544119c4b233360049230fe18535f8404fdd7be31b6f89e21f2372f5e0433",
+      "timelineStartFrame": 13156,
+      "timelineEndFrame": 16038,
+      "in": 0,
+      "out": 2882
+    },
+    {
+      "name": "magi-scene10-v1-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-scene10-v1-preview.mp4",
+      "sha256": "7be8581e461c95e154a14c5b1d490ac95d2e550d99f49e60c0fcfe138edeb58f",
+      "timelineStartFrame": 16038,
+      "timelineEndFrame": 18280,
+      "in": 0,
+      "out": 2242
+    },
+    {
+      "name": "magi-scene11-v1-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-scene11-v1-preview.mp4",
+      "sha256": "ad7da8142696992e0013356e53d62ed36fe265fbe8ec91dd6326dc52ae966afa",
+      "timelineStartFrame": 18280,
+      "timelineEndFrame": 19546,
+      "in": 0,
+      "out": 1266
+    },
+    {
+      "name": "magi-scene12-v1-preview.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\public\\video\\films\\magi-scene12-v1-preview.mp4",
+      "sha256": "3e1964b33e95a3891ad987889aab228c3740c0e673dc1b926e5edf5fc5b064ed",
+      "timelineStartFrame": 19546,
+      "timelineEndFrame": 20811,
+      "in": 0,
+      "out": 1265
+    },
+    {
+      "name": "credits-v1-48k.mp4",
+      "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\credits-v1-48k.mp4",
+      "sha256": "d318012b782adaa42a591e88e710b6996fa63122a4461c897fba06735c08b778",
+      "timelineStartFrame": 20811,
+      "timelineEndFrame": 21387,
+      "in": 0,
+      "out": 576
+    }
+  ]
+}

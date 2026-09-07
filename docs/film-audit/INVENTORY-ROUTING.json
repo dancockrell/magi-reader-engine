@@ -1,0 +1,2164 @@
+{
+  "status": "planning-classification-not-source-admission-or-complete-art-review",
+  "path_count": 245,
+  "unique_hashes": 239,
+  "sources": [
+    {
+      "sha256": "00163e2ed17c577eaf9e87b4fbdc86fdafe805d2050ac676fd4184792d5fa560",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\quarantine\\runtime-s3-c-pier-glass-renamed.mp4",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\s3-c-pier-glass.mp4",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\s3-d-pier-glass.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "01adc5c95caea7027a9c9199fbcb783ac00f02af6a79ca161cf0281f33e4de74",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\revelation-context-r6.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0424810e1d40ea4a1ce3975c7968743af114b3302934d7d37d53df42238f1f0c",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\07-hurry-home.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0646562411e1ffa5eeaedca35f8eec03966f9ae3f3f009ceedc2957a4e690045",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\07-loosening.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "06aba0e5698c0ee30032b993ec8a3eccfa1edcbddb0585b4491c6de4999da862",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\raw\\07-tears.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0709c9d644dcb66531043ae1957b2a1aacfe60aceba2f9647c73033204c0527d",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\03-chain-reveal.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0714e69cdc12e6428b8f03ad31506c698a52d430dd1bb47deedb1e9ec5d8624f",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\s3-c-present-planning-replacement.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "08039d962b32c699ed4af6c5d03366ebfdd3927fc46bb0e8016aaf1fa2c916ef",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r4\\raw\\lamp.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0a4f4a8b4163422e977917328da8268f1f0fe3e452c594f544e6cb7ef82e7190",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\08-chain-and-watch.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0b3dfadfe07d34eebc6ca1a44b9a1083b4511926695e176b12035e18f935dba0",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-12\\raw\\04-gifts-insert.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0bb848430fdf6603035b18ed9c9aacae3e443443a49d24e5a92132433ce2c60f",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\jim-continuity-context-r7.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0c1396d278174d7a6229b409db60ec7a350438378dea68804d2286040adb1be9",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\s1-c-recount.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0c48d9e86c35f39baf103d34fa270a69ff8871cd272d40ea322152db12273e20",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\departure-omni.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0d68d6c0742ba93f1e03203779d5a84565712c50d0c6a4669f58a26e61f9d877",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\scene5-award-v2-silent.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0e122b4ba826e990efffe09c611f1c32fb6fca59012e64c5be5d068374c99704",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\01-frozen-door-r2.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0eebf68956fbeed5245cc383031224bb518194c66021473567c1ce2835a05f3b",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-couch-v8.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0f9a7b2f91eaec5f178a6f518abd1b970ba45c1a77a9dd19e95956e8dfa5c0e7",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\bell.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "0ff9aeac34e2d237ad4c869cd538c815cf6b39dafb6c675d9d17e3a40c68e0da",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\scene7-award-v1-silent.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "10df191dd33dcaa03787b5e85eea9664c5196cf3da306f2007ee22b21f5f2b51",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\shop-conversation-r2.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "11d7565324b22548baa4a160d503f34e002944221ab21d8ebb4d2d9e34989c13",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\09-stare.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "128142d83d4711afedffb2c94945d59e197258f4d441736084ebe8f48aea7b80",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\05-inspection.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "132e3990dea17b793b814bdbea1c24cbe6dcf6bcaf34ef511ec19a13293d2ff0",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\gift-reveal-context-r10.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "137563a8c4f45610615058e41a810e28f96e53aa121e0564737c4ec117a944c2",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\scene7-award-v1.mp4"
+      ],
+      "category": "derived-film-reference-not-new-coverage",
+      "reason": "Assembly/delivery export. Preserve as provenance, not an independent take.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "16999a194f088387d281fbf4808b03b5e1a7fd065c7b8529e9e3a0c404256bc0",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\08-embrace.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "171f9fab32097eb2b91c3f6c7b8a39fef643183dbc4d91038aa27aeff6033bf9",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\s1-a-counting-pilot.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "191063ac38cff4bc73f55bde7ba0631aac243df8c20383d907b48d30a304da63",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\supper-detail-context-r1.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "191f7b7eb7c0ffcd6522d1ac2c47e886662ef764e4e518678bb667d61db51a64",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r7\\baseline-v0.9.3.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "19fae860031e037b9a3343681af60bdeda023604404c9817efe7ff5034757e07",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\s3-b-cat-fence.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "1a7052bfaaad9fb1cb11cecd42700c022b1c13c550816e88e28a5d442b21af52",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\03-cross-room.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "1a9456ca269f98c85f0154227f042be826d0621b889ba33ac0955f4658924f4f",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\06-cut.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "1b4ca8d2095a439d661609ad1b93b39d5027dd0e4ac547bb1764fa1ebd2eb5e0",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\10-resolve.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "1b5828dc7a9c64d6717aa6dcfec332b681f430f56cd7c5295b82887f474b035b",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\01-stairs-down.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "22cbbac83e6b8dedde1e48f85bf942b51512e0fda24fdc0be5385a26d86bc062",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\parcel-context-r8-reassurance-only.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "24df5f3922556fb5fada0cbdc2f15b1647b30ca02c55be916e03c97b60fe6872",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-7\\raw\\02-lighting-irons.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "27824269fe596a9444720bce69539128694ae63d6f7a9f9312946103e7c80a57",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\parcel-toss-r8.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "2a4dd7f073f49e70950f60383d82fd95e1134a1de58077059642fe94008f5b29",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\penny-isolated-r1.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "2b708148aa0db76cf53d334717431c8d80a5017a87a748d6fa27aed437690f7c",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\sofronie-reply-r1.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "2d532ad323999fc5e57efb3b875980670dc64cd323a56f75b720d13a51329df0",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\10-hair-grows.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "2ddddf0253ed6d23d0548ac8a54e94f4afdb6b6f945dbd37840ee637ae08cb64",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\chain-open-palm-r15.mp4"
+      ],
+      "category": "excluded-by-recorded-decision",
+      "reason": "All49 six-fps samples and all193 consecutive native frames inspected. Full-size frame0 shows a single U, but frames96 and192 expose an additional short strand/arc beneath the fingers joining the right leg. This violates the single continuous chain geometry; do not reuse an attractive opening to conceal an unresolved object mutation. No automatic retry.",
+      "ledger_status": "reject"
+    },
+    {
+      "sha256": "2eb05ada99fc677e0375c485a35c841178e784fb6ba9838cd5c47051f6235d48",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-12\\raw\\05-supper.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "2ee0b7e7b7bfbf457f218ec994bc954abdeedaf5f484e3af2328d9444e08e4fa",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-12\\raw\\01-magi-travel.mp4"
+      ],
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
+    },
+    {
+      "sha256": "2ff7f74e4e295006700cf0c73d2b311f188b4e885664eb697091f5129847b5b4",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\scene5-award-v1.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "30393bdace3f5f0eff2ce25053012d9dd09eb964baf0f9e4715695c47d277be5",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\raw\\01-two-treasures.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "30775b0f44767bd19d8c1611a31460e432f272cffadb6811200777847e2013c1",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\10-jim-weary-r3.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "308187056070f9e5bb350097b4c4f08f179c8f961f0e38723b527c09ebfd147f",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\06-shop-memory.mp4"
+      ],
+      "category": "excluded-by-recorded-decision",
+      "reason": "All 61 six-fps samples inspected. Shop-window footage displays two low straight-crested combs, incompatible with the three circular jeweled-crested amber combs in the selected reveal family. Reject from this cut despite attractive atmosphere; do not confuse a different gift with the longed-for gift.",
+      "ledger_status": "reject"
+    },
+    {
+      "sha256": "318d5ed59d400fa9751ecbeddfd4d4017052c832275d03f0abe79c77fd80c0ea",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\14-appeal-r3.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "319d1e963894192714c3d51bd7bf96df8d45f24384fd07026630837f2494f564",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\raw\\02-hair.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "326296999ba20e2b441fccb53c44500ac2648d5a1dda14060c40d62181c24869",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\06-cut-r2.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "3378b4daf8e8ea8f97940181ab7edcff7f4211bad2cda358bf9fa26f53992a8b",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\09-comfort.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "339296efeace3a0e6bdef32ed618ad35f30fc77b89174473881d7e7248f134bf",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\raw\\05-solomon.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "35fa55406cd5fea47f5fa942a55b2e5e1d90c991bd09b1109ef6b18e36c1a9db",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\11-della-search-r3.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "3833f0a0fa404730c21a71e44af4aef6dbe0726a495ee4a782d7a32793550eaa",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\scene5-award-v1-silent.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "3841beb55099a884aecf2908497f3af4b71192b3f385a430f362ec7685343e8a",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\comfort-r11.mp4"
+      ],
+      "category": "selected-candidate-admission-required",
+      "reason": "Named by the consolidated edit; no eligibility inferred from its selection.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "3bd55d758da326d3927acbb76f61a6e059689c32c6c4110f567e80d21c5f9e93",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\02-della-explains.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "3bf638f42a1c4558a80a285c4f64f399527e5415af2c206301e295b50e1e5b89",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\07-chops-insert.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "3e07b935cb27157fbe0a5e2a8f0871f7f0be12920d9b10593ea79bfdb1b5f389",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r4\\raw\\embrace.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "40a9eba1de3685e1b0d0405087fc6bc4631d4d7cf7685c6a6f72ed0ec388b6e6",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\02-reassurance.mp4"
+      ],
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
+    },
+    {
+      "sha256": "420028bbd7f22440a17e2015bfc47bb5bc437c8cb7b17a472913369e2e6903e6",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\shop-conversation-r3.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "420fa13cc85ea16cd6f4e6ffc70438dc9c3b7b4f3143d116b8cd38c028a5a718",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\gift-reveal-context-r11.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "42d15e88965310e79591e3b3f1125587cd259287fe004941b76d344de4cc50ee",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v10\\s1-recount-v10-raw.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "43278c9b45c116d9ee6ade54a27f79bd0ec556ddc55e630e024a6fe3c2002f9e",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\04-waiting-chain.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "4402ee0b7a44f141a206a54b1680b50806a597225e2262818e8c3ae39a2fa1e4",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\waiting-preparation-r1.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "454deea572e11b2844803548236354f7fb81197f4eb0707a67864fc3a485fe75",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-7\\raw\\03-smoothing-r3.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "4837f7169eee9fd576818a688ea02045dd7175dbc0d40e1327bb63858dbc7a94",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\namecard.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "49a1d8eb5d967750e13071818c4454dc253c1f9d01e7b82ad3a30900127e8c77",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\02-street-shop.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "4b52792ee89b3c46c10997c0e2744191b7aebf7d008422cad6930d6342e0bd3d",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\della-listening-r1.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "4c758b419d355afd508c456807f50871a7846fd2f919462e7b0fd53cbbca8f9f",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\s5-b-sofronie-transaction-source.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "4daee3bcbb8cc3758b8cc9392d1235af78b72da6262f0a5fe572e622b6996725",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-7\\raw\\03-curling.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "4e0f9ef6c5de0293095c962a6701c4b850f7b134ace1c7474933fe78ea4ffd24",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\08-cascade.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "4e2ce1aae074b8809aa707ac7d281147330bafd11c15fbfb67bc2000c7996a96",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\chops-offer-r1.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "4ea6b3b8725136ef8f185157780a5d9b5e6acff69b400e92283807d0109482e5",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\10-look-at-me.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "51782fe3efb8aa2df998ca05e3ab4470d7c5c13c8f1faa20b0cf13353cceeb8b",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\03-stairs-up.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "5178a712db2924f98afc8287d95c389acb325339f177d6ccc45d96c081f232b8",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-market-v8.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "53b90b27d339c685276f76211b63a8a30bfa257e888cb1e9d478e1d384ae86b7",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-12\\raw\\06-window-final.mp4"
+      ],
+      "category": "selected-candidate-admission-required",
+      "reason": "Named by the consolidated edit; no eligibility inferred from its selection.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "554758b44c830c97ffeca58dd593799cde7a826a05ee2f07ec770e6db887b5ec",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-r1-counting-hands.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "56ccd357965c0a65b77e147bc440c351aea174805ec20ad04af041e12a35bdda",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v4.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "57aeb6a2d1d6bebf370b4ea990cc5f55e3716ea8c6dfd2a34419a3cd09311733",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\s3-e-hair-release.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "583dc3e09a90c0ce51af153a476d8f7fe17abf68f853c5ce1e9e199e1c7642a2",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\wages-after.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "592586c2eff46eba77eaba6fdd6944a61dc45594e15f5f16e25d19f8f1e49569",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\embrace.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "59ddc1ae2d6b8d802dd0670b07b89cb5e95cf597e30c3ed14b18fe7be631b8e2",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-r4-penny-decision.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "5b111e7df2d2228d37a2a07795f24da56ebc0fdc39caecc6b43aa22acda27f81",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\parcel-action-context-r9.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "5bcf791e1ac6c367bca94051d5daed4a503e5bb4d87c825f17112015649c8fcd",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\01-parcel.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "5c29f624f2d53e359e91f70b31d8a4411e5714c8df1085ff436da21857d1a4d4",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\s4-a-two-treasures-raw.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "5d378112fd7d4baed36905d54196b237b034949987434e0092b8f79d7db5bb90",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-7\\raw\\05-mirror-review.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "5d8642b3336604d5901f98517b9507f5b773858dc591394e47d7b97d3439247a",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\03-unwrap.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "5e275bd5ce3866658bfa4ac57bd22aadb1cf9c7d8431fcdfcbbd9bd95eb987b6",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\11-check-chops.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "5ebca260bb7fb8baffc8d1bf4a52167824667e7cfae97a340bb6b76445a231de",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\03-cut-hair-question.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "5f1168b0a78799f9f7cc2dc32d84855839255bfab972d4197738b00792af57ef",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\01-frozen-door.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "5fdb7d6b1694b522255245bb611671a39cfa9e9bf0ada4b4e4fe99736155e4a6",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\04-asks-watch.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "602eabf5d13fc24abbbb658447b21e9886a428ccf2f77ce05b0a6ccc20c02d48",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\jim-continuation-r7.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "61fc5b073a9047c78cdf3e2a9945de61899f412ae04784b7244cee5d18e22dcd",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\waiting-room-r1.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "62d954bce452781e7c817791c3cfaf6811e420f05acba6a49f2aeb2169e2bc36",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\08-mirror-combs.mp4"
+      ],
+      "category": "excluded-by-recorded-decision",
+      "reason": "All 61 six-fps samples inspected. The post-sale scene brings back a watch on the table, introduces a differently formed comb and relocates Jim behind Della near the doorway. Reject from this cut: good facial acting does not resolve impossible prop possession or the interrupted intimate scene geography.",
+      "ledger_status": "reject"
+    },
+    {
+      "sha256": "6308630b64a001a766a09fff3e0eb81e10281c581d3195383728f4f992fe9cf9",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\scene5-in-context-v1.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "63376bf0c185ffa16ffbf568b074177b9865b168665cdd6eeabead8b475c19e7",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\stair-ascent-r3.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "643819f9a715389b76904e599e597b6197d9899dea8592da8b120b776f6cbb94",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\supper-detail-r1.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "653f0240bd62d4c13be2eb805dd104674ca0c00bb4ae5b74bea72c16b5ca9f09",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v11\\s1-book-opening-v11-raw.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "68c7cbe35a014f63b2773c1b4e1f1c4b063c30b0f975473bddcaa309329f5b03",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\03-clock-seven.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "6a774c9508088319d0aad30ecc111205e1750f789980bc8e8a55e00ff20a686f",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\05-chain-recognition.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "6c372be71620dbf8b6ac26f172d67d74fede3867c2ab6a14f1688c5c4d6da92c",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\opening\\raw\\book-open-candidate-01.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "6ce86f7864ee1d26c2e8001242b4ebcabf6eea329a9c71a58e4b0c1f88159479",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\parcel-insert-r9.mp4"
+      ],
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
+    },
+    {
+      "sha256": "6cf9c6d8735be5c1e7aa490addb9c8c5797b978105b9c61636f4e5d9dcb20897",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v10\\s1-turn-to-sofa-v10-raw.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "6db8eedb3aa556c57bd5f1f3eab63fd199fe50c79524040684a55f60e0941eea",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-7\\raw\\01-arrival.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "6dc8d62d51b5c661d7956fed70edbd21c9d9bc24b94bdfc41485e19f83c6ce05",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-tear-v8.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "6e8d45ea096d1202f17fb68da8256b4a907b35fa862aea5d3c74519dce7b4482",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\penny-context-r6.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "6ef3d5bb5339449736905fc90ed75e828df63c9eba84293cd401bd7b04eb2fdb",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\02-chain-macro.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "6f67f5331e6289e4fda51afd7652acbcc7c16a19fc791b3dbf59a6f76bcd410b",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\05-jim-sofa.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "70b2ab56c467dc866124ec796dbf8d27604084ee4c4fb01cffc0b9a96e50cd08",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\flat.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "7295403bcc59d5f7e130bd23d5b5233f9ee4fa0e26451d638f887a8dc61c8066",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-7\\raw\\04-final-curl-r2.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "730ec30d45bac827c19b8500477d7079b705b44bd95070613cecf6b7a239cdb1",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-winter-walk-v8.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "73e63f5aead92d0a61b17a839f33f6e7b55a56ca32c327b6d1c12989a315075f",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\detail-r2.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "7539b4417a3c3c77f2767f67a45c531507ccd52820032680d222c428dc47ff91",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\arrival.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "7722268cd1f73765293cde7a81491ce0c0bfeb66aba1c7c692db7f3a53fc0026",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\sound\\closing-sound-audition-r1.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "77a44639a3f14b17a00d5168746d742bbb59753d13a3860a3363b1278fe94794",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\06-love-uncountable.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "793971d5f6a7fc88f06ec8527c9c52b60a18605b427286d31a69f61e9f80d1db",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\chain-context-r14.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "7a1bc027567cff110aed3a7c66c0ac14cdfe6c30c64d966d2cbf54eeb56699ce",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-r2-market-walk.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "7ad4d33a92d92dced0f27b0a9ee0acf089d85bcc0ccad11d634e676bf52aba0a",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v1.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "7b5f072739907b65b5914e08e59db1ce09c39d9cf2987a38937853f5e73600ad",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\waiting-portrait-r1.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "7eea5c04c044b9e12c59568456f472cd6a368448d525de2d6ba2214f39ed3ef2",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\02-set-table.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "7f2e763b7a4985f86c6ab4abe49a98678262ff2c01fb5f8858b79f2318d5cd9a",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\04-idea.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "7f58eda9c2acd1e951cfab8d241f616159715c96d266ad9bfa6ca6ca6a2db198",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\scene5-award-v3.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "7fbab1987d12cc62d1bbac24ceeefef196ff773115626cc75af21e2eaca5162b",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\parcel-toss-r8b.mp4"
+      ],
+      "category": "selected-candidate-admission-required",
+      "reason": "Named by the consolidated edit; no eligibility inferred from its selection.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "813f695d5e06a1a06659df36edceef56c81a528649d5e62f9d74852f47419a9f",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\approved\\s1-r1-counting-hands-cut.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "8229c039733160d34f0c4af7210836fdd8964ed4bb752a63e5c78f4ad63f45d5",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\stair-costume-r2.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "826fa477b9a6b1b56501a63534fb25b8b1dee74510cd5400659624770a9de63e",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\unwrap-r10.mp4"
+      ],
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
+    },
+    {
+      "sha256": "83db00c4375edd2093ddc843f6fc0dbd0597ee65e6744d00d606b14eda7486d0",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\scene5-award-v4-silent.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4"
+      ],
+      "category": "derived-film-reference-not-new-coverage",
+      "reason": "Assembly/delivery export. Preserve as provenance, not an independent take.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "85e111ce68a02cdef7aeae282f1b62c2f9851d3563a712fd420fa5fd006453b7",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r4\\raw\\listening.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "869188cadfd30eb47dcc9ebd09b640f295d7ef05dc4015531be3cb9ccd44533b",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v10\\s1-counting-clean-v10-raw.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "871b31ee68dbe599bdc8d0de50ea6bade38999fd5c3c0a605b9f65bf533f7941",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\wages-before.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "87c8bdcc7403e3e71ea258799d183c280eb2be9779085b6168308578a6e892f4",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r6\\baseline-v0.9.2.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "887eb990cd96343db60c76852a17930bfdabf256984a609c6512a0c75b397a58",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\12-jim-silence-r3.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "8894dcd5c7c409ad4ea2f8c60a2c5223ae1c45969974858d96bec9b8ea5a7364",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\s1-b-market.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "88d82a181e85bfc5ad42620a63ff069648ef1daa1b18aefaed3f750904bba5d1",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\s1-e-reflection.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "898dd17709a1734428d3e3d8f10965c82293082ce4c751f90d5ff8538f1e73c4",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\final-round-01\\shared-ending.mp4"
+      ],
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
+    },
+    {
+      "sha256": "8a0bc8912fb595cf58c6e64bed117d44961427209dd73b88c176638cf0385506",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-12\\raw\\02-ancient-gifts.mp4"
+      ],
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
+    },
+    {
+      "sha256": "8a5de5a4d2ec012a768f1b2fa7186a63429206f3b1d940f70a5b6a1abb6b31dd",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r5\\baseline\\magi-reader-film-v0.9.1.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "8c1a9049d6186873090b0b9b496aa53dfe3bf03a9e09a314ea661ca55564c5d3",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\reaction-r10.mp4"
+      ],
+      "category": "selected-candidate-admission-required",
+      "reason": "Named by the consolidated edit; no eligibility inferred from its selection.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "8c80bb4365f6b886461f203c38aeec23af2167ccd1f33f2a0d6daf49aa7c31c5",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\05-mirror.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "8cefbf7bab7e0f6bb610ab7ee82e5b1dfd4e9a1aac676a759e0994000b59847e",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r5\\baseline\\magi-scene4-v1-preview.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "8d81d410515dbc8a2a926ccf21100a66870df15b3a3ba8e0aa9a40a2e7bbab9c",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\01-street-search.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "91808114ed99c732aa51782bf3b3120cf90fb3ed938be38d56cb3b02d6442e92",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\01-coffee-pan.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "91b7f625736d565568000ce9344f69bf955b7a57f14ad7815a068bd4fd0fb3b1",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\03-chain-in-hand.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "91f3cdfb08c875a603f4e0695b60b096d97e2452f498cffa36e6cfce6fbdc729",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-12\\raw\\03-couple-gifts.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "92c906a43d43b3e1b937394fbeb8375a021ef5e2aee53b6c40cbaf58be5f7ae0",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\final-round-01\\della-understanding.mp4"
+      ],
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
+    },
+    {
+      "sha256": "9359db2c028e18dd5b53fedebddea328858d25fef6175b9d9d22e04cc02997cc",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\waiting-care-r1.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "94264ebb0aa51e8e04c7f7fe69e12c29c40103308529032524159ee768bbb3bf",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-pennies-v8.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "9572722a79a72010853bc6ab1adfeec47e1b09c20200ccd190428bb9e0ac5744",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\s2-c-dillingham.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "965fc237c564df6a0f51e8fe8e3d0ccd7424960038fdc11825260c50be274414",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\07-jim-stairs.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "982d71d1ced08c4223c6d9b1146647603f6d2c0c876462be322ce6d688462cb5",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\detail.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "9912cf7eab46bad2ed36d0f92689c1c0f23f925fc167548c52d13b42ac1cd90d",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-counting-v8.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "99b78e09d72e64d36418fadd0bc41c59f01e33487b8fc1e476fb7362835ea889",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\approved\\s4-watch-cutaway.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "9abb1f2bf4012729fcebfe480862c5fce64e9155ecf4a3899cc484f2e915d881",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\supper-insert-r2.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "9ae5e230d9f516e6d489200d43e5b7a925b43a9efcd4118495e5436a2d2b1501",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r4\\raw\\embrace-barehands.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "9b987541fde1377ad7bdda53da04bdd2db63757ccc5950068ddf9a82187e6133",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-7\\raw\\04-final-curl.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "9bb5cba335fd1f39e84ea32af7d4e9b63528f0ad64aab043ec6bda398836f10c",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\quarantine\\runtime-s3-d-hair-release-rejected.mp4",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\s3-d-hair-release.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "9d093da285fe16ce8d46a2396dc041cfa0109cf85a6284ddb3c9f36263cc679c",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\09-gather.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "9dba6dd5c2d736af08c9b871ff630dda531f9f9eae8d7b9101aeb764952ba482",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\arrival-r2.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "9f3bdf243d5d6f061d30307e0e806356db09275eef01545ae27399f8398f7687",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\03-cut-hair-question-r2.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a009e070362b1400356bb947212d12a8950e38192c6d9c00db9c8824594d2b81",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\01-della-chain.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a042d527132f442c73c98b55dafadbfea8dd0a865b4a4a8c8e2904b8567dfe52",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\quarantine\\runtime-s3-a-window-cat-rejected.mp4",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\s3-a-window-cat.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a26c8acf872e4d76853ce7cfa0d108a060280ba1e1d0df8356c43f1a65c5f64d",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\shop-reveal-r3.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a2d8a8b46c7f96da52ff4b75400716c5831402a243bd6bbafadeda6d26c0db9c",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\08-embrace-r3.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a34bc38f87d7a0de7c51fda6082e29e4b338d658bdad128d9d5789b4fbd21436",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\06-transaction.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a4c58aadec6bb76232579112cb390d4a63210051dfcd7ea8adeaf78e021c5146",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\quarantine\\s4-d-hair-cascade-rejected.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a55f7d631b9cd96c3dc1202c577a5eb04f4ac2efbc8f9e37f7f3df59d23498a5",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\s1-d-couch.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a63d95a32ffcddec8aa4020661bbf439770d43bf9bd2595d2815f2feed6617db",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\della-chain-r13-framed.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a685834e73d85e8424648189c4be8e185822b1208416de68ddc56eaffcc861ce",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\05-combs-reveal.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a6fe64aea419eef509a4b511db75b722c85a47d2abc573639304274e0f6b990b",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\02-cat-window.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a792ef21c3ea9ce600ef4f46c5f43827a562ed6f6b4006cc8c0e9cd2810d463e",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\raw\\04-watch.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "a861c4241e14431ec9de5a0339d1603bfe06ee87a706ddcfbe1408d9dddc627c",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\s2-b-vestibule.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "aa6a85c8b4c3c212aef962d1a1f642e89a0773c1b7e9967d38e72c1caad7eb5f",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\recovery.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "ad04d1ee7af28bfdfa0d6fda7d5cb65ba4ed50def92e5367ab5a1ef765561ef6",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\07-combs-macro.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "ad59ee8421555d668863bc8f7b5b646b73f25d116689039f5623748720b3a78d",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\05-looking-for-hair.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "ae624473916798c5a5e5f80ce5d9dce20212ba76f25114e222a35a6bdc16d585",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\jim-ascent-r1.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "b0229d4f429dc658c83af2be7c96a613c5e334fc751f63a70363c3209328087e",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\supper-to-della-r1.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "b176aaac0b17415ff0e7de7d40805be52d02ff99c456f510c37627281bef7d72",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\01-counting.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "b2682438ebf1a52c86aa19e2a3d32e71d7ea173965c1d374d50a1fdaa4548ca4",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\letterbox-r2.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "b29e141b5e89b7a8dceb3a242bca43dcc00876ef0e14331a7497af9f5607db43",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-11\\raw\\06-empty-pocket.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "b4db59aeff5781241c50203916bca07d18bab1b961d88bf29550b842ee5afcf8",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\raw\\s1-r3-window-decision.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "b5d253a6e66738605f0605aa583d52ddda6f81327999564099203e9b61770426",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r5\\raw\\watch-omni.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "b6c7833879d823459b18538b984c23d1b75a2e62a4dfcf336ce5e35809e978d6",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\s2-d-homecoming.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "b743cc491b6f379a69404da6b0b7c6263a8799bf857e7cac33e621820599e882",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v3.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "b757e5eebbb65dbf4f3dea95b68b487eeb146142c9ca10893f953cdfab45b8fc",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\chops-offer-context-r1.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "b93c7e3451afd49339fbce534567a75324e2a72f7c8b199f9dab0c4e07931746",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\approved\\s1-r2-market-walk-cut.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "baf72f3c47a4f44b206956a02219d503a56fbb1741022b3d0d71a18d922cb788",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\13-della-fear-r3.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "bb8fe174464324cf7599c5f0b228c5904dee93f997a2c027df135999c748296d",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\08-door-open.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "bc038467c24cc65deec49e106d09d01388e2218423a32720e4ecbca958ced793",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\s4-b-sheba-raw.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "bd1af6a4df08aa3c7c3a2c9a003c5100dad88fc78d35773812e54e21cca7ad79",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\quarantine\\runtime-s3-b-present-planning-renamed.mp4",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\s3-b-present-planning.mp4",
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\s3-c-present-planning.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "bdf5093956be17f63f708038a7fd216c83f74115712d27a9622aaff7e1f44d31",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\della-chain-only-r13.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "be4c4a830a91d5db91700f68ebe58f3b6fc50407649ff9c4ebcafbcb5ffdc63c",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\scene5-award-v3-silent.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "bf0a3838760cf93a3ccc6c1194b2480d206839911b2c78bf664368be09ce4dc3",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\combs-insert-r12.mp4"
+      ],
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
+    },
+    {
+      "sha256": "c053541f0d27eee05abaf0fa848a5bdd035df593865f4bdedbae2e29aea1de91",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\final-round-01\\combs-reveal.mp4"
+      ],
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
+    },
+    {
+      "sha256": "c1486c43cec2a65f4a1bb339cccbfb00139a05f3ad1681eb0340de17d2eca71b",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\04-sofronie-r2.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "c15fc184a1b51ac7261b08863b508137c8cbc0019b3fcf9929fd9bc4ae0a26e3",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-7\\raw\\02-mirror-r3.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "c1f80683996ad9031f4b92135c1eca7000302a2ab7a13aa4bd5683aabdd549b7",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-7\\raw\\06-worry.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "c2d7c32de87c364c72ab9d41cb7846d2062514ca244ddc2a67a406c16b7187bd",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\parcel-reassurance-r8.mp4"
+      ],
+      "category": "selected-candidate-admission-required",
+      "reason": "Named by the consolidated edit; no eligibility inferred from its selection.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "c3cced2d6856f8d51100228945d3b4f681895c32751c6a9ab50dd7dbecde54bb",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\scene5-award-v4.mp4"
+      ],
+      "category": "derived-film-reference-not-new-coverage",
+      "reason": "Assembly/delivery export. Preserve as provenance, not an independent take.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "c3ecd1945bb6183844461d36a637ff44a2b635b8b84c1968bcd63975875faf42",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\sound\\closing-original-v6.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "c49be9a175180aab90f827d44cf3062b8800a7e747eb8bd5577f8332ac9e56fd",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\raw\\06-repin.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "c6e3b602a107959e312fe7b39c38547608443ec2cff5b8e744d67aff429da18d",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\v10\\s1-sofa-cry-v10-raw.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "c85e477e48a7f25c40ccbad58bb3d4312d9cea86df78a928e11d0b47c5cce10c",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\04-sold-still-me.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "c8ddb1f29a539f7cf3c66d71162a26d322b75578c6549792970651066e3e2c12",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\approved\\s4-b-sheba-reshoot.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "cc5da7d11e8e01c8a78baa1afe7cd91d4be3fcf817a907d846223e4b42c87db7",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\departure-exterior-r2.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "cee6da7792ebf5e62f0a0ae3cc026cb12b085de598d1ba0d73745c80ba86ba28",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r4\\baseline\\magi-reader-film-v0.9.0.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "d318012b782adaa42a591e88e710b6996fa63122a4461c897fba06735c08b778",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\credits-v1-48k.mp4"
+      ],
+      "category": "derived-film-reference-not-new-coverage",
+      "reason": "Assembly/delivery export. Preserve as provenance, not an independent take.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "d51abb089e94f7028713b56d007a2bfef4827799c0f0bfbd2bf6a924632175fd",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\12-jim-softens.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "d52c8707b21d2ff85dc27f72da8a6374b3d8656559c054f00f0afab467648ea0",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\s2-a-flat-reveal.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "d78ac7c9a900037e183edd2ec6a6c58aa9fb114b41de1a8b329e533cf1e249f1",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\della-decision-r2.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "dafc45e0e917b677b199750f0c203f2177ed4a61076bbbea227cb0921fbe0ad2",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\04-sofronie.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "dccb9bceeb80e11401ce6be34b43c0d3a87a514ac72ff878dd93398c8f45527c",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\06-prayer.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "dd95b4c3aa9d5de98c338b566cb76110b436f06a095add9eb3cc876a071cca09",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\s4-e-repin-raw.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "e032c835f9fd24c3177534ad410fd541a3249249cc8d448e7754843729634f12",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\stairs-context-r6.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "e0b07622a0923c5ab37a0e1c2b7ccdb7bfae1e1476a1f7986add0d82f0840a3d",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-7\\raw\\05-mirror-review-r2.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "e15b23d5915d251c0076614ef84fcaf090d696ed9e67497662bd29e196b9d493",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\06-hairpin.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "e171cc00b597ec6dc639e9e5cbda5376870815747fc5452e971dd9334d449564",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-1\\approved\\s1-r3-decision-crossing-cut.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "e1cb539e19a3020d3458a379a20d234ec4e5fd73b5632d528de2a05a7cc53018",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\02-shop-exterior-r3.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "e2d5c6e4025e198715d28fcd7d0c3ebee60e5d6893d72b59849c36d983f4c281",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r6\\della-reaction.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "e5f838650c7b0af97200bc10b221805f9cf344c229eeb4fb2bab3878cd69a8ca",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v2.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "e66b6c1713004ec0617a881b569edeb63e5d12ad5f1eafc08f168ed49575bcb0",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\s4-c-solomon-raw.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "e7cd2e81170b6e9a2510e6c8afa13a5603d62035cdaf04fe1a7c0d300161dc9d",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-8\\raw\\05-hears-step.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "e9b34ba4149260b21272ec43dace28b3c8ea65ba2547eb4e614b3dc115eda97e",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\s5-stair-climb.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "ea73e575af7ec290e560b49103cd6b45828422eb739412e5e1c31fdb5715f6b3",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\04-chain-macro.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "eb156da4d16043b8bfc3f3037be9a16afea700f7f75be2aa1900cd05a455f94d",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\04-idea-r2.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "ec4a88044fc7a718d365ef4813f2a1f269490389427cd38306cda27828ca10dd",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\waiting-preparation-r2.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "f0508f9324aaa7d70b636fdf83d5080b351ee67ff7660d29851d91b2f3c79e6a",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\02-jeweler-search.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "f2c4c96dc876714480b75bd40591a356a3ac352abb386749eee2dd5718614754",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\gift-reveal-context-r12.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "f3237e79013fd5b509c09dfa2342a1c04736d1e276a6e5059985233a0ace2c7a",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\02-cat-window-r2.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "f65d1bbb7670f06119e172f9bf7c1a5e4102af28ee0cd5dd2d53ef4d1e3ecf15",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\09-window-breath.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "f6e0bc0bfd91c2852a7e7d564b4e565d3194d2b6d38a9fa48970aec3472af524",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\13-reassurance-r3.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "f71ce1e0dad5336b100ff5c8f1d2700f83c31288c7a8f7a384d8723b07490162",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-10\\raw\\04-joy-tears.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "f73091014963103ec79cec1308a06191d759b34ed728cc3686c2b016fbae64c3",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-9\\raw\\05-looking-for-hair-r2.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "f770030cc55e91bfa6fd1e22e5faed081522d544544b763dc7e8aa8afb4ce445",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\della-cherishes-r12.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "f7c126bb2a8cad20065678fbd941581427cb93bad01c78a9dbcf05926efac731",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-4\\raw\\03-sheba.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "f94644244b0036b11d60f579108e75c2067f13a9922f51577ccac5b6033ab3e8",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v5.mp4"
+      ],
+      "category": "derived-film-reference-not-new-coverage",
+      "reason": "Assembly/delivery export. Preserve as provenance, not an independent take.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "f98aefd3b00b4b8058b4ae84ce1bce128be76a9f24fc8495b3be8c3a08faa149",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\polish-r4\\raw\\entrance.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "fad6ce3e7617f181e82b7e98e0f09a9782061255116498b039d001160f316807",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\jim-revelation-r1.mp4"
+      ],
+      "category": "selected-candidate-admission-required",
+      "reason": "Named by the consolidated edit; no eligibility inferred from its selection.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "fb0be4824cab96df60308bccd72b6f8190ff04342472a92d34dfec1de20ede71",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\jim-continuity-context-r7b.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "fcd17ffbf4ead704e968a9366a16cbd438aa05547148cf11851079c993600214",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-2\\v9\\letterbox.mp4"
+      ],
+      "category": "current-cut-source-candidate",
+      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "ledger_status": "unreviewed"
+    },
+    {
+      "sha256": "fd6cf0d515e8abc256115284267b56ee0f1f380519608631c0daeba75c67da9f",
+      "paths": [
+        "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\scene5-award-v2.mp4"
+      ],
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
+      "ledger_status": "unreviewed"
+    }
+  ]
+}

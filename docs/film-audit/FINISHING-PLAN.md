@@ -23,6 +23,14 @@ No new credit spend this turn. No bake/publication yet. Native inspection outsid
 
 ## Current execution state — 8 September
 
-The shared ending and the other two priority pickups now have formal source-range admissions; consult FINAL-ROUND-REGISTER.md rather than the historical pending status above. Seven source hashes are admitted in total. ENDING-SEQUENCE-PLAN.json explicitly leaves a 385-frame domestic-coda gap unresolved; this must not be padded by a repeated performance or the rejected watch-on-table footage.
+The shared ending and the other two priority pickups now have formal source-range admissions; consult FINAL-ROUND-REGISTER.md rather than the historical pending status above. Nine source hashes are admitted in total. ENDING-SEQUENCE-PLAN.json explicitly leaves a 385-frame domestic-coda gap unresolved; this must not be padded by a repeated performance or the rejected watch-on-table footage.
 
 The current master has a verified nested source map covering its full 21,387 frames. Resolve remaining opaque baseline sections, carry the established source decisions into an every-shot plan, and finish the unresolved coverage before baking. Mapping is provenance, not fresh visual approval. No new film has been rendered or published during this pass.
+
+## Consolidated whole-film plan — 8 September
+
+Use [WHOLE-FILM-CANDIDATE-PLAN.md](WHOLE-FILM-CANDIDATE-PLAN.md) and its JSON as the single candidate timeline. It integrates the parcel and ending section designs with the whole-film audit:113intervals,47beats,21,387frames. WHOLE-FILM-DECISIONS.json contains the human editorial treatments and15linked tasks. This is explicitly not the final admitted EDL; all remaining source selections, exact cuts and contextual joins still have to pass.
+
+The baseline's13component exports were recovered by verifying all21,387ordered H264 coded-picture packet hashes, accounting for non-picture headers inserted by concat remuxing. See docs/film-edits/baseline-concat-verified.edl.json. Historic internal edit records now locate candidate cuts; unlike coded-picture ancestry, their raw-source transforms and exact boundaries have not been independently certified. Do not mistake provisional cut locations for visual approval.
+
+INVENTORY-ROUTING.json assigns every inventoried hash a planning category, including retained reserve footage. It neither deletes anything nor falsely approves the reserve pool. Next work should resolve the linked tasks within this consolidated plan, admit only selected ranges, and lock the remaining finite pickup list against all unresolved coverage together. Do not restart the full-film audit or keep commissioning isolated fixes. Remaining credit ceiling33,000; no spending, bake or publication in this consolidation pass.
