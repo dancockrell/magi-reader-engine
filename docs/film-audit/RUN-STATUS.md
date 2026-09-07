@@ -12,7 +12,7 @@ This is an audit in progress, not a new finished cut. No film changes or generat
 
 ## Review position
 
-Accepted sequential coverage: **00:00–08:00**, samples **0–2879**; next cursor **2880** of 5,347. This is approximately 53.9% of the sampled film, not a whole-film verdict.
+Accepted sequential coverage: **00:00–08:24**, samples **0–3023**; next cursor **3024** of 5,347. This is approximately 56.6% of the sampled film, not a whole-film verdict.
 
 The worried close-up and developing couch performance are promising material to protect. Merchant-street footage may function as a recollection of saving pennies, but walking is a weaker illustration of bargaining. The isolated-penny replacement has a supplemental native-frame check; the apparent extra disk at 37.500 seconds resolves as the fingertip when enlarged. No final source selection follows from those observations alone.
 
@@ -35,6 +35,8 @@ The 06:00–06:36 pass establishes a clear plain linked-chain insert at sample 2
 The 06:36–07:12 pass finds a consequential prop/story error: Della lifts a small gold watch attached to the chain after arriving home (enlarged sample 2448), although she bought only the chain. The watch-handling shot ends about 409.583 seconds. Its delighted performance may offer an expression-only reuse span, but the incorrect possession must not survive. Preparation then uses a freestanding mirror, thoughtful close-up and a round tabletop mirror. No detached-hair curling is visible in this interval, but neither the actual iron action nor a tight-curled result is established through 07:12. Review the continuation before judging the whole grooming sequence. Receipts 002376, 002448 and 002520 accepted; no edit or generation. Next is 07:12.
 
 The 07:12–08:00 continuation resolves the pending curled-result question: tight curls appear at about 433.083 seconds, roughly two seconds into the result narration, within loose-sync tolerance. No detached-hair curling was observed in the reviewed grooming passage. Vulnerable self-talk remains with adult Della rather than literal schoolboy/chorus-girl imagery. Coffee, empty pan and uncooked chops match dinner readiness. At about 474.292 seconds Della waits at the table edge with chain alone, confirmed in enlarged sample 2856: this is a promising alternative to the earlier unsupported watch handling. Fine chain identity/contact and mirror/clock/set compatibility remain pending. Receipts 002592, 002664, 002736 and 002808 accepted. Next starts at 08:00; no film edit or generation.
+
+The 08:00–08:24 pass includes a native review of all 96 frames 11572–11667 plus enlarged samples 2898/2910: current Jim ascends on the stair side left of the banister, unlike the historical wrong-side screenshot. Do not transfer that old diagnosis to this version. He carries a brown parcel in both bare hands; it is not visible when he enters, leaving stowing/coat-pocket continuity pending. Prayer coverage has smoother bob-like side/back hair than the established curls (enlarged sample 3000), and an already-open doorway precedes the separate opening insert. Preserve vulnerability while resolving hair/door families. Receipts 002880 and 002952 accepted. Next begins 08:24, during arrival. No edit, generation or publication.
 
 ## Resume exactly here
 
