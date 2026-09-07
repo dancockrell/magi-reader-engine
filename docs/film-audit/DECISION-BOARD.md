@@ -10,6 +10,7 @@ Provisional synthesis, not an admitted source list. Baseline v6; current detaile
 4. Name-card framing jump at 01:32.750: native-confirmed. Find a clean span or substitute coverage.
 5. Hair-sale continuity at about 05:25.125: Sofronie's face/build and costume change between conversation and appraisal, alongside a different shop setup. Select one compatible performance/set family rather than conceal a character substitution with a transition.
 6. Sale-to-shopping costume change around 05:37.125: cream blouse/dark skirt becomes teal dress under the brown jacket. The offscreen haircut is valid; the unexplained wardrobe switch is a separate compatibility problem.
+7. Jeweler substitution around 06:21.583: older grey-bearded appraisal seller becomes dark-haired moustached transaction clerk, with no established handoff. Prefer a compatible transaction or a legible handoff from existing inventory; do not assume a replacement generation is necessary.
 
 ## Candidate families — not canonical yet
 
@@ -33,6 +34,7 @@ Provisional synthesis, not an admitted source list. Baseline v6; current detaile
 - Paired hair/watch composition: strong idea; only a physically sound range can survive.
 - Royal metaphors: narrator's imagined wit, not literal household events. Evaluate rhythm rather than reject automatically.
 - Della's quiet discovery at the jeweler around 05:56–06:00: attentive and personal, not ostentatious. Source-level physical review remains required.
+- Della's smile and chain lift around 06:13–06:21, followed by purposeful homeward travel from about 06:30.583. Protect recognition and anticipation; the return is already near its narration.
 
 ## Questions that change the edit
 

@@ -12,7 +12,7 @@ This is an audit in progress, not a new finished cut. No film changes or generat
 
 ## Review position
 
-Accepted sequential coverage: **00:00–06:00**, samples **0–2159**; next cursor **2160** of 5,347. This is approximately 40.4% of the sampled film, not a whole-film verdict.
+Accepted sequential coverage: **00:00–06:36**, samples **0–2375**; next cursor **2376** of 5,347. This is approximately 44.4% of the sampled film, not a whole-film verdict.
 
 The worried close-up and developing couch performance are promising material to protect. Merchant-street footage may function as a recollection of saving pennies, but walking is a weaker illustration of bargaining. The isolated-penny replacement has a supplemental native-frame check; the apparent extra disk at 37.500 seconds resolves as the fingertip when enlarged. No final source selection follows from those observations alone.
 
@@ -29,6 +29,8 @@ Critic corrections are implemented in PROTOCOL.md and [the decision board](DECIS
 The 04:24–05:00 pass finds that the Solomon tail actually continues to about 268.583 seconds, approximately 6.2 seconds after the narration returns to hair. This extends the evidence, but still does not mandate an exact caption cut. Della's hesitation and the outward face-led departure are promising material to protect. The sampled departure goes down and out, not the historical wrong-direction action. Stair contact and camera/door geometry still need native checks. Next is the shop entrance at 05:00.
 
 The 05:00–06:00 pass identifies an unmotivated change of Sofronie's face, costume and shop setup at approximately 05:25.125, followed by a cream-blouse to teal-dress costume change across the haircut ellipsis. The ellipsis itself is legitimate: the original story skips the cutting procedure. The jeweler appraisal introduces a pale linked chain on a dark pad; this is an observation to compare against later shots, not a canonical asset admission. See [05:00–06:00 findings](FINDINGS-0500-0600.md). Next review begins at 06:00; the master remains unchanged.
+
+The 06:00–06:36 pass establishes a clear plain linked-chain insert at sample 2190, but functional fob fittings and contact physics still need verification. Protect Della's smile while lifting it around 06:13–06:21. At approximately 06:21.583 the grey-bearded jeweler changes to a dark-haired moustached clerk without an established handoff. Transaction coverage therefore needs compatible seller selection. Her hurried homeward street shot starts around 06:30.583, close to the narrated return, and is a provisional reuse opportunity. Evidence: accepted reviews 002160, 002232 and 002304. No source admission or film alteration; next cursor is 06:36.
 
 ## Resume exactly here
 
