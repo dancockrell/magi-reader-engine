@@ -1,6 +1,14 @@
 # Whole-film audit checkpoint
 
-This is an audit in progress, not a new finished cut. No film changes or generations were made during this pass.
+## Current checkpoint — source selection and edit design
+
+Whole-film sequential review is COMPLETE: all5,347 samples accepted through the end of v6. Historical pass notes below remain evidence, not the current resume cursor. Current phase is inventory-review-required. No new film export or publication yet.
+
+The generated edit workboard links all47 text-led beats to187 observed review intervals, preserving receipt references, judgments and unresolved escalations. It is NOT a final shot list: packet/beat boundaries must not be mistaken for actual cuts, and no source admission is inferred. Rebuild with `python scripts/film_edit_workboard.py --audit ../magi-film-audit-20260907 --output ../magi-film-audit-20260907/edit-workboard.json`. Five targeted tests pass, including wrong-master and missing-review rejection.
+
+Resume source decisions from PARCEL-SEQUENCE-REVIEW.md and FINISHING-PLAN.md. Parcel timing now has candidate coverage for42.25 of44.5seconds, plus an explicit2.25second reassurance gap; ranges remain provisional until admission and contextual checks. Mandatory reassurance crop was inspected at sixfps throughout. Three priority generated sources are completed and under review. Additional credit allowance remaining33,000; no new spend this pass.
+
+## Historical sequential-pass log
 
 ## Completed preparation
 

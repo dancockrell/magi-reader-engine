@@ -55,3 +55,27 @@ All 214 six-per-second samples across four sources, seven ordered sheets, inspec
 ## Delivery gate
 
 No source admission, final edit-range approval, bake or publication claimed here. Remaining work: pocket lead-in native0–47, full-size release detail, parcel/box dimensions, native unwrapping contact, reassurance coverage, reveal ellipsis, and assembled audiovisual joins. No generation ordered and no credits spent for this comparison. Additional allowance remains33,000.
+
+## Reassurance follow-through
+
+Next pass: another122 six-fps samples inspected across parcel-reassurance-r8 and della-listening-r1, plus61 samples of a separately extracted mandatory crop of reassurance.
+
+- **parcel-reassurance-r8**, SHAc2d7c32de87c364c72ab9d41cb7846d2062514ca244ddc2a67a406c16b7187bd: affectionate two-shot, Della left looking right, Jim right looking left, tied collar. Jim still holds wrapping at the bottom of the original image. Uncropped source cannot follow the table throw. Static native crop `[240,0,1440,810]` retains both faces and excludes parcel/hands throughout all61 inspected samples. The tighter composition keeps their mutual attention, followed by downward looks around7.5–10s. A 1.333x enlargement would be needed for a1080p delivery; full-size quality and native edge checks remain required. No synthetic zoom, retiming or motion repair. Evidence folder explicitly identifies the crop; source acceptance must include that restriction.
+- **della-listening-r1**, SHA4b52792ee89b3c46c10997c0e2744191b7aebf7d008422cad6930d6342e0bd3d: quiet concerned close-up, short curls, no props in view. Della is on the right looking left rather than the reassurance shot's left looking right. Do not insert it as a reverse without a deliberate re-established axis. Retain for later seated revelation context where its direction can match Jim; do not flip it automatically.
+
+### Provisional timing design — not render input
+
+These are candidate native-time slots, with unresolved material left blank rather than stretched. The original narrator and captions remain unchanged.
+
+| Film time | Candidate source range | Purpose / unresolved check |
+|---|---|---|
+|668.250–671.250|parcel-toss-r8b frames0–72 exclusive|Pocket reach; exit before wrong flat parcel. Native lead-in pending.|
+|671.250–674.250|parcel-insert-r9 frames24–96 exclusive|Release/landing around672.5–672.8, within the671.706–674.226 table-throw narration. Remaining native handles/detail pending.|
+|674.250–684.250|parcel-reassurance-r8 frames0–240 exclusive, mandatory crop above|Reassurance as a shared moment; do not show package in Jim's hands again.|
+|684.250–686.500|UNRESOLVED,54frames|Need compatible reassurance continuation or reaction. Existing scene-10/raw/02-reassurance.mp4 is a next candidate, not approved; do not extend r8 by freezing.|
+|686.500–696.500|unwrap-r10 frames0–240 exclusive|Begins during invitation to unwrap; later paper action continues through nimble-fingers sentence. Closed-box reveal ellipsis and hand physics unresolved.|
+|696.500–704.750|reaction-r10 frames0–198 exclusive|Joy grows and becomes grief; expression timing remains close to spoken change. Native/contact join pending.|
+|704.750–712.750|comfort-r11 frames0–192 exclusive|Jim moves in to comfort, with continuing same-side geography; needs exact approach join.|
+|712.750 onward|New three-comb reveal, in/out not yet selected|Reveal the actual object at the narrator's explanation, not an incompatible alternate family.|
+
+This design finds existing candidates for42.25seconds of the44.5second parcel-to-combs sequence, leaving2.25seconds explicitly unresolved. Candidate duration is NOT a salvage/admission total. Box opening may be a permissible offscreen ellipsis while the audience watches Della; evaluate that assembled transition before deciding a new insert is necessary.
