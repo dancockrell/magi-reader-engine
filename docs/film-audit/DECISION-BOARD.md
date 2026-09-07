@@ -99,6 +99,13 @@ Continuation through 08:00 resolves the earlier pending hair-result question: cu
 - At761.667 the film cuts to Jim seated and gloved, wrapping absent, coins on the table. Enlarged4584 confirms Della lifts a complete dial-faced watch on a chain. Her joy seems intended to communicate loving generosity, but the prop negates the sacrifice. Replace the incompatible action with chain-only presentation on her open palm, after inventory review.
 - No source ranges are admitted by this pass. The original no-gloves requirement, persistent comb identity and absent sold watch remain mandatory constraints.
 
+## Chain detail and couch response through 13:24
+
+- Wrong watch dance continues through770.5. The following chain-hand insert to779.333 is relevant existing coverage; enlarged4632 shows pale oval links over fingers, but lower end exits frame. Verify source fittings, contact and persistent identity before admission.
+- Standing gift transfer offers affectionate coverage. Check native action match at788.333; do not assert a confirmed frame defect from sampled poses alone.
+- At790 Jim is already seated and his collar is open without the previous tie. Reconcile costume and missing sit-down. His hands-behind-head smile is faithful and close enough to its narrated phrase; preserve this performance rather than imposing sentence-driven synchronization.
+- Della's listening reaction from797.833 is motivated. Assess its development through the upcoming watch-sale disclosure with sound before deciding duration or reuse.
+
 ## Deferred / not grounds for reshoot
 
 - Solomon timing: earlier 1.603-second observed overlap was not a defect by itself. Continued review establishes a total tail of about 6.2 seconds; assess in moving sequence with sound before prescribing its endpoint.
