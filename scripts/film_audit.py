@@ -218,7 +218,11 @@ def submit(root, state, receipt_path):
         raise ValueError('Immutable review already exists')
     write(review, receipt)
     entities = read(root/'entities.json')
-    entities['observations'].extend(receipt.get('entities', []))
+    for observation in receipt.get('entities', []):
+        frame=root/'frames'/f'{observation["sample"]:06d}.jpg'
+        entities['observations'].append({**observation,
+            'movie_sha256':state['movie_sha256'], 'native_frame':observation['sample']*4,
+            'frame_path':str(frame.resolve()),'frame_sha256':digest(frame)})
     write(root/'entities.json', entities)
     state['cursor'] = request['sample_end']
     if state['cursor'] == state['samples']:
@@ -251,7 +255,8 @@ def compare(root, entity):
         canvas = Image.new('RGB', (1600, math.ceil(len(group)/4)*250), '#141414')
         draw = ImageDraw.Draw(canvas)
         for i, obs in enumerate(group):
-            with Image.open(root/'frames'/f'{obs["sample"]:06d}.jpg') as img:
+            frame=Path(obs.get('frame_path',root/'frames'/f'{obs["sample"]:06d}.jpg'))
+            with Image.open(frame) as img:
                 x,y,w,h=obs['bbox']; iw,ih=img.size
                 crop=img.crop((int(x*iw),int(y*ih),int((x+w)*iw),int((y+h)*ih)))
                 crop.thumbnail((396,215)); px,py=i%4*400,i//4*250
@@ -293,7 +298,13 @@ def call_reviewer(root, state, reading):
         'love as well as physical/identity continuity. Tag named entities with normalized '
         'boxes, features, state and prior-reference comparisons. Cover the requested time '
         'interval without gaps. A 12-second packet is not necessarily one shot. '
-        'Do not infer a canonical design merely from recency.\n\nINDEPENDENT READING:\n' +
+        'Do not infer a canonical design merely from recency. Be concise: aim for 900 words '
+        'or fewer, with concrete findings rather than repeated caveats. Do not demand '
+        'that each shot independently explain the entire love story; assess its function '
+        'in the complete emotional arc. Do not flag every frame for more inspection by '
+        'default: name an observed concern, a critical prop detail or a specific unresolved '
+        'join. Reuse means a candidate opportunity here, not final source admission. '
+        'Retain excellent material when no visible contradiction is found.\n\nINDEPENDENT READING:\n' +
         Path(reading).read_text(encoding='utf-8') + '\nPREVIOUS REVIEW:\n' +
         json.dumps(context, ensure_ascii=False) + '\nREQUEST:\n' +
         json.dumps(request, ensure_ascii=False))
@@ -321,11 +332,22 @@ def native_detail(root, state, start, end):
         '-frames:v',str(end-start),'-fps_mode','passthrough','-q:v','2',
         '-threads','2','-filter_threads','1','-start_number',str(start),
         '-y',str(output/'%06d.jpg')],check=True)
-    if len(list(output.glob('*.jpg'))) != end-start:
+    # Contact sheets share this directory but are not native frames.
+    if len([p for p in output.glob('*.jpg') if p.stem.isdigit()]) != end-start:
         raise ValueError('Native detail frame count mismatch')
     write(output/'provenance.json',{'movie_sha256':state['movie_sha256'],
         'native_start':start,'native_end_exclusive':end,'fps':24,
         'status':'extracted, not visually reviewed'})
+    from PIL import Image, ImageDraw
+    for page, offset in enumerate(range(start,end,36)):
+        indices=list(range(offset,min(offset+36,end)))
+        canvas=Image.new('RGB',(1920,math.ceil(len(indices)/6)*204),'#141414')
+        draw=ImageDraw.Draw(canvas)
+        for i,n in enumerate(indices):
+            with Image.open(output/f'{n:06d}.jpg') as img:
+                img.thumbnail((320,180)); x,y=i%6*320,i//6*204
+                canvas.paste(img,(x,y)); draw.text((x+4,y+182),f'{n/24:.3f}s native f{n}',fill='white')
+        canvas.save(output/f'sheet-{page:02}.jpg',quality=94)
     print(output.resolve())
 
 
@@ -391,7 +413,13 @@ def init_source(root, state, sha, beat_ids, ffprobe):
     write(target/'storyboard-resolved.json',[{'id':'SOURCE','unit':'source',
         'start':0,'end':frames/24,'purpose':'Test reuse for '+ '; '.join(x['purpose'] for x in beats)}])
     write(target/'captions.json',[])
-    write(target/'entities.json',read(root/'entities.json'))
+    entities=read(root/'entities.json')
+    for obs in entities['observations']:
+        # Older receipts remain immutable; resolve their parent-frame provenance
+        # before using them in another source's coordinate system.
+        obs.setdefault('frame_path',str((root/'frames'/f'{obs["sample"]:06d}.jpg').resolve()))
+        obs.setdefault('movie_sha256',state['movie_sha256'])
+    write(target/'entities.json',entities)
     print(f'Source review initialized with inherited entity ledger: {target.resolve()}')
 
 

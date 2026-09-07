@@ -2,7 +2,7 @@ import copy
 import tempfile
 import unittest
 from pathlib import Path
-from film_audit import digest, resolve_beats, validate_receipt
+from film_audit import digest, resolve_beats, validate_receipt, validate_plan, source_decision
 
 
 class ReviewGates(unittest.TestCase):
@@ -57,6 +57,14 @@ class ReviewGates(unittest.TestCase):
     def test_storyboard_cannot_invent_caption_anchor(self):
         with self.assertRaises(ValueError):
             resolve_beats({'beats':[['s1','Missing','x']]},[],3)
+
+    def test_cannot_plan_before_whole_film_review(self):
+        with self.assertRaises(ValueError):
+            validate_plan(Path(self.tmp.name),{'phase':'film-review'},'not-read')
+
+    def test_cannot_admit_source_before_whole_film_review(self):
+        with self.assertRaises(ValueError):
+            source_decision(Path(self.tmp.name),{'phase':'film-review'},'not-read')
 
 
 if __name__=='__main__':
