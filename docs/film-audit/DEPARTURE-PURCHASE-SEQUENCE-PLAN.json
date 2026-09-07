@@ -1,0 +1,375 @@
+{
+  "schema_version": 1,
+  "status": "exact-existing-source-plan-no-render-or-publication",
+  "fps": 24,
+  "start": 6869,
+  "end": 9832,
+  "total_frames": 2963,
+  "new_take_count": 0,
+  "missing_frames": 0,
+  "frame_convention": "Integer half-open ranges at native24fps; no repetition, reverse, freeze or retiming.",
+  "shots": [
+    {
+      "id": "DP01",
+      "start": 6869,
+      "end": 6977,
+      "start_seconds": 286.2083333333333,
+      "end_seconds": 290.7083333333333,
+      "source_id": "departure-omni",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/departure-omni.mp4",
+      "source_sha256": "0c48d9e86c35f39baf103d34fa270a69ff8871cd272d40ea322152db12273e20",
+      "source_in": 36,
+      "source_out": 144,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B013"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-departure-omni.json",
+      "purpose": "Della descends toward the open exterior doorway. Preserve urgency; stop before the source reverses the geography."
+    },
+    {
+      "id": "DP02",
+      "start": 6977,
+      "end": 7169,
+      "start_seconds": 290.7083333333333,
+      "end_seconds": 298.7083333333333,
+      "source_id": "departure-exterior",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/departure-exterior-r2.mp4",
+      "source_sha256": "cc5da7d11e8e01c8a78baa1afe7cd91d4be3fcf817a907d846223e4b42c87db7",
+      "source_in": 1,
+      "source_out": 193,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B013"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-departure-exterior.json",
+      "purpose": "Continue OUT from the building, down the stoop and into the street; a forward spatial ellipsis, not an inward recovery."
+    },
+    {
+      "id": "DP03",
+      "start": 7169,
+      "end": 7385,
+      "start_seconds": 298.7083333333333,
+      "end_seconds": 307.7083333333333,
+      "source_id": "shop-exterior",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-5/raw/02-shop-exterior-r3.mp4",
+      "source_sha256": "e1cb539e19a3020d3458a379a20d234ec4e5fd73b5632d528de2a05a7cc53018",
+      "source_in": 12,
+      "source_out": 228,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B014"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-shop-exterior.json",
+      "purpose": "The upward exterior move introduces the hair shop before her ascent. No new invented sign text."
+    },
+    {
+      "id": "DP04",
+      "start": 7385,
+      "end": 7445,
+      "start_seconds": 307.7083333333333,
+      "end_seconds": 310.2083333333333,
+      "source_id": "shop-ascent",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/stair-ascent-r3.mp4",
+      "source_sha256": "63376bf0c185ffa16ffbf568b074177b9865b168665cdd6eeabead8b475c19e7",
+      "source_in": 0,
+      "source_out": 60,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B014"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-shop-ascent.json",
+      "purpose": "Brief, clearly upward climb toward the hair shop. Brown hat and jacket remain on."
+    },
+    {
+      "id": "DP05",
+      "start": 7445,
+      "end": 7670,
+      "start_seconds": 310.2083333333333,
+      "end_seconds": 319.5833333333333,
+      "source_id": "shop-conversation",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/shop-conversation-r3.mp4",
+      "source_sha256": "420028bbd7f22440a17e2015bfc47bb5bc437c8cb7b17a472913369e2e6903e6",
+      "source_in": 0,
+      "source_out": 225,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B014"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-shop-conversation.json",
+      "purpose": "Keep both performers and Della's anxious proposal; avoid a severe crop that amputates her chin just to erase background architecture."
+    },
+    {
+      "id": "DP06",
+      "start": 7670,
+      "end": 7730,
+      "start_seconds": 319.5833333333333,
+      "end_seconds": 322.0833333333333,
+      "source_id": "master-sofronie",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/magi-award-assembly-v6.mp4",
+      "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+      "source_in": 7670,
+      "source_out": 7730,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B014"
+      ],
+      "status": "selected-admitted",
+      "admission_input": null,
+      "purpose": "Preserve the already-admitted Sofronie response. Her black high collar, pinned dark hair and small gold brooch are the same local character family."
+    },
+    {
+      "id": "DP07",
+      "start": 7730,
+      "end": 7802,
+      "start_seconds": 322.0833333333333,
+      "end_seconds": 325.0833333333333,
+      "source_id": "hat-reveal",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/shop-reveal-r3.mp4",
+      "source_sha256": "a26c8acf872e4d76853ce7cfa0d108a060280ba1e1d0df8356c43f1a65c5f64d",
+      "source_in": 0,
+      "source_out": 72,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B015"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-hat-reveal.json",
+      "purpose": "One removal of the brown hat, then hands begin releasing the hair. Cut before the later source changes staging."
+    },
+    {
+      "id": "DP08",
+      "start": 7802,
+      "end": 7970,
+      "start_seconds": 325.0833333333333,
+      "end_seconds": 332.0833333333333,
+      "source_id": "hair-inspection",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-5/raw/05-inspection.mp4",
+      "source_sha256": "128142d83d4711afedffb2c94945d59e197258f4d441736084ebe8f48aea7b80",
+      "source_in": 72,
+      "source_out": 240,
+      "crop_xywh": [
+        200,
+        0,
+        1600,
+        900
+      ],
+      "beat_ids": [
+        "B015"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-hair-inspection.json",
+      "purpose": "Hair is now loose and Sofronie appraises its length. Exclude the source's second hat-removal opening; crop keeps the discarded hat outside the lower-left edge."
+    },
+    {
+      "id": "DP09",
+      "start": 7970,
+      "end": 8090,
+      "start_seconds": 332.0833333333333,
+      "end_seconds": 337.0833333333333,
+      "source_id": "decision",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/della-decision-r2.mp4",
+      "source_sha256": "d78ac7c9a900037e183edd2ec6a6c58aa9fb114b41de1a8b329e533cf1e249f1",
+      "source_in": 0,
+      "source_out": 120,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B015"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-decision.json",
+      "purpose": "Della's resolve supplies the price/consent beat. The haircut itself is an honest ellipsis into the following short-haired search."
+    },
+    {
+      "id": "DP10",
+      "start": 8090,
+      "end": 8330,
+      "start_seconds": 337.0833333333333,
+      "end_seconds": 347.0833333333333,
+      "source_id": "street-search",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/01-street-search.mp4",
+      "source_sha256": "8d81d410515dbc8a2a926ccf21100a66870df15b3a3ba8e0aa9a40a2e7bbab9c",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B016"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-street-search.json",
+      "purpose": "Give her search the full forward ten-second take. Short uncurled hair, brown jacket and teal/ivory clothes show the sacrifice has happened."
+    },
+    {
+      "id": "DP11",
+      "start": 8330,
+      "end": 8570,
+      "start_seconds": 347.0833333333333,
+      "end_seconds": 357.0833333333333,
+      "source_id": "jeweler-search",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/02-jeweler-search.mp4",
+      "source_sha256": "f0508f9324aaa7d70b636fdf83d5080b351ee67ff7660d29851d91b2f3c79e6a",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": [
+        100,
+        100,
+        960,
+        540
+      ],
+      "beat_ids": [
+        "B016"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-jeweler-search.json",
+      "purpose": "Watch Della choosing carefully, not a second shopkeeper's face. Mandatory crop excludes the younger moustached background seller; hands/counter fall partly below the frame."
+    },
+    {
+      "id": "DP12",
+      "start": 8570,
+      "end": 8810,
+      "start_seconds": 357.0833333333333,
+      "end_seconds": 367.0833333333333,
+      "source_id": "chain-reveal",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/03-chain-reveal.mp4",
+      "source_sha256": "0709c9d644dcb66531043ae1957b2a1aacfe60aceba2f9647c73033204c0527d",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B017"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-chain-reveal.json",
+      "purpose": "The grey-bearded jeweler presents a plain pale chain and meets her look. Its small fittings are not certified by this medium view."
+    },
+    {
+      "id": "DP13",
+      "start": 8810,
+      "end": 8882,
+      "start_seconds": 367.0833333333333,
+      "end_seconds": 370.0833333333333,
+      "source_id": "chain-detail",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/04-chain-macro.mp4",
+      "source_sha256": "ea73e575af7ec290e560b49103cd6b45828422eb739412e5e1c31fdb5715f6b3",
+      "source_in": 0,
+      "source_out": 72,
+      "crop_xywh": [
+        420,
+        180,
+        960,
+        540
+      ],
+      "beat_ids": [
+        "B017"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-chain-detail.json",
+      "purpose": "Only three seconds of the pale simple linked strand, with the old closed-loop fitting outside frame. Visible small plain curb-link family compared with r13; no claim of matching hidden fittings or total length."
+    },
+    {
+      "id": "DP14",
+      "start": 8882,
+      "end": 9122,
+      "start_seconds": 370.0833333333333,
+      "end_seconds": 380.0833333333333,
+      "source_id": "recognition",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/05-chain-recognition.mp4",
+      "source_sha256": "6a774c9508088319d0aad30ecc111205e1750f789980bc8e8a55e00ff20a686f",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B017"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-recognition.json",
+      "purpose": "Her delight carries the thought of Jim. Same grey-bearded merchant remains background; chain fine and pale without a watch or ornate fob."
+    },
+    {
+      "id": "DP15",
+      "start": 9122,
+      "end": 9362,
+      "start_seconds": 380.0833333333333,
+      "end_seconds": 390.0833333333333,
+      "source_id": "payment",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/06-transaction.mp4",
+      "source_sha256": "a34bc38f87d7a0de7c51fda6082e29e4b338d658bdad128d9d5789b4fbd21436",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": [
+        260,
+        320,
+        1280,
+        720
+      ],
+      "beat_ids": [
+        "B018"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-payment.json",
+      "purpose": "Frame the payment and small wrapped purchase crossing the counter; exclude the contradictory younger merchant's face. Transfer is intact, not a face-only substitute for the action."
+    },
+    {
+      "id": "DP16",
+      "start": 9362,
+      "end": 9602,
+      "start_seconds": 390.0833333333333,
+      "end_seconds": 400.0833333333333,
+      "source_id": "hurry-home",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/07-hurry-home.mp4",
+      "source_sha256": "0424810e1d40ea4a1ce3975c7968743af114b3302934d7d37d53df42238f1f0c",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B018"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-hurry-home.json",
+      "purpose": "Brown hat back on after the indoor purchase; she hurries forward through the winter street protecting her purchase close to the chest."
+    },
+    {
+      "id": "DP17",
+      "start": 9602,
+      "end": 9832,
+      "start_seconds": 400.0833333333333,
+      "end_seconds": 409.6666666666667,
+      "source_id": "home",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/08-chain-and-watch.mp4",
+      "source_sha256": "0a4f4a8b4163422e977917328da8268f1f0fe3e452c594f544e6cb7ef82e7190",
+      "source_in": 0,
+      "source_out": 230,
+      "crop_xywh": [
+        0,
+        0,
+        1472,
+        828
+      ],
+      "beat_ids": [
+        "B018"
+      ],
+      "status": "selected-pending-parent-serial-admission",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-home.json",
+      "purpose": "Warm anticipation on returning home. Mandatory top-left crop removes the watch throughout; do not restore the uncropped source or imply Jim's sold watch is on the table."
+    }
+  ],
+  "changes": [
+    "Keep current outward departure and master Sofronie7670–7730.",
+    "Shorten chain macro from192 to72frames; reuse120 previously-unused forward native tail frames in search, reveal, recognition, payment and return instead.",
+    "Mandatory crops remove a different merchant and the watch-at-home contradiction.",
+    "No alteration to narration, caption timings or overall section duration."
+  ],
+  "reservations": [
+    "Joins are designed, not yet screened in the single finished assembly.",
+    "Hair-shop window background suggests a lower storefront despite the exterior/ascent. Severe tested face crops degraded the acting/composition and were not selected; this remains a minor architectural continuity reservation, not a claimed repair.",
+    "Plain-strand detail is admitted only as the visible simple pale linked family. Hidden clasp, alloy, precise length and inscriptions are not certified.",
+    "Payment insert preserves hand action while the seller's face is outside frame; changed background/costume details are not a new canonical seller."
+  ],
+  "outgoing_state": "Della home, short uncurled hair, brown jacket; happy with her gift, watch not visible. Next lane begins home preparation at9832.",
+  "evidence_root": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/departure-build-evidence"
+}

@@ -3088,54 +3088,63 @@
       "next": "F040"
     },
     {
+      "id": "F040",
       "start": 6869,
       "end": 6977,
-      "current_reference": {
+      "start_seconds": 286.2083333333333,
+      "end_seconds": 290.7083333333333,
+      "source_id": "departure-omni",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/departure-omni.mp4",
+      "source_sha256": "0c48d9e86c35f39baf103d34fa270a69ff8871cd272d40ea322152db12273e20",
+      "source_in": 36,
+      "source_out": 144,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B013"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-departure-omni.json",
+      "purpose": "Della descends toward the open exterior doorway. Preserve urgency; stop before the source reverses the geography.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP01",
+        "start": 6869,
+        "end": 6977,
+        "start_seconds": 286.2083333333333,
+        "end_seconds": 290.7083333333333,
+        "source_id": "departure-omni",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/departure-omni.mp4",
         "source_sha256": "0c48d9e86c35f39baf103d34fa270a69ff8871cd272d40ea322152db12273e20",
         "source_in": 36,
         "source_out": 144,
-        "timeline_start": 6869,
-        "timeline_end": 6977,
-        "crop_pipeline": [],
-        "provenance": [
+        "crop_xywh": null,
+        "beat_ids": [
+          "B013"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-departure-omni.json",
+        "purpose": "Della descends toward the open exterior doorway. Preserve urgency; stop before the source reverses the geography.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\departure-omni.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "docs/film-edits/scene5-award-v4.edl.json",
-            "shot": "Resolve on the descent"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Departure and hair-sale candidate"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 36,
+            "end": 144,
+            "crop": null,
+            "entity_compatibility": "Della descends toward the open exterior doorway. Preserve urgency; stop before the source reverses the geography."
           }
         ]
       },
-      "historic_cut": {
-        "start": 36,
-        "end": 144,
-        "name": "departure-omni.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F040",
       "beats": [
         "B013"
       ],
-      "component_subrange": {
-        "in": 36,
-        "out": 144,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T05",
         "T15"
       ],
       "treatment": [
-        "Protect current outward departure's acting; verify whole threshold action and next shot. Do not restore the historical inward-running clip."
+        "Della descends toward the open exterior doorway. Preserve urgency; stop before the source reverses the geography."
       ],
       "required_state": [
         "Same brown hat/jacket; down stairs and out to street."
@@ -3149,59 +3158,67 @@
         "001728.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F039",
       "next": "F041"
     },
     {
+      "id": "F041",
       "start": 6977,
       "end": 7169,
-      "current_reference": {
+      "start_seconds": 290.7083333333333,
+      "end_seconds": 298.7083333333333,
+      "source_id": "departure-exterior",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/departure-exterior-r2.mp4",
+      "source_sha256": "cc5da7d11e8e01c8a78baa1afe7cd91d4be3fcf817a907d846223e4b42c87db7",
+      "source_in": 1,
+      "source_out": 193,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B013"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-departure-exterior.json",
+      "purpose": "Continue OUT from the building, down the stoop and into the street; a forward spatial ellipsis, not an inward recovery.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP02",
+        "start": 6977,
+        "end": 7169,
+        "start_seconds": 290.7083333333333,
+        "end_seconds": 298.7083333333333,
+        "source_id": "departure-exterior",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/departure-exterior-r2.mp4",
         "source_sha256": "cc5da7d11e8e01c8a78baa1afe7cd91d4be3fcf817a907d846223e4b42c87db7",
         "source_in": 1,
         "source_out": 193,
-        "timeline_start": 6977,
-        "timeline_end": 7169,
-        "crop_pipeline": [],
-        "provenance": [
+        "crop_xywh": null,
+        "beat_ids": [
+          "B013"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-departure-exterior.json",
+        "purpose": "Continue OUT from the building, down the stoop and into the street; a forward spatial ellipsis, not an inward recovery.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\departure-exterior-r2.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "docs/film-edits/scene5-award-v4.edl.json",
-            "shot": "A single outward departure"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Departure and hair-sale candidate"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 1,
+            "end": 193,
+            "crop": null,
+            "entity_compatibility": "Continue OUT from the building, down the stoop and into the street; a forward spatial ellipsis, not an inward recovery."
           }
         ]
       },
-      "historic_cut": {
-        "start": 1,
-        "end": 193,
-        "name": "departure-exterior-r2.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F041",
       "beats": [
         "B013"
       ],
-      "component_subrange": {
-        "in": 1,
-        "out": 193,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T05",
         "T15"
       ],
       "treatment": [
-        "Protect current outward departure's acting; verify whole threshold action and next shot. Do not restore the historical inward-running clip."
+        "Continue OUT from the building, down the stoop and into the street; a forward spatial ellipsis, not an inward recovery."
       ],
       "required_state": [
         "Same brown hat/jacket; down stairs and out to street."
@@ -3214,61 +3231,68 @@
         "001728.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F040",
       "next": "F042"
     },
     {
+      "id": "F042",
       "start": 7169,
       "end": 7385,
-      "current_reference": {
+      "start_seconds": 298.7083333333333,
+      "end_seconds": 307.7083333333333,
+      "source_id": "shop-exterior",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-5/raw/02-shop-exterior-r3.mp4",
+      "source_sha256": "e1cb539e19a3020d3458a379a20d234ec4e5fd73b5632d528de2a05a7cc53018",
+      "source_in": 12,
+      "source_out": 228,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B014"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-shop-exterior.json",
+      "purpose": "The upward exterior move introduces the hair shop before her ascent. No new invented sign text.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP03",
+        "start": 7169,
+        "end": 7385,
+        "start_seconds": 298.7083333333333,
+        "end_seconds": 307.7083333333333,
+        "source_id": "shop-exterior",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-5/raw/02-shop-exterior-r3.mp4",
         "source_sha256": "e1cb539e19a3020d3458a379a20d234ec4e5fd73b5632d528de2a05a7cc53018",
         "source_in": 12,
         "source_out": 228,
-        "timeline_start": 7169,
-        "timeline_end": 7385,
-        "crop_pipeline": [],
-        "provenance": [
+        "crop_xywh": null,
+        "beat_ids": [
+          "B014"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-shop-exterior.json",
+        "purpose": "The upward exterior move introduces the hair shop before her ascent. No new invented sign text.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\02-shop-exterior-r3.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "docs/film-edits/scene5-award-v4.edl.json",
-            "shot": "The hair-goods address"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Departure and hair-sale candidate"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 12,
+            "end": 228,
+            "crop": null,
+            "entity_compatibility": "The upward exterior move introduces the hair shop before her ascent. No new invented sign text."
           }
         ]
       },
-      "historic_cut": {
-        "start": 12,
-        "end": 228,
-        "name": "02-shop-exterior-r3.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F042",
       "beats": [
         "B013",
         "B014"
       ],
-      "component_subrange": {
-        "in": 12,
-        "out": 228,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T05",
         "T15"
       ],
       "treatment": [
-        "Protect current outward departure's acting; verify whole threshold action and next shot. Do not restore the historical inward-running clip.",
-        "Establish the hair shop then her upstairs approach without another street departure; select one compatible hat and shop family."
+        "The upward exterior move introduces the hair shop before her ascent. No new invented sign text."
       ],
       "required_state": [
         "Same brown hat/jacket; down stairs and out to street.",
@@ -3284,59 +3308,67 @@
         "001800.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F041",
       "next": "F043"
     },
     {
+      "id": "F043",
       "start": 7385,
       "end": 7445,
-      "current_reference": {
+      "start_seconds": 307.7083333333333,
+      "end_seconds": 310.2083333333333,
+      "source_id": "shop-ascent",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/stair-ascent-r3.mp4",
+      "source_sha256": "63376bf0c185ffa16ffbf568b074177b9865b168665cdd6eeabead8b475c19e7",
+      "source_in": 0,
+      "source_out": 60,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B014"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-shop-ascent.json",
+      "purpose": "Brief, clearly upward climb toward the hair shop. Brown hat and jacket remain on.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP04",
+        "start": 7385,
+        "end": 7445,
+        "start_seconds": 307.7083333333333,
+        "end_seconds": 310.2083333333333,
+        "source_id": "shop-ascent",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/stair-ascent-r3.mp4",
         "source_sha256": "63376bf0c185ffa16ffbf568b074177b9865b168665cdd6eeabead8b475c19e7",
         "source_in": 0,
         "source_out": 60,
-        "timeline_start": 7385,
-        "timeline_end": 7445,
-        "crop_pipeline": [],
-        "provenance": [
+        "crop_xywh": null,
+        "beat_ids": [
+          "B014"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-shop-ascent.json",
+        "purpose": "Brief, clearly upward climb toward the hair shop. Brown hat and jacket remain on.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\stair-ascent-r3.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "docs/film-edits/scene5-award-v4.edl.json",
-            "shot": "Continuous ascent in matched long skirt; cut before landing hesitation"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Departure and hair-sale candidate"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 60,
+            "crop": null,
+            "entity_compatibility": "Brief, clearly upward climb toward the hair shop. Brown hat and jacket remain on."
           }
         ]
       },
-      "historic_cut": {
-        "start": 0,
-        "end": 60,
-        "name": "stair-ascent-r3.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F043",
       "beats": [
         "B014"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 60,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T05",
         "T15"
       ],
       "treatment": [
-        "Establish the hair shop then her upstairs approach without another street departure; select one compatible hat and shop family."
+        "Brief, clearly upward climb toward the hair shop. Brown hat and jacket remain on."
       ],
       "required_state": [
         "Long-haired Della, same brown hat; destination Sofronie's shop."
@@ -3349,61 +3381,68 @@
         "001800.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F042",
       "next": "F044"
     },
     {
+      "id": "F044",
       "start": 7445,
       "end": 7670,
-      "current_reference": {
+      "start_seconds": 310.2083333333333,
+      "end_seconds": 319.5833333333333,
+      "source_id": "shop-conversation",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/shop-conversation-r3.mp4",
+      "source_sha256": "420028bbd7f22440a17e2015bfc47bb5bc437c8cb7b17a472913369e2e6903e6",
+      "source_in": 0,
+      "source_out": 225,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B014"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-shop-conversation.json",
+      "purpose": "Keep both performers and Della's anxious proposal; avoid a severe crop that amputates her chin just to erase background architecture.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP05",
+        "start": 7445,
+        "end": 7670,
+        "start_seconds": 310.2083333333333,
+        "end_seconds": 319.5833333333333,
+        "source_id": "shop-conversation",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/shop-conversation-r3.mp4",
         "source_sha256": "420028bbd7f22440a17e2015bfc47bb5bc437c8cb7b17a472913369e2e6903e6",
         "source_in": 0,
         "source_out": 225,
-        "timeline_start": 7445,
-        "timeline_end": 7670,
-        "crop_pipeline": [],
-        "provenance": [
+        "crop_xywh": null,
+        "beat_ids": [
+          "B014"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-shop-conversation.json",
+        "purpose": "Keep both performers and Della's anxious proposal; avoid a severe crop that amputates her chin just to erase background architecture.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\shop-conversation-r3.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "docs/film-edits/scene5-award-v4.edl.json",
-            "shot": "Asking with hair still pinned"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Departure and hair-sale candidate"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 225,
+            "crop": null,
+            "entity_compatibility": "Keep both performers and Della's anxious proposal; avoid a severe crop that amputates her chin just to erase background architecture."
           }
         ]
       },
-      "historic_cut": {
-        "start": 0,
-        "end": 225,
-        "name": "shop-conversation-r3.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F044",
       "beats": [
         "B014",
         "B015"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 225,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T05",
         "T15"
       ],
       "treatment": [
-        "Establish the hair shop then her upstairs approach without another street departure; select one compatible hat and shop family.",
-        "Retain direct urgent negotiation; choose one Sofronie across question and appraisal. Use Della's reaction instead of substituting a different shopkeeper."
+        "Keep both performers and Della's anxious proposal; avoid a severe crop that amputates her chin just to erase background architecture."
       ],
       "required_state": [
         "Long-haired Della, same brown hat; destination Sofronie's shop.",
@@ -3420,7 +3459,6 @@
         "001872.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F043",
       "next": "F045"
     },
@@ -3428,79 +3466,40 @@
       "id": "F045",
       "start": 7670,
       "end": 7730,
-      "beat_ids": [
-        "B015"
-      ],
-      "title": "Sofronie appraises Della",
-      "entities": [
-        "SOFRONIE",
-        "DELLA"
-      ],
-      "reason": "The steady appraising response preserves the practical transaction and does not villainize the shopkeeper. Close framing avoids the prior wide shot's ground-floor geography; no hand/hat removal occurs inside selection.",
-      "compatibility": "Sofronie dark pulled-back hair, black high-neck dress and gold brooch; blurred brown Della hat on left foreground. Maintain matching screen direction and use before hat removal.",
-      "concerns": [
-        "Does not clear the adjacent street-level shop window or later hat-lift contact. Incoming and outgoing shop coverage must match this shopkeeper and hat."
-      ],
-      "frame_count": 60,
-      "duration_seconds": 2.5,
-      "timeline_start_frame": 7670,
-      "timeline_end_frame": 7730,
-      "evidence": [
-        "001872.json:shots[1]",
-        "001872.json:shots[2]"
-      ],
-      "evidence_receipts": [
-        {
-          "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\001872.json",
-          "sha256": "47cab76ca88b4927a63babd4f50083007dc68ced56611fd9bc21b381bd99175a"
-        }
-      ],
-      "status": "candidate-plan-blocked-not-renderable",
-      "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+      "start_seconds": 319.5833333333333,
+      "end_seconds": 322.0833333333333,
+      "source_id": "master-sofronie",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/magi-award-assembly-v6.mp4",
       "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
       "source_in": 7670,
       "source_out": 7730,
       "crop_xywh": null,
-      "purpose": "The steady appraising response preserves the practical transaction and does not villainize the shopkeeper. Close framing avoids the prior wide shot's ground-floor geography; no hand/hat removal occurs inside selection.",
+      "beat_ids": [
+        "B014"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": null,
+      "purpose": "Preserve the already-admitted Sofronie response. Her black high collar, pinned dark hair and small gold brooch are the same local character family.",
+      "section": "departure-purchase",
       "selected_candidate": {
-        "id": "RM02",
+        "id": "DP06",
         "start": 7670,
         "end": 7730,
-        "beat_ids": [
-          "B015"
-        ],
-        "title": "Sofronie appraises Della",
-        "entities": [
-          "SOFRONIE",
-          "DELLA"
-        ],
-        "reason": "The steady appraising response preserves the practical transaction and does not villainize the shopkeeper. Close framing avoids the prior wide shot's ground-floor geography; no hand/hat removal occurs inside selection.",
-        "compatibility": "Sofronie dark pulled-back hair, black high-neck dress and gold brooch; blurred brown Della hat on left foreground. Maintain matching screen direction and use before hat removal.",
-        "concerns": [
-          "Does not clear the adjacent street-level shop window or later hat-lift contact. Incoming and outgoing shop coverage must match this shopkeeper and hat."
-        ],
-        "frame_count": 60,
-        "duration_seconds": 2.5,
-        "timeline_start_frame": 7670,
-        "timeline_end_frame": 7730,
-        "evidence": [
-          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\001872.json",
-          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\007668-007674\\sheet-00.jpg",
-          "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\native\\007728-007734\\sheet-00.jpg"
-        ],
-        "evidence_receipts": [
-          {
-            "path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\reviews\\001872.json",
-            "sha256": "47cab76ca88b4927a63babd4f50083007dc68ced56611fd9bc21b381bd99175a"
-          }
-        ],
-        "status": "source-admitted-context-pending",
-        "source": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
+        "start_seconds": 319.5833333333333,
+        "end_seconds": 322.0833333333333,
+        "source_id": "master-sofronie",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/magi-award-assembly-v6.mp4",
         "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
         "source_in": 7670,
         "source_out": 7730,
         "crop_xywh": null,
-        "purpose": "The steady appraising response preserves the practical transaction and does not villainize the shopkeeper. Close framing avoids the prior wide shot's ground-floor geography; no hand/hat removal occurs inside selection.",
+        "beat_ids": [
+          "B014"
+        ],
+        "status": "selected-admitted",
+        "admission_input": null,
+        "purpose": "Preserve the already-admitted Sofronie response. Her black high collar, pinned dark hair and small gold brooch are the same local character family.",
+        "section": "departure-purchase",
         "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\magi-award-assembly-v6.mp4",
         "ledger_status": "admit",
         "ledger_ranges": [
@@ -3550,7 +3549,7 @@
         "T15"
       ],
       "treatment": [
-        "Retain direct urgent negotiation; choose one Sofronie across question and appraisal. Use Della's reaction instead of substituting a different shopkeeper."
+        "Preserve the already-admitted Sofronie response. Her black high collar, pinned dark hair and small gold brooch are the same local character family."
       ],
       "required_state": [
         "Hat off for appraisal, long hair sold; one merchant and costume."
@@ -3558,59 +3557,72 @@
       "story_purpose": [
         "A direct transaction: question, hat removal, long hair appraisal, twenty dollars, urgent acceptance."
       ],
+      "evidence": [
+        "001872.json:shots[1]",
+        "001872.json:shots[2]"
+      ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "previous": "F044",
       "next": "F046"
     },
     {
+      "id": "F046",
       "start": 7730,
       "end": 7802,
-      "current_reference": {
+      "start_seconds": 322.0833333333333,
+      "end_seconds": 325.0833333333333,
+      "source_id": "hat-reveal",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/shop-reveal-r3.mp4",
+      "source_sha256": "a26c8acf872e4d76853ce7cfa0d108a060280ba1e1d0df8356c43f1a65c5f64d",
+      "source_in": 0,
+      "source_out": 72,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B015"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-hat-reveal.json",
+      "purpose": "One removal of the brown hat, then hands begin releasing the hair. Cut before the later source changes staging.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP07",
+        "start": 7730,
+        "end": 7802,
+        "start_seconds": 322.0833333333333,
+        "end_seconds": 325.0833333333333,
+        "source_id": "hat-reveal",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/shop-reveal-r3.mp4",
         "source_sha256": "a26c8acf872e4d76853ce7cfa0d108a060280ba1e1d0df8356c43f1a65c5f64d",
         "source_in": 0,
         "source_out": 72,
-        "timeline_start": 7730,
-        "timeline_end": 7802,
-        "crop_pipeline": [],
-        "provenance": [
+        "crop_xywh": null,
+        "beat_ids": [
+          "B015"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-hat-reveal.json",
+        "purpose": "One removal of the brown hat, then hands begin releasing the hair. Cut before the later source changes staging.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\shop-reveal-r3.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "docs/film-edits/scene5-award-v4.edl.json",
-            "shot": "Remove the hat once; begin unpinning"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Departure and hair-sale candidate"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 72,
+            "crop": null,
+            "entity_compatibility": "One removal of the brown hat, then hands begin releasing the hair. Cut before the later source changes staging."
           }
         ]
       },
-      "historic_cut": {
-        "start": 0,
-        "end": 72,
-        "name": "shop-reveal-r3.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F046",
       "beats": [
         "B015"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 72,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T05",
         "T15"
       ],
       "treatment": [
-        "Retain direct urgent negotiation; choose one Sofronie across question and appraisal. Use Della's reaction instead of substituting a different shopkeeper."
+        "One removal of the brown hat, then hands begin releasing the hair. Cut before the later source changes staging."
       ],
       "required_state": [
         "Hat off for appraisal, long hair sold; one merchant and costume."
@@ -3623,68 +3635,82 @@
         "001944.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F045",
       "next": "F047"
     },
     {
+      "id": "F047",
       "start": 7802,
       "end": 7970,
-      "current_reference": {
+      "start_seconds": 325.0833333333333,
+      "end_seconds": 332.0833333333333,
+      "source_id": "hair-inspection",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-5/raw/05-inspection.mp4",
+      "source_sha256": "128142d83d4711afedffb2c94945d59e197258f4d441736084ebe8f48aea7b80",
+      "source_in": 72,
+      "source_out": 240,
+      "crop_xywh": [
+        200,
+        0,
+        1600,
+        900
+      ],
+      "beat_ids": [
+        "B015"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-hair-inspection.json",
+      "purpose": "Hair is now loose and Sofronie appraises its length. Exclude the source's second hat-removal opening; crop keeps the discarded hat outside the lower-left edge.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP08",
+        "start": 7802,
+        "end": 7970,
+        "start_seconds": 325.0833333333333,
+        "end_seconds": 332.0833333333333,
+        "source_id": "hair-inspection",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-5/raw/05-inspection.mp4",
         "source_sha256": "128142d83d4711afedffb2c94945d59e197258f4d441736084ebe8f48aea7b80",
         "source_in": 72,
         "source_out": 240,
-        "timeline_start": 7802,
-        "timeline_end": 7970,
-        "crop_pipeline": [
-          {
-            "crop_whxy": "1600:900:200:0",
-            "then_scale": [
-              1920,
-              1080
-            ],
-            "edl": "docs/film-edits/scene5-award-v4.edl.json"
-          }
+        "crop_xywh": [
+          200,
+          0,
+          1600,
+          900
         ],
-        "provenance": [
+        "beat_ids": [
+          "B015"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-hair-inspection.json",
+        "purpose": "Hair is now loose and Sofronie appraises its length. Exclude the source's second hat-removal opening; crop keeps the discarded hat outside the lower-left edge.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-5\\raw\\05-inspection.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "docs/film-edits/scene5-award-v4.edl.json",
-            "shot": "Ellipsis to released hair and appraisal; exclude returned hat"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Departure and hair-sale candidate"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 72,
+            "end": 240,
+            "crop": [
+              200,
+              0,
+              1600,
+              900
+            ],
+            "entity_compatibility": "Hair is now loose and Sofronie appraises its length. Exclude the source's second hat-removal opening; crop keeps the discarded hat outside the lower-left edge."
           }
         ]
       },
-      "historic_cut": {
-        "start": 72,
-        "end": 240,
-        "name": "05-inspection.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F047",
       "beats": [
         "B015"
       ],
-      "component_subrange": {
-        "in": 72,
-        "out": 240,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T05",
         "T15"
       ],
       "treatment": [
-        "Retain direct urgent negotiation; choose one Sofronie across question and appraisal. Use Della's reaction instead of substituting a different shopkeeper."
+        "Hair is now loose and Sofronie appraises its length. Exclude the source's second hat-removal opening; crop keeps the discarded hat outside the lower-left edge."
       ],
       "required_state": [
         "Hat off for appraisal, long hair sold; one merchant and costume."
@@ -3697,59 +3723,67 @@
         "001944.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F046",
       "next": "F048"
     },
     {
+      "id": "F048",
       "start": 7970,
       "end": 8090,
-      "current_reference": {
+      "start_seconds": 332.0833333333333,
+      "end_seconds": 337.0833333333333,
+      "source_id": "decision",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/della-decision-r2.mp4",
+      "source_sha256": "d78ac7c9a900037e183edd2ec6a6c58aa9fb114b41de1a8b329e533cf1e249f1",
+      "source_in": 0,
+      "source_out": 120,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B015"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-decision.json",
+      "purpose": "Della's resolve supplies the price/consent beat. The haircut itself is an honest ellipsis into the following short-haired search.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP09",
+        "start": 7970,
+        "end": 8090,
+        "start_seconds": 332.0833333333333,
+        "end_seconds": 337.0833333333333,
+        "source_id": "decision",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/award-candidate/della-decision-r2.mp4",
         "source_sha256": "d78ac7c9a900037e183edd2ec6a6c58aa9fb114b41de1a8b329e533cf1e249f1",
         "source_in": 0,
         "source_out": 120,
-        "timeline_start": 7970,
-        "timeline_end": 8090,
-        "crop_pipeline": [],
-        "provenance": [
+        "crop_xywh": null,
+        "beat_ids": [
+          "B015"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-decision.json",
+        "purpose": "Della's resolve supplies the price/consent beat. The haircut itself is an honest ellipsis into the following short-haired search.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\award-candidate\\della-decision-r2.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "docs/film-edits/scene5-award-v4.edl.json",
-            "shot": "The decision; cut away before the haircut"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Departure and hair-sale candidate"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 120,
+            "crop": null,
+            "entity_compatibility": "Della's resolve supplies the price/consent beat. The haircut itself is an honest ellipsis into the following short-haired search."
           }
         ]
       },
-      "historic_cut": {
-        "start": 0,
-        "end": 120,
-        "name": "della-decision-r2.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F048",
       "beats": [
         "B015"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 120,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T05",
         "T15"
       ],
       "treatment": [
-        "Retain direct urgent negotiation; choose one Sofronie across question and appraisal. Use Della's reaction instead of substituting a different shopkeeper."
+        "Della's resolve supplies the price/consent beat. The haircut itself is an honest ellipsis into the following short-haired search."
       ],
       "required_state": [
         "Hat off for appraisal, long hair sold; one merchant and costume."
@@ -3763,63 +3797,68 @@
         "002016.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F047",
       "next": "F049"
     },
     {
+      "id": "F049",
       "start": 8090,
-      "end": 8318,
-      "current_reference": {
-        "source_sha256": "955f4174dbf48d5333c5fd7566ecb20c24f63fb1ba6e2b8daab97560c2474513",
+      "end": 8330,
+      "start_seconds": 337.0833333333333,
+      "end_seconds": 347.0833333333333,
+      "source_id": "street-search",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/01-street-search.mp4",
+      "source_sha256": "8d81d410515dbc8a2a926ccf21100a66870df15b3a3ba8e0aa9a40a2e7bbab9c",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B016"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-street-search.json",
+      "purpose": "Give her search the full forward ten-second take. Short uncurled hair, brown jacket and teal/ivory clothes show the sacrifice has happened.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP10",
+        "start": 8090,
+        "end": 8330,
+        "start_seconds": 337.0833333333333,
+        "end_seconds": 347.0833333333333,
+        "source_id": "street-search",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/01-street-search.mp4",
+        "source_sha256": "8d81d410515dbc8a2a926ccf21100a66870df15b3a3ba8e0aa9a40a2e7bbab9c",
         "source_in": 0,
-        "source_out": 228,
-        "timeline_start": 8090,
-        "timeline_end": 9602,
-        "crop_pipeline": [],
-        "provenance": [
+        "source_out": 240,
+        "crop_xywh": null,
+        "beat_ids": [
+          "B016"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-street-search.json",
+        "purpose": "Give her search the full forward ten-second take. Short uncurled hair, brown jacket and teal/ivory clothes show the sacrifice has happened.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\01-street-search.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene6-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline shopping and journey home"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 240,
+            "crop": null,
+            "entity_compatibility": "Give her search the full forward ten-second take. Short uncurled hair, brown jacket and teal/ivory clothes show the sacrifice has happened."
           }
         ]
       },
-      "historic_cut": {
-        "start": 0,
-        "end": 228,
-        "name": "Searching the street",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-6/raw/01-street-search.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 228,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F049",
       "beats": [
         "B016"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 228,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T05",
         "T06",
         "T15"
       ],
       "treatment": [
-        "Use purposeful shopping ellipsis after offscreen haircut; reconcile cream-blouse to teal discontinuity rather than inventing an unexplained costume change."
+        "Give her search the full forward ten-second take. Short uncurled hair, brown jacket and teal/ivory clothes show the sacrifice has happened."
       ],
       "required_state": [
         "Short straight bob under brown outerwear; hair permanently sold."
@@ -3829,68 +3868,88 @@
       ],
       "evidence": [
         "002016.json:shots[0]",
-        "002016.json:shots[1]"
+        "002016.json:shots[1]",
+        "002016.json:shots[2]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F048",
       "next": "F050"
     },
     {
-      "start": 8318,
-      "end": 8534,
-      "current_reference": {
-        "source_sha256": "955f4174dbf48d5333c5fd7566ecb20c24f63fb1ba6e2b8daab97560c2474513",
-        "source_in": 228,
-        "source_out": 444,
-        "timeline_start": 8090,
-        "timeline_end": 9602,
-        "crop_pipeline": [],
-        "provenance": [
+      "id": "F050",
+      "start": 8330,
+      "end": 8570,
+      "start_seconds": 347.0833333333333,
+      "end_seconds": 357.0833333333333,
+      "source_id": "jeweler-search",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/02-jeweler-search.mp4",
+      "source_sha256": "f0508f9324aaa7d70b636fdf83d5080b351ee67ff7660d29851d91b2f3c79e6a",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": [
+        100,
+        100,
+        960,
+        540
+      ],
+      "beat_ids": [
+        "B016"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-jeweler-search.json",
+      "purpose": "Watch Della choosing carefully, not a second shopkeeper's face. Mandatory crop excludes the younger moustached background seller; hands/counter fall partly below the frame.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP11",
+        "start": 8330,
+        "end": 8570,
+        "start_seconds": 347.0833333333333,
+        "end_seconds": 357.0833333333333,
+        "source_id": "jeweler-search",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/02-jeweler-search.mp4",
+        "source_sha256": "f0508f9324aaa7d70b636fdf83d5080b351ee67ff7660d29851d91b2f3c79e6a",
+        "source_in": 0,
+        "source_out": 240,
+        "crop_xywh": [
+          100,
+          100,
+          960,
+          540
+        ],
+        "beat_ids": [
+          "B016"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-jeweler-search.json",
+        "purpose": "Watch Della choosing carefully, not a second shopkeeper's face. Mandatory crop excludes the younger moustached background seller; hands/counter fall partly below the frame.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\02-jeweler-search.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene6-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline shopping and journey home"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 240,
+            "crop": [
+              100,
+              100,
+              960,
+              540
+            ],
+            "entity_compatibility": "Watch Della choosing carefully, not a second shopkeeper's face. Mandatory crop excludes the younger moustached background seller; hands/counter fall partly below the frame."
           }
         ]
       },
-      "historic_cut": {
-        "start": 228,
-        "end": 444,
-        "name": "Turning the stores inside out",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-6/raw/02-jeweler-search.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 216,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F050",
       "beats": [
         "B016",
         "B017"
       ],
-      "component_subrange": {
-        "in": 228,
-        "out": 444,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T05",
         "T06",
         "T15"
       ],
       "treatment": [
-        "Use purposeful shopping ellipsis after offscreen haircut; reconcile cream-blouse to teal discontinuity rather than inventing an unexplained costume change.",
-        "Preserve recognition with the grey-bearded jeweler and one chain insert. Resolve fittings across later views before choosing canonical chain."
+        "Watch Della choosing carefully, not a second shopkeeper's face. Mandatory crop excludes the younger moustached background seller; hands/counter fall partly below the frame."
       ],
       "required_state": [
         "Short straight bob under brown outerwear; hair permanently sold.",
@@ -3901,68 +3960,72 @@
         "One simple platinum chain; recognition of quiet worth, not ornate luxury advertising."
       ],
       "evidence": [
-        "002016.json:shots[1]",
         "002016.json:shots[2]",
         "002088.json:shots[0]",
         "002088.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F049",
       "next": "F051"
     },
     {
-      "start": 8534,
-      "end": 8750,
-      "current_reference": {
-        "source_sha256": "955f4174dbf48d5333c5fd7566ecb20c24f63fb1ba6e2b8daab97560c2474513",
-        "source_in": 444,
-        "source_out": 660,
-        "timeline_start": 8090,
-        "timeline_end": 9602,
-        "crop_pipeline": [],
-        "provenance": [
+      "id": "F051",
+      "start": 8570,
+      "end": 8810,
+      "start_seconds": 357.0833333333333,
+      "end_seconds": 367.0833333333333,
+      "source_id": "chain-reveal",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/03-chain-reveal.mp4",
+      "source_sha256": "0709c9d644dcb66531043ae1957b2a1aacfe60aceba2f9647c73033204c0527d",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B017"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-chain-reveal.json",
+      "purpose": "The grey-bearded jeweler presents a plain pale chain and meets her look. Its small fittings are not certified by this medium view.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP12",
+        "start": 8570,
+        "end": 8810,
+        "start_seconds": 357.0833333333333,
+        "end_seconds": 367.0833333333333,
+        "source_id": "chain-reveal",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/03-chain-reveal.mp4",
+        "source_sha256": "0709c9d644dcb66531043ae1957b2a1aacfe60aceba2f9647c73033204c0527d",
+        "source_in": 0,
+        "source_out": 240,
+        "crop_xywh": null,
+        "beat_ids": [
+          "B017"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-chain-reveal.json",
+        "purpose": "The grey-bearded jeweler presents a plain pale chain and meets her look. Its small fittings are not certified by this medium view.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\03-chain-reveal.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene6-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline shopping and journey home"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 240,
+            "crop": null,
+            "entity_compatibility": "The grey-bearded jeweler presents a plain pale chain and meets her look. Its small fittings are not certified by this medium view."
           }
         ]
       },
-      "historic_cut": {
-        "start": 444,
-        "end": 660,
-        "name": "Made for Jim",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-6/raw/03-chain-reveal.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 216,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F051",
       "beats": [
         "B017"
       ],
-      "component_subrange": {
-        "in": 444,
-        "out": 660,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T06",
         "T15"
       ],
       "treatment": [
-        "Preserve recognition with the grey-bearded jeweler and one chain insert. Resolve fittings across later views before choosing canonical chain."
+        "The grey-bearded jeweler presents a plain pale chain and meets her look. Its small fittings are not certified by this medium view."
       ],
       "required_state": [
         "Simple pale fob chain, unchanged merchant; no watch in purchase."
@@ -3976,62 +4039,154 @@
         "002160.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F050",
       "next": "F052"
     },
     {
-      "start": 8750,
-      "end": 8942,
-      "current_reference": {
-        "source_sha256": "955f4174dbf48d5333c5fd7566ecb20c24f63fb1ba6e2b8daab97560c2474513",
-        "source_in": 660,
-        "source_out": 852,
-        "timeline_start": 8090,
-        "timeline_end": 9602,
-        "crop_pipeline": [],
-        "provenance": [
+      "id": "F052",
+      "start": 8810,
+      "end": 8882,
+      "start_seconds": 367.0833333333333,
+      "end_seconds": 370.0833333333333,
+      "source_id": "chain-detail",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/04-chain-macro.mp4",
+      "source_sha256": "ea73e575af7ec290e560b49103cd6b45828422eb739412e5e1c31fdb5715f6b3",
+      "source_in": 0,
+      "source_out": 72,
+      "crop_xywh": [
+        420,
+        180,
+        960,
+        540
+      ],
+      "beat_ids": [
+        "B017"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-chain-detail.json",
+      "purpose": "Only three seconds of the pale simple linked strand, with the old closed-loop fitting outside frame. Visible small plain curb-link family compared with r13; no claim of matching hidden fittings or total length.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP13",
+        "start": 8810,
+        "end": 8882,
+        "start_seconds": 367.0833333333333,
+        "end_seconds": 370.0833333333333,
+        "source_id": "chain-detail",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/04-chain-macro.mp4",
+        "source_sha256": "ea73e575af7ec290e560b49103cd6b45828422eb739412e5e1c31fdb5715f6b3",
+        "source_in": 0,
+        "source_out": 72,
+        "crop_xywh": [
+          420,
+          180,
+          960,
+          540
+        ],
+        "beat_ids": [
+          "B017"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-chain-detail.json",
+        "purpose": "Only three seconds of the pale simple linked strand, with the old closed-loop fitting outside frame. Visible small plain curb-link family compared with r13; no claim of matching hidden fittings or total length.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\04-chain-macro.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene6-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline shopping and journey home"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 72,
+            "crop": [
+              420,
+              180,
+              960,
+              540
+            ],
+            "entity_compatibility": "Only three seconds of the pale simple linked strand, with the old closed-loop fitting outside frame. Visible small plain curb-link family compared with r13; no claim of matching hidden fittings or total length."
           }
         ]
       },
-      "historic_cut": {
-        "start": 660,
-        "end": 852,
-        "name": "Quietness and value",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-6/raw/04-chain-macro.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 192,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F052",
       "beats": [
         "B017"
       ],
-      "component_subrange": {
-        "in": 660,
-        "out": 852,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T06",
         "T15"
       ],
       "treatment": [
-        "Preserve recognition with the grey-bearded jeweler and one chain insert. Resolve fittings across later views before choosing canonical chain."
+        "Only three seconds of the pale simple linked strand, with the old closed-loop fitting outside frame. Visible small plain curb-link family compared with r13; no claim of matching hidden fittings or total length."
+      ],
+      "required_state": [
+        "Simple pale fob chain, unchanged merchant; no watch in purchase."
+      ],
+      "story_purpose": [
+        "One simple platinum chain; recognition of quiet worth, not ornate luxury advertising."
+      ],
+      "evidence": [
+        "002160.json:shots[1]"
+      ],
+      "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
+      "previous": "F051",
+      "next": "F053"
+    },
+    {
+      "id": "F053",
+      "start": 8882,
+      "end": 9122,
+      "start_seconds": 370.0833333333333,
+      "end_seconds": 380.0833333333333,
+      "source_id": "recognition",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/05-chain-recognition.mp4",
+      "source_sha256": "6a774c9508088319d0aad30ecc111205e1750f789980bc8e8a55e00ff20a686f",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B017"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-recognition.json",
+      "purpose": "Her delight carries the thought of Jim. Same grey-bearded merchant remains background; chain fine and pale without a watch or ornate fob.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP14",
+        "start": 8882,
+        "end": 9122,
+        "start_seconds": 370.0833333333333,
+        "end_seconds": 380.0833333333333,
+        "source_id": "recognition",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/05-chain-recognition.mp4",
+        "source_sha256": "6a774c9508088319d0aad30ecc111205e1750f789980bc8e8a55e00ff20a686f",
+        "source_in": 0,
+        "source_out": 240,
+        "crop_xywh": null,
+        "beat_ids": [
+          "B017"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-recognition.json",
+        "purpose": "Her delight carries the thought of Jim. Same grey-bearded merchant remains background; chain fine and pale without a watch or ornate fob.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\05-chain-recognition.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
+          {
+            "start": 0,
+            "end": 240,
+            "crop": null,
+            "entity_compatibility": "Her delight carries the thought of Jim. Same grey-bearded merchant remains background; chain fine and pale without a watch or ornate fob."
+          }
+        ]
+      },
+      "beats": [
+        "B017"
+      ],
+      "tasks": [
+        "T06",
+        "T15"
+      ],
+      "treatment": [
+        "Her delight carries the thought of Jim. Same grey-bearded merchant remains background; chain fine and pale without a watch or ornate fob."
       ],
       "required_state": [
         "Simple pale fob chain, unchanged merchant; no watch in purchase."
@@ -4045,132 +4200,83 @@
         "002232.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F051",
-      "next": "F053"
-    },
-    {
-      "start": 8942,
-      "end": 9158,
-      "current_reference": {
-        "source_sha256": "955f4174dbf48d5333c5fd7566ecb20c24f63fb1ba6e2b8daab97560c2474513",
-        "source_in": 852,
-        "source_out": 1068,
-        "timeline_start": 8090,
-        "timeline_end": 9602,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene6-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline shopping and journey home"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
-          }
-        ]
-      },
-      "historic_cut": {
-        "start": 852,
-        "end": 1068,
-        "name": "Worthy of the watch",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-6/raw/05-chain-recognition.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 216,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F053",
-      "beats": [
-        "B017"
-      ],
-      "component_subrange": {
-        "in": 852,
-        "out": 1068,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
-      "tasks": [
-        "T06",
-        "T15"
-      ],
-      "treatment": [
-        "Preserve recognition with the grey-bearded jeweler and one chain insert. Resolve fittings across later views before choosing canonical chain."
-      ],
-      "required_state": [
-        "Simple pale fob chain, unchanged merchant; no watch in purchase."
-      ],
-      "story_purpose": [
-        "One simple platinum chain; recognition of quiet worth, not ornate luxury advertising."
-      ],
-      "evidence": [
-        "002232.json:shots[1]",
-        "002232.json:shots[2]"
-      ],
-      "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F052",
       "next": "F054"
     },
     {
-      "start": 9158,
-      "end": 9374,
-      "current_reference": {
-        "source_sha256": "955f4174dbf48d5333c5fd7566ecb20c24f63fb1ba6e2b8daab97560c2474513",
-        "source_in": 1068,
-        "source_out": 1284,
-        "timeline_start": 8090,
-        "timeline_end": 9602,
-        "crop_pipeline": [],
-        "provenance": [
+      "id": "F054",
+      "start": 9122,
+      "end": 9362,
+      "start_seconds": 380.0833333333333,
+      "end_seconds": 390.0833333333333,
+      "source_id": "payment",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/06-transaction.mp4",
+      "source_sha256": "a34bc38f87d7a0de7c51fda6082e29e4b338d658bdad128d9d5789b4fbd21436",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": [
+        260,
+        320,
+        1280,
+        720
+      ],
+      "beat_ids": [
+        "B018"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-payment.json",
+      "purpose": "Frame the payment and small wrapped purchase crossing the counter; exclude the contradictory younger merchant's face. Transfer is intact, not a face-only substitute for the action.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP15",
+        "start": 9122,
+        "end": 9362,
+        "start_seconds": 380.0833333333333,
+        "end_seconds": 390.0833333333333,
+        "source_id": "payment",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/06-transaction.mp4",
+        "source_sha256": "a34bc38f87d7a0de7c51fda6082e29e4b338d658bdad128d9d5789b4fbd21436",
+        "source_in": 0,
+        "source_out": 240,
+        "crop_xywh": [
+          260,
+          320,
+          1280,
+          720
+        ],
+        "beat_ids": [
+          "B018"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-payment.json",
+        "purpose": "Frame the payment and small wrapped purchase crossing the counter; exclude the contradictory younger merchant's face. Transfer is intact, not a face-only substitute for the action.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\06-transaction.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene6-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline shopping and journey home"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 240,
+            "crop": [
+              260,
+              320,
+              1280,
+              720
+            ],
+            "entity_compatibility": "Frame the payment and small wrapped purchase crossing the counter; exclude the contradictory younger merchant's face. Transfer is intact, not a face-only substitute for the action."
           }
         ]
       },
-      "historic_cut": {
-        "start": 1068,
-        "end": 1284,
-        "name": "Twenty-one dollars",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-6/raw/06-transaction.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 216,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F054",
       "beats": [
         "B017",
         "B018"
       ],
-      "component_subrange": {
-        "in": 1068,
-        "out": 1284,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T06",
         "T15"
       ],
       "treatment": [
-        "Preserve recognition with the grey-bearded jeweler and one chain insert. Resolve fittings across later views before choosing canonical chain.",
-        "Replace different-clerk transaction and watch-attached home appraisal with compatible payment/return/expression coverage."
+        "Frame the payment and small wrapped purchase crossing the counter; exclude the contradictory younger merchant's face. Transfer is intact, not a face-only substitute for the action."
       ],
       "required_state": [
         "Simple pale fob chain, unchanged merchant; no watch in purchase.",
@@ -4181,67 +4287,72 @@
         "Payment and hurried return. Future use with watch is imagined, not an actual fitting."
       ],
       "evidence": [
+        "002232.json:shots[1]",
         "002232.json:shots[2]",
-        "002304.json:shots[0]",
-        "002304.json:shots[1]"
+        "002304.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F053",
       "next": "F055"
     },
     {
-      "start": 9374,
+      "id": "F055",
+      "start": 9362,
       "end": 9602,
-      "current_reference": {
-        "source_sha256": "955f4174dbf48d5333c5fd7566ecb20c24f63fb1ba6e2b8daab97560c2474513",
-        "source_in": 1284,
-        "source_out": 1512,
-        "timeline_start": 8090,
-        "timeline_end": 9602,
-        "crop_pipeline": [],
-        "provenance": [
+      "start_seconds": 390.0833333333333,
+      "end_seconds": 400.0833333333333,
+      "source_id": "hurry-home",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/07-hurry-home.mp4",
+      "source_sha256": "0424810e1d40ea4a1ce3975c7968743af114b3302934d7d37d53df42238f1f0c",
+      "source_in": 0,
+      "source_out": 240,
+      "crop_xywh": null,
+      "beat_ids": [
+        "B018"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-hurry-home.json",
+      "purpose": "Brown hat back on after the indoor purchase; she hurries forward through the winter street protecting her purchase close to the chest.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP16",
+        "start": 9362,
+        "end": 9602,
+        "start_seconds": 390.0833333333333,
+        "end_seconds": 400.0833333333333,
+        "source_id": "hurry-home",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/07-hurry-home.mp4",
+        "source_sha256": "0424810e1d40ea4a1ce3975c7968743af114b3302934d7d37d53df42238f1f0c",
+        "source_in": 0,
+        "source_out": 240,
+        "crop_xywh": null,
+        "beat_ids": [
+          "B018"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-hurry-home.json",
+        "purpose": "Brown hat back on after the indoor purchase; she hurries forward through the winter street protecting her purchase close to the chest.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\07-hurry-home.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene6-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline shopping and journey home"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 240,
+            "crop": null,
+            "entity_compatibility": "Brown hat back on after the indoor purchase; she hurries forward through the winter street protecting her purchase close to the chest."
           }
         ]
       },
-      "historic_cut": {
-        "start": 1284,
-        "end": 1512,
-        "name": "Home with eighty-seven cents",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-6/raw/07-hurry-home.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 228,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F055",
       "beats": [
         "B018"
       ],
-      "component_subrange": {
-        "in": 1284,
-        "out": 1512,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T06",
         "T15"
       ],
       "treatment": [
-        "Replace different-clerk transaction and watch-attached home appraisal with compatible payment/return/expression coverage."
+        "Brown hat back on after the indoor purchase; she hurries forward through the winter street protecting her purchase close to the chest."
       ],
       "required_state": [
         "Della owns chain only, 87 cents remain; imagined watch use is not actual possession."
@@ -4250,69 +4361,88 @@
         "Payment and hurried return. Future use with watch is imagined, not an actual fitting."
       ],
       "evidence": [
+        "002304.json:shots[0]",
         "002304.json:shots[1]",
         "002376.json:shots[0]",
         "002376.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F054",
       "next": "F056"
     },
     {
+      "id": "F056",
       "start": 9602,
       "end": 9832,
-      "current_reference": {
+      "start_seconds": 400.0833333333333,
+      "end_seconds": 409.6666666666667,
+      "source_id": "home",
+      "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/08-chain-and-watch.mp4",
+      "source_sha256": "0a4f4a8b4163422e977917328da8268f1f0fe3e452c594f544e6cb7ef82e7190",
+      "source_in": 0,
+      "source_out": 230,
+      "crop_xywh": [
+        0,
+        0,
+        1472,
+        828
+      ],
+      "beat_ids": [
+        "B018"
+      ],
+      "status": "candidate-plan-blocked-not-renderable",
+      "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-home.json",
+      "purpose": "Warm anticipation on returning home. Mandatory top-left crop removes the watch throughout; do not restore the uncropped source or imply Jim's sold watch is on the table.",
+      "section": "departure-purchase",
+      "selected_candidate": {
+        "id": "DP17",
+        "start": 9602,
+        "end": 9832,
+        "start_seconds": 400.0833333333333,
+        "end_seconds": 409.6666666666667,
+        "source_id": "home",
+        "source": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-reader-solo-current/magi-reader-engine-solo-reader-redesign/production/magnific/gift-of-the-magi/scene-6/raw/08-chain-and-watch.mp4",
         "source_sha256": "0a4f4a8b4163422e977917328da8268f1f0fe3e452c594f544e6cb7ef82e7190",
         "source_in": 0,
         "source_out": 230,
-        "timeline_start": 9602,
-        "timeline_end": 9832,
-        "crop_pipeline": [
-          {
-            "crop_whxy": "1472:828:0:0",
-            "then_scale": [
-              1920,
-              1080
-            ],
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json"
-          }
+        "crop_xywh": [
+          0,
+          0,
+          1472,
+          828
         ],
-        "provenance": [
+        "beat_ids": [
+          "B018"
+        ],
+        "status": "selected-pending-parent-serial-admission",
+        "admission_input": "C:/Users/Admin/Documents/Codex/2026-09-01/le/work/magi-film-audit-20260907/admit-departure-home.json",
+        "purpose": "Warm anticipation on returning home. Mandatory top-left crop removes the watch throughout; do not restore the uncropped source or imply Jim's sold watch is on the table.",
+        "section": "departure-purchase",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-6\\raw\\08-chain-and-watch.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Della imagines his pleasure; exclude the absent watch"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 230,
+            "crop": [
+              0,
+              0,
+              1472,
+              828
+            ],
+            "entity_compatibility": "Warm anticipation on returning home. Mandatory top-left crop removes the watch throughout; do not restore the uncropped source or imply Jim's sold watch is on the table."
           }
         ]
       },
-      "historic_cut": {
-        "start": 0,
-        "end": 230,
-        "name": "08-chain-and-watch.mp4",
-        "metadata": null,
-        "path": null,
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F056",
       "beats": [
         "B018"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 230,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T06",
         "T15"
       ],
       "treatment": [
-        "Replace different-clerk transaction and watch-attached home appraisal with compatible payment/return/expression coverage."
+        "Warm anticipation on returning home. Mandatory top-left crop removes the watch throughout; do not restore the uncropped source or imply Jim's sold watch is on the table."
       ],
       "required_state": [
         "Della owns chain only, 87 cents remain; imagined watch use is not actual possession."
@@ -4326,7 +4456,6 @@
         "002448.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F055",
       "next": "F057"
     },

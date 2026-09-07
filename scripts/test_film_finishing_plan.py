@@ -34,6 +34,32 @@ class FinishingPlanTests(unittest.TestCase):
         self.assertEqual(len(della),1)
         self.assertEqual(della[0]['end']-della[0]['start'],240)
 
+    def test_departure_purchase_is_complete_existing_coverage(self):
+        shots = [s for s in self.plan['shots'] if 6869 <= s['start'] < 9832]
+        self.assertEqual(len(shots), 17)
+        self.assertEqual(sum(s['end']-s['start'] for s in shots), 2963)
+        self.assertEqual((shots[0]['start'], shots[-1]['end']), (6869,9832))
+        seen = {}
+        for s in shots:
+            c = s['selected_candidate']
+            self.assertEqual(c['section'], 'departure-purchase')
+            self.assertEqual(c['ledger_status'], 'admit')
+            self.assertEqual(c['source_out']-c['source_in'], s['end']-s['start'])
+            self.assertTrue(any(r['start'] <= c['source_in'] and r['end'] >= c['source_out']
+                                and r['crop'] == c['crop_xywh'] for r in c['ledger_ranges']))
+            for lo, hi in seen.get(c['source_sha256'], []):
+                self.assertTrue(c['source_out'] <= lo or c['source_in'] >= hi)
+            seen.setdefault(c['source_sha256'], []).append((c['source_in'],c['source_out']))
+
+    def test_departure_preserves_prop_and_merchant_exclusions(self):
+        by_id = {s['selected_candidate'].get('id'): s['selected_candidate']
+                 for s in self.plan['shots'] if s.get('selected_candidate')}
+        self.assertEqual(by_id['DP13']['source_out']-by_id['DP13']['source_in'],72)
+        self.assertEqual(by_id['DP13']['crop_xywh'],[420,180,960,540])
+        self.assertEqual(by_id['DP11']['crop_xywh'],[100,100,960,540])
+        self.assertEqual(by_id['DP15']['crop_xywh'],[260,320,1280,720])
+        self.assertEqual(by_id['DP17']['crop_xywh'],[0,0,1472,828])
+
     def test_not_renderable_or_admitted_by_planning(self):
         self.assertIn('NOT-final-or-renderable',self.plan['status'])
         self.assertTrue(all(s['status']=='candidate-plan-blocked-not-renderable'

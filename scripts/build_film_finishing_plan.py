@@ -176,6 +176,10 @@ def main():
     combs = read('docs/film-audit/COMBS-SEQUENCE-PLAN.json')['shots']
     opening = read('docs/film-audit/OPENING-SEQUENCE-PLAN.json')
     chain = read('docs/film-audit/CHAIN-SEQUENCE-PLAN.json')['shots']
+    departure_plan = read('docs/film-audit/DEPARTURE-PURCHASE-SEQUENCE-PLAN.json')
+    departure = [{**s, 'section': 'departure-purchase'} for s in departure_plan['shots']]
+    if (departure_plan['start'], departure_plan['end']) != (6869, 9832):
+        raise ValueError('Departure/purchase must preserve both neighboring section boundaries')
     retained_plan = read('docs/film-audit/RETAINED-MASTER-SELECTIONS.json')
     retained = [{**s, 'source': retained_plan['source_path'],
                  'source_sha256': retained_plan['movie_sha256'],
@@ -184,7 +188,7 @@ def main():
                  'status': 'source-admitted-context-pending'}
                 for s in retained_plan['selections']]
     overrides = opening_overrides(opening) + [{**s,'selected_candidate':s}
-                for s in retained+parcel+combs+chain+closing]
+                for s in retained+departure+parcel+combs+chain+closing]
     for override in overrides:
       container=override['selected_candidate']
       # Unpinned legacy named choices still need resolving; gaps remain gaps.
@@ -230,7 +234,7 @@ def main():
         label=shot.get('historic_cut',{}).get('name','')
         if label in decisions.get('shot_overrides',{}):
             shot['treatment']=[decisions['shot_overrides'][label]]
-        if shot.get('selected_candidate',{}).get('section') == 'opening':
+        if shot.get('selected_candidate',{}).get('section') in ('opening', 'departure-purchase'):
             shot['treatment']=[shot['selected_candidate']['purpose']]
         shot['required_state']=[decisions['beats'][b['id']]['state'] for b in beats]
         shot['story_purpose']=[b['purpose'] for b in beats]
