@@ -70,16 +70,16 @@ These are candidate native-time slots, with unresolved material left blank rathe
 | Film time | Candidate source range | Purpose / unresolved check |
 |---|---|---|
 |668.250–671.250|parcel-toss-r8b frames0–72 exclusive|Pocket reach; exit before wrong flat parcel. Native lead-in pending.|
-|671.250–674.250|parcel-insert-r9 frames24–96 exclusive|Release/landing around672.5–672.8, within the671.706–674.226 table-throw narration. Remaining native handles/detail pending.|
+|671.250–674.250|parcel-insert-r9 frames24–96 exclusive|Source range admitted after all72 native frames and landed detail inspected. Release/landing around672.5–672.8, within the671.706–674.226 table-throw narration.|
 |674.250–681.250|parcel-reassurance-r8 frames0–168 exclusive, mandatory crop above|Reassurance as a shared moment; do not show package in Jim's hands again.|
 |681.250–683.500|scene-10/raw/02-reassurance.mp4 frames168–222 exclusive, crop736,0,1184,666|Restricted source range admitted; closer view of Jim's affectionate smile. Join placement remains provisional.|
 |683.500–686.500|parcel-reassurance-r8 frames168–240 exclusive, mandatory crop above|Return to the shared look and downward turn, leading into unwrapping. Preserve chronological source progression, no repeated range.|
-|686.500–696.500|unwrap-r10 frames0–240 exclusive|Begins during invitation to unwrap; later paper action continues through nimble-fingers sentence. Closed-box reveal ellipsis and hand physics unresolved.|
-|696.500–704.750|reaction-r10 frames0–198 exclusive|Joy grows and becomes grief; expression timing remains close to spoken change. Native/contact join pending.|
-|704.750–712.750|comfort-r11 frames0–192 exclusive|Jim moves in to comfort, with continuing same-side geography; needs exact approach join.|
-|712.750 onward|New three-comb reveal, in/out not yet selected|Reveal the actual object at the narrator's explanation, not an incompatible alternate family.|
+|686.500–695.250|unwrap-r10 frames0–210 exclusive|Source range admitted. Begin on invitation; cut after paper opens, before the settled closed-box tail. Lid opens offscreen during reaction.|
+|695.250–703.500|reaction-r10 frames0–198 exclusive|Joy around696.75 and grief around699.75 sit close to696.57/699.57 narration. Native/contact join pending.|
+|703.500–711.500|comfort-r11 frames0–192 exclusive|Jim moves in to comfort, with continuing same-side geography; needs exact approach join.|
+|711.500 onward|New three-comb reveal, in/out not yet selected|Reveal the object about1.3s before the narrator names it, within loose-sync tolerance. No incompatible alternate family.|
 
-This design now finds existing candidates for the entire44.5second parcel-to-combs sequence. Only the2.25second Jim portrait has completed formal source admission; the other candidates and assembled sequence are not yet approved. Box opening may be a permissible offscreen ellipsis while the audience watches Della; evaluate that assembled transition before deciding a new insert is necessary.
+This design supplies the parcel-to-reveal sequence with existing candidates, now reaching the combs at711.5s rather than712.75s. The1.25s is removed from the settled closed-box tail, not frozen or stretched elsewhere; the reveal is allowed to lead its narration. Three sources have restricted admission:3s throw,2.25s portrait and8.75s wrapping removal. Other candidates and the assembled sequence still require approval. Box opening is an offscreen ellipsis while the audience watches Della; evaluate that assembled transition before deciding a new insert is necessary.
 
 ## Restricted admission — Jim portrait
 
@@ -88,3 +88,9 @@ Source40a9eba1de3685e1b0d0405087fc6bc4631d4d7cf7685c6a6f72ed0ec388b6e6 reviewed 
 Formal source review completed61/61 with a receipt; inventory decision admits only frames168–222 exclusive with the mandatory crop and tied-collar/screen-left compatibility restriction. Source decision is in external audit/source-decisions/40a9eba1de3685e1b0d0405087fc6bc4631d4d7cf7685c6a6f72ed0ec388b6e6.json. Existing extracted sheets were hash-verified byte-identical to the formal receipt's sheets; no visual review was inferred from extraction alone.
 
 The closer view belongs INSIDE the longer reassurance moment, before the two-shot's downward turn, rather than appending an upward-looking portrait after both actors already look down. This keeps performance progression and resolves the duration gap without a freeze or retake. Final native joins, delivery-size crop quality and sound-on pacing remain assembly checks.
+
+## Parcel and wrapping admission
+
+The table-throw source was formally reviewed31/31 samples plus native24–95 and enlarged landed parcel. Range24–96 admitted, uncropped. Wrapping-removal source was formally reviewed61/61 samples plus all240 native frames0–239 in seven sheets. Hands remove loose string, work paper open, expose closed dark box, and settle. Range0–210 admitted; the final settled tail is omitted to bring Della's joy and grief closer to their narrated changes.
+
+Enlarged first/last unwrap frames and new comb-reveal frame0 were compared. Brown paper, crossed twine and dark case form a compatible material family, but apparent case proportions vary with perspective; exact dimensions have not been measured. The case opening is not present in the source. The edit deliberately leaves that action offscreen during the face reaction and reveals the open case later, following comfort. Do not claim the source depicts an opening lid. Both source decisions are preserved in the external audit/source-decisions directory with exact SHA and native bounds. No new credits or export this pass.
