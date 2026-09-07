@@ -2,6 +2,8 @@
 
 No new generation, recut, render or publication during the audit. Preserve v0.9.7.
 
+Current scoped exception: the user's later instruction to make highest-priority picks first and generate authorized priority batch01 before remaining inventory reconciliation. Two takes completed; an additional40,000-credit ceiling was then authorized. See FINAL-ROUND-REGISTER.md and PRIORITY-BATCH-01-REVIEW.md. This advances bounded generation only, not source admission, final assembly validation or publication.
+
 ## Final-round constraint — user clarification
 
 One more planned round of retakes is authorized after inventory and the complete edit plan, not endless iterative generation. Lock every requested shot, reference family, starting/ending state, finite take count and total credit ceiling before dispatch. No automatic additional round if a take fails: finish with planned alternatives and existing coverage, or explicitly report a consequential remaining gap. The list and credit ceiling are not yet locked. Preserve the narration unless the user separately authorizes abridgment. This constraint governs step9 below and supersedes any implication of unlimited correction cycles.

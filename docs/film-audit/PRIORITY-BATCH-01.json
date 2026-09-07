@@ -1,0 +1,70 @@
+{
+  "date": "2026-09-07",
+  "authority": "User: make your highest priority picks first and generate. Scoped override of inventory-complete-before-generation; remaining audit and admission gates remain.",
+  "status": "provider-completed-not-reviewed",
+  "takes": 2,
+  "credits": 14000,
+  "automaticRetries": false,
+  "canonicalCombProposal": "Existing r11 three-piece amber jeweled side-and-back set. Other comb families cannot be intercut as identical; inventory reconciliation still required.",
+  "clips": [
+    {
+      "slug": "bytedance-seedance-pro-2.0",
+      "duration": 10,
+      "aspectRatio": "16:9",
+      "resolution": "1080p",
+      "withSoundEffects": false,
+      "keyframes": {
+        "start": {
+          "type": "image",
+          "url": "3zMS7LrREY"
+        }
+      },
+      "prompt": "Single continuous 10-second photorealistic period-drama close-up, beginning exactly from this image. Preserve this adult woman's face, short brown curls, muted blue-teal dress with ivory collar, modest apartment and soft window lighting. The woman is Della in The Gift of the Magi, listening to her beloved adult husband Jim just offscreen left. He has just revealed that he sold his watch to buy her combs; she sold her hair for his chain. It seems the earlier ending intended to celebrate their love with beautiful gifts, but showing the sold watch contradicted their sacrifice. Here tell the resolution through her face instead. Start with the reference's attentive sadness, then her eyes lift slightly toward Jim at the same offscreen eyeline as understanding arrives. A tiny surprised breath, moist eyes, then a restrained affectionate smile, a little almost-laugh of tenderness at their mutual generosity. End in a quiet living smile, naturally breathing and blinking. Not grief, not a glamour pose, not exaggerated laughing. Camera stays at the same side of the axis with an extremely gentle physical push closer. Keep hands and all gifts below the frame throughout. Only Della visible, no added people or objects. No dialogue, lip-sync, music, text, cuts or transitions. Real-time natural movement, not slow motion, no freeze, loop or reverse."
+    },
+    {
+      "slug": "bytedance-seedance-pro-2.0",
+      "duration": 10,
+      "aspectRatio": "16:9",
+      "resolution": "1080p",
+      "withSoundEffects": false,
+      "keyframes": {
+        "start": {
+          "type": "image",
+          "url": "gO3H5upSXO"
+        }
+      },
+      "prompt": "Single continuous 10-second photorealistic cinematic insert beginning exactly from the reference image. The Gift of the Magi: the beautiful expensive combs Della has longed for, now hers but her long hair is gone. It seems earlier coverage sought to convey their beauty, but changing their shape and number between shots destroyed the identity of Jim's gift. Preserve EXACTLY these three rigid amber mottled tortoiseshell ornamental hair combs, their scalloped arched crests, circular jewel motifs, tiny pale and pink rim jewels, teeth, relative sizes and positions in this already-open dark rectangular case on crumpled brown wrapping paper. One larger back comb and two side combs. The case, combs, paper and table remain physically stationary. A very slow modest lateral camera slide of a few centimeters with a slight push-in reveals real parallax, enough living motion for a film insert, with natural oil-lamp reflection glints. Keep all three combs legible and in focus. Same low warm lamplight and muted room; no magical sparkle. No hands enter; no unwrapping or picking up; do not turn this into a product advert. Nothing appears, vanishes, melts, changes design or moves independently. No watch or chain, no new gift. No text, voices, music, cuts, fades, loops, freeze or slow motion. Finish still moving gently in the same direction."
+    }
+  ],
+  "generation": {
+    "creations": [
+      {
+        "identifier": "1lyaQ6ir4r",
+        "status": "queued",
+        "expectTime": 345,
+        "tool": "video-generator",
+        "credits": 7000
+      },
+      {
+        "identifier": "LwNubZCswO",
+        "status": "queued",
+        "expectTime": 346,
+        "tool": "video-generator",
+        "credits": 7000
+      }
+    ],
+    "models": [
+      {
+        "slug": "bytedance-seedance-pro-2.0",
+        "duration": 10,
+        "autoSelected": false
+      },
+      {
+        "slug": "bytedance-seedance-pro-2.0",
+        "duration": 10,
+        "autoSelected": false
+      }
+    ],
+    "instruction": "Queued — the result does NOT appear on its own even when status is `processing`. Queue everything the user asked for first, then in THIS SAME turn call `creations_show` once with exactly these newly-created identifiers: `1lyaQ6ir4r`, `LwNubZCswO` — never the source/input identifier you passed in — and `creations_wait` (1–8 identifiers per call; batch in groups of 8 if more), which blocks until the queued items finish, to confirm the results before replying. Never reply that it is \"generating\" or \"will appear shortly\" and stop — calling these tools is the ONLY way it renders. Never regenerate queued items or add extras beyond the request. No folderReference was passed, so results land in the user's Personal project — if the user named a target project, pass `folderReference` (from `folders_list`) on EVERY generation/edit call. When replying to the user, use names, titles, webUrl, and plain descriptions — do not quote internal identifiers (UUIDs, folder references, session or request ids) unless they explicitly ask."
+  }
+}

@@ -1,8 +1,27 @@
 # Final round — inventory-led working register
 
-Status: planning, not a generation order. One final planned round; no new generation yet.
+Status: priority batch 01 submitted under the user's explicit generate-first instruction. Two 10-second 1080p Seedance 2.0 takes, 14,000 quoted credits total; no automatic retries. See PRIORITY-BATCH-01.json for exact prompts and references. Remaining inventory and the rest of the final round are not yet locked. Neither take is reviewed or admitted.
 
-## Review order
+## Priority batch 01 — 7 September
+
+The user requested highest-priority picks first and generation now. This explicitly advances these two takes before completion of source-inventory reconciliation; it does not waive physical continuity, native-frame review, or final edit review.
+
+1. Della's loving understanding after Jim's watch-sale revelation. Existing short-haired close-up anchor has no contradictory props. Preserve tenderness while replacing ending coverage that resurrects the watch. Acceptance: same face/costume/eyeline, understated emotional change, no invented objects, normal continuous motion. This is reaction coverage, not a complete replacement ending.
+2. Three-piece jeweled comb insert from the existing r11 open-case anchor. Apparent intent of older inserts was to show the gift's beauty; changing designs defeated its identity. Propose this existing side-and-back set as the working design, pending compatible-coverage reconciliation. Acceptance: exactly three unchanged rigid combs, stable teeth/jewels/case, restrained moving camera, no added hands or watch. Reject incompatible families from any sequence using this design; generation itself does not admit the design or footage.
+
+Both remain candidates. Six-per-second review, native detail checks and predecessor/successor edit checks are required before admission. No baked film or published app changed.
+
+Provider completion confirmed for both priority takes on 7 September. This is generation completion only: visual review and admission remain pending.
+
+## Additional credit authority — 7 September
+
+User: "you can have 40,000 more credits. use them wisely."
+
+Additional spending ceiling: 40,000 credits beyond priority batch 01's 14,000 already spent. Additional allowance spent at authorization: 0; remaining: 40,000. Combined authorized accounting envelope for batch 01 and subsequent spending: 54,000. Account-wide balance is not this task's budget and may change through other tasks. The one-final-retake-round restriction and no automatic retries remain in force. Include preparatory image generation and other paid media charges in this allowance, not only video charges. Check actual prices/balance before spending; preserve unused allowance.
+
+Prioritize reviewing the two pending takes, then irreducible script/prop-continuity gaps: compatible comb handling, watch-free shared resolution, and parcel action. Reuse validated coverage whenever possible. No new charges made merely to consume this allowance.
+
+## Remaining review order
 
 1. Gift system: compare comb reveal/window/handling/ending and chain shop/wait/presentation. Choose physical designs based on compatible reviewed coverage, not filenames or newest take.
 2. Parcel action: compatible pocket, table, unwrapping and comfort; no repeated unopened parcel.
