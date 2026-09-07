@@ -9,10 +9,18 @@ BASE = Path('C:/Users/Admin/Documents/Codex/2026-09-01/le/work')
 PROD = BASE/'magi-reader-solo-current/magi-reader-engine-solo-reader-redesign'
 parser = argparse.ArgumentParser()
 parser.add_argument('--existing', nargs='+', choices=['della-cherishes-r12', 'supper-insert-r2', 'jim-revelation-r1'])
+parser.add_argument('--source', type=Path, nargs='+', help='Explicit production sources; evidence uses filename stem')
 args = parser.parse_args()
-for name in (args.existing or ('della-understanding', 'combs-reveal')):
+if args.existing and args.source:
+    parser.error('Choose existing names or explicit sources, not both')
+names = [p.stem for p in args.source] if args.source else (args.existing or ('della-understanding', 'combs-reveal'))
+for index, name in enumerate(names):
     folder = PROD/'production/award-candidate'
     source = (folder if args.existing else folder/'final-round-01')/f'{name}.mp4'
+    if args.source:
+        source = args.source[index].resolve(strict=True)
+        if not source.is_relative_to(PROD.resolve()):
+            raise SystemExit('Source must be inside the production checkout')
     root = BASE/'magi-film-audit-20260907/priority-batch-01'/name
     root.mkdir(parents=True, exist_ok=True)
     if (root/'state.json').exists():

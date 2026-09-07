@@ -1,0 +1,59 @@
+{
+  "date": "2026-09-07",
+  "purpose": "Watch-free shared ending",
+  "status": "submitted-not-reviewed",
+  "takes": 1,
+  "credits": 7000,
+  "additionalAllowanceRemaining": 33000,
+  "totalSpentThisFinalRound": 21000,
+  "automaticRetries": false,
+  "acceptance": [
+    "Exactly two same adult identities, Della short curls and teal ivory dress, Jim open collar and no gloves",
+    "Quiet affection rather than renewed grief",
+    "No sold watch or other gifts appear; hands below framing",
+    "Continuous forward real-time action without duplication, deformation, loop or freeze",
+    "Review all six-fps samples and suspicious native neighbors; verify joins with Della reaction and final window before admission"
+  ],
+  "alternativesReviewed": [
+    "03-couple-gifts: all61 samples, watch and gloves visible, incompatible comb family; no unqualified reuse",
+    "05-supper: all61 samples, watch and plain comb; no unqualified reuse",
+    "comfort-r11: all49 samples, tearful embrace rather than resolved warmth, preserve for earlier comfort not ending"
+  ],
+  "clip": {
+    "slug": "bytedance-seedance-pro-2.0",
+    "duration": 10,
+    "aspectRatio": "16:9",
+    "resolution": "1080p",
+    "withSoundEffects": false,
+    "references": [
+      {
+        "type": "image",
+        "url": "3zMS7LrREY"
+      },
+      {
+        "type": "image",
+        "url": "fHxdTQ7CDY"
+      }
+    ],
+    "prompt": "One uninterrupted 10-second photorealistic period-film shot, The Gift of the Magi. Reference 1 supplies EXACT adult Della identity: short brown curls, expressive brown eyes, blue-teal modest dress and ivory collar. Reference 2 supplies EXACT adult Jim identity, brown waistcoat, dark coat and OPEN cream shirt collar, no tie. Also preserve the worn blue-green sofa, cracked muted plaster, cool winter window light and gentle warm practical lighting from reference 2. Compose a NEW intimate chest-up two-shot on that sofa: Della screen-left, Jim screen-right, side by side, shoulders close. Both faces stay visible. Camera at seated eye height, not a high-angle dining shot. Their hands and laps remain naturally below the frame; no tabletop visible. Story context: Jim has already sold his watch to buy Della's combs; Della sold her long hair for his chain. They have understood each other's sacrifice. It seems earlier ending shots intended to celebrate their devotion by showing treasured gifts together, but resurrecting the sold watch contradicted the meaning. Preserve the affection by showing the two people, not possessions. Begin with them quietly meeting each other's eyes. Della gives a small relieved smile; Jim answers with a tender almost-laugh. Over the middle seconds Della slowly rests the side of her head against his shoulder, without obscuring either face; he tilts his head gently toward hers. Finish resting close together with soft living smiles, breathing and a natural blink. Tender ordinary married love, not sobbing, not exaggerated theatrical laughter, not a kiss or dance. Restrained almost-static camera with a tiny physical approach; real-time motion, natural skin texture, stable anatomy and identity. Exactly two adults throughout. No child, baby, extra figure, watch, chain, comb, package, gloves, jewelry, table, food, title or text enters the composition. Silent: no dialogue or lip-sync, no music. No internal cuts, dissolves, black fade, loops, freeze, reverse motion or slow motion. Leave the final warm image moving naturally for the editor."
+  },
+  "generation": {
+    "creations": [
+      {
+        "identifier": "w42kFSq7EI",
+        "status": "queued",
+        "expectTime": 348,
+        "tool": "video-generator",
+        "credits": 7000
+      }
+    ],
+    "models": [
+      {
+        "slug": "bytedance-seedance-pro-2.0",
+        "duration": 10,
+        "autoSelected": false
+      }
+    ],
+    "instruction": "Queued — the result does NOT appear on its own even when status is `processing`. Queue everything the user asked for first, then in THIS SAME turn call `creations_show` once with exactly these newly-created identifiers: `w42kFSq7EI` — never the source/input identifier you passed in — and `creations_wait` (1–8 identifiers per call; batch in groups of 8 if more), which blocks until the queued items finish, to confirm the results before replying. Never reply that it is \"generating\" or \"will appear shortly\" and stop — calling these tools is the ONLY way it renders. Never regenerate queued items or add extras beyond the request. No folderReference was passed, so results land in the user's Personal project — if the user named a target project, pass `folderReference` (from `folders_list`) on EVERY generation/edit call. When replying to the user, use names, titles, webUrl, and plain descriptions — do not quote internal identifiers (UUIDs, folder references, session or request ids) unless they explicitly ask."
+  }
+}

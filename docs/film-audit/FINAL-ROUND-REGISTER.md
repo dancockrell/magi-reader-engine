@@ -1,6 +1,6 @@
 # Final round — inventory-led working register
 
-Status: priority batch 01 submitted under the user's explicit generate-first instruction. Two 10-second 1080p Seedance 2.0 takes, 14,000 quoted credits total; no automatic retries. See PRIORITY-BATCH-01.json for exact prompts and references. Remaining inventory and the rest of the final round are not yet locked. Neither take is reviewed or admitted.
+Status: priority batch01 completed and received first source review (see PRIORITY-BATCH-01-REVIEW.md); neither take finally admitted. Priority batch02 submitted: one10-second1080p shared-ending take,7,000 credits. Total final-round spend21,000; remaining additional allowance33,000. No automatic retries. Remaining inventory and the rest of the final round are not yet locked.
 
 ## Priority batch 01 — 7 September
 
@@ -11,7 +11,13 @@ The user requested highest-priority picks first and generation now. This explici
 
 Both remain candidates. Six-per-second review, native detail checks and predecessor/successor edit checks are required before admission. No baked film or published app changed.
 
-Provider completion confirmed for both priority takes on 7 September. This is generation completion only: visual review and admission remain pending.
+Provider completion confirmed for both first-batch takes on7September. Initial six-fps source review completed; full admission and assembled edit review remain pending.
+
+## Shared ending — batch02
+
+Reviewed all171six-fps samples across original couple-gifts, supper and comfort-r11 sources. Original couple shot preserves appealing smiles but shows the sold watch and Jim's gloves. Supper preserves warmth but shows sold watch and plain comb. Comfort's close framing avoids gifts but carries renewed tears, unsuitable as resolved ending. They are not admitted as unrestricted final-resolution coverage. A crop might salvage a portion, but must not be assumed clean without full-range verification.
+
+One reference-guided replacement submitted using clean existing Della and Jim portraits, not the contaminated table images: chest-up seated two-shot, Della left/Jim right, relieved smiles followed by Della resting against Jim's shoulder. Open collar, no gloves, all gifts out of composition. Preserve warm human interaction without reversing the story's sacrifice. See PRIORITY-BATCH-02.json for exact brief, alternatives and acceptance conditions. No second attempt automatically authorized by a failure.
 
 ## Additional credit authority — 7 September
 
