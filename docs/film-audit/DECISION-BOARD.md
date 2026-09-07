@@ -41,6 +41,8 @@ Provisional synthesis, not an admitted source list. Baseline v6; current detaile
 
 ## Questions that change the edit
 
+Continuation through 08:00 resolves the earlier pending hair-result question: curls appear around 07:13, acceptably near their narration. Preserve the vulnerable self-examination and self-talk. The chain-only waiting shot around 07:54–08:00 (enlarged sample 2856) offers a script-compatible emotional use of the gift; do not confuse it with the incorrect watch scene. Dinner remains uncooked as required. Mirror/clock/set consistency and fine chain/contact checks still need source review.
+
 - Which continuous set/costume family supplies the best complete emotional sequence?
 - Does inventory contain an actual compatible hair release and outward departure?
 - Can the watch-table shot end before the unwanted effect while preserving useful action?
