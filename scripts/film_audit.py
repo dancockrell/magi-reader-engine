@@ -144,6 +144,12 @@ def sheets(root, samples, stem):
     return paths
 
 
+def supplemental_context(root):
+    """Carry later corrections alongside immutable original observations."""
+    return [{'path': str(p.resolve()), 'sha256': digest(p), 'record': read(p)}
+            for p in sorted((root/'supplemental').glob('*.json'))]
+
+
 def next_packet(root, state):
     if state['phase'] != 'film-review':
         print(json.dumps({'phase': state['phase'], 'message': 'Film review cannot advance in this phase.'}))
@@ -160,6 +166,7 @@ def next_packet(root, state):
         'story_beats': [x for x in read(root/'storyboard-resolved.json') if x['start'] < b and x['end'] > a],
         'captions': [x for x in read(root/'captions.json') if x['start'] < b+1 and x['end'] > a-1],
         'entities': read(root/'entities.json'),
+        'supplemental_reviews': supplemental_context(root),
         'previous_review': str(root/'reviews'/f'{max(0,start-state["packet_samples"]):06d}.json') if start else None,
         'instructions': 'View every sheet in order, inspect original-sized frames and native neighbors for uncertainty. Record actual cuts, apparent intent, observed evidence, entities and four judgments. Do not approve from labels or aggregate similarity. Submit a receipt; the script will not move on without it.',
         'receipt_schema': {'movie_sha256': state['movie_sha256'], 'sample_start': start, 'sample_end': end,
@@ -183,6 +190,9 @@ def validate_receipt(request, receipt):
     for path, expected in request['sheet_sha256'].items():
         if digest(path) != expected:
             raise ValueError('Evidence changed after packet creation')
+    for item in request.get('supplemental_reviews', []):
+        if digest(item['path']) != item['sha256']:
+            raise ValueError('Supplemental review changed; regenerate packet context')
     for key in ('continuity', 'relevance', 'writer_fidelity', 'heartfelt_love'):
         value = receipt.get('judgments', {}).get(key, '')
         if len(value.strip()) < 30 or value == 'evidence required':

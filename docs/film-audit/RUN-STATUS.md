@@ -12,9 +12,13 @@ This is an audit in progress, not a new finished cut. No film changes or generat
 
 ## Review position
 
-Accepted sequential coverage: **00:00–00:48**, samples **0–287**; next cursor **288** of 5,347. This is approximately 5.4% of the sampled film, not a whole-film verdict.
+Accepted sequential coverage: **00:00–03:00**, samples **0–1079**; next cursor **1080** of 5,347. This is approximately 20.2% of the sampled film, not a whole-film verdict.
 
 The worried close-up and developing couch performance are promising material to protect. Merchant-street footage may function as a recollection of saving pennies, but walking is a weaker illustration of bargaining. The isolated-penny replacement has a supplemental native-frame check; the apparent extra disk at 37.500 seconds resolves as the fingertip when enlarged. No final source selection follows from those observations alone.
+
+The next pass through 03:00 found incompatible room layouts at about 01:04, a native-confirmed name-card framing jump at 01:32.750, present-day costume/action mismatch at 02:08, late standing-window coverage, and premature/repeated mirror action with incompatible mirror designs and early hair release. See [findings through 03:00](FINDINGS-THROUGH-0300.md). Preserve the affectionate household-memory performances; these are supported by the original narrative, not automatically early-arrival errors.
+
+Supplemental findings and corrections are now carried into each subsequent review request and checked for changes before acceptance. This includes the correction that mirror description begins 181.274 seconds and the decisive turn begins 204.914 seconds. Twelve workflow tests pass. These checks do not certify artistic quality.
 
 Audit workspace: `../magi-film-audit-20260907` relative to this checkout. It contains state.json, immutable accepted reviews, entity observations, inventory.json, frame evidence and supplemental reviews. The frozen film hash is `852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b`.
 

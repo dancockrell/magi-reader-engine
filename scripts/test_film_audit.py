@@ -2,7 +2,7 @@ import copy
 import tempfile
 import unittest
 from pathlib import Path
-from film_audit import digest, resolve_beats, validate_receipt, validate_plan, source_decision
+from film_audit import digest, resolve_beats, validate_receipt, validate_plan, source_decision, supplemental_context
 
 
 class ReviewGates(unittest.TestCase):
@@ -47,6 +47,18 @@ class ReviewGates(unittest.TestCase):
 
     def test_reject_bad_entity(self):
         self.receipt['entities']=[{'id':'CHAIN'}]
+        with self.assertRaises(ValueError): validate_receipt(self.request,self.receipt)
+
+    def test_later_corrections_are_carried_forward(self):
+        folder=Path(self.tmp.name)/'supplemental'
+        folder.mkdir()
+        correction=folder/'correction.json'
+        correction.write_text('{"finding":"Earlier ambiguity resolved by native frames."}')
+        records=supplemental_context(Path(self.tmp.name))
+        self.assertEqual(records[0]['record']['finding'], 'Earlier ambiguity resolved by native frames.')
+        self.request['supplemental_reviews']=records
+        validate_receipt(self.request,self.receipt)
+        correction.write_text('{"finding":"Changed after review began."}')
         with self.assertRaises(ValueError): validate_receipt(self.request,self.receipt)
 
     def test_storyboard_must_follow_narrative(self):
