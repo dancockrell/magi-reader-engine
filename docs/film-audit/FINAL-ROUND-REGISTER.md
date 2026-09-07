@@ -51,6 +51,16 @@ Prioritize reviewing the two pending takes, then irreducible script/prop-continu
 - Broad pale simple-link appearance is compatible, but exact clasps/fittings and tiny finger-link contact remain unresolved. Record in source native-review.json; no unsupported exact-identity match and no admission yet.
 - Next source work should compare gift families and inspect remaining chain details, not reshoot the promising Della expression. Queue is audit/inventory-queue.json; original inventory dispositions remain unchanged.
 
+## Current selection update — 7 September, after retrieved-chain review
+
+The three completed priority pickups now have formal source admissions at native0–240 exclusive,24fps, no crop: Della-understanding92c906a4, combs-revealc053541f, shared-ending898dd177. Each has completed61-sample source receipts. Official sheets were verified byte-identical to the fully inspected earlier evidence. Della additionally has native0–239 inspection; combs have ending native204–239 and full-size detail/cross-source comparison; shared ending has native120–191 contact inspection. Source approval is not contextual edit or final sound approval.
+
+Four older hashes also have restricted admissions: Jim reassurance portrait40a9eba1 (mandatory crop), parcel throw6ce86f78, unwrapping826fa477, boxed combsbf0a3838. Exact bounds live in the hash-addressed external source decisions. Earlier paragraphs saying no admissions or uncertain comb canon are historical: the ledger now locks the three-piece amber circular-jeweled comb design. Chain canon remains unresolved.
+
+An old queued take N20aGPv6D9 was retrieved, fully reviewed and rejected for an extra chain strand; its historical760credit commission is not new spending. No retries. Additional remaining allowance is33,000. Seven admitted source hashes do not constitute a measured full-film salvage percentage.
+
+ENDING-SEQUENCE-PLAN.json now provides an exact frame-addressed design from789.875 through891.125. It preserves source-time progression and explicitly leaves the sixteen-second domestic coda gap and credit imagery unresolved. Not renderable, not a substitute for the every-shot whole-film plan, not yet published.
+
 ## Non-negotiable delivery boundaries
 
 No post-sale watch; one consistent comb set and chain; no literal child for boy or foolish children; maintain story action and geography. No freezes, loops, reverse playback or speed-fitting. Crops require full-range inspection. Finite planned alternatives must serve real coverage gaps, not unbounded beauty variations.

@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "status": "section-edit-design-not-renderable",
+  "fps": 24,
+  "master_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+  "timeline_start": 18957,
+  "timeline_end": 21387,
+  "note": "Exact proposed timing at normal speed. Source admission and contextual audiovisual approval are separate. This is not the complete final-shot-plan and cannot be submitted as one.",
+  "shots": [
+    {
+      "id": "C01",
+      "start": 18957,
+      "end": 19317,
+      "source": "jim-revelation-r1.mp4",
+      "source_sha256": "fad6ce3e7617f181e82b7e98e0f09a9782061255116498b039d001160f316807",
+      "source_in": 0,
+      "source_out": 360,
+      "status": "candidate-native-hands-review-required",
+      "beats": [
+        "B043",
+        "B044"
+      ],
+      "purpose": "Let Jim relax, smile and speak with modest tenderness. Continuous15seconds rather than splitting the same take around a long listening insert.",
+      "join": "Incoming must establish seated/open-collar Jim, not a costume jump; outgoing cut on his attention to Della.",
+      "entity_state": "Jim seated, bare hands, open collar, no visible gifts."
+    },
+    {
+      "id": "C02",
+      "start": 19317,
+      "end": 19557,
+      "source": "final-round-01/della-understanding.mp4",
+      "source_sha256": "92c906a43d43b3e1b937394fbeb8375a021ef5e2aee53b6c40cbaf58be5f7ae0",
+      "source_in": 0,
+      "source_out": 240,
+      "status": "source-admitted-context-pending",
+      "beats": [
+        "B044",
+        "B045"
+      ],
+      "purpose": "Begin concern at804.875; recognition around806.875–808.875 brackets watch-sale line807.723–811.395, smile develops afterward. Keep all ten seconds so feeling earns the smile.",
+      "join": "Jim looks right, Della looks left; narration continues offscreen. Cut away on settled affection, about0.46seconds into Magi narration.",
+      "entity_state": "Della short curls, teal/ivory, no visible chain/combs/watch."
+    },
+    {
+      "id": "C03",
+      "start": 19557,
+      "end": 19768,
+      "source": "scene-12/raw/01-magi-travel.mp4",
+      "source_in": 0,
+      "source_out": 211,
+      "status": "candidate-source-motion-review-required",
+      "beats": [
+        "B045"
+      ],
+      "purpose": "Narrator's explicit historical comparison; native camel gait remains to inspect.",
+      "join": "Literary comparison, not literal domestic geography."
+    },
+    {
+      "id": "C04",
+      "start": 19768,
+      "end": 19979,
+      "source": "scene-12/raw/02-ancient-gifts.mp4",
+      "source_in": 0,
+      "source_out": 211,
+      "status": "candidate-source-motion-review-required",
+      "beats": [
+        "B045"
+      ],
+      "purpose": "The historical gifts, then return to Jim and Della before the narrator names the flat.",
+      "join": "Ancient objects must not be confused with household gifts."
+    },
+    {
+      "id": "C05",
+      "start": 19979,
+      "end": 20364,
+      "status": "unresolved-coverage-gap",
+      "beats": [
+        "B045"
+      ],
+      "purpose": "Sixteen and one twenty-fourth seconds of the adult couple's shared sacrifice, without the watch or incompatible gifts.",
+      "rejected_alternatives": [
+        "03-couple-gifts: sold watch, gloves/tie reset",
+        "04-gifts-insert: sold watch and incompatible comb",
+        "05-supper: sold watch and changed comb"
+      ],
+      "conditions": [
+        "No watch, incompatible combs or new child.",
+        "Consistent open-collar Jim, short-curled Della and shared room.",
+        "Emotion should deepen into affection, not restart grief.",
+        "Normal-speed distinct footage; no duplication of C02 or C06."
+      ],
+      "next_action": "Resolve from compatible unused performance ranges or name finite pickups in full-film retake plan; no automatic generation."
+    },
+    {
+      "id": "C06",
+      "start": 20364,
+      "end": 20604,
+      "source": "final-round-01/shared-ending.mp4",
+      "source_sha256": "898dd17709a1734428d3e3d8f10965c82293082ce4c751f90d5ff8538f1e73c4",
+      "source_in": 0,
+      "source_out": 240,
+      "status": "source-admitted-context-pending",
+      "beats": [
+        "B046"
+      ],
+      "purpose": "At848.5 they share looks; Della rests against Jim near855.5 when narration calls these two wisest.",
+      "join": "Preserve seated Della-left/Jim-right and open collar. Exit after settled contact, once only.",
+      "entity_state": "Adult couple on sofa, no gifts/watch visible."
+    },
+    {
+      "id": "C07",
+      "start": 20604,
+      "end": 20812,
+      "source": "scene-12/raw/06-window-final.mp4",
+      "source_in": 0,
+      "source_out": 208,
+      "status": "candidate-source-review-required",
+      "beats": [
+        "B046"
+      ],
+      "purpose": "Exterior retreat carries final words through867.167; warm household rather than extra prop display.",
+      "join": "Check actual window geography and brightness; restrained transition."
+    },
+    {
+      "id": "C08",
+      "start": 20812,
+      "end": 21387,
+      "status": "credits-revision-required",
+      "beats": [
+        "B046"
+      ],
+      "purpose": "Preserve literary credits, replace wrong comb imagery with canonical design. Verify text and music decay; retain final fade around889–890.5 and black tail.",
+      "conditions": [
+        "No narration restarted.",
+        "Canonical comb design even in credits.",
+        "Final fade and sound decay verified in actual rendered output."
+      ]
+    }
+  ]
+}
