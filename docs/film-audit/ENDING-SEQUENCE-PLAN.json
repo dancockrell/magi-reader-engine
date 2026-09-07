@@ -15,7 +15,7 @@
       "source_sha256": "fad6ce3e7617f181e82b7e98e0f09a9782061255116498b039d001160f316807",
       "source_in": 0,
       "source_out": 360,
-      "status": "candidate-native-hands-review-required",
+      "status": "native-hands-reviewed-formal-source-admission-pending",
       "beats": [
         "B043",
         "B044"
@@ -46,13 +46,14 @@
       "start": 19557,
       "end": 19768,
       "source": "scene-12/raw/01-magi-travel.mp4",
+      "source_sha256": "2ee0b7e7b7bfbf457f218ec994bc954abdeedaf5f484e3af2328d9444e08e4fa",
       "source_in": 0,
       "source_out": 211,
-      "status": "candidate-source-motion-review-required",
+      "status": "source-admitted-context-pending",
       "beats": [
         "B045"
       ],
-      "purpose": "Narrator's explicit historical comparison; native camel gait remains to inspect.",
+      "purpose": "Narrator's explicit historical comparison. All61samples and native0–210 reviewed; source range admitted, assembled audiovisual transition remains pending.",
       "join": "Literary comparison, not literal domestic geography."
     },
     {
@@ -60,9 +61,10 @@
       "start": 19768,
       "end": 19979,
       "source": "scene-12/raw/02-ancient-gifts.mp4",
+      "source_sha256": "8a0bc8912fb595cf58c6e64bed117d44961427209dd73b88c176638cf0385506",
       "source_in": 0,
       "source_out": 211,
-      "status": "candidate-source-motion-review-required",
+      "status": "source-admitted-context-pending",
       "beats": [
         "B045"
       ],
@@ -114,12 +116,12 @@
       "source": "scene-12/raw/06-window-final.mp4",
       "source_in": 0,
       "source_out": 208,
-      "status": "candidate-source-review-required",
+      "status": "identity-and-geography-conflict-not-admitted",
       "beats": [
         "B046"
       ],
       "purpose": "Exterior retreat carries final words through867.167; warm household rather than extra prop display.",
-      "join": "Check actual window geography and brightness; restrained transition."
+      "join": "All61samples and enlarged starting frame reviewed8September. Exterior shows a supper-table couple, not the seated sofa composition; woman's swept-back hair and dark costume differ from short-curled teal/ivory Della. Warm mood is useful but identity and window geography cannot be assumed. Keep slot unresolved; do not approve because figures are small."
     },
     {
       "id": "C08",

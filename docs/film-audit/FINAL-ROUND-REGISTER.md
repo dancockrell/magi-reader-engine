@@ -67,4 +67,10 @@ No post-sale watch; one consistent comb set and chain; no literal child for boy 
 
 ## Not yet known
 
-Exact salvage duration, canonical designs, final shot list, take count and credit ceiling remain unresolved. Earlier half-to-two-thirds salvage estimate is not a measured admission figure. No new source has been admitted yet.
+Exact full-film salvage duration, chain design and final shot list remain unresolved. Earlier half-to-two-thirds salvage estimate is not a measured admission figure. The comb design is locked; additional allowance is33,000credits with no automatic retries.
+
+## Closing coverage review — 8 September
+
+Two more sources admitted, bringing the total to nine hashes: scene12/raw/01-magi-travel (2ee0b7e7) and 02-ancient-gifts (8a0bc891), each native0–211 exclusive, no crop. Each full61-sample source review is recorded; travel additionally has all211native frames inspected. These cover17.583seconds of proposed historical comparison, not a newly rendered scene.
+
+Jim-revelation native0–71 and288–335 plus enlarged30,45,300 show a continuous bare-handed rise behind his head and lowering, with motion blur rather than an observed duplicate-hand jump. Formal source admission still pending. Exterior06-window-final remains unadmitted: enlarged initial frame shows a differently styled supper couple. See CLOSING-COVERAGE-REVIEW.md. No new spending, bake or publication.
