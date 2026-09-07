@@ -71,11 +71,20 @@ These are candidate native-time slots, with unresolved material left blank rathe
 |---|---|---|
 |668.250–671.250|parcel-toss-r8b frames0–72 exclusive|Pocket reach; exit before wrong flat parcel. Native lead-in pending.|
 |671.250–674.250|parcel-insert-r9 frames24–96 exclusive|Release/landing around672.5–672.8, within the671.706–674.226 table-throw narration. Remaining native handles/detail pending.|
-|674.250–684.250|parcel-reassurance-r8 frames0–240 exclusive, mandatory crop above|Reassurance as a shared moment; do not show package in Jim's hands again.|
-|684.250–686.500|UNRESOLVED,54frames|Need compatible reassurance continuation or reaction. Existing scene-10/raw/02-reassurance.mp4 is a next candidate, not approved; do not extend r8 by freezing.|
+|674.250–681.250|parcel-reassurance-r8 frames0–168 exclusive, mandatory crop above|Reassurance as a shared moment; do not show package in Jim's hands again.|
+|681.250–683.500|scene-10/raw/02-reassurance.mp4 frames168–222 exclusive, crop736,0,1184,666|Restricted source range admitted; closer view of Jim's affectionate smile. Join placement remains provisional.|
+|683.500–686.500|parcel-reassurance-r8 frames168–240 exclusive, mandatory crop above|Return to the shared look and downward turn, leading into unwrapping. Preserve chronological source progression, no repeated range.|
 |686.500–696.500|unwrap-r10 frames0–240 exclusive|Begins during invitation to unwrap; later paper action continues through nimble-fingers sentence. Closed-box reveal ellipsis and hand physics unresolved.|
 |696.500–704.750|reaction-r10 frames0–198 exclusive|Joy grows and becomes grief; expression timing remains close to spoken change. Native/contact join pending.|
 |704.750–712.750|comfort-r11 frames0–192 exclusive|Jim moves in to comfort, with continuing same-side geography; needs exact approach join.|
 |712.750 onward|New three-comb reveal, in/out not yet selected|Reveal the actual object at the narrator's explanation, not an incompatible alternate family.|
 
-This design finds existing candidates for42.25seconds of the44.5second parcel-to-combs sequence, leaving2.25seconds explicitly unresolved. Candidate duration is NOT a salvage/admission total. Box opening may be a permissible offscreen ellipsis while the audience watches Della; evaluate that assembled transition before deciding a new insert is necessary.
+This design now finds existing candidates for the entire44.5second parcel-to-combs sequence. Only the2.25second Jim portrait has completed formal source admission; the other candidates and assembled sequence are not yet approved. Box opening may be a permissible offscreen ellipsis while the audience watches Della; evaluate that assembled transition before deciding a new insert is necessary.
+
+## Restricted admission — Jim portrait
+
+Source40a9eba1de3685e1b0d0405087fc6bc4631d4d7cf7685c6a6f72ed0ec388b6e6 reviewed at sixfps, both full take and two separately extracted crops. Selected native168–221 inspected consecutively in two sheets; crop sample48 enlarged. The first960x540 crop was unnecessarily tight; choose736,0,1184,666 instead to retain more detail and shoulder space. Hands are lowered during the selected interior and parcel remains outside mandatory composition. Earlier repeated hair-touch action and all uncropped source remain unadmitted.
+
+Formal source review completed61/61 with a receipt; inventory decision admits only frames168–222 exclusive with the mandatory crop and tied-collar/screen-left compatibility restriction. Source decision is in external audit/source-decisions/40a9eba1de3685e1b0d0405087fc6bc4631d4d7cf7685c6a6f72ed0ec388b6e6.json. Existing extracted sheets were hash-verified byte-identical to the formal receipt's sheets; no visual review was inferred from extraction alone.
+
+The closer view belongs INSIDE the longer reassurance moment, before the two-shot's downward turn, rather than appending an upward-looking portrait after both actors already look down. This keeps performance progression and resolves the duration gap without a freeze or retake. Final native joins, delivery-size crop quality and sound-on pacing remain assembly checks.
