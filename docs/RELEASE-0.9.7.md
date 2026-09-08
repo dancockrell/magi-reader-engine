@@ -1,4 +1,7 @@
-# Current film and production backup
+# Historical v0.9.7 film and production backup
+
+The film in this release is superseded by [v0.9.8](RELEASE-0.9.8.md).
+Its production archives remain available; they are not a backup of later edits.
 
 This release publishes the latest complete film, `magi-award-assembly-v6.mp4`,
 as `the-gift-of-the-magi.mp4`, with its matching captions. It also preserves the

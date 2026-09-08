@@ -1,4 +1,4 @@
-export const FILM_DOWNLOAD = import.meta.env.VITE_FILM_URL || 'https://github.com/dancockrell/magi-reader-engine/releases/download/v0.9.7-current/the-gift-of-the-magi.mp4';
+export const FILM_DOWNLOAD = import.meta.env.VITE_FILM_URL || 'https://github.com/dancockrell/magi-reader-engine/releases/download/v0.9.8-film/the-gift-of-the-magi.mp4';
 export const FILM_URL = import.meta.env.VITE_FILM_URL ||
   (import.meta.env.PROD ? FILM_DOWNLOAD : 'video/films/magi-reader-film-final.mp4?edit=portfolio');
 export const FILM_CAPTIONS = import.meta.env.VITE_FILM_CAPTIONS || 'video/films/magi-reader-film-final.vtt';

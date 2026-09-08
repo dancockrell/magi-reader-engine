@@ -15,6 +15,6 @@ test('without a candidate override the published release remains unchanged', asy
   vi.stubEnv('VITE_FILM_URL', '');
   vi.stubEnv('VITE_FILM_CAPTIONS', '');
   const film = await import('./film-delivery.js');
-  expect(film.FILM_DOWNLOAD).toContain('/v0.9.7-current/the-gift-of-the-magi.mp4');
+  expect(film.FILM_DOWNLOAD).toContain('/v0.9.8-film/the-gift-of-the-magi.mp4');
   expect(film.FILM_CAPTIONS).toBe('video/films/magi-reader-film-final.vtt');
 });

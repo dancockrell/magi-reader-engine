@@ -4,7 +4,7 @@
 
 O. Henry’s *The Gift of the Magi*, adapted into a narrated short film and a quiet, installable reading app.
 
-[**Open the app**](https://dancockrell.github.io/magi-reader-engine/) · [**Watch the film**](https://dancockrell.github.io/magi-reader-engine/film.html) · [**Download the 1080p film**](https://github.com/dancockrell/magi-reader-engine/releases/download/v0.9.7-current/the-gift-of-the-magi.mp4)
+[**Open the app**](https://dancockrell.github.io/magi-reader-engine/) · [**Watch the film**](https://dancockrell.github.io/magi-reader-engine/film.html) · [**Download the 1080p film**](https://github.com/dancockrell/magi-reader-engine/releases/download/v0.9.8-film/the-gift-of-the-magi.mp4)
 
 [![Della counting her savings](public/art/storyboard/s1/s1-a-counting.jpg)](https://dancockrell.github.io/magi-reader-engine/film.html)
 
@@ -21,7 +21,7 @@ No account, classroom workflow, explanatory host characters, or sentence-driven 
 
 This is a portfolio project by **Dan Cockrell**, combining application development with an AI-assisted film production workflow. Generated footage was treated as source material: selected, rejected, reshot and cut into an authored timeline.
 
-Picture, narration and music are baked into one film. The application does not stretch clips, loop shots or pause picture to catch individual sentences. The v0.9.7 delivery is **1920 × 1080 at 24 fps**, approximately **14 minutes 51 seconds** including titles and the closing coda. [Current release and production backup](docs/RELEASE-0.9.7.md).
+Picture, narration and music are baked into one film. The application does not stretch clips, loop shots or pause picture to catch individual sentences. The v0.9.8 delivery is **1920 × 1080 at 24 fps**, approximately **14 minutes 51 seconds** including titles and the closing coda. [Current film release](docs/RELEASE-0.9.8.md) · [Earlier production backup](docs/RELEASE-0.9.7.md).
 
 [Read the production case study](docs/FILM-PRODUCTION.md) · [Release checks](docs/PORTFOLIO-RELEASE.md)
 
