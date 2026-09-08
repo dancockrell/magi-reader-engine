@@ -13,6 +13,20 @@ Use a brief consistent object reveal, then reviewed performances, close-ups and
 reaction cuts. Maintain normal motion and story state; judge the physical render.
 An intermediate render must identify unchanged/unresolved sections honestly.
 
+### Same actress, same home, same film
+
+The user's latest review identifies an ensemble-level defect: individually good
+shots switch Della's appearance, upgrade the apartment, or alternate painterly
+and photographic rendering. Judge every retained shot beside its neighbors,
+not as a standalone attractive image. Preserve the established teal-dress Della,
+her story-correct hair state, modest worn apartment and naturalistic period-film
+appearance. A close-up can exclude incompatible furniture or costume edges; it
+cannot excuse a different face, impossible hair state or a different rendering
+style. Modest grading may unify exposure and color, but must not be represented
+as a repair for identity or architecture. Reject incompatible wide coverage;
+prefer an unused compatible performance or a necessary planned pickup. Do not
+make more prop inserts to cover this problem.
+
 ## Prior production order — 7 September 2026
 
 For this film, [the complete ordered audit](film-audit/PROTOCOL.md) now precedes
