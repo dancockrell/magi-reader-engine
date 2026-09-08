@@ -4,6 +4,7 @@ import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import { viteSingleFile } from 'vite-plugin-singlefile';
 import { cpSync, existsSync, mkdirSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 /**
  * Two build targets, because the reader has two lives.
@@ -20,6 +21,7 @@ import { cpSync, existsSync, mkdirSync } from 'node:fs';
  * and absolute URLs break there.
  */
 const single = process.env.SINGLE === '1';
+let mediaOutput;
 
 export default defineConfig({
   base: './',
@@ -30,11 +32,14 @@ export default defineConfig({
   },
   plugins: [react(), ...(single ? [viteSingleFile()] : []), {
     name: 'curated-reader-media',
+    configResolved(config) {
+      mediaOutput = resolve(config.root, config.build.outDir);
+    },
     closeBundle() {
       const files = ['art', 'magi-audio', 'cues', 'manifest.webmanifest', 'app-icon.svg', 'app-icon-192.png', 'app-icon-512.png', 'sw.js', 'video/films/magi-reader-film-final.vtt'];
-      mkdirSync('dist/video/films', { recursive: true });
+      mkdirSync(resolve(mediaOutput, 'video/films'), { recursive: true });
       for (const file of files) {
-        if (existsSync('public/' + file)) cpSync('public/' + file, 'dist/' + file, { recursive: true });
+        if (existsSync('public/' + file)) cpSync('public/' + file, resolve(mediaOutput, file), { recursive: true });
       }
     },
   }],
