@@ -20,3 +20,17 @@ the narrow enlargement needs full-size quality review. Ordered source and
 v6 context images inspected, but this is a candidate until its render is checked.
 Narrated below-knee description precedes pinning; the final hesitation remains
 before departure. Total duration and original narration timing unchanged.
+
+## Physical check and integration
+
+Rendered 6298–7200 to include the departure. Ordered images show secured hair,
+hesitation, descent and exterior exit in that order. Full-size repin detail was
+inspected: softness from enlargement remains visible; this is not an invisible
+repair. No full-speed or audible acceptance is claimed from these images.
+
+Integrated into full-length local v7, 21387 frames, with all 98 segments reused.
+Movie SHA256 `ba0242095320ab70ff0f475fb63e1027aaca6df07bad5300ed5a49c7a28b80b4`.
+Review page `/review-human-v7.html`; v6 app preview remains unchanged.
+V6 original AAC packet hash independently checked this turn:
+`20b3b086e420e399d210179c2fb5a1687439b89ac63d03326bda53b640a967bf`.
+This is audio preservation evidence, not a sound-quality listening review.
