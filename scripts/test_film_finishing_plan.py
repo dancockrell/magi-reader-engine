@@ -16,12 +16,39 @@ class FinishingPlanTests(unittest.TestCase):
     def test_retained_master_keeps_its_original_time(self):
         sha='852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b'
         retained=[s for s in self.plan['shots']
-                  if s.get('selected_candidate',{}).get('source_sha256')==sha]
+                  if s.get('selected_candidate',{}).get('source_sha256')==sha
+                  and s['selected_candidate'].get('section') != 'mirror-hair']
         self.assertEqual(sum(s['end']-s['start'] for s in retained),959)
         for s in retained:
             c=s['selected_candidate']
             self.assertEqual((c['source_in'],c['source_out']),(s['start'],s['end']))
             self.assertIsNone(c['crop_xywh'])
+
+    def test_mirror_excludes_morphs_and_preserves_honest_gaps(self):
+        shots=[s for s in self.plan['shots'] if 4351 <= s['start'] < 6869]
+        self.assertEqual(sum(s['end']-s['start'] for s in shots),2518)
+        gaps=[s for s in shots if not s['selected_candidate'].get('source_sha256')]
+        self.assertEqual([(s['start'],s['end']) for s in gaps],
+                         [(4351,4918),(5390,5606),(6675,6768)])
+        self.assertEqual(sum(s['end']-s['start'] for s in gaps),876)
+        release=[s['selected_candidate'] for s in shots if s['selected_candidate'].get(
+            'source_sha256')=='57aeb6a2d1d6bebf370b4ea990cc5f55e3716ea8c6dfd2a34419a3cd09311733']
+        self.assertEqual([(c['source_in'],c['source_out']) for c in release],[(0,120),(176,240)])
+        for s in shots:
+            c=s['selected_candidate']
+            if c.get('source_sha256'):
+                self.assertEqual(c['ledger_status'],'admit')
+                self.assertTrue(any(r['start'] <= c['source_in'] and r['end'] >= c['source_out']
+                                    and r['crop']==c['crop_xywh'] for r in c['ledger_ranges']))
+
+    def test_royal_comparison_yields_to_della_at_script_return(self):
+        s=next(s for s in self.plan['shots'] if s['start']==6076)
+        self.assertEqual(s['end'],6298)
+        self.assertEqual((s['selected_candidate']['source_in'],s['selected_candidate']['source_out']),
+                         (6223,6445))
+        following=next(s for s in self.plan['shots'] if s['start']==6298)
+        self.assertEqual(following['selected_candidate']['source_sha256'],
+                         '5c29f624f2d53e359e91f70b31d8a4411e5714c8df1085ff436da21857d1a4d4')
 
     def test_chain_section_keeps_palm_gap_and_continuous_performance(self):
         shots=[s for s in self.plan['shots'] if 18280 <= s['start'] < 18957]

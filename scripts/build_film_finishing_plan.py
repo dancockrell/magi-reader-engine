@@ -56,6 +56,27 @@ def opening_overrides(opening):
     return result
 
 
+def mirror_overrides(plan):
+    """Keep reviewed handles and unresolved coverage explicit in one timeline."""
+    if (plan['scope']['start'], plan['scope']['end']) != (4351, 6869):
+        raise ValueError('Mirror section handover changed')
+    spans = [{**s, 'crop_xywh': None, 'section': 'mirror-hair'}
+             for s in plan['exact_build_sections']]
+    spans += [{**s, 'purpose': s['need'], 'section': 'mirror-hair',
+               'status': 'unresolved-coverage-no-padding'}
+              for s in plan['unresolved_slots']]
+    spans.sort(key=lambda s: s['start'])
+    cursor = 4351
+    for s in spans:
+        if s['start'] != cursor or s['end'] <= cursor:
+            raise ValueError('Mirror section has an unaccounted gap or overlap')
+        cursor = s['end']
+    if cursor != 6869:
+        raise ValueError('Mirror section is incomplete')
+    return [{'start': s['start'], 'end': s['end'], 'selected_candidate': s}
+            for s in spans]
+
+
 def validate(plan):
     cursor = 0
     for index, shot in enumerate(plan['shots']):
@@ -187,7 +208,8 @@ def main():
                  'crop_xywh': None, 'purpose': s['reason'],
                  'status': 'source-admitted-context-pending'}
                 for s in retained_plan['selections']]
-    overrides = opening_overrides(opening) + [{**s,'selected_candidate':s}
+    overrides = opening_overrides(opening) + mirror_overrides(
+                read('docs/film-audit/MIRROR-HAIR-SEQUENCE-PLAN.json')) + [{**s,'selected_candidate':s}
                 for s in retained+departure+parcel+combs+chain+closing]
     for override in overrides:
       container=override['selected_candidate']
@@ -234,7 +256,7 @@ def main():
         label=shot.get('historic_cut',{}).get('name','')
         if label in decisions.get('shot_overrides',{}):
             shot['treatment']=[decisions['shot_overrides'][label]]
-        if shot.get('selected_candidate',{}).get('section') in ('opening', 'departure-purchase'):
+        if shot.get('selected_candidate',{}).get('section') in ('opening', 'departure-purchase', 'mirror-hair'):
             shot['treatment']=[shot['selected_candidate']['purpose']]
         shot['required_state']=[decisions['beats'][b['id']]['state'] for b in beats]
         shot['story_purpose']=[b['purpose'] for b in beats]

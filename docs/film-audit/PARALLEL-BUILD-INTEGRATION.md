@@ -32,3 +32,18 @@ freed departure agent; the parent retains home-memory review and integration.
 
 Publication: local integration only. No new film render, release, Pages update,
 credit spend or award outcome is claimed.
+
+## Mirror and hair checkpoint
+
+Following the departure checkpoint ecfed2f, the parent integrated thirteen exact
+mirror/hair selections and three explicitly unfilled slots. Eight further raw
+source hashes were admitted; the master admission gained two royal comparisons
+through a hash-pinned revision preserving its previous six ranges and history.
+Total restricted source admissions are now53. The one candidate timeline has120
+intervals, still47beats and21,387frames.64film tests pass, including exclusion of
+the hair-growth middle, unchanged section boundaries, exact source-ledger ranges,
+and Solomon yielding to Della at frame6298. No gap is converted into filler.
+
+The agents subsequently stopped on usage-limit errors. Their last saved work is
+input, not an ongoing process. The parent continues from the saved files; the
+unsaved preparation and home-present plans are not assumed complete.

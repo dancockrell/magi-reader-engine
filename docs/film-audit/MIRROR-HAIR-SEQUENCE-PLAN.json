@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "status": "finite_inventory_pass_complete_edit_still_has_explicit_unfilled_slots",
+  "fps": 24,
+  "scope": {
+    "start": 4351,
+    "end": 6869,
+    "beat_ids": [
+      "B009",
+      "B010",
+      "B011",
+      "B012"
+    ]
+  },
+  "rules": [
+    "Native24fps unchanged; no reverse, stretch, freeze or repeat.",
+    "Use one teal wardrobe/mirror family through the decision.",
+    "A missing slot is not authorization for a retake and not proof no further inventory can fill it."
+  ],
+  "exact_build_sections": [
+    {
+      "start": 4918,
+      "end": 5158,
+      "source_sha256": "00163e2ed17c577eaf9e87b4fbdc86fdafe805d2050ac676fd4184792d5fa560",
+      "source_in": 0,
+      "source_out": 240,
+      "purpose": "Standing-before-glass appraisal around the decisive turn; physical whirl itself remains an incoming coverage need."
+    },
+    {
+      "start": 5158,
+      "end": 5278,
+      "source_sha256": "57aeb6a2d1d6bebf370b4ea990cc5f55e3716ea8c6dfd2a34419a3cd09311733",
+      "source_in": 0,
+      "source_out": 120,
+      "purpose": "Hands rise to pinned hair; cut BEFORE the rejected growth transition."
+    },
+    {
+      "start": 5278,
+      "end": 5326,
+      "source_sha256": "99b78e09d72e64d36418fadd0bc41c59f01e33487b8fc1e476fb7362835ea889",
+      "source_in": 0,
+      "source_out": 48,
+      "purpose": "Two-second ordinary treasure-table cutaway gives real editorial ellipsis, not a morph dissolve."
+    },
+    {
+      "start": 5326,
+      "end": 5390,
+      "source_sha256": "57aeb6a2d1d6bebf370b4ea990cc5f55e3716ea8c6dfd2a34419a3cd09311733",
+      "source_in": 176,
+      "source_out": 240,
+      "purpose": "Return to already released long hair at221.917, within the scripted full-length sentence ending222.122."
+    },
+    {
+      "start": 5606,
+      "end": 5678,
+      "source_sha256": "99b78e09d72e64d36418fadd0bc41c59f01e33487b8fc1e476fb7362835ea889",
+      "source_in": 48,
+      "source_out": 120,
+      "purpose": "Complete the same unique cutaway source after watch inheritance line; no source frame repeats."
+    },
+    {
+      "start": 5678,
+      "end": 5901,
+      "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+      "source_in": 5777,
+      "source_out": 6000,
+      "purpose": "Sheba hypothetical illustration236.583–245.875; native boundaries exclude both adjacent flat shots."
+    },
+    {
+      "start": 5901,
+      "end": 6076,
+      "source_sha256": "c8ddb1f29a539f7cf3c66d71162a26d322b75578c6549792970651066e3e2c12",
+      "source_in": 0,
+      "source_out": 175,
+      "purpose": "Actual matching teal long-hair appreciation between royal comparisons; filename misleadingly says Sheba."
+    },
+    {
+      "start": 6076,
+      "end": 6298,
+      "source_sha256": "852574ecb47757dd45b3d56293ec05b6af0547efcdbd5257b71e083997b3ef3b",
+      "source_in": 6223,
+      "source_out": 6445,
+      "purpose": "Solomon hypothetical253.167–262.417; finishes at the return to Della instead of6.2seconds late."
+    },
+    {
+      "start": 6298,
+      "end": 6514,
+      "source_sha256": "5c29f624f2d53e359e91f70b31d8a4411e5714c8df1085ff436da21857d1a4d4",
+      "source_in": 0,
+      "source_out": 216,
+      "purpose": "Return to actual Della at262.417s, within one frame of the262.397 narration cue. Long-haired teal family; not literal knee-length certification."
+    },
+    {
+      "start": 6514,
+      "end": 6610,
+      "source_sha256": "a4c58aadec6bb76232579112cb390d4a63210051dfcd7ea8adeaf78e021c5146",
+      "source_in": 0,
+      "source_out": 96,
+      "purpose": "Four seconds of intact long-haired hand-lowering before the excluded giant-braid transformation; then genuine repin ellipsis needed."
+    },
+    {
+      "start": 6610,
+      "end": 6675,
+      "source_sha256": "c8ddb1f29a539f7cf3c66d71162a26d322b75578c6549792970651066e3e2c12",
+      "source_in": 175,
+      "source_out": 240,
+      "purpose": "Remaining unique shoulder-gather tail; approach to repin ellipsis, not a claim of completed pinning."
+    },
+    {
+      "start": 6768,
+      "end": 6840,
+      "source_sha256": "dd95b4c3aa9d5de98c338b566cb76110b436f06a095add9eb3cc876a071cca09",
+      "source_in": 168,
+      "source_out": 240,
+      "purpose": "Pinned aftermath/hesitation282–285s; do not claim this supplies nervous repin."
+    },
+    {
+      "start": 6840,
+      "end": 6869,
+      "source_sha256": "9bb5cba335fd1f39e84ea32af7d4e9b63528f0ad64aab043ec6bda398836f10c",
+      "source_in": 0,
+      "source_out": 29,
+      "purpose": "Short pinned-hair hesitation bridge before coat and departure; exclude later release."
+    }
+  ],
+  "unresolved_slots": [
+    {
+      "start": 4351,
+      "end": 4918,
+      "need": "23.625s pinned-hair pier-glass setup. Only literal between-windows mirror footage uses cream blouse; selected teal mirror is already reserved for the decision. No duplicate source frames or wardrobe jump authorized."
+    },
+    {
+      "start": 5390,
+      "end": 5606,
+      "need": "9s treasure preamble/inherited watch. Its previous wide is reassigned to the more important return-to-hair cue. Need compatible unused pre-sale object/reaction coverage; malformed palm-watch dial is not admitted."
+    },
+    {
+      "start": 6675,
+      "end": 6768,
+      "need": "3.875s nervous doing-up and hesitation. Both actual transformation middles are nonphysical. Requires a genuine compatible cutaway/ellipsis; no shrinking hair, loop or freeze."
+    }
+  ],
+  "source_admission_inputs": [
+    "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\admit-mirror-hair-mirror.json",
+    "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\admit-mirror-hair-release-handles.json",
+    "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\admit-mirror-hair-treasures-wide.json",
+    "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\admit-mirror-hair-watch-cutaway.json",
+    "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\admit-mirror-hair-repin-result.json",
+    "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\admit-mirror-hair-cascade-handle.json",
+    "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\admit-master-retained-plus-royals.json",
+    "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\admit-mirror-hair-shoulder-gather.json",
+    "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-film-audit-20260907\\admit-mirror-hair-pinned-bridge.json"
+  ],
+  "inspected_not_selected": [
+    {
+      "sha256": "8c80bb4365f6b886461f203c38aeec23af2167ccd1f33f2a0d6daf49aa7c31c5",
+      "finding": "Correct narrow wall mirror; cream blouse; repeated full-body turns may be intended to illustrate longitudinal strips, but cannot silently change chosen wardrobe."
+    },
+    {
+      "sha256": "e15b23d5915d251c0076614ef84fcaf090d696ed9e67497662bd29e196b9d493",
+      "finding": "Already loose hair and oval tabletop mirror; not pinned-to-loose release."
+    },
+    {
+      "sha256": "c49be9a175180aab90f827d44cf3062b8800a7e747eb8bd5577f8332ac9e56fd",
+      "finding": "Cream blouse/ornate freestanding mirror with hair adjusting; cannot crosscut with teal family as same event."
+    },
+    {
+      "sha256": "a4c58aadec6bb76232579112cb390d4a63210051dfcd7ea8adeaf78e021c5146",
+      "finding": "Starts compatible loose hair, then strands become patterned braids and cover face. Not admitted by this pass."
+    },
+    {
+      "sha256": "b5d253a6e66738605f0605aa583d52ddda6f81327999564099203e9b61770426",
+      "finding": "Same palm-watch alternative used in current master; supplemental native review already flags malformed dial. Do not reintroduce as hero watch simply because bow stays attached."
+    }
+  ],
+  "selected_frames": 1642,
+  "selected_seconds": 68.41666666666667,
+  "master_admission_caution": "Prepared against current six-range admitted master entry. Parent must merge with any newer master admission before serial registration; never overwrite newer selections.",
+  "unfilled_frames": 876,
+  "unfilled_seconds": 36.5,
+  "full_scope_accounted_for": true,
+  "remaining_semantic_limit": "Compatible teal long-hair shots frame visible hanging length but do not establish below-knee length as written. Do not conceal this by claiming the full-length requirement passed.",
+  "minimum_finite_pickups": [
+    {
+      "priority": 1,
+      "id": "M1-glass-geography",
+      "seconds": 15,
+      "frames_required": 360,
+      "timeline": [
+        4351,
+        4711
+      ],
+      "anchor_sha256": "00163e2ed17c577eaf9e87b4fbdc86fdafe805d2050ac676fd4184792d5fa560",
+      "anchor_frame": 0,
+      "prompt": "The intent is to make the tiny apartment and Della's ingenuity readable before her decision. A narrow wall-mounted pier glass stands between two windows in the established shabby blue-green flat. Della wears the established plain teal dress, cream collar and narrow brown belt, brown hair pinned up. Begin an intimate lateral architectural move showing the glass and windows, then let Della enter its narrow reflection and quietly adjust her stance to see herself. Her hair remains pinned throughout; the reflection follows the one adult woman. One continuous unhurried camera move, no new props or text."
+    },
+    {
+      "priority": 2,
+      "id": "M2-glass-performance",
+      "seconds": 10,
+      "frames_required": 207,
+      "timeline": [
+        4711,
+        4918
+      ],
+      "anchor_sha256": "00163e2ed17c577eaf9e87b4fbdc86fdafe805d2050ac676fd4184792d5fa560",
+      "anchor_frame": 160,
+      "prompt": "The intent is to preserve Della's intelligence and vulnerability, not demonstrate a magical mirror. Matching teal dress and pinned brown hair, a close three-quarter view of her face as she makes one small sideways adjustment to see herself in the narrow glass, then grows still in thought. Keep the room and light consistent. Frame primarily the actual face with only a narrow edge of glass, not a competing frontal reflected face. No hair release or wardrobe change. Continuous natural24fps movement."
+    },
+    {
+      "priority": 3,
+      "id": "M3-pre-sale-treasure-insert",
+      "seconds": 15,
+      "frames_required": 309,
+      "uses": [
+        {
+          "timeline": [
+            5390,
+            5606
+          ],
+          "source": [
+            0,
+            216
+          ]
+        },
+        {
+          "timeline": [
+            6675,
+            6768
+          ],
+          "source": [
+            216,
+            309
+          ]
+        }
+      ],
+      "anchor_sha256": "5c29f624f2d53e359e91f70b31d8a4411e5714c8df1085ff436da21857d1a4d4",
+      "anchor_frame": 100,
+      "prompt": "The intent is an ordinary cherished possession, not a magical effect. The same small closed gold pocket watch with its existing plain brown strap rests untouched on the established worn table. An intimate slow lateral camera drift catches the worn closed case in warm window light. No dial is exposed, no chain attached, no hands touch it, no smoke or vapor, no jewelry appears. Preserve the exact case and strap throughout. This pre-sale object insert will also provide a brief honest editorial ellipsis while Della pins her hair offscreen."
+    }
+  ],
+  "pickup_budget_note": "Three finite takes15+10+15 seconds provide40seconds gross for36.5seconds uncovered. Cost is unquoted; parent must price and decide whether to reallocate ending pickups. No dispatch authorization inferred. If any take fails, do not silently start another round."
+}
