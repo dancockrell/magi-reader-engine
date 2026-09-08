@@ -33,3 +33,15 @@ The preceding descriptive montage still needs dramatic refinement; the 5390–56
 white-blouse interval is unresolved. Do not integrate this into a release master
 or claim the incompatible family has been eliminated. No generation, retiming,
 reversal, frozen padding or publication was performed.
+
+## Next edit: the two possessions
+
+5390–5606 now selects Jim sofa source 0–216 with mandatory crop
+180,360,800,450. Ordered source images inspected; the crop excludes short-haired
+Della and the gift table, retaining Jim's affectionate expression. This plays
+as a portrait/recollection during the narrator's introduction of their pride,
+not a claim that Jim has returned home at this point. It replaces the remaining
+nine-second white-blouse slot here, followed by the existing brief watch insert.
+The wider source is not admitted in this earlier story position. Its gesturing
+may still read too much like present-tense conversation; judge in context.
+The preceding unresolved statement is historical, not the current selection.

@@ -17,6 +17,7 @@
     {"start":4990,"end":5158,"source":"production/magnific/gift-of-the-magi/scene-3/s3-d-pier-glass.mp4","source_in":72,"crop":null},
     {"start":5158,"end":5294,"source":"production/magnific/gift-of-the-magi/scene-3/s3-e-hair-release.mp4","source_in":24,"crop":[100,80,800,450]},
     {"start":5294,"end":5390,"source":"production/magnific/gift-of-the-magi/scene-3/quarantine/runtime-s3-d-hair-release-rejected.mp4","source_in":144,"crop":[180,20,480,270]},
+    {"start":5390,"end":5606,"source":"production/magnific/gift-of-the-magi/scene-11/raw/05-jim-sofa.mp4","source_in":0,"crop":[180,360,800,450]},
     {"start":6675,"end":6768,"source":"production/magnific/gift-of-the-magi/scene-4/s4-e-repin-raw.mp4","source_in":0,"crop":[160,40,800,450]},
     {"start":10393,"end":10585,"source":"production/magnific/gift-of-the-magi/scene-7/raw/05-mirror-review-r2.mp4","source_in":24,"crop":[0,0,1152,648]},
     {"start":11797,"end":12037,"source":"production/magnific/gift-of-the-magi/scene-8/raw/06-prayer.mp4","source_in":0,"crop":[220,0,1056,594]},
