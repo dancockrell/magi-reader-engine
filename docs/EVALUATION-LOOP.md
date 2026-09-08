@@ -4,7 +4,16 @@ Working instruction for film review, generation briefs and revision cycles.
 This protocol also applies to app/design diagnosis where competing requirements
 produce a locally plausible but globally wrong result.
 
-## Current production order — 7 September 2026
+## Finishing direction — 8 September 2026
+
+The user has explicitly redirected this completed whole-film audit into execution:
+build the film, reduce prop inserts, and concentrate on the people. Do not restart
+the full audit or require fresh generation for every literal narrated action.
+Use a brief consistent object reveal, then reviewed performances, close-ups and
+reaction cuts. Maintain normal motion and story state; judge the physical render.
+An intermediate render must identify unchanged/unresolved sections honestly.
+
+## Prior production order — 7 September 2026
 
 For this film, [the complete ordered audit](film-audit/PROTOCOL.md) now precedes
 any further generation or patching. Read the whole story, lock the text-led

@@ -1,0 +1,20 @@
+{
+  "status": "physical-edit-candidate-context-screening-required",
+  "direction": "One brief comb reveal, then the adult couple. These cuts supersede literal product coverage and do not certify the rest of the checkpoint as final.",
+  "edits": [
+    {"start":0,"end":222,"source":"production/human-cut/book-title-entry.mp4","source_in":0,"crop":null},
+    {"start":17076,"end":17148,"source":"production/award-candidate/final-round-01/combs-reveal.mp4","source_in":0,"crop":null},
+    {"start":17148,"end":17316,"source":"production/magnific/gift-of-the-magi/scene-10/raw/02-reassurance.mp4","source_in":0,"crop":[736,0,1184,666]},
+    {"start":17316,"end":17556,"source":"production/magnific/gift-of-the-magi/scene-10/raw/04-joy-tears.mp4","source_in":0,"crop":[350,40,800,450]},
+    {"start":17556,"end":17796,"source":"production/magnific/gift-of-the-magi/scene-10/raw/10-hair-grows.mp4","source_in":0,"crop":[1060,0,800,450]},
+    {"start":17796,"end":18036,"source":"production/award-candidate/della-cherishes-r12.mp4","source_in":0,"crop":null},
+    {"start":18036,"end":18159,"source":"production/magnific/gift-of-the-magi/scene-11/raw/03-chain-in-hand.mp4","source_in":12,"crop":[928,0,960,540]},
+    {"start":18159,"end":18231,"source":"production/magnific/gift-of-the-magi/scene-11/raw/01-della-chain.mp4","source_in":0,"crop":[100,0,960,540]},
+    {"start":18231,"end":18472,"source":"production/magnific/gift-of-the-magi/scene-11/raw/04-asks-watch.mp4","source_in":0,"crop":[160,20,960,540]},
+    {"start":18592,"end":18760,"source":"production/award-candidate/della-chain-only-r13.mp4","source_in":72,"crop":[80,0,960,540]},
+    {"start":20004,"end":20244,"source":"production/magnific/gift-of-the-magi/scene-12/raw/03-couple-gifts.mp4","source_in":0,"crop":[400,0,1152,648]},
+    {"start":20244,"end":20364,"source":"production/magnific/gift-of-the-magi/scene-12/raw/05-supper.mp4","source_in":0,"crop":[400,80,960,540]},
+    {"start":20604,"end":20812,"source":"production/magnific/gift-of-the-magi/scene-12/raw/06-window-final.mp4","source_in":0,"crop":[480,0,896,504]},
+    {"start":20812,"end":21387,"source":"production/human-cut/literary-credits-v2.mp4","source_in":0,"crop":null}
+  ]
+}
