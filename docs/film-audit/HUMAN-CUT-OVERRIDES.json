@@ -3,6 +3,11 @@
   "direction": "One brief comb reveal, then the adult couple. These cuts supersede literal product coverage and do not certify the rest of the checkpoint as final.",
   "edits": [
     {"start":0,"end":222,"source":"production/human-cut/book-title-entry.mp4","source_in":0,"crop":null},
+    {"start":3073,"end":3178,"source":"production/magnific/gift-of-the-magi/scene-1/s1-e-reflection.mp4","source_in":0,"crop":null},
+    {"start":3375,"end":3615,"source":"public/video/storyboard/s3/s3-c-present-planning.mp4","source_in":0,"crop":[200,0,800,450]},
+    {"start":3615,"end":3855,"source":"production/magnific/gift-of-the-magi/scene-2/s2-d-homecoming.mp4","source_in":0,"crop":null},
+    {"start":3855,"end":4023,"source":"production/magnific/gift-of-the-magi/scene-3/raw/s3-c-present-planning-replacement.mp4","source_in":0,"crop":[200,0,800,450]},
+    {"start":4023,"end":4215,"source":"production/magnific/gift-of-the-magi/scene-1/raw/s1-r3-window-decision.mp4","source_in":0,"crop":null},
     {"start":10393,"end":10585,"source":"production/magnific/gift-of-the-magi/scene-7/raw/05-mirror-review-r2.mp4","source_in":24,"crop":[0,0,1152,648]},
     {"start":11797,"end":12037,"source":"production/magnific/gift-of-the-magi/scene-8/raw/06-prayer.mp4","source_in":0,"crop":[220,0,1056,594]},
     {"start":12745,"end":12963,"source":"production/magnific/gift-of-the-magi/scene-8/raw/13-della-fear-r3.mp4","source_in":0,"crop":[240,0,1152,648]},
