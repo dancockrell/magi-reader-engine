@@ -50,6 +50,22 @@ class FinishingPlanTests(unittest.TestCase):
         self.assertEqual(following['selected_candidate']['source_sha256'],
                          '5c29f624f2d53e359e91f70b31d8a4411e5714c8df1085ff436da21857d1a4d4')
 
+    def test_window_to_cat_is_actual_exterior_not_sill_cat(self):
+        shots=[s for s in self.plan['shots'] if 3073 <= s['start'] < 4351]
+        self.assertEqual((shots[0]['start'],shots[-1]['end']),(3073,4351))
+        self.assertEqual(sum(s['end']-s['start'] for s in shots),1278)
+        window=next(s for s in shots if s['start']==3178)['selected_candidate']
+        cat=next(s for s in shots if s['start']==3255)['selected_candidate']
+        self.assertEqual(window['crop_xywh'],[450,0,800,450])
+        self.assertEqual((window['source_in'],window['source_out']),(163,240))
+        self.assertEqual(cat['source_sha256'],
+                         '19fae860031e037b9a3343681af60bdeda023604404c9817efe7ff5034757e07')
+        self.assertEqual((cat['source_in'],cat['source_out']),(0,120))
+        for c in (window,cat):
+            self.assertEqual(c['ledger_status'],'admit')
+            self.assertTrue(any(r['start'] <= c['source_in'] and r['end'] >= c['source_out']
+                                and r['crop']==c['crop_xywh'] for r in c['ledger_ranges']))
+
     def test_chain_section_keeps_palm_gap_and_continuous_performance(self):
         shots=[s for s in self.plan['shots'] if 18280 <= s['start'] < 18957]
         self.assertEqual(len(shots),4)

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "status": "partial-native-selections-not-renderable",
+  "fps": 24,
+  "scope": {
+    "start": 3073,
+    "end": 4351
+  },
+  "shots": [
+    {
+      "id": "HP01",
+      "start": 3073,
+      "end": 3178,
+      "purpose": "Finish crying and powder-rag recovery; correct teal coverage still required.",
+      "status": "unresolved-coverage-no-padding"
+    },
+    {
+      "id": "HP02",
+      "start": 3178,
+      "end": 3255,
+      "source_sha256": "a042d527132f442c73c98b55dafadbfea8dd0a865b4a4a8c8e2904b8567dfe52",
+      "source_in": 163,
+      "source_out": 240,
+      "crop_xywh": [
+        450,
+        0,
+        800,
+        450
+      ],
+      "purpose": "Della stands by the window and raises her gaze; exclude the sill cat using the checked face-led crop."
+    },
+    {
+      "id": "HP03",
+      "start": 3255,
+      "end": 3375,
+      "source_sha256": "19fae860031e037b9a3343681af60bdeda023604404c9817efe7ff5034757e07",
+      "source_in": 0,
+      "source_out": 120,
+      "crop_xywh": null,
+      "purpose": "A grey cat walks a grey fence outside; enter0.097s before the named cat line and leave0.679s after it."
+    },
+    {
+      "id": "HP04",
+      "start": 3375,
+      "end": 4351,
+      "purpose": "Return to Della's present-day worry and affectionate planning for Jim. Select matching unused coverage; no premature mirror/hair release or repeated counting.",
+      "status": "unresolved-coverage-no-padding"
+    }
+  ],
+  "selected_frames": 197,
+  "unfilled_frames": 1081,
+  "join_review": "Window gaze left to cat travelling right is a cut to what she sees, not a match-on-action. Final normal-speed sound-on and delivery-size crop inspection still required.",
+  "exclusions": [
+    "No repeated recovery source already used at59–64s.",
+    "No cat walking on the apartment sill.",
+    "No cream-blouse change or premature hair release.",
+    "No looping, frozen padding, speed fitting or invented filler."
+  ]
+}

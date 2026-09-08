@@ -253,17 +253,17 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\s3-b-cat-fence.mp4"
       ],
-      "category": "reserve-pool-not-yet-selected",
-      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "1a7052bfaaad9fb1cb11cecd42700c022b1c13c550816e88e28a5d442b21af52",
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\03-cross-room.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -1243,8 +1243,8 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\05-mirror.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -1443,9 +1443,9 @@
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\quarantine\\runtime-s3-a-window-cat-rejected.mp4",
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\s3-a-window-cat.mp4"
       ],
-      "category": "reserve-pool-not-yet-selected",
-      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
-      "ledger_status": "unreviewed"
+      "category": "admitted-ranges-only",
+      "reason": "Only ledger ranges and mandatory crops are eligible; contextual review pending.",
+      "ledger_status": "admit"
     },
     {
       "sha256": "a26c8acf872e4d76853ce7cfa0d108a060280ba1e1d0df8356c43f1a65c5f64d",
@@ -1587,8 +1587,8 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\01-counting.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -1931,8 +1931,8 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\06-hairpin.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -2012,8 +2012,8 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\04-idea-r2.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {
@@ -2048,8 +2048,8 @@
       "paths": [
         "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\raw\\02-cat-window-r2.mp4"
       ],
-      "category": "current-cut-source-candidate",
-      "reason": "Current source map or historic edit declaration links this candidate to current coverage; review exact source range before reuse.",
+      "category": "reserve-pool-not-yet-selected",
+      "reason": "Retained alternative inventory. Not approved or rejected by filename; inspect only when resolving a named task.",
       "ledger_status": "unreviewed"
     },
     {

@@ -1903,58 +1903,30 @@
       "next": "F023"
     },
     {
-      "start": 3073,
-      "end": 3300,
-      "current_reference": {
-        "source_sha256": "e78dba0ebb65805d99b7464d6f44ccb93c95a3fdd27ae00a0d2b74f45e21a409",
-        "source_in": 0,
-        "source_out": 227,
-        "timeline_start": 3073,
-        "timeline_end": 5331,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene3-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
-          }
-        ]
-      },
-      "historic_cut": {
-        "start": 0,
-        "end": 227,
-        "name": "The last coins",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-3/raw/01-counting.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 227,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
       "id": "F023",
+      "start": 3073,
+      "end": 3178,
+      "purpose": "Finish crying and powder-rag recovery; correct teal coverage still required.",
+      "status": "candidate-plan-blocked-not-renderable",
+      "section": "home-present",
+      "selected_candidate": {
+        "id": "HP01",
+        "start": 3073,
+        "end": 3178,
+        "purpose": "Finish crying and powder-rag recovery; correct teal coverage still required.",
+        "status": "unresolved-coverage-no-padding",
+        "section": "home-present"
+      },
       "beats": [
         "B007"
       ],
-      "component_subrange": {
-        "in": 0,
-        "out": 227,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T02",
         "T03",
         "T15"
       ],
       "treatment": [
-        "Order recovery, window gaze and grey cat/fence; remove repeated starting poses and avoid a new room family."
+        "Finish crying and powder-rag recovery; correct teal coverage still required."
       ],
       "required_state": [
         "Long hair still pinned; Della alone before decision."
@@ -1965,67 +1937,68 @@
       "evidence": [
         "000720.json:shots[0]",
         "000720.json:shots[1]",
-        "000792.json:shots[0]",
-        "000792.json:shots[1]"
+        "000792.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
       "previous": "F022",
       "next": "F024"
     },
     {
-      "start": 3300,
-      "end": 3527,
-      "current_reference": {
-        "source_sha256": "e78dba0ebb65805d99b7464d6f44ccb93c95a3fdd27ae00a0d2b74f45e21a409",
-        "source_in": 227,
-        "source_out": 454,
-        "timeline_start": 3073,
-        "timeline_end": 5331,
-        "crop_pipeline": [],
-        "provenance": [
+      "id": "F024",
+      "start": 3178,
+      "end": 3255,
+      "source_sha256": "a042d527132f442c73c98b55dafadbfea8dd0a865b4a4a8c8e2904b8567dfe52",
+      "source_in": 163,
+      "source_out": 240,
+      "crop_xywh": [
+        450,
+        0,
+        800,
+        450
+      ],
+      "purpose": "Della stands by the window and raises her gaze; exclude the sill cat using the checked face-led crop.",
+      "section": "home-present",
+      "selected_candidate": {
+        "id": "HP02",
+        "start": 3178,
+        "end": 3255,
+        "source_sha256": "a042d527132f442c73c98b55dafadbfea8dd0a865b4a4a8c8e2904b8567dfe52",
+        "source_in": 163,
+        "source_out": 240,
+        "crop_xywh": [
+          450,
+          0,
+          800,
+          450
+        ],
+        "purpose": "Della stands by the window and raises her gaze; exclude the sill cat using the checked face-led crop.",
+        "section": "home-present",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\quarantine\\runtime-s3-a-window-cat-rejected.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene3-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 163,
+            "end": 240,
+            "crop": [
+              450,
+              0,
+              800,
+              450
+            ],
+            "entity_compatibility": "Teal dress, cream collar, pinned long brown hair; single downcast-to-window turn. No cat, hand or gift in cropped field. Source crop800x450 requires delivery-size sharpness check, not approval of uncropped footage."
           }
         ]
       },
-      "historic_cut": {
-        "start": 227,
-        "end": 454,
-        "name": "Gray cat and gray fence",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-3/raw/02-cat-window-r2.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 227,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F024",
       "beats": [
         "B007"
       ],
-      "component_subrange": {
-        "in": 227,
-        "out": 454,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T02",
         "T03",
         "T15"
       ],
       "treatment": [
-        "Order recovery, window gaze and grey cat/fence; remove repeated starting poses and avoid a new room family."
+        "Della stands by the window and raises her gaze; exclude the sill cat using the checked face-led crop."
       ],
       "required_state": [
         "Long hair still pinned; Della alone before decision."
@@ -2034,9 +2007,7 @@
         "Powder rag, then window and grey backyard; her dull gaze and small resources."
       ],
       "evidence": [
-        "000792.json:shots[1]",
-        "000864.json:shots[0]",
-        "000864.json:shots[1]"
+        "000792.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
@@ -2044,58 +2015,46 @@
       "next": "F025"
     },
     {
-      "start": 3527,
-      "end": 3754,
-      "current_reference": {
-        "source_sha256": "e78dba0ebb65805d99b7464d6f44ccb93c95a3fdd27ae00a0d2b74f45e21a409",
-        "source_in": 454,
-        "source_out": 681,
-        "timeline_start": 3073,
-        "timeline_end": 5331,
-        "crop_pipeline": [],
-        "provenance": [
+      "id": "F025",
+      "start": 3255,
+      "end": 3375,
+      "source_sha256": "19fae860031e037b9a3343681af60bdeda023604404c9817efe7ff5034757e07",
+      "source_in": 0,
+      "source_out": 120,
+      "crop_xywh": null,
+      "purpose": "A grey cat walks a grey fence outside; enter0.097s before the named cat line and leave0.679s after it.",
+      "section": "home-present",
+      "selected_candidate": {
+        "id": "HP03",
+        "start": 3255,
+        "end": 3375,
+        "source_sha256": "19fae860031e037b9a3343681af60bdeda023604404c9817efe7ff5034757e07",
+        "source_in": 0,
+        "source_out": 120,
+        "crop_xywh": null,
+        "purpose": "A grey cat walks a grey fence outside; enter0.097s before the named cat line and leave0.679s after it.",
+        "section": "home-present",
+        "source_path": "C:\\Users\\Admin\\Documents\\Codex\\2026-09-01\\le\\work\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\s3-b-cat-fence.mp4",
+        "ledger_status": "admit",
+        "ledger_ranges": [
           {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene3-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
+            "start": 0,
+            "end": 120,
+            "crop": null,
+            "entity_compatibility": "Single grey cat on snow-dusted grey fence; pre-sale winter exterior insert, no Della wardrobe or gift state visible."
           }
         ]
       },
-      "historic_cut": {
-        "start": 454,
-        "end": 681,
-        "name": "The narrow flat",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-3/raw/03-cross-room.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 227,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F025",
       "beats": [
         "B007"
       ],
-      "component_subrange": {
-        "in": 454,
-        "out": 681,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T02",
         "T03",
         "T15"
       ],
       "treatment": [
-        "Order recovery, window gaze and grey cat/fence; remove repeated starting poses and avoid a new room family."
+        "A grey cat walks a grey fence outside; enter0.097s before the named cat line and leave0.679s after it."
       ],
       "required_state": [
         "Long hair still pinned; Della alone before decision."
@@ -2104,8 +2063,8 @@
         "Powder rag, then window and grey backyard; her dull gaze and small resources."
       ],
       "evidence": [
-        "000864.json:shots[1]",
-        "000936.json:shots[0]"
+        "000792.json:shots[0]",
+        "000792.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
@@ -2113,129 +2072,31 @@
       "next": "F026"
     },
     {
-      "start": 3754,
-      "end": 3981,
-      "current_reference": {
-        "source_sha256": "e78dba0ebb65805d99b7464d6f44ccb93c95a3fdd27ae00a0d2b74f45e21a409",
-        "source_in": 681,
-        "source_out": 908,
-        "timeline_start": 3073,
-        "timeline_end": 5331,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene3-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
-          }
-        ]
-      },
-      "historic_cut": {
-        "start": 681,
-        "end": 908,
-        "name": "An idea arrives",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-3/raw/04-idea-r2.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 227,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
       "id": "F026",
-      "beats": [
-        "B007"
-      ],
-      "component_subrange": {
-        "in": 681,
-        "out": 908,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
-      "tasks": [
-        "T02",
-        "T03",
-        "T15"
-      ],
-      "treatment": [
-        "Order recovery, window gaze and grey cat/fence; remove repeated starting poses and avoid a new room family."
-      ],
-      "required_state": [
-        "Long hair still pinned; Della alone before decision."
-      ],
-      "story_purpose": [
-        "Powder rag, then window and grey backyard; her dull gaze and small resources."
-      ],
-      "evidence": [
-        "000936.json:shots[0]",
-        "000936.json:shots[1]"
-      ],
-      "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
+      "start": 3375,
+      "end": 4351,
+      "purpose": "Return to Della's present-day worry and affectionate planning for Jim. Select matching unused coverage; no premature mirror/hair release or repeated counting.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F025",
-      "next": "F027"
-    },
-    {
-      "start": 3981,
-      "end": 4208,
-      "current_reference": {
-        "source_sha256": "e78dba0ebb65805d99b7464d6f44ccb93c95a3fdd27ae00a0d2b74f45e21a409",
-        "source_in": 908,
-        "source_out": 1135,
-        "timeline_start": 3073,
-        "timeline_end": 5331,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene3-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
-          }
-        ]
+      "section": "home-present",
+      "selected_candidate": {
+        "id": "HP04",
+        "start": 3375,
+        "end": 4351,
+        "purpose": "Return to Della's present-day worry and affectionate planning for Jim. Select matching unused coverage; no premature mirror/hair release or repeated counting.",
+        "status": "unresolved-coverage-no-padding",
+        "section": "home-present"
       },
-      "historic_cut": {
-        "start": 908,
-        "end": 1135,
-        "name": "The pier glass",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-3/raw/05-mirror.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 227,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F027",
       "beats": [
         "B007",
         "B008"
       ],
-      "component_subrange": {
-        "in": 908,
-        "out": 1135,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
       "tasks": [
         "T02",
         "T03",
         "T15"
       ],
       "treatment": [
-        "Order recovery, window gaze and grey cat/fence; remove repeated starting poses and avoid a new room family.",
-        "Preserve the warm thought of Jim; remove native-confirmed167.75/170.75 resets with a continuous expression range or compatible cutaway."
+        "Return to Della's present-day worry and affectionate planning for Jim. Select matching unused coverage; no premature mirror/hair release or repeated counting."
       ],
       "required_state": [
         "Long hair still pinned; Della alone before decision.",
@@ -2246,85 +2107,21 @@
         "Thought of Jim transforms money anxiety into the desire to honour him."
       ],
       "evidence": [
+        "000792.json:shots[1]",
+        "000864.json:shots[0]",
+        "000864.json:shots[1]",
+        "000936.json:shots[0]",
         "000936.json:shots[1]",
         "000936.json:shots[2]",
         "000936.json:shots[3]",
         "001008.json:shots[0]",
         "001008.json:shots[1]",
-        "001008.json:shots[2]"
-      ],
-      "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F026",
-      "next": "F028"
-    },
-    {
-      "start": 4208,
-      "end": 4351,
-      "current_reference": {
-        "source_sha256": "e78dba0ebb65805d99b7464d6f44ccb93c95a3fdd27ae00a0d2b74f45e21a409",
-        "source_in": 1135,
-        "source_out": 1278,
-        "timeline_start": 3073,
-        "timeline_end": 5331,
-        "crop_pipeline": [],
-        "provenance": [
-          {
-            "edl": "baseline-concat-verified.json",
-            "shot": "magi-scene3-v1-preview.mp4"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v5.edl.json",
-            "shot": "Baseline opening through the two treasures"
-          },
-          {
-            "edl": "docs/film-edits/magi-award-assembly-v6.edl.json",
-            "shot": "Preserved film through Della waiting"
-          }
-        ]
-      },
-      "historic_cut": {
-        "start": 1135,
-        "end": 1362,
-        "name": "First hairpin",
-        "metadata": "..\\magi-reader-solo-current\\magi-reader-engine-solo-reader-redesign\\production\\magnific\\gift-of-the-magi\\scene-3\\edit-v1.json",
-        "path": "production/magnific/gift-of-the-magi/scene-3/raw/06-hairpin.mp4",
-        "original_declared_raw_in": 0,
-        "original_declared_raw_out": 227,
-        "warning": "Historic declaration; transformed source equality and cut frame not verified",
-        "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
-      },
-      "id": "F028",
-      "beats": [
-        "B008"
-      ],
-      "component_subrange": {
-        "in": 1135,
-        "out": 1278,
-        "offset_from_original_historic_start": 0,
-        "meaning": "Current component coordinates only. Raw-source transformation still needs verification."
-      },
-      "tasks": [
-        "T03",
-        "T15"
-      ],
-      "treatment": [
-        "Preserve the warm thought of Jim; remove native-confirmed167.75/170.75 resets with a continuous expression range or compatible cutaway."
-      ],
-      "required_state": [
-        "Decision forming; hair has not yet been released."
-      ],
-      "story_purpose": [
-        "Thought of Jim transforms money anxiety into the desire to honour him."
-      ],
-      "evidence": [
         "001008.json:shots[2]",
         "001080.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F027",
-      "next": "F029"
+      "previous": "F025",
+      "next": "F027"
     },
     {
       "start": 4351,
@@ -2337,7 +2134,7 @@
         "section": "mirror-hair",
         "status": "unresolved-coverage-no-padding"
       },
-      "id": "F029",
+      "id": "F027",
       "beats": [
         "B009"
       ],
@@ -2364,8 +2161,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F028",
-      "next": "F030"
+      "previous": "F026",
+      "next": "F028"
     },
     {
       "start": 4918,
@@ -2390,7 +2187,7 @@
           }
         ]
       },
-      "id": "F030",
+      "id": "F028",
       "beats": [
         "B010"
       ],
@@ -2413,8 +2210,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F029",
-      "next": "F031"
+      "previous": "F027",
+      "next": "F029"
     },
     {
       "start": 5158,
@@ -2445,7 +2242,7 @@
           }
         ]
       },
-      "id": "F031",
+      "id": "F029",
       "beats": [
         "B010"
       ],
@@ -2468,8 +2265,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F030",
-      "next": "F032"
+      "previous": "F028",
+      "next": "F030"
     },
     {
       "start": 5278,
@@ -2494,7 +2291,7 @@
           }
         ]
       },
-      "id": "F032",
+      "id": "F030",
       "beats": [
         "B010"
       ],
@@ -2516,8 +2313,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F031",
-      "next": "F033"
+      "previous": "F029",
+      "next": "F031"
     },
     {
       "start": 5326,
@@ -2548,7 +2345,7 @@
           }
         ]
       },
-      "id": "F033",
+      "id": "F031",
       "beats": [
         "B010",
         "B011"
@@ -2575,8 +2372,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F032",
-      "next": "F034"
+      "previous": "F030",
+      "next": "F032"
     },
     {
       "start": 5390,
@@ -2589,7 +2386,7 @@
         "section": "mirror-hair",
         "status": "unresolved-coverage-no-padding"
       },
-      "id": "F034",
+      "id": "F032",
       "beats": [
         "B011"
       ],
@@ -2614,8 +2411,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F033",
-      "next": "F035"
+      "previous": "F031",
+      "next": "F033"
     },
     {
       "start": 5606,
@@ -2640,7 +2437,7 @@
           }
         ]
       },
-      "id": "F035",
+      "id": "F033",
       "beats": [
         "B011"
       ],
@@ -2663,8 +2460,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F034",
-      "next": "F036"
+      "previous": "F032",
+      "next": "F034"
     },
     {
       "start": 5678,
@@ -2731,7 +2528,7 @@
           }
         ]
       },
-      "id": "F036",
+      "id": "F034",
       "beats": [
         "B011"
       ],
@@ -2756,8 +2553,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F035",
-      "next": "F037"
+      "previous": "F033",
+      "next": "F035"
     },
     {
       "start": 5901,
@@ -2782,7 +2579,7 @@
           }
         ]
       },
-      "id": "F037",
+      "id": "F035",
       "beats": [
         "B011"
       ],
@@ -2807,8 +2604,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F036",
-      "next": "F038"
+      "previous": "F034",
+      "next": "F036"
     },
     {
       "start": 6076,
@@ -2875,7 +2672,7 @@
           }
         ]
       },
-      "id": "F038",
+      "id": "F036",
       "beats": [
         "B011"
       ],
@@ -2899,8 +2696,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F037",
-      "next": "F039"
+      "previous": "F035",
+      "next": "F037"
     },
     {
       "start": 6298,
@@ -2925,7 +2722,7 @@
           }
         ]
       },
-      "id": "F039",
+      "id": "F037",
       "beats": [
         "B012"
       ],
@@ -2950,8 +2747,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F038",
-      "next": "F040"
+      "previous": "F036",
+      "next": "F038"
     },
     {
       "start": 6514,
@@ -2976,7 +2773,7 @@
           }
         ]
       },
-      "id": "F040",
+      "id": "F038",
       "beats": [
         "B012"
       ],
@@ -2999,8 +2796,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F039",
-      "next": "F041"
+      "previous": "F037",
+      "next": "F039"
     },
     {
       "start": 6610,
@@ -3025,7 +2822,7 @@
           }
         ]
       },
-      "id": "F041",
+      "id": "F039",
       "beats": [
         "B012"
       ],
@@ -3050,8 +2847,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F040",
-      "next": "F042"
+      "previous": "F038",
+      "next": "F040"
     },
     {
       "start": 6675,
@@ -3064,7 +2861,7 @@
         "section": "mirror-hair",
         "status": "unresolved-coverage-no-padding"
       },
-      "id": "F042",
+      "id": "F040",
       "beats": [
         "B012"
       ],
@@ -3087,8 +2884,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F041",
-      "next": "F043"
+      "previous": "F039",
+      "next": "F041"
     },
     {
       "start": 6768,
@@ -3113,7 +2910,7 @@
           }
         ]
       },
-      "id": "F043",
+      "id": "F041",
       "beats": [
         "B012"
       ],
@@ -3136,8 +2933,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F042",
-      "next": "F044"
+      "previous": "F040",
+      "next": "F042"
     },
     {
       "start": 6840,
@@ -3162,7 +2959,7 @@
           }
         ]
       },
-      "id": "F044",
+      "id": "F042",
       "beats": [
         "B012"
       ],
@@ -3185,11 +2982,11 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F043",
-      "next": "F045"
+      "previous": "F041",
+      "next": "F043"
     },
     {
-      "id": "F045",
+      "id": "F043",
       "start": 6869,
       "end": 6977,
       "start_seconds": 286.2083333333333,
@@ -3259,11 +3056,11 @@
         "001728.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F044",
-      "next": "F046"
+      "previous": "F042",
+      "next": "F044"
     },
     {
-      "id": "F046",
+      "id": "F044",
       "start": 6977,
       "end": 7169,
       "start_seconds": 290.7083333333333,
@@ -3332,11 +3129,11 @@
         "001728.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F045",
-      "next": "F047"
+      "previous": "F043",
+      "next": "F045"
     },
     {
-      "id": "F047",
+      "id": "F045",
       "start": 7169,
       "end": 7385,
       "start_seconds": 298.7083333333333,
@@ -3409,11 +3206,11 @@
         "001800.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F046",
-      "next": "F048"
+      "previous": "F044",
+      "next": "F046"
     },
     {
-      "id": "F048",
+      "id": "F046",
       "start": 7385,
       "end": 7445,
       "start_seconds": 307.7083333333333,
@@ -3482,11 +3279,11 @@
         "001800.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F047",
-      "next": "F049"
+      "previous": "F045",
+      "next": "F047"
     },
     {
-      "id": "F049",
+      "id": "F047",
       "start": 7445,
       "end": 7670,
       "start_seconds": 310.2083333333333,
@@ -3560,11 +3357,11 @@
         "001872.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F048",
-      "next": "F050"
+      "previous": "F046",
+      "next": "F048"
     },
     {
-      "id": "F050",
+      "id": "F048",
       "start": 7670,
       "end": 7730,
       "start_seconds": 319.5833333333333,
@@ -3675,11 +3472,11 @@
         "001872.json:shots[2]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F049",
-      "next": "F051"
+      "previous": "F047",
+      "next": "F049"
     },
     {
-      "id": "F051",
+      "id": "F049",
       "start": 7730,
       "end": 7802,
       "start_seconds": 322.0833333333333,
@@ -3748,11 +3545,11 @@
         "001944.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F050",
-      "next": "F052"
+      "previous": "F048",
+      "next": "F050"
     },
     {
-      "id": "F052",
+      "id": "F050",
       "start": 7802,
       "end": 7970,
       "start_seconds": 325.0833333333333,
@@ -3836,11 +3633,11 @@
         "001944.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F051",
-      "next": "F053"
+      "previous": "F049",
+      "next": "F051"
     },
     {
-      "id": "F053",
+      "id": "F051",
       "start": 7970,
       "end": 8090,
       "start_seconds": 332.0833333333333,
@@ -3910,11 +3707,11 @@
         "002016.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F052",
-      "next": "F054"
+      "previous": "F050",
+      "next": "F052"
     },
     {
-      "id": "F054",
+      "id": "F052",
       "start": 8090,
       "end": 8330,
       "start_seconds": 337.0833333333333,
@@ -3985,11 +3782,11 @@
         "002016.json:shots[2]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F053",
-      "next": "F055"
+      "previous": "F051",
+      "next": "F053"
     },
     {
-      "id": "F055",
+      "id": "F053",
       "start": 8330,
       "end": 8570,
       "start_seconds": 347.0833333333333,
@@ -4078,11 +3875,11 @@
         "002088.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F054",
-      "next": "F056"
+      "previous": "F052",
+      "next": "F054"
     },
     {
-      "id": "F056",
+      "id": "F054",
       "start": 8570,
       "end": 8810,
       "start_seconds": 357.0833333333333,
@@ -4152,11 +3949,11 @@
         "002160.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F055",
-      "next": "F057"
+      "previous": "F053",
+      "next": "F055"
     },
     {
-      "id": "F057",
+      "id": "F055",
       "start": 8810,
       "end": 8882,
       "start_seconds": 367.0833333333333,
@@ -4239,11 +4036,11 @@
         "002160.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F056",
-      "next": "F058"
+      "previous": "F054",
+      "next": "F056"
     },
     {
-      "id": "F058",
+      "id": "F056",
       "start": 8882,
       "end": 9122,
       "start_seconds": 370.0833333333333,
@@ -4313,11 +4110,11 @@
         "002232.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F057",
-      "next": "F059"
+      "previous": "F055",
+      "next": "F057"
     },
     {
-      "id": "F059",
+      "id": "F057",
       "start": 9122,
       "end": 9362,
       "start_seconds": 380.0833333333333,
@@ -4405,11 +4202,11 @@
         "002304.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F058",
-      "next": "F060"
+      "previous": "F056",
+      "next": "F058"
     },
     {
-      "id": "F060",
+      "id": "F058",
       "start": 9362,
       "end": 9602,
       "start_seconds": 390.0833333333333,
@@ -4480,11 +4277,11 @@
         "002376.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F059",
-      "next": "F061"
+      "previous": "F057",
+      "next": "F059"
     },
     {
-      "id": "F061",
+      "id": "F059",
       "start": 9602,
       "end": 9832,
       "start_seconds": 400.0833333333333,
@@ -4569,8 +4366,8 @@
         "002448.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F060",
-      "next": "F062"
+      "previous": "F058",
+      "next": "F060"
     },
     {
       "start": 9832,
@@ -4605,7 +4402,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F062",
+      "id": "F060",
       "beats": [
         "B019"
       ],
@@ -4633,8 +4430,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F061",
-      "next": "F063"
+      "previous": "F059",
+      "next": "F061"
     },
     {
       "start": 10033,
@@ -4669,7 +4466,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F063",
+      "id": "F061",
       "beats": [
         "B019"
       ],
@@ -4699,8 +4496,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F062",
-      "next": "F064"
+      "previous": "F060",
+      "next": "F062"
     },
     {
       "start": 10273,
@@ -4735,7 +4532,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F064",
+      "id": "F062",
       "beats": [
         "B019",
         "B020"
@@ -4769,8 +4566,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F063",
-      "next": "F065"
+      "previous": "F061",
+      "next": "F063"
     },
     {
       "start": 10393,
@@ -4805,7 +4602,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F065",
+      "id": "F063",
       "beats": [
         "B020"
       ],
@@ -4834,8 +4631,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F064",
-      "next": "F066"
+      "previous": "F062",
+      "next": "F064"
     },
     {
       "start": 10585,
@@ -4879,7 +4676,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F066",
+      "id": "F064",
       "beats": [
         "B020",
         "B021"
@@ -4913,11 +4710,11 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F065",
-      "next": "F067"
+      "previous": "F063",
+      "next": "F065"
     },
     {
-      "id": "F067",
+      "id": "F065",
       "start": 10825,
       "end": 11113,
       "beat_ids": [
@@ -5071,11 +4868,11 @@
         "Vulnerable self-address to reflection; loving reason for sacrifice, not literal threat."
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F066",
-      "next": "F068"
+      "previous": "F064",
+      "next": "F066"
     },
     {
-      "id": "F068",
+      "id": "F066",
       "start": 11113,
       "end": 11323,
       "beat_ids": [
@@ -5229,8 +5026,8 @@
         "Coffee ready, hot pan waiting for uncooked chops; establish stove/table/door geography."
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F067",
-      "next": "F069"
+      "previous": "F065",
+      "next": "F067"
     },
     {
       "start": 11323,
@@ -5261,7 +5058,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F069",
+      "id": "F067",
       "beats": [
         "B022",
         "B023"
@@ -5295,8 +5092,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F068",
-      "next": "F070"
+      "previous": "F066",
+      "next": "F068"
     },
     {
       "start": 11383,
@@ -5336,7 +5133,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F070",
+      "id": "F068",
       "beats": [
         "B023"
       ],
@@ -5367,8 +5164,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F069",
-      "next": "F071"
+      "previous": "F067",
+      "next": "F069"
     },
     {
       "start": 11569,
@@ -5395,7 +5192,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F071",
+      "id": "F069",
       "beats": [
         "B023"
       ],
@@ -5425,8 +5222,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F070",
-      "next": "F072"
+      "previous": "F068",
+      "next": "F070"
     },
     {
       "start": 11665,
@@ -5464,7 +5261,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F072",
+      "id": "F070",
       "beats": [
         "B023",
         "B024"
@@ -5498,8 +5295,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F071",
-      "next": "F073"
+      "previous": "F069",
+      "next": "F071"
     },
     {
       "start": 11797,
@@ -5537,7 +5334,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F073",
+      "id": "F071",
       "beats": [
         "B024"
       ],
@@ -5567,8 +5364,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F072",
-      "next": "F074"
+      "previous": "F070",
+      "next": "F072"
     },
     {
       "start": 12037,
@@ -5606,7 +5403,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F074",
+      "id": "F072",
       "beats": [
         "B024",
         "B025"
@@ -5640,11 +5437,11 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F073",
-      "next": "F075"
+      "previous": "F071",
+      "next": "F073"
     },
     {
-      "id": "F075",
+      "id": "F073",
       "start": 12169,
       "end": 12361,
       "beat_ids": [
@@ -5788,8 +5585,8 @@
         "Jim enters and closes the same door. Bare hands, worn coat, no visible watch or child."
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F074",
-      "next": "F076"
+      "previous": "F072",
+      "next": "F074"
     },
     {
       "start": 12361,
@@ -5827,7 +5624,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F076",
+      "id": "F074",
       "beats": [
         "B025",
         "B026"
@@ -5862,8 +5659,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F075",
-      "next": "F077"
+      "previous": "F073",
+      "next": "F075"
     },
     {
       "start": 12553,
@@ -5901,7 +5698,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F077",
+      "id": "F075",
       "beats": [
         "B026"
       ],
@@ -5932,8 +5729,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F076",
-      "next": "F078"
+      "previous": "F074",
+      "next": "F076"
     },
     {
       "start": 12745,
@@ -5971,7 +5768,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F078",
+      "id": "F076",
       "beats": [
         "B026"
       ],
@@ -6003,8 +5800,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F077",
-      "next": "F079"
+      "previous": "F075",
+      "next": "F077"
     },
     {
       "start": 12963,
@@ -6042,7 +5839,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F079",
+      "id": "F077",
       "beats": [
         "B026"
       ],
@@ -6072,8 +5869,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F078",
-      "next": "F080"
+      "previous": "F076",
+      "next": "F078"
     },
     {
       "start": 13156,
@@ -6111,7 +5908,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F080",
+      "id": "F078",
       "beats": [
         "B027"
       ],
@@ -6140,8 +5937,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F079",
-      "next": "F081"
+      "previous": "F077",
+      "next": "F079"
     },
     {
       "start": 13300,
@@ -6179,7 +5976,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F081",
+      "id": "F079",
       "beats": [
         "B027"
       ],
@@ -6208,8 +6005,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F080",
-      "next": "F082"
+      "previous": "F078",
+      "next": "F080"
     },
     {
       "start": 13540,
@@ -6247,7 +6044,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F082",
+      "id": "F080",
       "beats": [
         "B027"
       ],
@@ -6275,8 +6072,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F081",
-      "next": "F083"
+      "previous": "F079",
+      "next": "F081"
     },
     {
       "start": 13780,
@@ -6314,7 +6111,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F083",
+      "id": "F081",
       "beats": [
         "B027",
         "B028"
@@ -6348,8 +6145,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F082",
-      "next": "F084"
+      "previous": "F080",
+      "next": "F082"
     },
     {
       "start": 14020,
@@ -6387,7 +6184,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F084",
+      "id": "F082",
       "beats": [
         "B028"
       ],
@@ -6417,8 +6214,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F083",
-      "next": "F085"
+      "previous": "F081",
+      "next": "F083"
     },
     {
       "start": 14260,
@@ -6456,7 +6253,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F085",
+      "id": "F083",
       "beats": [
         "B028",
         "B029"
@@ -6490,8 +6287,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F084",
-      "next": "F086"
+      "previous": "F082",
+      "next": "F084"
     },
     {
       "start": 14500,
@@ -6529,7 +6326,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F086",
+      "id": "F084",
       "beats": [
         "B029"
       ],
@@ -6559,8 +6356,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F085",
-      "next": "F087"
+      "previous": "F083",
+      "next": "F085"
     },
     {
       "start": 14740,
@@ -6598,7 +6395,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F087",
+      "id": "F085",
       "beats": [
         "B029",
         "B030"
@@ -6633,8 +6430,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F086",
-      "next": "F088"
+      "previous": "F084",
+      "next": "F086"
     },
     {
       "start": 14980,
@@ -6672,7 +6469,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F088",
+      "id": "F086",
       "beats": [
         "B030"
       ],
@@ -6702,8 +6499,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F087",
-      "next": "F089"
+      "previous": "F085",
+      "next": "F087"
     },
     {
       "start": 15220,
@@ -6734,7 +6531,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F089",
+      "id": "F087",
       "beats": [
         "B030",
         "B031"
@@ -6769,11 +6566,11 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F088",
-      "next": "F090"
+      "previous": "F086",
+      "next": "F088"
     },
     {
-      "id": "F090",
+      "id": "F088",
       "start": 15340,
       "end": 15436,
       "beat_ids": [
@@ -6929,8 +6726,8 @@
         "Discreet ordinary cutaway grants privacy. No ghost, supernatural object or conspicuous spectacle."
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F089",
-      "next": "F091"
+      "previous": "F087",
+      "next": "F089"
     },
     {
       "start": 15436,
@@ -6968,7 +6765,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F091",
+      "id": "F089",
       "beats": [
         "B032"
       ],
@@ -6999,8 +6796,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F090",
-      "next": "F092"
+      "previous": "F088",
+      "next": "F090"
     },
     {
       "start": 15676,
@@ -7031,7 +6828,7 @@
         "path": null,
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F092",
+      "id": "F090",
       "beats": [
         "B032"
       ],
@@ -7061,8 +6858,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F091",
-      "next": "F093"
+      "previous": "F089",
+      "next": "F091"
     },
     {
       "start": 15797,
@@ -7100,7 +6897,7 @@
         "warning": "Historic declaration; transformed source equality and cut frame not verified",
         "bounds_meaning": "Original historical shot in its component; NOT the shortened plan slot or a proposed raw trim."
       },
-      "id": "F093",
+      "id": "F091",
       "beats": [
         "B032"
       ],
@@ -7131,8 +6928,8 @@
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
       "status": "candidate-plan-blocked-not-renderable",
-      "previous": "F092",
-      "next": "F094"
+      "previous": "F090",
+      "next": "F092"
     },
     {
       "start": 16038,
@@ -7162,7 +6959,7 @@
           }
         ]
       },
-      "id": "F094",
+      "id": "F092",
       "beats": [
         "B033"
       ],
@@ -7183,8 +6980,8 @@
         "003960.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F093",
-      "next": "F095"
+      "previous": "F091",
+      "next": "F093"
     },
     {
       "start": 16110,
@@ -7214,7 +7011,7 @@
           }
         ]
       },
-      "id": "F095",
+      "id": "F093",
       "beats": [
         "B033",
         "B034"
@@ -7240,8 +7037,8 @@
         "004032.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F094",
-      "next": "F096"
+      "previous": "F092",
+      "next": "F094"
     },
     {
       "start": 16182,
@@ -7288,7 +7085,7 @@
           }
         ]
       },
-      "id": "F096",
+      "id": "F094",
       "beats": [
         "B034"
       ],
@@ -7310,8 +7107,8 @@
         "004032.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F095",
-      "next": "F097"
+      "previous": "F093",
+      "next": "F095"
     },
     {
       "start": 16350,
@@ -7369,7 +7166,7 @@
           }
         ]
       },
-      "id": "F097",
+      "id": "F095",
       "beats": [
         "B034"
       ],
@@ -7390,8 +7187,8 @@
         "004032.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F096",
-      "next": "F098"
+      "previous": "F094",
+      "next": "F096"
     },
     {
       "start": 16404,
@@ -7438,7 +7235,7 @@
           }
         ]
       },
-      "id": "F098",
+      "id": "F096",
       "beats": [
         "B034"
       ],
@@ -7460,8 +7257,8 @@
         "004104.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F097",
-      "next": "F099"
+      "previous": "F095",
+      "next": "F097"
     },
     {
       "start": 16476,
@@ -7491,7 +7288,7 @@
           }
         ]
       },
-      "id": "F099",
+      "id": "F097",
       "beats": [
         "B034",
         "B035"
@@ -7518,8 +7315,8 @@
         "004104.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F098",
-      "next": "F100"
+      "previous": "F096",
+      "next": "F098"
     },
     {
       "start": 16686,
@@ -7566,7 +7363,7 @@
           }
         ]
       },
-      "id": "F100",
+      "id": "F098",
       "beats": [
         "B035",
         "B036"
@@ -7594,8 +7391,8 @@
         "004176.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F099",
-      "next": "F101"
+      "previous": "F097",
+      "next": "F099"
     },
     {
       "start": 16926,
@@ -7625,7 +7422,7 @@
           }
         ]
       },
-      "id": "F101",
+      "id": "F099",
       "beats": [
         "B036"
       ],
@@ -7649,11 +7446,11 @@
         "004248.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F100",
-      "next": "F102"
+      "previous": "F098",
+      "next": "F100"
     },
     {
-      "id": "F102",
+      "id": "F100",
       "start": 17076,
       "end": 17316,
       "seconds": [
@@ -7736,11 +7533,11 @@
         "004320.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F101",
-      "next": "F103"
+      "previous": "F099",
+      "next": "F101"
     },
     {
-      "id": "F103",
+      "id": "F101",
       "start": 17316,
       "end": 17484,
       "seconds": [
@@ -7845,11 +7642,11 @@
         "004320.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F102",
-      "next": "F104"
+      "previous": "F100",
+      "next": "F102"
     },
     {
-      "id": "F104",
+      "id": "F102",
       "start": 17484,
       "end": 17676,
       "seconds": [
@@ -7925,11 +7722,11 @@
         "004392.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F103",
-      "next": "F105"
+      "previous": "F101",
+      "next": "F103"
     },
     {
-      "id": "F105",
+      "id": "F103",
       "start": 17676,
       "end": 17832,
       "seconds": [
@@ -7993,11 +7790,11 @@
         "004392.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F104",
-      "next": "F106"
+      "previous": "F102",
+      "next": "F104"
     },
     {
-      "id": "F106",
+      "id": "F104",
       "start": 17832,
       "end": 18072,
       "seconds": [
@@ -8081,11 +7878,11 @@
         "004464.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F105",
-      "next": "F107"
+      "previous": "F103",
+      "next": "F105"
     },
     {
-      "id": "F107",
+      "id": "F105",
       "start": 18072,
       "end": 18159,
       "seconds": [
@@ -8188,11 +7985,11 @@
         "004536.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F106",
-      "next": "F108"
+      "previous": "F104",
+      "next": "F106"
     },
     {
-      "id": "F108",
+      "id": "F106",
       "start": 18159,
       "end": 18280,
       "seconds": [
@@ -8251,11 +8048,11 @@
         "004536.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F107",
-      "next": "F109"
+      "previous": "F105",
+      "next": "F107"
     },
     {
-      "id": "F109",
+      "id": "F107",
       "start": 18280,
       "end": 18472,
       "start_seconds": 761.6666666666666,
@@ -8305,11 +8102,11 @@
         "004608.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F108",
-      "next": "F110"
+      "previous": "F106",
+      "next": "F108"
     },
     {
-      "id": "F110",
+      "id": "F108",
       "start": 18472,
       "end": 18520,
       "start_seconds": 769.6666666666666,
@@ -8409,11 +8206,11 @@
         "004608.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F109",
-      "next": "F111"
+      "previous": "F107",
+      "next": "F109"
     },
     {
-      "id": "F111",
+      "id": "F109",
       "start": 18520,
       "end": 18760,
       "start_seconds": 771.6666666666666,
@@ -8492,11 +8289,11 @@
         "004680.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F110",
-      "next": "F112"
+      "previous": "F108",
+      "next": "F110"
     },
     {
-      "id": "F112",
+      "id": "F110",
       "start": 18760,
       "end": 18957,
       "start_seconds": 781.6666666666666,
@@ -8585,11 +8382,11 @@
         "004680.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F111",
-      "next": "F113"
+      "previous": "F109",
+      "next": "F111"
     },
     {
-      "id": "F113",
+      "id": "F111",
       "start": 18957,
       "end": 19317,
       "source": "jim-revelation-r1.mp4",
@@ -8658,11 +8455,11 @@
         "004824.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F112",
-      "next": "F114"
+      "previous": "F110",
+      "next": "F112"
     },
     {
-      "id": "F114",
+      "id": "F112",
       "start": 19317,
       "end": 19557,
       "source": "final-round-01/della-understanding.mp4",
@@ -8726,11 +8523,11 @@
         "004824.json:shots[2]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F113",
-      "next": "F115"
+      "previous": "F111",
+      "next": "F113"
     },
     {
-      "id": "F115",
+      "id": "F113",
       "start": 19557,
       "end": 19768,
       "source": "scene-12/raw/01-magi-travel.mp4",
@@ -8787,11 +8584,11 @@
         "004896.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F114",
-      "next": "F116"
+      "previous": "F112",
+      "next": "F114"
     },
     {
-      "id": "F116",
+      "id": "F114",
       "start": 19768,
       "end": 20004,
       "source": "scene-12/raw/02-ancient-gifts.mp4",
@@ -8848,11 +8645,11 @@
         "004968.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F115",
-      "next": "F117"
+      "previous": "F113",
+      "next": "F115"
     },
     {
-      "id": "F117",
+      "id": "F115",
       "start": 20004,
       "end": 20364,
       "status": "candidate-plan-blocked-not-renderable",
@@ -8965,11 +8762,11 @@
         "005040.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F116",
-      "next": "F118"
+      "previous": "F114",
+      "next": "F116"
     },
     {
-      "id": "F118",
+      "id": "F116",
       "start": 20364,
       "end": 20604,
       "source": "final-round-01/shared-ending.mp4",
@@ -9033,11 +8830,11 @@
         "005112.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F117",
-      "next": "F119"
+      "previous": "F115",
+      "next": "F117"
     },
     {
-      "id": "F119",
+      "id": "F117",
       "start": 20604,
       "end": 20812,
       "rejected_source": "scene-12/raw/06-window-final.mp4",
@@ -9080,11 +8877,11 @@
         "005184.json:shots[0]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F118",
-      "next": "F120"
+      "previous": "F116",
+      "next": "F118"
     },
     {
-      "id": "F120",
+      "id": "F118",
       "start": 20812,
       "end": 21387,
       "status": "candidate-plan-blocked-not-renderable",
@@ -9136,7 +8933,7 @@
         "005328.json:shots[1]"
       ],
       "join_rule": "Preserve outgoing action, screen side, eyeline and named object state. Review with previous and next shot at native rate and with sound; no padding or retiming.",
-      "previous": "F119",
+      "previous": "F117",
       "next": null
     }
   ],

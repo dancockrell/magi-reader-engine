@@ -199,6 +199,17 @@ def main():
     chain = read('docs/film-audit/CHAIN-SEQUENCE-PLAN.json')['shots']
     departure_plan = read('docs/film-audit/DEPARTURE-PURCHASE-SEQUENCE-PLAN.json')
     departure = [{**s, 'section': 'departure-purchase'} for s in departure_plan['shots']]
+    home_plan = read('docs/film-audit/HOME-PRESENT-SEQUENCE-PLAN.json')
+    home = [{**s, 'section': 'home-present'} for s in home_plan['shots']]
+    if home_plan['scope'] != {'start': 3073, 'end': 4351}:
+        raise ValueError('Home-present must replace the first incompatible costume frame')
+    cursor = 3073
+    for s in home:
+        if s['start'] != cursor or s['end'] <= cursor:
+            raise ValueError('Home-present has an unaccounted gap or overlap')
+        cursor = s['end']
+    if cursor != 4351:
+        raise ValueError('Home-present handover changed')
     if (departure_plan['start'], departure_plan['end']) != (6869, 9832):
         raise ValueError('Departure/purchase must preserve both neighboring section boundaries')
     retained_plan = read('docs/film-audit/RETAINED-MASTER-SELECTIONS.json')
@@ -210,7 +221,7 @@ def main():
                 for s in retained_plan['selections']]
     overrides = opening_overrides(opening) + mirror_overrides(
                 read('docs/film-audit/MIRROR-HAIR-SEQUENCE-PLAN.json')) + [{**s,'selected_candidate':s}
-                for s in retained+departure+parcel+combs+chain+closing]
+                for s in retained+home+departure+parcel+combs+chain+closing]
     for override in overrides:
       container=override['selected_candidate']
       # Unpinned legacy named choices still need resolving; gaps remain gaps.
@@ -256,7 +267,7 @@ def main():
         label=shot.get('historic_cut',{}).get('name','')
         if label in decisions.get('shot_overrides',{}):
             shot['treatment']=[decisions['shot_overrides'][label]]
-        if shot.get('selected_candidate',{}).get('section') in ('opening', 'departure-purchase', 'mirror-hair'):
+        if shot.get('selected_candidate',{}).get('section') in ('opening', 'departure-purchase', 'mirror-hair', 'home-present'):
             shot['treatment']=[shot['selected_candidate']['purpose']]
         shot['required_state']=[decisions['beats'][b['id']]['state'] for b in beats]
         shot['story_purpose']=[b['purpose'] for b in beats]
