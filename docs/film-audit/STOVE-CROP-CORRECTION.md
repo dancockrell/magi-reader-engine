@@ -13,3 +13,13 @@ ordered rendered images across the affected ten seconds. Object is excluded
 in those samples. Full native-motion/context acceptance is still pending.
 This supersedes the uncropped admission at this film position, not the entire
 source inventory. Not yet integrated into the full v7 movie or published.
+
+## Full v8 integration
+
+Integrated into full-teal-v8, 21387 frames, without re-encoding unchanged pieces.
+SHA256 `783095ea8b047bc020e256372c1ba3f71b428709d9a93e649284dace4bbca752`.
+Local review `/review-human-v8.html`, movie `video/films/magi-human-cut-v8.mp4`.
+Opened isolated background browser and sought to 190 seconds: actual full v8
+displayed the corrected Della framing and matching caption, with no stove in view.
+Closed temporary tab; existing playback and v6 app preview remain unchanged.
+This verifies integration at that point, not whole-film artistic acceptance.
