@@ -45,3 +45,13 @@ nine-second white-blouse slot here, followed by the existing brief watch insert.
 The wider source is not admitted in this earlier story position. Its gesturing
 may still read too much like present-tense conversation; judge in context.
 The preceding unresolved statement is historical, not the current selection.
+
+## Reduced reaction cutting
+
+Replace 4663–4742 recount and 4742–4798 planning fragment with one continuous
+135-frame performance: tear-v8 source 60–195, crop 200,100,1280,720.
+This source is already used at 1182–1423 in wider framing. This is an explicit
+editorial reprise, not unused footage or a loop within the shot. The wiping
+gesture is excluded; the later quiet gaze is retained. It removes one cut and
+the brief return to planning-table business during the reflective aside.
+Acceptance remains conditional on the reprise not drawing attention to itself.
