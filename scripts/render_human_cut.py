@@ -20,6 +20,8 @@ def main():
     ap.add_argument('--plan', type=Path, required=True)
     ap.add_argument('--output', type=Path, required=True)
     ap.add_argument('--overrides', type=Path)
+    ap.add_argument('--start-frame', type=int, default=0)
+    ap.add_argument('--end-frame', type=int, default=21387)
     args = ap.parse_args()
     root = args.production.resolve()
     out = args.output.resolve()
@@ -62,7 +64,13 @@ def main():
             edits = sorted(revised+[replacement],key=lambda e:e['start'])
     assert edits[0]['start'] == 0 and edits[-1]['end'] == 21387
     assert all(a['end'] == b['start'] for a,b in zip(edits, edits[1:]))
-    manifest = dict(status='rendered-checkpoint-not-final', fps=24, edits=edits)
+    assert 0 <= args.start_frame < args.end_frame <= 21387
+    edits = [dict(e, start=max(e['start'], args.start_frame),
+                  end=min(e['end'], args.end_frame),
+                  source_in=e['source_in']+max(0,args.start_frame-e['start']))
+             for e in edits if e['end'] > args.start_frame and e['start'] < args.end_frame]
+    manifest = dict(status='rendered-checkpoint-not-final', fps=24,
+                    timeline_start_frame=args.start_frame, timeline_end_frame=args.end_frame, edits=edits)
     (out/'edit.json').write_text(json.dumps(manifest, indent=2), encoding='utf-8')
     pieces = []
     for i, edit in enumerate(edits):
@@ -90,11 +98,17 @@ def main():
     listing = out/'concat.txt'
     listing.write_text(''.join("file '" + p.as_posix().replace("'", "'\\''") + "'\n" for p in pieces), encoding='utf-8')
     movie = out/'magi-human-cut-checkpoint.mp4'
-    run([ff,'-hide_banner','-loglevel','error','-y','-f','concat','-safe','0','-i',listing,
-         '-i',baseline,'-map','0:v:0','-map','1:a:0','-c','copy','-movflags','+faststart',movie])
+    mux = [ff,'-hide_banner','-loglevel','error','-y','-f','concat','-safe','0','-i',listing]
+    context = args.start_frame != 0 or args.end_frame != 21387
+    if context:
+        mux += ['-ss',args.start_frame/24]
+    mux += ['-i',baseline,'-map','0:v:0','-map','1:a:0','-c','copy']
+    if context:
+        mux += ['-t',(args.end_frame-args.start_frame)/24]
+    run(mux+['-movflags','+faststart',movie])
     info = json.loads(subprocess.check_output([str(probe),'-v','error','-show_streams','-of','json',str(movie)]))
     video = next(s for s in info['streams'] if s['codec_type']=='video')
-    assert int(video['nb_frames']) == 21387, video
+    assert int(video['nb_frames']) == args.end_frame-args.start_frame, video
     manifest['output'] = str(movie)
     manifest['probe'] = info
     manifest['sha256'] = hashlib.file_digest(movie.open('rb'),'sha256').hexdigest()

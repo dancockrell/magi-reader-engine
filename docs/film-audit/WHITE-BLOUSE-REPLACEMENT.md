@@ -51,3 +51,16 @@ cinematic post-production. This supersedes all proposed pickups in older plans.
   assembled sequence check; no new full render launched while prior one runs.
 -Rejected attempted salvage: later `s4-d-hair-cascade-rejected.mp4` frames96–240
   still morph into giant curls even in a tighter crop. Do not admit that crop.
+
+## Rendered sequence checkpoint
+
+The entire3073–4351 range is now physically rendered as
+`production/human-cut/early-context-v1/magi-human-cut-checkpoint.mp4` and copied
+to local review `public/video/films/magi-teal-sequence-v1.mp4`.
+1278 frames at24fps (53.25s), original corresponding narration retained.
+Final4215–4351 uses unused window source0–136 with crop450,0,800,450;
+the earlier window shot uses163–240, so these are distinct source frames.
+Ordered rendered sequence inspected: no white-blouse frames in this range.
+Homecoming is an editorial recollection framed between present-day thoughts;
+its audience reading and final sound-on screening remain acceptance items.
+The mirror passage after4351 is not included and remains unfinished.
