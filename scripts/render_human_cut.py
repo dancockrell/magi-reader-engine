@@ -20,6 +20,8 @@ def main():
     ap.add_argument('--plan', type=Path, required=True)
     ap.add_argument('--output', type=Path, required=True)
     ap.add_argument('--overrides', type=Path)
+    ap.add_argument('--reuse', type=Path, action='append', default=[],
+                    help='Read-only directories containing previously rendered identical edits')
     ap.add_argument('--start-frame', type=int, default=0)
     ap.add_argument('--end-frame', type=int, default=21387)
     args = ap.parse_args()
@@ -77,6 +79,21 @@ def main():
         count = edit['end']-edit['start']
         key = hashlib.sha256(json.dumps(edit, sort_keys=True).encode()).hexdigest()[:12]
         part = out / f'{i:03}-{key}.mp4'
+        # Edit hashes include source range, crop and timeline. Reject stale pieces
+        # when the source was modified after rendering; never mutate old reviews.
+        if not part.exists():
+            source_mtime = Path(edit['source']).stat().st_mtime
+            candidates = (p for directory in args.reuse
+                          for p in directory.resolve().glob(f'*-{key}.mp4'))
+            for cached in candidates:
+                if cached.stat().st_mtime < source_mtime:
+                    continue
+                cached_info = json.loads(subprocess.check_output([
+                    str(probe), '-v','error','-select_streams','v:0',
+                    '-show_entries','stream=nb_frames','-of','json',str(cached)]))
+                if int(cached_info['streams'][0].get('nb_frames',0)) == count:
+                    part = cached
+                    break
         pieces.append(part)
         if part.exists() and part.stat().st_size > 1024:
             info = json.loads(subprocess.check_output([str(probe), '-v','error','-select_streams','v:0',
