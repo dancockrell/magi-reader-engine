@@ -64,3 +64,19 @@ Ordered rendered sequence inspected: no white-blouse frames in this range.
 Homecoming is an editorial recollection framed between present-day thoughts;
 its audience reading and final sound-on screening remain acceptance items.
 The mirror passage after4351 is not included and remains unfinished.
+
+## Mirror-context v2 checkpoint
+
+Subsequent4351–5158 sequence is now rendered separately (807frames,33.625s).
+Local asset `public/video/films/magi-mirror-sequence-v2.mp4`.
+The mirror appears at the first pier-glass sentence instead of24seconds later.
+Existing original mirror source is split0–72 and72–240 without duplication.
+The descriptive aside is carried by unused matching room and pensive footage;
+the final turn returns to the mirror before the hair-release passage.
+Recount source38–117 avoids previously used0–38; planning source184–240
+avoids the earlier0–168 and known native jump near175–182.
+Two low crops were corrected after inspecting the rendered context.
+Ordered rendered images contain no white blouse in this interval. Narrative
+reading of the reflective montage still needs full-speed sound-on acceptance.
+The later hair-release and pre-sale intervals remain to be finished; this is not
+a final master or confirmation that every incompatible frame has been removed.
