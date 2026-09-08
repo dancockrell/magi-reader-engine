@@ -23,6 +23,11 @@ const single = process.env.SINGLE === '1';
 
 export default defineConfig({
   base: './',
+  server: {
+    // Rendered movies are immutable review assets, not hot-reload inputs.
+    // Windows can lock a movie during copying and crash the native watcher.
+    watch: { ignored: ['**/public/video/**', '**/production/**'] },
+  },
   plugins: [react(), ...(single ? [viteSingleFile()] : []), {
     name: 'curated-reader-media',
     closeBundle() {
